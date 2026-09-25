@@ -1,4 +1,4 @@
-import { PageShell } from "@/components/layout/PageShell";
+﻿import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";
 
@@ -7,7 +7,7 @@ const lmaSizes = [
     numara: "1",
     kilo: "< 5 kg",
     kiloPrecise: "≤ 4 kg",
-    maxKuf: "4 mL",
+    maxKaf: "4 mL",
     etTube: "3.5 mm",
     note: "Yenidoğan / Prematür",
     color: "border-pink-300 bg-pink-500/15",
@@ -18,7 +18,7 @@ const lmaSizes = [
     numara: "1.5",
     kilo: "5–10 kg",
     kiloPrecise: "5–10 kg",
-    maxKuf: "7 mL",
+    maxKaf: "7 mL",
     etTube: "4.0 mm",
     note: "İnfant",
     color: "border-purple-300 bg-purple-500/15",
@@ -29,7 +29,7 @@ const lmaSizes = [
     numara: "2",
     kilo: "10–20 kg",
     kiloPrecise: "10–20 kg",
-    maxKuf: "10 mL",
+    maxKaf: "10 mL",
     etTube: "4.5 mm",
     note: "Küçük çocuk",
     color: "border-blue-300 bg-blue-500/15",
@@ -40,7 +40,7 @@ const lmaSizes = [
     numara: "2.5",
     kilo: "20–30 kg",
     kiloPrecise: "20–30 kg",
-    maxKuf: "14 mL",
+    maxKaf: "14 mL",
     etTube: "5.0 mm",
     note: "Büyük çocuk",
     color: "border-teal-300 bg-teal-500/15",
@@ -51,7 +51,7 @@ const lmaSizes = [
     numara: "3",
     kilo: "30–50 kg",
     kiloPrecise: "30–50 kg",
-    maxKuf: "20 mL",
+    maxKaf: "20 mL",
     etTube: "6.0 mm",
     note: "Küçük yetişkin",
     color: "border-green-300 bg-green-50",
@@ -62,7 +62,7 @@ const lmaSizes = [
     numara: "4",
     kilo: "50–70 kg",
     kiloPrecise: "50–70 kg",
-    maxKuf: "30 mL",
+    maxKaf: "30 mL",
     etTube: "6.0 mm",
     note: "Orta yetişkin",
     color: "border-amber-300 bg-amber-500/15",
@@ -73,7 +73,7 @@ const lmaSizes = [
     numara: "5",
     kilo: "70–100 kg",
     kiloPrecise: "70–100 kg",
-    maxKuf: "40 mL",
+    maxKaf: "40 mL",
     etTube: "7.0 mm",
     note: "Büyük yetişkin",
     color: "border-orange-300 bg-orange-500/15",
@@ -117,8 +117,8 @@ export default function LMAPage() {
                   </div>
                   <div className="flex gap-3 flex-wrap">
                     <div>
-                      <p className="text-[10px] text-slate-500 font-bold">Maks Kuf</p>
-                      <p className={`text-xs font-black ${size.textColor}`}>{size.maxKuf}</p>
+                      <p className="text-[10px] text-slate-500 font-bold">Maks Kaf</p>
+                      <p className={`text-xs font-black ${size.textColor}`}>{size.maxKaf}</p>
                     </div>
                     <div>
                       <p className="text-[10px] text-slate-500 font-bold">ETT Geçiş</p>
