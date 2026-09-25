@@ -21,12 +21,14 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imgError, setImgError] = useState(false);
   const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   const current = images[currentIndex];
   const hasMultiple = images.length > 1;
 
   useEffect(() => {
     setImgError(false);
+    setZoomLevel(1);
   }, [currentIndex]);
 
   useEffect(() => {
@@ -133,7 +135,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
       )}
 
       <div
-        className="flex-1 overflow-auto flex items-start justify-center p-4 transition-transform"
+        className={`flex-1 overflow-auto flex items-start p-4 transition-transform ${zoomLevel === 1 ? 'justify-center' : 'justify-start'}`}
         style={{ touchAction: "pan-y pinch-zoom" }}
         onClick={(e) => {
           if (e.target === e.currentTarget) onClose();
@@ -161,12 +163,33 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
             key={current.src}
             src={current.src}
             alt={`${title} - ${current.label}`}
-            className="max-w-none rounded-xl shadow-2xl"
-            style={{ minWidth: 280, maxWidth: "100%" }}
+            className="rounded-xl shadow-2xl transition-all duration-200 origin-top-left"
+            style={{ width: zoomLevel === 1 ? '100%' : `${zoomLevel * 100}%`, minWidth: 280, maxWidth: zoomLevel === 1 ? '100%' : 'none' }}
             onError={() => setImgError(true)}
             draggable={false}
           />
         )}
+      </div>
+
+      {/* Zoom Controls */}
+      <div className="absolute bottom-6 right-4 sm:right-8 flex gap-3 z-50 shadow-2xl rounded-full bg-black/70 backdrop-blur-md p-1.5 border border-white/20">
+        <button 
+          onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.max(z - 0.5, 1)); }} 
+          disabled={zoomLevel <= 1}
+          className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 text-white font-bold text-xl flex items-center justify-center active:scale-90 transition-all disabled:opacity-30"
+        >
+          -
+        </button>
+        <div className="flex items-center justify-center w-14 text-white font-bold text-sm">
+          {Math.round(zoomLevel * 100)}%
+        </div>
+        <button 
+          onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.min(z + 0.5, 4)); }} 
+          disabled={zoomLevel >= 4}
+          className="w-10 h-10 rounded-full bg-white text-black hover:bg-white/90 font-bold text-xl flex items-center justify-center active:scale-90 transition-all disabled:opacity-30"
+        >
+          +
+        </button>
       </div>
 
 
