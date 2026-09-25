@@ -6,27 +6,19 @@ import { ArrowLeft } from "lucide-react";
 
 export default function VentilatorPage() {
   const [kilo, setKilo] = useState("");
-  const [fio2, setFio2] = useState("40");
   const [peep, setPeep] = useState("5");
-  const [freq, setFreq] = useState("14");
-  const [ieE, setIeE] = useState("2");
+  const [freq, setFreq] = useState("10");
 
   const k = parseFloat(kilo);
   const f = parseFloat(freq);
-  const ie = parseFloat(ieE);
 
   const valid = k > 0 && k <= 300;
 
   // Ideal vücut ağırlığına göre hesaplama (erkek/kadın ortalaması)
   const tidalMin = valid ? (k * 6).toFixed(0) : null;
-  const tidalMax = valid ? (k * 8).toFixed(0) : null;
+  const tidalMax = valid ? (k * 10).toFixed(0) : null;
   const dkVolMin = valid && f ? ((k * 6 * f) / 1000).toFixed(1) : null;
-  const dkVolMax = valid && f ? ((k * 8 * f) / 1000).toFixed(1) : null;
-
-  // I:E zamanları
-  const totalCycle = f > 0 ? 60 / f : null;
-  const tI = totalCycle ? (totalCycle / (1 + ie)).toFixed(2) : null;
-  const tE = totalCycle && tI ? (totalCycle - parseFloat(tI)).toFixed(2) : null;
+  const dkVolMax = valid && f ? ((k * 10 * f) / 1000).toFixed(1) : null;
 
   return (
     <PageShell>
@@ -52,25 +44,6 @@ export default function VentilatorPage() {
             </div>
           </div>
 
-          {/* FiO2 */}
-          <div className="px-4 py-3">
-            <div className="flex items-center gap-3 mb-2">
-              <label className="text-sm font-bold text-white/90 w-40 shrink-0">FiO₂</label>
-              <span className="ml-auto text-sm font-black text-purple-400">%{fio2}</span>
-            </div>
-            <input
-              type="range"
-              min="21"
-              max="100"
-              step="1"
-              value={fio2}
-              onChange={(e) => setFio2(e.target.value)}
-              className="w-full accent-purple-600"
-            />
-            <div className="flex justify-between text-[10px] text-slate-400 font-bold mt-0.5">
-              <span>%21</span><span>%100</span>
-            </div>
-          </div>
 
           {/* PEEP */}
           <div className="px-4 py-3">
@@ -95,40 +68,34 @@ export default function VentilatorPage() {
           {/* Frekans */}
           <div className="px-4 py-3">
             <div className="flex items-center gap-3 mb-2">
-              <label className="text-sm font-bold text-white/90 w-40 shrink-0">Solunum Frekansı</label>
+              <label className="text-sm font-bold text-white/90 w-40 shrink-0">Solunum Sayısı</label>
               <span className="ml-auto text-sm font-black text-purple-400">{freq} /dk</span>
             </div>
-            <input
-              type="range"
-              min="8"
-              max="30"
-              step="1"
-              value={freq}
-              onChange={(e) => setFreq(e.target.value)}
-              className="w-full accent-purple-600"
-            />
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setFreq(p => String(Math.max(8, parseInt(p) - 1)))}
+                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center font-bold text-xl active:scale-95 transition-all"
+              >
+                -
+              </button>
+              <input
+                type="range"
+                min="8"
+                max="30"
+                step="1"
+                value={freq}
+                onChange={(e) => setFreq(e.target.value)}
+                className="flex-1 accent-purple-600"
+              />
+              <button
+                onClick={() => setFreq(p => String(Math.min(30, parseInt(p) + 1)))}
+                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center font-bold text-xl active:scale-95 transition-all"
+              >
+                +
+              </button>
+            </div>
             <div className="flex justify-between text-[10px] text-slate-400 font-bold mt-0.5">
               <span>8</span><span>30</span>
-            </div>
-          </div>
-
-          {/* I:E */}
-          <div className="px-4 py-3">
-            <div className="flex items-center gap-3 mb-2">
-              <label className="text-sm font-bold text-white/90 w-40 shrink-0">I:E Oranı</label>
-              <span className="ml-auto text-sm font-black text-purple-400">1:{ieE}</span>
-            </div>
-            <input
-              type="range"
-              min="1"
-              max="4"
-              step="0.5"
-              value={ieE}
-              onChange={(e) => setIeE(e.target.value)}
-              className="w-full accent-purple-600"
-            />
-            <div className="flex justify-between text-[10px] text-slate-400 font-bold mt-0.5">
-              <span>1:1</span><span>1:4</span>
             </div>
           </div>
         </div>
@@ -138,7 +105,7 @@ export default function VentilatorPage() {
           <div className="space-y-3">
             {/* Tidal Volüm */}
             <div className="bg-purple-600 rounded-xl p-4 text-white">
-              <p className="text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Tidal Volüm (6–8 mL/kg)</p>
+              <p className="text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Tidal Volüm (6–10 mL/kg)</p>
               <div className="flex items-center justify-center gap-3">
                 <div className="text-center">
                   <p className="text-3xl font-black">{tidalMin}</p>
@@ -147,7 +114,7 @@ export default function VentilatorPage() {
                 <span className="text-lg font-black opacity-50">–</span>
                 <div className="text-center">
                   <p className="text-3xl font-black">{tidalMax}</p>
-                  <p className="text-[11px] opacity-70 font-bold">8 mL/kg</p>
+                  <p className="text-[11px] opacity-70 font-bold">10 mL/kg</p>
                 </div>
                 <span className="text-sm font-bold opacity-70 ml-1">mL</span>
               </div>
@@ -156,7 +123,7 @@ export default function VentilatorPage() {
             {/* Grid sonuçlar */}
             <div className="grid grid-cols-2 gap-3">
               <div className="glass-card rounded-xl border border-white/10 p-3 text-center ">
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">Dakika Volümü</p>
+                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">MİNUTE VOLÜME</p>
                 <p className="text-base font-black text-white/90 mt-1">{dkVolMin}–{dkVolMax}</p>
                 <p className="text-[10px] text-slate-500 font-bold">L/dk</p>
               </div>
@@ -164,16 +131,6 @@ export default function VentilatorPage() {
                 <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">PEEP</p>
                 <p className="text-base font-black text-white/90 mt-1">{peep}</p>
                 <p className="text-[10px] text-slate-500 font-bold">cmH₂O</p>
-              </div>
-              <div className="glass-card rounded-xl border border-white/10 p-3 text-center ">
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">İnspirasyon (Ti)</p>
-                <p className="text-base font-black text-white/90 mt-1">{tI}</p>
-                <p className="text-[10px] text-slate-500 font-bold">sn</p>
-              </div>
-              <div className="glass-card rounded-xl border border-white/10 p-3 text-center ">
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">Ekspirasyon (Te)</p>
-                <p className="text-base font-black text-white/90 mt-1">{tE}</p>
-                <p className="text-[10px] text-slate-500 font-bold">sn</p>
               </div>
             </div>
 

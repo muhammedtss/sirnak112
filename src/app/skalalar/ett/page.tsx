@@ -11,14 +11,14 @@ export default function ETTPage() {
   const y = parseFloat(yas);
   const k = parseFloat(kilo);
 
-  const validYas = y >= 1 && y <= 18;
+  const validYas = y >= 0 && y <= 18;
   const validKilo = k > 0 && k <= 100;
 
   // ETT İç Çap (mm)
   // < 1 yaş: 3.5 mm (termde yenidoğan)
   // ≥ 1 yaş: (yaş/4) + 4 kafsız; (yaş/4) + 3.5 kaflı
-  const ettkafsız = validYas ? ((y / 4) + 4).toFixed(1) : null;
-  const ettkaflı = validYas ? ((y / 4) + 3.5).toFixed(1) : null;
+  const ettkafsız = validYas ? (y < 1 ? "3.5" : ((y / 4) + 4).toFixed(1)) : null;
+  const ettkaflı = validYas ? (y < 1 ? "3.5" : ((y / 4) + 3.5).toFixed(1)) : null;
 
   // Derinlik (cm - ağızdan)
   // ≥ 2 yaş: (yaş/2) + 12

@@ -21,13 +21,7 @@ interface Skala {
 }
 
 const yetiskinSkalalar: Skala[] = [
-  {
-    id: "cabuk", name: "ÇABUK Değerlendirme", icon: "⚡",
-    accent: "#F43F5E", glow: "rgba(244,63,94,0.15)", border: "rgba(244,63,94,0.25)",
-    description: "Hızlı hasta değerlendirme skalası.",
-    tags: ["Hızlı", "Triaj"],
-    href: "/skalalar/cabuk",
-  },
+
   {
     id: "glasgow-yetiskin", name: "Glasgow Koma Skalası", icon: "🧠",
     accent: "#818CF8", glow: "rgba(129,140,248,0.15)", border: "rgba(129,140,248,0.25)",
@@ -77,6 +71,13 @@ const yetiskinSkalalar: Skala[] = [
     tags: ["KPR", "4H4T", "Arrest"],
     href: "/skalalar/geri-dondurulebilir",
   },
+  {
+    id: "yanik", name: "İnteraktif Yanık Hesaplama", icon: "🔥",
+    accent: "#F97316", glow: "rgba(249,115,22,0.15)", border: "rgba(249,115,22,0.25)",
+    description: "3D görsel üzerinden yanık yüzdesi hesaplama ve sıvı replasmanı.",
+    tags: ["Yanık", "Sıvı", "TBSA"],
+    href: "/skalalar/yanik",
+  },
 ];
 
 const cocukSkalalar: Skala[] = [
@@ -107,6 +108,13 @@ const cocukSkalalar: Skala[] = [
     description: "Görünüm (A), Solunum Eforu (B) ve Dolaşım (C) üçgeniyle aciliyet belirler.",
     tags: ["Pediatri", "Triaj", "PAT"],
     href: "/skalalar/pat",
+  },
+  {
+    id: "cabuk", name: "Çocuk Değerlendirme Üçgeni (ÇABUK)", icon: "⚡",
+    accent: "#F43F5E", glow: "rgba(244,63,94,0.15)", border: "rgba(244,63,94,0.25)",
+    description: "Hızlı hasta değerlendirme skalası.",
+    tags: ["Hızlı", "Triaj", "ÇABUK"],
+    href: "/skalalar/cabuk",
   },
   {
     id: "ett", name: "ETT — Endotrakeal Entübasyon", icon: "🫀",
@@ -266,14 +274,6 @@ export default function SkalalarPage() {
             onToggle={(id) => setOpenCocuk((p) => (p === id ? null : id))}
           />
 
-          {/* Full-width Burn Calculator */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 px-1 mb-3">
-              <span className="text-xl">🔥</span>
-              <h2 className="text-base font-bold">İnteraktif Yanık Hesaplayıcı</h2>
-            </div>
-            <BurnCalculatorEmbed />
-          </div>
         </div>
       </div>
     </PageShell>
