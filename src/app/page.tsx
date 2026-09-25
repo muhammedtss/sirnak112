@@ -32,13 +32,13 @@ const item = {
 };
 
 const quickLinks = [
-  { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Algoritmalar",accent: "#F97316" },
-  { href: "/vaka-protokolleri",    icon: BookOpen,   label: "Vaka Protokolleri",        accent: "#8B5CF6" },
-  { href: "/skalalar",             icon: Activity,   label: "Skalalar",           accent: "#34D399" },
-  { href: "/ilac-doz",             icon: Pill,       label: "İlaç Dozu",          accent: "#F59E0B" },
-  { href: "/envanter",             icon: Package,    label: "Envanter",           accent: "#EF4444" },
-  { href: "/evraklar",             icon: FileText,   label: "Evraklar",           accent: "#EC4899" },
-  { href: "/icd10",                icon: FileSearch, label: "ICD-10",             accent: "#06B6D4" },
+  { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Algoritmalar",      desc: "Akış şemaları", accent: "#F97316" },
+  { href: "/vaka-protokolleri",    icon: BookOpen,   label: "Vaka Protokolleri", desc: "Adım adım rehber", accent: "#8B5CF6" },
+  { href: "/skalalar",             icon: Activity,   label: "Skalalar",          desc: "Hesaplayıcılar", accent: "#34D399" },
+  { href: "/ilac-doz",             icon: Pill,       label: "İlaç Dozu",         desc: "İnfüzyon hesabı", accent: "#F59E0B" },
+  { href: "/envanter",             icon: Package,    label: "Envanter",          desc: "Malzeme kontrolü", accent: "#EF4444" },
+  { href: "/evraklar",             icon: FileText,   label: "Evraklar",          desc: "Form ve tutanaklar", accent: "#EC4899" },
+  { href: "/icd10",                icon: FileSearch, label: "ICD-10",            desc: "Tanı kodları", accent: "#06B6D4" },
 ];
 
 export default function HomePage() {
@@ -114,10 +114,17 @@ export default function HomePage() {
             <motion.div key={link.href} variants={item} className={link.href === "/icd10" ? "col-span-2" : ""}>
               <Link
                 href={link.href}
-                className="glass-card glass-hover flex flex-col p-4 gap-3 group"
+                className="glass-card glass-hover flex flex-col p-4 gap-3 group relative overflow-hidden"
               >
+                {/* Background Watermark Icon */}
+                <Icon
+                  className="absolute -right-4 -bottom-4 opacity-15 transform -rotate-12 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500 pointer-events-none"
+                  style={{ width: 80, height: 80, color: link.accent }}
+                  strokeWidth={1.5}
+                />
+
                 <div
-                  className="w-10 h-10 rounded-2xl flex items-center justify-center"
+                  className="w-10 h-10 rounded-2xl flex items-center justify-center relative z-10"
                   style={{
                     background: `${link.accent}22`,
                     border: `1px solid ${link.accent}33`,
@@ -128,10 +135,13 @@ export default function HomePage() {
                     strokeWidth={2}
                   />
                 </div>
-                <div className="flex items-end justify-between">
-                  <span className="text-sm font-semibold leading-tight pr-2">{link.label}</span>
+                <div className="flex items-end justify-between relative z-10 mt-1">
+                  <div className="flex flex-col">
+                    <span className="text-sm font-semibold leading-tight">{link.label}</span>
+                    <span className="text-[10px] text-muted font-medium mt-1">{link.desc}</span>
+                  </div>
                   <ChevronRight
-                    className="shrink-0 opacity-30 group-hover:opacity-70 transition-opacity"
+                    className="shrink-0 opacity-30 group-hover:opacity-70 transition-opacity mb-1"
                     style={{ width: 14, height: 14 }}
                   />
                 </div>
