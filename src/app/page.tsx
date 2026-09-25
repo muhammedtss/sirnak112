@@ -12,6 +12,7 @@ import {
   Cpu,
   ChevronRight,
   Zap,
+  HeartPulse,
 } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
@@ -39,6 +40,7 @@ const quickLinks = [
   { href: "/envanter",             icon: Package,    label: "Envanter",          desc: "Malzeme kontrolü", accent: "#EF4444" },
   { href: "/evraklar",             icon: FileText,   label: "Evraklar",          desc: "Form ve tutanaklar", accent: "#EC4899" },
   { href: "/icd10",                icon: FileSearch, label: "ICD-10",            desc: "Tanı kodları", accent: "#06B6D4" },
+  { href: "/ekg-egitim",           icon: HeartPulse, label: "EKG Eğitimi",       desc: "İnteraktif modüller", accent: "#10B981" },
 ];
 
 export default function HomePage() {
@@ -110,11 +112,12 @@ export default function HomePage() {
       >
         {quickLinks.map((link) => {
           const Icon = link.icon;
+          const isFullRow = link.href === "/icd10" || link.href === "/ekg-egitim";
           return (
-            <motion.div key={link.href} variants={item} className={link.href === "/icd10" ? "col-span-2 flex justify-center" : "w-full"}>
+            <motion.div key={link.href} variants={item} className={isFullRow ? "col-span-2 flex justify-center" : "w-full"}>
               <Link
                 href={link.href}
-                className={`glass-card glass-hover flex flex-col p-4 gap-3 group relative overflow-hidden ${link.href === "/icd10" ? "w-[65%]" : "w-full"}`}
+                className={`glass-card glass-hover flex flex-col p-4 gap-3 group relative overflow-hidden ${isFullRow ? "w-[65%]" : "w-full"}`}
               >
                 {/* Background Watermark Icon */}
                 <Icon
