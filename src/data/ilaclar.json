@@ -1,0 +1,1858 @@
+{
+  "0_9_nacl": {
+    "id": "0_9_nacl",
+    "name": "%0,9 Sodyum Klorür (İzotonik/Serum Fizyolojik)",
+    "cases": {
+      "hipovolemik_sok": {
+        "caseName": "Hipovolemik Şok",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml",
+          "fixedDose": "500-1000",
+          "maxDose": "1000 ml",
+          "route": "IV",
+          "notes": "5-10 dakikada hızlı infüzyon/bolus, SKB 80-90 mmHg olana kadar titre et"
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 20,
+          "unit": "ml",
+          "fixedDose": null,
+          "maxDose": "60 ml/kg",
+          "route": "IV/IO",
+          "notes": "5-10 dk da bolus. Yanıt alınamazsa tekrarlanır (maksimum 3 kez). Yenidoğanlarda doz 10 ml/kg'dır (maksimum 20 ml/kg)."
+        }
+      },
+      "kardiyojenik_sok": {
+        "caseName": "Kardiyojenik Şok",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml",
+          "fixedDose": "250",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Hipotansiyon durumunda dikkatle verilebilir"
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 5,
+          "unit": "ml",
+          "fixedDose": null,
+          "maxDose": "20 ml/kg",
+          "route": "IV",
+          "notes": "5-10 ml/kg 20-30 dk içerisinde verilir. Yanıt alınamazsa tekrarlanır (maks toplam 20 ml/kg)."
+        }
+      },
+      "septik_sok": {
+        "caseName": "Septik Şok",
+        "eriskin": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 20,
+          "unit": "ml",
+          "fixedDose": null,
+          "maxDose": "60 ml/kg",
+          "route": "IV",
+          "notes": "5-10 dk da gidecek şekilde verilir. Yanıt alınmazsa tekrarlanır (Yenidoğanda 10 ml/kg, toplam maks 30 ml/kg)."
+        }
+      },
+      "anafilaksi": {
+        "caseName": "Anafilaksi ve Alerjik Reaksiyon",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml",
+          "fixedDose": "500",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Bolus olarak verilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 20,
+          "unit": "ml",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Hipotansiyon varlığında sıvı yüklemesi olarak verilir."
+        }
+      },
+      "hipertermi": {
+        "caseName": "Hipertermi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml",
+          "fixedDose": "1000-2000",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Bolus olarak başlanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 20,
+          "unit": "ml",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Hidrasyon için verilir."
+        }
+      }
+    }
+  },
+  "adenozin": {
+    "id": "adenozin",
+    "name": "Adenozin",
+    "cases": {
+      "tasiaritmi": {
+        "caseName": "Nabızlı Taşikardi (SVT / Dar QRS)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "6",
+          "maxDose": "12 mg",
+          "route": "IV",
+          "notes": "Hızlı IV puşe ve devamında en az 20 ml bolus SF. Başarısız ise 2. doz 12 mg."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "12 mg",
+          "route": "IV",
+          "notes": "Hızlı puşe. İlk doz 0.1 mg/kg (maks 6 mg). İkinci doz 0.2 mg/kg (maks 12 mg)."
+        }
+      }
+    }
+  },
+  "adrenalin": {
+    "id": "adrenalin",
+    "name": "Adrenalin",
+    "cases": {
+      "arrest": {
+        "caseName": "Kardiyopulmoner Arrest (VF/nVT/Asistoli/NEA)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "1",
+          "maxDose": null,
+          "route": "IV/IO",
+          "notes": "1/10000'lik solüsyon, 3-5 dakikada bir tekrarlanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.01,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "1 mg",
+          "route": "IV/IO",
+          "notes": "1/10000'lik solüsyon (0.1 ml/kg), 3-5 dakikada bir tekrarlanır."
+        }
+      },
+      "anafilaksi": {
+        "caseName": "Anafilaksi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "0.3-0.5",
+          "maxDose": null,
+          "route": "IM",
+          "notes": "Hipoperfüzyon sürerse 5 dk içinde tekrarla. Düzelmezse 1 mcg/dk IV infüzyon yavaş uygula."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.01,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "0.5 mg",
+          "route": "IM",
+          "notes": "1/1000 solüsyon. 12 yaş altı maks 0.3 mg, 12 yaş üstü maks 0.5 mg. Yeterli cevap alınamazsa 5-15 dk arayla toplam 3 doza kadar çıkılabilir."
+        }
+      },
+      "bradikardi": {
+        "caseName": "Bradikardi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg/dk",
+          "fixedDose": "2-10",
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "Atropine yanıt alınamıyorsa infüzyon şeklinde uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.01,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV/IO",
+          "notes": "1/10.000 solüsyon (0.1 ml/kg). Gerekirse 3-5 dk'da bir tekrarla."
+        }
+      },
+      "sok": {
+        "caseName": "Dirençli Şok (Hipovolemik/Kardiyojenik/Septik)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg/dk",
+          "fixedDose": "2-10",
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "Sıvı tedavisine yanıtsız veya MAP < 65 mmHg ise infüzyon."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": null,
+          "unit": "mcg/kg/dk",
+          "fixedDose": "0.1-1",
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "Sıvıya dirençli şokta 0.1-1 mcg/kg/dk, Kardiyojenik/Septik şokta 0.1-0.3 mcg/kg/dk infüzyon."
+        }
+      },
+      "krup": {
+        "caseName": "Krup (Orta/Ağır Atak)",
+        "eriskin": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.5,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "5 mg",
+          "route": "Nebül",
+          "notes": "1/1000'lik ampulden nebülize edilir. 10 kg üzerinde maksimum 5 mg."
+        }
+      },
+      "yenidogan_canlandirma": {
+        "caseName": "Yenidoğan Canlandırması",
+        "eriskin": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.02,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "1/10000 lik adrenalin KAH < 60 atım/dk ise uygulanır."
+        }
+      }
+    }
+  },
+  "amiodaron": {
+    "id": "amiodaron",
+    "name": "Amiodaron",
+    "cases": {
+      "arrest": {
+        "caseName": "Kardiyopulmoner Arrest (Dirençli VF/nVT)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "300",
+          "maxDose": "450 mg",
+          "route": "IV/IO",
+          "notes": "3. şok sonrası 300 mg bolus, 5. şok sonrası 150 mg tekrar edilebilir. %5 dekstroz içinde verilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 5,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV/IO",
+          "notes": "3. defibrilasyon sonrası %5 dekstroz içine katılarak bolus verilir. Dirençli VF'de tekrarlanabilir."
+        }
+      },
+      "tasiaritmi": {
+        "caseName": "Nabızlı Taşikardi (Geniş QRS veya Dirençli SVT)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "150",
+          "maxDose": "300 mg",
+          "route": "IV",
+          "notes": "Stabil geniş QRS'te 150 mg (%5 dekstroz ile 10 dk'da). Anstabil kardiyoversiyon yanıtsızsa 300 mg (10 dk'da)."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 5,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "Geniş QRS Taşikardide 20-60 dk'da infüzyon şeklinde verilir."
+        }
+      }
+    }
+  },
+  "asetilsalisilik_asit": {
+    "id": "asetilsalisilik_asit",
+    "name": "Asetilsalisilik Asit",
+    "cases": {
+      "akut_koroner_sendrom": {
+        "caseName": "Akut Koroner Sendrom",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "160-325",
+          "maxDose": "325 mg",
+          "route": "Oral",
+          "notes": "Çiğnetilerek verilir. Alerji ve aktif kanama kontrendikedir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "aspirin": {
+    "id": "aspirin",
+    "name": "Aspirin (Asetilsalisilik Asit)",
+    "cases": {
+      "akut_koroner_sendrom": {
+        "caseName": "Akut Koroner Sendrom",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "160-325",
+          "maxDose": "325 mg",
+          "route": "Oral",
+          "notes": "Çiğnetilerek verilir. Alerji ve aktif kanama kontrendikedir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "atropin": {
+    "id": "atropin",
+    "name": "Atropin",
+    "cases": {
+      "bradikardi": {
+        "caseName": "Bradikardi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "1",
+          "maxDose": "3 mg",
+          "route": "IV",
+          "notes": "3-5 dk'da bir tekrarlanabilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.02,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "0.5 mg",
+          "route": "IV",
+          "notes": "Primer AV blok veya aşırı vagal uyarı durumlarında kullanılır."
+        }
+      },
+      "kolinerjik_zehirlenme": {
+        "caseName": "Kolinerjik Ajanlarla Zehirlenme",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "1-2",
+          "maxDose": null,
+          "route": "IV/IM",
+          "notes": "IV verilemezse 2-5 mg IM. Trakeobronşiyal sekresyonlar azalıncaya kadar 5 dk'da bir tekrarlanır. Maksimum dozu yoktur."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "deksametazon": {
+    "id": "deksametazon",
+    "name": "Deksametazon",
+    "cases": {
+      "krup": {
+        "caseName": "Krup (Hafif/Orta/Ağır Atak)",
+        "eriskin": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.6,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "16 mg",
+          "route": "Oral/IM/IV",
+          "notes": "Hafif atakta 0.15-0.6 mg/kg; Orta ve Ağır atakta 0.6 mg/kg uygulanır."
+        }
+      }
+    }
+  },
+  "dekstroz": {
+    "id": "dekstroz",
+    "name": "Dekstroz / Glikoz",
+    "cases": {
+      "hipoglisemi": {
+        "caseName": "Hipoglisemi / Diyabetik Aciller",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "gr",
+          "fixedDose": "25",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "%10-%20'lik Dekstroz solüsyonlarından bolus olarak verilir. 5-10 dk da bir tekrarlanabilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 5,
+          "unit": "ml",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Çocuk ve yenidoğanlarda %10 luk dekstroz 5 ml/kg veya %20 lik dekstroz 2.5 ml/kg IV puşe/idame."
+        }
+      }
+    }
+  },
+  "diazepam": {
+    "id": "diazepam",
+    "name": "Diazepam",
+    "cases": {
+      "nobet": {
+        "caseName": "Nöbet / Konvülziyon",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "5",
+          "maxDose": null,
+          "route": "IV yavaş puşe",
+          "notes": "Nöbet devam ederse 5 dk sonra tekrar edilebilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.2,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "10 mg",
+          "route": "IV / Rektal",
+          "notes": "IV yavaş puşe (maks 10 mg). Rektal yoldan verilecekse doz 0.3-0.5 mg/kg şeklindedir."
+        }
+      },
+      "ajite_hasta": {
+        "caseName": "Ajite Hasta Yönetimi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "5",
+          "maxDose": null,
+          "route": "IM",
+          "notes": "Sedasyon amacıyla. Doz 20 dk sonra tekrarlanabilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      },
+      "eklampsi": {
+        "caseName": "Eklampsi / Üçüncü Trimestr Nöbet",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "5",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Magnezyum Sülfat ile nöbet durdurulamazsa uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "difenhidramin": {
+    "id": "difenhidramin",
+    "name": "Difenhidramin",
+    "cases": {
+      "alerjik_reaksiyon_anafilaksi": {
+        "caseName": "Alerjik Reaksiyon ve Anafilaksi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "25-50",
+          "maxDose": "50 mg",
+          "route": "IV",
+          "notes": "Yavaş puşe olarak uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "50 mg",
+          "route": "IV",
+          "notes": "Antihistaminik olarak 1 mg/kg yavaş uygulanır."
+        }
+      }
+    }
+  },
+  "diltiazem": {
+    "id": "diltiazem",
+    "name": "Diltiazem",
+    "cases": {
+      "nabizli_tasikardi": {
+        "caseName": "Nabızlı Taşikardi (SVT / Atriyal Fibrilasyon)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.25,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "İlk doz 0,25 mg/kg IV. Başarısız olursa ikinci doz 0,35 mg/kg IV verilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "dopamin": {
+    "id": "dopamin",
+    "name": "Dopamin",
+    "cases": {
+      "bradikardi": {
+        "caseName": "Bradikardi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg/kg/dk",
+          "fixedDose": "5-20",
+          "maxDose": "20 mcg/kg/dk",
+          "route": "IV İnfüzyon",
+          "notes": "Atropine yanıt alınamıyorsa infüzyon şeklinde uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg/kg/dk",
+          "fixedDose": "5-20",
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "İnotrop destek olarak uygulanır."
+        }
+      },
+      "sok": {
+        "caseName": "Şok (Hipovolemik / Kardiyojenik / Septik)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg/kg/dk",
+          "fixedDose": "5-20",
+          "maxDose": "20 mcg/kg/dk",
+          "route": "IV İnfüzyon",
+          "notes": "Sıvı tedavisine dirençli şok tablosunda infüzyon. Kardiyojenik şokta 2-5 mcg/kg/dk ile başlanıp 20'ye çıkılabilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg/kg/dk",
+          "fixedDose": "5-20",
+          "maxDose": "20 mcg/kg/dk",
+          "route": "IV İnfüzyon",
+          "notes": "Sıvı tedavisine rağmen şok bulguları düzelmezse infüzyon başlanır. Septik şokta alternatif inotrop ajandır."
+        }
+      }
+    }
+  },
+  "feniramin_maleat": {
+    "id": "feniramin_maleat",
+    "name": "Feniramin Maleat",
+    "cases": {
+      "alerjik_reaksiyon_anafilaksi": {
+        "caseName": "Alerjik Reaksiyon ve Anafilaksi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "45.5",
+          "maxDose": "45.5 mg",
+          "route": "IV",
+          "notes": "Yavaş puşe olarak uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "50 mg",
+          "route": "IV",
+          "notes": "Antihistaminik olarak 1 mg/kg (maksimum 50 mg) yavaş uygulanır."
+        }
+      }
+    }
+  },
+  "fenitoin": {
+    "id": "fenitoin",
+    "name": "Fenitoin",
+    "cases": {
+      "nobet": {
+        "caseName": "Nöbet / Konvülziyon",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 20,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "İnfüzyon hızı en fazla 25 mg/kg/dk olacak şekilde verilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 20,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "SF içine katılarak infüzyonla verilir. (İnfüzyon hızı: 1 ml/kg/dk olacak şekilde)."
+        }
+      }
+    }
+  },
+  "fentanil": {
+    "id": "fentanil",
+    "name": "Fentanil",
+    "cases": {
+      "akut_koroner_sendrom": {
+        "caseName": "Akut Koroner Sendrom / Göğüs Ağrısı",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mcg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Göğüs ağrısı devam ediyor ve tolere edilemiyorsa yavaş bolus uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      },
+      "yanik": {
+        "caseName": "Termal Yanık",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mcg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV / IM",
+          "notes": "Ağrı kontrolü için yavaş IV veya IM uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mcg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV / IM / SC",
+          "notes": "Ağrı kontrolü için yavaş infüzyon, IM veya SC uygulanır."
+        }
+      }
+    }
+  },
+  "furosemid": {
+    "id": "furosemid",
+    "name": "Furosemid",
+    "cases": {
+      "kardiyojenik_sok": {
+        "caseName": "Kalp Yetmezliği / Kardiyojenik Şok / Yüklenme",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "20-40",
+          "maxDose": "40 mg",
+          "route": "IV",
+          "notes": "Dekompanse kalp yetmezliği veya hipertansif kalp yetmezliğinde uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Kardiyojenik şok tablosunda yüklenme bulguları (ronküs, raller, hepatomegali vb.) varsa uygulanır."
+        }
+      }
+    }
+  },
+  "glikoz": {
+    "id": "glikoz",
+    "name": "Glikoz (Dekstroz)",
+    "cases": {
+      "diyabetik_aciller": {
+        "caseName": "Diyabetik Aciller / Hipoglisemi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "gr",
+          "fixedDose": "25",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "%10-%20'lik Dekstroz solüsyonlarından 25 gr glikoz IV bolus olarak verilir. (Glikoz < 60 mg/dl ise 5-10 dk'da bir tekrarla)."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": "Çocuklarda doz mililitre cinsinden dekstroz üzerinden (örn: 5 ml/kg %10 dekstroz) verilir."
+        }
+      }
+    }
+  },
+  "ibuprofen": {
+    "id": "ibuprofen",
+    "name": "İbuprofen",
+    "cases": {
+      "ates_yonetimi": {
+        "caseName": "Ateş Yönetimi",
+        "eriskin": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "5-10 mg/kg",
+          "maxDose": "400 mg/doz",
+          "route": "Oral",
+          "notes": "5-10 mg/kg dozunda oral yolla verilir. 6 saatte bir tekrarlanabilir. 12 ayın altında verilmez."
+        }
+      }
+    }
+  },
+  "insulin": {
+    "id": "insulin",
+    "name": "İnsülin",
+    "cases": {
+      "crush_sendromu": {
+        "caseName": "Crush Sendromu (Hiperpotasemi)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Hiperpotasemi acil tedavi seçeneklerinden biri olarak dekstroz ile birlikte verilir. Tam doz belirtilmemiştir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "ipratropium_bromur": {
+    "id": "ipratropium_bromur",
+    "name": "İpratropium Bromür",
+    "cases": {
+      "koah": {
+        "caseName": "KOAH",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg",
+          "fixedDose": "500",
+          "maxDose": null,
+          "route": "Nebül",
+          "notes": "Kısa etkili b2 agonist (Salbutamol) ile birlikte 20 dk da bir en fazla 3 defa tekrarlanabilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      },
+      "astim": {
+        "caseName": "Astım",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg",
+          "fixedDose": "500",
+          "maxDose": null,
+          "route": "İnhaler / Nebül",
+          "notes": "Düzelme yoksa 20 dk arayla tekrarlanabilir (Maks: 3 kez)."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg",
+          "fixedDose": "250",
+          "maxDose": "500 mcg/doz",
+          "route": "Nebül",
+          "notes": "<20 kg için 250 mcg/doz (1 nebül); >=20 kg için 500 mcg/doz. 20 dk arayla 3 doz salbutamol ile aynı anda verilebilir."
+        }
+      }
+    }
+  },
+  "isosorbid_dinitrat": {
+    "id": "isosorbid_dinitrat",
+    "name": "İsosorbid Dinitrat",
+    "cases": {
+      "akut_koroner_sendrom": {
+        "caseName": "Akut Koroner Sendrom",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "5",
+          "maxDose": "15 mg",
+          "route": "SL",
+          "notes": "Hipotansiyon ve Bradikardi yoksa verilir. Ağrı devam ederse 3-5 dk'da bir tekrarla (Toplam 3 doz)."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      },
+      "kardiyojenik_sok": {
+        "caseName": "Hipertansif Kalp Yetmezliği",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "5",
+          "maxDose": "15 mg",
+          "route": "SL",
+          "notes": "Sublingual tablet, maksimum 3 doz."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "kalsiyum_glukonat": {
+    "id": "kalsiyum_glukonat",
+    "name": "Kalsiyum Glukonat",
+    "cases": {
+      "zehirlenme": {
+        "caseName": "Kalsiyum Kanal Blokeri / Beta Bloker Zehirlenmesi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml",
+          "fixedDose": "30",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Hipotansiyon eşlik ediyorsa 10 ml'lik 3 ampul Kalsiyum Glukonat (toplam 30 ml) 100 ml %0,9 NaCl içinde 10 dk'da verilebilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      },
+      "crush_sendromu": {
+        "caseName": "Crush Sendromu (Hiperpotasemi)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml",
+          "fixedDose": "10-30",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "%10'luk solüsyondan 2-3 dk içinde verilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "karbetosin": {
+    "id": "karbetosin",
+    "name": "Karbetosin",
+    "cases": {
+      "dogum": {
+        "caseName": "Acil Doğum ve Postpartum Kanama",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mcg",
+          "fixedDose": "100",
+          "maxDose": null,
+          "route": "IM / IV",
+          "notes": "100 mcg/100 ml 1 dk'dan kısa olmayacak şekilde yavaş puşe uygulanır. (Postpartum kanamada eğer doğum sırasında verildiyse yeterlidir)."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "levatirasetam": {
+    "id": "levatirasetam",
+    "name": "Levatirasetam",
+    "cases": {
+      "nobet": {
+        "caseName": "Nöbet / Konvülziyon",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 60,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "Nöbet devam ediyorsa verilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 60,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "Nöbet devam ediyorsa IV infüzyon şeklinde verilir."
+        }
+      }
+    }
+  },
+  "lidokain": {
+    "id": "lidokain",
+    "name": "Lidokain",
+    "cases": {
+      "arrest": {
+        "caseName": "Şoklanır Ritim Arrest (VF/nVT)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV/IO",
+          "notes": "3. şoktan sonra 1-1.5 mg/kg bolus verilir. 5. şoktan sonra dirençli VF/nVT varsa 0.5-0.75 mg/kg tekrar verilebilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV/IO",
+          "notes": "Dirençli VF/VT'de 5. defibrilasyondan sonra amiodaron yerine verilebilir."
+        }
+      },
+      "resusitasyon_sonrasi": {
+        "caseName": "Resüsitasyon Sonrası Bakım (Prematür Ventriküler Kontraksiyon)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "1-1.5 mg/kg IV bolus."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "magnezyum_sulfat": {
+    "id": "magnezyum_sulfat",
+    "name": "Magnezyum Sülfat",
+    "cases": {
+      "astim": {
+        "caseName": "Ölümcül Astım Atağı",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "gr",
+          "fixedDose": "1-2",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "%0,9 NaCl içinde 20-30 dakikada uygulanabilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      },
+      "tasiaritmi": {
+        "caseName": "Nabızlı Taşikardi (Torsades de Pointes)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "gr",
+          "fixedDose": "2",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "10 dakikada verilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      },
+      "eklampsi": {
+        "caseName": "Gebelikte Akut Hipertansiyon / Eklampsi (Nöbet)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "gr",
+          "fixedDose": "4",
+          "maxDose": "6 gr",
+          "route": "IV",
+          "notes": "Nöbeti olana veya profilaksi için 4 gr IV bolus 15-20 dk'da (%0,9 NaCl içinde). İdame olarak 4 saatte 4 gr (1-2 gr/sa) verilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "metil_prednizolon": {
+    "id": "metil_prednizolon",
+    "name": "Metil Prednizolon",
+    "cases": {
+      "koah": {
+        "caseName": "KOAH",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "40",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      },
+      "astim": {
+        "caseName": "Astım",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "40",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Hafif, Orta ve Ağır ataklarda kullanılır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "60 mg/gün",
+          "route": "IV",
+          "notes": "1-2 mg/kg/doz IV bolus uygulanır. (Maksimum 60 mg/gün)"
+        }
+      },
+      "anafilaksi": {
+        "caseName": "Anafilaksi ve Alerjik Reaksiyon",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "125 mg",
+          "route": "IV",
+          "notes": "1-2 mg/kg profilaktik olarak uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "125 mg",
+          "route": "IV / IM",
+          "notes": "1-2 mg/kg geç reaksiyonların önlenmesi için uygulanır."
+        }
+      }
+    }
+  },
+  "metoprolol": {
+    "id": "metoprolol",
+    "name": "Metoprolol",
+    "cases": {
+      "nabizli_tasikardi": {
+        "caseName": "Nabızlı Taşikardi (SVT / Atriyal Fibrilasyon)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "5",
+          "maxDose": "15 mg",
+          "route": "IV",
+          "notes": "3 kez tekrarlanabilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "midazolam": {
+    "id": "midazolam",
+    "name": "Midazolam",
+    "cases": {
+      "tasiaritmi_sedasyon": {
+        "caseName": "Kardiyoversiyon Öncesi Sedasyon",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Kardiyoversiyon öncesi sedasyon amaçlı verilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Kardiyoversiyon öncesi sedasyon amaçlı verilir."
+        }
+      },
+      "ajite_hasta": {
+        "caseName": "Ajite Hasta Yaklaşımı",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "2.5-5",
+          "maxDose": null,
+          "route": "IM / IV",
+          "notes": "5 mg IM veya 2,5 mg IV. Halen ajiteyse sedasyon dozu tekrarlanabilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      },
+      "nobet": {
+        "caseName": "Nöbet / Konvülziyon",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "5-10",
+          "maxDose": null,
+          "route": "IV / IM",
+          "notes": "5 mg IV veya 10 mg IM verilir. 5 dk sonra nöbet devam ediyorsa tekrar edilebilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.2,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "10 mg",
+          "route": "IV / IM / Nazal / Bukkal",
+          "notes": "0.2 mg/kg (maksimum 10 mg) uygulanır. 5 dk da nöbet devam ediyorsa 1 kez daha tekrarla."
+        }
+      },
+      "kafa_travmasi": {
+        "caseName": "Kafa Travması (Ajite Hasta Sedasyonu)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "1-2.5",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "3-5 dk'da bir hasta sakinleşinceye kadar uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "nalokson": {
+    "id": "nalokson",
+    "name": "Nalokson",
+    "cases": {
+      "narkotik_opioid_zehirlenmesi": {
+        "caseName": "Narkotik / Opioid Zehirlenmeleri",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "0.4-2",
+          "maxDose": "10 mg",
+          "route": "IV/IM/IO/SC",
+          "notes": "Solunum depresyonu varsa uygulanır. Apne ya da siyanoz olan hastada 2 mg IV uygulanır. İstenen etki elde edilinceye kadar tekrarlanabilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.1,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "10 mg",
+          "route": "IV/IM",
+          "notes": "Maksimum tek doz 2 mg. Toplam maksimum doz 10 mg."
+        }
+      }
+    }
+  },
+  "nifedipin": {
+    "id": "nifedipin",
+    "name": "Nifedipin",
+    "cases": {
+      "gebelikte_akut_hipertansiyon": {
+        "caseName": "Gebelikte Akut Hipertansiyon (Eklampsi Öncesi)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "10",
+          "maxDose": "20 mg/doz",
+          "route": "Oral",
+          "notes": "Kan basıncı >= 160/110 ise 10 mg kapsül yuttur. 20 dk sonra devam ediyorsa tekrarla. 2. ve 3. dozlarda hedef basınca ulaşılamadıysa 20 mg verilebilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "oksijen": {
+    "id": "oksijen",
+    "name": "Oksijen",
+    "cases": {
+      "hipoksi_solunum_sikintisi": {
+        "caseName": "Hipoksi ve Solunum Sıkıntısı",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "L/dk",
+          "fixedDose": "10",
+          "maxDose": null,
+          "route": "İnhalasyon",
+          "notes": "SpO2 %94-98 olacak şekilde geri solumasız maske ile verilir. Gerekirse PBV ile desteklenir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "L/dk",
+          "fixedDose": "10",
+          "maxDose": null,
+          "route": "İnhalasyon",
+          "notes": "SpO2 %94-98 aralığında olacak şekilde rezervuarlı maske ile verilir."
+        }
+      }
+    }
+  },
+  "parasetamol": {
+    "id": "parasetamol",
+    "name": "Parasetamol",
+    "cases": {
+      "ates_yonetimi": {
+        "caseName": "Ateş Yönetimi",
+        "eriskin": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 15,
+          "unit": "mg",
+          "fixedDose": "10-15 mg/kg",
+          "maxDose": "500 mg/doz",
+          "route": "IV / Oral",
+          "notes": "Ateş >= 38 C ise uygulanır. 10-15 mg/kg IV veya oral. 4-6 saatte bir tekrarlanabilir."
+        }
+      }
+    }
+  },
+  "ringer_laktat": {
+    "id": "ringer_laktat",
+    "name": "Ringer Laktat",
+    "cases": {
+      "hipovolemik_sok": {
+        "caseName": "Hipovolemik Şok",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml",
+          "fixedDose": "500-1000",
+          "maxDose": "1000 ml",
+          "route": "IV",
+          "notes": "5-10 dk hızlı infüzyon. SKB 80-90 mmHg olacak şekilde titre edilir."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 20,
+          "unit": "ml",
+          "fixedDose": null,
+          "maxDose": "60 ml/kg",
+          "route": "IV",
+          "notes": "5-10 dk içinde hızlı puşe. Yanıt alınamazsa tekrarlanır (maksimum 3 kez)."
+        }
+      },
+      "yanik": {
+        "caseName": "Termal ve Elektrik Yanıkları",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml",
+          "fixedDose": "500",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "1 saatten kısa nakiller için 500 ml. Uzun nakillerde Parkland formülü: (2 x VYA x kg)/16 veya (4 x VYA x kg)/16."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml",
+          "fixedDose": "Parkland Formülü",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "Parkland formülü ile hesaplanır: Normal yanıklarda (3 x VYA x kg)/16. Elektrik yanıklarında (4 x VYA x kg)/16."
+        }
+      },
+      "acil_dogum": {
+        "caseName": "Acil Doğum Eylemi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "ml/saat",
+          "fixedDose": "125",
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "125 ml/saat (40 damla/dk) olarak verilir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "salbutamol": {
+    "id": "salbutamol",
+    "name": "Salbutamol",
+    "cases": {
+      "astim_koah": {
+        "caseName": "Astım ve KOAH Atakları",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "2.5-5",
+          "maxDose": null,
+          "route": "İnhaler / Nebül",
+          "notes": "İnhaler için 4-8 puf, nebülizatör için 2.5-5 mg. Düzelme olmazsa 20 dk arayla tekrarlanabilir (Maks: 3 kez)."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.15,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": "5 mg",
+          "route": "İnhaler / Nebül",
+          "notes": "İnhaler için 4-8 puf (5 yaş altı 2-6 puf). Nebül için 0.15 mg/kg (min 2.5 mg, maks 5 mg). 20 dk arayla 3 kez verilebilir."
+        }
+      },
+      "anafilaksi": {
+        "caseName": "Anafilaksi (Bronkospazm)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": "mg",
+          "fixedDose": "2.5-5",
+          "maxDose": null,
+          "route": "Nebül",
+          "notes": "Anafilaksiye eşlik eden bronkospazm durumunda kullanılır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 0.15,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "Nebül",
+          "notes": "Solunum sıkıntısı varsa 0.15 mg/kg nebül 20 dk arayla 3 kez uygulanır."
+        }
+      }
+    }
+  },
+  "sildenafil": {
+    "id": "sildenafil",
+    "name": "Sildenafil",
+    "cases": {
+      "akut_koroner_sendrom": {
+        "caseName": "Akut Koroner Sendrom",
+        "eriskin": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": "Hastanın sildenafil kullanımı varsa nitratlar kontrendikedir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "sodyum_bikarbonat": {
+    "id": "sodyum_bikarbonat",
+    "name": "Sodyum Bikarbonat",
+    "cases": {
+      "trisiklik_antidepresan_zehirlenmesi": {
+        "caseName": "Trisiklik Antidepresan Zehirlenmesi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 1,
+          "unit": "mEq",
+          "fixedDose": "1-2 mEq/kg",
+          "maxDose": null,
+          "route": "IV",
+          "notes": "EKG'de QRS süresi 0,10 sn'den uzunsa 1-2 mEq/kg IV puşe. 3-5 dk'da bir tekrarla."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "tadalafil": {
+    "id": "tadalafil",
+    "name": "Tadalafil",
+    "cases": {
+      "akut_koroner_sendrom": {
+        "caseName": "Akut Koroner Sendrom",
+        "eriskin": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": "Hastanın tadalafil kullanımı varsa nitratlar kontrendikedir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  },
+  "valproik_asit": {
+    "id": "valproik_asit",
+    "name": "Valproik Asit",
+    "cases": {
+      "nobet": {
+        "caseName": "Nöbet / Konvülziyon",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 40,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "Nöbet devam ediyorsa IV infüzyon şeklinde uygulanır."
+        },
+        "cocuk": {
+          "isAvailable": true,
+          "isWeightBased": true,
+          "dosePerKg": 30,
+          "unit": "mg",
+          "fixedDose": null,
+          "maxDose": null,
+          "route": "IV İnfüzyon",
+          "notes": "Nöbet devam ediyorsa 30 mg/kg dozunda IV infüzyon şeklinde uygulanır."
+        }
+      }
+    }
+  },
+  "vardenafil": {
+    "id": "vardenafil",
+    "name": "Vardenafil",
+    "cases": {
+      "akut_koroner_sendrom": {
+        "caseName": "Akut Koroner Sendrom",
+        "eriskin": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": "Hastanın vardenafil kullanımı varsa nitratlar kontrendikedir."
+        },
+        "cocuk": {
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
+          "fixedDose": null,
+          "maxDose": null,
+          "route": null,
+          "notes": null
+        }
+      }
+    }
+  }
+}

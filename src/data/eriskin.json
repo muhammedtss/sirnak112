@@ -1,0 +1,3146 @@
+{
+  "SB-ASH-Y-01": {
+    "id": "SB-ASH-Y-01",
+    "title": "Olay Yeri Yönetimi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "SKKM/ÇM ile iletişime geç, olay yeri hakkında bilgi al; Olayın büyüklüğünü tahmin et",
+        "nextId": "node_2",
+        "isCritical": true
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Gerekli kişisel koruyucu malzemelerini kullan",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Olay yeri güvenliği var mı?",
+        "yesId": "node_5",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Gerekli ise ilgili kurum desteği iste. Güvenlik sağlanıncaya kadar güvenli noktada bekle",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Hasta/Yaralı güvenliği var mı?",
+        "yesId": "node_7",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Hasta güvenliğini sağla",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Olay, yaralanma ve/veya hastalığın oluş şeklini, olabilecek vaka sayısını, ek kaynak ihtiyacını değerlendir",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "Hasta/Yaralı birden fazla ise triyaj yap. Ek kaynak ihtiyacını belirle",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "İhtiyaç duyulan ekip ve ekipmanı iste",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "redirect",
+        "content": "ACİL OLGU YÖNETİMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-02",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-02": {
+    "id": "SB-ASH-Y-02",
+    "title": "Acil Olgu Yönetimi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "decision",
+        "content": "Olay yeri güvenli mi?",
+        "yesId": "node_3",
+        "noId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "redirect",
+        "content": "OLAY YERİ YÖNETİMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-01",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Gerekli tüm ekipmanları al",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Ekip ve Malzeme Yerleşimi: Malzeme yerleşimi, kullanılacak malzeme kol mesafesinde ulaşılabilecek şekilde olmalıdır",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Birincil Değerlendirme: Genel görünüm ve bilinç durumuyla birlikte dolaşımsal ve solunumsal risklerin belirlenmesi için X-ABCDE yaklaşımı uygulanır",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "İkincil Değerlendirme (Ayrıntılı tüm vücut muayenesi - Tıbbi öykü - Vital bulgular - Nörolojik muayene) ve Ön tanı",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "redirect",
+        "content": "İLGİLİ ALGORİTMAYA GİT (Daha sonra yeniden değerlendirme yap)",
+        "targetAlgorithmId": "ILGILI_ALGORITMA",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-03": {
+    "id": "SB-ASH-Y-03",
+    "title": "Hava Yolu Tıkanıklıkları",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "decision",
+        "content": "Bilinç açık mı?",
+        "yesId": "node_3",
+        "noId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "redirect",
+        "content": "ARREST YÖNETİMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-09",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Hasta ses çıkarıyor mu? (Öksürük, inleme, konuşma)",
+        "yesId": "node_4",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Kısmi Tıkanma: Öksürmesini teşvik et, takip et",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Tam tıkanmaya dönüşürse?",
+        "yesId": "node_6",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Tam Tıkanma: 5 kez sırta vuru, 5 kez karına bası uygula (Cisim çıkana kadar devam et)",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Bilinç kaybı gelişirse?",
+        "yesId": "node_2",
+        "noId": "node_6",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-04": {
+    "id": "SB-ASH-Y-04",
+    "title": "Hafif Orta / Ağır KOAH",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Hastayı rahat ettiği (tercihen oturur) pozisyonda tut",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "SpO2 %88-92 olacak şekilde titre ederek oksijen ver. Gerekirse solunumu PBV ile destekle",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Hastanın durumu Ağır mı? (Hafif/Orta ise Hayır seçiniz)",
+        "yesId": "node_6",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Hafif Orta: SALBUTAMOL 4-8 puf ya da 2,5-5 mg nebülle birlikte İPRATROPİUM BROMÜR 500 mcg nebül",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "20 dk sonra: SALBUTAMOL 2,5 mg + İPRATROPİUM BROMÜR 500 mcg (Maks 3 defa). METİL PREDNİZOLON 40 mg IV.",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Ağır: SALBUTAMOL 4-8 puf ya da 2,5-5 mg nebülle birlikte İPRATROPİUM BROMÜR 500 mcg nebül",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "20 dk sonra: SALBUTAMOL 2,5 mg + İPRATROPİUM BROMÜR 500 mcg (Maks 3 defa). METİL PREDNİZOLON 40 mg IV. Tedaviye yanıt vermeyen hastaya ileri hava yolu için hazırlıklı ol. Tolere eden hastaya non-invaziv mekanik ventilasyon.",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-05": {
+    "id": "SB-ASH-Y-05",
+    "title": "Astım",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Hastayı rahat ettiği (tercihen oturur) pozisyonda tut. SpO2 > %93 olacak şekilde titre ederek oksijen ver. Gerekirse solunumu PBV ile destekle. Damar yolu aç ve %0,9 NaCl (DAKŞ)",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Atağın derecesi Ağır Atak mı? (Hafif/Orta ise Hayır seçiniz)",
+        "yesId": "node_5",
+        "noId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Hafif Orta Atak: SALBUTAMOL 4-8 puf inhaler veya 2,5-5 mg nebül uygula",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "20 dk sonra: Düzelme yoksa ikinci SALBUTAMOL ile birlikte İPRATROPİUM BROMÜR 500 mcg inhaler kullan (Maks 3 kez). METİL PREDNİZOLON 40 mg IV.",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Ağır Atak: SALBUTAMOL 2,5-5 mg nebülle birlikte İPRATROPİUM BROMÜR 500 mcg nebül uygula",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "20 dk sonra: Düzelme yoksa ikinci SALBUTAMOL nebülle birlikte İPRATROPİUM BROMÜR 500 mcg nebül uygula (Maks 3 kez). METİL PREDNİZOLON 40 mg IV.",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Ölümcül astım atağında (bilinç bulanıklığı ve sessiz toraks gelişmişse) erken ileri hava yolu uygulaması için hazırlan, MAGNEZYUM SÜLFAT 1-2 g IV (%0,9 NaCl içinde 20-30 dakikada uygulanabilir)",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-06": {
+    "id": "SB-ASH-Y-06",
+    "title": "Akut Koroner Sendrom",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Ağrı sorgulaması yap, hastayı sakinleştirmeye çalış, gereksiz efordan kaçın. AKS'li hastayı kesinlikle yürütme!",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "En kısa sürede vital bulgulara bak. Monitörize et (12 derivasyonlu EKG). SpO2 < %90 ise O2 ver",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "ASETİLSALİSİLİK ASİT 160-325 mg çiğnet",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Hipotansiyon ve Bradikardi var mı?",
+        "yesId": "node_6",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "İSOSORBİD DİNİTRAT 5 mg SL tb (Ağrı devam ederse 3-5 dk da bir tekrarla - Toplam 3 doz)",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Göğüs ağrısı devam ediyor ve hasta tarafından tolere edilemiyor mu?",
+        "yesId": "node_7",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "FENTANİL 1 mcg/kg IV (ST eleve MI varsa perkütan koroner girişim ya da fibrinolitik tedavi için SKKM/ÇM ile iletişime geçilmelidir)",
+        "nextId": "node_8",
+        "isCritical": true
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "redirect",
+        "content": "TESPİT EDİLEN RİTMİN ALGORİTMASINA GİT (HER AŞAMADA HASTANEYE NAKİL)",
+        "targetAlgorithmId": "TESPIT_EDILEN_RITIM",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-07": {
+    "id": "SB-ASH-Y-07",
+    "title": "Bradikardi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Hasta hipoksemikse oksijenizasyon, damar yolu, monitörizasyon ve 12 derivasyon EKG",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Altta yatan nedeni tanımla ve müdahale et (hipoksi, toksinler vb.)",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Hasta stabil mi? (Senkop, iskemik göğüs ağrısı, şok bulguları, akut kalp yetmezliği, hipotansiyon, nabız <40 atım/dk ise stabil değil)",
+        "yesId": "node_7",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "ATROPİN 1 mg IV 3-5 dk da bir tekrarlanabilir (yanıta göre maks doz 3 mg)",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Yeterli cevap alındı mı?",
+        "yesId": "node_7",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Yanıt alınamıyorsa: ADRENALİN IV infüzyon 2-10 mcg/dk ya da DOPAMİN IV infüzyon 5-20 mcg/kg/dk veya Transkütanöz Pace uygula. (QRS > 0,12 sn ise Pace öncelikli)",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Asistoli riski var mı? (Yakın asistoli öyküsü, Mobitz Tip 2 AV blok, AV tam blok, Ventriküler duraklama > 3 sn)",
+        "yesId": "node_6",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "Yakın vital takibi yap. HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-08": {
+    "id": "SB-ASH-Y-08",
+    "title": "Nabızlı Taşikardi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Hipoksemikse oksijen başla, damar yolu, monitörizasyon ve 12 derivasyon EKG",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Hasta stabil mi? (Senkop, ani bilinç değişikliği, iskemik göğüs ağrısı, şok bulguları, akut kalp yetmezliği varsa anstabil)",
+        "yesId": "node_3",
+        "noId": "node_13",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Göğüs ağrısı devam ediyor ve hasta tarafından tolere edilemiyorsa FENTANİL 1 mcg/kg IV",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "QRS Geniş mi? (Geniş >0,12 sn)",
+        "yesId": "node_5",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Geniş QRS ritmi Düzenli mi?",
+        "yesId": "node_6",
+        "noId": "node_7",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Ventriküler taşikardi ya da belirsiz ritim ise AMİODARON 150 mg IV (%5 dekstroz ile 10 dk). Etkisizse kardiyoversiyon (sedasyon sonrası)",
+        "nextId": "node_12",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Dal bloklu atrial fibrilasyon; dar kompleks gibi tedavi et. Torsades de Pointes düşünülüyorsa MAGNEZYUM SÜLFAT 2 gr/10dk IV",
+        "nextId": "node_12",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "Dar QRS ritmi Düzenli mi?",
+        "yesId": "node_9",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "Vagal manevra uygula. ADENOZİN 6 mg hızlı IV puşe, başarısız ise 12 mg. Veya METOPROLOL 5 mg / DİLTİAZEM 0,25 mg/kg. Etkisizse kardiyoversiyon",
+        "nextId": "node_12",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "action",
+        "content": "Olası atrial fibrilasyon. METOPROLOL 5 mg IV veya DİLTİAZEM 0,25 mg/kg IV",
+        "nextId": "node_12",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      },
+      "node_13": {
+        "id": "node_13",
+        "type": "action",
+        "content": "Kardiyoversiyon öncesi MİDAZOLAM 0,1 mg/kg IV ile sedasyon önerilir",
+        "nextId": "node_14",
+        "isCritical": false
+      },
+      "node_14": {
+        "id": "node_14",
+        "type": "action",
+        "content": "Kardiyoversiyon (Senkron şok). Yanıt alınamazsa: AMİODARON 300 mg IV (10 dk). Yanıt alınamazsa: Kardiyoversiyon tekrarla",
+        "nextId": "node_12",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-09": {
+    "id": "SB-ASH-Y-09",
+    "title": "Arrest Yönetimi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Bilinç kapalı/yanıtsız hasta",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Nabız ve solunumu eş zamanlı kontrol et (En fazla 10 saniyede tamamla)",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Nabız var mı?",
+        "yesId": "node_4",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Nabız var, Solunum yok / Gasping solunum: 5-6 saniyede bir soluk ver. 2 dakikada bir nabız kontrolü yap",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Nabız yok. 30 kalp masajı/2 solunum (BVM ile) defibrilatör hazır olana kadar KPR uygula",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Ritim ve Nabız Değerlendir. Ritim şoklanabilir mi?",
+        "yesId": "node_7",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "redirect",
+        "content": "ŞOKLANIR RİTİM VF/nVT ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-11",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "redirect",
+        "content": "ŞOKLANAMAZ RİTİM NEA/ASİSTOLİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-10",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-10": {
+    "id": "SB-ASH-Y-10",
+    "title": "Asistoli / NEA",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "ARREST YÖNETİMİ ALGORİTMASINI UYGULA",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Göğüs basısına başla, oksijenizasyonu ve ventilasyonu sağla",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "ADRENALİN 1 mg IV/IO 3-5 dk arayla tekrarla (1/10000 lik)",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "İleri hava yolu uygulaması yap",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "2 dk arayla ritmi ve nabzı değerlendir. Nabız var mı?",
+        "yesId": "node_6",
+        "noId": "node_7",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "redirect",
+        "content": "RESÜSİTASYON SONRASI BAKIM ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-12",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Nabız yok. Ritim nedir?",
+        "yesId": "node_8",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "redirect",
+        "content": "VF/nVT ise ŞOKLANIR RİTİM ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-11",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "NEA/Asistoli. 2 dk boyunca KPR ye devam et. (Geri döndürülebilir nedenler gözden geçirilmeli)",
+        "nextId": "node_5",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-11": {
+    "id": "SB-ASH-Y-11",
+    "title": "Şoklanır Ritim VF / Nabızsız VT",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "ARREST YÖNETİMİ ALGORİTMASINI UYGULA",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Göğüs basısına başla, oksijenizasyonu ve ventilasyonu sağla. Şok hazır olana kadar KPR ye ara verme",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "1. Defibrilasyon (120-360J; firma önerisine göre), şok sonrası ara vermeden göğüs basısına devam et",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "2 dk arayla ritmi ve nabzı değerlendir. IV veya IO yol aç",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Ritim VF / Nabızsız VT mi?",
+        "yesId": "node_6",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "2. Defibrilasyon, şok sonrası ara vermeden göğüs basısına devam et. ADRENALİN 3-5 dk da bir ver (1 mg 1/10000 IV)",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "2 dk arayla ritmi ve nabzı değerlendir. İleri hava yolu uygulaması yap",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "Ritim VF / Nabızsız VT mi?",
+        "yesId": "node_12",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "action",
+        "content": "3. Defibrilasyon, şok sonrası ara vermeden göğüs basısına devam et. AMİODARON 300 mg IV/IO bolus veya %2 LİDOKAİN 1-1.5 mg/kg IV/IO bolus. (Dirençli VF/nVT'de 5. şoktan sonra Amiodaron 150 mg veya Lidokain 0.5-0.75 mg/kg tekrar verilir)",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "decision",
+        "content": "Ritim değişikliği varsa, Nabız Var mı?",
+        "yesId": "node_10",
+        "noId": "node_11",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "redirect",
+        "content": "RESÜSİTASYON SONRASI BAKIM ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-12",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "redirect",
+        "content": "ŞOKLANAMAZ RİTİM (NEA/ASİSTOLİ) ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-10",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-12": {
+    "id": "SB-ASH-Y-12",
+    "title": "Resüsitasyon Sonrası Bakım",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Yeniden Değerlendirme Yap: Monitörizasyon, 12 derivasyonlu EKG çek. Spontan solunum yoksa oksijenizasyon ve ventilasyonu sürdür (SpO2 %94-98). Ateş 32-37.5 °C aralığında tut. 2 dk da bir nabız ve ritim kontrolü, vital bulguları değerlendir",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Hipotansiyon (Sistolik KB < 90 mmHg) var mı?",
+        "yesId": "node_3",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Hipotansiyon nedenlerini araştır. Hedef değer MAP >= 65 mmHg",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Hipotansiyon devam ediyorsa %0.9 NaCl infüzyonu ve/veya ADRENALİN 2-10 mcg/dk IV infüzyonu veya DOPAMİN 5-20 mcg/kg/dk IV infüzyonu",
+        "nextId": "node_14",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Prematür Ventriküler Kontraksiyon varlığı (bigemini, couplets, triplets, R-on-T fenomeni, sürekli olmayan VT) var mı?",
+        "yesId": "node_6",
+        "noId": "node_7",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "%2 LİDOKAİN IV bolus 1-1,5 mg/kg veya AMİODARON 150 mg IV (%5 dekstroz ile 10 dk da)",
+        "nextId": "node_14",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Bradiaritmi var mı?",
+        "yesId": "node_8",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "redirect",
+        "content": "BRADİKARDİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-07",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "decision",
+        "content": "Hipo/Hiperglisemi var mı?",
+        "yesId": "node_10",
+        "noId": "node_11",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "redirect",
+        "content": "DİYABETİK ACİLLER ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-17",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "decision",
+        "content": "Taşiaritmi var mı?",
+        "yesId": "node_12",
+        "noId": "node_13",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "redirect",
+        "content": "TAŞİARİTMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-08",
+        "isCritical": false
+      },
+      "node_13": {
+        "id": "node_13",
+        "type": "decision",
+        "content": "Nöbet var mı?",
+        "yesId": "node_15",
+        "noId": "node_14",
+        "isCritical": false
+      },
+      "node_15": {
+        "id": "node_15",
+        "type": "redirect",
+        "content": "NÖBET/KONVÜLZİYON ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-19",
+        "isCritical": false
+      },
+      "node_14": {
+        "id": "node_14",
+        "type": "action",
+        "content": "ARREST TEKRARINDA İLGİLİ RİTMİN ALGORİTMASINA GİT",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-13": {
+    "id": "SB-ASH-Y-13",
+    "title": "Hipovolemik Şok",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Hemodinamik monitörizasyon (EKG, tansiyon, pulse oksimetri), Yüksek doz O2, geniş damar yolu, Şok pozisyonu",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Şok türü Hemorajik şok mu?",
+        "yesId": "node_3",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Kanama kontrolü (direkt bası, sıkı bandaj, arter bası noktalarına bası, turnike, kanama durdurucu ajan)",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Hipotansif hastalara 250-500 ml % 0,9 NaCl veya Ringer laktat hızlı infüzyon (maks 1000 ml). Sistolik kan basıncı 80-90 mmHg olacak şekilde titre et",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Non-Hemorajik şok: %0,9 NaCl ya da Ringer Laktat 500-1000 ml bolus 5-10 dk. Her bolustan sonra hasta volüm durumunu kontrol et",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Belirlenebilir şok nedenlerini tanı ve yönet (Tansiyon pnömotoraks, anafilaksi, perikardiyal tamponad...) MAP 65-70 mmHg olmalı",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "MAP <65 mmHg ve hipovolemi devam ediyorsa/yanıt alınamıyorsa: ADRENALİN IV infüzyon 2-10 mcg/dk ya da DOPAMİN IV infüzyon 5-20 mcg/kg/dk",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-14": {
+    "id": "SB-ASH-Y-14",
+    "title": "Kalp Yetmezliğine Bağlı Akut Akciğer Ödemi ve Kardiyojenik Şok",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. SpO2 >%94-98 olacak şekilde oksijen ver, Gerekirse PBV ile destekle. Kardiyak monitörizasyon ve 12 derivasyonlu EKG. Yeni gelişen kardiyak iskemi ve aritmilere dikkat et",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Normotansif (SKB > 100 mmHg) Dekompanse Kalp Yetmezliği tablosu mu?",
+        "yesId": "node_3",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "FUROSEMİD 20-40 mg IV",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Hipertansif Kalp Yetmezliği tablosu mu?",
+        "yesId": "node_5",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "İSOSORBİD DİNİTRAT 5 mg SL tb maks: 3 doz. FUROSEMİD 20-40 mg IV. Noninvaziv mekanik ventilasyon düşün CPAP",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Kardiyojenik Şok tablosu: Hipotansiyon için 250 ml % 0,9 NaCl verilebilir. DOPAMİN 2-5 mcg/kg/dk IV (20 mcg/kg/dk kadar çıkılabilir)",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-15": {
+    "id": "SB-ASH-Y-15",
+    "title": "Ajite Hastaya Yaklaşım",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "decision",
+        "content": "Olay yeri güvenliği sağlanmış mı? Çevresel önlemler alınmış mı?",
+        "yesId": "node_3",
+        "noId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Güvenli bölgeye çekil, SKKM/ÇM'yi ara. Kolluk kuvveti iste",
+        "nextId": "node_5",
+        "isCritical": true
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Yatıştırma: Uygun iletişimle kontrolü sağlamaya çalış",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Kontrol sağlandı mı?",
+        "yesId": "node_6",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Kolluk kuvvetleri ile fiziksel kısıtlama. İlaçla kısıtlama / sedasyon düşün",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Nedeni değerlendir: Travmatik mi?",
+        "yesId": "node_7",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "redirect",
+        "content": "TRAVMALI HASTADA ACİL OLGU YÖNETİMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-38",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "Non Travmatik: Nedene yönelik tedavi et",
+        "nextId": "node_11",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "decision",
+        "content": "Halen ajite mi?",
+        "yesId": "node_9",
+        "noId": "node_12",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "Sedasyon için: MİDAZOLAM 5mg IM veya 2,5 mg IV ya da DİAZEPAM 5 mg IM",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "decision",
+        "content": "Halen ajite mi?",
+        "yesId": "node_13",
+        "noId": "node_12",
+        "isCritical": false
+      },
+      "node_13": {
+        "id": "node_13",
+        "type": "action",
+        "content": "Sedasyon dozunu tekrar et",
+        "nextId": "node_12",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-16": {
+    "id": "SB-ASH-Y-16",
+    "title": "Bilinç Değişikliği",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Solunum ve dolaşımı destekle. Vital bulguları ve EKG değerlendir. Kan şekerini ölç. Nedenleri araştır",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Travma var mı?",
+        "yesId": "node_3",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "redirect",
+        "content": "TRAVMALI HASTADA ACİL OLGU YÖNETİMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-38",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "İnme var mı?",
+        "yesId": "node_5",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "redirect",
+        "content": "İNME / SVO ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-18",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Nöbet var mı?",
+        "yesId": "node_7",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "redirect",
+        "content": "NÖBET/KONVÜLZİYON ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-19",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "Zehirlenme var mı?",
+        "yesId": "node_9",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "redirect",
+        "content": "ZEHİRLENMELERE GENEL YAKLAŞIM ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-31",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "decision",
+        "content": "Dolaşımsal Nedenler var mı?",
+        "yesId": "node_11",
+        "noId": "node_12",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "redirect",
+        "content": "RİTİM ANALİZİ VE İLGİLİ ALGORİTMAYA GİT",
+        "targetAlgorithmId": "RITIM_ANALIZI",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "decision",
+        "content": "Hipoksi var mı?",
+        "yesId": "node_13",
+        "noId": "node_14",
+        "isCritical": false
+      },
+      "node_13": {
+        "id": "node_13",
+        "type": "action",
+        "content": "Oksijenizasyon ve ventilasyonu sağla",
+        "nextId": "node_16",
+        "isCritical": false
+      },
+      "node_14": {
+        "id": "node_14",
+        "type": "decision",
+        "content": "Hipo/Hiperglisemi var mı?",
+        "yesId": "node_15",
+        "noId": "node_16",
+        "isCritical": false
+      },
+      "node_15": {
+        "id": "node_15",
+        "type": "redirect",
+        "content": "DİYABETİK ACİLLER ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-17",
+        "isCritical": false
+      },
+      "node_16": {
+        "id": "node_16",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-17": {
+    "id": "SB-ASH-Y-17",
+    "title": "Diyabetik Aciller",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Kan şekerini ölç",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Glikoz < 60 mg/dl ve/veya klinik hipoglisemiyi düşündürüyorsa?",
+        "yesId": "node_4",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Bilinci açık mı?",
+        "yesId": "node_5",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Ağızdan şekerli sıvı ver. Kan şekerini kontrol et ve kliniği değerlendir. Gerekirse 15 dk da bir tekrarla",
+        "nextId": "node_11",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Bilinci kapalı. %10-%20 lik Dekstroz solüsyonlarından 25 gr glikoz IV bolus olarak ver",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Kan şekerini ölç. Glikoz < 60 mg/dl ise her 5-10 dk da bir Dekstroz solüsyonlarını tekrarla",
+        "nextId": "node_11",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "Glikoz > 300 mg/dl mi?",
+        "yesId": "node_9",
+        "noId": "node_11",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "% 0,9 NaCl IV infüzyon başla",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "decision",
+        "content": "Şok ve dehidratasyon bulguları varsa?",
+        "yesId": "node_12",
+        "noId": "node_11",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "redirect",
+        "content": "HİPOVOLEMİK ŞOK ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-13",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-18": {
+    "id": "SB-ASH-Y-18",
+    "title": "İnme / SVO",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Aspirasyon, üst hava yolu obstrüksiyonu, hipoventilasyon ve travma yönünden değerlendir",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "SpO2 %94-98 olacak şekilde uygun yöntemle oksijen ver gerekirse solunumu PBV ile destekle. Damar yolu aç (DAKŞ)",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Kan glikoz seviyesini ölç",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Glikoz < 60 mg/dl ve/veya hipoglisemi bulguları varsa?",
+        "yesId": "node_5",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "redirect",
+        "content": "DİYABETİK ACİLLER ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-17",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "BEFAST hastane öncesi inme skalası pozitifse Hasta hipoperfüzyon belirtileri göstermiyor ise baş ve gövdeyi 30 derece yükselt",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Kardiyak monitörizasyon. KB takibi (Kan basıncı takibi sırasında tansiyon değerleri normalin üstünde olsa da tansiyonu düşürme!)",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "Hastanın son olarak normal görüldüğü zamandan 4,5 saat içinde trombolitik, 6 saat içinde endovasküler girişim için uygun merkeze nakil. HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-19": {
+    "id": "SB-ASH-Y-19",
+    "title": "Nöbet / Konvülziyon",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Hava yolu açıklığını sağla SpO2 %94-98 olacak şekilde uygun yöntemle oksijen ver gerekirse solunumu PBV ile destekle",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Damar yolu aç (DAKŞ). Kan glikoz seviyesini ölç",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Glikoz < 60 mg/dl ve/veya hipoglisemi bulguları varsa?",
+        "yesId": "node_4",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "redirect",
+        "content": "DİYABETİK ACİLLER ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-17",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Kardiyak monitörizasyon (Hastayı engellemeye çalışma, başının altına yastık yerleştir)",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Nöbet devam ediyor mu?",
+        "yesId": "node_7",
+        "noId": "node_11",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "DİAZEPAM 5 mg IV yavaş puşe ya da MİDAZOLAM 5 mg IV/10 mg IM",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "FENİTOİN 20 mg/kg (infüzyon hızı en fazla 25 mg/kg/dk) ya da VALPROİK ASİT 40 mg/kg IV infüzyon ya da LEVATİRASETAM 60 mg/kg IV infüzyon",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "5 dk sonra nöbet devam ediyorsa DİAZEPAM 5 mg IV yavaş puşe ya da MİDAZOLAM 5 mg IV/10 mg IM",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "decision",
+        "content": "Nöbet devam ediyor mu?",
+        "yesId": "node_12",
+        "noId": "node_11",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "action",
+        "content": "İleri hava yolu uygulaması için hazırlan",
+        "nextId": "node_13",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "action",
+        "content": "Nöbet Sonlandı. Postiktal dönemde hastanın hava yolu açıklığına dikkat et",
+        "nextId": "node_13",
+        "isCritical": false
+      },
+      "node_13": {
+        "id": "node_13",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-20": {
+    "id": "SB-ASH-Y-20",
+    "title": "Vertigo",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Şok için sistemik dolaşım bulguları, kapiller geri dolum, nabız dolgunluğu ve hızı, cilt dolaşımı, kan basıncı ve bilinç durumunu değerlendir",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "BEFAST kriterlerini değerlendir. Var mı?",
+        "yesId": "node_4",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "redirect",
+        "content": "SVO / İNME ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-18",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Hastanın rahat ettiği pozisyonda kalmasını sağla. Damar yolu aç",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Spontan nistagmus var mı?",
+        "yesId": "node_7",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Yön değiştiren, vertikal, pür torsiyonel mi?",
+        "yesId": "node_4",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "Horizontal nistagmus var ya da nistagmus yok. Bağımsız bir şekilde ayakta durabiliyor ve yürüyebiliyor mu?",
+        "yesId": "node_9",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "Periferik Nedenler",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "decision",
+        "content": "Şok bulguları varsa?",
+        "yesId": "node_11",
+        "noId": "node_12",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "redirect",
+        "content": "İLGİLİ ALGORİTMAYA GİT",
+        "targetAlgorithmId": "ILGILI_ALGORITMA",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-21": {
+    "id": "SB-ASH-Y-21",
+    "title": "Alerjik Reaksiyon",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Akut başlangıç, yaşamı tehdit eden bulgular var mı? (Anjioödem, stridor, hırıltılı solunum, takipne, wheezing, siyanoz, SpO2 <%90, konfüzyon, soluk cilt, hipotansiyon, koma)",
+        "yesId": "node_3",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "redirect",
+        "content": "ANAFİLAKSİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-22",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Hava yolu açıklığını sağla, oksijen desteği ver, damar yolu aç, monitörize et: SpO2, EKG, KB takibi",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "% 0,9 NaCl 500 ml bolus ver",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "FENİRAMİN MALEAT 45,5 mg IV veya DİFENHİDRAMİN 25-50 mg IV yavaş puşe uygula",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Proflaktik olarak METİL PREDNİZOLON IV 1-2 mg/kg (maks: 125 mg) uygula. HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-22": {
+    "id": "SB-ASH-Y-22",
+    "title": "Anafilaksi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Akut başlangıç, yaşamı tehdit eden bulguları var mı?",
+        "yesId": "node_3",
+        "noId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "ADRENALİN 0,3-0,5 mg IM uygula",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Hava yolu açıklığını sağla, SpO2 94-98 olacak şekilde oksijen desteği ver, damar yolu aç. Anjioödem varlığında erken ileri havayolu uygulamalası hazırlığı yap. Monitörize et: SpO2, EKG, KB takibi",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Hipoperfüzyon sürüyor mu?",
+        "yesId": "node_6",
+        "noId": "node_7",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "ADRENALİN 0,3-0,5 mg IM 5 dk içinde tekrarla, % 0,9 NaCl 500 ml bolus ver",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Düzelme olmazsa ADRENALİN 1 mcg/dk infüzyon IV yavaş uygula, % 0,9 NaCl 500 ml bolus ver",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "DİFENHİDRAMİN 25-50 mg veya FENİRAMİN MALEAT 45,5 mg IV yavaş uygula. Bronkospazm için SALBUTAMOL 2,5-5 mg ver",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "Proflaktik olarak METİL PREDNİZOLON IV 1-2 mg/kg (maks: 125 mg) uygula. HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-23": {
+    "id": "SB-ASH-Y-23",
+    "title": "Hipertermi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Tablo hangisidir? (Isı Krampları / Isı Stresi / Isı Çarpması)",
+        "yesId": "node_3",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Isı Krampları: Oral sıvı replasmanı, dinlenme",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Isı Stresi mi, Isı Çarpması mı?",
+        "yesId": "node_6",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Isı Stresi: Damar yolu aç, ortam ısısını düşür, 1000-2000 ml %0.9 NaCl bolus başla",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "Isı Çarpması: Vital bulguları ve kan şekerini değerlendir, damar yolu aç, monitörize et, %0,9 NaCl 1000 ml bolus başla",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "Vücut ısısı <39 °C olacak şekilde hastayı serin ortama al, kıyafetlerini çıkar, ambulans kabinini soğut, pasif eksternal soğutma uygula",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-24": {
+    "id": "SB-ASH-Y-24",
+    "title": "Hipotermi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Soğuk çevreden uzaklaştır, ıslak veya soğuk kıyafetleri çıkar, ısı kaybını engelle",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Hipotermi derecesi nedir? (Hafif / Orta / Ağır / Hipotermik Kardiyak Arrest)",
+        "yesId": "node_3",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Hafif Hipotermi (Bilinç açık, titreme, 32 °C < vücut ısısı < 35 °C): Ortam sıcaklığını artır, sıcak kıyafetler ve battaniye ver, sıcak içecek içir, mümkünse hareket etmesini sağla",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Orta veya Ağır Hipotermi mi, yoksa Arrest mi?",
+        "yesId": "node_5",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Orta Hipotermi (28 °C < vücut ısısı < 32 °C) / Ağır Hipotermi (vücut ısısı < 28 °C): Monitörize et, hava yolu güvenliğini sağla",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Ortam sıcaklığını artır, ılık oksijen ver, baş-boyun-koltuk altı-kasık bölgelerine ılık su paketleri koy, termal battaniye ile sar",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Ilık % 0,9 NaCl infüzyonu uygula. Aritmiden kaçınmak için immobilizasyonu sağla",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "redirect",
+        "content": "HİPOTERMİDE ARREST YÖNETİMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-25",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-25": {
+    "id": "SB-ASH-Y-25",
+    "title": "Hipotermide Arrest Yönetimi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Vücut ısısı < 35 °C ve bilinç kapalı ise en az 60 sn nabız kontrolü yap",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Nabız var mı?",
+        "yesId": "node_4",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "redirect",
+        "content": "HİPOTERMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-24",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "KPR başlama kriterleri var mı?",
+        "yesId": "node_6",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Standart erişkin ileri yaşam desteği uygulamasına başla. Eş zamanlı olarak pasif ve aktif ısıtma yöntemlerini uygula",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Vücut ısısı > 35 °C oldu mu?",
+        "yesId": "node_8",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "redirect",
+        "content": "ARREST YÖNETİMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-09",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "KPR'ye başlama. SKKM/ÇM ile görüşerek ECMO merkezine yönlendirmeyi düşün",
+        "nextId": "node_10",
+        "isCritical": true
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-26": {
+    "id": "SB-ASH-Y-26",
+    "title": "Isırma ve Sokmalar",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Isıran veya sokan etkeni belirle. Isırılan yeri tespit et, yara izini değerlendir",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Etken Kara canlıları mı, Deniz canlıları mı?",
+        "yesId": "node_4",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Kara canlıları: Isırılan bölgeye lokal soğuk uygula",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Deniz canlıları: Isırılan bölgeyi %0,9 NaCl veya steril su ile temizle (100-250 ml arası). Isırılan bölgeyi mümkünse ve yakmayacak seviyede lokal sıcak suyun içinde beklet (en az 20 dakika)",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Yıka ve sabitle. Her 5 dk da bir ödemin sınırını izle",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Hastanın vitallerini takip et, zehirlenme, alerjik reaksiyon ve anafilaksi bulgularını gözlemle",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "Alerjik reaksiyon / Anafilaksi varsa?",
+        "yesId": "node_9",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "redirect",
+        "content": "İLGİLİ ALGORİTMAYA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-22",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-27": {
+    "id": "SB-ASH-Y-27",
+    "title": "Suda Boğulma",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Hava yolu güvenliğini sağla, solunum durumunu kontrol et",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Spontan solunumu var mı?",
+        "yesId": "node_4",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Spontan solunumu var: Maske ile oksijen ver",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Spontan solunumu yok: BVM ile solunumu destekle",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Spontan solunum geldi mi?",
+        "yesId": "node_7",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Spontan solunum geldi: Maske ile oksijen ver",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "redirect",
+        "content": "Solunum yok / Gasping solunum: ARREST YÖNETİMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-09",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-28": {
+    "id": "SB-ASH-Y-28",
+    "title": "Termal Yanık",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Yanık bölgesindeki giysileri ve takıları çıkart (deri veya doku kaldırılmamalı, soyulmamalı)",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Yanığın alanını ve derinliğini değerlendir, yanık yüzeyini yanık seti içindeki ekipman ile veya steril pansuman ile ört, vital bulguları değerlendir",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Ringer Laktat başla",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Şok bulguları var mı?",
+        "yesId": "node_6",
+        "noId": "node_7",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "redirect",
+        "content": "HİPOVOLEMİK ŞOK ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-13",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Sıvı yüklemesi yap! (1 saatten daha kısa nakiller için 500 ml Ringer Laktat, daha uzun süreli nakiller için PARKLAND formülü kullanılmalıdır). Ağrı kontrolü için ANALJEZİK/FENTANİL (Fentanil: 1 mcg/kg IV yavaş, IM) uygula",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-29": {
+    "id": "SB-ASH-Y-29",
+    "title": "Elektrik Yanıkları",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Olay yeri yönetimini uygula (Yaralının elektrik kaynağından ayrıldığından emin ol, en az 10 metre mesafede dur)",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Solunum sıkıntısı varsa, hava yolunu açık tut, oksijenasyon ve ventilasyonu destekle",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Erken monitörizasyon, nabız ve ritim kontrolü yap (Arrest ve aritmi durumunda İLGİLİ ALGORİTMAYA GİT)",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Rabdomyoliz riskine karşı erken ve yeterli sıvı (Ringer Laktat) tedavisi başla",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Spinal immobilizasyonu sağla",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "redirect",
+        "content": "Yanık alanları için TERMAL YANIK ALGORİTMASINA GİT. HER AŞAMADA HASTANEYE NAKİL",
+        "targetAlgorithmId": "SB-ASH-Y-28",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-30": {
+    "id": "SB-ASH-Y-30",
+    "title": "Kimyasal Yanıklar",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Olay yeri yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Kimyasala maruziyeti kes: Görülebilen parçaları ve kalıntıları temizle. Bol su veya %0,9 NaCl ile 20 dk boyunca nazikçe yıka",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "redirect",
+        "content": "TERMAL YANIK ALGORİTMASINA GİT. HER AŞAMADA HASTANEYE NAKİL",
+        "targetAlgorithmId": "SB-ASH-Y-28",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-31": {
+    "id": "SB-ASH-Y-31",
+    "title": "Zehirlenmelere Genel Yaklaşım",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Olay yeri yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Maddeyi tanımla (Ne almış, nasıl almış, ne kadar almış, ne zaman almış, kusmuş mu?)",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Bilinç Kapalı mı?",
+        "yesId": "node_5",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Hava yolu güvenliğini sağla, solunumu ve dolaşımı destekle",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "SpO2 %94-98 olacak şekilde oksijenizasyonu ve ventilasyonu sürdür",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Damar yolu aç (DAKŞ)",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "SKKM ile temasa geç, UZEM yönergelerine göre hareket et. Sürekli gözlem. HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": true
+      }
+    }
+  },
+  "SB-ASH-Y-32": {
+    "id": "SB-ASH-Y-32",
+    "title": "Yüksek Doz İlaç Alımı",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "İlacı tanımla (Ne almış, nasıl almış, ne kadar almış, ne zaman almış, kusmuş mu?)",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Vital bulguları al, EKG değerlendir, fiziksel muayeneyi yap",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Tüm vücut salgılarında artma var mı?",
+        "yesId": "node_5",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "redirect",
+        "content": "KOLİNERJİK AJANLARLA ZEHİRLENME ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-35",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Nöbet var mı?",
+        "yesId": "node_7",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "redirect",
+        "content": "NÖBET/KONVÜLZİYON ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-19",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "Hipo/Hiperglisemi var mı?",
+        "yesId": "node_9",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "redirect",
+        "content": "DİYABETİK ACİLLER ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-17",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "decision",
+        "content": "Koma, bradipne, pinpoint pupil durumu var mı?",
+        "yesId": "node_11",
+        "noId": "node_12",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "redirect",
+        "content": "NARKOTİK / OPIOID ZEHİRLENMELERİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-36",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "decision",
+        "content": "Hipotermi var mı?",
+        "yesId": "node_13",
+        "noId": "node_14",
+        "isCritical": false
+      },
+      "node_13": {
+        "id": "node_13",
+        "type": "redirect",
+        "content": "HİPOTERMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-24",
+        "isCritical": false
+      },
+      "node_14": {
+        "id": "node_14",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-33": {
+    "id": "SB-ASH-Y-33",
+    "title": "Karbonmonoksit Zehirlenmesi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Olay yeri yönetimini uygula (Kapalı alan yangınlarında kişisel güvenlik öncelikli olmalı, dumana maruziyet en aza indirilmeli)",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "10 L/dk dan yüksek olacak şekilde O2 ver (rezervuarlı maske ile)",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Vital bulguları takip et, gerekirse PBV uygula, semptomatik tedavi ver",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "İleri hava yolu yönetimi için hazırlıklı ol",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Nöbet varsa?",
+        "yesId": "node_7",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "redirect",
+        "content": "NÖBET/KONVÜLZİYON ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-19",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-34": {
+    "id": "SB-ASH-Y-34",
+    "title": "Kalsiyum Kanal Blokerleri / Beta Blokerler ile Zehirlenme",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "ZEHİRLENMELERE GENEL YAKLAŞIM ALGORİTMASINI UYGULA",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Oksijen SpO2 %94-98 olacak şekilde ver. Gerekirse PBV uygula. Damar yolu aç (DAKŞ), monitörize et",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Bradiaritmi var ise?",
+        "yesId": "node_4",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "redirect",
+        "content": "BRADİKARDİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-07",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Hipoglisemi var ise?",
+        "yesId": "node_6",
+        "noId": "node_7",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "redirect",
+        "content": "DİYABETİK ACİLLER ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-17",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Hipotansiyon var ise?",
+        "yesId": "node_8",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "SKB > 90 mmHg olacak şekilde % 0,9 NaCl / RL IV hidrasyon başla",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "decision",
+        "content": "Kalsiyum kanal blokörü ile zehirlenmeden emin olunursa ve hipotansiyon da eşlik ediyorsa?",
+        "yesId": "node_11",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "action",
+        "content": "3 ampul KALSİYUM GLUKONAT %0,9 NaCl içinde IV olarak 10 dk da verilebilir",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-35": {
+    "id": "SB-ASH-Y-35",
+    "title": "Kolinerjik Ajanlarla Zehirlenme",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Hastaya müdahale etmeden önce kişisel koruyucu ekipmanları kullan, dekontaminasyon yap ve cilt emilimini önle",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "ZEHİRLENMELERE GENEL YAKLAŞIM ALGORİTMASINI UYGULA",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Oksijen SpO2 > %94 olacak şekilde ver. Gerekirse PBV uygula",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Ciddi bulgu ve semptomlar (SLUDGE-BBB) için ATROPİN 1-2 mg IV ver. (IV yol açılamazsa 2-5 mg IM). Trakeobronşiyal sekresyonlar azalıncaya kadar 5 dk da bir tekrarla",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-36": {
+    "id": "SB-ASH-Y-36",
+    "title": "Narkotik / Opioid Zehirlenmeleri",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "ZEHİRLENMELERE GENEL YAKLAŞIM ALGORİTMASINI UYGULA",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Oksijen SpO2 > %94 olacak şekilde ver. Gerekirse PBV uygula. Solunum depresyonu varsa ileri hava yolu uygula",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Kan şekeri ölçümü yap",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Glikoz < 60 mg/dl ve/veya klinik olarak hipoglisemi belirti ve bulgularının olması durumunda?",
+        "yesId": "node_5",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "redirect",
+        "content": "DİYABETİK ACİLLER ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-17",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Solunum depresyonu varsa?",
+        "yesId": "node_7",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "NALOKSON 0,4-2 mg IM/IV/IO/SC verilir (Maks 10 mg). Düzelme olmazsa 2-3 dk da bir tekrarla",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "İleri hava yolu uygulaması için hazırlan",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "decision",
+        "content": "Hipotansiyon varlığında?",
+        "yesId": "node_10",
+        "noId": "node_11",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "action",
+        "content": "% 0,9 NaCl IV yüklemesi yap",
+        "nextId": "node_11",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-37": {
+    "id": "SB-ASH-Y-37",
+    "title": "Trisiklik Antidepresan Zehirlenmesi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "ZEHİRLENMELERE GENEL YAKLAŞIM ALGORİTMASINI UYGULA",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Oksijen SpO2 > %94 olacak şekilde ver. Gerekirse PBV uygula",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Ciddi bulgu ve semptomlar: Disritmiler mi, Hipertermi mi, Nöbet mi?",
+        "yesId": "node_4",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Disritmiler: QRS süresi 0,10 sn den uzunsa, 1-2 mEq/kg puşe NaHCO3 ver, 3-5 dk da bir tekrarla. Hipotansiyon varlığında % 0,9 NaCl yüklemesi yap. Gerekirse İLGİLİ RİTİM ALGORİTMASINA GİT",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Hipertermi: HİPERTERMİ ALGORİTMASINA GİT",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Nöbet: NÖBET/KONVÜLZİYON ALGORİTMASINA GİT",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-38": {
+    "id": "SB-ASH-Y-38",
+    "title": "Travmalı Hastada Acil Olgu Yönetimi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Olay yeri yönetimini uygula ve güvenliği sağla. Travma mekanizmasının değerlendirilmesi",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Eğer dışa doğru hayatı tehdit eden kanama varsa?",
+        "yesId": "node_3",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Doğrudan bası uygula",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Hava yolu açık ve güvenilir mi?",
+        "yesId": "node_6",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Hava yolunu aç, orofaringeal hava yolunu yerleştir, aspirasyon yap, ileri hava yolu uygulamalarını düşün",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Servikal ve spinal immobilizasyonu sağla",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Solunumu stabil mi? Her iki akciğer eşit havalanıyor mu? (SpO2 > %94, SS: 10-30/dk)",
+        "yesId": "node_9",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "Solunumu destekle, ileri hava yolu düşün. Tansiyon pnömotoraks varsa iğne dekompresyon, açık pnömotoraks varsa kapat, hemotoraks varsa destekle",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "decision",
+        "content": "Nabız var mı?",
+        "yesId": "node_11",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "redirect",
+        "content": "ARREST YÖNETİMİ ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-09",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "decision",
+        "content": "Dolaşım stabil mi? (KGD >2 sn, Nabız > 120 atım/dk, SKB < 90 mmHg olmamalı)",
+        "yesId": "node_13",
+        "noId": "node_12",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "action",
+        "content": "Pelvis travması ya da şüphesi varsa pelvisi sabitle",
+        "nextId": "node_17",
+        "isCritical": false
+      },
+      "node_17": {
+        "id": "node_17",
+        "type": "redirect",
+        "content": "HİPOVOLEMİK ŞOK ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-13",
+        "isCritical": false
+      },
+      "node_13": {
+        "id": "node_13",
+        "type": "decision",
+        "content": "Bilinç normal mi? (GKS 15, Uyanık, Basit komutlara uyuyor mu?)",
+        "yesId": "node_15",
+        "noId": "node_14",
+        "isCritical": false
+      },
+      "node_14": {
+        "id": "node_14",
+        "type": "redirect",
+        "content": "KAFA TRAVMALI HASTAYA YAKLAŞIM ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-40",
+        "isCritical": false
+      },
+      "node_15": {
+        "id": "node_15",
+        "type": "action",
+        "content": "Tüm giysileri çıkararak vücut kontrolünü tamamla, hipotermiden koru",
+        "nextId": "node_16",
+        "isCritical": false
+      },
+      "node_16": {
+        "id": "node_16",
+        "type": "action",
+        "content": "İkincil değerlendirmeyi tamamla (nakil sırasında), immobilizasyonu sürdür ve naklet. HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-39": {
+    "id": "SB-ASH-Y-39",
+    "title": "Crush Sendromu",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Güvenliğin sağlandığından emin ol",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "IV/IO yolu açıldı mı?",
+        "yesId": "node_4",
+        "noId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Kurtarma öncesinde damar yolu açılamamışsa damar yolu aç, %0,9 NaCl başla. Hipotermiye karşı dikkatli ol",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Damar yolu bulunduğunda %0,9 NaCl başla (1000 ml/sa). Kurtarma işlemi sırasında sıvı verilmişse %0,9 NaCl IV hidrasyona devam edin",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "TRAVMALI HASTADA ACİL OLGU YÖNETİMİNİ UYGULA. Hiperkalemi açısından EKG çek",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Toplamda 3000-6000 ml sıvı ver (Kurtarma işlemi 2 saatten uzun sürerse %0,9 NaCl hızını azalt: 500 ml/sa veya daha az)",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Hiperpotasemi bulguları varsa?",
+        "yesId": "node_8",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "KALSİYUM GLUKONAT %10 luk solüsyondan 10-30 ml IV (2-3 dk içinde) verilir",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-40": {
+    "id": "SB-ASH-Y-40",
+    "title": "Kafa Travmalı Hastaya Yaklaşım",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "GKS <= 8 ya da solunum yetmezliği veya hava yolu tehlikesi varlığında?",
+        "yesId": "node_3",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "İleri hava yolu yönetimi uygula",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "SpO2 >%94-98 olacak şekilde oksijenizasyonu ve ventilasyonu sağla (Ventilasyon sayısı yetişkinlerde 10/dk)",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Kan şekerini ölç",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "KŞ < 60 mg/dl veya > 300 mg/dl mi?",
+        "yesId": "node_7",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "redirect",
+        "content": "DİYABETİK ACİLLER ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-17",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "IV sıvı tedavisine başla, SKB > 100 mmHg olacak şekilde sıvı tedavisini sürdür",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "decision",
+        "content": "KİBAS veya Nöbet varsa?",
+        "yesId": "node_10",
+        "noId": "node_11",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "redirect",
+        "content": "NÖBET / KONVÜLZİYON ALGORİTMASINA GİT",
+        "targetAlgorithmId": "SB-ASH-Y-19",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "action",
+        "content": "HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-Y-41": {
+    "id": "SB-ASH-Y-41",
+    "title": "Start Triyaj",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Seslen, güvenli alana çağır",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "Yürüyenler?",
+        "yesId": "node_3",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "YEŞİL KOD",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Yürüyemeyenler: Solunumu değerlendir",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Solunum yok mu?",
+        "yesId": "node_6",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Başa pozisyon ver",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Pozisyon sonrası solunum yok mu?",
+        "yesId": "node_8",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "SİYAH KOD",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "Solunum varsa KIRMIZI KOD",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "decision",
+        "content": "Solunum var: Solunum sayısı 10/dk'dan az veya 30/dk'dan fazla mı?",
+        "yesId": "node_9",
+        "noId": "node_11",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "action",
+        "content": "Dolaşımı değerlendir",
+        "nextId": "node_12",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "decision",
+        "content": "KGD 2 sn'den uzun veya distal nabız yok ise?",
+        "yesId": "node_9",
+        "noId": "node_13",
+        "isCritical": false
+      },
+      "node_13": {
+        "id": "node_13",
+        "type": "decision",
+        "content": "Komutlara uyuyor mu?",
+        "yesId": "node_14",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_14": {
+        "id": "node_14",
+        "type": "action",
+        "content": "SARI KOD",
+        "isCritical": false
+      }
+    }
+  }
+}

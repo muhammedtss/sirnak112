@@ -1,0 +1,551 @@
+{
+  "SB-ASH-DY-01": {
+    "id": "SB-ASH-DY-01",
+    "title": "Acil Doğum Eylemi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "SpO2 %94-98 olacak şekilde oksijenizasyonu sağla ve ventilasyonu destekle. Maske ile 10 L/dk oksijen ver",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Damar yolu aç. Ringer Laktat veya %0,9 NaCl IV 125 ml/saat - 40 damla/dk başla",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Annenin dizlerini bükerek karnına doğru çekmesini sağla. Kalçasını battaniye veya minderle yükselt. Perine etrafında steril alan oluştur",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Baş göründüğünde anneyi ıkınması için teşvik et. Baş çıkarken kontrollü çıkmasını sağlamak için parmaklarını kafatasının kemik kısmına yerleştir",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Baş doğduktan sonra başı destekle. Ağız ve burunu temizle. Omuzların ön arka çapla doğması için başın rotasyonunu bekle",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "decision",
+        "content": "Göbek kordonunun boynuna dolanıp dolanmadığını kontrol et. Dolanma var mı?",
+        "yesId": "node_8",
+        "noId": "node_9",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "Kordonu omuzdan kaydırarak veya klempleyip keserek çöz",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "Bacaklar gelirken bacakları kavra. Göbek kordonu kesilene kadar mümkünse bebeği anne üzerine yatır",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "action",
+        "content": "30-60 sn bekleyip göbek kordonunu klemple ve kes. KARBETOSİN 100 mcg/100 ml (IM veya IV yavaş puşe) uygula",
+        "nextId": "node_11",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "action",
+        "content": "Doğum sonrası plasentanın çıkışını gözle. Perineal bölgeye steril ped koy, annenin bacaklarını birleştir. Plasenta çıkınca uterin masaja başla",
+        "nextId": "node_12",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "action",
+        "content": "En kısa sürede anneyle tensel teması ve emzirmeyi sağla. Anne, bebek ve plasentayı uygun hastaneye naklet",
+        "nextId": "node_13",
+        "isCritical": false
+      },
+      "node_13": {
+        "id": "node_13",
+        "type": "redirect",
+        "content": "Normal Yenidoğan Bakımı Algoritmasına Git",
+        "targetAlgorithmId": "SB-ASH-DY-06",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-DY-02": {
+    "id": "SB-ASH-DY-02",
+    "title": "Doğum Komplikasyonları",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Damar yolu aç. SpO2 %94-98 olacak şekilde Maske ile 10 L/dk oksijen ver. Ringer Laktat veya %0,9 NaCl IV 125 ml/saat başla",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Annenin kalçalarını yükselt. Baş gövde aşağı pozisyonda (diz göğüs pozisyonu) veya trendelenburg pozisyonu ver",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Ekstremite ve/veya Makat Geliş mi var?",
+        "yesId": "node_4",
+        "noId": "node_7",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Göbek Kordonu Sarkması eşlik ediyor mu?",
+        "yesId": "node_7",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Yenidoğanı ASLA bacaklarından çekme. Anneye ıkınmamasını söyle. Önde gelen kısmı çekme destekle",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "redirect",
+        "content": "Normal Yenidoğan Bakımı Algoritmasına Git",
+        "targetAlgorithmId": "SB-ASH-DY-06",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Göbek Kordonu Sarkması: Açıktaki kordonu ılık nemli bir gazlı bez veya pedlerle kapat",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "Anneden kasılmalar sırasında sık nefes almasını ve ıkınmamasını iste. Hiçbir durumda kordonu geri itme",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "Bilgi ver, uygun hastaneye yönlendirme sağla",
+        "nextId": "node_6",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-DY-03": {
+    "id": "SB-ASH-DY-03",
+    "title": "Postpartum Kanama",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Hava yolu açıklığını sağla. SpO2 %94-98 olacak şekilde oksijenizasyonu sağla. Damaryolu aç",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "decision",
+        "content": "1000 ml den fazla kanama, devam eden aktif kanama veya klinik şok varlığı mevcut mu?",
+        "yesId": "node_3",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "2000 ml ye kadar % 0,9 NaCl ile sıvı resüsitasyonu uygula",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "action",
+        "content": "Uterusun tonusunu kontrol et",
+        "nextId": "node_5",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "decision",
+        "content": "Plasenta çıkmış ve uterus yumuşak mı?",
+        "yesId": "node_6",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Uterusa masaj yap. KARBETOSİN 100 mcg/100 ml (IM/IV) uygula. Perinede kanayan yırtık varsa ped ile kompresyon yap",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Kanama devam ediyorsa transfer sırasında Bimanuel uterus masajı yap",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "Plasenta çıkmamış mı?",
+        "yesId": "node_9",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "Plasenta çıkmamışsa çıkarmaya çalışma. KARBETOSİN 100 mcg/100 ml uygula",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "action",
+        "content": "Plasenta çıkmış ve uterus sert. Perinede görünen kanayan bir yırtık varsa ped ile kompresyon yap",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-DY-04": {
+    "id": "SB-ASH-DY-04",
+    "title": "Gebelikte Akut Hipertansiyon Yönetimi",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. Hastayı yarı oturur pozisyona al veya sol yanına yatır",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Hava yolu açıklığını sağla. SpO2 %94-98 olacak şekilde oksijenizasyon sağla. Damar yolu aç",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Yutabiliyorsa NİFEDİPİN 10 mg kapsül yuttur",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "20 dk sonra TA >= 160/110 mmHg mi?",
+        "yesId": "node_5",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "NİFEDİPİN 10 mg kapsül yuttur (2. doz)",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "20 dk sonra TA >= 160/110 mmHg mi?",
+        "yesId": "node_7",
+        "noId": "node_8",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "NİFEDİPİN 10 mg kapsül yuttur (3. doz)",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "action",
+        "content": "Eklampsi profilaksisi için 4 gr MAGNEZYUM SÜLFAT, IV bolus şeklinde 15-20 dk da ver (Maksimum doz 6 gr)",
+        "nextId": "node_9",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "İdame olarak 4 gr MAGNEZYUM SÜLFAT 4 saatte gidecek şekilde infüzyona devam et",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-DY-05": {
+    "id": "SB-ASH-DY-05",
+    "title": "Üçüncü Trimestr Nöbetler (Eklampsi)",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Acil olgu yönetimini uygula. SpO2 %94-98 oksijen sağla. Damar yolu aç. AVPU ve vital bulguları hızla değerlendir",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Hastayı engellemeye çalışma, nöbeti seyrine bırak. Yaralanmayı önlemek için tedbir al. İleri hava yolu için hazırlıklı ol",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Kan şekeri ölçümü: Glikoz < 60 mg/dl veya hipoglisemi bulguları var mı?",
+        "yesId": "node_4",
+        "noId": "node_5",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "redirect",
+        "content": "Diyabetik Aciller Algoritmasına Git",
+        "targetAlgorithmId": "SB-ASH-Y-17",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Hastayı sol yanına yatır",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Nöbeti olan hastaya 4 gr MAGNEZYUM SÜLFAT IV bolus şekilde 15-20 dk da ver",
+        "nextId": "node_7",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "İdame olarak 4 gr MAGNEZYUM SÜLFAT 4 saatte gidecek şekilde uygula",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "MAGNEZYUM SÜLFAT ile nöbet durdurulamadı mı?",
+        "yesId": "node_9",
+        "noId": "node_10",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "DİAZEPAM 5 mg IV uygula",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "decision",
+        "content": "TA >= 160 / 110 mmHg mi?",
+        "yesId": "node_11",
+        "noId": "node_12",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "redirect",
+        "content": "Gebelikte Akut Hipertansiyon Yönetimi Algoritmasına Git",
+        "targetAlgorithmId": "SB-ASH-DY-04",
+        "isCritical": false
+      },
+      "node_12": {
+        "id": "node_12",
+        "type": "action",
+        "content": "Vital bulguları sık takip ederek nakli sağla",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-DY-06": {
+    "id": "SB-ASH-DY-06",
+    "title": "Normal Yenidoğan Bakımı",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "decision",
+        "content": "Bebek zamanında doğdu mu? Kas tonusu iyi mi? Solunumu var mı veya ağlıyor mu?",
+        "yesId": "node_2",
+        "noId": "node_3",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "Anne yanında olağan bakım: Kurula, ısıt ve vücut sıcaklığını koru, gerekirse salgıları temizle, değerlendirmeyi sürdür",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "action",
+        "content": "Kurula, Isıt, Uyaran ver, Pozisyon ver, Gerekirse salgıları temizle",
+        "nextId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "decision",
+        "content": "Solunum yok, iç çekme tarzında solunum veya kalp atım hızı < 100 atım/dk mı?",
+        "yesId": "node_5",
+        "noId": "node_6",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "redirect",
+        "content": "Yenidoğan Canlandırması Algoritmasına Git",
+        "targetAlgorithmId": "SB-ASH-DY-07",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "action",
+        "content": "Solunum güçlüğü veya inatçı siyanoz. Pozisyon ver ve hava yolunu temizle. SpO2 izle. Gerektikçe oksijen desteği ve PBV uygula",
+        "isCritical": false
+      }
+    }
+  },
+  "SB-ASH-DY-07": {
+    "id": "SB-ASH-DY-07",
+    "title": "Yenidoğan Canlandırması",
+    "startNodeId": "node_1",
+    "nodes": {
+      "node_1": {
+        "id": "node_1",
+        "type": "action",
+        "content": "Solunum yok, iç çekme tarzında solunum veya kalp atım hızı < 100 atım/dk durumunda müdahaleye başla",
+        "nextId": "node_2",
+        "isCritical": false
+      },
+      "node_2": {
+        "id": "node_2",
+        "type": "action",
+        "content": "PBV uygula (40-60 soluk/dk). SpO2 izle, EKG izlemini düşün",
+        "nextId": "node_3",
+        "isCritical": false
+      },
+      "node_3": {
+        "id": "node_3",
+        "type": "decision",
+        "content": "Kalp atım hızı < 100 atım/dk mı?",
+        "yesId": "node_5",
+        "noId": "node_4",
+        "isCritical": false
+      },
+      "node_4": {
+        "id": "node_4",
+        "type": "redirect",
+        "content": "Normal Yenidoğan Bakımı Algoritmasına Git",
+        "targetAlgorithmId": "SB-ASH-DY-06",
+        "isCritical": false
+      },
+      "node_5": {
+        "id": "node_5",
+        "type": "action",
+        "content": "Göğüs hareketlerini kontrol et. Gerekirse ventilasyon düzeltici adımlar uygula. Gerekirse ETT veya laringeal maske uygula",
+        "nextId": "node_6",
+        "isCritical": false
+      },
+      "node_6": {
+        "id": "node_6",
+        "type": "decision",
+        "content": "Kalp atım hızı < 60 atım/dk mı?",
+        "yesId": "node_7",
+        "noId": "node_2",
+        "isCritical": false
+      },
+      "node_7": {
+        "id": "node_7",
+        "type": "action",
+        "content": "Henüz yapılmamışsa ETT veya LMA yerleştir. KPR (%100 O2 ile eşgüdümlü PBV) başlat. EKG izlemini yap. IV veya IO yol aç",
+        "nextId": "node_8",
+        "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "type": "decision",
+        "content": "Kalp atım hızı < 60 atım/dk devam ediyor mu?",
+        "yesId": "node_9",
+        "noId": "node_2",
+        "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "type": "action",
+        "content": "ADRENALİN 0,02 mg/kg 1/10000 lik IV uygula. Hipovolemi ve/veya pnömotoraksı düşün",
+        "nextId": "node_10",
+        "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "type": "decision",
+        "content": "KAH halen < 60 atım/dk mı?",
+        "yesId": "node_11",
+        "noId": "node_2",
+        "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "type": "redirect",
+        "content": "Arrest Yönetimi Algoritmasına Git",
+        "targetAlgorithmId": "SB-ASH-C-12",
+        "isCritical": false
+      }
+    }
+  }
+}

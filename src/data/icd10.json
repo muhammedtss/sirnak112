@@ -1,0 +1,1675 @@
+[
+  {
+    "kod": "I10",
+    "ad": "Esansiyel Hipertansiyon",
+    "tr": "Esansiyel (Primer) Hipertansiyon",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "hipertansiyon yüksek tansiyon ht kan basıncı hta primer esansiyel"
+  },
+  {
+    "kod": "I11.0",
+    "ad": "Hypertensive heart disease with heart failure",
+    "tr": "Hipertansif Kalp Hastalığı ile Kalp Yetmezliği",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "hipertansif kalp hastalığı kalp yetmezliği hta hf"
+  },
+  {
+    "kod": "I16.0",
+    "ad": "Hypertensive urgency",
+    "tr": "Hipertansif Aciliyet",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "hipertansif aciliyet kriz tansiyon yüksekliği organ hasarı yok"
+  },
+  {
+    "kod": "I16.1",
+    "ad": "Hypertensive emergency",
+    "tr": "Hipertansif Acil Durum",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "hipertansif acil kriz organ hasarı hedef organ"
+  },
+  {
+    "kod": "I20.0",
+    "ad": "Unstable angina",
+    "tr": "Kararsız Angina",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "kararsız angina unstable göğüs ağrısı iskemi uap acs akut koroner"
+  },
+  {
+    "kod": "I20.9",
+    "ad": "Angina pectoris, unspecified",
+    "tr": "Angina Pektoris",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "angina pektoris göğüs ağrısı iskemik kalp hastalığı efor"
+  },
+  {
+    "kod": "I21.01",
+    "ad": "STEMI - Left anterior descending",
+    "tr": "STEMI - LAD İnfarktı (Ön Duvar)",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "stemi miyokard enfarktüsü kalp krizi ön duvar lad sol ön inen anterior mi amt"
+  },
+  {
+    "kod": "I21.09",
+    "ad": "STEMI - Anterior wall",
+    "tr": "STEMI - Anterior Duvar İnfarktı",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "stemi anterior ön duvar kalp krizi mi miyokard enfarktüs"
+  },
+  {
+    "kod": "I21.11",
+    "ad": "STEMI - Right coronary artery (Inferior)",
+    "tr": "STEMI - Alt Duvar İnfarktı (RCA)",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "stemi inferior alt duvar rca sağ koroner kalp krizi imt diaphragmatik"
+  },
+  {
+    "kod": "I21.3",
+    "ad": "STEMI - Unspecified site",
+    "tr": "STEMI - Belirtilmemiş",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "stemi akut miyokard enfarktüs kalp krizi st elevasyonu"
+  },
+  {
+    "kod": "I21.4",
+    "ad": "NSTEMI - Non-ST elevation MI",
+    "tr": "NSTEMI - ST Elevasyonsuz Miyokard Enfarktüsü",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "nstemi non-st elevasyonsuz miyokard enfarktüs akut koroner troponin"
+  },
+  {
+    "kod": "I21.A1",
+    "ad": "Myocardial infarction type 2",
+    "tr": "Tip 2 Miyokard Enfarktüsü",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "tip 2 mi miyokard enfarktüs arz talep dengesizliği anemi"
+  },
+  {
+    "kod": "I24.0",
+    "ad": "Acute coronary thrombosis",
+    "tr": "Akut Koroner Tromboz",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "koroner tromboz tıkanma pıhtı"
+  },
+  {
+    "kod": "I26.0",
+    "ad": "Pulmonary embolism with acute cor pulmonale",
+    "tr": "Akut Kor Pulmanaleli Pulmoner Emboli",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "pulmoner emboli masif pe kor pulmonale akut sağ kalp yetmezliği"
+  },
+  {
+    "kod": "I26.9",
+    "ad": "Pulmonary embolism without acute cor pulmonale",
+    "tr": "Pulmoner Emboli",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "pulmoner emboli pe akciğer pıhtı tromboemboli dvt"
+  },
+  {
+    "kod": "I30.0",
+    "ad": "Acute nonspecific pericarditis",
+    "tr": "Akut Perikardit",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "perikardit kalp zarı iltihabı göğüs ağrısı pericard"
+  },
+  {
+    "kod": "I31.4",
+    "ad": "Cardiac tamponade",
+    "tr": "Kardiyak Tamponad",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "kardiyak tamponad kalp tamponadı perikardiyal effüzyon perikardiyosentez"
+  },
+  {
+    "kod": "I40.9",
+    "ad": "Acute myocarditis, unspecified",
+    "tr": "Akut Miyokardit",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "miyokardit kalp kası iltihabı akut miyokard enflamasyon"
+  },
+  {
+    "kod": "I46.2",
+    "ad": "Cardiac arrest due to underlying cardiac condition",
+    "tr": "Kardiyak Arrest (Kardiyak Nedenli)",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "kardiyak arrest kalp durması kpr resusitasyon vf vt asistol"
+  },
+  {
+    "kod": "I46.9",
+    "ad": "Cardiac arrest, cause unspecified",
+    "tr": "Kardiyak Arrest, Nedeni Belirtilmemiş",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "kardiyak arrest kalp durması kpr resüsitasyon nea pea"
+  },
+  {
+    "kod": "I47.1",
+    "ad": "Supraventricular tachycardia",
+    "tr": "Supraventriküler Taşikardi",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "svt supraventriküler taşikardi hızlı nabız çarpıntı avnrt paroksismal"
+  },
+  {
+    "kod": "I47.2",
+    "ad": "Ventricular tachycardia",
+    "tr": "Ventriküler Taşikardi",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "ventriküler taşikardi vt geniş kompleks hızlı kalp ritim bozukluğu"
+  },
+  {
+    "kod": "I48.0",
+    "ad": "Paroxysmal atrial fibrillation",
+    "tr": "Paroksismal Atriyal Fibrilasyon",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "atriyal fibrilasyon af paroksismal aritmi çarpıntı düzensiz nabız"
+  },
+  {
+    "kod": "I48.91",
+    "ad": "Unspecified atrial fibrillation",
+    "tr": "Atriyal Fibrilasyon",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "atriyal fibrilasyon af aritmi çarpıntı düzensiz nabız"
+  },
+  {
+    "kod": "I49.01",
+    "ad": "Ventricular fibrillation",
+    "tr": "Ventriküler Fibrilasyon",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "ventriküler fibrilasyon vf defibrilasyon kardiyak arrest şok"
+  },
+  {
+    "kod": "I50.1",
+    "ad": "Left ventricular failure",
+    "tr": "Sol Ventriküler Yetmezlik",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "sol kalp yetmezliği sol ventrikül akut pulmoner ödem nefes darlığı"
+  },
+  {
+    "kod": "I50.21",
+    "ad": "Acute systolic heart failure",
+    "tr": "Akut Sistolik Kalp Yetmezliği",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "akut sistolik kalp yetmezliği hfref ejeksiyon fraksiyonu"
+  },
+  {
+    "kod": "I50.9",
+    "ad": "Heart failure, unspecified",
+    "tr": "Kalp Yetmezliği",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "kalp yetmezliği konjestif hf nefes darlığı bacak şişmesi ödem"
+  },
+  {
+    "kod": "I60.9",
+    "ad": "Subarachnoid hemorrhage",
+    "tr": "Subaraknoid Kanama",
+    "kategori": "Nöroloji",
+    "anahtar": "subaraknoid kanama sah baş ağrısı beyin kanaması ani şiddetli gök gürültüsü"
+  },
+  {
+    "kod": "I61.9",
+    "ad": "Intracerebral hemorrhage",
+    "tr": "İntraserebral Kanama",
+    "kategori": "Nöroloji",
+    "anahtar": "intraserebral kanama ich beyin içi kanama hemorajik inme"
+  },
+  {
+    "kod": "I63.9",
+    "ad": "Cerebral infarction (Ischemic stroke)",
+    "tr": "İskemik İnme",
+    "kategori": "Nöroloji",
+    "anahtar": "iskemik inme serebral infarkt felç tia hemiplejia afazi deveboynu"
+  },
+  {
+    "kod": "I71.00",
+    "ad": "Aortic dissection, unspecified",
+    "tr": "Aort Diseksiyonu",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "aort diseksiyonu yırtılma sırt göğüs ağrısı ripping tearing a tipi b tipi"
+  },
+  {
+    "kod": "I71.3",
+    "ad": "Abdominal aortic aneurysm, ruptured",
+    "tr": "Rüptüre Abdominal Aort Anevrizması",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "aort anevrizması rüptür yırtılma karın ağrısı aaa abdominal"
+  },
+  {
+    "kod": "I80.20",
+    "ad": "Deep vein thrombosis",
+    "tr": "Derin Ven Trombozu",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "dvt derin ven trombozu bacak ağrısı şişlik venöz tromboz"
+  },
+  {
+    "kod": "J05.0",
+    "ad": "Acute obstructive laryngitis (Croup)",
+    "tr": "Akut Obstrüktif Larenjit (Krup)",
+    "kategori": "Solunum",
+    "anahtar": "krup croup akut obstrüktif larenjit havlayan öksürük stridor larenks çocuk"
+  },
+  {
+    "kod": "J05.1",
+    "ad": "Acute epiglottitis",
+    "tr": "Akut Epiglottit",
+    "kategori": "Solunum",
+    "anahtar": "epiglottit epiglot iltihabı hava yolu tıkanıklığı yutma güçlüğü tripod"
+  },
+  {
+    "kod": "J18.9",
+    "ad": "Pneumonia, unspecified",
+    "tr": "Pnömoni",
+    "kategori": "Solunum",
+    "anahtar": "pnömoni zatürre akciğer iltihabı ateş öksürük balgam"
+  },
+  {
+    "kod": "J15.9",
+    "ad": "Bacterial pneumonia, unspecified",
+    "tr": "Bakteriyel Pnömoni",
+    "kategori": "Solunum",
+    "anahtar": "bakteriyel pnömoni zatürre akciğer bakteri ateş balgam"
+  },
+  {
+    "kod": "J20.9",
+    "ad": "Acute bronchitis, unspecified",
+    "tr": "Akut Bronşit",
+    "kategori": "Solunum",
+    "anahtar": "akut bronşit bronş iltihabı öksürük balgam"
+  },
+  {
+    "kod": "J21.9",
+    "ad": "Acute bronchiolitis, unspecified",
+    "tr": "Akut Bronşiyolit",
+    "kategori": "Solunum",
+    "anahtar": "bronşiyolit rsv solunum sincisyal virüs bebek wheezing hışıltı"
+  },
+  {
+    "kod": "J44.0",
+    "ad": "COPD with acute lower respiratory infection",
+    "tr": "KOAH - Akut Alt Solunum Yolu İnfeksiyonu",
+    "kategori": "Solunum",
+    "anahtar": "koah akut enfeksiyon kronik obstrüktif akciğer hastalığı"
+  },
+  {
+    "kod": "J44.1",
+    "ad": "COPD with acute exacerbation",
+    "tr": "KOAH Akut Alevlenmesi",
+    "kategori": "Solunum",
+    "anahtar": "koah alevlenme akut exacerbation bronkospaşm nefes darlığı"
+  },
+  {
+    "kod": "J45.51",
+    "ad": "Severe persistent asthma with acute exacerbation",
+    "tr": "Ağır Persistan Astım Akut Alevlenmesi",
+    "kategori": "Solunum",
+    "anahtar": "astım alevlenme ağır bronkospaşm wheezing hışıltı nefes darlığı"
+  },
+  {
+    "kod": "J45.902",
+    "ad": "Unspecified asthma with status asthmaticus",
+    "tr": "Status Asthmaticus",
+    "kategori": "Solunum",
+    "anahtar": "status asthmaticus astım durumu tedaviye dirençli bronkospaşm"
+  },
+  {
+    "kod": "J45.901",
+    "ad": "Asthma with acute exacerbation",
+    "tr": "Astım Akut Alevlenmesi",
+    "kategori": "Solunum",
+    "anahtar": "astım alevlenme akut bronkospaşm wheezing hışıltı"
+  },
+  {
+    "kod": "J80",
+    "ad": "Acute respiratory distress syndrome (ARDS)",
+    "tr": "Akut Solunum Sıkıntısı Sendromu (ARDS)",
+    "kategori": "Solunum",
+    "anahtar": "ards akut solunum sıkıntısı sendromu oksijen difüzyon mekanik ventilasyon"
+  },
+  {
+    "kod": "J81.0",
+    "ad": "Acute pulmonary edema",
+    "tr": "Akut Pulmoner Ödem",
+    "kategori": "Solunum",
+    "anahtar": "pulmoner ödem akut akciğer ödemi pembe köpüklü balgam nefes darlığı"
+  },
+  {
+    "kod": "J90",
+    "ad": "Pleural effusion",
+    "tr": "Plevral Effüzyon",
+    "kategori": "Solunum",
+    "anahtar": "plevral effüzyon plevral sıvı torasentez"
+  },
+  {
+    "kod": "J93.0",
+    "ad": "Spontaneous tension pneumothorax",
+    "tr": "Spontan Tansiyon Pnömotoraks",
+    "kategori": "Solunum",
+    "anahtar": "tansiyon pnömotoraks spontan akciğer çökmesi trakea deviasyonu"
+  },
+  {
+    "kod": "J93.11",
+    "ad": "Primary spontaneous pneumothorax",
+    "tr": "Primer Spontan Pnömotoraks",
+    "kategori": "Solunum",
+    "anahtar": "spontan pnömotoraks primer akciğer çökmesi ani göğüs ağrısı"
+  },
+  {
+    "kod": "J93.9",
+    "ad": "Pneumothorax, unspecified",
+    "tr": "Pnömotoraks",
+    "kategori": "Solunum",
+    "anahtar": "pnömotoraks akciğer çökmesi hava kaçağı plevra"
+  },
+  {
+    "kod": "J96.00",
+    "ad": "Acute respiratory failure, unspecified",
+    "tr": "Akut Solunum Yetmezliği",
+    "kategori": "Solunum",
+    "anahtar": "akut solunum yetmezliği hipoksi hiperkapni oksijen satürasyonu"
+  },
+  {
+    "kod": "J96.01",
+    "ad": "Acute respiratory failure with hypoxia",
+    "tr": "Hipoksili Akut Solunum Yetmezliği",
+    "kategori": "Solunum",
+    "anahtar": "akut solunum yetmezliği hipoksi oksijen düşük"
+  },
+  {
+    "kod": "J96.02",
+    "ad": "Acute respiratory failure with hypercapnia",
+    "tr": "Hiperkapnili Akut Solunum Yetmezliği",
+    "kategori": "Solunum",
+    "anahtar": "akut solunum yetmezliği hiperkapni co2 yüksek"
+  },
+  {
+    "kod": "R00.0",
+    "ad": "Tachycardia, unspecified",
+    "tr": "Taşikardi",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "taşikardi hızlı nabız kalp hızı çarpıntı sinüs svt vt"
+  },
+  {
+    "kod": "R00.1",
+    "ad": "Bradycardia, unspecified",
+    "tr": "Bradikardi",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "bradikardi yavaş nabız kalp hızı düşük blok"
+  },
+  {
+    "kod": "R00.2",
+    "ad": "Palpitations",
+    "tr": "Çarpıntı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "çarpıntı palpitasyon kalp ritim şikayeti"
+  },
+  {
+    "kod": "R04.0",
+    "ad": "Epistaxis",
+    "tr": "Epistaksis",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "epistaksis burun kanaması rinoraji"
+  },
+  {
+    "kod": "R04.2",
+    "ad": "Hemoptysis",
+    "tr": "Hemoptizi",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "hemoptizi kan tükürme öksürükle kan balgam kanlı"
+  },
+  {
+    "kod": "R06.00",
+    "ad": "Dyspnea, unspecified",
+    "tr": "Dispne",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "dispne nefes darlığı solunum güçlüğü"
+  },
+  {
+    "kod": "R06.02",
+    "ad": "Shortness of breath",
+    "tr": "Nefes Darlığı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "nefes darlığı solunum güçlüğü dispne tachypnea"
+  },
+  {
+    "kod": "R06.2",
+    "ad": "Wheezing",
+    "tr": "Hışıltı (Wheezing)",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "hışıltı wheezing bronkospaşm astım koah"
+  },
+  {
+    "kod": "R06.81",
+    "ad": "Apnea, not elsewhere classified",
+    "tr": "Apne",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "apne apnea solunum durması"
+  },
+  {
+    "kod": "R07.0",
+    "ad": "Pain in throat",
+    "tr": "Boğaz Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "boğaz ağrısı tonsillit farenjit larenjit"
+  },
+  {
+    "kod": "R07.1",
+    "ad": "Chest pain on breathing",
+    "tr": "Solunumla İlişkili Göğüs Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "göğüs ağrısı solunumla artan plevritik pnömotoraks"
+  },
+  {
+    "kod": "R07.2",
+    "ad": "Precordial pain",
+    "tr": "Prekordiyal Ağrı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "prekordiyal ağrı göğüs ön yüz ağrısı kalp"
+  },
+  {
+    "kod": "R07.9",
+    "ad": "Chest pain, unspecified",
+    "tr": "Göğüs Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "göğüs ağrısı toracalji kardiyak iskemik musküler"
+  },
+  {
+    "kod": "R10.0",
+    "ad": "Acute abdomen",
+    "tr": "Akut Karın",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "akut karın peritonit apandisit perforasyon cerrahi karın ağrısı"
+  },
+  {
+    "kod": "R10.11",
+    "ad": "Right upper quadrant pain",
+    "tr": "Sağ Üst Kadran Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "sağ üst kadran ağrısı suq karaciğer safra kesesi kolesistit"
+  },
+  {
+    "kod": "R10.12",
+    "ad": "Left upper quadrant pain",
+    "tr": "Sol Üst Kadran Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "sol üst kadran ağrısı luq dalak mide"
+  },
+  {
+    "kod": "R10.13",
+    "ad": "Epigastric pain",
+    "tr": "Epigastrik Ağrı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "epigastrik ağrı mide üstü ülser gastrit pankreatit"
+  },
+  {
+    "kod": "R10.31",
+    "ad": "Right lower quadrant pain",
+    "tr": "Sağ Alt Kadran Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "sağ alt kadran ağrısı rlq apandisit mcburney"
+  },
+  {
+    "kod": "R10.32",
+    "ad": "Left lower quadrant pain",
+    "tr": "Sol Alt Kadran Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "sol alt kadran ağrısı llq divertikül barsak"
+  },
+  {
+    "kod": "R10.84",
+    "ad": "Generalized abdominal pain",
+    "tr": "Yaygın Karın Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "yaygın karın ağrısı diffüz peritonit"
+  },
+  {
+    "kod": "R10.9",
+    "ad": "Unspecified abdominal pain",
+    "tr": "Karın Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "karın ağrısı abdominal ağrı belirtilmemiş"
+  },
+  {
+    "kod": "R11.0",
+    "ad": "Nausea",
+    "tr": "Bulantı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "bulantı mide bulantısı nozea"
+  },
+  {
+    "kod": "R11.10",
+    "ad": "Vomiting, unspecified",
+    "tr": "Kusma",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "kusma emezis reflü mide"
+  },
+  {
+    "kod": "R11.2",
+    "ad": "Nausea with vomiting",
+    "tr": "Bulantı ve Kusma",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "bulantı kusma birlikte mide"
+  },
+  {
+    "kod": "R13.10",
+    "ad": "Dysphagia, unspecified",
+    "tr": "Disfaji",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "disfaji yutma güçlüğü yutamama"
+  },
+  {
+    "kod": "R40.0",
+    "ad": "Somnolence",
+    "tr": "Somnolans",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "somnolans uykululuk bilinç azalması"
+  },
+  {
+    "kod": "R40.1",
+    "ad": "Stupor",
+    "tr": "Stupor",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "stupor bilinç kaybı uyarılabilirlik azalmış"
+  },
+  {
+    "kod": "R40.20",
+    "ad": "Unspecified coma",
+    "tr": "Koma",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "koma bilinç kaybı şuur kaybı gks glasgow"
+  },
+  {
+    "kod": "R41.0",
+    "ad": "Disorientation, unspecified",
+    "tr": "Dezoryantasyon",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "dezoryantasyon konfüzyon yönelim bozukluğu"
+  },
+  {
+    "kod": "R42",
+    "ad": "Dizziness and giddiness",
+    "tr": "Baş Dönmesi",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "baş dönmesi vertigo sersemlik dizziness"
+  },
+  {
+    "kod": "R50.9",
+    "ad": "Fever, unspecified",
+    "tr": "Ateş",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "ateş hipetermi pireksi febril yüksek ısı"
+  },
+  {
+    "kod": "R51.9",
+    "ad": "Headache, unspecified",
+    "tr": "Baş Ağrısı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "baş ağrısı sefalji migren gerilim"
+  },
+  {
+    "kod": "R55",
+    "ad": "Syncope and collapse",
+    "tr": "Senkop",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "senkop bayılma geçici bilinç kaybı kollaps"
+  },
+  {
+    "kod": "R56.00",
+    "ad": "Simple febrile convulsions",
+    "tr": "Basit Febril Konvülsiyon",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "febril konvülsiyon ateşli nöbet basit çocuk"
+  },
+  {
+    "kod": "R56.01",
+    "ad": "Complex febrile convulsions",
+    "tr": "Kompleks Febril Konvülsiyon",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "kompleks febril konvülsiyon ateşli nöbet uzun odaklı çocuk"
+  },
+  {
+    "kod": "R56.9",
+    "ad": "Unspecified convulsions",
+    "tr": "Konvülsiyon / Nöbet",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "konvülsiyon nöbet epilepsi sara grand mal tonik klonik"
+  },
+  {
+    "kod": "R57.0",
+    "ad": "Cardiogenic shock",
+    "tr": "Kardiyojenik Şok",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "kardiyojenik şok kalp yetmezliği hipotansiyon"
+  },
+  {
+    "kod": "R57.1",
+    "ad": "Hypovolemic shock",
+    "tr": "Hipovolemik Şok",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "hipovolemik şok sıvı kaybı kanama dehidrasyon"
+  },
+  {
+    "kod": "R57.8",
+    "ad": "Other shock",
+    "tr": "Diğer Şok (Nörojenik/Anafilaktik)",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "nörojenik şok anafilaktik şok diğer"
+  },
+  {
+    "kod": "R57.9",
+    "ad": "Shock, unspecified",
+    "tr": "Şok",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "şok hipotansiyon perfüzyon bozukluğu"
+  },
+  {
+    "kod": "R58",
+    "ad": "Hemorrhage, not elsewhere classified",
+    "tr": "Kanama",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "kanama hemoraji"
+  },
+  {
+    "kod": "G00.9",
+    "ad": "Bacterial meningitis, unspecified",
+    "tr": "Bakteriyel Menenjit",
+    "kategori": "Nöroloji",
+    "anahtar": "menenjit bakteriyel beyin zarı iltihabı ense sertliği ateş purpura"
+  },
+  {
+    "kod": "G03.9",
+    "ad": "Meningitis, unspecified",
+    "tr": "Menenjit",
+    "kategori": "Nöroloji",
+    "anahtar": "menenjit beyin zarı iltihabı ense sertliği ateş baş ağrısı"
+  },
+  {
+    "kod": "G04.90",
+    "ad": "Encephalitis and encephalomyelitis, unspecified",
+    "tr": "Ensefalit",
+    "kategori": "Nöroloji",
+    "anahtar": "ensefalit beyin iltihabı ateş bilinç değişikliği"
+  },
+  {
+    "kod": "G41.0",
+    "ad": "Grand mal status epilepticus",
+    "tr": "Grand Mal Status Epileptikus",
+    "kategori": "Nöroloji",
+    "anahtar": "status epileptikus grand mal tonik klonik sürekli nöbet"
+  },
+  {
+    "kod": "G41.9",
+    "ad": "Status epilepticus, unspecified",
+    "tr": "Status Epileptikus",
+    "kategori": "Nöroloji",
+    "anahtar": "status epileptikus sürekli nöbet 5dk benzodiazepin"
+  },
+  {
+    "kod": "G43.909",
+    "ad": "Migraine, unspecified",
+    "tr": "Migren",
+    "kategori": "Nöroloji",
+    "anahtar": "migren hemikrani fotofobi fonofobi aura baş ağrısı"
+  },
+  {
+    "kod": "G45.9",
+    "ad": "Transient ischemic attack (TIA)",
+    "tr": "Geçici İskemik Atak (TİA)",
+    "kategori": "Nöroloji",
+    "anahtar": "tia geçici iskemik atak mini felç geçici nörolojik semptom"
+  },
+  {
+    "kod": "G61.0",
+    "ad": "Guillain-Barre syndrome",
+    "tr": "Guillain-Barré Sendromu",
+    "kategori": "Nöroloji",
+    "anahtar": "guillain barre gbs yükselen paralizi kas güçsüzlüğü"
+  },
+  {
+    "kod": "G93.1",
+    "ad": "Anoxic brain damage",
+    "tr": "Anoksik Beyin Hasarı",
+    "kategori": "Nöroloji",
+    "anahtar": "anoksik beyin hasarı oksijen yoksunluğu post resüsitasyon"
+  },
+  {
+    "kod": "G93.40",
+    "ad": "Encephalopathy, unspecified",
+    "tr": "Ensefalopati",
+    "kategori": "Nöroloji",
+    "anahtar": "ensefalopati beyin disfonksiyon konfüzyon deliryum"
+  },
+  {
+    "kod": "G93.6",
+    "ad": "Cerebral edema",
+    "tr": "Serebral Ödem",
+    "kategori": "Nöroloji",
+    "anahtar": "serebral ödem beyin ödemi kafa içi basınç artışı herniasyon"
+  },
+  {
+    "kod": "K22.3",
+    "ad": "Perforation of esophagus",
+    "tr": "Özofagus Perforasyonu",
+    "kategori": "Gastrointestinal",
+    "anahtar": "özofagus perforasyonu yemek borusu delinme boerhaave"
+  },
+  {
+    "kod": "K25.0",
+    "ad": "Acute gastric ulcer with hemorrhage",
+    "tr": "Kanayan Akut Gastrik Ülser",
+    "kategori": "Gastrointestinal",
+    "anahtar": "gastrik ülser kanama mide ülseri üst gis kanama hematemez"
+  },
+  {
+    "kod": "K25.1",
+    "ad": "Acute gastric ulcer with perforation",
+    "tr": "Perfore Gastrik Ülser",
+    "kategori": "Gastrointestinal",
+    "anahtar": "perfore mide ülseri perforasyon peritonit akut karın"
+  },
+  {
+    "kod": "K29.01",
+    "ad": "Acute gastritis with bleeding",
+    "tr": "Akut Gastrit ile Kanama",
+    "kategori": "Gastrointestinal",
+    "anahtar": "akut gastrit kanama mide iltihabı"
+  },
+  {
+    "kod": "K35.80",
+    "ad": "Acute appendicitis, unspecified",
+    "tr": "Akut Apandisit",
+    "kategori": "Gastrointestinal",
+    "anahtar": "akut apandisit appendisit sağ alt kadran ağrısı mcburney"
+  },
+  {
+    "kod": "K56.609",
+    "ad": "Unspecified intestinal obstruction",
+    "tr": "İntestinal Obstrüksiyon",
+    "kategori": "Gastrointestinal",
+    "anahtar": "intestinal obstrüksiyon barsak tıkanıklığı ileus"
+  },
+  {
+    "kod": "K63.1",
+    "ad": "Perforation of intestine",
+    "tr": "Barsak Perforasyonu",
+    "kategori": "Gastrointestinal",
+    "anahtar": "barsak perforasyonu delinme peritonit pnömoperiton"
+  },
+  {
+    "kod": "K65.0",
+    "ad": "Acute peritonitis",
+    "tr": "Akut Peritonit",
+    "kategori": "Gastrointestinal",
+    "anahtar": "peritonit batın zarı iltihabı akut karın defans rijidite"
+  },
+  {
+    "kod": "K72.00",
+    "ad": "Acute hepatic failure without coma",
+    "tr": "Akut Karaciğer Yetmezliği",
+    "kategori": "Gastrointestinal",
+    "anahtar": "akut karaciğer yetmezliği sarılık ensefalopati"
+  },
+  {
+    "kod": "K85.00",
+    "ad": "Acute pancreatitis without necrosis",
+    "tr": "Akut Pankreatit",
+    "kategori": "Gastrointestinal",
+    "anahtar": "akut pankreatit pankreas iltihabı epigastrik ağrı amilaz lipaz"
+  },
+  {
+    "kod": "K85.90",
+    "ad": "Acute pancreatitis, unspecified",
+    "tr": "Akut Pankreatit, Belirtilmemiş",
+    "kategori": "Gastrointestinal",
+    "anahtar": "pankreatit pankreas ağrısı amilaz"
+  },
+  {
+    "kod": "K92.0",
+    "ad": "Hematemesis",
+    "tr": "Hematemez",
+    "kategori": "Gastrointestinal",
+    "anahtar": "hematemez kan kusmak üst gis kanama kanlı kusma"
+  },
+  {
+    "kod": "K92.1",
+    "ad": "Melena",
+    "tr": "Melena",
+    "kategori": "Gastrointestinal",
+    "anahtar": "melena siyah dışkı katran rengi alt kanama gis"
+  },
+  {
+    "kod": "K92.2",
+    "ad": "GI hemorrhage, unspecified",
+    "tr": "Gastrointestinal Kanama",
+    "kategori": "Gastrointestinal",
+    "anahtar": "gis kanaması gastrointestinal kanama"
+  },
+  {
+    "kod": "A02.0",
+    "ad": "Salmonella enteritis",
+    "tr": "Salmonella Enteriti",
+    "kategori": "Enfeksiyon",
+    "anahtar": "salmonella enterit gıda zehirlenmesi ishal"
+  },
+  {
+    "kod": "A09",
+    "ad": "Infectious gastroenteritis",
+    "tr": "İnfeksiyöz Gastroenterit",
+    "kategori": "Enfeksiyon",
+    "anahtar": "gastroenterit ishal kusma mide barsak enfeksiyonu"
+  },
+  {
+    "kod": "A39.0",
+    "ad": "Meningococcal meningitis",
+    "tr": "Meningokokal Menenjit",
+    "kategori": "Enfeksiyon",
+    "anahtar": "meningokokal menenjit purpura peteşi ense sertliği"
+  },
+  {
+    "kod": "A40.9",
+    "ad": "Streptococcal sepsis",
+    "tr": "Streptokoksik Sepsis",
+    "kategori": "Enfeksiyon",
+    "anahtar": "streptokoksik sepsis kan zehirlenmesi streptococcus"
+  },
+  {
+    "kod": "A41.9",
+    "ad": "Sepsis, unspecified organism",
+    "tr": "Sepsis",
+    "kategori": "Enfeksiyon",
+    "anahtar": "sepsis kan zehirlenmesi bacteremi ateş hipotansiyon organ yetmezliği sirs"
+  },
+  {
+    "kod": "A48.3",
+    "ad": "Toxic shock syndrome",
+    "tr": "Toksik Şok Sendromu",
+    "kategori": "Enfeksiyon",
+    "anahtar": "toksik şok sendromu stafilokokal streptokoksik"
+  },
+  {
+    "kod": "B97.29",
+    "ad": "Other coronavirus",
+    "tr": "Koronavirüs Enfeksiyonu",
+    "kategori": "Enfeksiyon",
+    "anahtar": "koronavirüs covid sars-cov solunum"
+  },
+  {
+    "kod": "E10.10",
+    "ad": "Type 1 DM with ketoacidosis without coma",
+    "tr": "Tip 1 DM Ketoasidoz (Komasız)",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "tip 1 diyabet ketoasidoz dka keton asidoz"
+  },
+  {
+    "kod": "E10.11",
+    "ad": "Type 1 DM with ketoacidosis with coma",
+    "tr": "Tip 1 DM Ketoasidoz Koması",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "tip 1 diyabet ketoasidoz koma dka"
+  },
+  {
+    "kod": "E10.641",
+    "ad": "Type 1 DM with hypoglycemia with coma",
+    "tr": "Tip 1 DM Hipoglisemi Koması",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "tip 1 diyabet hipoglisemi koma şeker düşüklüğü"
+  },
+  {
+    "kod": "E11.10",
+    "ad": "Type 2 DM with ketoacidosis without coma",
+    "tr": "Tip 2 DM Ketoasidoz",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "tip 2 diyabet ketoasidoz dka"
+  },
+  {
+    "kod": "E11.641",
+    "ad": "Type 2 DM with hypoglycemia with coma",
+    "tr": "Tip 2 DM Hipoglisemi Koması",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "tip 2 diyabet hipoglisemi koma"
+  },
+  {
+    "kod": "E11.65",
+    "ad": "Type 2 DM with hyperglycemia",
+    "tr": "Tip 2 DM Hiperglisemi",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "tip 2 diyabet hiperglisemi yüksek şeker"
+  },
+  {
+    "kod": "E11.69",
+    "ad": "Type 2 DM with hyperosmolar state",
+    "tr": "Tip 2 DM Hiperosmolar Durum (HHS)",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "hiperosmolar hiperglisemik durum hhs hhns diyabet"
+  },
+  {
+    "kod": "E16.2",
+    "ad": "Hypoglycemia, unspecified",
+    "tr": "Hipoglisemi",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "hipoglisemi şeker düşüklüğü glukoz düşük diyabet bilinç"
+  },
+  {
+    "kod": "E27.40",
+    "ad": "Adrenocortical insufficiency (Adrenal crisis)",
+    "tr": "Adrenal Kriz",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "adrenal kriz böbreküstü bezi yetmezliği addison kortizol"
+  },
+  {
+    "kod": "E05.91",
+    "ad": "Thyrotoxicosis with thyroid storm",
+    "tr": "Tiroid Fırtınası",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "tiroid fırtınası tirotoksikoz tirotoksik kriz hipertiroidi"
+  },
+  {
+    "kod": "E86.0",
+    "ad": "Dehydration",
+    "tr": "Dehidrasyon",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "dehidrasyon sıvı kaybı susuzluk"
+  },
+  {
+    "kod": "E87.0",
+    "ad": "Hypernatremia",
+    "tr": "Hipernatremi",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "hipernatremi sodyum yüksek na"
+  },
+  {
+    "kod": "E87.1",
+    "ad": "Hyponatremia",
+    "tr": "Hiponatremi",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "hiponatremi sodyum düşük na elektrolit"
+  },
+  {
+    "kod": "E87.20",
+    "ad": "Acidosis, unspecified",
+    "tr": "Asidoz",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "asidoz metabolik asidemi ph düşük"
+  },
+  {
+    "kod": "E87.3",
+    "ad": "Alkalosis",
+    "tr": "Alkaloz",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "alkaloz metabolik ph yüksek"
+  },
+  {
+    "kod": "E87.5",
+    "ad": "Hyperkalemia",
+    "tr": "Hiperkalemi",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "hiperkalemi potasyum yüksek k+ ekg değişiklik"
+  },
+  {
+    "kod": "E87.6",
+    "ad": "Hypokalemia",
+    "tr": "Hipokalemi",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "hipokalemi potasyum düşük k+ elektrolit"
+  },
+  {
+    "kod": "N10",
+    "ad": "Acute pyelonephritis",
+    "tr": "Akut Piyelonefrit",
+    "kategori": "Ürogenital",
+    "anahtar": "piyelonefrit böbrek iltihabı idrar yolu enfeksiyonu ateş bel ağrısı"
+  },
+  {
+    "kod": "N17.9",
+    "ad": "Acute kidney failure, unspecified",
+    "tr": "Akut Böbrek Yetmezliği",
+    "kategori": "Ürogenital",
+    "anahtar": "akut böbrek yetmezliği akı abf aki kreatinin azalmış idrar"
+  },
+  {
+    "kod": "N20.0",
+    "ad": "Calculus of kidney",
+    "tr": "Böbrek Taşı",
+    "kategori": "Ürogenital",
+    "anahtar": "böbrek taşı nefrolitiyazis kolik"
+  },
+  {
+    "kod": "N20.1",
+    "ad": "Calculus of ureter",
+    "tr": "Üreter Taşı",
+    "kategori": "Ürogenital",
+    "anahtar": "üreter taşı üreterolitiyazis kolik"
+  },
+  {
+    "kod": "N20.9",
+    "ad": "Urinary calculus (Renal colic)",
+    "tr": "Renal Kolik",
+    "kategori": "Ürogenital",
+    "anahtar": "renal kolik böbrek koligi üriner taş"
+  },
+  {
+    "kod": "N39.0",
+    "ad": "Urinary tract infection",
+    "tr": "İdrar Yolu Enfeksiyonu",
+    "kategori": "Ürogenital",
+    "anahtar": "idrar yolu enfeksiyonu iye uti sistit piyelonefrit yanma"
+  },
+  {
+    "kod": "N44.00",
+    "ad": "Torsion of testis, unspecified",
+    "tr": "Testis Torsiyonu",
+    "kategori": "Ürogenital",
+    "anahtar": "testis torsiyonu ağrı skrotum"
+  },
+  {
+    "kod": "O00.90",
+    "ad": "Unspecified ectopic pregnancy",
+    "tr": "Ektopik Gebelik",
+    "kategori": "Obstetrik",
+    "anahtar": "ektopik gebelik dış gebelik tüp gebelik karın ağrısı"
+  },
+  {
+    "kod": "O14.10",
+    "ad": "Severe pre-eclampsia",
+    "tr": "Ağır Preeklampsi",
+    "kategori": "Obstetrik",
+    "anahtar": "preeklampsi gebelik hipertansiyon proteinüri ağır"
+  },
+  {
+    "kod": "O15.00",
+    "ad": "Eclampsia in pregnancy",
+    "tr": "Eklampsi",
+    "kategori": "Obstetrik",
+    "anahtar": "eklampsi gebelik nöbet konvülsiyon magnezyum"
+  },
+  {
+    "kod": "O20.0",
+    "ad": "Threatened abortion",
+    "tr": "Tehdid Edilen Düşük",
+    "kategori": "Obstetrik",
+    "anahtar": "tehdit düşük vajinal kanama gebelik"
+  },
+  {
+    "kod": "O72.1",
+    "ad": "Other immediate postpartum hemorrhage",
+    "tr": "Postpartum Kanama",
+    "kategori": "Obstetrik",
+    "anahtar": "postpartum kanama doğum sonrası kanama pph uterus atoni"
+  },
+  {
+    "kod": "S02.91XA",
+    "ad": "Fracture of skull, initial encounter",
+    "tr": "Kafatası Kırığı",
+    "kategori": "Travma",
+    "anahtar": "kafatası kırığı kafa travması kbb baş"
+  },
+  {
+    "kod": "S06.0X0A",
+    "ad": "Concussion without loss of consciousness",
+    "tr": "Beyin Sarsıntısı (Bilinç Kaybı Yok)",
+    "kategori": "Travma",
+    "anahtar": "beyin sarsıntısı konkusyon baş travması bilinç kaybı olmadan"
+  },
+  {
+    "kod": "S06.0X1A",
+    "ad": "Concussion with loss of consciousness ≤30min",
+    "tr": "Beyin Sarsıntısı (Bilinç Kaybı ≤30dk)",
+    "kategori": "Travma",
+    "anahtar": "beyin sarsıntısı konkusyon bilinç kaybı 30 dakika"
+  },
+  {
+    "kod": "S06.4X0A",
+    "ad": "Epidural hemorrhage",
+    "tr": "Epidural Kanama",
+    "kategori": "Travma",
+    "anahtar": "epidural kanama hematom kafa travması bilinç açıklık intervali"
+  },
+  {
+    "kod": "S06.5X0A",
+    "ad": "Traumatic subdural hemorrhage",
+    "tr": "Subdural Kanama",
+    "kategori": "Travma",
+    "anahtar": "subdural kanama hematom travmatik kafa bilinç"
+  },
+  {
+    "kod": "S06.6X0A",
+    "ad": "Traumatic subarachnoid hemorrhage",
+    "tr": "Travmatik Subaraknoid Kanama",
+    "kategori": "Travma",
+    "anahtar": "travmatik subaraknoid kanama sah kafa travması"
+  },
+  {
+    "kod": "S22.49XA",
+    "ad": "Multiple rib fractures",
+    "tr": "Çok Sayıda Kaburga Kırığı",
+    "kategori": "Travma",
+    "anahtar": "kaburga kırığı çok sayıda flail chest paradoksal solunum"
+  },
+  {
+    "kod": "S27.0XXA",
+    "ad": "Traumatic pneumothorax",
+    "tr": "Travmatik Pnömotoraks",
+    "kategori": "Travma",
+    "anahtar": "travmatik pnömotoraks göğüs travması akciğer çökmesi"
+  },
+  {
+    "kod": "S27.2XXA",
+    "ad": "Traumatic hemothorax",
+    "tr": "Hemotoraks",
+    "kategori": "Travma",
+    "anahtar": "hemotoraks göğüs travması kan plevra"
+  },
+  {
+    "kod": "S36.00XA",
+    "ad": "Unspecified injury of spleen",
+    "tr": "Dalak Yaralanması",
+    "kategori": "Travma",
+    "anahtar": "dalak yaralanması splenik laserasyon sol üst kadran"
+  },
+  {
+    "kod": "S36.115A",
+    "ad": "Moderate laceration of liver",
+    "tr": "Karaciğer Laserasyonu",
+    "kategori": "Travma",
+    "anahtar": "karaciğer laserasyonu hepatik travma sağ üst kadran"
+  },
+  {
+    "kod": "S72.009A",
+    "ad": "Hip fracture",
+    "tr": "Kalça Kırığı",
+    "kategori": "Travma",
+    "anahtar": "kalça kırığı femur boyun yaşlı düşme"
+  },
+  {
+    "kod": "T30.0",
+    "ad": "Burn, unspecified degree",
+    "tr": "Yanık",
+    "kategori": "Travma/Çevre",
+    "anahtar": "yanık termal hasar cilt bölgesi"
+  },
+  {
+    "kod": "T31.0",
+    "ad": "Burns < 10% body surface",
+    "tr": "Vücut Yüzeyinin %10'undan Azı Yanık",
+    "kategori": "Travma/Çevre",
+    "anahtar": "yanık tbsa %10 az küçük"
+  },
+  {
+    "kod": "T67.01XA",
+    "ad": "Heatstroke and sunstroke",
+    "tr": "Sıcak Çarpması",
+    "kategori": "Travma/Çevre",
+    "anahtar": "sıcak çarpması heat stroke güneş hipertermi"
+  },
+  {
+    "kod": "T68.XXXA",
+    "ad": "Hypothermia",
+    "tr": "Hipotermi",
+    "kategori": "Travma/Çevre",
+    "anahtar": "hipotermi soğuk maruziyeti düşük vücut ısısı"
+  },
+  {
+    "kod": "T75.1XXA",
+    "ad": "Drowning and submersion",
+    "tr": "Boğulma",
+    "kategori": "Travma/Çevre",
+    "anahtar": "boğulma drowning su altında near-drowning"
+  },
+  {
+    "kod": "T39.1X1A",
+    "ad": "Poisoning by acetaminophen/paracetamol",
+    "tr": "Parasetamol Zehirlenmesi",
+    "kategori": "Zehirlenme",
+    "anahtar": "parasetamol asetaminofen zehirlenme overdoz panadol"
+  },
+  {
+    "kod": "T40.1X1A",
+    "ad": "Poisoning by heroin",
+    "tr": "Eroin Zehirlenmesi",
+    "kategori": "Zehirlenme",
+    "anahtar": "eroin zehirlenmesi opioid overdoz nalokson"
+  },
+  {
+    "kod": "T40.2X1A",
+    "ad": "Poisoning by other opioids",
+    "tr": "Opioid Zehirlenmesi",
+    "kategori": "Zehirlenme",
+    "anahtar": "opioid fentanil morfin zehirlenmesi nalokson solunum depresyonu"
+  },
+  {
+    "kod": "T40.5X1A",
+    "ad": "Poisoning by cocaine",
+    "tr": "Kokain Zehirlenmesi",
+    "kategori": "Zehirlenme",
+    "anahtar": "kokain zehirlenmesi stimülan taşikardi"
+  },
+  {
+    "kod": "T42.4X1A",
+    "ad": "Poisoning by benzodiazepines",
+    "tr": "Benzodiazepin Zehirlenmesi",
+    "kategori": "Zehirlenme",
+    "anahtar": "benzodiazepin zehirlenmesi flumazenil sedatif"
+  },
+  {
+    "kod": "T51.0X1A",
+    "ad": "Toxic effect of ethanol",
+    "tr": "Alkol Zehirlenmesi",
+    "kategori": "Zehirlenme",
+    "anahtar": "alkol zehirlenmesi etanol intoksikasyon"
+  },
+  {
+    "kod": "T58.91XA",
+    "ad": "Carbon monoxide poisoning",
+    "tr": "Karbonmonoksit Zehirlenmesi",
+    "kategori": "Zehirlenme",
+    "anahtar": "karbonmonoksit zehirlenmesi co zehirlenmesi baca gazı"
+  },
+  {
+    "kod": "T78.2XXA",
+    "ad": "Anaphylactic shock, unspecified",
+    "tr": "Anafilaktik Şok",
+    "kategori": "Zehirlenme",
+    "anahtar": "anafilaksi anafilaktik şok alerji epinefrin adrenalin ilaç gıda"
+  },
+  {
+    "kod": "T88.6XXA",
+    "ad": "Anaphylactic shock due to correct medication",
+    "tr": "İlaca Bağlı Anafilaktik Şok",
+    "kategori": "Zehirlenme",
+    "anahtar": "ilaç reaksiyonu anafilaksi anafilaktik şok"
+  },
+  {
+    "kod": "F10.129",
+    "ad": "Alcohol abuse with intoxication",
+    "tr": "Alkol Entoksikasyonu",
+    "kategori": "Psikiyatri",
+    "anahtar": "alkol entoksikasyonu sarhoşluk bilinç değişikliği"
+  },
+  {
+    "kod": "F10.231",
+    "ad": "Alcohol dependence with withdrawal delirium (DT)",
+    "tr": "Deliryum Tremens",
+    "kategori": "Psikiyatri",
+    "anahtar": "deliryum tremens dt yoksunluk alkol tremor halüsinasyon"
+  },
+  {
+    "kod": "F11.129",
+    "ad": "Opioid abuse with intoxication",
+    "tr": "Opioid Entoksikasyonu",
+    "kategori": "Psikiyatri",
+    "anahtar": "opioid bağımlılık entoksikasyon"
+  },
+  {
+    "kod": "F20.9",
+    "ad": "Schizophrenia, unspecified",
+    "tr": "Şizofreni",
+    "kategori": "Psikiyatri",
+    "anahtar": "şizofreni psikoz halüsinasyon"
+  },
+  {
+    "kod": "F23",
+    "ad": "Acute and transient psychotic disorder",
+    "tr": "Akut Psikoz",
+    "kategori": "Psikiyatri",
+    "anahtar": "akut psikoz psikotik bozukluk halüsinasyon ajitasyon"
+  },
+  {
+    "kod": "F41.0",
+    "ad": "Panic disorder",
+    "tr": "Panik Bozukluğu",
+    "kategori": "Psikiyatri",
+    "anahtar": "panik atak bozukluğu çarpıntı nefes darlığı anksiyete"
+  },
+  {
+    "kod": "F41.1",
+    "ad": "Generalized anxiety disorder",
+    "tr": "Genel Anksiyete Bozukluğu",
+    "kategori": "Psikiyatri",
+    "anahtar": "anksiyete bozukluğu kaygı genel"
+  },
+  {
+    "kod": "J01.90",
+    "ad": "Acute sinusitis, unspecified",
+    "tr": "Akut Sinüzit",
+    "kategori": "Solunum",
+    "anahtar": "sinüzit sinüs iltihabı yüz ağrısı burun akıntısı"
+  },
+  {
+    "kod": "J02.9",
+    "ad": "Acute pharyngitis, unspecified",
+    "tr": "Akut Farenjit",
+    "kategori": "Solunum",
+    "anahtar": "farenjit boğaz iltihabı boğaz ağrısı"
+  },
+  {
+    "kod": "J03.90",
+    "ad": "Acute tonsillitis, unspecified",
+    "tr": "Akut Tonsillitis",
+    "kategori": "Solunum",
+    "anahtar": "tonsillitis bademcik iltihabı boğaz ağrısı"
+  },
+  {
+    "kod": "J04.0",
+    "ad": "Acute laryngitis",
+    "tr": "Akut Larenjit",
+    "kategori": "Solunum",
+    "anahtar": "larenjit larinks ses kısıklığı boğaz"
+  },
+  {
+    "kod": "J12.9",
+    "ad": "Viral pneumonia, unspecified",
+    "tr": "Viral Pnömoni",
+    "kategori": "Solunum",
+    "anahtar": "viral pnömoni virüs zatürre"
+  },
+  {
+    "kod": "G50.0",
+    "ad": "Trigeminal neuralgia",
+    "tr": "Trigeminal Nevralji",
+    "kategori": "Nöroloji",
+    "anahtar": "trigeminal nevralji yüz ağrısı elektrik çarpması"
+  },
+  {
+    "kod": "K40.90",
+    "ad": "Inguinal hernia",
+    "tr": "İnguinal Herni",
+    "kategori": "Gastrointestinal",
+    "anahtar": "kasık fıtığı inguinal herni inkarserasyonu"
+  },
+  {
+    "kod": "K57.32",
+    "ad": "Diverticulitis of large intestine",
+    "tr": "Divertikülitis",
+    "kategori": "Gastrointestinal",
+    "anahtar": "divertikülitis divertikül iltihap sol alt kadran"
+  },
+  {
+    "kod": "B00.1",
+    "ad": "Herpesviral vesicular dermatitis",
+    "tr": "Herpes Dermatiti",
+    "kategori": "Enfeksiyon",
+    "anahtar": "herpes simplex uçuk veziküler deri"
+  },
+  {
+    "kod": "B02.9",
+    "ad": "Zoster without complications",
+    "tr": "Herpes Zoster",
+    "kategori": "Enfeksiyon",
+    "anahtar": "herpes zoster zona shingles veziküler döküntü"
+  },
+  {
+    "kod": "A08.4",
+    "ad": "Viral intestinal infection",
+    "tr": "Viral Barsak Enfeksiyonu",
+    "kategori": "Enfeksiyon",
+    "anahtar": "viral barsak enfeksiyon ishal kusma"
+  },
+  {
+    "kod": "J04.1",
+    "ad": "Acute tracheitis",
+    "tr": "Akut Trakeitis",
+    "kategori": "Solunum",
+    "anahtar": "trakeitis trakea iltihabı öksürük stridor"
+  },
+  {
+    "kod": "J85.2",
+    "ad": "Abscess of lung",
+    "tr": "Akciğer Absesi",
+    "kategori": "Solunum",
+    "anahtar": "akciğer absesi pulmoner apse ateş balgam"
+  },
+  {
+    "kod": "R06.03",
+    "ad": "Orthopnea",
+    "tr": "Ortopne",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "ortopne yatar pozisyonda nefes darlığı kalp yetmezliği"
+  },
+  {
+    "kod": "R06.3",
+    "ad": "Periodic breathing (Cheyne-Stokes)",
+    "tr": "Cheyne-Stokes Solunumu",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "cheyne stokes periyodik solunum"
+  },
+  {
+    "kod": "R53.1",
+    "ad": "Weakness",
+    "tr": "Halsizlik/Güçsüzlük",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "halsizlik güçsüzlük yorgunluk weakness"
+  },
+  {
+    "kod": "R68.83",
+    "ad": "Chills without fever",
+    "tr": "Titreme (Ateşsiz)",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "titreme üşüme rigors chills"
+  },
+  {
+    "kod": "R07.81",
+    "ad": "Pleurodynia",
+    "tr": "Plörodini",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "plörodini plevritik ağrı solunumla artan"
+  },
+  {
+    "kod": "R07.82",
+    "ad": "Intercostal pain",
+    "tr": "İnterkoastal Ağrı",
+    "kategori": "Semptom/Bulgu",
+    "anahtar": "interkoastal ağrı kaburga arası"
+  },
+  {
+    "kod": "N94.89",
+    "ad": "Pelvic pain",
+    "tr": "Pelvik Ağrı",
+    "kategori": "Ürogenital",
+    "anahtar": "pelvik ağrı alt karın ağrısı kadın"
+  },
+  {
+    "kod": "T80.29XA",
+    "ad": "Infection following infusion",
+    "tr": "İnfüzyon Sonrası Enfeksiyon",
+    "kategori": "Zehirlenme",
+    "anahtar": "infüzyon komplikasyon enfeksiyon iv"
+  },
+  {
+    "kod": "T81.40XA",
+    "ad": "Infection following a procedure",
+    "tr": "Prosedür Sonrası Enfeksiyon",
+    "kategori": "Zehirlenme",
+    "anahtar": "prosedür sonrası enfeksiyon komplikasyon cerrahi"
+  },
+  {
+    "kod": "I24.1",
+    "ad": "Postmyocardial infarction syndrome",
+    "tr": "Post-MI Sendromu (Dressler)",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "dressler sendromu post mi perikardit ateş"
+  },
+  {
+    "kod": "I25.10",
+    "ad": "Atherosclerotic heart disease",
+    "tr": "Aterosklerotik Kalp Hastalığı",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "ateroskleroz kalp hastalığı koroner damar"
+  },
+  {
+    "kod": "I42.0",
+    "ad": "Dilated cardiomyopathy",
+    "tr": "Dilate Kardiyomiyopati",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "dilate kardiyomiyopati ejeksiyon fraksiyonu düşük"
+  },
+  {
+    "kod": "I42.1",
+    "ad": "Obstructive hypertrophic cardiomyopathy",
+    "tr": "Hipertrofik Obstrüktif Kardiyomiyopati (HOCM)",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "hocm hipertrofik obstrüktif kardiyomiyopati"
+  },
+  {
+    "kod": "I48.11",
+    "ad": "Longstanding persistent atrial fibrillation",
+    "tr": "Uzun Süreli Persistan Atriyal Fibrilasyon",
+    "kategori": "Kardiyovasküler",
+    "anahtar": "persistan atriyal fibrilasyon uzun süreli af"
+  },
+  {
+    "kod": "G40.901",
+    "ad": "Epilepsy with status epilepticus",
+    "tr": "Epilepsi Status Epileptikus ile",
+    "kategori": "Nöroloji",
+    "anahtar": "epilepsi status epileptikus nöbet"
+  },
+  {
+    "kod": "G40.909",
+    "ad": "Epilepsy, unspecified",
+    "tr": "Epilepsi",
+    "kategori": "Nöroloji",
+    "anahtar": "epilepsi sara nöbet bilinç kaybı"
+  },
+  {
+    "kod": "G44.009",
+    "ad": "Cluster headache syndrome",
+    "tr": "Küme Baş Ağrısı",
+    "kategori": "Nöroloji",
+    "anahtar": "küme baş ağrısı cluster headache göz ağrısı"
+  },
+  {
+    "kod": "K26.0",
+    "ad": "Acute duodenal ulcer with hemorrhage",
+    "tr": "Kanayan Duodenal Ülser",
+    "kategori": "Gastrointestinal",
+    "anahtar": "duodenal ülser kanama on iki parmak barsak üst gis"
+  },
+  {
+    "kod": "K26.1",
+    "ad": "Acute duodenal ulcer with perforation",
+    "tr": "Perfore Duodenal Ülser",
+    "kategori": "Gastrointestinal",
+    "anahtar": "perfore duodenal ülser delinme peritonit"
+  },
+  {
+    "kod": "K29.00",
+    "ad": "Acute gastritis without bleeding",
+    "tr": "Akut Gastrit",
+    "kategori": "Gastrointestinal",
+    "anahtar": "akut gastrit mide iltihabı epigastrik ağrı"
+  },
+  {
+    "kod": "B34.9",
+    "ad": "Viral infection, unspecified",
+    "tr": "Viral Enfeksiyon",
+    "kategori": "Enfeksiyon",
+    "anahtar": "viral enfeksiyon virüs"
+  },
+  {
+    "kod": "B05.9",
+    "ad": "Measles without complication",
+    "tr": "Kızamık",
+    "kategori": "Enfeksiyon",
+    "anahtar": "kızamık measles döküntü ateş koplik"
+  },
+  {
+    "kod": "E87.70",
+    "ad": "Fluid overload, unspecified",
+    "tr": "Sıvı Aşırı Yükü",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "sıvı aşırı yükü volüm overload ödem"
+  },
+  {
+    "kod": "O00.101",
+    "ad": "Left tubal pregnancy",
+    "tr": "Sol Tüp Gebeliği",
+    "kategori": "Obstetrik",
+    "anahtar": "tüp gebeliği sol ektopik gebelik"
+  },
+  {
+    "kod": "O14.00",
+    "ad": "Mild to moderate pre-eclampsia",
+    "tr": "Hafif-Orta Preeklampsi",
+    "kategori": "Obstetrik",
+    "anahtar": "preeklampsi hafif orta gebelik hipertansiyon"
+  },
+  {
+    "kod": "S22.39XA",
+    "ad": "Fracture of one rib",
+    "tr": "Tek Kaburga Kırığı",
+    "kategori": "Travma",
+    "anahtar": "kaburga kırığı tek göğüs travması"
+  },
+  {
+    "kod": "S06.2X0A",
+    "ad": "Diffuse traumatic brain injury",
+    "tr": "Diffüz Travmatik Beyin Hasarı",
+    "kategori": "Travma",
+    "anahtar": "diffüz travmatik beyin hasarı kafa travması"
+  },
+  {
+    "kod": "S06.300A",
+    "ad": "Focal traumatic brain injury",
+    "tr": "Fokal Travmatik Beyin Hasarı",
+    "kategori": "Travma",
+    "anahtar": "fokal travmatik beyin hasarı kafa travması"
+  },
+  {
+    "kod": "T33.90XA",
+    "ad": "Frostbite, unspecified site",
+    "tr": "Donma Yaralanması (Frostbite)",
+    "kategori": "Travma/Çevre",
+    "anahtar": "donma yaralanması frostbite soğuk"
+  },
+  {
+    "kod": "T36.0X1A",
+    "ad": "Poisoning by penicillins",
+    "tr": "Penisilin Zehirlenmesi",
+    "kategori": "Zehirlenme",
+    "anahtar": "penisilin zehirlenme antibiyotik"
+  },
+  {
+    "kod": "T43.201A",
+    "ad": "Poisoning by antidepressants",
+    "tr": "Antidepresan Zehirlenmesi",
+    "kategori": "Zehirlenme",
+    "anahtar": "antidepresan zehirlenme overdoz tca ssri"
+  },
+  {
+    "kod": "F10.239",
+    "ad": "Alcohol dependence with withdrawal",
+    "tr": "Alkol Yoksunluğu",
+    "kategori": "Psikiyatri",
+    "anahtar": "alkol yoksunluk tremor ajitasyon"
+  },
+  {
+    "kod": "F19.129",
+    "ad": "Other psychoactive substance abuse",
+    "tr": "Diğer Psikotrop Madde Entoksikasyonu",
+    "kategori": "Psikiyatri",
+    "anahtar": "psikotrop madde uyuşturucu entoksikasyon"
+  },
+  {
+    "kod": "F31.9",
+    "ad": "Bipolar disorder, unspecified",
+    "tr": "Bipolar Bozukluk",
+    "kategori": "Psikiyatri",
+    "anahtar": "bipolar bozukluk manik depresif"
+  },
+  {
+    "kod": "F32.9",
+    "ad": "Major depressive disorder",
+    "tr": "Major Depresif Bozukluk",
+    "kategori": "Psikiyatri",
+    "anahtar": "major depresyon depresif bozukluk"
+  },
+  {
+    "kod": "F60.3",
+    "ad": "Borderline personality disorder",
+    "tr": "Borderline Kişilik Bozukluğu",
+    "kategori": "Psikiyatri",
+    "anahtar": "borderline kişilik bozukluğu kendine zarar"
+  },
+  {
+    "kod": "E05.90",
+    "ad": "Thyrotoxicosis without thyroid storm",
+    "tr": "Tirotoksikoz",
+    "kategori": "Endokrin/Metabolik",
+    "anahtar": "tirotoksikoz hipertiroidi graves basedow"
+  }
+]

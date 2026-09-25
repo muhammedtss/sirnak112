@@ -1,0 +1,14 @@
+import { PageShell } from "@/components/layout/PageShell";
+import { AppHeader } from "@/components/layout/AppHeader";
+import { ArrowLeft } from "lucide-react";
+
+export default function YenidoganIlacDozPage() {
+  return (
+    <PageShell>
+      <AppHeader title="Yenidoğan İlaç Doz" back="/ilac-doz" icon={<ArrowLeft style={{ width: 16, height: 16 }} />} />
+      <main className="flex-1 px-4 py-4 max-w-md mx-auto w-full">
+        <p className="text-muted text-sm text-center mt-10">Yenidoğan İlaç Dozları çok yakında...</p>
+      </main>
+    </PageShell>
+  );
+}

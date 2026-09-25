@@ -1,0 +1,638 @@
+{
+  "acil_yardim": {
+    "id": "acil_yardim",
+    "name": "Acil Yardım ve Yoğun Bakım Ambulansı",
+    "ilaclar": [
+      {
+        "id": "1",
+        "name": "Adrenalin amp 1 mg",
+        "gerekliMiktar": "20",
+        "kontroleTabi": false
+      },
+      {
+        "id": "2",
+        "name": "Lidokain %2 amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "3",
+        "name": "Atropin amp 0,5 mg",
+        "gerekliMiktar": "6",
+        "kontroleTabi": false
+      },
+      {
+        "id": "4",
+        "name": "Antihistaminik amp",
+        "gerekliMiktar": "4",
+        "kontroleTabi": false
+      },
+      {
+        "id": "5",
+        "name": "Beta bloker amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "6",
+        "name": "Spazmolitik amp",
+        "gerekliMiktar": "4",
+        "kontroleTabi": false
+      },
+      {
+        "id": "7",
+        "name": "Kalsiyum amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "8",
+        "name": "Kortikosteroid amp (deksametazon) (8mg)",
+        "gerekliMiktar": "4",
+        "kontroleTabi": false
+      },
+      {
+        "id": "9",
+        "name": "Kortikosteroid amp (metilprednizolon) (40mg)",
+        "gerekliMiktar": "6",
+        "kontroleTabi": false
+      },
+      {
+        "id": "10",
+        "name": "Diazepam amp",
+        "gerekliMiktar": "3",
+        "kontroleTabi": true
+      },
+      {
+        "id": "11",
+        "name": "Diltiazem 25 mg amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "12",
+        "name": "Dopamin 200 mg amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "13",
+        "name": "Midazolam 5 mg amp",
+        "gerekliMiktar": "3",
+        "kontroleTabi": false
+      },
+      {
+        "id": "14",
+        "name": "Antiemetik amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": true
+      },
+      {
+        "id": "15",
+        "name": "Antiepileptik amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": true
+      },
+      {
+        "id": "16",
+        "name": "Etil klorür sprey",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "17",
+        "name": "Verapamil amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "18",
+        "name": "Furosemid amp",
+        "gerekliMiktar": "5",
+        "kontroleTabi": false
+      },
+      {
+        "id": "19",
+        "name": "Amiodaron amp",
+        "gerekliMiktar": "6",
+        "kontroleTabi": false
+      },
+      {
+        "id": "20",
+        "name": "Analjezik amp (im/iv)",
+        "gerekliMiktar": "10",
+        "kontroleTabi": true
+      },
+      {
+        "id": "21",
+        "name": "Sodyum Bikarbonat (NaHCO3) amp",
+        "gerekliMiktar": "10",
+        "kontroleTabi": false
+      },
+      {
+        "id": "22",
+        "name": "Nalokson amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "23",
+        "name": "Nebul (salbutamol+ipratropium bromür)",
+        "gerekliMiktar": "4",
+        "kontroleTabi": false
+      },
+      {
+        "id": "24",
+        "name": "Anestezik pomad",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "25",
+        "name": "Antimikrobiyal pomad",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "26",
+        "name": "Proton pompa inhibitörü flakon",
+        "gerekliMiktar": "3",
+        "kontroleTabi": false
+      },
+      {
+        "id": "27",
+        "name": "Asetilsalisilik asit tb (kutu) (öncelikli tercih enterik kaplı olmayan)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "28",
+        "name": "İzosorbid Dinitrat 5 mg tb (kutu)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "29",
+        "name": "Kaptopril tb 25 mg (kutu)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "30",
+        "name": "%20 Dekstroz 150 cc, %10 dekstroz 250 cc, %5 dekstroz 150 cc (her birinden)",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "31",
+        "name": "İzotonik 100 cc, 250 cc, 500 cc (her birinden)",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "32",
+        "name": "Ringer laktat 500 cc",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "33",
+        "name": "Magnezyum sülfat amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "34",
+        "name": "Flumazenil 0,5 mg amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "35",
+        "name": "Parasetamol flakon",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "36",
+        "name": "Adenozin amp",
+        "gerekliMiktar": "10",
+        "kontroleTabi": false
+      },
+      {
+        "id": "37",
+        "name": "Nifedipin 10 mg kapsül (kutu)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "38",
+        "name": "Karbetosin 100 mcg/ml amp/flakon",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "39",
+        "name": "Fentanil amp/flakon",
+        "gerekliMiktar": "1",
+        "kontroleTabi": true
+      }
+    ]
+  },
+  "hasta_nakil": {
+    "id": "hasta_nakil",
+    "name": "Hasta Nakil Ambulansı",
+    "ilaclar": [
+      {
+        "id": "1",
+        "name": "Adrenalin amp 1 mg",
+        "gerekliMiktar": "10",
+        "kontroleTabi": false
+      },
+      {
+        "id": "2",
+        "name": "Lidokain %2 amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "3",
+        "name": "Atropin amp 0,5 mg",
+        "gerekliMiktar": "3",
+        "kontroleTabi": false
+      },
+      {
+        "id": "4",
+        "name": "Antihistaminik amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "6",
+        "name": "Spazmolitik amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "7",
+        "name": "Kalsiyum amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "8",
+        "name": "Kortikosteroid amp (deksametazon) (8mg)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "9",
+        "name": "Kortikosteroid amp (metilprednizolon) (40mg)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "10",
+        "name": "Diazepam amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": true
+      },
+      {
+        "id": "13",
+        "name": "Midazolam 5 mg amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "14",
+        "name": "Antiemetik amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": true
+      },
+      {
+        "id": "20",
+        "name": "Analjezik amp (im/iv)",
+        "gerekliMiktar": "5",
+        "kontroleTabi": true
+      },
+      {
+        "id": "21",
+        "name": "Sodyum Bikarbonat (NaHCO3) amp",
+        "gerekliMiktar": "5",
+        "kontroleTabi": false
+      },
+      {
+        "id": "22",
+        "name": "Nalokson amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "23",
+        "name": "Nebul (salbutamol+ipratropium bromür)",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "24",
+        "name": "Anestezik pomad",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "25",
+        "name": "Antimikrobiyal pomad",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "26",
+        "name": "Proton pompa inhibitörü flakon",
+        "gerekliMiktar": "3",
+        "kontroleTabi": false
+      },
+      {
+        "id": "27",
+        "name": "Asetilsalisilik asit tb (kutu) (öncelikli tercih enterik kaplı olmayan)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "29",
+        "name": "Kaptopril tb 25 mg (kutu)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "30",
+        "name": "%20 Dekstroz 150 cc, %10 dekstroz 250 cc, %5 dekstroz 150 cc (her birinden)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "31",
+        "name": "İzotonik 100 cc, 250 cc, 500 cc (her birinden)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "32",
+        "name": "Ringer laktat 500 cc",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "33",
+        "name": "Magnezyum sülfat amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "34",
+        "name": "Flumazenil 0,5 mg amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      }
+    ]
+  },
+  "hava_deniz": {
+    "id": "hava_deniz",
+    "name": "Hava ve Deniz Ambulansı",
+    "ilaclar": [
+      {
+        "id": "1",
+        "name": "Adrenalin amp 1 mg",
+        "gerekliMiktar": "20",
+        "kontroleTabi": false
+      },
+      {
+        "id": "2",
+        "name": "Lidokain %2 amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "3",
+        "name": "Atropin amp 0,5 mg",
+        "gerekliMiktar": "6",
+        "kontroleTabi": false
+      },
+      {
+        "id": "4",
+        "name": "Antihistaminik amp",
+        "gerekliMiktar": "4",
+        "kontroleTabi": false
+      },
+      {
+        "id": "5",
+        "name": "Beta bloker amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "6",
+        "name": "Spazmolitik amp",
+        "gerekliMiktar": "4",
+        "kontroleTabi": false
+      },
+      {
+        "id": "7",
+        "name": "Kalsiyum amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "8",
+        "name": "Kortikosteroid amp (deksametazon) (8mg)",
+        "gerekliMiktar": "4",
+        "kontroleTabi": false
+      },
+      {
+        "id": "9",
+        "name": "Kortikosteroid amp (metilprednizolon) (40mg)",
+        "gerekliMiktar": "6",
+        "kontroleTabi": false
+      },
+      {
+        "id": "10",
+        "name": "Diazepam amp",
+        "gerekliMiktar": "3",
+        "kontroleTabi": true
+      },
+      {
+        "id": "11",
+        "name": "Diltiazem 25 mg amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "12",
+        "name": "Dopamin 200 mg amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "13",
+        "name": "Midazolam 5 mg amp",
+        "gerekliMiktar": "3",
+        "kontroleTabi": false
+      },
+      {
+        "id": "14",
+        "name": "Antiemetik amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": true
+      },
+      {
+        "id": "15",
+        "name": "Antiepileptik amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": true
+      },
+      {
+        "id": "16",
+        "name": "Etil klorür sprey",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "17",
+        "name": "Verapamil amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "18",
+        "name": "Furosemid amp",
+        "gerekliMiktar": "5",
+        "kontroleTabi": false
+      },
+      {
+        "id": "19",
+        "name": "Amiodaron amp",
+        "gerekliMiktar": "6",
+        "kontroleTabi": false
+      },
+      {
+        "id": "20",
+        "name": "Analjezik amp (im/iv)",
+        "gerekliMiktar": "10",
+        "kontroleTabi": true
+      },
+      {
+        "id": "21",
+        "name": "Sodyum Bikarbonat (NaHCO3) amp",
+        "gerekliMiktar": "10",
+        "kontroleTabi": false
+      },
+      {
+        "id": "22",
+        "name": "Nalokson amp",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "23",
+        "name": "Nebul (salbutamol+ipratropium bromür)",
+        "gerekliMiktar": "4",
+        "kontroleTabi": false
+      },
+      {
+        "id": "24",
+        "name": "Anestezik pomad",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "25",
+        "name": "Antimikrobiyal pomad",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "26",
+        "name": "Proton pompa inhibitörü flakon",
+        "gerekliMiktar": "3",
+        "kontroleTabi": false
+      },
+      {
+        "id": "27",
+        "name": "Asetilsalisilik asit tb (kutu) (öncelikli tercih enterik kaplı olmayan)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "28",
+        "name": "İzosorbid Dinitrat 5 mg tb (kutu)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "29",
+        "name": "Kaptopril tb 25 mg (kutu)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "30",
+        "name": "%20 Dekstroz 150 cc, %10 dekstroz 250 cc, %5 dekstroz 150 cc (her birinden)",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "31",
+        "name": "İzotonik 100 cc, 250 cc, 500 cc (her birinden)",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "32",
+        "name": "Ringer laktat 500 cc",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "33",
+        "name": "Magnezyum sülfat amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "34",
+        "name": "Flumazenil 0,5 mg amp",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "35",
+        "name": "Parasetamol flakon",
+        "gerekliMiktar": "2",
+        "kontroleTabi": false
+      },
+      {
+        "id": "36",
+        "name": "Adenozin amp",
+        "gerekliMiktar": "10",
+        "kontroleTabi": false
+      },
+      {
+        "id": "37",
+        "name": "Nifedipin 10 mg kapsül (kutu)",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "38",
+        "name": "Karbetosin 100 mcg/ml amp/flakon",
+        "gerekliMiktar": "1",
+        "kontroleTabi": false
+      },
+      {
+        "id": "39",
+        "name": "Fentanil amp/flakon",
+        "gerekliMiktar": "1",
+        "kontroleTabi": true
+      }
+    ]
+  }
+}
