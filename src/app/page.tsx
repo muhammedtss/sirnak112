@@ -111,14 +111,14 @@ export default function HomePage() {
         {quickLinks.map((link) => {
           const Icon = link.icon;
           return (
-            <motion.div key={link.href} variants={item} className={link.href === "/icd10" ? "col-span-2" : ""}>
+            <motion.div key={link.href} variants={item} className={link.href === "/icd10" ? "col-span-2 flex justify-center" : "w-full"}>
               <Link
                 href={link.href}
-                className="glass-card glass-hover flex flex-col p-4 gap-3 group relative overflow-hidden"
+                className={`glass-card glass-hover flex flex-col p-4 gap-3 group relative overflow-hidden ${link.href === "/icd10" ? "w-[65%]" : "w-full"}`}
               >
                 {/* Background Watermark Icon */}
                 <Icon
-                  className="absolute -right-4 -bottom-4 opacity-15 transform -rotate-12 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500 pointer-events-none"
+                  className="absolute -right-4 -bottom-4 opacity-10 transform -rotate-12 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500 pointer-events-none"
                   style={{ width: 80, height: 80, color: link.accent }}
                   strokeWidth={1.5}
                 />
