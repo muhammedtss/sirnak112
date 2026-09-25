@@ -3,9 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SIRNAK_112_EKG_DATA, EkgModule } from "@/data/ekg-training-data";
-import { Lock, Unlock, ChevronRight, Activity, Menu, X, PlayCircle } from "lucide-react";
+import { Lock, ChevronRight, Activity, Menu, X, PlayCircle } from "lucide-react";
 import InteractiveWaveAnatomy from "./InteractiveWaveAnatomy";
 import TreeBuilderGame from "./TreeBuilderGame";
+import RhythmSimulator from "./RhythmSimulator";
 
 export default function EkgTrainingLayout() {
   const [unlockedIndex, setUnlockedIndex] = useState(0);
@@ -59,7 +60,11 @@ export default function EkgTrainingLayout() {
       return <TreeBuilderGame module={module} onComplete={completeActiveModule} />;
     }
 
-    // Default renderer for intro, caliper-training, rhythm-simulator
+    if (module.type === "rhythm-simulator") {
+      return <RhythmSimulator module={module} onComplete={completeActiveModule} />;
+    }
+
+    // Default renderer for intro, caliper-training
     return (
       <div className="flex flex-col gap-6 w-full">
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
@@ -88,22 +93,6 @@ export default function EkgTrainingLayout() {
             </div>
           )}
         </div>
-
-        {/* Generic mock simulator renderer for rhythm-simulator if needed */}
-        {module.type === "rhythm-simulator" && module.interactivePayload?.cases && (
-          <div className="bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col items-center">
-            <h4 className="text-slate-400 mb-4 text-sm font-medium">Vaka Simülasyonları Listesi</h4>
-            <div className="grid grid-cols-1 gap-4 w-full">
-              {module.interactivePayload.cases.map((c: any, i: number) => (
-                <div key={i} className="p-4 bg-slate-900 border border-slate-700 rounded-xl flex flex-col gap-2">
-                  <img src={c.stripImage} alt={c.tani} className="w-full h-auto bg-white/5 rounded" />
-                  <div className="text-emerald-400 font-bold text-sm mt-2">{c.tani}</div>
-                  <div className="text-slate-400 text-xs">Hız: {c.hiz} | Ritim: {c.ritim} | P: {c.pDalgasi}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* Free completion for passive modules */}
         <div className="flex justify-center mt-4">
