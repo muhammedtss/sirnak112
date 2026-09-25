@@ -3,16 +3,18 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SIRNAK_112_EKG_DATA, EkgModule } from "@/data/ekg-training-data";
-import { Lock, ChevronRight, Activity, Menu, X, PlayCircle } from "lucide-react";
+import { Lock, ChevronRight, Activity, Menu, X, PlayCircle, Ruler } from "lucide-react";
 import InteractiveWaveAnatomy from "./InteractiveWaveAnatomy";
 import TreeBuilderGame from "./TreeBuilderGame";
 import RhythmSimulator from "./RhythmSimulator";
+import DigitalCaliper from "./DigitalCaliper";
 
 export default function EkgTrainingLayout() {
   const [unlockedIndex, setUnlockedIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [caliperDemoOpen, setCaliperDemoOpen] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -93,6 +95,30 @@ export default function EkgTrainingLayout() {
             </div>
           )}
         </div>
+
+        {module.type === "caliper-training" && (
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+            <div className="flex justify-between items-center mb-4">
+              <h4 className="text-slate-300 font-bold uppercase text-sm">Pratik Kalp Hızı Hesaplama</h4>
+              <button 
+                onClick={() => setCaliperDemoOpen(!caliperDemoOpen)}
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all ${caliperDemoOpen ? 'bg-emerald-500 text-slate-950 shadow-[0_0_15px_rgba(16,185,129,0.3)]' : 'bg-slate-800 text-emerald-400 hover:bg-slate-700'}`}
+              >
+                <Ruler size={16} /> Pergeli {caliperDemoOpen ? "Kapat" : "Aç"}
+              </button>
+            </div>
+            
+            <div className="w-full relative EKG-GRID-BACKGROUND bg-[#ffefef] border border-slate-700 rounded-xl overflow-hidden min-h-[300px]">
+              {caliperDemoOpen && <DigitalCaliper onClose={() => setCaliperDemoOpen(false)} />}
+              
+              <div className="flex items-center justify-center p-8 bg-white/5 h-full opacity-30 text-center">
+                <span className="text-slate-800 font-bold text-lg max-w-sm">
+                  Buraya pratik yapmak için örnek bir EKG trasesi gelebilir. Yukarıdan pergeli açarak araç özelliklerini test edebilirsiniz.
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Free completion for passive modules */}
         <div className="flex justify-center mt-4">

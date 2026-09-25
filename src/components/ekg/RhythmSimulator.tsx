@@ -3,7 +3,8 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { EkgModule, RhythmAnalysisData } from "@/data/ekg-training-data";
-import { Activity, AlertTriangle, CheckCircle, ChevronRight, Info } from "lucide-react";
+import { Activity, AlertTriangle, CheckCircle, ChevronRight, Info, Ruler } from "lucide-react";
+import DigitalCaliper from "./DigitalCaliper";
 
 interface Props {
   module: EkgModule;
@@ -28,12 +29,14 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
   const [step, setStep] = useState(0); // 0 to 5 (5 is diagnosis)
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [showNotes, setShowNotes] = useState(false);
+  const [caliperOpen, setCaliperOpen] = useState(false);
 
   // Reset state when case changes
   useEffect(() => {
     setStep(0);
     setErrorMsg(null);
     setShowNotes(false);
+    setCaliperOpen(false);
   }, [currentCaseIndex]);
 
   // Generate options for the current step
@@ -113,17 +116,28 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
       <div className="bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)]">
         <div className="p-3 bg-slate-800 border-b border-slate-700 flex justify-between items-center">
           <span className="text-emerald-500 font-bold tracking-widest text-sm">VAKA {currentCaseIndex + 1} / {cases.length}</span>
-          <span className="text-slate-400 text-xs flex items-center gap-1"><Activity size={14}/> EKG Monitörü</span>
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => setCaliperOpen(!caliperOpen)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${caliperOpen ? 'bg-emerald-500 text-slate-950' : 'bg-slate-700 text-emerald-400 hover:bg-slate-600'}`}
+            >
+              <Ruler size={14} /> Pergeli {caliperOpen ? "Kapat" : "Aç"}
+            </button>
+            <span className="text-slate-400 text-xs flex items-center gap-1 hidden sm:flex"><Activity size={14}/> EKG Monitörü</span>
+          </div>
         </div>
-        <div className="w-full overflow-x-auto relative EKG-GRID-BACKGROUND bg-[#ffefef]">
-          {/* A soft CSS grid overlay to make it look like EKG paper if the image has transparent background, 
-              but since we extracted PDF images, they probably have their own grid. We'll just display it. */}
-          <div className="min-w-[600px] w-full max-h-[300px] flex items-center justify-center p-2 bg-white overflow-hidden">
-            <img 
-              src={currentCase.stripImage} 
-              alt="EKG Strip" 
-              className="max-h-full w-auto object-contain scale-100 hover:scale-125 transition-transform duration-300 origin-center cursor-zoom-in"
-            />
+        <div className="w-full relative EKG-GRID-BACKGROUND bg-[#ffefef]">
+          {/* Caliper Overlay */}
+          {caliperOpen && <DigitalCaliper onClose={() => setCaliperOpen(false)} />}
+          
+          <div className="w-full overflow-x-auto">
+            <div className="min-w-[600px] w-full h-[250px] sm:h-[300px] flex items-center justify-center p-2 bg-white relative">
+              <img 
+                src={currentCase.stripImage} 
+                alt="EKG Strip" 
+                className="max-h-full w-auto object-contain pointer-events-none"
+              />
+            </div>
           </div>
         </div>
       </div>
