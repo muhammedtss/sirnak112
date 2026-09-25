@@ -42,7 +42,7 @@ const stagger = {
 };
 const card = {
   hidden: { opacity: 0, x: -16 },
-  show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 320, damping: 28 } },
+  show: { opacity: 1, x: 0, transition: { type: "spring" as const, stiffness: 320, damping: 28 } },
 };
 
 export default function VakaProtokolleriPage() {

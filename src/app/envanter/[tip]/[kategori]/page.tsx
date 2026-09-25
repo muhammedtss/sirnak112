@@ -31,7 +31,7 @@ export default async function EnvanterKategoriPage({ params }: PageProps) {
         title="İlaçlar"
         back={`/envanter/${tip}`}
         icon={<ArrowLeft style={{ width: 16, height: 16 }} />}
-        rightSlot={<span className="text-[11px] font-semibold text-primary">{ambulansNames[tip] || ambulans.name}</span>}
+        right={<span className="text-[11px] font-semibold text-primary">{ambulansNames[tip] || ambulans.name}</span>}
       />
       <main className="flex-1 overflow-y-auto px-4 py-4 w-full">
         <EnvanterIlacListesi ilaclar={ambulans.ilaclar} />
