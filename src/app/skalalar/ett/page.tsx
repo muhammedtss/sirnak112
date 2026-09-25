@@ -15,14 +15,13 @@ export default function ETTPage() {
   const validKilo = !isNaN(k) && k > 0 && k <= 100;
 
   // ETT İç Çap (mm)
-  // < 1 yaş: 3.5 mm (termde yenidoğan)
-  // ≥ 1 yaş: (yaş/4) + 4 kafsız; (yaş/4) + 3.5 kaflı
-  const ettkafsız = validYas ? (y < 1 ? "3.5" : ((y / 4) + 4).toFixed(1)) : null;
-  const ettkaflı = validYas ? (y < 1 ? "3.5" : ((y / 4) + 3.5).toFixed(1)) : null;
+  // (yaş/4) + 4 kafsız; (yaş/4) + 3.5 kaflı
+  const ettkafsız = validYas ? ((y / 4) + 4).toFixed(1) : null;
+  const ettkaflı = validYas ? ((y / 4) + 3.5).toFixed(1) : null;
 
   // Derinlik (cm - ağızdan)
-  // ≥ 2 yaş: (yaş/2) + 12
-  const derinlik = validYas ? (y >= 2 ? ((y / 2) + 12).toFixed(1) : "Klinik") : null;
+  // (yaş/2) + 12
+  const derinlik = validYas ? ((y / 2) + 12).toFixed(1) : null;
   const derinlikKilo = validKilo ? (k / 10 + 12).toFixed(1) : null;
 
   // Laringoskop blade
@@ -48,7 +47,7 @@ export default function ETTPage() {
           <p className="text-[11px] text-blue-400 leading-relaxed">
             <span className="font-black">Kafsız ETT:</span> (Yaş/4) + 4 mm<br />
             <span className="font-black">Kaflı ETT:</span> (Yaş/4) + 3.5 mm<br />
-            <span className="font-black">Derinlik (ağız):</span> (Yaş/2) + 12 cm (≥2 yaş)
+            <span className="font-black">Derinlik (ağız):</span> (Yaş/2) + 12 cm
           </p>
         </div>
 
@@ -106,7 +105,7 @@ export default function ETTPage() {
               <div className="px-4 py-3 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-bold text-white/90">Derinlik (ağızdan)</p>
-                  <p className="text-[11px] text-slate-500">Yaş formülüyle — {validYas && y >= 2 ? "(Yaş/2) + 12" : "klinik değerlendirme"}</p>
+                  <p className="text-[11px] text-slate-500">Yaş formülüyle — (Yaş/2) + 12</p>
                 </div>
                 <div className="text-right">
                   <p className="text-xl font-black text-white/90">{derinlik || "-"}</p>

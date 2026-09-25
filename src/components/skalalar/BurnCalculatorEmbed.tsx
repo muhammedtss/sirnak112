@@ -10,34 +10,34 @@ const SECTIONS = [
   {
     title: "Baş, Boyun ve Gövde",
     parts: [
-      { id: "bas", label: "Baş", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 9.5, "1": 8.5, "5": 6.5, "10": 5.5, "15": 4.5, "Erişkin": 3.5 })[a] },
-      { id: "boyun", label: "Boyun", hasFront: true, hasBack: true, getPercent: () => 1 },
-      { id: "govde", label: "Gövde / Sırt", hasFront: true, hasBack: true, getPercent: () => 13 },
-      { id: "genital", label: "Genital", hasFront: true, hasBack: false, getPercent: () => 1 },
-      { id: "sag_kalca", label: "Sağ Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
+      { id: "bas", label: "Baş", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 9.5, "1": 8.5, "5": 6.5, "10": 5.5, "15": 4.5, "Erişkin": 3.5 })[a], isCenter: true },
+      { id: "boyun", label: "Boyun", hasFront: true, hasBack: true, getPercent: () => 1, isCenter: true },
+      { id: "govde", label: "Gövde / Sırt", hasFront: true, hasBack: true, getPercent: () => 13, isCenter: true },
+      { id: "genital", label: "Genital", hasFront: true, hasBack: false, getPercent: () => 1, isCenter: true },
       { id: "sol_kalca", label: "Sol Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
+      { id: "sag_kalca", label: "Sağ Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
     ]
   },
   {
     title: "Kollar",
     parts: [
-      { id: "sag_ust_kol", label: "Sağ Üst Kol", hasFront: true, hasBack: true, getPercent: () => 2 },
-      { id: "sag_alt_kol", label: "Sağ Alt Kol", hasFront: true, hasBack: true, getPercent: () => 1.5 },
-      { id: "sag_el", label: "Sağ El", hasFront: true, hasBack: true, getPercent: () => 1.25 },
       { id: "sol_ust_kol", label: "Sol Üst Kol", hasFront: true, hasBack: true, getPercent: () => 2 },
+      { id: "sag_ust_kol", label: "Sağ Üst Kol", hasFront: true, hasBack: true, getPercent: () => 2 },
       { id: "sol_alt_kol", label: "Sol Alt Kol", hasFront: true, hasBack: true, getPercent: () => 1.5 },
+      { id: "sag_alt_kol", label: "Sağ Alt Kol", hasFront: true, hasBack: true, getPercent: () => 1.5 },
       { id: "sol_el", label: "Sol El", hasFront: true, hasBack: true, getPercent: () => 1.25 },
+      { id: "sag_el", label: "Sağ El", hasFront: true, hasBack: true, getPercent: () => 1.25 },
     ]
   },
   {
     title: "Bacaklar",
     parts: [
-      { id: "sag_uyluk", label: "Sağ Uyluk", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.75, "1": 3.25, "5": 4.0, "10": 4.25, "15": 4.5, "Erişkin": 4.75 })[a] },
-      { id: "sag_bacak", label: "Sağ Bacak (Alt)", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.5, "1": 2.5, "5": 2.75, "10": 3.0, "15": 3.25, "Erişkin": 3.5 })[a] },
-      { id: "sag_ayak", label: "Sağ Ayak", hasFront: true, hasBack: true, getPercent: () => 1.75 },
       { id: "sol_uyluk", label: "Sol Uyluk", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.75, "1": 3.25, "5": 4.0, "10": 4.25, "15": 4.5, "Erişkin": 4.75 })[a] },
+      { id: "sag_uyluk", label: "Sağ Uyluk", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.75, "1": 3.25, "5": 4.0, "10": 4.25, "15": 4.5, "Erişkin": 4.75 })[a] },
       { id: "sol_bacak", label: "Sol Bacak (Alt)", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.5, "1": 2.5, "5": 2.75, "10": 3.0, "15": 3.25, "Erişkin": 3.5 })[a] },
+      { id: "sag_bacak", label: "Sağ Bacak (Alt)", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.5, "1": 2.5, "5": 2.75, "10": 3.0, "15": 3.25, "Erişkin": 3.5 })[a] },
       { id: "sol_ayak", label: "Sol Ayak", hasFront: true, hasBack: true, getPercent: () => 1.75 },
+      { id: "sag_ayak", label: "Sağ Ayak", hasFront: true, hasBack: true, getPercent: () => 1.75 },
     ]
   }
 ];
@@ -174,14 +174,15 @@ export default function BurnCalculatorEmbed() {
           {SECTIONS.map((section, idx) => (
             <div key={idx} className="space-y-3">
               <h3 className="text-sm font-bold text-white/80 border-b border-white/10 pb-1">{section.title}</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <div className="grid grid-cols-2 gap-2">
                 {section.parts.map(part => {
                   const percent = part.getPercent(ageGroup);
                   const isFrontSelected = selectedParts.has(`${part.id}_on`);
                   const isBackSelected = selectedParts.has(`${part.id}_arka`);
+                  const isCenter = (part as any).isCenter;
                   
                   return (
-                    <div key={part.id} className="flex flex-col items-center justify-between bg-black/5 dark:bg-black/20 border border-black/5 dark:border-white/5 rounded-xl p-2 gap-2">
+                    <div key={part.id} className={`flex flex-col items-center justify-between bg-black/5 dark:bg-black/20 border border-black/5 dark:border-white/5 rounded-xl p-2 gap-2 ${isCenter ? "col-span-2" : ""}`}>
                       <div className="flex flex-col items-center min-w-0 text-center">
                         <span className="text-xs font-bold text-slate-800 dark:text-white leading-tight">{part.label}</span>
                         <span className="text-[10px] text-teal-600 dark:text-teal-400/80 font-mono font-bold mt-0.5">(% {percent})</span>
