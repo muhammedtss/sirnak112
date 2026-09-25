@@ -11,8 +11,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Sirnak 112 - Acil Protokol",
-  description: "Sirnak 112 Acil Saglik Hizmetleri Protokol ve Ilac Uygulamasi",
+  title: "Şırnak 112 - Acil Protokol",
+  description: "Şırnak 112 Acil Saglik Hizmetleri Protokol ve Ilac Uygulamasi",
 };
 
 export const viewport = {
