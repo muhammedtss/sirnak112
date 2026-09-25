@@ -109,13 +109,7 @@ const cocukSkalalar: Skala[] = [
     tags: ["Pediatri", "Triaj", "PAT"],
     href: "/skalalar/pat",
   },
-  {
-    id: "cabuk", name: "Çocuk Değerlendirme Üçgeni (ÇABUK)", icon: "⚡",
-    accent: "#F43F5E", glow: "rgba(244,63,94,0.15)", border: "rgba(244,63,94,0.25)",
-    description: "Hızlı hasta değerlendirme skalası.",
-    tags: ["Hızlı", "Triaj", "ÇABUK"],
-    href: "/skalalar/cabuk",
-  },
+
   {
     id: "ett", name: "ETT — Endotrakeal Entübasyon", icon: "🫀",
     accent: "#38BDF8", glow: "rgba(56,189,248,0.15)", border: "rgba(56,189,248,0.25)",

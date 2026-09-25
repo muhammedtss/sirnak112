@@ -32,8 +32,8 @@ const item = {
 };
 
 const quickLinks = [
-  { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Görsel Algoritmalar",accent: "#F97316" },
-  { href: "/vaka-protokolleri",    icon: BookOpen,   label: "Protokoller",        accent: "#8B5CF6" },
+  { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Algoritmalar",accent: "#F97316" },
+  { href: "/vaka-protokolleri",    icon: BookOpen,   label: "Vaka Protokolleri",        accent: "#8B5CF6" },
   { href: "/skalalar",             icon: Activity,   label: "Skalalar",           accent: "#34D399" },
   { href: "/ilac-doz",             icon: Pill,       label: "İlaç Dozu",          accent: "#F59E0B" },
   { href: "/envanter",             icon: Package,    label: "Envanter",           accent: "#EF4444" },
@@ -58,6 +58,7 @@ export default function HomePage() {
             Sistemi
           </span>
         </h1>
+        <p className="text-[11px] font-medium text-subtle mt-0.5 opacity-80">Developed by Kadir Taş</p>
         </div>
         <div className="flex items-center gap-2">
           <GlobalSearchModal />
@@ -96,7 +97,7 @@ export default function HomePage() {
           className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold relative z-10"
           style={{ color: "var(--primary-light)" }}
         >
-          Görsel Algoritmalar <ChevronRight style={{ width: 16, height: 16 }} />
+          Algoritmalar <ChevronRight style={{ width: 16, height: 16 }} />
         </Link>
       </motion.div>
 
