@@ -345,35 +345,6 @@
       }
     }
   },
-  "asetilsalisilik_asit": {
-    "id": "asetilsalisilik_asit",
-    "name": "Asetilsalisilik Asit",
-    "cases": {
-      "akut_koroner_sendrom": {
-        "caseName": "Akut Koroner Sendrom",
-        "eriskin": {
-          "isAvailable": true,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": "mg",
-          "fixedDose": "160-325",
-          "maxDose": "325 mg",
-          "route": "Oral",
-          "notes": "Çiğnetilerek verilir. Alerji ve aktif kanama kontrendikedir."
-        },
-        "cocuk": {
-          "isAvailable": false,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": null,
-          "fixedDose": null,
-          "maxDose": null,
-          "route": null,
-          "notes": null
-        }
-      }
-    }
-  },
   "aspirin": {
     "id": "aspirin",
     "name": "Aspirin (Asetilsalisilik Asit)",
@@ -891,35 +862,6 @@
           "maxDose": "400 mg/doz",
           "route": "Oral",
           "notes": "5-10 mg/kg dozunda oral yolla verilir. 6 saatte bir tekrarlanabilir. 12 ayın altında verilmez."
-        }
-      }
-    }
-  },
-  "insulin": {
-    "id": "insulin",
-    "name": "İnsülin",
-    "cases": {
-      "crush_sendromu": {
-        "caseName": "Crush Sendromu (Hiperpotasemi)",
-        "eriskin": {
-          "isAvailable": true,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": null,
-          "fixedDose": null,
-          "maxDose": null,
-          "route": "IV",
-          "notes": "Hiperpotasemi acil tedavi seçeneklerinden biri olarak dekstroz ile birlikte verilir. Tam doz belirtilmemiştir."
-        },
-        "cocuk": {
-          "isAvailable": false,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": null,
-          "fixedDose": null,
-          "maxDose": null,
-          "route": null,
-          "notes": null
         }
       }
     }
@@ -1529,27 +1471,53 @@
     "id": "oksijen",
     "name": "Oksijen",
     "cases": {
-      "hipoksi_solunum_sikintisi": {
-        "caseName": "Hipoksi ve Solunum Sıkıntısı",
+      "koah": {
+        "caseName": "KOAH",
         "eriskin": {
           "isAvailable": true,
           "isWeightBased": false,
           "dosePerKg": null,
           "unit": "L/dk",
-          "fixedDose": "10",
+          "fixedDose": "2-4",
           "maxDose": null,
-          "route": "İnhalasyon",
-          "notes": "SpO2 %94-98 olacak şekilde geri solumasız maske ile verilir. Gerekirse PBV ile desteklenir."
+          "route": "İnhalasyon (Nazal Kanül / Venturi)",
+          "notes": "Hedef SpO2 %88-92. Yüksek akım oksijenden kaçının. Gerekirse NIMV düşünülmelidir."
+        },
+        "cocuk": {
+          "isAvailable": false
+        }
+      },
+      "kritik_hastalik": {
+        "caseName": "Kritik Hastalık (Şok, Sepsis, Arrest, Majör Travma, Anafilaksi)",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "unit": "L/dk",
+          "fixedDose": "15",
+          "route": "İnhalasyon (Geri Solumasız Maske)",
+          "notes": "Başlangıçta yüksek akım oksijen. SpO2 %94-98 hedeflenir."
         },
         "cocuk": {
           "isAvailable": true,
           "isWeightBased": false,
-          "dosePerKg": null,
           "unit": "L/dk",
-          "fixedDose": "10",
-          "maxDose": null,
-          "route": "İnhalasyon",
-          "notes": "SpO2 %94-98 aralığında olacak şekilde rezervuarlı maske ile verilir."
+          "fixedDose": "15",
+          "route": "İnhalasyon (Geri Solumasız Maske)",
+          "notes": "SpO2 %94-98 hedeflenir. Ağır hipokside BVM ile destekle."
+        }
+      },
+      "gebelik_ve_karbonmonoksit": {
+        "caseName": "Gebelik Acilleri veya Karbonmonoksit Zehirlenmesi",
+        "eriskin": {
+          "isAvailable": true,
+          "isWeightBased": false,
+          "unit": "L/dk",
+          "fixedDose": "15",
+          "route": "İnhalasyon (Geri Solumasız Maske)",
+          "notes": "SpO2 > %95 hedeflenir. Karbonmonoksit zehirlenmesinde nabız oksimetri normal görünse de yüksek doz oksijen verin."
+        },
+        "cocuk": {
+          "isAvailable": false
         }
       }
     }
@@ -1710,35 +1678,6 @@
       }
     }
   },
-  "sildenafil": {
-    "id": "sildenafil",
-    "name": "Sildenafil",
-    "cases": {
-      "akut_koroner_sendrom": {
-        "caseName": "Akut Koroner Sendrom",
-        "eriskin": {
-          "isAvailable": false,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": null,
-          "fixedDose": null,
-          "maxDose": null,
-          "route": null,
-          "notes": "Hastanın sildenafil kullanımı varsa nitratlar kontrendikedir."
-        },
-        "cocuk": {
-          "isAvailable": false,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": null,
-          "fixedDose": null,
-          "maxDose": null,
-          "route": null,
-          "notes": null
-        }
-      }
-    }
-  },
   "sodyum_bikarbonat": {
     "id": "sodyum_bikarbonat",
     "name": "Sodyum Bikarbonat",
@@ -1754,35 +1693,6 @@
           "maxDose": null,
           "route": "IV",
           "notes": "EKG'de QRS süresi 0,10 sn'den uzunsa 1-2 mEq/kg IV puşe. 3-5 dk'da bir tekrarla."
-        },
-        "cocuk": {
-          "isAvailable": false,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": null,
-          "fixedDose": null,
-          "maxDose": null,
-          "route": null,
-          "notes": null
-        }
-      }
-    }
-  },
-  "tadalafil": {
-    "id": "tadalafil",
-    "name": "Tadalafil",
-    "cases": {
-      "akut_koroner_sendrom": {
-        "caseName": "Akut Koroner Sendrom",
-        "eriskin": {
-          "isAvailable": false,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": null,
-          "fixedDose": null,
-          "maxDose": null,
-          "route": null,
-          "notes": "Hastanın tadalafil kullanımı varsa nitratlar kontrendikedir."
         },
         "cocuk": {
           "isAvailable": false,
@@ -1822,35 +1732,6 @@
           "maxDose": null,
           "route": "IV İnfüzyon",
           "notes": "Nöbet devam ediyorsa 30 mg/kg dozunda IV infüzyon şeklinde uygulanır."
-        }
-      }
-    }
-  },
-  "vardenafil": {
-    "id": "vardenafil",
-    "name": "Vardenafil",
-    "cases": {
-      "akut_koroner_sendrom": {
-        "caseName": "Akut Koroner Sendrom",
-        "eriskin": {
-          "isAvailable": false,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": null,
-          "fixedDose": null,
-          "maxDose": null,
-          "route": null,
-          "notes": "Hastanın vardenafil kullanımı varsa nitratlar kontrendikedir."
-        },
-        "cocuk": {
-          "isAvailable": false,
-          "isWeightBased": false,
-          "dosePerKg": null,
-          "unit": null,
-          "fixedDose": null,
-          "maxDose": null,
-          "route": null,
-          "notes": null
         }
       }
     }

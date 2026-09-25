@@ -16,9 +16,9 @@ export default function ETTPage() {
 
   // ETT İç Çap (mm)
   // < 1 yaş: 3.5 mm (termde yenidoğan)
-  // ≥ 1 yaş: (yaş/4) + 4 kuffsuz; (yaş/4) + 3.5 kuflu
-  const ettKuffsuz = validYas ? ((y / 4) + 4).toFixed(1) : null;
-  const ettKuflu = validYas ? ((y / 4) + 3.5).toFixed(1) : null;
+  // ≥ 1 yaş: (yaş/4) + 4 kafs�z; (yaş/4) + 3.5 kafl�
+  const ettkafs�z = validYas ? ((y / 4) + 4).toFixed(1) : null;
+  const ettkafl� = validYas ? ((y / 4) + 3.5).toFixed(1) : null;
 
   // Derinlik (cm - ağızdan)
   // ≥ 2 yaş: (yaş/2) + 12
@@ -35,7 +35,7 @@ export default function ETTPage() {
   };
 
   // Suction kateter
-  const suction = ettKuffsuz ? (parseFloat(ettKuffsuz) * 2).toFixed(0) : null;
+  const suction = ettkafs�z ? (parseFloat(ettkafs�z) * 2).toFixed(0) : null;
 
   return (
     <PageShell>
@@ -46,8 +46,8 @@ export default function ETTPage() {
         <div className="bg-blue-500/15 border border-blue-200 rounded-xl p-3.5">
           <p className="text-xs font-bold text-blue-800 uppercase tracking-wide mb-1">Hesaplama Formülleri</p>
           <p className="text-[11px] text-blue-400 leading-relaxed">
-            <span className="font-black">Kuffsuz ETT:</span> (Yaş/4) + 4 mm<br />
-            <span className="font-black">Kuflu ETT:</span> (Yaş/4) + 3.5 mm<br />
+            <span className="font-black">kafs�z ETT:</span> (Yaş/4) + 4 mm<br />
+            <span className="font-black">kafl� ETT:</span> (Yaş/4) + 3.5 mm<br />
             <span className="font-black">Derinlik (ağız):</span> (Yaş/2) + 12 cm (≥2 yaş)
           </p>
         </div>
@@ -92,13 +92,13 @@ export default function ETTPage() {
             {/* ETT boyutları */}
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-blue-600 rounded-xl p-3.5 text-center text-white">
-                <p className="text-[10px] font-bold uppercase tracking-wide opacity-80">Kuffsuz ETT</p>
-                <p className="text-3xl font-black mt-1">{ettKuffsuz}</p>
+                <p className="text-[10px] font-bold uppercase tracking-wide opacity-80">kafs�z ETT</p>
+                <p className="text-3xl font-black mt-1">{ettkafs�z}</p>
                 <p className="text-xs font-bold opacity-70">mm İç Çap</p>
               </div>
               <div className="bg-indigo-600 rounded-xl p-3.5 text-center text-white">
-                <p className="text-[10px] font-bold uppercase tracking-wide opacity-80">Kuflu ETT</p>
-                <p className="text-3xl font-black mt-1">{ettKuflu}</p>
+                <p className="text-[10px] font-bold uppercase tracking-wide opacity-80">kafl� ETT</p>
+                <p className="text-3xl font-black mt-1">{ettkafl�}</p>
                 <p className="text-xs font-bold opacity-70">mm İç Çap</p>
               </div>
             </div>

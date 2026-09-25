@@ -51,6 +51,12 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (!touchStart) return;
+    
+    if (zoomLevel > 1) {
+      setTouchStart(null);
+      return;
+    }
+
     const touchEndX = e.changedTouches[0].clientX;
     const touchEndY = e.changedTouches[0].clientY;
     
@@ -69,7 +75,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex flex-col bg-black/80 backdrop-blur-md"
+      className="fixed inset-0 z-[100] flex flex-col bg-black/80 backdrop-blur-md"
       role="dialog"
       aria-modal="true"
     >
@@ -81,8 +87,8 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
           <span className="text-white/30 text-xs">·</span>
           <span className="text-white text-sm font-bold truncate">{title}</span>
           {hasMultiple && (
-            <span className="shrink-0 ml-1 text-white/50 text-xs font-medium">
-              ({currentIndex + 1}/{images.length})
+            <span className="shrink-0 ml-1 text-white text-xs font-bold bg-black/60 px-2 py-0.5 rounded-full shadow-md border border-white/10">
+              {currentIndex + 1} / {images.length}
             </span>
           )}
         </div>
@@ -136,7 +142,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
 
       <div
         className={`flex-1 overflow-auto flex items-start p-4 transition-transform ${zoomLevel === 1 ? 'justify-center' : 'justify-start'}`}
-        style={{ touchAction: "pan-y pinch-zoom" }}
+        style={{ touchAction: zoomLevel === 1 ? "pan-y pinch-zoom" : "auto" }}
         onClick={(e) => {
           if (e.target === e.currentTarget) onClose();
         }}
@@ -163,8 +169,8 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
             key={current.src}
             src={current.src}
             alt={`${title} - ${current.label}`}
-            className="rounded-xl shadow-2xl transition-all duration-200 origin-top-left"
-            style={{ width: zoomLevel === 1 ? '100%' : `${zoomLevel * 100}%`, minWidth: 280, maxWidth: zoomLevel === 1 ? '100%' : 'none' }}
+            className="rounded-xl shadow-2xl transition-all duration-200 origin-top-left shrink-0"
+            style={{ width: zoomLevel === 1 ? '100%' : `${zoomLevel * 100}%`, minWidth: 280, maxWidth: 'none' }}
             onError={() => setImgError(true)}
             draggable={false}
           />
@@ -172,21 +178,21 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
       </div>
 
       {/* Zoom Controls */}
-      <div className="absolute bottom-6 right-4 sm:right-8 flex gap-3 z-50 shadow-2xl rounded-full bg-black/70 backdrop-blur-md p-1.5 border border-white/20">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 shadow-2xl rounded-full bg-slate-900/90 backdrop-blur-md px-4 py-2 border border-white/20">
         <button 
           onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.max(z - 0.5, 1)); }} 
           disabled={zoomLevel <= 1}
-          className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 text-white font-bold text-xl flex items-center justify-center active:scale-90 transition-all disabled:opacity-30"
+          className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-2xl flex items-center justify-center active:scale-95 transition-all disabled:opacity-30"
         >
           -
         </button>
-        <div className="flex items-center justify-center w-14 text-white font-bold text-sm">
+        <div className="flex items-center justify-center w-16 text-white font-bold text-base bg-black/40 rounded-full py-1">
           {Math.round(zoomLevel * 100)}%
         </div>
         <button 
           onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.min(z + 0.5, 4)); }} 
           disabled={zoomLevel >= 4}
-          className="w-10 h-10 rounded-full bg-white text-black hover:bg-white/90 font-bold text-xl flex items-center justify-center active:scale-90 transition-all disabled:opacity-30"
+          className="w-12 h-12 rounded-full bg-white text-black hover:bg-slate-200 font-black text-2xl flex items-center justify-center active:scale-95 transition-all disabled:opacity-30 shadow-lg"
         >
           +
         </button>

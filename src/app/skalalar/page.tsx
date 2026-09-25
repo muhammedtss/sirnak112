@@ -22,6 +22,13 @@ interface Skala {
 
 const yetiskinSkalalar: Skala[] = [
   {
+    id: "cabuk", name: "ÇABUK Değerlendirme", icon: "⚡",
+    accent: "#F43F5E", glow: "rgba(244,63,94,0.15)", border: "rgba(244,63,94,0.25)",
+    description: "Hızlı hasta değerlendirme skalası.",
+    tags: ["Hızlı", "Triaj"],
+    href: "/skalalar/cabuk",
+  },
+  {
     id: "glasgow-yetiskin", name: "Glasgow Koma Skalası", icon: "🧠",
     accent: "#818CF8", glow: "rgba(129,140,248,0.15)", border: "rgba(129,140,248,0.25)",
     description: "Bilinç düzeyini göz açma (E), sözel yanıt (V) ve motor yanıt (M) skorlarıyla değerlendiren standart nörolojik skala.",
@@ -242,8 +249,8 @@ export default function SkalalarPage() {
           </p>
         </div>
 
-        {/* 2-col grid on md, single col on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* 2-col grid always */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-6">
           <SkalaSection
             title="Yetişkin Skalaları"
             icon="👤"

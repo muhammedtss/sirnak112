@@ -84,8 +84,8 @@ function Lightbox({
           <span className="text-white text-sm font-bold truncate">
             {fileNameToTitle(current.image.src)}
           </span>
-          <span className="shrink-0 ml-1 text-white/50 text-xs">
-            ({idx + 1}/{images.length})
+          <span className="shrink-0 ml-1 text-white text-xs font-bold bg-black/60 px-2 py-0.5 rounded-full shadow-md border border-white/10">
+            {idx + 1} / {images.length}
           </span>
         </div>
         <button
@@ -125,7 +125,7 @@ function Lightbox({
         >
           <ArrowLeft style={{ width: 20, height: 20 }} />
         </button>
-        <span className="text-white/60 text-sm font-medium min-w-[60px] text-center">
+        <span className="text-white text-sm font-bold min-w-[80px] text-center bg-black/60 px-3 py-1.5 rounded-full shadow-md border border-white/10">
           {idx + 1} / {images.length}
         </span>
         <button

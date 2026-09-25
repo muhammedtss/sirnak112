@@ -20,8 +20,8 @@ export default function VentilatorPage() {
   // Ideal vücut ağırlığına göre hesaplama (erkek/kadın ortalaması)
   const tidalMin = valid ? (k * 6).toFixed(0) : null;
   const tidalMax = valid ? (k * 8).toFixed(0) : null;
-  const dkVolMin = valid && f ? (k * 6 * f).toFixed(0) : null;
-  const dkVolMax = valid && f ? (k * 8 * f).toFixed(0) : null;
+  const dkVolMin = valid && f ? ((k * 6 * f) / 1000).toFixed(1) : null;
+  const dkVolMax = valid && f ? ((k * 8 * f) / 1000).toFixed(1) : null;
 
   // I:E zamanları
   const totalCycle = f > 0 ? 60 / f : null;
@@ -158,7 +158,7 @@ export default function VentilatorPage() {
               <div className="glass-card rounded-xl border border-white/10 p-3 text-center ">
                 <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">Dakika Volümü</p>
                 <p className="text-base font-black text-white/90 mt-1">{dkVolMin}–{dkVolMax}</p>
-                <p className="text-[10px] text-slate-500 font-bold">mL/dk</p>
+                <p className="text-[10px] text-slate-500 font-bold">L/dk</p>
               </div>
               <div className="glass-card rounded-xl border border-white/10 p-3 text-center ">
                 <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">PEEP</p>

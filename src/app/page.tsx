@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import GlobalSearchModal from "@/components/search/GlobalSearchModal";
 
 const container = {
   hidden: { opacity: 0 },
@@ -31,14 +32,13 @@ const item = {
 };
 
 const quickLinks = [
-  { href: "/algoritmalar",         icon: Cpu,        label: "Algoritmalar",       accent: "#6366F1" },
+  { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Görsel Algoritmalar",accent: "#F97316" },
   { href: "/vaka-protokolleri",    icon: BookOpen,   label: "Protokoller",        accent: "#8B5CF6" },
   { href: "/skalalar",             icon: Activity,   label: "Skalalar",           accent: "#34D399" },
   { href: "/ilac-doz",             icon: Pill,       label: "İlaç Dozu",          accent: "#F59E0B" },
   { href: "/envanter",             icon: Package,    label: "Envanter",           accent: "#EF4444" },
-  { href: "/icd10",                icon: FileSearch, label: "ICD-10",             accent: "#06B6D4" },
   { href: "/evraklar",             icon: FileText,   label: "Evraklar",           accent: "#EC4899" },
-  { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Görsel Algoritmalar",accent: "#F97316" },
+  { href: "/icd10",                icon: FileSearch, label: "ICD-10",             accent: "#06B6D4" },
 ];
 
 export default function HomePage() {
@@ -59,7 +59,10 @@ export default function HomePage() {
           </span>
         </h1>
         </div>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <GlobalSearchModal />
+          <ThemeToggle />
+        </div>
       </header>
 
       {/* ── Hero banner ── */}
@@ -89,11 +92,11 @@ export default function HomePage() {
           Kritik vakalarda hızlı, doğru karar için tasarlanmış acil başvuru sistemi.
         </p>
         <Link
-          href="/algoritmalar"
+          href="/algoritmalar-gorsel"
           className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold relative z-10"
           style={{ color: "var(--primary-light)" }}
         >
-          Algoritmalar <ChevronRight style={{ width: 16, height: 16 }} />
+          Görsel Algoritmalar <ChevronRight style={{ width: 16, height: 16 }} />
         </Link>
       </motion.div>
 
@@ -107,7 +110,7 @@ export default function HomePage() {
         {quickLinks.map((link) => {
           const Icon = link.icon;
           return (
-            <motion.div key={link.href} variants={item}>
+            <motion.div key={link.href} variants={item} className={link.href === "/icd10" ? "col-span-2" : ""}>
               <Link
                 href={link.href}
                 className="glass-card glass-hover flex flex-col p-4 gap-3 group"
