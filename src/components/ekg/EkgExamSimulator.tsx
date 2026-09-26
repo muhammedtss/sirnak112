@@ -10,7 +10,9 @@ import {
   ChevronRight,
   Ruler,
   Award,
-  RefreshCcw
+  RefreshCcw,
+  Maximize2,
+  X
 } from "lucide-react";
 import DigitalCaliper from "./DigitalCaliper";
 
@@ -38,6 +40,7 @@ export default function EkgExamSimulator() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [showNotes, setShowNotes] = useState(false);
   const [caliperOpen, setCaliperOpen] = useState(false);
+  const [fullScreenMode, setFullScreenMode] = useState(false);
 
   // Exam states
   const [score, setScore] = useState(100);
@@ -223,33 +226,33 @@ export default function EkgExamSimulator() {
             >
               <Ruler size={14} /> Pergeli {caliperOpen ? "Kapat" : "Aç"}
             </button>
+            <button
+              onClick={() => setFullScreenMode(true)}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-800 text-blue-400 hover:bg-slate-700"
+            >
+              <Maximize2 size={14} /> <span className="hidden sm:inline">Tam Ekran</span>
+            </button>
           </div>
         </div>
 
         {/* Pergel ve EKG Görüntüsü Alanı */}
-        <div className="w-full relative bg-white overflow-x-auto">
-          <div className="min-w-[700px] w-full relative">
-            {caliperOpen && (
-              <div className="relative z-20">
-                <DigitalCaliper onClose={() => setCaliperOpen(false)} />
-              </div>
-            )}
-
-            <div
-              className={`w-full h-[260px] sm:h-[300px] flex items-center justify-center p-2 bg-white ${
-                caliperOpen
-                  ? "absolute bottom-0 left-0 right-0 z-10"
-                  : "relative"
-              }`}
-            >
-              <img
-                src={currentCase.stripImage}
-                alt={`EKG Vaka ${currentCaseIndex + 1}`}
-                className="max-h-full w-full object-contain pointer-events-none select-none"
-              />
-            </div>
+        {caliperOpen ? (
+          <DigitalCaliper onClose={() => setCaliperOpen(false)}>
+            <img
+              src={currentCase.stripImage}
+              alt={`EKG Vaka ${currentCaseIndex + 1}`}
+              className="max-h-full max-w-none object-contain pointer-events-none select-none z-10"
+            />
+          </DigitalCaliper>
+        ) : (
+          <div className="w-full relative bg-white p-2 flex justify-center min-h-[250px] overflow-x-auto">
+            <img
+              src={currentCase.stripImage}
+              alt={`EKG Vaka ${currentCaseIndex + 1}`}
+              className="max-h-full max-w-none object-contain pointer-events-none select-none z-10"
+            />
           </div>
-        </div>
+        )}
       </div>
 
       {/* 5-Step Interactive Decision Form */}
@@ -407,6 +410,43 @@ export default function EkgExamSimulator() {
           )}
         </div>
       </div>
+
+      {/* Tam Ekran Modu Modalı */}
+      <AnimatePresence>
+        {fullScreenMode && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-slate-950 flex flex-col justify-center items-center p-2 sm:p-6"
+          >
+            <button 
+              onClick={() => setFullScreenMode(false)} 
+              className="absolute top-4 right-4 z-[70] bg-slate-800 p-2 rounded-full text-slate-300 hover:text-white hover:bg-slate-700 shadow-xl border border-slate-600"
+            >
+              <X size={24} />
+            </button>
+            
+            <div className="w-full max-w-7xl">
+              <div className="text-center mb-4">
+                <h3 className="text-xl font-bold text-white uppercase tracking-widest">
+                  VAKA {currentCaseIndex + 1} EKG
+                </h3>
+                <p className="text-emerald-400 text-sm font-semibold">Genişletilmiş İnceleme Modu</p>
+              </div>
+              <div className="w-full border-4 border-slate-800 rounded-xl overflow-hidden bg-white shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+                <DigitalCaliper>
+                  <img 
+                    src={currentCase.stripImage} 
+                    alt="EKG Fullscreen" 
+                    className="max-h-[50vh] sm:max-h-[70vh] max-w-none object-contain pointer-events-none select-none z-10" 
+                  />
+                </DigitalCaliper>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

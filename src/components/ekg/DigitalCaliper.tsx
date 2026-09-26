@@ -5,9 +5,10 @@ import { Ruler, XCircle, MousePointer2, RotateCcw } from "lucide-react";
 
 interface Props {
   onClose?: () => void;
+  children?: React.ReactNode;
 }
 
-export default function DigitalCaliper({ onClose }: Props) {
+export default function DigitalCaliper({ onClose, children }: Props) {
   const [mode, setMode] = useState<"regular" | "irregular">("regular");
   const [pixelsPerSquare, setPixelsPerSquare] = useState(28);
 
@@ -77,105 +78,16 @@ export default function DigitalCaliper({ onClose }: Props) {
     mode === "regular" ? Math.round(300 / squares) : markers.length * 20;
 
   return (
-    <div className="w-full flex flex-col">
-      {/* Üst Kompakt Araç Çubuğu - EKG'nin üstünü kapatmaz! */}
-      <div className="bg-slate-900 border-b border-slate-700 px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 z-20">
-        <div className="flex items-center gap-2">
-          <div className="flex bg-slate-950 p-1 rounded-lg border border-slate-800">
-            <button
-              onClick={() => {
-                setMode("regular");
-                setMarkers([]);
-              }}
-              className={`text-xs px-3 py-1 font-bold rounded-md transition-all ${
-                mode === "regular"
-                  ? "bg-emerald-500 text-slate-950"
-                  : "text-slate-400 hover:text-slate-200"
-              }`}
-            >
-              Düzenli (300 / Kare)
-            </button>
-            <button
-              onClick={() => setMode("irregular")}
-              className={`text-xs px-3 py-1 font-bold rounded-md transition-all ${
-                mode === "irregular"
-                  ? "bg-blue-500 text-slate-950"
-                  : "text-slate-400 hover:text-slate-200"
-              }`}
-            >
-              Düzensiz (15 Kare x 20)
-            </button>
-          </div>
-
-          {mode === "irregular" && markers.length > 0 && (
-            <button
-              onClick={() => setMarkers([])}
-              className="text-xs text-slate-400 hover:text-white flex items-center gap-1 px-2 py-1 bg-slate-800 rounded-md"
-              title="İşaretleri Sıfırla"
-            >
-              <RotateCcw size={12} /> Sıfırla
-            </button>
-          )}
-        </div>
-
-        {/* Canlı Hesaplama Gösterimi */}
-        <div className="flex items-center gap-4 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
-          {mode === "regular" ? (
-            <div className="text-xs text-slate-300">
-              Mesafe:{" "}
-              <span className="text-emerald-400 font-bold">
-                {squares.toFixed(1)} Büyük Kare
-              </span>
-              <span className="mx-2 text-slate-600">|</span>
-              300 / {squares.toFixed(1)} ={" "}
-              <span className="text-white font-black text-sm">{bpm} /dk</span>
-            </div>
-          ) : (
-            <div className="text-xs text-slate-300">
-              İşaretlenen R:{" "}
-              <span className="text-blue-400 font-bold">
-                {markers.length} Adet
-              </span>
-              <span className="mx-2 text-slate-600">|</span>
-              {markers.length} x 20 ={" "}
-              <span className="text-white font-black text-sm">{bpm} /dk</span>
-            </div>
-          )}
-        </div>
-
-        {/* Kalibrasyon ve Kapatma */}
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 text-[11px] text-slate-400">
-            <span className="hidden sm:inline">Kare Genişliği:</span>
-            <input
-              type="range"
-              min="14"
-              max="55"
-              value={pixelsPerSquare}
-              onChange={(e) => setPixelsPerSquare(Number(e.target.value))}
-              className="w-20 accent-emerald-500 cursor-pointer"
-            />
-            <span className="text-emerald-400 font-mono font-bold w-9">
-              {pixelsPerSquare}px
-            </span>
-          </div>
-          {onClose && (
-            <button
-              onClick={onClose}
-              className="text-slate-400 hover:text-red-400 p-1"
-            >
-              <XCircle size={18} />
-            </button>
-          )}
-        </div>
-      </div>
-
+    <div className="w-full flex flex-col bg-slate-900 border border-slate-700 rounded-b-xl overflow-hidden shadow-2xl">
       {/* EKG Üzerine Binen Tam Boy Pergel Katmanı */}
       <div
         ref={containerRef}
         onClick={handleTrackClick}
-        className="relative w-full h-[260px] sm:h-[300px] select-none overflow-hidden"
+        className="relative w-full select-none overflow-x-auto touch-pan-x bg-white flex items-center justify-center p-2 min-h-[250px] sm:min-h-[300px]"
       >
+        {/* Child Image */}
+        {children}
+
         {mode === "regular" ? (
           <>
             {/* İki Bacak Arası Dolgu ve Kırmızı Büyük Kare Kılavuzları (Slayt 10) */}
@@ -199,10 +111,10 @@ export default function DigitalCaliper({ onClose }: Props) {
                 setDragging("left");
               }}
               style={{ left: leftLeg }}
-              className="absolute top-0 bottom-0 w-7 -ml-3.5 cursor-ew-resize touch-none flex flex-col items-center justify-center group z-20"
+              className="absolute top-0 bottom-1 w-8 -ml-4 cursor-ew-resize touch-none flex flex-col items-center justify-end group z-20"
             >
-              <div className="w-0.5 h-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
-              <div className="absolute top-1/2 -translate-y-1/2 w-5 h-10 bg-emerald-500 text-slate-950 rounded-md font-black text-[10px] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <div className="w-[1.5px] h-full bg-emerald-500/70 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+              <div className="w-7 h-8 bg-emerald-500 text-slate-950 rounded-b-full rounded-t-sm font-black text-[10px] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 R1
               </div>
             </div>
@@ -214,10 +126,10 @@ export default function DigitalCaliper({ onClose }: Props) {
                 setDragging("right");
               }}
               style={{ left: rightLeg }}
-              className="absolute top-0 bottom-0 w-7 -ml-3.5 cursor-ew-resize touch-none flex flex-col items-center justify-center group z-20"
+              className="absolute top-0 bottom-1 w-8 -ml-4 cursor-ew-resize touch-none flex flex-col items-center justify-end group z-20"
             >
-              <div className="w-0.5 h-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
-              <div className="absolute top-1/2 -translate-y-1/2 w-5 h-10 bg-emerald-500 text-slate-950 rounded-md font-black text-[10px] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <div className="w-[1.5px] h-full bg-emerald-500/70 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+              <div className="w-7 h-8 bg-emerald-500 text-slate-950 rounded-b-full rounded-t-sm font-black text-[10px] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 R2
               </div>
             </div>
@@ -260,6 +172,89 @@ export default function DigitalCaliper({ onClose }: Props) {
             ))}
           </>
         )}
+      </div>
+
+      {/* Alt Kompakt Araç Çubuğu (Bottom Control Bar) */}
+      <div className="bg-slate-950 border-t border-slate-700 px-3 py-2 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 z-20">
+        <div className="flex items-center gap-2">
+          <div className="flex bg-slate-900 p-0.5 rounded-lg border border-slate-800">
+            <button
+              onClick={() => {
+                setMode("regular");
+                setMarkers([]);
+              }}
+              className={`text-[10px] sm:text-xs px-2 sm:px-3 py-1 font-bold rounded-md transition-all ${
+                mode === "regular"
+                  ? "bg-emerald-500 text-slate-950"
+                  : "text-slate-400 hover:text-slate-200"
+              }`}
+            >
+              Düzenli
+            </button>
+            <button
+              onClick={() => setMode("irregular")}
+              className={`text-[10px] sm:text-xs px-2 sm:px-3 py-1 font-bold rounded-md transition-all ${
+                mode === "irregular"
+                  ? "bg-blue-500 text-slate-950"
+                  : "text-slate-400 hover:text-slate-200"
+              }`}
+            >
+              Düzensiz
+            </button>
+          </div>
+
+          {mode === "irregular" && markers.length > 0 && (
+            <button
+              onClick={() => setMarkers([])}
+              className="text-[10px] text-slate-400 hover:text-white flex items-center gap-1 px-1.5 py-1 bg-slate-800 rounded-md"
+            >
+              <RotateCcw size={12} />
+            </button>
+          )}
+        </div>
+
+        {/* Canlı Hesaplama */}
+        <div className="flex items-center gap-3 bg-slate-900 px-3 py-1 rounded-lg border border-slate-800 flex-1 justify-center min-w-[140px]">
+          {mode === "regular" ? (
+            <div className="text-[11px] text-slate-300 flex items-center gap-2">
+              <span>Mesafe: <strong className="text-emerald-400">{squares.toFixed(1)}K</strong></span>
+              <span className="text-slate-600">|</span>
+              <span className="text-white font-black text-xs sm:text-sm">{bpm} /dk</span>
+            </div>
+          ) : (
+            <div className="text-[11px] text-slate-300 flex items-center gap-2">
+              <span>İşaret: <strong className="text-blue-400">{markers.length}</strong></span>
+              <span className="text-slate-600">|</span>
+              <span className="text-white font-black text-xs sm:text-sm">{bpm} /dk</span>
+            </div>
+          )}
+        </div>
+
+        {/* Kalibrasyon ve Kapatma */}
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 text-[10px] text-slate-400 bg-slate-900 px-2 py-1 rounded-lg border border-slate-800">
+            <span className="hidden sm:inline font-bold">Kalibrasyon:</span>
+            <input
+              type="range"
+              min="14"
+              max="55"
+              value={pixelsPerSquare}
+              onChange={(e) => setPixelsPerSquare(Number(e.target.value))}
+              className="w-16 sm:w-20 accent-emerald-500 cursor-pointer"
+            />
+            <span className="text-emerald-400 font-mono font-bold w-6 text-right">
+              {pixelsPerSquare}
+            </span>
+          </div>
+          {onClose && (
+            <button
+              onClick={onClose}
+              className="text-slate-400 hover:text-red-400 p-1.5 bg-slate-900 rounded-lg border border-slate-800"
+            >
+              <XCircle size={16} />
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

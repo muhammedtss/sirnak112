@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SIRNAK_112_EKG_DATA, RhythmAnalysisData } from "@/data/ekg-training-data";
 import { 
-  Play, BookOpen, Activity, Zap, Heart, Search, Ruler, ChevronDown, ChevronRight, Stethoscope, Scale
+  Play, BookOpen, Activity, Zap, Heart, Search, Ruler, ChevronDown, ChevronRight, Stethoscope, Scale, Maximize2, X
 } from "lucide-react";
 import DigitalCaliper from "./DigitalCaliper";
 
@@ -54,6 +54,8 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
   const [vsModeActive, setVsModeActive] = useState(false);
   const [revealedSteps, setRevealedSteps] = useState<Record<number, boolean>>({});
   const [caliperOpen, setCaliperOpen] = useState(false);
+  const [caliperOpen2, setCaliperOpen2] = useState(false); // For vs mode trace 2
+  const [fullScreenMode, setFullScreenMode] = useState<number | null>(null); // null, 1 (trace 1), 2 (trace 2)
   
   const selectedCase = allCases[selectedCaseIdx];
   const selectedCase2 = allCases[selectedCaseIdx2];
@@ -276,26 +278,52 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Rhythm 1 Trace */}
               <div className="bg-slate-950 rounded-2xl overflow-hidden border border-emerald-500/30">
-                <div className="p-3 bg-emerald-500/10 border-b border-emerald-500/30">
+                <div className="p-3 bg-emerald-500/10 border-b border-emerald-500/30 flex justify-between items-center">
                   <span className="font-bold text-emerald-400 text-sm uppercase">{selectedCase?.tani}</span>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setCaliperOpen(!caliperOpen)}
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-[11px] font-bold transition-all ${caliperOpen ? "bg-emerald-500 text-slate-950" : "bg-slate-800 text-emerald-400 hover:bg-slate-700"}`}
+                    >
+                      <Ruler size={12} /> Pergeli {caliperOpen ? "Kapat" : "Aç"}
+                    </button>
+                    <button onClick={() => setFullScreenMode(1)} className="p-1 rounded-lg bg-slate-800 text-blue-400 hover:bg-slate-700"><Maximize2 size={14}/></button>
+                  </div>
                 </div>
-                <div className="w-full relative bg-white p-2 flex justify-center min-h-[180px] overflow-x-auto">
-                  {selectedCase?.stripImage && (
-                    <img src={selectedCase.stripImage} alt="EKG 1" className="max-h-full object-contain pointer-events-none select-none z-10" />
-                  )}
-                </div>
+                {caliperOpen ? (
+                  <DigitalCaliper onClose={() => setCaliperOpen(false)}>
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                  </DigitalCaliper>
+                ) : (
+                  <div className="w-full relative bg-white p-2 flex justify-center min-h-[180px] overflow-x-auto">
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                  </div>
+                )}
               </div>
 
               {/* Rhythm 2 Trace */}
               <div className="bg-slate-950 rounded-2xl overflow-hidden border border-blue-500/30">
-                <div className="p-3 bg-blue-500/10 border-b border-blue-500/30">
+                <div className="p-3 bg-blue-500/10 border-b border-blue-500/30 flex justify-between items-center">
                   <span className="font-bold text-blue-400 text-sm uppercase">{selectedCase2?.tani}</span>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setCaliperOpen2(!caliperOpen2)}
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-[11px] font-bold transition-all ${caliperOpen2 ? "bg-blue-500 text-slate-950" : "bg-slate-800 text-blue-400 hover:bg-slate-700"}`}
+                    >
+                      <Ruler size={12} /> Pergeli {caliperOpen2 ? "Kapat" : "Aç"}
+                    </button>
+                    <button onClick={() => setFullScreenMode(2)} className="p-1 rounded-lg bg-slate-800 text-blue-400 hover:bg-slate-700"><Maximize2 size={14}/></button>
+                  </div>
                 </div>
-                <div className="w-full relative bg-white p-2 flex justify-center min-h-[180px] overflow-x-auto">
-                  {selectedCase2?.stripImage && (
-                    <img src={selectedCase2.stripImage} alt="EKG 2" className="max-h-full object-contain pointer-events-none select-none z-10" />
-                  )}
-                </div>
+                {caliperOpen2 ? (
+                  <DigitalCaliper onClose={() => setCaliperOpen2(false)}>
+                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                  </DigitalCaliper>
+                ) : (
+                  <div className="w-full relative bg-white p-2 flex justify-center min-h-[180px] overflow-x-auto">
+                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -342,19 +370,27 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
               <div className="bg-slate-950 rounded-2xl overflow-hidden border border-slate-800">
                 <div className="p-3 bg-slate-900 border-b border-slate-800 flex justify-between items-center">
                   <span className="font-bold text-amber-400 text-sm uppercase">{selectedCase?.tani}</span>
-                  <button
-                    onClick={() => setCaliperOpen(!caliperOpen)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${caliperOpen ? "bg-amber-500 text-slate-950" : "bg-slate-800 text-amber-400 hover:bg-slate-700"}`}
-                  >
-                    <Ruler size={14} /> Pergeli {caliperOpen ? "Kapat" : "Aç"}
-                  </button>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setCaliperOpen(!caliperOpen)}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${caliperOpen ? "bg-amber-500 text-slate-950" : "bg-slate-800 text-amber-400 hover:bg-slate-700"}`}
+                    >
+                      <Ruler size={14} /> Pergeli {caliperOpen ? "Kapat" : "Aç"}
+                    </button>
+                    <button onClick={() => setFullScreenMode(1)} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-800 text-blue-400 hover:bg-slate-700">
+                      <Maximize2 size={14} /> <span className="hidden sm:inline">Tam Ekran</span>
+                    </button>
+                  </div>
                 </div>
-                <div className="w-full relative bg-white p-2 flex justify-center min-h-[250px] overflow-x-auto">
-                  {caliperOpen && <div className="absolute inset-0 z-20"><DigitalCaliper onClose={() => setCaliperOpen(false)} /></div>}
-                  {selectedCase?.stripImage && (
-                    <img src={selectedCase.stripImage} alt="EKG" className="max-h-full object-contain pointer-events-none select-none z-10" />
-                  )}
-                </div>
+                {caliperOpen ? (
+                  <DigitalCaliper onClose={() => setCaliperOpen(false)}>
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                  </DigitalCaliper>
+                ) : (
+                  <div className="w-full relative bg-white p-2 flex justify-center min-h-[250px] overflow-x-auto">
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                  </div>
+                )}
               </div>
 
               {currentNotes.length > 0 && (
@@ -480,6 +516,43 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
           </button>
         </div>
       </section>
+
+      {/* Tam Ekran Modu Modalı */}
+      <AnimatePresence>
+        {fullScreenMode !== null && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-slate-950 flex flex-col justify-center items-center p-2 sm:p-6"
+          >
+            <button 
+              onClick={() => setFullScreenMode(null)} 
+              className="absolute top-4 right-4 z-[70] bg-slate-800 p-2 rounded-full text-slate-300 hover:text-white hover:bg-slate-700 shadow-xl border border-slate-600"
+            >
+              <X size={24} />
+            </button>
+            
+            <div className="w-full max-w-7xl">
+              <div className="text-center mb-4">
+                <h3 className="text-xl font-bold text-white uppercase tracking-widest">
+                  {fullScreenMode === 1 ? selectedCase?.tani : selectedCase2?.tani}
+                </h3>
+                <p className="text-emerald-400 text-sm font-semibold">Genişletilmiş İnceleme Modu</p>
+              </div>
+              <div className="w-full border-4 border-slate-800 rounded-xl overflow-hidden bg-white shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+                <DigitalCaliper>
+                  <img 
+                    src={fullScreenMode === 1 ? selectedCase?.stripImage : selectedCase2?.stripImage} 
+                    alt="EKG Fullscreen" 
+                    className="max-h-[50vh] sm:max-h-[70vh] max-w-none object-contain pointer-events-none select-none z-10" 
+                  />
+                </DigitalCaliper>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
