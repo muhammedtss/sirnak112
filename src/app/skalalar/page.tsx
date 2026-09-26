@@ -65,10 +65,10 @@ const yetiskinSkalalar: Skala[] = [
     href: "/skalalar/ventilator",
   },
   {
-    id: "geri-dondurulebilir", name: "Arrest — 4H & 4T", icon: "🔄",
+    id: "geri-dondurulebilir", name: "Arrest — 5H-5T", icon: "🔄",
     accent: "#FB923C", glow: "rgba(251,146,60,0.15)", border: "rgba(251,146,60,0.25)",
-    description: "KPR sırasında aranması gereken geri döndürülebilir nedenler: Hipoksi, Hipovolemi, Hiperpotasemi, Hipotermi, Tansiyon pnx, Tamponad, Tromboz, Toksinler.",
-    tags: ["KPR", "4H4T", "Arrest"],
+    description: "KPR sırasında aranması gereken geri döndürülebilir nedenler (5H-5T): Hipoksi, Hipovolemi, Hipo/Hiper termi, Hipo/Hiper kalemi, Hidrojen iyonu Asidoz, Tansiyon pnömotoraks, Tamponad Kardiyak, Tromboz Pulmoner, Tromboz Kardiyak, Toksinler.",
+    tags: ["KPR", "5H5T", "Arrest"],
     href: "/skalalar/geri-dondurulebilir",
   },
   {
@@ -108,6 +108,13 @@ const cocukSkalalar: Skala[] = [
     description: "Görünüm (A), Solunum Eforu (B) ve Dolaşım (C) üçgeniyle aciliyet belirler.",
     tags: ["Pediatri", "Triaj", "PAT"],
     href: "/skalalar/pat",
+  },
+  {
+    id: "best-guess", name: "Best Guess Formülü", icon: "⚖️",
+    accent: "#F59E0B", glow: "rgba(245,158,11,0.15)", border: "rgba(245,158,11,0.25)",
+    description: "Çocuklarda vücut ağırlığı tahmini (Best Guess). <12 ay, 1-4 yaş ve 5-14 yaş için.",
+    tags: ["Pediatri", "Kilo", "Best Guess"],
+    href: "/skalalar/best-guess",
   },
 
   {

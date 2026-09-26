@@ -726,6 +726,8 @@
         "content": "Geniş QRS (>0,09 sn) mi?",
         "yesId": "node_8",
         "noId": "node_5",
+        "yesText": "Geniş QRS",
+        "noText": "Dar QRS",
         "isCritical": false
       },
       "node_5": {
@@ -1077,7 +1079,7 @@
       "node_8": {
         "id": "node_8",
         "type": "action",
-        "content": "NEA / Asistoli: 2 dk boyunca KPR'ye devam et (Geri döndürülebilir nedenler gözden geçirilmeli)",
+        "content": "NEA / Asistoli: 2 dk boyunca KPR'ye devam et (Geri döndürülebilir nedenler 5H-5T gözden geçirilmeli)",
         "nextId": "node_4",
         "isCritical": false
       },

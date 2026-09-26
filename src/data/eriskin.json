@@ -484,6 +484,8 @@
         "content": "QRS Geniş mi? (Geniş >0,12 sn)",
         "yesId": "node_5",
         "noId": "node_8",
+        "yesText": "Geniş QRS",
+        "noText": "Dar QRS",
         "isCritical": false
       },
       "node_5": {
@@ -492,6 +494,8 @@
         "content": "Geniş QRS ritmi Düzenli mi?",
         "yesId": "node_6",
         "noId": "node_7",
+        "yesText": "Düzenli Ritim",
+        "noText": "Düzensiz Ritim",
         "isCritical": false
       },
       "node_6": {
@@ -514,6 +518,8 @@
         "content": "Dar QRS ritmi Düzenli mi?",
         "yesId": "node_9",
         "noId": "node_10",
+        "yesText": "Düzenli Ritim",
+        "noText": "Düzensiz Ritim",
         "isCritical": false
       },
       "node_9": {
@@ -683,7 +689,7 @@
       "node_9": {
         "id": "node_9",
         "type": "action",
-        "content": "NEA/Asistoli. 2 dk boyunca KPR ye devam et. (Geri döndürülebilir nedenler gözden geçirilmeli)",
+        "content": "NEA/Asistoli. 2 dk boyunca KPR ye devam et. (Geri döndürülebilir nedenler 5H-5T gözden geçirilmeli)",
         "nextId": "node_5",
         "isCritical": false
       }
@@ -755,7 +761,7 @@
       "node_12": {
         "id": "node_12",
         "type": "action",
-        "content": "3. Defibrilasyon, şok sonrası ara vermeden göğüs basısına devam et. AMİODARON 300 mg IV/IO bolus veya %2 LİDOKAİN 1-1.5 mg/kg IV/IO bolus. (Dirençli VF/nVT'de 5. şoktan sonra Amiodaron 150 mg veya Lidokain 0.5-0.75 mg/kg tekrar verilir)",
+        "content": "3.Defibrilasyon, şok sonrası ara vermeden göğüs basısına devam et. AMİODARON 300 mg IV/IO bolus (2-3 dk) (20 ml %5 dekstroz içinde) veya %2 LİDOKAİN 1-1.5 mg/kg IV/IO bolus. Tekrarlayan veya dirençli VF/Nabızsız VT 5. şoktan sonra AMİODARON 150 mg IV/IO bolus (2-3 dk) (10 ml %5 dekstroz içinde) veya %2 LİDOKAİN 0,5-0,75 mg/kg IV/IO bolus tekrar ver",
         "nextId": "node_3",
         "isCritical": false
       },

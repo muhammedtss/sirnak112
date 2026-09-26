@@ -28,16 +28,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${outfit.variable} h-full`}>
-      <body className="flex flex-col relative antialiased">
+    <html lang="tr" className={`${outfit.variable} h-[100dvh]`}>
+      <body className="flex flex-col h-full relative antialiased overflow-hidden">
         {/* Layered premium background — fixed, stays behind everything */}
         <Background />
 
-        {/* Each page renders its own header + content.
-            Root layout only provides the ambient BG and bottom nav shell. */}
-        {children}
+        <div className="flex-1 overflow-y-auto w-full relative z-10" id="main-scroll-container">
+          {children}
+        </div>
 
-        <BottomNav />
+        <div className="shrink-0 w-full relative z-50 bg-transparent">
+          <BottomNav />
+        </div>
       </body>
     </html>
   );

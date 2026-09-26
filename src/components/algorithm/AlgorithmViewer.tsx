@@ -354,7 +354,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                             className="flex-1 glass-card hover:bg-emerald-500/10 hover:border-emerald-500/50 hover:text-emerald-400 disabled:opacity-50 py-3 rounded-xl font-bold text-lg active:scale-95 transition-all"
                             style={{ borderColor: "rgba(16,185,129,0.3)", color: "#34D399" }}
                           >
-                            Evet
+                            {node.yesText || "Evet"}
                           </button>
                           <button
                             onClick={() => node.noId && advance(node.noId)}
@@ -362,7 +362,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                             className="flex-1 glass-card hover:bg-red-500/10 hover:border-red-500/50 hover:text-red-400 disabled:opacity-50 py-3 rounded-xl font-bold text-lg active:scale-95 transition-all"
                             style={{ borderColor: "rgba(239,68,68,0.3)", color: "#F87171" }}
                           >
-                            Hayır
+                            {node.noText || "Hayır"}
                           </button>
                         </div>
                       ) : (
@@ -376,7 +376,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                                 : { background: "rgba(255,255,255,0.02)", border: "1px solid var(--glass-border)", color: "var(--fg-muted)" }
                             }
                           >
-                            Evet
+                            {node.yesText || "Evet"}
                           </button>
                           <button
                             onClick={() => node.noId && setHistory(prev => [...prev.slice(0, index + 1), node.noId!])}
@@ -387,7 +387,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                                 : { background: "rgba(255,255,255,0.02)", border: "1px solid var(--glass-border)", color: "var(--fg-muted)" }
                             }
                           >
-                            Hayır
+                            {node.noText || "Hayır"}
                           </button>
                         </div>
                       )}
@@ -470,7 +470,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                 </div>
               );
             })}
-            <div ref={bottomRef} className="h-32" /> {/* Increased padding for BottomNav */}
+            <div ref={bottomRef} className="h-6" /> {/* Small padding before footer */}
           </div>
         )}
 
@@ -524,7 +524,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                 Veri bulunamadı.
               </div>
             )}
-            <div className="h-24" /> {/* Padding for BottomNav in full mode */}
+            <div className="h-6" /> {/* Small padding before footer */}
           </div>
         )}
       </div>

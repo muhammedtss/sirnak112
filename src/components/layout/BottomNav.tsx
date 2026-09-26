@@ -17,10 +17,10 @@ export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    /* Safe-area padding for iPhone notch */
-    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none pb-[env(safe-area-inset-bottom,12px)] px-4">
+    /* Safe-area padding for iPhone notch, now part of normal flow */
+    <div className="w-full flex justify-center pb-[env(safe-area-inset-bottom,16px)] pt-2 px-4">
       <nav
-        className="pointer-events-auto glass flex items-center justify-between w-full max-w-sm px-2 py-2 rounded-[2rem]"
+        className="glass flex items-center justify-between w-full max-w-sm px-2 py-2 rounded-[2rem] shadow-xl"
         style={{ borderColor: "var(--glass-border)" }}
       >
         {navItems.map((item) => {

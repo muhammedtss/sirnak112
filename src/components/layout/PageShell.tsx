@@ -6,8 +6,6 @@ interface PageShellProps {
   children: ReactNode;
   /** Extra className for the scroll container */
   className?: string;
-  /** Padding bottom to avoid BottomNav overlap (default: pb-28) */
-  bottomPadding?: string;
 }
 
 /**
@@ -19,10 +17,10 @@ interface PageShellProps {
  *     <div className="p-4 max-w-xl mx-auto"> ... </div>
  *   </PageShell>
  */
-export function PageShell({ children, className = "", bottomPadding = "pb-28" }: PageShellProps) {
+export function PageShell({ children, className = "" }: PageShellProps) {
   return (
     <div
-      className={`flex flex-col min-h-[100svh] overflow-y-auto ${bottomPadding} ${className}`}
+      className={`flex flex-col w-full min-h-full ${className}`}
     >
       {children}
     </div>

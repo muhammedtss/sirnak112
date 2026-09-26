@@ -14,6 +14,8 @@ export interface AlgorithmNode {
   // Eğer type === 'decision' (Karar) ise
   yesId?: string;          // Evet seçilirse gidilecek düğümün ID'si
   noId?: string;           // Hayır seçilirse gidilecek düğümün ID'si
+  yesText?: string;        // "Evet" butonu yerine yazılacak özel metin
+  noText?: string;         // "Hayır" butonu yerine yazılacak özel metin
   
   // Eğer type === 'redirect' (Başka algoritmaya yönlendirme) ise
   targetAlgorithmId?: string; // Gidilecek yeni algoritmanın ID'si (Örn: 'arrest_yonetimi')

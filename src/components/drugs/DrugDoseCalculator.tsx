@@ -57,13 +57,17 @@ function StepBadge({ step, label, active, done }: { step: number; label: string;
 
 // ─── Result Card ──────────────────────────────────────────────────────────────
 
-function ResultCard({ dose, doseInfo, ageGroup, weight }: {
+function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
   dose: string;
   doseInfo: DoseInfo;
   ageGroup: AgeGroup;
   weight: string;
+  drugId?: string;
 }) {
   const ageLabel = ageGroup === "eriskin" ? "Erişkin" : "Çocuk";
+  const weightNum = parseFloat(weight);
+  const showDopaminDrops = drugId === "dopamin" && !isNaN(weightNum);
+
   return (
     <div className="mt-5 rounded-2xl overflow-hidden shadow-lg border border-teal-500/30 glass-card animate-in fade-in slide-in-from-bottom-4 duration-400">
       {/* Header */}
@@ -78,6 +82,12 @@ function ResultCard({ dose, doseInfo, ageGroup, weight }: {
         <p className="text-lg text-teal-400 font-semibold mt-1">{doseInfo.unit}</p>
         {doseInfo.isWeightBased && weight && (
           <p className="text-xs text-subtle mt-1">{weight} kg × {doseInfo.dosePerKg} {doseInfo.unit}/kg</p>
+        )}
+        {showDopaminDrops && (
+          <div className="mt-4 bg-orange-500/10 border border-orange-500/30 rounded-xl p-3">
+            <p className="text-[11px] text-orange-400 font-bold uppercase tracking-widest mb-1">Damla Ayar Değeri</p>
+            <p className="text-2xl font-black text-orange-300">{(weightNum * 1.5).toFixed(1)} <span className="text-sm font-bold text-orange-400/80">damla/dk</span></p>
+          </div>
         )}
       </div>
 
@@ -151,20 +161,26 @@ export default function DrugDoseCalculator() {
   const isWeightInvalid = weight !== "" && (isNaN(weightNum) || weightNum <= 0 || weightNum > 300);
   const isWeightHigh = !isWeightInvalid && weightNum > 150;
 
+  const isSpecialWeightDrug = selectedDrugId === "dopamin";
+  const requiresWeight = currentDoseInfo?.isWeightBased || isSpecialWeightDrug;
+
   // Calculate dose
   const calculatedDose = useMemo(() => {
     if (!currentDoseInfo) return null;
     if (!currentDoseInfo.isAvailable) return null;
-    if (currentDoseInfo.isWeightBased) {
+    
+    if (requiresWeight) {
       if (!weight || isWeightInvalid || weightNum > 300) return null;
-      if (!currentDoseInfo.dosePerKg) return null;
-      const raw = weightNum * currentDoseInfo.dosePerKg;
-      return raw % 1 === 0 ? raw.toString() : raw.toFixed(2);
+      if (currentDoseInfo.isWeightBased && currentDoseInfo.dosePerKg) {
+        const raw = weightNum * currentDoseInfo.dosePerKg;
+        return raw % 1 === 0 ? raw.toString() : raw.toFixed(2);
+      }
+      return currentDoseInfo.fixedDose;
     }
     return currentDoseInfo.fixedDose;
-  }, [currentDoseInfo, weight, weightNum, isWeightInvalid]);
+  }, [currentDoseInfo, weight, weightNum, isWeightInvalid, requiresWeight]);
 
-  const step = !selectedDrugId ? 1 : !selectedCaseKey ? 2 : !currentDoseInfo?.isAvailable ? 3 : currentDoseInfo.isWeightBased && !calculatedDose ? 3 : 4;
+  const step = !selectedDrugId ? 1 : !selectedCaseKey ? 2 : !currentDoseInfo?.isAvailable ? 3 : (requiresWeight && !calculatedDose) ? 3 : 4;
 
   const handleDrugSelect = (drug: Drug) => {
     setSelectedDrugId(drug.id);
@@ -322,7 +338,7 @@ export default function DrugDoseCalculator() {
             )}
 
             {/* Weight Input */}
-            {currentDoseInfo?.isAvailable && currentDoseInfo.isWeightBased && (
+            {currentDoseInfo?.isAvailable && requiresWeight && (
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-bold text-muted uppercase tracking-wide flex items-center gap-2">
                   <svg className="w-4 h-4 text-teal-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -371,8 +387,9 @@ export default function DrugDoseCalculator() {
               </div>
             )}
 
+
             {/* Fixed dose preview */}
-            {currentDoseInfo?.isAvailable && !currentDoseInfo.isWeightBased && currentDoseInfo.fixedDose && (
+            {currentDoseInfo?.isAvailable && !requiresWeight && currentDoseInfo.fixedDose && (
               <div className="bg-teal-500/10 border border-teal-500/30 rounded-xl p-4">
                 <p className="text-xs text-teal-400 font-bold uppercase tracking-wide mb-1">Sabit Doz (Kilo Bağımsız)</p>
                 <p className="text-4xl font-black text-teal-300">{currentDoseInfo.fixedDose}</p>
@@ -390,6 +407,7 @@ export default function DrugDoseCalculator() {
           doseInfo={currentDoseInfo}
           ageGroup={ageGroup}
           weight={weight}
+          drugId={selectedDrugId}
         />
       )}
     </div>
