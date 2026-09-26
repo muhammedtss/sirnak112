@@ -1611,7 +1611,7 @@
           "fixedDose": "125",
           "maxDose": null,
           "route": "IV İnfüzyon",
-          "notes": "125 ml/saat (40 damla/dk) olarak verilir."
+          "notes": "125 ml/saat (40 cc/dk) olarak verilir."
         },
         "cocuk": {
           "isAvailable": false,

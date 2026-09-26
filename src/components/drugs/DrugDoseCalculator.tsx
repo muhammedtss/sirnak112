@@ -85,8 +85,8 @@ function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
         )}
         {showDopaminDrops && (
           <div className="mt-4 bg-orange-500/10 border border-orange-500/30 rounded-xl p-3">
-            <p className="text-[11px] text-orange-400 font-bold uppercase tracking-widest mb-1">Damla Ayar Değeri</p>
-            <p className="text-2xl font-black text-orange-300">{(weightNum * 1.5).toFixed(1)} <span className="text-sm font-bold text-orange-400/80">damla/dk</span></p>
+            <p className="text-[11px] text-orange-400 font-bold uppercase tracking-widest mb-1">cc/dk Ayar Değeri</p>
+            <p className="text-2xl font-black text-orange-300">{(weightNum * 1.5).toFixed(1)} <span className="text-sm font-bold text-orange-400/80">cc/dk</span></p>
           </div>
         )}
       </div>

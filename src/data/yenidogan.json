@@ -21,7 +21,7 @@
       "node_3": {
         "id": "node_3",
         "type": "action",
-        "content": "Damar yolu aç. Ringer Laktat veya %0,9 NaCl IV 125 ml/saat - 40 damla/dk başla",
+        "content": "Damar yolu aç. Ringer Laktat veya %0,9 NaCl IV 125 ml/saat - 40 cc/dk başla",
         "nextId": "node_4",
         "isCritical": false
       },

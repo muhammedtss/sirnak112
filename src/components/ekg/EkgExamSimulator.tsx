@@ -2,21 +2,17 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { EkgModule, RhythmAnalysisData } from "@/data/ekg-training-data";
+import { SIRNAK_112_EKG_DATA, RhythmAnalysisData } from "@/data/ekg-training-data";
 import {
   Activity,
   AlertTriangle,
   CheckCircle,
   ChevronRight,
-  Info,
   Ruler,
+  Award,
+  RefreshCcw
 } from "lucide-react";
 import DigitalCaliper from "./DigitalCaliper";
-
-interface Props {
-  module: EkgModule;
-  onComplete: () => void;
-}
 
 const PARAMETERS = [
   { key: "ritim", label: "1. Ritim" },
@@ -26,16 +22,27 @@ const PARAMETERS = [
   { key: "qrsGenisligi", label: "5. QRS Genişliği" },
 ] as const;
 
-export default function RhythmSimulator({ module, onComplete }: Props) {
-  const cases = module.interactivePayload?.cases || [];
-  const [currentCaseIndex, setCurrentCaseIndex] = useState(0);
+export default function EkgExamSimulator() {
+  const cases = useMemo(() => {
+    const mod6 = SIRNAK_112_EKG_DATA.find((m) => m.id === "mod-6")?.interactivePayload?.cases || [];
+    const mod7 = SIRNAK_112_EKG_DATA.find((m) => m.id === "mod-7")?.interactivePayload?.cases || [];
+    const combined = [...mod6, ...mod7];
+    // Sınav modu olduğu için karıştırabiliriz
+    return combined.sort(() => Math.random() - 0.5);
+  }, []);
 
+  const [currentCaseIndex, setCurrentCaseIndex] = useState(0);
   const currentCase = cases[currentCaseIndex];
 
   const [step, setStep] = useState(0);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [showNotes, setShowNotes] = useState(false);
   const [caliperOpen, setCaliperOpen] = useState(false);
+
+  // Exam states
+  const [score, setScore] = useState(100);
+  const [totalErrors, setTotalErrors] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     setStep(0);
@@ -49,9 +56,9 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
 
     if (step < 5) {
       const paramKey = PARAMETERS[step].key;
-      const correct = currentCase[paramKey];
+      const correct = currentCase[paramKey as keyof RhythmAnalysisData] as string;
       const allVals = Array.from(
-        new Set(cases.map((c: any) => c[paramKey])),
+        new Set(cases.map((c: any) => c[paramKey]))
       ) as string[];
       const distractors = allVals.filter((v) => v !== correct);
       distractors.sort(() => Math.random() - 0.5);
@@ -60,7 +67,7 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
     } else {
       const correct = currentCase.tani;
       const allVals = Array.from(
-        new Set(cases.map((c: any) => c.tani)),
+        new Set(cases.map((c: any) => c.tani))
       ) as string[];
       const distractors = allVals.filter((v) => v !== correct);
       distractors.sort(() => Math.random() - 0.5);
@@ -69,62 +76,26 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
     }
   }, [currentCase, step, cases]);
 
-  const relevantNotes = useMemo(() => {
-    const allNotes = module.verbatimContent.notes || [];
-    if (!currentCase || allNotes.length === 0) return [];
-    const taniUpper = currentCase.tani.toUpperCase();
-
-    if (taniUpper.includes("SVT")) {
-      return allNotes.filter((n) => n.includes("PSVT") || n.includes("AVNRT"));
-    }
-    if (taniUpper.includes("FİBRİLASYON") && !taniUpper.includes("DAL")) {
-      return allNotes.filter((n) => n.includes("Atriyal Fibrilasyon:"));
-    }
-    if (taniUpper.includes("DAL BLOĞU")) {
-      return allNotes.filter(
-        (n) => n.includes("Dal Blokları") || n.includes("WPW"),
-      );
-    }
-    return allNotes;
-  }, [currentCase, module.verbatimContent.notes]);
-
   const handleOptionClick = (opt: string) => {
     if (step < 5) {
       const paramKey = PARAMETERS[step].key;
-      const correct = currentCase[paramKey];
+      const correct = currentCase[paramKey as keyof RhythmAnalysisData];
       if (opt === correct) {
         setErrorMsg(null);
         setStep((s) => s + 1);
       } else {
-        let msg = "Yanlış seçim, lütfen EKG trasesini tekrar inceleyin.";
-        if (paramKey === "ritim") {
-          msg =
-            currentCase.ritim === "DÜZENLİ"
-              ? "R-R aralıklarına dikkat et, birbirine eşit! (Düzenli)"
-              : "R-R aralıklarına dikkat et, aralıklar birbirinden farklı! (Düzensiz)";
-        } else if (paramKey === "hiz") {
-          msg =
-            "Üstteki 'Pergeli Aç' butonunu kullanarak R-R arasındaki büyük kareleri (300/kare) veya 15 kare içindeki R sayısını (x20) ölçün.";
-        } else if (paramKey === "pDalgasi") {
-          msg =
-            "Her QRS öncesinde düzenli bir P dalgası veya testere dişi (flatter) görünümü olup olmadığına dikkat edin.";
-        } else if (paramKey === "pQrsIliskisi") {
-          msg =
-            "Her P dalgasını bir QRS kompleksi takip ediyor mu ve P-R mesafesi normal mi (0.12-0.20 sn)?";
-        } else if (paramKey === "qrsGenisligi") {
-          msg =
-            "QRS genişliği 0.12 saniyeden (3 küçük kare) dar mı yoksa geniş mi?";
-        }
-        setErrorMsg(msg);
+        setScore((s) => Math.max(0, s - 5));
+        setTotalErrors((e) => e + 1);
+        setErrorMsg("Hatalı değerlendirme (-5 Puan). Traseyi tekrar inceleyin.");
       }
     } else {
       if (opt === currentCase.tani) {
         setErrorMsg(null);
         setShowNotes(true);
       } else {
-        setErrorMsg(
-          "Yanlış tanı! Sol tarafta doğruladığınız 5 parametreyi birleştirerek tekrar düşünün.",
-        );
+        setScore((s) => Math.max(0, s - 5));
+        setTotalErrors((e) => e + 1);
+        setErrorMsg("Hatalı değerlendirme (-5 Puan). Traseyi tekrar inceleyin.");
       }
     }
   };
@@ -133,23 +104,111 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
     if (currentCaseIndex < cases.length - 1) {
       setCurrentCaseIndex((i) => i + 1);
     } else {
-      onComplete();
+      setIsFinished(true);
     }
   };
+
+  const restartExam = () => {
+    setCurrentCaseIndex(0);
+    setScore(100);
+    setTotalErrors(0);
+    setIsFinished(false);
+  };
+
+  if (isFinished) {
+    const isSuccess = score >= 70;
+    return (
+      <div className="w-full max-w-2xl mx-auto mt-10">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="bg-slate-900 border-2 border-slate-700 rounded-3xl p-8 shadow-2xl relative overflow-hidden"
+        >
+          {/* Top Decoration */}
+          <div className={`absolute top-0 left-0 right-0 h-3 ${isSuccess ? 'bg-emerald-500' : 'bg-red-500'}`} />
+          
+          <div className="text-center mb-8">
+            <Award className={`w-20 h-20 mx-auto mb-4 ${isSuccess ? 'text-emerald-500' : 'text-red-500'}`} />
+            <h2 className="text-2xl font-black text-white tracking-widest uppercase mb-2">Şırnak 112 EKG Değerlendirme Karnesi</h2>
+            <p className="text-slate-400 font-semibold">Vaka Sınavı Sonuç Raporu</p>
+          </div>
+
+          <div className="bg-slate-950 rounded-2xl p-6 border border-slate-800 mb-8">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="text-center p-4 bg-slate-900 rounded-xl border border-slate-800">
+                <span className="text-slate-400 text-sm font-bold block mb-1">Toplam Vaka</span>
+                <span className="text-3xl font-black text-white">{cases.length}</span>
+              </div>
+              <div className="text-center p-4 bg-slate-900 rounded-xl border border-slate-800">
+                <span className="text-slate-400 text-sm font-bold block mb-1">Nihai Puan</span>
+                <span className={`text-3xl font-black ${isSuccess ? 'text-emerald-400' : 'text-red-400'}`}>{score}</span>
+              </div>
+              <div className="text-center p-4 bg-slate-900 rounded-xl border border-slate-800">
+                <span className="text-slate-400 text-sm font-bold block mb-1">Doğru Karar</span>
+                <span className="text-2xl font-black text-emerald-500">{cases.length * 6}</span>
+              </div>
+              <div className="text-center p-4 bg-slate-900 rounded-xl border border-slate-800">
+                <span className="text-slate-400 text-sm font-bold block mb-1">Hatalı Karar</span>
+                <span className="text-2xl font-black text-red-500">{totalErrors}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={`text-center p-6 rounded-2xl mb-8 ${isSuccess ? 'bg-emerald-500/10 border border-emerald-500/30' : 'bg-red-500/10 border border-red-500/30'}`}>
+            <h3 className={`text-2xl font-black uppercase tracking-wider mb-2 ${isSuccess ? 'text-emerald-400' : 'text-red-400'}`}>
+              {isSuccess ? 'BAŞARILI' : 'BAŞARISIZ'}
+            </h3>
+            <p className={`font-semibold ${isSuccess ? 'text-emerald-300' : 'text-red-300'}`}>
+              {isSuccess ? 'Tebrikler! EKG değerlendirme testini başarıyla tamamladınız.' : 'Eğitim Modunu Tekrar İnceleyin.'}
+            </p>
+          </div>
+
+          <button onClick={restartExam} className="w-full py-4 bg-slate-800 hover:bg-slate-700 text-white font-black uppercase tracking-widest rounded-xl transition-colors flex items-center justify-center gap-2">
+            <RefreshCcw size={20} /> Yeniden Başla
+          </button>
+        </motion.div>
+      </div>
+    );
+  }
 
   if (!currentCase) return null;
 
   return (
     <div className="flex flex-col gap-6 w-full">
+      {/* Exam Header HUD */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4 shadow-lg">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center border border-amber-500/30">
+            <Activity className="text-amber-400" size={20} />
+          </div>
+          <div>
+            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Sınav İlerlemesi</span>
+            <div className="text-lg font-black text-white">VAKA {currentCaseIndex + 1} <span className="text-slate-500">/ {cases.length}</span></div>
+          </div>
+        </div>
+        
+        <div className="flex items-center gap-4">
+          <div className="bg-slate-950 px-4 py-2 rounded-xl border border-slate-800 text-right">
+            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Kalan Puan</span>
+            <div className="text-xl font-black text-emerald-400 flex items-center justify-end gap-1.5">
+              {score} <span className="text-sm">HP</span>
+            </div>
+          </div>
+          <div className="bg-slate-950 px-4 py-2 rounded-xl border border-slate-800 text-right">
+            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Hata Sayısı</span>
+            <div className="text-xl font-black text-red-400 flex items-center justify-end gap-1.5">
+              {totalErrors} <AlertTriangle size={14} className="text-red-500/70" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* EKG Strip Display & Caliper Container */}
       <div className="bg-slate-900 border border-slate-700 rounded-2xl overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)]">
         <div className="p-3.5 bg-slate-800 border-b border-slate-700 flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center gap-3">
-            <span className="text-emerald-400 font-black tracking-widest text-sm">
-              VAKA {currentCaseIndex + 1} / {cases.length}
-            </span>
-            <span className="text-xs bg-slate-900 text-slate-400 px-2.5 py-1 rounded-md border border-slate-700">
-              Slayt {currentCase.slide}
+            <span className="text-amber-400 font-black tracking-widest text-sm">
+              EKG MONİTÖRÜ
             </span>
           </div>
 
@@ -158,15 +217,12 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
               onClick={() => setCaliperOpen(!caliperOpen)}
               className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 caliperOpen
-                  ? "bg-emerald-500 text-slate-950 shadow-[0_0_12px_rgba(16,185,129,0.4)]"
-                  : "bg-slate-700 text-emerald-400 hover:bg-slate-600"
+                  ? "bg-amber-500 text-slate-950 shadow-[0_0_12px_rgba(245,158,11,0.4)]"
+                  : "bg-slate-700 text-amber-400 hover:bg-slate-600"
               }`}
             >
               <Ruler size={14} /> Pergeli {caliperOpen ? "Kapat" : "Aç"}
             </button>
-            <span className="text-slate-400 text-xs hidden sm:flex items-center gap-1">
-              <Activity size={14} className="text-emerald-500" /> EKG Monitörü
-            </span>
           </div>
         </div>
 
@@ -218,7 +274,7 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
                     isCompleted
                       ? "bg-emerald-500/10 border-emerald-500/40 text-emerald-400"
                       : isCurrent
-                        ? "bg-slate-800 border-blue-500 text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.25)]"
+                        ? "bg-slate-800 border-amber-500 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.25)]"
                         : "bg-slate-950/60 border-slate-800/80 text-slate-500 opacity-60"
                   }`}
                 >
@@ -226,7 +282,7 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
                     {p.label}
                   </span>
                   <div className="flex items-center gap-2 text-right">
-                    <span className="text-xs font-bold">{val}</span>
+                    <span className="text-xs font-bold">{val as React.ReactNode}</span>
                     {isCompleted && (
                       <CheckCircle
                         size={16}
@@ -234,7 +290,7 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
                       />
                     )}
                     {isCurrent && (
-                      <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse shrink-0" />
+                      <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse shrink-0" />
                     )}
                   </div>
                 </div>
@@ -272,7 +328,7 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
           {!showNotes ? (
             <>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-blue-400 block mb-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block mb-1">
                   ADIM {step + 1} / 6
                 </span>
                 <h4 className="text-white font-bold text-lg mb-1">
@@ -281,7 +337,7 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
                     : "Bu EKG'nin Nihai Tanısı Nedir?"}
                 </h4>
                 <p className="text-slate-400 text-xs mb-4">
-                  Yukarıdaki EKG trasesini inceleyerek doğru seçeneğe tıklayın.
+                  Yukarıdaki EKG trasesini inceleyerek doğru seçeneğe tıklayın. Dikkat, hatalı seçimler puan kaybettirir!
                 </p>
 
                 <div className="grid grid-cols-1 gap-2.5">
@@ -293,7 +349,7 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         onClick={() => handleOptionClick(opt)}
-                        className="text-left p-3.5 rounded-xl border border-slate-700 bg-slate-800/90 hover:bg-slate-700 hover:border-emerald-500/60 text-sm font-semibold text-slate-100 transition-all active:scale-[0.99]"
+                        className="text-left p-3.5 rounded-xl border border-slate-700 bg-slate-800/90 hover:bg-slate-700 hover:border-blue-500/60 text-sm font-semibold text-slate-100 transition-all active:scale-[0.99]"
                       >
                         {opt}
                       </motion.button>
@@ -322,48 +378,30 @@ export default function RhythmSimulator({ module, onComplete }: Props) {
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex flex-col h-full justify-between"
+              className="flex flex-col h-full justify-center"
             >
-              <div>
-                <div className="flex items-center gap-2.5 text-emerald-400 mb-2">
-                  <CheckCircle size={26} />
-                  <div>
-                    <h4 className="font-black text-lg leading-none">
-                      Tebrikler, Doğru Tanı!
-                    </h4>
-                    <span className="text-xs font-bold text-white mt-1 block">
-                      {currentCase.tani}
-                    </span>
-                  </div>
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-emerald-500/20 border-4 border-emerald-500/30 mb-4">
+                  <CheckCircle size={40} className="text-emerald-400" />
                 </div>
-
-                {relevantNotes.length > 0 && (
-                  <div className="bg-emerald-500/10 border border-emerald-500/30 p-4 rounded-xl mt-4">
-                    <h5 className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase mb-2">
-                      <Info size={14} /> Sunum Bilgi Notu
-                    </h5>
-                    <div className="space-y-2 max-h-[160px] overflow-y-auto pr-2">
-                      {relevantNotes.map((n, i) => (
-                        <p
-                          key={i}
-                          className="text-slate-200 text-xs leading-relaxed"
-                        >
-                          {n}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <h4 className="font-black text-2xl text-white mb-2">
+                  Tebrikler, Doğru Tanı!
+                </h4>
+                <div className="inline-block bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg">
+                  <span className="text-sm font-bold text-emerald-400">
+                    {currentCase.tani}
+                  </span>
+                </div>
               </div>
 
               <button
                 onClick={handleNextCase}
-                className="w-full mt-6 py-3.5 bg-emerald-500 text-slate-950 font-black uppercase tracking-wider rounded-xl hover:bg-emerald-400 transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] flex justify-center items-center gap-2"
+                className="w-full mt-auto py-4 bg-amber-500 text-slate-950 font-black uppercase tracking-wider rounded-xl hover:bg-amber-400 transition-all shadow-[0_0_15px_rgba(245,158,11,0.3)] flex justify-center items-center gap-2"
               >
                 {currentCaseIndex < cases.length - 1
-                  ? "Sonraki Vakaya Geç"
-                  : "Modülü Tamamla"}
-                <ChevronRight size={18} />
+                  ? "Sıradaki Vakaya Geç"
+                  : "Sınavı Tamamla ve Sonucu Gör"}
+                <ChevronRight size={20} />
               </button>
             </motion.div>
           )}
