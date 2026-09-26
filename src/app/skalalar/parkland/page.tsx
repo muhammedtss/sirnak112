@@ -15,30 +15,30 @@ const SECTIONS = [
       { id: "boyun", label: "Boyun", hasFront: true, hasBack: true, getPercent: () => 1 },
       { id: "govde", label: "Gövde / Sırt", hasFront: true, hasBack: true, getPercent: () => 13 },
       { id: "genital", label: "Genital", hasFront: true, hasBack: false, getPercent: () => 1 },
-      { id: "sag_kalca", label: "Sağ Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
       { id: "sol_kalca", label: "Sol Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
+      { id: "sag_kalca", label: "Sağ Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
     ]
   },
   {
     title: "Kollar",
     parts: [
-      { id: "sag_ust_kol", label: "Sağ Üst Kol", hasFront: true, hasBack: true, getPercent: () => 2 },
-      { id: "sag_alt_kol", label: "Sağ Alt Kol", hasFront: true, hasBack: true, getPercent: () => 1.5 },
-      { id: "sag_el", label: "Sağ El", hasFront: true, hasBack: true, getPercent: () => 1.25 },
       { id: "sol_ust_kol", label: "Sol Üst Kol", hasFront: true, hasBack: true, getPercent: () => 2 },
+      { id: "sag_ust_kol", label: "Sağ Üst Kol", hasFront: true, hasBack: true, getPercent: () => 2 },
       { id: "sol_alt_kol", label: "Sol Alt Kol", hasFront: true, hasBack: true, getPercent: () => 1.5 },
+      { id: "sag_alt_kol", label: "Sağ Alt Kol", hasFront: true, hasBack: true, getPercent: () => 1.5 },
       { id: "sol_el", label: "Sol El", hasFront: true, hasBack: true, getPercent: () => 1.25 },
+      { id: "sag_el", label: "Sağ El", hasFront: true, hasBack: true, getPercent: () => 1.25 },
     ]
   },
   {
     title: "Bacaklar",
     parts: [
-      { id: "sag_uyluk", label: "Sağ Uyluk", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.75, "1": 3.25, "5": 4.0, "10": 4.25, "15": 4.5, "Erişkin": 4.75 })[a] },
-      { id: "sag_bacak", label: "Sağ Bacak (Alt)", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.5, "1": 2.5, "5": 2.75, "10": 3.0, "15": 3.25, "Erişkin": 3.5 })[a] },
-      { id: "sag_ayak", label: "Sağ Ayak", hasFront: true, hasBack: true, getPercent: () => 1.75 },
       { id: "sol_uyluk", label: "Sol Uyluk", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.75, "1": 3.25, "5": 4.0, "10": 4.25, "15": 4.5, "Erişkin": 4.75 })[a] },
+      { id: "sag_uyluk", label: "Sağ Uyluk", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.75, "1": 3.25, "5": 4.0, "10": 4.25, "15": 4.5, "Erişkin": 4.75 })[a] },
       { id: "sol_bacak", label: "Sol Bacak (Alt)", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.5, "1": 2.5, "5": 2.75, "10": 3.0, "15": 3.25, "Erişkin": 3.5 })[a] },
+      { id: "sag_bacak", label: "Sağ Bacak (Alt)", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.5, "1": 2.5, "5": 2.75, "10": 3.0, "15": 3.25, "Erişkin": 3.5 })[a] },
       { id: "sol_ayak", label: "Sol Ayak", hasFront: true, hasBack: true, getPercent: () => 1.75 },
+      { id: "sag_ayak", label: "Sağ Ayak", hasFront: true, hasBack: true, getPercent: () => 1.75 },
     ]
   }
 ];
@@ -179,7 +179,7 @@ export default function ParklandPage() {
             {SECTIONS.map((section, idx) => (
               <div key={idx} className="space-y-3">
                 <h3 className="text-sm font-bold text-white/80 border-b border-white/10 pb-1">{section.title}</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   {section.parts.map(part => {
                     const percent = part.getPercent(ageGroup);
                     const isFrontSelected = selectedParts.has(`${part.id}_on`);

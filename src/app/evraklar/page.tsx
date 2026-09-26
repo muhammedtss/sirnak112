@@ -180,6 +180,20 @@ const EVRAKLAR: Evrak[] = [
     ],
   },
   {
+    id: "dogum-raporu",
+    kod: "HB.FR.007",
+    baslik: "Ambulansta Gerçekleşen Doğum Raporu",
+    kategori: "Hasta Bakim",
+    aciklama: "Ambulansta gerceklesen dogum vakalarinin resmi kayit altina alindigi belge",
+    dosya: "/Ambulans_Evraklar/19-HB.FR.007 AMBULANSTA GERÇEKLEŞEN DOĞUM RAPORU.docx",
+    bolumler: [
+      { baslik: "Anne Bilgileri", icerik: "Anne Adi Soyadi | TC Kimlik | Yas | Gebelik Sayisi (Parite/Gravida)" },
+      { baslik: "Dogum Detaylari", icerik: "Dogum Tarihi | Saati | Plaka | APGAR (1. ve 5. Dk) | Plasenta Ayrildi mi?" },
+      { baslik: "Bebek Bilgileri", icerik: "Cinsiyet | Cilt Rengi | Aglama Durumu" },
+      { baslik: "Imzalar", icerik: "Dogumu Gerceklestiren (Imza) | Ekip Gorevlisi (Imza)" },
+    ],
+  },
+  {
     id: "sozel-order",
     kod: "HB.FR.002",
     baslik: "Sözel Order Formu",
