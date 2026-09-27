@@ -292,11 +292,11 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
                 </div>
                 {caliperOpen ? (
                   <DigitalCaliper onClose={() => setCaliperOpen(false)}>
-                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="ekg-monitor-img" />}
                   </DigitalCaliper>
                 ) : (
-                  <div className="w-full relative bg-white p-2 flex justify-center min-h-[180px] overflow-x-auto">
-                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                  <div className="ekg-monitor-container">
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="ekg-monitor-img" />}
                   </div>
                 )}
               </div>
@@ -317,11 +317,11 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
                 </div>
                 {caliperOpen2 ? (
                   <DigitalCaliper onClose={() => setCaliperOpen2(false)}>
-                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="ekg-monitor-img" />}
                   </DigitalCaliper>
                 ) : (
-                  <div className="w-full relative bg-white p-2 flex justify-center min-h-[180px] overflow-x-auto">
-                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                  <div className="ekg-monitor-container">
+                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="ekg-monitor-img" />}
                   </div>
                 )}
               </div>
@@ -384,11 +384,11 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
                 </div>
                 {caliperOpen ? (
                   <DigitalCaliper onClose={() => setCaliperOpen(false)}>
-                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="ekg-monitor-img" />}
                   </DigitalCaliper>
                 ) : (
-                  <div className="w-full relative bg-white p-2 flex justify-center min-h-[250px] overflow-x-auto">
-                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="max-h-full max-w-none object-contain pointer-events-none select-none z-10" />}
+                  <div className="ekg-monitor-container">
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="ekg-monitor-img" />}
                   </div>
                 )}
               </div>
@@ -540,12 +540,12 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
                 </h3>
                 <p className="text-emerald-400 text-sm font-semibold">Genişletilmiş İnceleme Modu</p>
               </div>
-              <div className="w-full border-4 border-slate-800 rounded-xl overflow-hidden bg-white shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+              <div className="w-full border-4 border-slate-800 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)]">
                 <DigitalCaliper>
                   <img 
                     src={fullScreenMode === 1 ? selectedCase?.stripImage : selectedCase2?.stripImage} 
                     alt="EKG Fullscreen" 
-                    className="max-h-[50vh] sm:max-h-[70vh] max-w-none object-contain pointer-events-none select-none z-10" 
+                    className="ekg-monitor-img fullscreen" 
                   />
                 </DigitalCaliper>
               </div>

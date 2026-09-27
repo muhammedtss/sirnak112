@@ -184,3 +184,50 @@ input, textarea, [contenteditable] {
 [data-theme="light"] .svg-invert-in-dark {
   filter: opacity(0.9);
 }
+
+/* === EKG Monitor Styling (Paper Mode) === */
+.ekg-monitor-container {
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  min-height: 280px;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 4px solid rgba(15, 23, 42, 0.3); /* Dark slate border for contrast in dark mode */
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 640px) {
+  .ekg-monitor-container {
+    justify-content: center;
+  }
+}
+
+.ekg-monitor-container::before {
+  display: none; /* Removed the artificial green grid */
+}
+
+.ekg-monitor-img {
+  height: 250px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+  padding: 10px;
+  /* Clean up jpeg artifacts without inverting. Multiply blends it perfectly into the white bg */
+  filter: contrast(1.15) brightness(1.02);
+  mix-blend-mode: multiply;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.ekg-monitor-img.fullscreen {
+  height: 60vh;
+}
+@media (min-width: 640px) {
+  .ekg-monitor-img.fullscreen {
+    height: 75vh;
+  }
+}

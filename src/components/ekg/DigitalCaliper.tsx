@@ -83,7 +83,7 @@ export default function DigitalCaliper({ onClose, children }: Props) {
       <div
         ref={containerRef}
         onClick={handleTrackClick}
-        className="relative w-full select-none overflow-x-auto touch-pan-x bg-white flex items-center justify-center p-2 min-h-[250px] sm:min-h-[300px]"
+        className="ekg-monitor-container"
       >
         {/* Child Image */}
         {children}

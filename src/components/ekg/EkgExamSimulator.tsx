@@ -26,8 +26,8 @@ const PARAMETERS = [
 
 export default function EkgExamSimulator() {
   const cases = useMemo(() => {
-    const mod6 = SIRNAK_112_EKG_DATA.find((m) => m.id === "mod-6")?.interactivePayload?.cases || [];
-    const mod7 = SIRNAK_112_EKG_DATA.find((m) => m.id === "mod-7")?.interactivePayload?.cases || [];
+    const mod6 = SIRNAK_112_EKG_DATA.find((m) => m.id === "mod-6-hizli-ritim-vakalari")?.interactivePayload?.cases || [];
+    const mod7 = SIRNAK_112_EKG_DATA.find((m) => m.id === "mod-7-yavas-ritim-vakalari")?.interactivePayload?.cases || [];
     const combined = [...mod6, ...mod7];
     // Sınav modu olduğu için karıştırabiliriz
     return combined.sort(() => Math.random() - 0.5);
@@ -241,15 +241,15 @@ export default function EkgExamSimulator() {
             <img
               src={currentCase.stripImage}
               alt={`EKG Vaka ${currentCaseIndex + 1}`}
-              className="max-h-full max-w-none object-contain pointer-events-none select-none z-10"
+              className="ekg-monitor-img"
             />
           </DigitalCaliper>
         ) : (
-          <div className="w-full relative bg-white p-2 flex justify-center min-h-[250px] overflow-x-auto">
+          <div className="ekg-monitor-container">
             <img
               src={currentCase.stripImage}
               alt={`EKG Vaka ${currentCaseIndex + 1}`}
-              className="max-h-full max-w-none object-contain pointer-events-none select-none z-10"
+              className="ekg-monitor-img"
             />
           </div>
         )}
@@ -434,12 +434,12 @@ export default function EkgExamSimulator() {
                 </h3>
                 <p className="text-emerald-400 text-sm font-semibold">Genişletilmiş İnceleme Modu</p>
               </div>
-              <div className="w-full border-4 border-slate-800 rounded-xl overflow-hidden bg-white shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+              <div className="w-full border-4 border-slate-800 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.8)]">
                 <DigitalCaliper>
                   <img 
                     src={currentCase.stripImage} 
                     alt="EKG Fullscreen" 
-                    className="max-h-[50vh] sm:max-h-[70vh] max-w-none object-contain pointer-events-none select-none z-10" 
+                    className="ekg-monitor-img fullscreen" 
                   />
                 </DigitalCaliper>
               </div>
