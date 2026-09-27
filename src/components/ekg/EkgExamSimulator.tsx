@@ -25,12 +25,13 @@ const PARAMETERS = [
 ] as const;
 
 export default function EkgExamSimulator() {
-  const cases = useMemo(() => {
+  const [cases, setCases] = useState<any[]>([]);
+  useEffect(() => {
     const mod6 = SIRNAK_112_EKG_DATA.find((m) => m.id === "mod-6-hizli-ritim-vakalari")?.interactivePayload?.cases || [];
     const mod7 = SIRNAK_112_EKG_DATA.find((m) => m.id === "mod-7-yavas-ritim-vakalari")?.interactivePayload?.cases || [];
     const combined = [...mod6, ...mod7];
     // Sınav modu olduğu için karıştırabiliriz
-    return combined.sort(() => Math.random() - 0.5);
+    setCases(combined.sort(() => Math.random() - 0.5));
   }, []);
 
   const [currentCaseIndex, setCurrentCaseIndex] = useState(0);
@@ -41,6 +42,7 @@ export default function EkgExamSimulator() {
   const [showNotes, setShowNotes] = useState(false);
   const [caliperOpen, setCaliperOpen] = useState(false);
   const [fullScreenMode, setFullScreenMode] = useState(false);
+  const [wrongAttempts, setWrongAttempts] = useState<string[]>([]);
 
   // Exam states
   const [score, setScore] = useState(100);
@@ -52,10 +54,16 @@ export default function EkgExamSimulator() {
     setErrorMsg(null);
     setShowNotes(false);
     setCaliperOpen(false);
-  }, [currentCaseIndex]);
+    setWrongAttempts([]);
+  }, [currentCaseIndex, step]);
 
-  const options = useMemo(() => {
-    if (!currentCase) return [];
+  const [options, setOptions] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!currentCase) {
+      setOptions([]);
+      return;
+    }
 
     if (step < 5) {
       const paramKey = PARAMETERS[step].key;
@@ -66,7 +74,7 @@ export default function EkgExamSimulator() {
       const distractors = allVals.filter((v) => v !== correct);
       distractors.sort(() => Math.random() - 0.5);
       const selectedOpts = [correct, ...distractors.slice(0, 3)];
-      return selectedOpts.sort(() => Math.random() - 0.5);
+      setOptions(selectedOpts.sort(() => Math.random() - 0.5));
     } else {
       const correct = currentCase.tani;
       const allVals = Array.from(
@@ -75,7 +83,7 @@ export default function EkgExamSimulator() {
       const distractors = allVals.filter((v) => v !== correct);
       distractors.sort(() => Math.random() - 0.5);
       const selectedOpts = [correct, ...distractors.slice(0, 3)];
-      return selectedOpts.sort(() => Math.random() - 0.5);
+      setOptions(selectedOpts.sort(() => Math.random() - 0.5));
     }
   }, [currentCase, step, cases]);
 
@@ -89,6 +97,7 @@ export default function EkgExamSimulator() {
       } else {
         setScore((s) => Math.max(0, s - 5));
         setTotalErrors((e) => e + 1);
+        setWrongAttempts((prev) => [...prev, opt]);
         setErrorMsg("Hatalı değerlendirme (-5 Puan). Traseyi tekrar inceleyin.");
       }
     } else {
@@ -98,14 +107,17 @@ export default function EkgExamSimulator() {
       } else {
         setScore((s) => Math.max(0, s - 5));
         setTotalErrors((e) => e + 1);
+        setWrongAttempts((prev) => [...prev, opt]);
         setErrorMsg("Hatalı değerlendirme (-5 Puan). Traseyi tekrar inceleyin.");
       }
     }
   };
 
   const handleNextCase = () => {
+    if (!showNotes) return;
+    setShowNotes(false);
     if (currentCaseIndex < cases.length - 1) {
-      setCurrentCaseIndex((i) => i + 1);
+      setCurrentCaseIndex(Math.min(currentCaseIndex + 1, cases.length - 1));
     } else {
       setIsFinished(true);
     }
@@ -174,7 +186,7 @@ export default function EkgExamSimulator() {
     );
   }
 
-  if (!currentCase) return null;
+  if (cases.length === 0 || !currentCase) return null;
 
   return (
     <div className="flex flex-col gap-6 w-full">
@@ -242,6 +254,7 @@ export default function EkgExamSimulator() {
               src={currentCase.stripImage}
               alt={`EKG Vaka ${currentCaseIndex + 1}`}
               className="ekg-monitor-img"
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/ekg-fallback.svg"; }}
             />
           </DigitalCaliper>
         ) : (
@@ -250,6 +263,7 @@ export default function EkgExamSimulator() {
               src={currentCase.stripImage}
               alt={`EKG Vaka ${currentCaseIndex + 1}`}
               className="ekg-monitor-img"
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/ekg-fallback.svg"; }}
             />
           </div>
         )}
@@ -352,7 +366,12 @@ export default function EkgExamSimulator() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         onClick={() => handleOptionClick(opt)}
-                        className="text-left p-3.5 rounded-xl border border-slate-700 bg-slate-800/90 hover:bg-slate-700 hover:border-blue-500/60 text-sm font-semibold text-slate-100 transition-all active:scale-[0.99]"
+                        disabled={wrongAttempts.includes(opt)}
+                        className={`text-left p-3.5 rounded-xl border transition-all ${
+                          wrongAttempts.includes(opt)
+                            ? "bg-red-500/10 border-red-500/40 text-red-400 opacity-50 cursor-not-allowed"
+                            : "border-slate-700 bg-slate-800/90 hover:bg-slate-700 hover:border-blue-500/60 text-sm font-semibold text-slate-100 active:scale-[0.99]"
+                        }`}
                       >
                         {opt}
                       </motion.button>
@@ -440,6 +459,7 @@ export default function EkgExamSimulator() {
                     src={currentCase.stripImage} 
                     alt="EKG Fullscreen" 
                     className="ekg-monitor-img fullscreen" 
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/ekg-fallback.svg"; }}
                   />
                 </DigitalCaliper>
               </div>

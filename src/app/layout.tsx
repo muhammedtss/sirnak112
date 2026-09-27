@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Background } from "@/components/ui/Background";
 import { BottomNav } from "@/components/layout/BottomNav";
@@ -36,10 +37,18 @@ export default function RootLayout({
         <div className="flex-1 overflow-y-auto w-full relative z-10" id="main-scroll-container">
           {children}
         </div>
-
         <div className="shrink-0 w-full relative z-50 bg-transparent">
           <BottomNav />
         </div>
+        <Script id="register-sw" strategy="afterInteractive">
+          {`
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js');
+              });
+            }
+          `}
+        </Script>
       </body>
     </html>
   );

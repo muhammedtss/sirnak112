@@ -22,7 +22,18 @@ export interface EkgModule {
   interactivePayload?: any;
 }
 
-export const SIRNAK_112_EKG_DATA: EkgModule[] = [
+function deepFreeze<T>(obj: T): T {
+  if (obj === null || typeof obj !== "object") return obj;
+  Object.keys(obj).forEach((prop) => {
+    const val = (obj as any)[prop];
+    if (typeof val === "object" && val !== null && !Object.isFrozen(val)) {
+      deepFreeze(val);
+    }
+  });
+  return Object.freeze(obj);
+}
+
+const RAW_SIRNAK_112_EKG_DATA: EkgModule[] = [
   {
     id: "mod-1-amac",
     slideNumbers: [1, 2, 3],
@@ -331,3 +342,5 @@ export const SIRNAK_112_EKG_DATA: EkgModule[] = [
     }
   }
 ];
+
+export const SIRNAK_112_EKG_DATA = deepFreeze(RAW_SIRNAK_112_EKG_DATA);

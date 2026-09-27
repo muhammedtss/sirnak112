@@ -72,7 +72,7 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
 
   const getNotesForCase = (c: any) => {
     if (!c) return [];
-    const taniUpper = c.tani.toUpperCase();
+    const taniUpper = c.tani.toLocaleUpperCase("tr-TR");
     const allNotes = [...(mod6.verbatimContent.notes || []), ...(mod7.verbatimContent.notes || []), ...(mod4.verbatimContent.notes || [])];
     
     if (taniUpper.includes("SVT")) return allNotes.filter(n => n.includes("PSVT") || n.includes("AVNRT"));
@@ -292,11 +292,11 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
                 </div>
                 {caliperOpen ? (
                   <DigitalCaliper onClose={() => setCaliperOpen(false)}>
-                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="ekg-monitor-img" />}
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="ekg-monitor-img" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/ekg-fallback.svg'; }} />}
                   </DigitalCaliper>
                 ) : (
                   <div className="ekg-monitor-container">
-                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="ekg-monitor-img" />}
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG 1" className="ekg-monitor-img" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/ekg-fallback.svg'; }} />}
                   </div>
                 )}
               </div>
@@ -317,11 +317,11 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
                 </div>
                 {caliperOpen2 ? (
                   <DigitalCaliper onClose={() => setCaliperOpen2(false)}>
-                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="ekg-monitor-img" />}
+                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="ekg-monitor-img" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/ekg-fallback.svg'; }} />}
                   </DigitalCaliper>
                 ) : (
                   <div className="ekg-monitor-container">
-                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="ekg-monitor-img" />}
+                    {selectedCase2?.stripImage && <img src={selectedCase2.stripImage} alt="EKG 2" className="ekg-monitor-img" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/ekg-fallback.svg'; }} />}
                   </div>
                 )}
               </div>
@@ -384,11 +384,11 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
                 </div>
                 {caliperOpen ? (
                   <DigitalCaliper onClose={() => setCaliperOpen(false)}>
-                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="ekg-monitor-img" />}
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="ekg-monitor-img" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/ekg-fallback.svg'; }} />}
                   </DigitalCaliper>
                 ) : (
                   <div className="ekg-monitor-container">
-                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="ekg-monitor-img" />}
+                    {selectedCase?.stripImage && <img src={selectedCase.stripImage} alt="EKG" className="ekg-monitor-img" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/ekg-fallback.svg'; }} />}
                   </div>
                 )}
               </div>
@@ -467,7 +467,7 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
                 <h4 className="text-xs font-black text-slate-500 mb-2">{cat}</h4>
                 <div className="flex flex-wrap gap-2">
                   {(rhythms as string[]).map(r => {
-                    const matchIdx = allCases.findIndex((c: any) => c.tani.toUpperCase().includes(r.toUpperCase()) || r.toUpperCase().includes(c.tani.toUpperCase()));
+                    const matchIdx = allCases.findIndex((c: any) => c.tani.toLocaleUpperCase("tr-TR").includes(r.toLocaleUpperCase("tr-TR")) || r.toLocaleUpperCase("tr-TR").includes(c.tani.toLocaleUpperCase("tr-TR")));
                     return (
                       <button 
                         key={r}
@@ -490,7 +490,7 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
             <h3 className="text-lg font-bold text-blue-400 mb-4 border-b border-blue-500/20 pb-2">Bradikardi ve Bloklar</h3>
             <div className="space-y-3">
               {mod8.interactivePayload.slowRhythmsSummary.map((item: any, i: number) => {
-                const matchIdx = allCases.findIndex((c: any) => c.tani.toUpperCase().includes(item.rhythm.toUpperCase()));
+                const matchIdx = allCases.findIndex((c: any) => c.tani.toLocaleUpperCase("tr-TR").includes(item.rhythm.toLocaleUpperCase("tr-TR")));
                 return (
                   <div key={i} className="flex flex-col p-3 bg-slate-900 rounded-xl border border-slate-800">
                     <button 
@@ -546,6 +546,7 @@ export default function EkgGuidedEducation({ onGoToExam }: { onGoToExam: () => v
                     src={fullScreenMode === 1 ? selectedCase?.stripImage : selectedCase2?.stripImage} 
                     alt="EKG Fullscreen" 
                     className="ekg-monitor-img fullscreen" 
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/ekg-fallback.svg'; }}
                   />
                 </DigitalCaliper>
               </div>

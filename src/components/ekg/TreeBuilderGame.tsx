@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { EkgModule } from "@/data/ekg-training-data";
 import { Check, Activity, Target } from "lucide-react";
@@ -52,6 +52,13 @@ export default function TreeBuilderGame({ module, onComplete }: Props) {
   const [selectedPrompt, setSelectedPrompt] = useState<string | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [errorPair, setErrorPair] = useState<string | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    }
+  }, []);
 
   useEffect(() => {
     // Shuffle answers initially
@@ -74,7 +81,8 @@ export default function TreeBuilderGame({ module, onComplete }: Props) {
       } else {
         // Error flash
         setErrorPair(selectedPrompt);
-        setTimeout(() => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
           setErrorPair(null);
           setSelectedPrompt(null);
           setSelectedAnswer(null);
@@ -149,7 +157,7 @@ export default function TreeBuilderGame({ module, onComplete }: Props) {
                 return (
                   <div
                     key={pair.id}
-                    onClick={() => !isMatched && setSelectedPrompt(isSelected ? null : pair.id)}
+                    onClick={() => !isMatched && !errorPair && setSelectedPrompt(isSelected ? null : pair.id)}
                     className={`p-3 rounded-xl border-2 transition-all cursor-pointer flex flex-col justify-center min-h-[80px] ${
                       isMatched
                         ? "bg-emerald-500/10 border-emerald-500/50 text-emerald-400"

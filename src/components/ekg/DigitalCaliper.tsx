@@ -15,6 +15,11 @@ export default function DigitalCaliper({ onClose, children }: Props) {
   // Yüzde (%) tabanlı pozisyonlar veya piksel sınırları
   const [leftLeg, setLeftLeg] = useState(120);
   const [rightLeg, setRightLeg] = useState(260);
+  const leftRef = useRef(leftLeg);
+  const rightRef = useRef(rightLeg);
+  leftRef.current = leftLeg;
+  rightRef.current = rightLeg;
+
   const [dragging, setDragging] = useState<"left" | "right" | "window" | null>(
     null,
   );
@@ -26,6 +31,10 @@ export default function DigitalCaliper({ onClose, children }: Props) {
   const windowWidth = 15 * pixelsPerSquare;
 
   useEffect(() => {
+    setMarkers([]);
+  }, [windowStart, windowWidth]);
+
+  useEffect(() => {
     const handlePointerMove = (e: PointerEvent) => {
       if (!dragging || !containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -33,9 +42,9 @@ export default function DigitalCaliper({ onClose, children }: Props) {
 
       if (mode === "regular") {
         if (dragging === "left") {
-          setLeftLeg(Math.min(x, rightLeg - 15));
+          setLeftLeg(Math.min(x, rightRef.current - 15));
         } else if (dragging === "right") {
-          setRightLeg(Math.max(x, leftLeg + 15));
+          setRightLeg(Math.max(x, leftRef.current + 15));
         }
       } else if (dragging === "window") {
         const maxStart = Math.max(0, rect.width - windowWidth);
@@ -53,7 +62,7 @@ export default function DigitalCaliper({ onClose, children }: Props) {
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerup", handlePointerUp);
     };
-  }, [dragging, leftLeg, rightLeg, mode, windowWidth]);
+  }, [dragging, mode, windowWidth]);
 
   const handleTrackClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (mode !== "irregular" || dragging) return;

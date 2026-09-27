@@ -347,14 +347,13 @@ export default function DrugDoseCalculator() {
                   Hasta Kilosu (kg)
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   inputMode="decimal"
                   value={weight}
                   onChange={(e) => {
-                    const val = e.target.value;
+                    const val = e.target.value.replace(",", ".");
                     if (val === "" || /^\d*\.?\d*$/.test(val)) {
-                      const num = parseFloat(val);
-                      if (val === "" || num >= 0) setWeight(val);
+                      setWeight(val);
                     }
                   }}
                   onKeyDown={(e) => { if (["-", "+", "e", "E"].includes(e.key)) e.preventDefault(); }}
@@ -368,12 +367,12 @@ export default function DrugDoseCalculator() {
                   }`}
                 />
                 {/* Weight warnings */}
-                {isWeightInvalid && weightNum > 300 && (
+                {isWeightInvalid && weight !== "" && (
                   <div className="flex items-center gap-2 bg-red-500/10 border border-red-500/30 px-3 py-2 rounded-lg">
                     <svg className="w-4 h-4 text-red-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z" />
                     </svg>
-                    <p className="text-xs font-bold text-red-300">Geçersiz Kilo — Hesaplama yapılamaz (Maks: 300 kg)</p>
+                    <p className="text-xs font-bold text-red-300">Geçersiz Kilo — Hesaplama yapılamaz (1-300 kg arası giriniz)</p>
                   </div>
                 )}
                 {isWeightHigh && !isWeightInvalid && (

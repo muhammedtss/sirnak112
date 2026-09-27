@@ -146,14 +146,24 @@ export default function BurnCalculatorEmbed() {
           <div className="space-y-2">
             <label className="text-xs font-bold text-muted uppercase tracking-wide">Hasta Kilosu (kg)</label>
             <input
-              type="number"
-              min="1"
-              max="300"
+              type="text"
+              inputMode="decimal"
               value={kilo}
-              onChange={(e) => setKilo(e.target.value)}
+              onChange={(e) => {
+                const val = e.target.value.replace(",", ".");
+                if (val === "" || /^\d*\.?\d*$/.test(val)) {
+                  setKilo(val);
+                }
+              }}
               placeholder="Örn: 70"
               className="w-full text-xl font-black text-white bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all placeholder-white/20"
             />
+            {k !== null && !isNaN(k) && (k <= 0 || k > 300) && (
+              <p className="text-xs font-bold text-red-400 mt-1">Lütfen geçerli bir kilo değeri giriniz (1-300 kg arası).</p>
+            )}
+            {tbsa !== null && tbsa > 100 && (
+              <p className="text-xs font-bold text-red-400 mt-1">Yanık yüzdesi %100'ü geçemez.</p>
+            )}
           </div>
         </div>
       </div>

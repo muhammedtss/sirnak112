@@ -9,13 +9,15 @@ export function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
+    const rawTheme = localStorage.getItem("theme");
+    const isValidTheme = rawTheme === "dark" || rawTheme === "light";
+    if (isValidTheme) {
+      setTheme(rawTheme as "dark" | "light");
+      document.documentElement.setAttribute("data-theme", rawTheme);
     } else {
       // Default to dark as per premium app requirements
       document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
     }
   }, []);
 
