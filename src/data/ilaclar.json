@@ -391,14 +391,14 @@
           "notes": "3-5 dk'da bir tekrarlanabilir."
         },
         "cocuk": {
-          "isAvailable": true,
-          "isWeightBased": true,
-          "dosePerKg": 0.02,
-          "unit": "mg",
+          "isAvailable": false,
+          "isWeightBased": false,
+          "dosePerKg": null,
+          "unit": null,
           "fixedDose": null,
-          "maxDose": "0.5 mg",
-          "route": "IV",
-          "notes": "Primer AV blok veya aşırı vagal uyarı durumlarında kullanılır."
+          "maxDose": null,
+          "route": null,
+          "notes": "Kontrendikedir, verilmemesi gerekir."
         }
       },
       "kolinerjik_zehirlenme": {
