@@ -347,7 +347,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                       </div>
 
                       {isLast ? (
-                        <div className="flex gap-4 w-full">
+                        <div className="flex flex-col sm:flex-row gap-3 w-full">
                           <button
                             onClick={() => node.yesId && advance(node.yesId)}
                             disabled={!node.yesId}
@@ -366,7 +366,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                           </button>
                         </div>
                       ) : (
-                        <div className="flex gap-4 w-full">
+                        <div className="flex flex-col sm:flex-row gap-3 w-full">
                           <button
                             onClick={() => node.yesId && setHistory(prev => [...prev.slice(0, index + 1), node.yesId!])}
                             className="flex-1 py-3 rounded-xl font-bold text-lg text-center cursor-pointer transition-all active:scale-95"
@@ -503,14 +503,14 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                             className="px-2 py-1 rounded inline-block border"
                             style={{ background: "rgba(16,185,129,0.1)", borderColor: "rgba(16,185,129,0.2)", color: "#34D399" }}
                           >
-                            <strong>Evet:</strong>{" "}
+                            <strong>{node.yesText || "Evet"}:</strong>{" "}
                             {algorithm.nodes[node.yesId!]?.content || "Eksik Veri"}
                           </span>
                           <span
                             className="px-2 py-1 rounded inline-block border mt-1"
                             style={{ background: "rgba(239,68,68,0.1)", borderColor: "rgba(239,68,68,0.2)", color: "#F87171" }}
                           >
-                            <strong>Hayır:</strong>{" "}
+                            <strong>{node.noText || "Hayır"}:</strong>{" "}
                             {algorithm.nodes[node.noId!]?.content || "Eksik Veri"}
                           </span>
                         </div>

@@ -14,30 +14,30 @@ const SECTIONS = [
       { id: "boyun", label: "Boyun", hasFront: true, hasBack: true, getPercent: () => 1, isCenter: true },
       { id: "govde", label: "Gövde / Sırt", hasFront: true, hasBack: true, getPercent: () => 13, isCenter: true },
       { id: "genital", label: "Genital", hasFront: true, hasBack: false, getPercent: () => 1, isCenter: true },
-      { id: "sag_kalca", label: "Sağ Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
       { id: "sol_kalca", label: "Sol Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
+      { id: "sag_kalca", label: "Sağ Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
     ]
   },
   {
     title: "Kollar",
     parts: [
-      { id: "sag_ust_kol", label: "Sağ Üst Kol", hasFront: true, hasBack: true, getPercent: () => 2 },
       { id: "sol_ust_kol", label: "Sol Üst Kol", hasFront: true, hasBack: true, getPercent: () => 2 },
-      { id: "sag_alt_kol", label: "Sağ Alt Kol", hasFront: true, hasBack: true, getPercent: () => 1.5 },
+      { id: "sag_ust_kol", label: "Sağ Üst Kol", hasFront: true, hasBack: true, getPercent: () => 2 },
       { id: "sol_alt_kol", label: "Sol Alt Kol", hasFront: true, hasBack: true, getPercent: () => 1.5 },
-      { id: "sag_el", label: "Sağ El", hasFront: true, hasBack: true, getPercent: () => 1.25 },
+      { id: "sag_alt_kol", label: "Sağ Alt Kol", hasFront: true, hasBack: true, getPercent: () => 1.5 },
       { id: "sol_el", label: "Sol El", hasFront: true, hasBack: true, getPercent: () => 1.25 },
+      { id: "sag_el", label: "Sağ El", hasFront: true, hasBack: true, getPercent: () => 1.25 },
     ]
   },
   {
     title: "Bacaklar",
     parts: [
-      { id: "sag_uyluk", label: "Sağ Uyluk", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.75, "1": 3.25, "5": 4.0, "10": 4.25, "15": 4.5, "Erişkin": 4.75 })[a] },
       { id: "sol_uyluk", label: "Sol Uyluk", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.75, "1": 3.25, "5": 4.0, "10": 4.25, "15": 4.5, "Erişkin": 4.75 })[a] },
-      { id: "sag_bacak", label: "Sağ Bacak (Alt)", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.5, "1": 2.5, "5": 2.75, "10": 3.0, "15": 3.25, "Erişkin": 3.5 })[a] },
+      { id: "sag_uyluk", label: "Sağ Uyluk", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.75, "1": 3.25, "5": 4.0, "10": 4.25, "15": 4.5, "Erişkin": 4.75 })[a] },
       { id: "sol_bacak", label: "Sol Bacak (Alt)", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.5, "1": 2.5, "5": 2.75, "10": 3.0, "15": 3.25, "Erişkin": 3.5 })[a] },
-      { id: "sag_ayak", label: "Sağ Ayak", hasFront: true, hasBack: true, getPercent: () => 1.75 },
+      { id: "sag_bacak", label: "Sağ Bacak (Alt)", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 2.5, "1": 2.5, "5": 2.75, "10": 3.0, "15": 3.25, "Erişkin": 3.5 })[a] },
       { id: "sol_ayak", label: "Sol Ayak", hasFront: true, hasBack: true, getPercent: () => 1.75 },
+      { id: "sag_ayak", label: "Sağ Ayak", hasFront: true, hasBack: true, getPercent: () => 1.75 },
     ]
   }
 ];
@@ -47,6 +47,8 @@ export default function BurnCalculatorEmbed() {
   const [ageGroup, setAgeGroup] = useState<AgeGroup>("Erişkin");
   const [selectedParts, setSelectedParts] = useState<Set<string>>(new Set());
   const [isZoomed, setIsZoomed] = useState(false);
+  const [inputMode, setInputMode] = useState<"visual" | "manual">("visual");
+  const [manualTbsa, setManualTbsa] = useState("");
 
   const togglePart = (id: string, side: "on" | "arka") => {
     const key = `${id}_${side}`;
@@ -58,7 +60,7 @@ export default function BurnCalculatorEmbed() {
     });
   };
 
-  const tbsa = useMemo(() => {
+  const calculatedTbsa = useMemo(() => {
     let total = 0;
     for (const section of SECTIONS) {
       for (const part of section.parts) {
@@ -68,6 +70,8 @@ export default function BurnCalculatorEmbed() {
     }
     return total;
   }, [selectedParts, ageGroup]);
+
+  const tbsa = inputMode === "manual" ? parseFloat(manualTbsa) || 0 : calculatedTbsa;
 
   const k = parseFloat(kilo);
   const valid = k > 0 && k <= 300 && tbsa > 0;
@@ -171,18 +175,49 @@ export default function BurnCalculatorEmbed() {
       {/* 2. Adım: Yanık Bölgeleri */}
       <div className="glass-card rounded-2xl shadow-sm">
         <div className="px-4 py-3 border-b border-white/10 bg-orange-500/5 flex justify-between items-center">
-          <p className="text-xs font-bold text-orange-400 uppercase tracking-widest">2. Adım · Yanık Bölgeleri</p>
+          <p className="text-xs font-bold text-orange-400 uppercase tracking-widest">2. Adım · Yanık Yüzdesi (%)</p>
           <span className="text-orange-300 font-bold bg-orange-500/20 px-2 py-0.5 rounded text-sm">
             Toplam: %{tbsa.toFixed(1)}
           </span>
         </div>
         <div className="p-4 flex flex-col gap-6">
-          <p className="text-xs text-subtle leading-relaxed">
-            İlgili vücut bölgesindeki <strong className="text-orange-300">Ön (Ö)</strong> veya <strong className="text-orange-300">Arka (A)</strong> yüzey düğmelerine tıklayarak yanık alanlarını seçin. Yüzdeler yaşa göre otomatik hesaplanır.
-          </p>
+          <div className="flex bg-black/20 p-1 rounded-xl">
+            <button 
+              onClick={() => setInputMode("visual")} 
+              className={`flex-1 py-2 text-sm font-bold rounded-lg transition-all ${inputMode === "visual" ? "bg-orange-500/20 text-orange-300 border border-orange-500/50 shadow-sm" : "text-muted hover:bg-white/5"}`}
+            >
+              Şemadan Seç
+            </button>
+            <button 
+              onClick={() => setInputMode("manual")} 
+              className={`flex-1 py-2 text-sm font-bold rounded-lg transition-all ${inputMode === "manual" ? "bg-orange-500/20 text-orange-300 border border-orange-500/50 shadow-sm" : "text-muted hover:bg-white/5"}`}
+            >
+              Manuel Gir
+            </button>
+          </div>
 
-          {SECTIONS.map((section, idx) => (
-            <div key={idx} className="space-y-3">
+          {inputMode === "manual" ? (
+            <div className="space-y-3 animate-in fade-in">
+              <label className="text-xs font-bold text-muted uppercase tracking-wide">Tahmini Yanık Yüzdesi (%)</label>
+              <input
+                type="number"
+                min="0.1"
+                max="100"
+                step="0.1"
+                value={manualTbsa}
+                onChange={(e) => setManualTbsa(e.target.value)}
+                placeholder="Örn: 15.5"
+                className="w-full text-xl font-black text-white bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all placeholder-white/20"
+              />
+            </div>
+          ) : (
+            <div className="space-y-6 animate-in fade-in">
+              <p className="text-xs text-subtle leading-relaxed">
+                İlgili vücut bölgesindeki <strong className="text-orange-300">Ön (Ö)</strong> veya <strong className="text-orange-300">Arka (A)</strong> yüzey düğmelerine tıklayarak yanık alanlarını seçin. Yüzdeler yaşa göre otomatik hesaplanır.
+              </p>
+
+              {SECTIONS.map((section, idx) => (
+                <div key={idx} className="space-y-3">
               <h3 className="text-sm font-bold text-white/80 border-b border-white/10 pb-1">{section.title}</h3>
               <div className="grid grid-cols-2 gap-2">
                 {section.parts.map(part => {
@@ -230,10 +265,12 @@ export default function BurnCalculatorEmbed() {
             </div>
           ))}
           
-          {tbsa > 0 && (
-            <button onClick={() => setSelectedParts(new Set())} className="w-full py-2 bg-red-500/10 text-red-400 rounded-lg text-sm font-bold border border-red-500/20 active:scale-95 transition-all mt-2">
-              Seçimleri Temizle
-            </button>
+              {calculatedTbsa > 0 && (
+                <button onClick={() => setSelectedParts(new Set())} className="w-full py-2 bg-red-500/10 text-red-400 rounded-lg text-sm font-bold border border-red-500/20 active:scale-95 transition-all mt-2">
+                  Seçimleri Temizle
+                </button>
+              )}
+            </div>
           )}
         </div>
       </div>

@@ -11,10 +11,10 @@ const SECTIONS = [
   {
     title: "Baş, Boyun ve Gövde",
     parts: [
-      { id: "bas", label: "Baş", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 9.5, "1": 8.5, "5": 6.5, "10": 5.5, "15": 4.5, "Erişkin": 3.5 })[a] },
-      { id: "boyun", label: "Boyun", hasFront: true, hasBack: true, getPercent: () => 1 },
-      { id: "govde", label: "Gövde / Sırt", hasFront: true, hasBack: true, getPercent: () => 13 },
-      { id: "genital", label: "Genital", hasFront: true, hasBack: false, getPercent: () => 1 },
+      { id: "bas", label: "Baş", hasFront: true, hasBack: true, getPercent: (a: AgeGroup) => ({ "0": 9.5, "1": 8.5, "5": 6.5, "10": 5.5, "15": 4.5, "Erişkin": 3.5 })[a], isCenter: true },
+      { id: "boyun", label: "Boyun", hasFront: true, hasBack: true, getPercent: () => 1, isCenter: true },
+      { id: "govde", label: "Gövde / Sırt", hasFront: true, hasBack: true, getPercent: () => 13, isCenter: true },
+      { id: "genital", label: "Genital", hasFront: true, hasBack: false, getPercent: () => 1, isCenter: true },
       { id: "sol_kalca", label: "Sol Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
       { id: "sag_kalca", label: "Sağ Kalça", hasFront: false, hasBack: true, getPercent: () => 2.5 },
     ]
@@ -48,6 +48,8 @@ export default function ParklandPage() {
   const [ageGroup, setAgeGroup] = useState<AgeGroup>("Erişkin");
   const [selectedParts, setSelectedParts] = useState<Set<string>>(new Set());
   const [isZoomed, setIsZoomed] = useState(false);
+  const [inputMode, setInputMode] = useState<"visual" | "manual">("visual");
+  const [manualTbsa, setManualTbsa] = useState("");
 
   const togglePart = (id: string, side: "on" | "arka") => {
     const key = `${id}_${side}`;
@@ -59,7 +61,7 @@ export default function ParklandPage() {
     });
   };
 
-  const tbsa = useMemo(() => {
+  const calculatedTbsa = useMemo(() => {
     let total = 0;
     for (const section of SECTIONS) {
       for (const part of section.parts) {
@@ -69,6 +71,8 @@ export default function ParklandPage() {
     }
     return total;
   }, [selectedParts, ageGroup]);
+
+  const tbsa = inputMode === "manual" ? parseFloat(manualTbsa) || 0 : calculatedTbsa;
 
   const k = parseFloat(kilo);
   const valid = k > 0 && k <= 300 && tbsa > 0;
@@ -166,18 +170,49 @@ export default function ParklandPage() {
         {/* 2. Adım: Yanık Bölgeleri */}
         <div className="glass-card rounded-2xl shadow-sm animate-in fade-in slide-in-from-bottom-3">
           <div className="px-4 py-3 border-b border-white/10 bg-orange-500/5 flex justify-between items-center">
-            <p className="text-xs font-bold text-orange-400 uppercase tracking-widest">2. Adım · Yanık Bölgeleri</p>
+            <p className="text-xs font-bold text-orange-400 uppercase tracking-widest">2. Adım · Yanık Yüzdesi (%)</p>
             <span className="text-orange-300 font-bold bg-orange-500/20 px-2 py-0.5 rounded text-sm">
               Toplam: %{tbsa.toFixed(1)}
             </span>
           </div>
           <div className="p-4 flex flex-col gap-6">
-            <p className="text-xs text-subtle leading-relaxed">
-              İlgili vücut bölgesindeki <strong className="text-orange-300">Ön (Ö)</strong> veya <strong className="text-orange-300">Arka (A)</strong> yüzey düğmelerine tıklayarak yanık alanlarını seçin. Yüzdeler yaşa göre otomatik hesaplanır.
-            </p>
+            <div className="flex bg-black/20 p-1 rounded-xl">
+              <button 
+                onClick={() => setInputMode("visual")} 
+                className={`flex-1 py-2 text-sm font-bold rounded-lg transition-all ${inputMode === "visual" ? "bg-orange-500/20 text-orange-300 border border-orange-500/50 shadow-sm" : "text-muted hover:bg-white/5"}`}
+              >
+                Şemadan Seç
+              </button>
+              <button 
+                onClick={() => setInputMode("manual")} 
+                className={`flex-1 py-2 text-sm font-bold rounded-lg transition-all ${inputMode === "manual" ? "bg-orange-500/20 text-orange-300 border border-orange-500/50 shadow-sm" : "text-muted hover:bg-white/5"}`}
+              >
+                Manuel Gir
+              </button>
+            </div>
 
-            {SECTIONS.map((section, idx) => (
-              <div key={idx} className="space-y-3">
+            {inputMode === "manual" ? (
+              <div className="space-y-3 animate-in fade-in">
+                <label className="text-xs font-bold text-muted uppercase tracking-wide">Tahmini Yanık Yüzdesi (%)</label>
+                <input
+                  type="number"
+                  min="0.1"
+                  max="100"
+                  step="0.1"
+                  value={manualTbsa}
+                  onChange={(e) => setManualTbsa(e.target.value)}
+                  placeholder="Örn: 15.5"
+                  className="w-full text-xl font-black text-white bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all placeholder-white/20"
+                />
+              </div>
+            ) : (
+              <div className="space-y-6 animate-in fade-in">
+                <p className="text-xs text-subtle leading-relaxed">
+                  İlgili vücut bölgesindeki <strong className="text-orange-300">Ön (Ö)</strong> veya <strong className="text-orange-300">Arka (A)</strong> yüzey düğmelerine tıklayarak yanık alanlarını seçin. Yüzdeler yaşa göre otomatik hesaplanır.
+                </p>
+
+                {SECTIONS.map((section, idx) => (
+                  <div key={idx} className="space-y-3">
                 <h3 className="text-sm font-bold text-white/80 border-b border-white/10 pb-1">{section.title}</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {section.parts.map(part => {
@@ -185,8 +220,10 @@ export default function ParklandPage() {
                     const isFrontSelected = selectedParts.has(`${part.id}_on`);
                     const isBackSelected = selectedParts.has(`${part.id}_arka`);
                     
+                    const isCenter = (part as any).isCenter;
+                    
                     return (
-                      <div key={part.id} className="flex flex-col items-center justify-between bg-black/5 dark:bg-black/20 border border-black/5 dark:border-white/5 rounded-xl p-2 gap-2">
+                      <div key={part.id} className={`flex flex-col items-center justify-between bg-black/5 dark:bg-black/20 border border-black/5 dark:border-white/5 rounded-xl p-2 gap-2 ${isCenter ? "col-span-2" : ""}`}>
                         <div className="flex flex-col items-center min-w-0 text-center">
                           <span className="text-xs font-bold text-slate-800 dark:text-white leading-tight">{part.label}</span>
                           <span className="text-[10px] text-teal-600 dark:text-teal-400/80 font-mono font-bold mt-0.5">(% {percent})</span>
@@ -224,10 +261,12 @@ export default function ParklandPage() {
               </div>
             ))}
             
-            {tbsa > 0 && (
-              <button onClick={() => setSelectedParts(new Set())} className="w-full py-2 bg-red-500/10 text-red-400 rounded-lg text-sm font-bold border border-red-500/20 active:scale-95 transition-all mt-2">
-                Seçimleri Temizle
-              </button>
+                {calculatedTbsa > 0 && (
+                  <button onClick={() => setSelectedParts(new Set())} className="w-full py-2 bg-red-500/10 text-red-400 rounded-lg text-sm font-bold border border-red-500/20 active:scale-95 transition-all mt-2">
+                    Seçimleri Temizle
+                  </button>
+                )}
+              </div>
             )}
           </div>
         </div>

@@ -1272,6 +1272,8 @@
         "type": "decision",
         "yesId": "node_5",
         "noId": "node_6",
+        "yesText": "Glokoz<60mg/dl veya Hipoglisemi bulgusu varsa",
+        "noText": "Hipoglisemi bulgusu yok",
         "isCritical": false
       },
       "node_5": {

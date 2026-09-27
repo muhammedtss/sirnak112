@@ -1,22 +1,14 @@
-const CACHE_NAME = 'ekg-cache-v2';
+const CACHE_NAME = 'sirnak112-offline-v3';
 
-const PRECACHE_ASSETS = [
+const PRECACHE_PAGES = [
   '/',
-  '/ekg-fallback.svg',
-  '/ekg/slide-17.png',
-  '/ekg/slide-18.png',
-  '/ekg/slide-22.png',
-  '/ekg/slide-23.png',
-  '/ekg/slide-25.png',
-  '/ekg/slide-26.png',
-  '/ekg/slide-30.png',
-  '/ekg/slide-32.png',
-  '/ekg/slide-33.png',
-  '/ekg/slide-34.png',
-  '/ekg/slide-35.png',
-  '/ekg/slide-36.png',
   '/ekg-egitim',
-  '/ilac-doz'
+  '/ilac-doz',
+  '/skalalar',
+  '/algoritmalar',
+  '/vaka-protokolleri',
+  '/envanter',
+  '/evraklar'
 ];
 
 self.addEventListener('install', (event) => {
@@ -24,7 +16,33 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
       await Promise.allSettled(
-        PRECACHE_ASSETS.map((url) => cache.add(url).catch((err) => console.error(`Failed to cache ${url}:`, err)))
+        PRECACHE_PAGES.map(async (url) => {
+          try {
+            const response = await fetch(url);
+            if (response.ok) {
+              await cache.put(url, response.clone());
+              // Deep precache JS/CSS chunks from HTML
+              const html = await response.text();
+              const staticMatches = html.match(/\/_next\/static\/[^"'\s>]+/g) || [];
+              const uniqueUrls = [...new Set(staticMatches)];
+              
+              await Promise.allSettled(
+                uniqueUrls.map(async (staticUrl) => {
+                  try {
+                    const staticRes = await fetch(staticUrl);
+                    if (staticRes.ok) {
+                      await cache.put(staticUrl, staticRes.clone());
+                    }
+                  } catch (e) {
+                    console.error('Static precache failed:', staticUrl, e);
+                  }
+                })
+              );
+            }
+          } catch (e) {
+            console.error('Page precache failed:', url, e);
+          }
+        })
       );
     })
   );
@@ -44,44 +62,90 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'CACHE_LOADED_RESOURCES' && event.data.urls) {
+    caches.open(CACHE_NAME).then((cache) => {
+      event.data.urls.forEach(async (url) => {
+        try {
+          // Zaten cache'te var mı kontrolü yapılabilir, basitlik adına overwrite
+          const res = await fetch(url);
+          if (res.ok) {
+            await cache.put(url, res.clone());
+          }
+        } catch (e) {
+          console.error('Failed to cache loaded resource:', url, e);
+        }
+      });
+    });
+  }
+});
+
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   
-  // Sadece GET isteklerini önbelleğe al ve sadece aynı kökenden gelenleri işle
   if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
 
-  // EKG ve public dosyaları için Stale-While-Revalidate stratejisi
-  if (url.pathname.startsWith('/ekg/') || url.pathname.match(/\.(png|jpg|jpeg|svg|gif|webp)$/)) {
-    event.respondWith(
-      caches.match(event.request).then((cachedResponse) => {
-        const fetchPromise = fetch(event.request).then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, networkResponse.clone());
-            });
-          }
-          return networkResponse.clone();
-        }).catch(() => {
-          // Görüntü yüklenemezse ve cache'de de yoksa fallback dön
-          if (event.request.destination === 'image') {
-            return caches.match('/ekg-fallback.svg');
-          }
-        });
+  const isRSC = url.searchParams.has('_rsc') || event.request.headers.get('RSC') === '1';
+  const isNavigate = event.request.mode === 'navigate';
+  const isStatic = url.pathname.startsWith('/_next/static/') || url.pathname.startsWith('/ekg/');
 
-        return cachedResponse || fetchPromise;
+  if (isStatic) {
+    // Cache-First Strategy for static assets
+    event.respondWith(
+      caches.match(event.request, { ignoreSearch: true }).then((cachedResponse) => {
+        if (cachedResponse) return cachedResponse;
+        return fetch(event.request).then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const clone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
+          return networkResponse;
+        });
       })
     );
-  } else {
-    // Diğer tüm rotalar için Network-First stratejisi (Next.js client-side routing için)
+    return;
+  }
+
+  if (isRSC) {
+    // RSC requests: Network first, fallback to cache, if no cache return Response.error() 
+    // to force Next.js to do a full navigation
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return caches.match(event.request).then((res) => {
+          if (res) return res;
+          return Response.error();
+        });
+      })
+    );
+    return;
+  }
+
+  if (isNavigate) {
+    // Navigate requests: Network first, fallback to cached HTML page (ignore search query), then fallback to '/'
     event.respondWith(
       fetch(event.request).then((networkResponse) => {
-        if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, networkResponse.clone());
-          });
+        if (networkResponse && networkResponse.status === 200) {
+           const clone = networkResponse.clone();
+           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
         }
         return networkResponse;
-      }).catch(() => caches.match(event.request))
+      }).catch(() => {
+        return caches.match(url.pathname, { ignoreSearch: true }).then((res) => {
+          return res || caches.match('/');
+        });
+      })
     );
+    return;
   }
+
+  // Default Network-First for anything else
+  event.respondWith(
+    fetch(event.request).then((networkResponse) => {
+      if (networkResponse && networkResponse.status === 200) {
+        const clone = networkResponse.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+      }
+      return networkResponse;
+    }).catch(() => caches.match(event.request, { ignoreSearch: true }))
+  );
 });

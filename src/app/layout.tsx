@@ -44,7 +44,16 @@ export default function RootLayout({
           {`
             if ('serviceWorker' in navigator) {
               window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js');
+                navigator.serviceWorker.register('/sw.js').then(function(reg) {
+                  navigator.serviceWorker.ready.then(function(swRegistration) {
+                    const urls = performance.getEntriesByType('resource')
+                      .map(r => r.name)
+                      .filter(name => name.includes('/_next/static/'));
+                    if (swRegistration.active) {
+                      swRegistration.active.postMessage({ type: 'CACHE_LOADED_RESOURCES', urls });
+                    }
+                  });
+                });
               });
             }
           `}
