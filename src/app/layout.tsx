@@ -14,6 +14,16 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Şırnak 112 - Acil Protokol",
   description: "Şırnak 112 Acil Saglik Hizmetleri Protokol ve Ilac Uygulamasi",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' }
+    ]
+  }
 };
 
 export const viewport = {
@@ -56,6 +66,17 @@ export default function RootLayout({
                 });
               });
             }
+
+            document.addEventListener('click', (e) => {
+              if (!navigator.onLine) {
+                const anchor = e.target.closest('a');
+                if (anchor && anchor.href && anchor.href.startsWith(window.location.origin)) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  window.location.href = anchor.href;
+                }
+              }
+            }, true);
           `}
         </Script>
       </body>

@@ -1,14 +1,42 @@
-const CACHE_NAME = 'sirnak112-offline-v3';
+const CACHE_NAME = 'sirnak112-offline-v4';
 
 const PRECACHE_PAGES = [
-  '/',
-  '/ekg-egitim',
-  '/ilac-doz',
-  '/skalalar',
-  '/algoritmalar',
-  '/vaka-protokolleri',
-  '/envanter',
-  '/evraklar'
+  '/', 
+  '/ekg-egitim', 
+  '/ilac-doz', 
+  '/ilac-doz/cocuk', 
+  '/ilac-doz/eriskin', 
+  '/ilac-doz/yenidogan', 
+  '/skalalar', 
+  '/skalalar/apgar', 
+  '/skalalar/avpu', 
+  '/skalalar/best-guess', 
+  '/skalalar/cabuk', 
+  '/skalalar/dispne', 
+  '/skalalar/ett', 
+  '/skalalar/geri-dondurulebilir', 
+  '/skalalar/glasgow-bebek', 
+  '/skalalar/glasgow-pediatri', 
+  '/skalalar/glasgow-yetiskin', 
+  '/skalalar/kas-gucu', 
+  '/skalalar/lma', 
+  '/skalalar/onaysiz-ilaclar', 
+  '/skalalar/parkland', 
+  '/skalalar/pat', 
+  '/skalalar/ventilator', 
+  '/skalalar/yanik', 
+  '/algoritmalar', 
+  '/algoritmalar/cocuk', 
+  '/algoritmalar/eriskin', 
+  '/algoritmalar/yenidogan', 
+  '/algoritmalar-gorsel', 
+  '/vaka-protokolleri', 
+  '/vaka-protokolleri/cocuk', 
+  '/vaka-protokolleri/eriskin', 
+  '/vaka-protokolleri/yenidogan', 
+  '/envanter', 
+  '/evraklar', 
+  '/icd10'
 ];
 
 self.addEventListener('install', (event) => {
@@ -121,18 +149,20 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (isNavigate) {
-    // Navigate requests: Network first, fallback to cached HTML page (ignore search query), then fallback to '/'
     event.respondWith(
       fetch(event.request).then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200) {
            const clone = networkResponse.clone();
-           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+           caches.open(CACHE_NAME).then((cache) => cache.put(url.pathname, clone));
         }
         return networkResponse;
-      }).catch(() => {
-        return caches.match(url.pathname, { ignoreSearch: true }).then((res) => {
-          return res || caches.match('/');
-        });
+      }).catch(async () => {
+        const cache = await caches.open(CACHE_NAME);
+        const res1 = await cache.match(url.pathname, { ignoreSearch: true });
+        if (res1) return res1;
+        const res2 = await cache.match(event.request, { ignoreSearch: true });
+        if (res2) return res2;
+        return cache.match('/');
       })
     );
     return;

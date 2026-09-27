@@ -30,6 +30,8 @@ while ((match = imgRegex.exec(dataContent)) !== null) {
   foundImages.add(match[0]);
 }
 foundImages.add('/ekg-fallback.svg');
+foundImages.add('/icons/icon-192x192.png');
+foundImages.add('/icons/icon-512x512.png');
 
 let test1Passed = true;
 for (const imgUrl of foundImages) {
