@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sirnak112-offline-v4';
+const CACHE_NAME = 'sirnak112-offline-v5';
 
 const PRECACHE_PAGES = [
   '/', 
@@ -36,7 +36,9 @@ const PRECACHE_PAGES = [
   '/vaka-protokolleri/yenidogan', 
   '/envanter', 
   '/evraklar', 
-  '/icd10'
+  '/icd10',
+  '/burn-map.svg',
+  '/burn-reference.svg'
 ];
 
 self.addEventListener('install', (event) => {

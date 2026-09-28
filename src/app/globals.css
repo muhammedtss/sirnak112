@@ -185,6 +185,49 @@ input, textarea, [contenteditable] {
   filter: opacity(0.9);
 }
 
+/* === İnteraktif Yanık Haritası (BurnMap / public/burn-map.svg) === */
+.burn-map {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.burn-map-artwork {
+  fill: var(--fg);
+  fill-opacity: 0.92;
+}
+.burn-map-zone {
+  fill: var(--fg);
+  fill-opacity: 0.045;
+  transition: fill 0.15s, fill-opacity 0.15s;
+}
+.burn-map-zone[data-state="hover"] {
+  fill: #F97316;
+  fill-opacity: 0.25;
+}
+.burn-map-zone[data-state="selected"] {
+  fill: #F97316;
+  fill-opacity: 0.62;
+}
+.burn-map-labels text {
+  fill: var(--fg);
+  fill-opacity: 0.85;
+  font-weight: 700;
+}
+.burn-map-labels text[data-selected] {
+  fill-opacity: 1;
+  font-weight: 900;
+}
+.burn-map-hit {
+  fill: transparent;
+  pointer-events: all;
+  cursor: pointer;
+  outline: none;
+}
+.burn-map-hit:focus-visible {
+  stroke: #FB923C;
+  stroke-width: 48;
+  stroke-dasharray: 120 80;
+}
+
 /* === EKG Monitor Styling (Paper Mode) === */
 .ekg-monitor-container {
   background-color: #ffffff;
