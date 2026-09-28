@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import { OfflineButton } from "@/components/pwa/OfflineButton";
 
 interface AppHeaderProps {
   /** Page title shown in the center/left */
@@ -73,9 +74,10 @@ export function AppHeader({ title, icon, back, right, badge }: AppHeaderProps) {
         </span>
       )}
 
-      {/* Right slot & Theme Toggle */}
+      {/* Right slot, çevrimdışı durumu & Theme Toggle */}
       <div className="shrink-0 flex items-center gap-2 ml-1">
         {right}
+        <OfflineButton />
         <ThemeToggle />
       </div>
     </header>

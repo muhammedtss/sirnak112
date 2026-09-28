@@ -5,6 +5,11 @@ import EnvanterIlacListesi from "@/components/envanter/EnvanterIlacListesi";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";
+import { staticParamsFor } from "@/lib/static-params";
+
+export function generateStaticParams() {
+  return staticParamsFor("/envanter/[tip]/[kategori]");
+}
 
 const ambulansNames: Record<string, string> = {
   acil_yardim: "Acil Yardım ve Yoğun Bakım",

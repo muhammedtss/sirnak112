@@ -4,6 +4,11 @@ import envanterData from "@/data/ambulans-envanter.json";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { Stethoscope, ArrowLeft } from "lucide-react";
+import { staticParamsFor } from "@/lib/static-params";
+
+export function generateStaticParams() {
+  return staticParamsFor("/envanter/[tip]");
+}
 
 const ambulansNames: Record<string, string> = {
   acil_yardim: "Acil Yardım ve Yoğun Bakım",

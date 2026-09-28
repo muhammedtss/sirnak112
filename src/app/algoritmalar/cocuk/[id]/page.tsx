@@ -4,6 +4,11 @@ import cocukData from "@/data/cocuk.json";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";
+import { staticParamsFor } from "@/lib/static-params";
+
+export function generateStaticParams() {
+  return staticParamsFor("/algoritmalar/cocuk/[id]");
+}
 
 export default async function CocukAlgoritmaSayfasi({
   params,

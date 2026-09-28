@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { Background } from "@/components/ui/Background";
 import { BottomNav } from "@/components/layout/BottomNav";
+import { OfflineManager } from "@/components/pwa/OfflineManager";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -14,6 +14,12 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Şırnak 112 - Acil Protokol",
   description: "Şırnak 112 Acil Saglik Hizmetleri Protokol ve Ilac Uygulamasi",
+  applicationName: "Şırnak 112 Acil Protokol",
+  appleWebApp: {
+    capable: true,
+    title: "112 Protokol",
+    statusBarStyle: "black-translucent",
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -31,6 +37,7 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
+  themeColor: "#090C14",
 };
 
 export default function RootLayout({
@@ -50,35 +57,7 @@ export default function RootLayout({
         <div className="shrink-0 w-full relative z-50 bg-transparent">
           <BottomNav />
         </div>
-        <Script id="register-sw" strategy="afterInteractive">
-          {`
-            if ('serviceWorker' in navigator) {
-              window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js').then(function(reg) {
-                  navigator.serviceWorker.ready.then(function(swRegistration) {
-                    const urls = performance.getEntriesByType('resource')
-                      .map(r => r.name)
-                      .filter(name => name.includes('/_next/static/'));
-                    if (swRegistration.active) {
-                      swRegistration.active.postMessage({ type: 'CACHE_LOADED_RESOURCES', urls });
-                    }
-                  });
-                });
-              });
-            }
-
-            document.addEventListener('click', (e) => {
-              if (!navigator.onLine) {
-                const anchor = e.target.closest('a');
-                if (anchor && anchor.href && anchor.href.startsWith(window.location.origin)) {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  window.location.href = anchor.href;
-                }
-              }
-            }, true);
-          `}
-        </Script>
+        <OfflineManager />
       </body>
     </html>
   );

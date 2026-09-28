@@ -17,6 +17,7 @@ import {
 import { PageShell } from "@/components/layout/PageShell";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import GlobalSearchModal from "@/components/search/GlobalSearchModal";
+import { OfflineButton } from "@/components/pwa/OfflineButton";
 
 const container = {
   hidden: { opacity: 0 },
@@ -64,6 +65,7 @@ export default function HomePage() {
         </div>
         <div className="flex items-center gap-2">
           <GlobalSearchModal />
+          <OfflineButton />
           <ThemeToggle />
         </div>
       </header>

@@ -149,11 +149,19 @@ if (!nextConfigStr.includes('Content-Security-Policy') || !nextConfigStr.include
   test4Passed = false;
 }
 
+// Service worker: yalnızca başarılı, aynı kökenli yanıtlar önbelleğe alınmalı
 const swStr = fs.readFileSync(path.join(rootDir, 'public', 'sw.js'), 'utf-8');
-if (!swStr.includes('networkResponse.status === 200')) {
-  console.error("❌ FAIL: public/sw.js içinde 'networkResponse.status === 200' kontrolü eksik.");
-  hasError = true;
-  test4Passed = false;
+const swChecks = [
+  ["url.origin !== self.location.origin", "farklı kökenli istekler SW dışında bırakılmalı"],
+  ["res.ok && res.type === 'basic'", "yalnızca başarılı ve aynı kökenli yanıtlar önbelleğe alınmalı"],
+  ["function isHtmlResponse", "sayfa önbelleği yalnızca başarılı HTML yanıtlarını kabul etmeli"],
+];
+for (const [needle, reason] of swChecks) {
+  if (!swStr.includes(needle)) {
+    console.error(`❌ FAIL: public/sw.js — ${reason} ('${needle}' bulunamadı).`);
+    hasError = true;
+    test4Passed = false;
+  }
 }
 
 if (test4Passed) console.log(`✅ PASS: Güvenlik ve Sızıntı Denetimi başarılı.`);

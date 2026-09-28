@@ -4,6 +4,11 @@ import eriskinProtokolData from "@/data/eriskin.json";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";
+import { staticParamsFor } from "@/lib/static-params";
+
+export function generateStaticParams() {
+  return staticParamsFor("/vaka-protokolleri/eriskin/[id]");
+}
 
 export default async function EriskinProtokolSayfasi({
   params,
