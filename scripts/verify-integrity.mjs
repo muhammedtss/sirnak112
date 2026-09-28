@@ -6,11 +6,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
-// Import the data
-const dataContent = fs.readFileSync(path.join(rootDir, 'src/data/ekg-training-data.ts'), 'utf-8');
+// EKG modülü kaynakları (TS dosyaları düz metin olarak okunur; loader gerekmez)
+const ekgDir = path.join(rootDir, 'src/lib/ekg');
+const rhythmsContent = fs.readFileSync(path.join(ekgDir, 'rhythms.ts'), 'utf-8');
+const casesContent = fs.readFileSync(path.join(ekgDir, 'cases.ts'), 'utf-8');
 
-// Use basic parsing since we can't easily import TS directly without a loader in vanilla node
-console.log("=== BŞLATILIYOR: DOĞRULAMA SCRİPTİ ===");
+console.log("=== BAŞLATILIYOR: DOĞRULAMA SCRİPTİ ===");
 
 let hasError = false;
 
@@ -21,17 +22,20 @@ function assert(condition, message) {
   }
 }
 
-// TEST 1: Physical File & Image Verification
-console.log("\n[TEST 1] Fiziksel Dosya ve Görsel Doğrulaması (Zero-404 Test)");
-const imgRegex = /\/ekg\/[\w-]+\.png/g;
-let match;
-const foundImages = new Set();
-while ((match = imgRegex.exec(dataContent)) !== null) {
-  foundImages.add(match[0]);
+function walkFiles(dir, exts) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => {
+    const full = path.join(dir, e.name);
+    return e.isDirectory() ? walkFiles(full, exts) : exts.some(x => e.name.endsWith(x)) ? [full] : [];
+  });
 }
-foundImages.add('/ekg-fallback.svg');
-foundImages.add('/icons/icon-192x192.png');
-foundImages.add('/icons/icon-512x512.png');
+
+// TEST 1: EKG görselleri — kodda geçen her /ekg/*.webp dosyası mevcut ve sağlam olmalı
+console.log("\n[TEST 1] Fiziksel Dosya ve Görsel Doğrulaması (Zero-404 Test)");
+const foundImages = new Set(['/icons/icon-192x192.png', '/icons/icon-512x512.png']);
+for (const file of walkFiles(path.join(rootDir, 'src'), ['.ts', '.tsx'])) {
+  const content = fs.readFileSync(file, 'utf-8');
+  for (const m of content.matchAll(/\/ekg\/[\w-]+\.(?:webp|png|svg)/g)) foundImages.add(m[0]);
+}
 
 let test1Passed = true;
 for (const imgUrl of foundImages) {
@@ -40,49 +44,48 @@ for (const imgUrl of foundImages) {
     console.error(`❌ FAIL: Eksik dosya -> ${imgUrl}`);
     hasError = true;
     test1Passed = false;
-  } else {
-    const stats = fs.statSync(filePath);
-    if (stats.size < 1000 && !imgUrl.includes('fallback')) { // fallback SVG might be small
-      console.error(`❌ FAIL: Bozuk/Çok küçük dosya -> ${imgUrl} (${stats.size} bytes)`);
-      hasError = true;
-      test1Passed = false;
-    }
+  } else if (fs.statSync(filePath).size < 1000) {
+    console.error(`❌ FAIL: Bozuk/Çok küçük dosya -> ${imgUrl} (${fs.statSync(filePath).size} bytes)`);
+    hasError = true;
+    test1Passed = false;
   }
 }
 if (test1Passed) console.log(`✅ PASS: Toplam ${foundImages.size} görsel başarıyla doğrulandı.`);
 
-// TEST 2: Turkish Locale & Data Matching
-console.log("\n[TEST 2] Türkçe Locale ve Veri Eşleşme Testi");
+// TEST 2: EKG veri tutarlılığı — her gerçek vaka tanımlı bir ritme bağlı, görseli benzersiz
+console.log("\n[TEST 2] EKG Vaka ve Ritim Eşleşme Testi");
 let test2Passed = true;
-
-// Extract matrix and cases with simpler regex
-  const diagnosisRegex = /tani:\s*"([^"]+)"/g;
-  let tmatch;
-  let allDiagnoses = [];
-  while ((tmatch = diagnosisRegex.exec(dataContent)) !== null) {
-    allDiagnoses.push(tmatch[1]);
+const ritimIdleri = new Set([...rhythmsContent.matchAll(/^ {2}"?([a-z0-9-]+)"?: \{\r?\n {4}id: "([a-z0-9-]+)"/gm)].map(m => {
+  if (m[1] !== m[2]) {
+    console.error(`❌ FAIL: Ritim anahtarı ile id uyuşmuyor: ${m[1]} ≠ ${m[2]}`);
+    hasError = true;
+    test2Passed = false;
   }
-
-  // matrix items
-  const matrixRegex = /"([^"]+)":\s*\[(.*?)\]/g;
-  let mmatch;
-  let matrixItems = [];
-  while ((mmatch = matrixRegex.exec(dataContent)) !== null) {
-    if (mmatch[1].includes("QRS")) {
-       matrixItems.push(...mmatch[2].match(/"([^"]+)"/g).map(s => s.replace(/"/g, "")));
-    }
+  return m[2];
+}));
+const vakaRitimleri = [...casesContent.matchAll(/ritim: "([a-z0-9-]+)"/g)].map(m => m[1]);
+const vakaGorselleri = [...casesContent.matchAll(/gorsel: "([^"]+)"/g)].map(m => m[1]);
+if (ritimIdleri.size < 10) {
+  console.error(`❌ FAIL: Ritim kayıt defteri okunamadı (${ritimIdleri.size} ritim).`);
+  hasError = true;
+  test2Passed = false;
+}
+for (const r of vakaRitimleri) {
+  if (!ritimIdleri.has(r)) {
+    console.error(`❌ FAIL: Gerçek vaka tanımsız ritme bağlı: ${r}`);
+    hasError = true;
+    test2Passed = false;
   }
-
-  // The matrix matching in actual code uses a mapping. Let's just assert our mock logic doesn't crash.
-  let matchedCount = 0;
-  for (const diag of allDiagnoses) {
-     const cleanDiag = diag.replace(/ \(.+\)/, "").toLocaleUpperCase("tr-TR");
-     if (cleanDiag) matchedCount++;
-  }
-  
-  assert(matchedCount === allDiagnoses.length, "Bazı tanılar localeUpperCase işleminden geçemedi.");
-  
-  if (test2Passed) console.log(`✅ PASS: Türkçe locale eşleşme simülasyonu başarılı.`);
+}
+if (new Set(vakaGorselleri).size !== vakaGorselleri.length) {
+  console.error("❌ FAIL: Aynı görsel birden fazla vakada kullanılıyor.");
+  hasError = true;
+  test2Passed = false;
+}
+for (const tani of [...casesContent.matchAll(/tani: "([^"]+)"/g)].map(m => m[1])) {
+  assert(tani.toLocaleUpperCase("tr-TR").length > 0, `Tanı Türkçe büyük harfe çevrilemedi: ${tani}`);
+}
+if (test2Passed) console.log(`✅ PASS: ${ritimIdleri.size} ritim, ${vakaRitimleri.length} gerçek vaka tutarlı.`);
 
 
 // TEST 3: Medical Calculator Fuzzing Test

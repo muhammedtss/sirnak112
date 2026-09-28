@@ -41,7 +41,7 @@ const quickLinks = [
   { href: "/envanter",             icon: Package,    label: "Envanter",          desc: "Malzeme kontrolü", accent: "#EF4444" },
   { href: "/evraklar",             icon: FileText,   label: "Evraklar",          desc: "Form ve tutanaklar", accent: "#EC4899" },
   { href: "/icd10",                icon: FileSearch, label: "ICD-10",            desc: "Tanı kodları", accent: "#06B6D4" },
-  { href: "/ekg-yakinda",          icon: HeartPulse, label: "EKG Eğitimi",       desc: "İnteraktif modüller", accent: "#10B981" },
+  { href: "/ekg-egitim",           icon: HeartPulse, label: "EKG Eğitimi",       desc: "Eğitim, atlas ve vaka sınavı", accent: "#10B981" },
 ];
 
 export default function HomePage() {
@@ -114,7 +114,7 @@ export default function HomePage() {
       >
         {quickLinks.map((link) => {
           const Icon = link.icon;
-          const isFullRow = link.href === "/icd10" || link.href === "/ekg-yakinda";
+          const isFullRow = link.href === "/icd10" || link.href === "/ekg-egitim";
           return (
             <motion.div key={link.href} variants={item} className={isFullRow ? "col-span-2 flex justify-center" : "w-full"}>
               <Link

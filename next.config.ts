@@ -13,6 +13,10 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  async redirects() {
+    // EKG modülü yayında: eski "yakında" sayfasının bağlantıları yeni modüle gider
+    return [{ source: '/ekg-yakinda', destination: '/ekg-egitim', permanent: true }];
+  },
   async headers() {
     return [
       {
