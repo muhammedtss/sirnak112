@@ -21,7 +21,7 @@
       "node_3": {
         "id": "node_3",
         "type": "action",
-        "content": "Damar yolu aç. Ringer Laktat veya %0,9 NaCl IV 125 ml/saat - 40 cc/dk başla",
+        "content": "Damar yolu aç. Ringer Laktat veya %0,9 NaCl IV 125 ml/saat (40 damla/dk) başla",
         "nextId": "node_4",
         "isCritical": false
       },
@@ -35,7 +35,7 @@
       "node_5": {
         "id": "node_5",
         "type": "action",
-        "content": "Baş göründüğünde anneyi ıkınması için teşvik et. Baş çıkarken kontrollü çıkmasını sağlamak için parmaklarını kafatasının kemik kısmına yerleştir",
+        "content": "Baş göründüğünde anneyi ıkınması için teşvik et. Baş çıkarken kontrollü çıkmasını sağlamak için parmaklarını kafatasının kemik kısmına yerleştir. (Fontanel ve yüzden sakın)",
         "nextId": "node_6",
         "isCritical": false
       },
@@ -71,14 +71,14 @@
       "node_10": {
         "id": "node_10",
         "type": "action",
-        "content": "30-60 sn bekleyip göbek kordonunu klemple ve kes. KARBETOSİN 100 mcg/100 ml (IM veya IV yavaş puşe) uygula",
+        "content": "30-60 sn bekleyip göbek kordonunu klemple ve kes (ilk klemp bebekten yaklaşık 10 cm, ikinci klemp ilkinden 10 cm uzakta). Doğum zamanını kaydet. KARBETOSİN 100 mcg/100 ml (IM veya IV 1 dk'dan kısa olmayacak şekilde yavaş puşe) uygula",
         "nextId": "node_11",
-        "isCritical": false
+        "isCritical": true
       },
       "node_11": {
         "id": "node_11",
         "type": "action",
-        "content": "Doğum sonrası plasentanın çıkışını gözle. Perineal bölgeye steril ped koy, annenin bacaklarını birleştir. Plasenta çıkınca uterin masaja başla",
+        "content": "Doğum sonrası plasentanın çıkışını gözle; plasentayı gazlı bez/steril örtüyle sar. Perineal bölgeye steril ped koy, annenin bacaklarını birleştir. Plasenta çıkınca uterin masaja başla (uterus yumuşak ise fundustan değil pubisin hemen üzerinden)",
         "nextId": "node_12",
         "isCritical": false
       },
@@ -106,7 +106,7 @@
       "node_1": {
         "id": "node_1",
         "type": "action",
-        "content": "Damar yolu aç. SpO2 %94-98 olacak şekilde Maske ile 10 L/dk oksijen ver. Ringer Laktat veya %0,9 NaCl IV 125 ml/saat başla",
+        "content": "Damar yolu aç. SpO2 %94-98 olacak şekilde maske ile 10 L/dk oksijen ver. Ringer Laktat veya %0,9 NaCl IV 125 ml/saat (40 damla/dk) başla",
         "nextId": "node_2",
         "isCritical": false
       },
@@ -143,7 +143,7 @@
       "node_6": {
         "id": "node_6",
         "type": "redirect",
-        "content": "Normal Yenidoğan Bakımı Algoritmasına Git",
+        "content": "Doğum gerçekleşmişse NORMAL YENİDOĞAN BAKIMI ve/veya YENİDOĞAN CANLANDIRMA ALGORİTMASINA GİT",
         "targetAlgorithmId": "SB-ASH-DY-06",
         "isCritical": false
       },
@@ -178,7 +178,7 @@
       "node_1": {
         "id": "node_1",
         "type": "action",
-        "content": "Acil olgu yönetimini uygula. Hava yolu açıklığını sağla. SpO2 %94-98 olacak şekilde oksijenizasyonu sağla. Damaryolu aç",
+        "content": "Acil olgu yönetimini uygula. Hava yolu açıklığını sağla. SpO2 %94-98 olacak şekilde geri solumasız maske ile 10 L/dk oksijen ver. Damar yolu aç",
         "nextId": "node_2",
         "isCritical": false
       },
@@ -215,9 +215,9 @@
       "node_6": {
         "id": "node_6",
         "type": "action",
-        "content": "Uterusa masaj yap. KARBETOSİN 100 mcg/100 ml (IM/IV) uygula. Perinede kanayan yırtık varsa ped ile kompresyon yap",
+        "content": "Uterusa masaj yap. KARBETOSİN 100 mcg/100 ml (IM/IV, 1 dk'dan kısa olmayacak şekilde yavaş puşe; doğum sırasında verildiyse yeterlidir, tekrarlama) uygula. Perinede kanayan yırtık varsa ped ile kompresyon yap",
         "nextId": "node_7",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
@@ -236,8 +236,8 @@
       "node_9": {
         "id": "node_9",
         "type": "action",
-        "content": "Plasenta çıkmamışsa çıkarmaya çalışma. KARBETOSİN 100 mcg/100 ml uygula",
-        "isCritical": false
+        "content": "Plasenta çıkmamışsa çıkarmaya çalışma. KARBETOSİN 100 mcg/100 ml (1 dk'dan kısa olmayacak şekilde yavaş puşe; doğum sırasında verildiyse yeterlidir) uygula",
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
@@ -271,7 +271,7 @@
         "type": "action",
         "content": "Yutabiliyorsa NİFEDİPİN 10 mg kapsül yuttur",
         "nextId": "node_4",
-        "isCritical": false
+        "isCritical": true
       },
       "node_4": {
         "id": "node_4",
@@ -284,9 +284,9 @@
       "node_5": {
         "id": "node_5",
         "type": "action",
-        "content": "NİFEDİPİN 10 mg kapsül yuttur (2. doz)",
+        "content": "NİFEDİPİN 10 mg kapsül yuttur (2. doz). KB hâlâ ≥ 160/110 ve yükselme eğilimindeyse bu dozda 20 mg verilebilir",
         "nextId": "node_6",
-        "isCritical": false
+        "isCritical": true
       },
       "node_6": {
         "id": "node_6",
@@ -299,22 +299,22 @@
       "node_7": {
         "id": "node_7",
         "type": "action",
-        "content": "NİFEDİPİN 10 mg kapsül yuttur (3. doz)",
+        "content": "NİFEDİPİN 10 mg kapsül yuttur (3. doz). KB hâlâ ≥ 160/110 ve yükselme eğilimindeyse bu dozda 20 mg verilebilir",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
         "type": "action",
-        "content": "Eklampsi profilaksisi için 4 gr MAGNEZYUM SÜLFAT, IV bolus şeklinde 15-20 dk da ver (Maksimum doz 6 gr)",
+        "content": "Eklampsi profilaksisi için 4 gr MAGNEZYUM SÜLFAT IV bolus şeklinde 15-20 dk'da ver (100 ml içinde 4 gr hazır magnezyum solüsyonu; maks 6 gr). Hazır solüsyon yoksa 100 ml %0,9 NaCl içine 3 ampul %15'lik MgSO4 15-20 dk'da (≈200 damla/dk)",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
         "type": "action",
-        "content": "İdame olarak 4 gr MAGNEZYUM SÜLFAT 4 saatte gidecek şekilde infüzyona devam et",
-        "isCritical": false
+        "content": "İdame olarak 4 gr MAGNEZYUM SÜLFAT 4 saatte (1-2 gr/sa) gidecek şekilde infüzyona devam et",
+        "isCritical": true
       }
     }
   },
@@ -362,16 +362,16 @@
       "node_6": {
         "id": "node_6",
         "type": "action",
-        "content": "Nöbeti olan hastaya 4 gr MAGNEZYUM SÜLFAT IV bolus şekilde 15-20 dk da ver",
+        "content": "Nöbeti olan hastaya 4 gr MAGNEZYUM SÜLFAT IV bolus şeklinde 15-20 dk'da ver (100 ml içinde 4 gr hazır solüsyon; maks 6 gr)",
         "nextId": "node_7",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
         "type": "action",
-        "content": "İdame olarak 4 gr MAGNEZYUM SÜLFAT 4 saatte gidecek şekilde uygula",
+        "content": "İdame olarak 4 gr MAGNEZYUM SÜLFAT 4 saatte (1-2 gr/sa) gidecek şekilde uygula. AVPU, vital bulgular, SpO2, EKG ve patella refleksini kontrol et",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
@@ -386,7 +386,7 @@
         "type": "action",
         "content": "DİAZEPAM 5 mg IV uygula",
         "nextId": "node_10",
-        "isCritical": false
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
@@ -427,13 +427,13 @@
       "node_2": {
         "id": "node_2",
         "type": "action",
-        "content": "Anne yanında olağan bakım: Kurula, ısıt ve vücut sıcaklığını koru, gerekirse salgıları temizle, değerlendirmeyi sürdür",
+        "content": "Anne yanında olağan bakım: Kurula, ısıt ve vücut sıcaklığını koru, gerekirse salgıları temizle (önce ağız sonra burun), değerlendirmeyi sürdür",
         "isCritical": false
       },
       "node_3": {
         "id": "node_3",
         "type": "action",
-        "content": "Kurula, Isıt, Uyaran ver, Pozisyon ver, Gerekirse salgıları temizle",
+        "content": "Kurula, ısıt, uyaran ver, pozisyon ver, gerekirse salgıları temizle (önce ağız sonra burun). 32. gebelik haftasından önce doğanlar kurulanmadan polietilen torbaya konur",
         "nextId": "node_4",
         "isCritical": false
       },

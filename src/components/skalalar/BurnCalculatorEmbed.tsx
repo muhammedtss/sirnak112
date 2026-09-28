@@ -20,7 +20,7 @@ const VIEW_OPTIONS: { value: BurnMapView; label: string }[] = [
 
 interface BurnCalculatorEmbedProps {
   /** "tbsa": önce yanık yüzdesi, kilo isteğe bağlı (İnteraktif Yanık Hesaplama)
-   *  "parkland": önce yaş & kilo, ardından yüzde ve sıvı hesabı (Parkland Formülü) */
+   *  "parkland": önce yaş & kilo, ardından yüzde ve sıvı hesabı (EK-2 yanık sıvı formülü) */
   variant?: "tbsa" | "parkland";
 }
 
@@ -60,9 +60,17 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
   const kiloInvalid = kilo !== "" && (!Number.isFinite(k) || k <= 0 || k > 300);
   const valid = !kiloInvalid && k > 0 && tbsa > 0 && !tbsaInvalid;
 
-  const toplam = valid ? 4 * k * tbsa : null;
-  const ilk8 = toplam !== null ? toplam / 2 : null;
-  const kalan16 = toplam !== null ? toplam / 2 : null;
+  /* EK-2 Yanık Anahtar Noktalar (s.48, s.133): saatlik başlangıç hızı (ml/saat)
+     ≥13 yaş ve erişkin: (2 × VYA% × kg)/16 · <13 yaş: (3 × VYA% × kg)/16
+     Elektrik yanığında herkes için: (4 × VYA% × kg)/16
+     Yaş grupları 0/1/5/10 → <13 yaş; 15/Erişkin → ≥13 yaş. */
+  const [elektrik, setElektrik] = useState(false);
+  const cocukMu = ageGroup === "0" || ageGroup === "1" || ageGroup === "5" || ageGroup === "10";
+  const katsayi = elektrik ? 4 : cocukMu ? 3 : 2;
+  const saatlikHiz = valid ? (katsayi * tbsa * k) / 16 : null;
+  // Hastane öncesi sıvı eşiği: ≥30 kg'da ≥%15, <30 kg'da ≥%10 yanık
+  const esik = k >= 30 ? 15 : 10;
+  const esikAlti = valid && tbsa < esik;
 
   /* ───────────── Parçalar ───────────── */
 
@@ -271,50 +279,45 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
           {tbsaCard}
           <div className="glass-card rounded-2xl shadow-sm">
             <div className="px-4 py-3 border-b border-white/10 bg-teal-500/5">
-              <p className="text-xs font-bold text-teal-400 uppercase tracking-widest">2. Adım · Sıvı İhtiyacı (Parkland)</p>
+              <p className="text-xs font-bold text-teal-400 uppercase tracking-widest">2. Adım · Sıvı İhtiyacı</p>
             </div>
             <div className="p-4">{kiloInput}</div>
           </div>
         </>
       )}
 
-      {/* Sonuç: Parkland */}
-      {valid && toplam !== null && ilk8 !== null && kalan16 !== null && (
+      {/* Sonuç: sıvı başlangıç hızı (EK-2) */}
+      {valid && saatlikHiz !== null && (
         <div className="space-y-3 animate-in fade-in slide-in-from-bottom-4">
+          <label className="flex items-center gap-3 glass-card rounded-xl px-4 py-3 cursor-pointer">
+            <input type="checkbox" checked={elektrik} onChange={e => setElektrik(e.target.checked)} className="w-4 h-4 accent-teal-500" />
+            <span className="text-sm font-bold">Elektrik yanığı</span>
+            <span className="text-[11px] text-muted ml-auto">katsayı 4 ml</span>
+          </label>
+
           <div className="bg-teal-600 rounded-2xl p-5 text-center text-white shadow-[0_0_30px_rgba(13,148,136,0.3)] border border-teal-400">
             <div className="flex items-center justify-center gap-2 mb-2 opacity-90">
               <Droplet className="w-4 h-4" />
-              <p className="text-xs font-bold uppercase tracking-wider">24 Saatlik Toplam Sıvı (Ringer Laktat)</p>
+              <p className="text-xs font-bold uppercase tracking-wider">Ringer Laktat · Saatlik Başlangıç Hızı</p>
             </div>
-            <p className="text-5xl font-black tracking-tight">{toplam.toFixed(0)} <span className="text-xl opacity-80">mL</span></p>
-            <p className="text-[11px] opacity-80 mt-1">4 mL × {k} kg × %{formatPercent(tbsa)}</p>
+            <p className="text-5xl font-black tracking-tight">{saatlikHiz.toFixed(0)} <span className="text-xl opacity-80">mL/saat</span></p>
+            <p className="text-[11px] opacity-80 mt-1">
+              ({katsayi} × %{formatPercent(tbsa)} × {k} kg) / 16 ·{" "}
+              {elektrik ? "elektrik yanığı" : cocukMu ? "13 yaş altı" : "13 yaş ve üzeri"}
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div className="glass-card rounded-2xl border-2 border-orange-400/50 p-4 text-center bg-orange-500/10">
-              <p className="text-[11px] font-bold text-orange-300 uppercase tracking-wide mb-1">İlk 8 Saat</p>
-              <p className="text-3xl font-black text-orange-400">{ilk8.toFixed(0)}</p>
-              <p className="text-xs text-orange-300/80 font-bold mb-3">mL</p>
-              <div className="pt-3 border-t border-orange-500/20">
-                <p className="text-[10px] text-orange-300/60 uppercase">Saatlik Hız</p>
-                <p className="text-lg font-black text-white">{(ilk8 / 8).toFixed(0)} <span className="text-xs font-normal">mL/saat</span></p>
-              </div>
+          {esikAlti && (
+            <div className="bg-sky-500/10 border border-sky-500/30 rounded-xl p-4 text-xs text-sky-200/90 leading-relaxed">
+              <span className="font-bold text-sky-300 block mb-1">ℹ️ Eşik altı</span>
+              Hastane öncesinde {k >= 30 ? "30 kg ve üzeri hastada %15" : "30 kg altı hastada %10"} ve üzeri yanıkta sıvı resüsitasyonu başlanır.
             </div>
-            <div className="glass-card rounded-2xl border-2 border-teal-400/50 p-4 text-center bg-teal-500/10">
-              <p className="text-[11px] font-bold text-teal-300 uppercase tracking-wide mb-1">Kalan 16 Saat</p>
-              <p className="text-3xl font-black text-teal-400">{kalan16.toFixed(0)}</p>
-              <p className="text-xs text-teal-300/80 font-bold mb-3">mL</p>
-              <div className="pt-3 border-t border-teal-500/20">
-                <p className="text-[10px] text-teal-300/60 uppercase">Saatlik Hız</p>
-                <p className="text-lg font-black text-white">{(kalan16 / 16).toFixed(0)} <span className="text-xs font-normal">mL/saat</span></p>
-              </div>
-            </div>
-          </div>
+          )}
 
-          <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs text-amber-200/90 leading-relaxed shadow-inner">
-            <span className="font-bold text-amber-400 block mb-1">⚠️ Klinik Not:</span>
-            Sıvı resüsitasyonu yanığın başladığı saatten itibaren hesaplanır. Formül bir rehberdir, hastanın idrar çıkışı (0.5–1 mL/kg/saat) ve klinik yanıtına göre titre edilmelidir.
-            {ageGroup !== "Erişkin" && " Çocuklarda Parkland sıvısına ek olarak dekstrozlu idame sıvısı da planlanmalıdır."}
+          <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs text-amber-200/90 leading-relaxed shadow-inner space-y-1">
+            <span className="font-bold text-amber-400 block">⚠️ Klinik Not (EK-2 Yanık Anahtar Noktalar)</span>
+            <p>1 saatten kısa nakillerde 500 ml Ringer Laktat yeterlidir; formül daha uzun nakiller içindir.</p>
+            <p>1. derece yanıklar hesaba katılmaz. Saatlik hız idrar çıkışına göre %10-30 artırılıp azaltılır (hedef 0,5-1 ml/kg/saat; çocukta 1 ml/kg/saat).</p>
           </div>
         </div>
       )}

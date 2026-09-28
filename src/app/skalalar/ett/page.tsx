@@ -16,12 +16,14 @@ export default function ETTPage() {
 
   // ETT İç Çap (mm)
   // (yaş/4) + 4 kafsız; (yaş/4) + 3.5 kaflı
-  const ettkafsız = validYas ? ((y / 4) + 4).toFixed(1) : null;
+  // İki yaşından küçük, 4 kg'dan ağır bebeklerde iç çapı 4 mm tüp kullanılabilir
+  const ettkafsız = validYas ? (y < 2 ? "4.0" : ((y / 4) + 4).toFixed(1)) : null;
   const ettkaflı = validYas ? ((y / 4) + 3.5).toFixed(1) : null;
 
-  // Derinlik (cm - ağızdan)
-  // (yaş/2) + 12
+  // Derinlik (cm - üst dudaktan) — EK-2 Arrest Yönetimi Anahtar Noktalar (s.106)
+  // Kaflı: (yaş/2) + 12 · Kafsız: uygun kafsız tüp numarası × 3
   const derinlik = validYas ? ((y / 2) + 12).toFixed(1) : null;
+  const derinlikKafsiz = ettkafsız ? (parseFloat(ettkafsız) * 3).toFixed(1) : null;
   const derinlikKilo = validKilo ? (k / 10 + 12).toFixed(1) : null;
 
   // Laringoskop blade
@@ -47,7 +49,8 @@ export default function ETTPage() {
           <p className="text-[11px] text-blue-400 leading-relaxed">
             <span className="font-black">Kafsız ETT:</span> (Yaş/4) + 4 mm<br />
             <span className="font-black">Kaflı ETT:</span> (Yaş/4) + 3.5 mm<br />
-            <span className="font-black">Derinlik (ağız):</span> (Yaş/2) + 12 cm
+            <span className="font-black">Derinlik (üst dudak):</span> kaflı (Yaş/2) + 12 cm · kafsız tüp no × 3<br />
+            <span className="font-black">2 yaş altı (&gt;4 kg):</span> iç çapı 4 mm tüp
           </p>
         </div>
 
@@ -104,12 +107,22 @@ export default function ETTPage() {
             <div className="glass-card rounded-xl border border-white/10  overflow-hidden divide-y divide-white/10">
               <div className="px-4 py-3 flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-bold text-white/90">Derinlik (ağızdan)</p>
-                  <p className="text-[11px] text-slate-500">Yaş formülüyle — (Yaş/2) + 12</p>
+                  <p className="text-sm font-bold text-white/90">Derinlik — kaflı tüp</p>
+                  <p className="text-[11px] text-slate-500">Üst dudaktan — (Yaş/2) + 12</p>
                 </div>
                 <div className="text-right">
                   <p className="text-xl font-black text-white/90">{derinlik || "-"}</p>
                   {derinlik && derinlik !== "Klinik" && <p className="text-xs text-slate-500 font-bold">cm</p>}
+                </div>
+              </div>
+              <div className="px-4 py-3 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-white/90">Derinlik — kafsız tüp</p>
+                  <p className="text-[11px] text-slate-500">Üst dudaktan — kafsız tüp no × 3</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xl font-black text-white/90">{derinlikKafsiz || "-"}</p>
+                  {derinlikKafsiz && <p className="text-xs text-slate-500 font-bold">cm</p>}
                 </div>
               </div>
               <div className="px-4 py-3 flex items-center justify-between">

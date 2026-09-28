@@ -144,7 +144,7 @@
           "fixedDose": null,
           "maxDose": "12 mg",
           "route": "IV",
-          "notes": "Hızlı puşe. İlk doz 0.1 mg/kg (maks 6 mg). İkinci doz 0.2 mg/kg (maks 12 mg)."
+          "notes": "Hızlı puşe; her dozdan hemen sonra 5 ml %0,9 NaCl ile itilir. İlk doz 0,1 mg/kg (maks 6 mg), ikinci doz 0,2 mg/kg (maks 12 mg)."
         }
       }
     }
@@ -479,7 +479,7 @@
           "fixedDose": null,
           "maxDose": null,
           "route": "IV",
-          "notes": "Çocuk ve yenidoğanlarda %10 luk dekstroz 5 ml/kg veya %20 lik dekstroz 2.5 ml/kg IV puşe/idame."
+          "notes": "%10'luk dekstroz 5 ml/kg veya %20'lik dekstroz 2,5 ml/kg IV bolus. %20'lik dekstroz periferik damar yolundan VERİLEMEZ. Yenidoğanda <50 mg/dl ise tekrarlanır."
         }
       }
     }
@@ -506,9 +506,9 @@
           "dosePerKg": 0.2,
           "unit": "mg",
           "fixedDose": null,
-          "maxDose": "10 mg",
+          "maxDose": "<5 yaş 5 mg, ≥5 yaş 10 mg (IV)",
           "route": "IV / Rektal",
-          "notes": "IV yavaş puşe (maks 10 mg). Rektal yoldan verilecekse doz 0.3-0.5 mg/kg şeklindedir."
+          "notes": "IV yavaş puşe 0,2 mg/kg (maks <5 yaş 5 mg, ≥5 yaş 10 mg). Rektal 0,3-0,5 mg/kg (maks <2 yaş 5 mg, ≥2 yaş 10 mg). 5 dk'da nöbet devam ederse aynı doz 1 kez tekrarlanır."
         }
       },
       "ajite_hasta": {
@@ -722,7 +722,7 @@
           "fixedDose": null,
           "maxDose": null,
           "route": "IV İnfüzyon",
-          "notes": "SF içine katılarak infüzyonla verilir. (İnfüzyon hızı: 1 ml/kg/dk olacak şekilde)."
+          "notes": "SF içine katılarak infüzyonla verilir. (İnfüzyon hızı: 1 mg/kg/dk olacak şekilde)."
         }
       }
     }
@@ -1379,9 +1379,9 @@
           "dosePerKg": 0.2,
           "unit": "mg",
           "fixedDose": null,
-          "maxDose": "10 mg",
+          "maxDose": "<5 yaş 6 mg, ≥5 yaş 10 mg (IV/IM)",
           "route": "IV / IM / Nazal / Bukkal",
-          "notes": "0.2 mg/kg (maksimum 10 mg) uygulanır. 5 dk da nöbet devam ediyorsa 1 kez daha tekrarla."
+          "notes": "IV/IM 0,2 mg/kg (maks <5 yaş 6 mg, ≥5 yaş 10 mg). Nazal/bukkal 0,2-0,3 mg/kg (maks <6 ay 2,5 mg, <5 yaş 5 mg, ≥5 yaş 10 mg). 5 dk'da nöbet devam ederse 1 kez tekrarlanır."
         }
       },
       "kafa_travmasi": {
@@ -1588,7 +1588,7 @@
           "fixedDose": "500",
           "maxDose": null,
           "route": "IV",
-          "notes": "1 saatten kısa nakiller için 500 ml. Uzun nakillerde Parkland formülü: (2 x VYA x kg)/16 veya (4 x VYA x kg)/16."
+          "notes": "1 saatten kısa nakiller için 500 ml. Daha uzun nakillerde ≥13 yaş: (2 × VYA% × kg)/16 = saatlik başlangıç hızı (ml/saat); elektrik yanığında (4 × VYA% × kg)/16. 1. derece yanıklar hesaba katılmaz; idrar çıkışına göre saatlik hız %10-30 artırılıp azaltılır."
         },
         "cocuk": {
           "isAvailable": true,
@@ -1598,7 +1598,7 @@
           "fixedDose": "Parkland Formülü",
           "maxDose": null,
           "route": "IV",
-          "notes": "Parkland formülü ile hesaplanır: Normal yanıklarda (3 x VYA x kg)/16. Elektrik yanıklarında (4 x VYA x kg)/16."
+          "notes": "<13 yaş: (3 × VYA% × kg)/16 = saatlik başlangıç hızı (ml/saat); elektrik yanığında (4 × VYA% × kg)/16. Hastane öncesi <30 kg'da ≥%10, ≥30 kg'da ≥%15 yanıkta sıvı başlanır."
         }
       },
       "acil_dogum": {
@@ -1611,7 +1611,7 @@
           "fixedDose": "125",
           "maxDose": null,
           "route": "IV İnfüzyon",
-          "notes": "125 ml/saat (40 cc/dk) olarak verilir."
+          "notes": "125 ml/saat (40 damla/dk) olarak verilir."
         },
         "cocuk": {
           "isAvailable": false,

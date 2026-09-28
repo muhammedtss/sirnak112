@@ -51,9 +51,9 @@ const yetiskinSkalalar: Skala[] = [
     href: "/skalalar/dispne",
   },
   {
-    id: "parkland", name: "Parkland Formülü", icon: "💧",
+    id: "parkland", name: "Yanık Sıvı Resüsitasyonu", icon: "💧",
     accent: "#38BDF8", glow: "rgba(56,189,248,0.15)", border: "rgba(56,189,248,0.25)",
-    description: "Yanık resüsitasyonunda ilk 24 saatte verilecek sıvı: 4 mL × kg × TBSA%.",
+    description: "Yanıkta Ringer Laktat saatlik başlangıç hızı: (2 × VYA% × kg)/16; 13 yaş altı 3 ml, elektrik yanığı 4 ml.",
     tags: ["Yanık", "Sıvı", "Ringer"],
     href: "/skalalar/parkland",
   },

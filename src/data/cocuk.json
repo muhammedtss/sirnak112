@@ -17,7 +17,7 @@
         "type": "action",
         "content": "Gerekli ise ilgili kurum desteği iste. Güvenlik sağlanıncaya kadar güvenli noktada bekle",
         "nextId": "node_1",
-        "isCritical": false
+        "isCritical": true
       },
       "node_3": {
         "id": "node_3",
@@ -60,7 +60,7 @@
         "type": "action",
         "content": "İhtiyaç duyulan ekip ve ekipmanı iste",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
@@ -175,7 +175,9 @@
         "content": "Öksürme ve ses yok, tam tıkanma var. Yaş grubu nedir? (1 yaş altı / 1 yaş üstü)",
         "yesId": "node_7",
         "noId": "node_8",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "1 yaş altı",
+        "noText": "1 yaş üstü"
       },
       "node_7": {
         "id": "node_7",
@@ -240,7 +242,9 @@
         "content": "Atak şiddeti Hafif/Orta Atak mı yoksa Ağır Atak mı?",
         "yesId": "node_5",
         "noId": "node_7",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Hafif / Orta Atak",
+        "noText": "Ağır Atak"
       },
       "node_5": {
         "id": "node_5",
@@ -254,12 +258,12 @@
         "type": "action",
         "content": "20 dakika sonra düzelme yoksa ikinci SALBUTAMOL ve ortada ek olarak İPRATROPİUM BROMÜR (1 nebül 250 mcg) tekrarla (Maks: 3 kez)",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
         "type": "action",
-        "content": "Ağır Atak: SALBUTAMOL ve İPRATROPİUM BROMÜR uygula (Salbutamol 1-2 nebül veya 4-8 puf, İpratropium 250 mcg)",
+        "content": "Ağır Atak: SALBUTAMOL ve İPRATROPİUM BROMÜR uygula (Salbutamol 1-2 nebül veya 4-8 puf / 5 yaş altı 2-6 puf, İpratropium 250 mcg)",
         "nextId": "node_8",
         "isCritical": false
       },
@@ -268,13 +272,13 @@
         "type": "action",
         "content": "20 dakika sonra düzelme yoksa ikinci SALBUTAMOL ve İPRATROPİUM BROMÜR uygula (Maks: 3 kez)",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
         "type": "action",
-        "content": "Bir saat içinde yeterince rahatlama olmazsa METİL PREDNİZOLON 1-2 mg/kg IV bolus uygula. HER AŞAMADA HASTANEYE NAKİL",
-        "isCritical": false
+        "content": "Bir saat içinde yeterince rahatlama olmazsa METİL PREDNİZOLON 1-2 mg/kg IV bolus uygula (IV ve oral maks 60 mg/gün). Bilinç azalması, konfüzyon, koma veya tonus azalmasında PBV düşün. HER AŞAMADA HASTANEYE NAKİL",
+        "isCritical": true
       }
     }
   },
@@ -388,14 +392,16 @@
         "content": "Atak şiddeti nedir? (Hafif / Orta / Ağır)",
         "yesId": "node_6",
         "noId": "node_7",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Hafif Atak",
+        "noText": "Orta / Ağır Atak"
       },
       "node_6": {
         "id": "node_6",
         "type": "action",
         "content": "Hafif Atak: DEKSAMETAZON 0,15-0,6 mg/kg (maks: 16 mg) oral/IM/IV uygula",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
@@ -403,21 +409,23 @@
         "content": "Orta Atak mı, Ağır Atak mı?",
         "yesId": "node_8",
         "noId": "node_10",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Orta Atak",
+        "noText": "Ağır Atak"
       },
       "node_8": {
         "id": "node_8",
         "type": "action",
         "content": "Orta Atak: DEKSAMETAZON 0,6 mg/kg (maks: 16 mg) oral/IM/IV ve ADRENALİN nebül (1/1000'lik) 0,5 mg/kg (10 kg üzerinde maks 5 mg) uygula",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
         "type": "action",
         "content": "Ağır Atak: DEKSAMETAZON 0,6 mg/kg (maks: 16 mg) oral/IM/IV ve ADRENALİN nebül (1/1000'lik) 0,5 mg/kg (10 kg üzerinde maks 5 mg) uygula; düzelme olmazsa tekrarla",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
@@ -480,7 +488,7 @@
         "type": "action",
         "content": "Aynı miktarda sıvıyı ikinci veya üçüncü kez tekrarla (toplam 60 ml/kg; yenidoğanlarda en fazla iki kez yükleme, toplam 20 ml/kg). Üç kez sıvı yüklendiği halde düzelmezse ADRENALİN (0,1-1 mcg/kg/dk) ya da DOPAMİN (5-20 mcg/kg/dk) infüzyonu düşün",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
@@ -522,14 +530,14 @@
         "type": "action",
         "content": "1 mg/kg FUROSEMİD IV",
         "nextId": "node_5",
-        "isCritical": false
+        "isCritical": true
       },
       "node_5": {
         "id": "node_5",
         "type": "action",
         "content": "Sıvı tedavisine yanıt alınamadığında veya yüklenme bulguları ortaya çıkarsa ADRENALİN IV infüzyonu planla (0,1-0,3 mcg/kg/dk)",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_6": {
         "id": "node_6",
@@ -551,7 +559,7 @@
         "type": "action",
         "content": "İlk sıvı tedavisine yeterli yanıt alınamazsa aynı miktarda sıvıyı ikinci ve üçüncü kez tekrarla (Maks: 20 ml/kg geçilmemelidir)",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
@@ -620,7 +628,7 @@
         "type": "action",
         "content": "Sıvı tedavisine rağmen şok bulguları düzelmezse ADRENALİN IV 0,1 - 0,3 mcg/kg/dk ya da DOPAMİN IV 5 - 20 mcg/kg/dk infüzyon başla",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
@@ -661,7 +669,7 @@
         "type": "decision",
         "content": "Birincil değerlendirme sonunda dolaşım yetmezliği bulguları var mı? (Hipotansiyon, şok bulguları, ani bilinç değişikliği)",
         "yesId": "node_5",
-        "noId": "node_7",
+        "noId": "node_9",
         "isCritical": false
       },
       "node_5": {
@@ -690,7 +698,13 @@
         "id": "node_8",
         "type": "action",
         "content": "İnotrop ilaç (Adrenalin, Dopamin) infüzyonu düşün. Özel durumlarda (primer AV blok, aşırı vagal uyarı varsa) ATROPİN 0,02 mg/kg IV (Maksimum tek doz çocuklarda 0,5 mg'dır). HER AŞAMADA HASTANEYE NAKİL",
-        "isCritical": false
+        "isCritical": true
+      },
+      "node_9": {
+        "id": "node_9",
+        "isCritical": false,
+        "type": "action",
+        "content": "Dolaşım yetmezliği bulgusu yok: Oksijen vermeye devam et, yakın takip. HER AŞAMADA HASTANEYE NAKİL"
       }
     }
   },
@@ -743,14 +757,16 @@
         "content": "SVT için dolaşım yeterli mi yoksa yetersiz mi?",
         "yesId": "node_7",
         "noId": "node_11",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Dolaşım yeterli",
+        "noText": "Dolaşım yetersiz"
       },
       "node_7": {
         "id": "node_7",
         "type": "action",
-        "content": "Dolaşım yeterli: Vagal manevra. ADENOZİN IV hızlı puşe (ilk doz 0,1 mg/kg, ikinci doz 0,2 mg/kg). İzlem",
+        "content": "Dolaşım yeterli: Vagal manevra (adenozin uygulamasını geciktirmeyecek şekilde). Ritim düzelmezse ADENOZİN IV hızlı puşe: ilk doz 0,1 mg/kg (en fazla 6 mg), ikinci doz 0,2 mg/kg (en fazla 12 mg); her dozdan hemen sonra 5 ml %0,9 NaCl ile it. İzlem — dolaşım bozulursa sedasyon ve kardiyoversiyon",
         "nextId": "node_12",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
@@ -758,28 +774,30 @@
         "content": "Geniş QRS. Dolaşım yeterli mi?",
         "yesId": "node_9",
         "noId": "node_11",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Dolaşım yeterli",
+        "noText": "Dolaşım yetersiz"
       },
       "node_9": {
         "id": "node_9",
         "type": "action",
-        "content": "Dolaşım yeterli (VT): Ritim düzenli ve QRS monomorfik ise ADENOZİN IV kullanmayı düşün",
-        "nextId": "node_10",
-        "isCritical": false
+        "content": "Dolaşım yeterli (VT): Ritim düzenli ve QRS monomorfik ise ADENOZİN IV kullanmayı düşün (ilk doz 0,1 mg/kg, en fazla 6 mg; ikinci doz 0,2 mg/kg, en fazla 12 mg)",
+        "nextId": "node_12",
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
         "type": "action",
         "content": "2 kez yapılan kardiyoversiyona rağmen yanıt alınamamışsa veya taşikardiyse AMİODARON 5 mg/kg dozunda (20-60 dk'da IV infüzyon, ilk tercih %5 dekstroz içinde)",
         "nextId": "node_12",
-        "isCritical": false
+        "isCritical": true
       },
       "node_11": {
         "id": "node_11",
         "type": "action",
         "content": "Dolaşım yetersiz: Sedasyon (MİDAZOLAM 0,1 mg/kg IV). Kardiyoversiyon (1. Doz 1 J/kg, 2. Doz 2 J/kg)",
-        "nextId": "node_12",
-        "isCritical": false
+        "nextId": "node_10",
+        "isCritical": true
       },
       "node_12": {
         "id": "node_12",
@@ -885,7 +903,7 @@
         "id": "node_11",
         "type": "decision",
         "content": "Nabız > 60 atım/dk mı?",
-        "yesId": "node_12",
+        "yesId": "node_17",
         "noId": "node_8",
         "isCritical": false
       },
@@ -909,6 +927,13 @@
         "type": "action",
         "content": "Yeniden değerlendir. PBV'ye devam et, 2 dk'da bir tekrar kontrol et",
         "isCritical": false
+      },
+      "node_17": {
+        "id": "node_17",
+        "isCritical": false,
+        "type": "action",
+        "content": "Nabız > 60 atım/dk: PBV'ye devam et, 2 dk'da bir solunum ve nabız kontrolü yap (en fazla 10 sn)",
+        "nextId": "node_12"
       }
     }
   },
@@ -1035,7 +1060,7 @@
       "node_2": {
         "id": "node_2",
         "type": "action",
-        "content": "Damar yolu açılmazsa ADRENALİN 0,01 mg/kg (1/10.000) IV/IO (3 - 5 dk arayla tekrarla)",
+        "content": "Damar yolu açılır açılmaz ADRENALİN 0,01 mg/kg (1/10.000) IV/IO (3 - 5 dk arayla tekrarla)",
         "nextId": "node_3",
         "isCritical": false
       },
@@ -1074,7 +1099,9 @@
         "content": "Nabız yok. Ritim NEA / Asistoli mi yoksa VF / Nabızsız VT mi?",
         "yesId": "node_8",
         "noId": "node_9",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "NEA / Asistoli",
+        "noText": "VF / Nabızsız VT"
       },
       "node_8": {
         "id": "node_8",
@@ -1100,16 +1127,16 @@
       "node_1": {
         "id": "node_1",
         "type": "action",
-        "content": "Yeniden Değerlendirme: SpO2 %94-98 olacak şekilde oksijenizasyon ve ventilasyonu sürdür (<1 yaş: 30/dk; >1 yaş: 20/dk). 2 dk'da bir nabız ve ritim kontrolü, 12 derivasyonlu EKG. Vital bulguları değerlendir (hasta stabil olana kadar 5 dk'da bir, stabil olduktan sonra 15 dk'da bir). 37.6 °C ve üzeri ateşi kontrol et",
+        "content": "Yeniden Değerlendirme: Spontan solunumu yoksa SpO2 %94-98 olacak şekilde oksijenizasyon ve ventilasyonu sürdür (≤1 yaş: 30/dk; >1 yaş: 20/dk). 2 dk'da bir nabız ve ritim kontrolü, 12 derivasyonlu EKG. Vital bulguları değerlendir (stabil olana kadar 5 dk'da bir, stabil olduktan sonra 15 dk'da bir). 37,6 °C ve üzeri ateşi kontrol altına al. Kan şekeri 70-180 mg/dl hedeflenir",
         "nextId": "node_2",
         "isCritical": false
       },
       "node_2": {
         "id": "node_2",
         "type": "decision",
-        "content": "Durum kontrolü: Arrest tekrarında mı, Dolaşım yetmezliği mi, Hipoglisemi/Hiperglisemi mi, Bradiaritmi mi, Taşikardi mi, yoksa Nöbet mi?",
+        "content": "Arrest tekrarladı mı?",
         "yesId": "node_3",
-        "noId": "node_9",
+        "noId": "node_10",
         "isCritical": false
       },
       "node_3": {
@@ -1159,6 +1186,46 @@
         "type": "action",
         "content": "HER AŞAMADA HASTANEYE NAKİL",
         "isCritical": false
+      },
+      "node_10": {
+        "id": "node_10",
+        "isCritical": false,
+        "type": "decision",
+        "content": "Dolaşım yetmezliği var mı?",
+        "yesId": "node_4",
+        "noId": "node_11"
+      },
+      "node_11": {
+        "id": "node_11",
+        "isCritical": false,
+        "type": "decision",
+        "content": "Hipoglisemi / Hiperglisemi var mı?",
+        "yesId": "node_5",
+        "noId": "node_12"
+      },
+      "node_12": {
+        "id": "node_12",
+        "isCritical": false,
+        "type": "decision",
+        "content": "Bradiaritmi var mı?",
+        "yesId": "node_6",
+        "noId": "node_13"
+      },
+      "node_13": {
+        "id": "node_13",
+        "isCritical": false,
+        "type": "decision",
+        "content": "Taşikardi var mı?",
+        "yesId": "node_7",
+        "noId": "node_14"
+      },
+      "node_14": {
+        "id": "node_14",
+        "isCritical": false,
+        "type": "decision",
+        "content": "Nöbet var mı?",
+        "yesId": "node_8",
+        "noId": "node_9"
       }
     }
   },
@@ -1176,11 +1243,11 @@
       },
       "node_2": {
         "id": "node_2",
-        "decision": "Var ya da şüpheli travma mı?",
         "type": "decision",
         "yesId": "node_3",
         "noId": "node_4",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Var ya da şüpheli travma mı?"
       },
       "node_3": {
         "id": "node_3",
@@ -1206,9 +1273,9 @@
       "node_6": {
         "id": "node_6",
         "type": "decision",
-        "content": "Kan şekeri durumu nedir? (> 300 mg/dl mi, < 60 mg/dl / yenidoğanda < 40 mg/dl mi, yoksa normoglisemi mi?)",
+        "content": "Kan şekeri > 300 mg/dl mi?",
         "yesId": "node_7",
-        "noId": "node_9",
+        "noId": "node_11",
         "isCritical": false
       },
       "node_7": {
@@ -1228,7 +1295,7 @@
       "node_8": {
         "id": "node_8",
         "type": "action",
-        "content": "Normoglisemi durumunda eşlik eden bulguları değerlendir (Nöbet geçiriyorsa, toksik madde şüphesi varsa, ateş >= 38 °C ise, veya dolaşım bozukluğu varsa ilgili algoritmalara yönel)",
+        "content": "Normoglisemi: Eşlik eden bulguları değerlendir — nöbet varsa NÖBET/KONVÜLZİYON, toksik madde şüphesi varsa TOKSİKOLOJİ, ateş ≥ 38 °C ise ATEŞ YÖNETİMİ, dolaşım bozukluğu varsa HİPOVOLEMİK ŞOK algoritmasına yönel",
         "nextId": "node_10",
         "isCritical": false
       },
@@ -1237,6 +1304,14 @@
         "type": "action",
         "content": "Nörolojik değerlendirme yap (pupil, ışık reaksiyonu, taraf bulgusu). GKS takibi yap. HER AŞAMADA HASTANEYE NAKİL",
         "isCritical": false
+      },
+      "node_11": {
+        "id": "node_11",
+        "isCritical": false,
+        "type": "decision",
+        "content": "Kan şekeri < 60 mg/dl (yenidoğanda < 40 mg/dl) mi?",
+        "yesId": "node_9",
+        "noId": "node_8"
       }
     }
   },
@@ -1268,13 +1343,13 @@
       },
       "node_4": {
         "id": "node_4",
-        "decision": "Glikoz < 60 mg/dl veya hipoglisemi bulguları var mı?",
         "type": "decision",
         "yesId": "node_5",
         "noId": "node_6",
         "yesText": "Glokoz<60mg/dl veya Hipoglisemi bulgusu varsa",
         "noText": "Hipoglisemi bulgusu yok",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Glikoz < 60 mg/dl veya hipoglisemi bulguları var mı?"
       },
       "node_5": {
         "id": "node_5",
@@ -1301,9 +1376,9 @@
       "node_8": {
         "id": "node_8",
         "type": "action",
-        "content": "DİAZEPAM 0,2 mg/kg (maks: 5 mg / >=5 yaş için 10 mg) IV yavaş puşe / rektal veya MİDAZOLAM 0,2 mg/kg (maks: 10 mg) IV/İM/Nazal/Bukkal",
+        "content": "DİAZEPAM IV 0,2 mg/kg yavaş puşe (maks <5 yaş 5 mg, ≥5 yaş 10 mg) veya rektal 0,3-0,5 mg/kg (maks <2 yaş 5 mg, ≥2 yaş 10 mg) YA DA MİDAZOLAM IV/IM 0,2 mg/kg (maks <5 yaş 6 mg, ≥5 yaş 10 mg) veya nazal/bukkal 0,2-0,3 mg/kg (maks <6 ay 2,5 mg, <5 yaş 5 mg, ≥5 yaş 10 mg)",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
@@ -1311,7 +1386,7 @@
         "content": "5 dk da nöbet devam ediyorsa aynı dozdan ilacı 1 kez daha tekrarla. Nöbet devam ediyor mu?",
         "yesId": "node_10",
         "noId": "node_13",
-        "isCritical": false
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
@@ -1325,7 +1400,7 @@
         "type": "action",
         "content": "FENİTOİN 20 mg/kg IV (infüzyon hızı en fazla 25 mg/kg/dk) ya da VALPROİK ASİT 30 mg/kg IV infüzyon ya da LEVATİRASETAM 60 mg/kg IV infüzyon",
         "nextId": "node_12",
-        "isCritical": false
+        "isCritical": true
       },
       "node_12": {
         "id": "node_12",
@@ -1494,7 +1569,9 @@
         "content": "Bilinci açık mı, kapalı mı?",
         "yesId": "node_4",
         "noId": "node_6",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Bilinç açık",
+        "noText": "Bilinç kapalı"
       },
       "node_4": {
         "id": "node_4",
@@ -1506,7 +1583,7 @@
       "node_5": {
         "id": "node_5",
         "type": "action",
-        "content": "Kan şekeri tekrar kontrol et (Glikoz > 60 mg/dl ise 15 dk'da bir kan şekeri takibine devam et). HER AŞAMADA HASTANEYE NAKİL",
+        "content": "Kan şekerini tekrar kontrol et: Glikoz < 60 mg/dl ise 5 ml/kg %10'luk dekstroz IV puşe; > 60 mg/dl ise 15 dk'da bir kan şekeri takibine devam et. HER AŞAMADA HASTANEYE NAKİL",
         "isCritical": false
       },
       "node_6": {
@@ -1534,7 +1611,7 @@
         "id": "node_9",
         "type": "action",
         "content": "% 5'lik dekstroz 2,5-5 ml/kg/saat idame IV sıvı başla. HER AŞAMADA HASTANEYE NAKİL",
-        "isCritical": false
+        "isCritical": true
       }
     }
   },
@@ -1560,14 +1637,14 @@
       "node_3": {
         "id": "node_3",
         "type": "action",
-        "content": "SpO2 %94-98 aralığında olacak şekilde oksijen vermeye başla",
+        "content": "SpO2 %94-98 aralığında olacak şekilde oksijen vermeye başla. Solunum sıkıntısı varsa SALBUTAMOL 0,15 mg/kg nebül (20 dk arayla 3 kez). Anjioödem varsa erken ileri hava yolu uygulamasına hazırlan",
         "nextId": "node_4",
         "isCritical": false
       },
       "node_4": {
         "id": "node_4",
         "type": "action",
-        "content": "Anafilaksi tanısı konduğu anda; ADRENALİN 1/1000 solüsyon 0,01 mg/kg IM (0,01 ml/kg) (12 yaş altı maks 0,3 mg, 12 yaş üstü maks 0,5 mg IM, uygulama için uygun bölgesi kullanılmalı). Yeterli cevap alınamazsa 5-15 dk arayla toplam 3 doza kadar çıkılabilir",
+        "content": "Anafilaksi tanısı konduğu anda; ADRENALİN 1/1000 solüsyon 0,01 mg/kg IM (0,01 ml/kg) (12 yaş altı maks 0,3 mg, 12 yaş üstü maks 0,5 mg IM, uygulama için uyluk bölgesi kullanılmalı). Yeterli cevap alınamazsa 5-15 dk arayla toplam 3 doza kadar çıkılabilir",
         "nextId": "node_5",
         "isCritical": false
       },
@@ -1583,13 +1660,13 @@
         "type": "action",
         "content": "Antihistaminik uygula: DİFENHİDRAMİN IV 1 mg/kg veya FENİRAMİN MALEAT IV 1 mg/kg (maks: 50 mg)",
         "nextId": "node_7",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
         "type": "action",
         "content": "Geç reaksiyonların ortaya çıkmasının önlenmesi için METİL PREDNİZOLON 1 - 2 mg/kg IV veya İM uygula (maks: 125 mg). HER AŞAMADA HASTANEYE NAKİL",
-        "isCritical": false
+        "isCritical": true
       }
     }
   },
@@ -1721,7 +1798,7 @@
       "node_8": {
         "id": "node_8",
         "type": "action",
-        "content": "< 32 °C aktif dış ısıtma uygulamaları yaparken > 32 °C altında sarsıntılar kardiyak aritmileri tetikleyebileceği için transport sırasında hastayı fazla hareket ettirme. Yakın vital bulgu ve kan şekeri takibi yap. HER AŞAMADA HASTANEYE NAKİL",
+        "content": "< 32 °C aktif dış ısıtma uygulamaları yaparken < 32 °C altında sarsıntılar kardiyak aritmileri tetikleyebileceği için transport sırasında hastayı fazla hareket ettirme. Yakın vital bulgu ve kan şekeri takibi yap. HER AŞAMADA HASTANEYE NAKİL",
         "isCritical": false
       }
     }
@@ -1897,7 +1974,7 @@
       "node_3": {
         "id": "node_3",
         "type": "action",
-        "content": "KONU İLE İLGİLİ ANAHTAR NOKTALARA BAKINIZ",
+        "content": "Hasta sudan çıkarılmamış: Sağlık personeli suya girmeden at-çek-uzat protokolü ile hastayı sudan çıkarmalı; çıkarılamıyorsa profesyonel yardım çağırılır",
         "nextId": "node_2",
         "isCritical": false
       },
@@ -2013,7 +2090,7 @@
         "type": "action",
         "content": "Ağrı kontrolü için ANALJEZİK/FENTANİL (Fentanil için: 1 mcg/kg IV yavaş infüzyon, İM, SC) yap",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
@@ -2095,11 +2172,11 @@
       },
       "node_8": {
         "id": "node_8",
-        "decision": "Dolaşım bozukluğu bulguları varsa?",
         "type": "decision",
         "yesId": "node_9",
         "noId": "node_10",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Dolaşım bozukluğu bulguları varsa?"
       },
       "node_9": {
         "id": "node_9",
@@ -2117,11 +2194,11 @@
       },
       "node_11": {
         "id": "node_11",
-        "decision": "Normal sınırlar dışındaysa?",
         "type": "decision",
         "yesId": "node_12",
         "noId": "node_13",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Normal sınırlar dışındaysa?"
       },
       "node_12": {
         "id": "node_12",
@@ -2139,11 +2216,11 @@
       },
       "node_14": {
         "id": "node_14",
-        "decision": "Anormal bulgu varsa?",
         "type": "decision",
         "yesId": "node_15",
         "noId": "node_16",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Anormal bulgu varsa?"
       },
       "node_15": {
         "id": "node_15",
@@ -2161,11 +2238,11 @@
       },
       "node_17": {
         "id": "node_17",
-        "decision": "Nöbet varsa?",
         "type": "decision",
         "yesId": "node_18",
         "noId": "node_19",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Nöbet varsa?"
       },
       "node_18": {
         "id": "node_18",
@@ -2196,11 +2273,11 @@
       },
       "node_2": {
         "id": "node_2",
-        "decision": "Yürüyenler?",
         "type": "decision",
         "yesId": "node_3",
         "noId": "node_4",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Yürüyenler?"
       },
       "node_3": {
         "id": "node_3",
@@ -2217,11 +2294,11 @@
       },
       "node_5": {
         "id": "node_5",
-        "decision": "Solunum var mı?",
         "type": "decision",
         "yesId": "node_10",
         "noId": "node_6",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Solunum var mı?"
       },
       "node_6": {
         "id": "node_6",
@@ -2232,11 +2309,11 @@
       },
       "node_7": {
         "id": "node_7",
-        "decision": "Pozisyon sonrası solunum var mı?",
         "type": "decision",
         "yesId": "node_9",
         "noId": "node_8",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Pozisyon sonrası solunum var mı?"
       },
       "node_9": {
         "id": "node_9",
@@ -2253,11 +2330,11 @@
       },
       "node_15": {
         "id": "node_15",
-        "decision": "Nabız var mı?",
         "type": "decision",
         "yesId": "node_16",
         "noId": "node_17",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Nabız var mı?"
       },
       "node_16": {
         "id": "node_16",
@@ -2268,11 +2345,11 @@
       },
       "node_18": {
         "id": "node_18",
-        "decision": "Solunum var mı?",
         "type": "decision",
         "yesId": "node_19",
         "noId": "node_20",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Solunum var mı?"
       },
       "node_19": {
         "id": "node_19",
@@ -2294,11 +2371,11 @@
       },
       "node_10": {
         "id": "node_10",
-        "decision": "Solunum var: Solunum sayısı 15 dk'dan az 45 dk'dan fazla mı?",
         "type": "decision",
         "yesId": "node_9",
         "noId": "node_11",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Solunum var: Solunum sayısı 15/dk'dan az veya 45/dk'dan fazla mı?"
       },
       "node_11": {
         "id": "node_11",
@@ -2309,10 +2386,11 @@
       },
       "node_12": {
         "id": "node_12",
-        "decision": "Distal nabız YOK ise?",
         "yesId": "node_9",
         "noId": "node_13",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Distal nabız YOK ise?",
+        "type": "decision"
       },
       "node_13": {
         "id": "node_13",
@@ -2323,11 +2401,11 @@
       },
       "node_14": {
         "id": "node_14",
-        "decision": "Komutlara uyuyor mu? (A-V-P uygun yanıt)",
         "type": "decision",
         "yesId": "node_21",
         "noId": "node_9",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Komutlara uyuyor mu? (A-V uygun yanıt; P-U uygunsuz yanıt)"
       },
       "node_21": {
         "id": "node_21",
@@ -2351,11 +2429,11 @@
       },
       "node_2": {
         "id": "node_2",
-        "decision": "Eğer dışa doğru hayatı tehdit eden kanama varsa?",
         "type": "decision",
         "yesId": "node_3",
         "noId": "node_4",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Eğer dışa doğru hayatı tehdit eden kanama varsa?"
       },
       "node_3": {
         "id": "node_3",
@@ -2366,11 +2444,11 @@
       },
       "node_4": {
         "id": "node_4",
-        "decision": "Hava yolu açık/güvenilir mi?",
         "type": "decision",
         "yesId": "node_6",
         "noId": "node_5",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Hava yolu açık/güvenilir mi?"
       },
       "node_5": {
         "id": "node_5",
@@ -2388,24 +2466,17 @@
       },
       "node_7": {
         "id": "node_7",
-        "decision": "Solunumu var mı?",
         "type": "decision",
         "yesId": "node_9",
         "noId": "node_8",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Solunumu var mı?"
       },
       "node_8": {
         "id": "node_8",
         "type": "action",
         "content": "Solunumu yoksa / yeterli değilse: BVM ile solunumu destekle ve %100 O2 ver, ileri hava yolu uygulamalarını düşün",
-        "nextId": "node_14",
-        "isCritical": false
-      },
-      "node_14": {
-        "id": "node_14",
-        "type": "redirect",
-        "content": "ARREST YÖNETİMİ ALGORİTMASINA GİT",
-        "targetAlgorithmId": "SB-ASH-C-12",
+        "nextId": "node_10",
         "isCritical": false
       },
       "node_9": {
@@ -2417,33 +2488,33 @@
       },
       "node_10": {
         "id": "node_10",
-        "decision": "Nabız var mı?",
         "type": "decision",
         "yesId": "node_12",
         "noId": "node_11",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Nabız var mı?"
       },
       "node_11": {
         "id": "node_11",
         "type": "redirect",
-        "content": "ARREST YÖNETİMİ ALGORİTMASINA GİT",
+        "content": "Nabız yok: ARREST YÖNETİMİ ALGORİTMASINA GİT (Mümkünse 2 büyük damar yolu / gerekirse IO aç, hızlı %0,9 NaCl 20 ml/kg)",
         "targetAlgorithmId": "SB-ASH-C-12",
         "isCritical": false
       },
       "node_12": {
         "id": "node_12",
         "type": "action",
-        "content": "Solonum Var: SpO2 %94-98 olacak şekilde O2 ver",
+        "content": "Solunum Var: SpO2 %94-98 olacak şekilde O2 ver",
         "nextId": "node_13",
         "isCritical": false
       },
       "node_13": {
         "id": "node_13",
-        "decision": "Dolaşım bozukluğu bulguları varsa?",
         "type": "decision",
         "yesId": "node_15",
         "noId": "node_16",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Dolaşım bozukluğu bulguları varsa?"
       },
       "node_15": {
         "id": "node_15",
@@ -2454,11 +2525,11 @@
       },
       "node_16": {
         "id": "node_16",
-        "decision": "Kafa travması var mı?",
         "type": "decision",
         "yesId": "node_17",
         "noId": "node_18",
-        "isCritical": false
+        "isCritical": false,
+        "content": "Kafa travması var mı?"
       },
       "node_17": {
         "id": "node_17",
@@ -2470,7 +2541,7 @@
       "node_18": {
         "id": "node_18",
         "type": "action",
-        "content": "Tüm giysileri çıkararak vücut kontrolünü tamamla, hipotermiden koru. Vaka kritik travma hastası özellikleri taşıyorsa; ikincil değerlendirmeyi tamamlama, stabilizasyonu sağla ve naklet. HER AŞAMADA HASTANEYE NAKİL",
+        "content": "Tüm giysileri çıkararak vücut kontrolünü tamamla (kanıt olabilecek giysileri koru), hipotermiden koru. Kritik travma hastasıysa hayatı tehdit edici problemleri hızla düzelt, stabilize et ve naklet; kritik değilse ikincil değerlendirmeyi tamamla. Çocuk istismarı olasılığını göz önünde bulundur. HER AŞAMADA HASTANEYE NAKİL",
         "isCritical": false
       }
     }

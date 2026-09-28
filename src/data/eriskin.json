@@ -31,7 +31,7 @@
         "type": "action",
         "content": "Gerekli ise ilgili kurum desteği iste. Güvenlik sağlanıncaya kadar güvenli noktada bekle",
         "nextId": "node_3",
-        "isCritical": false
+        "isCritical": true
       },
       "node_5": {
         "id": "node_5",
@@ -67,7 +67,7 @@
         "type": "action",
         "content": "İhtiyaç duyulan ekip ve ekipmanı iste",
         "nextId": "node_10",
-        "isCritical": false
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
@@ -166,7 +166,7 @@
       "node_4": {
         "id": "node_4",
         "type": "action",
-        "content": "Kısmi Tıkanma: Öksürmesini teşvik et, takip et",
+        "content": "Kısmi Tıkanma: Öksürmesini teşvik et, takip et. Kısmi tıkanıklıkta sırta vurmak tam tıkanıklığa neden olabilir!",
         "nextId": "node_5",
         "isCritical": false
       },
@@ -182,7 +182,7 @@
         "id": "node_6",
         "type": "action",
         "content": "Tam Tıkanma: 5 kez sırta vuru, 5 kez karına bası uygula (Cisim çıkana kadar devam et)",
-        "nextId": "node_7",
+        "nextId": "node_8",
         "isCritical": false
       },
       "node_7": {
@@ -192,6 +192,13 @@
         "yesId": "node_2",
         "noId": "node_6",
         "isCritical": false
+      },
+      "node_8": {
+        "id": "node_8",
+        "isCritical": true,
+        "type": "action",
+        "content": "Tam tıkanmada ileri hava yolu uygulamaları başarısızsa iğne ile krikotirotomi yap",
+        "nextId": "node_7"
       }
     }
   },
@@ -234,7 +241,7 @@
         "type": "action",
         "content": "20 dk sonra: SALBUTAMOL 2,5 mg + İPRATROPİUM BROMÜR 500 mcg (Maks 3 defa). METİL PREDNİZOLON 40 mg IV.",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_6": {
         "id": "node_6",
@@ -248,7 +255,7 @@
         "type": "action",
         "content": "20 dk sonra: SALBUTAMOL 2,5 mg + İPRATROPİUM BROMÜR 500 mcg (Maks 3 defa). METİL PREDNİZOLON 40 mg IV. Tedaviye yanıt vermeyen hastaya ileri hava yolu için hazırlıklı ol. Tolere eden hastaya non-invaziv mekanik ventilasyon.",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
@@ -266,7 +273,7 @@
       "node_1": {
         "id": "node_1",
         "type": "action",
-        "content": "Acil olgu yönetimini uygula. Hastayı rahat ettiği (tercihen oturur) pozisyonda tut. SpO2 > %93 olacak şekilde titre ederek oksijen ver. Gerekirse solunumu PBV ile destekle. Damar yolu aç ve %0,9 NaCl (DAKŞ)",
+        "content": "Acil olgu yönetimini uygula. Hastayı rahat ettiği (tercihen oturur) pozisyonda tut. SpO2 > %93 olacak şekilde titre ederek oksijen ver. Gerekirse solunumu PBV ile destekle. Damar yolu aç ve %0,9 NaCl (DAKŞ). Etiyolojide anafilaksiyi göz önünde bulundur",
         "nextId": "node_2",
         "isCritical": false
       },
@@ -290,7 +297,7 @@
         "type": "action",
         "content": "20 dk sonra: Düzelme yoksa ikinci SALBUTAMOL ile birlikte İPRATROPİUM BROMÜR 500 mcg inhaler kullan (Maks 3 kez). METİL PREDNİZOLON 40 mg IV.",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_5": {
         "id": "node_5",
@@ -304,14 +311,14 @@
         "type": "action",
         "content": "20 dk sonra: Düzelme yoksa ikinci SALBUTAMOL nebülle birlikte İPRATROPİUM BROMÜR 500 mcg nebül uygula (Maks 3 kez). METİL PREDNİZOLON 40 mg IV.",
         "nextId": "node_7",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
         "type": "action",
         "content": "Ölümcül astım atağında (bilinç bulanıklığı ve sessiz toraks gelişmişse) erken ileri hava yolu uygulaması için hazırlan, MAGNEZYUM SÜLFAT 1-2 g IV (%0,9 NaCl içinde 20-30 dakikada uygulanabilir)",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
@@ -360,7 +367,7 @@
         "type": "action",
         "content": "İSOSORBİD DİNİTRAT 5 mg SL tb (Ağrı devam ederse 3-5 dk da bir tekrarla - Toplam 3 doz)",
         "nextId": "node_6",
-        "isCritical": false
+        "isCritical": true
       },
       "node_6": {
         "id": "node_6",
@@ -394,7 +401,7 @@
       "node_1": {
         "id": "node_1",
         "type": "action",
-        "content": "Acil olgu yönetimini uygula. Hasta hipoksemikse oksijenizasyon, damar yolu, monitörizasyon ve 12 derivasyon EKG",
+        "content": "Acil olgu yönetimini uygula. Hasta hipoksemikse (SpO2 < %94) oksijenizasyon, damar yolu, monitörizasyon ve 12 derivasyon EKG",
         "nextId": "node_2",
         "isCritical": false
       },
@@ -408,7 +415,7 @@
       "node_3": {
         "id": "node_3",
         "type": "decision",
-        "content": "Hasta stabil mi? (Senkop, iskemik göğüs ağrısı, şok bulguları, akut kalp yetmezliği, hipotansiyon, nabız <40 atım/dk ise stabil değil)",
+        "content": "Hasta stabil mi? (Senkop, ani bilinç değişikliği, iskemik göğüs ağrısı, şok bulguları, akut kalp yetmezliği, hipotansiyon, nabız <40 atım/dk ise stabil değil)",
         "yesId": "node_7",
         "noId": "node_4",
         "isCritical": false
@@ -432,8 +439,8 @@
         "id": "node_6",
         "type": "action",
         "content": "Yanıt alınamıyorsa: ADRENALİN IV infüzyon 2-10 mcg/dk ya da DOPAMİN IV infüzyon 5-20 mcg/kg/dk veya Transkütanöz Pace uygula. (QRS > 0,12 sn ise Pace öncelikli)",
-        "nextId": "node_7",
-        "isCritical": false
+        "nextId": "node_8",
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
@@ -476,7 +483,7 @@
         "type": "action",
         "content": "Göğüs ağrısı devam ediyor ve hasta tarafından tolere edilemiyorsa FENTANİL 1 mcg/kg IV",
         "nextId": "node_4",
-        "isCritical": false
+        "isCritical": true
       },
       "node_4": {
         "id": "node_4",
@@ -501,16 +508,16 @@
       "node_6": {
         "id": "node_6",
         "type": "action",
-        "content": "Ventriküler taşikardi ya da belirsiz ritim ise AMİODARON 150 mg IV (%5 dekstroz ile 10 dk). Etkisizse kardiyoversiyon (sedasyon sonrası)",
+        "content": "Ventriküler taşikardi ya da belirsiz ritim ise AMİODARON 150 mg IV (%5 dekstroz ile 10 dk'da). Önceden kesin tanılı dal bloklu SVT tanısı varsa dar kompleks gibi tedavi et. Etkisizse kardiyoversiyon (sedasyon sonrası)",
         "nextId": "node_12",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
         "type": "action",
         "content": "Dal bloklu atrial fibrilasyon; dar kompleks gibi tedavi et. Torsades de Pointes düşünülüyorsa MAGNEZYUM SÜLFAT 2 gr/10dk IV",
         "nextId": "node_12",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
@@ -525,16 +532,16 @@
       "node_9": {
         "id": "node_9",
         "type": "action",
-        "content": "Vagal manevra uygula. ADENOZİN 6 mg hızlı IV puşe, başarısız ise 12 mg. Veya METOPROLOL 5 mg / DİLTİAZEM 0,25 mg/kg. Etkisizse kardiyoversiyon",
+        "content": "Vagal manevra uygula. ADENOZİN 6 mg hızlı IV puşe ve devamında en az 20 ml bolus %0,9 NaCl IV; başarısız ise 2. doz 12 mg. Adenozin yoksa METOPROLOL 5 mg IV (3 kez tekrarlanabilir) veya DİLTİAZEM 0,25 mg/kg IV (ikinci doz 0,35 mg/kg IV). Etkisizse KARDİYOVERSİYON (sedasyon sonrası)",
         "nextId": "node_12",
-        "isCritical": false
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
         "type": "action",
-        "content": "Olası atrial fibrilasyon. METOPROLOL 5 mg IV veya DİLTİAZEM 0,25 mg/kg IV",
+        "content": "Olası atriyal fibrilasyon: METOPROLOL 5 mg IV (3 kez tekrarlanabilir) veya DİLTİAZEM 0,25 mg/kg IV (ikinci doz 0,35 mg/kg IV)",
         "nextId": "node_12",
-        "isCritical": false
+        "isCritical": true
       },
       "node_12": {
         "id": "node_12",
@@ -547,14 +554,14 @@
         "type": "action",
         "content": "Kardiyoversiyon öncesi MİDAZOLAM 0,1 mg/kg IV ile sedasyon önerilir",
         "nextId": "node_14",
-        "isCritical": false
+        "isCritical": true
       },
       "node_14": {
         "id": "node_14",
         "type": "action",
-        "content": "Kardiyoversiyon (Senkron şok). Yanıt alınamazsa: AMİODARON 300 mg IV (10 dk). Yanıt alınamazsa: Kardiyoversiyon tekrarla",
+        "content": "Kardiyoversiyon (senkronize şok): Dar düzenli QRS 100 J · Dar düzensiz QRS 200 J · Geniş düzenli QRS 100 J · Geniş düzensiz QRS: defibrilasyon (senkronize değil) dozu. Yanıt alınamazsa: AMİODARON 300 mg IV (10 dk). Yanıt alınamazsa: kardiyoversiyonu tekrarla",
         "nextId": "node_12",
-        "isCritical": false
+        "isCritical": true
       }
     }
   },
@@ -677,7 +684,9 @@
         "content": "Nabız yok. Ritim nedir?",
         "yesId": "node_8",
         "noId": "node_9",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "VF / Nabızsız VT",
+        "noText": "NEA / Asistoli"
       },
       "node_8": {
         "id": "node_8",
@@ -821,7 +830,7 @@
         "type": "action",
         "content": "Hipotansiyon devam ediyorsa %0.9 NaCl infüzyonu ve/veya ADRENALİN 2-10 mcg/dk IV infüzyonu veya DOPAMİN 5-20 mcg/kg/dk IV infüzyonu",
         "nextId": "node_14",
-        "isCritical": false
+        "isCritical": true
       },
       "node_5": {
         "id": "node_5",
@@ -836,7 +845,7 @@
         "type": "action",
         "content": "%2 LİDOKAİN IV bolus 1-1,5 mg/kg veya AMİODARON 150 mg IV (%5 dekstroz ile 10 dk da)",
         "nextId": "node_14",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
@@ -959,7 +968,7 @@
         "type": "action",
         "content": "MAP <65 mmHg ve hipovolemi devam ediyorsa/yanıt alınamıyorsa: ADRENALİN IV infüzyon 2-10 mcg/dk ya da DOPAMİN IV infüzyon 5-20 mcg/kg/dk",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
@@ -994,7 +1003,7 @@
         "type": "action",
         "content": "FUROSEMİD 20-40 mg IV",
         "nextId": "node_7",
-        "isCritical": false
+        "isCritical": true
       },
       "node_4": {
         "id": "node_4",
@@ -1009,14 +1018,14 @@
         "type": "action",
         "content": "İSOSORBİD DİNİTRAT 5 mg SL tb maks: 3 doz. FUROSEMİD 20-40 mg IV. Noninvaziv mekanik ventilasyon düşün CPAP",
         "nextId": "node_7",
-        "isCritical": false
+        "isCritical": true
       },
       "node_6": {
         "id": "node_6",
         "type": "action",
         "content": "Kardiyojenik Şok tablosu: Hipotansiyon için 250 ml % 0,9 NaCl verilebilir. DOPAMİN 2-5 mcg/kg/dk IV (20 mcg/kg/dk kadar çıkılabilir)",
         "nextId": "node_7",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
@@ -1103,7 +1112,7 @@
         "type": "action",
         "content": "Sedasyon için: MİDAZOLAM 5mg IM veya 2,5 mg IV ya da DİAZEPAM 5 mg IM",
         "nextId": "node_10",
-        "isCritical": false
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
@@ -1118,7 +1127,7 @@
         "type": "action",
         "content": "Sedasyon dozunu tekrar et",
         "nextId": "node_12",
-        "isCritical": false
+        "isCritical": true
       },
       "node_12": {
         "id": "node_12",
@@ -1406,7 +1415,7 @@
         "id": "node_8",
         "type": "action",
         "content": "Hastanın son olarak normal görüldüğü zamandan 4,5 saat içinde trombolitik, 6 saat içinde endovasküler girişim için uygun merkeze nakil. HER AŞAMADA HASTANEYE NAKİL",
-        "isCritical": false
+        "isCritical": true
       }
     }
   },
@@ -1464,21 +1473,21 @@
         "type": "action",
         "content": "DİAZEPAM 5 mg IV yavaş puşe ya da MİDAZOLAM 5 mg IV/10 mg IM",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
         "type": "action",
         "content": "FENİTOİN 20 mg/kg (infüzyon hızı en fazla 25 mg/kg/dk) ya da VALPROİK ASİT 40 mg/kg IV infüzyon ya da LEVATİRASETAM 60 mg/kg IV infüzyon",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
         "type": "action",
         "content": "5 dk sonra nöbet devam ediyorsa DİAZEPAM 5 mg IV yavaş puşe ya da MİDAZOLAM 5 mg IV/10 mg IM",
         "nextId": "node_10",
-        "isCritical": false
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
@@ -1651,13 +1660,13 @@
         "type": "action",
         "content": "FENİRAMİN MALEAT 45,5 mg IV veya DİFENHİDRAMİN 25-50 mg IV yavaş puşe uygula",
         "nextId": "node_7",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
         "type": "action",
         "content": "Proflaktik olarak METİL PREDNİZOLON IV 1-2 mg/kg (maks: 125 mg) uygula. HER AŞAMADA HASTANEYE NAKİL",
-        "isCritical": false
+        "isCritical": true
       }
     }
   },
@@ -1715,20 +1724,20 @@
         "type": "action",
         "content": "Düzelme olmazsa ADRENALİN 1 mcg/dk infüzyon IV yavaş uygula, % 0,9 NaCl 500 ml bolus ver",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
         "type": "action",
         "content": "DİFENHİDRAMİN 25-50 mg veya FENİRAMİN MALEAT 45,5 mg IV yavaş uygula. Bronkospazm için SALBUTAMOL 2,5-5 mg ver",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
         "type": "action",
         "content": "Proflaktik olarak METİL PREDNİZOLON IV 1-2 mg/kg (maks: 125 mg) uygula. HER AŞAMADA HASTANEYE NAKİL",
-        "isCritical": false
+        "isCritical": true
       }
     }
   },
@@ -1747,10 +1756,12 @@
       "node_2": {
         "id": "node_2",
         "type": "decision",
-        "content": "Tablo hangisidir? (Isı Krampları / Isı Stresi / Isı Çarpması)",
+        "content": "Tablo hangisidir? Isı krampları: kas krampları, normal/hafif artmış vücut ısısı, terleme. Isı stresi: kramplara ek olarak <40 °C ateş, bulantı, kusma, baş ağrısı, halsizlik, ortostatik hipotansiyon. Isı çarpması: >40 °C ve bilinç bulanıklığı",
         "yesId": "node_3",
         "noId": "node_5",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Isı Krampları",
+        "noText": "Isı Stresi / Isı Çarpması"
       },
       "node_3": {
         "id": "node_3",
@@ -1765,7 +1776,9 @@
         "content": "Isı Stresi mi, Isı Çarpması mı?",
         "yesId": "node_6",
         "noId": "node_8",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Isı Stresi",
+        "noText": "Isı Çarpması"
       },
       "node_6": {
         "id": "node_6",
@@ -1811,10 +1824,12 @@
       "node_2": {
         "id": "node_2",
         "type": "decision",
-        "content": "Hipotermi derecesi nedir? (Hafif / Orta / Ağır / Hipotermik Kardiyak Arrest)",
+        "content": "Hipotermi derecesi nedir? (Hafif: bilinç açık, titreme, 32-35 °C / Orta-Ağır / Hipotermik Kardiyak Arrest)",
         "yesId": "node_3",
         "noId": "node_4",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Hafif",
+        "noText": "Orta / Ağır / Arrest"
       },
       "node_3": {
         "id": "node_3",
@@ -1826,15 +1841,17 @@
       "node_4": {
         "id": "node_4",
         "type": "decision",
-        "content": "Orta veya Ağır Hipotermi mi, yoksa Arrest mi?",
+        "content": "Orta-Ağır Hipotermi mi, yoksa Hipotermik Kardiyak Arrest mi (bilinç kapalı, nabız yok)?",
         "yesId": "node_5",
         "noId": "node_8",
-        "isCritical": false
+        "isCritical": false,
+        "yesText": "Orta / Ağır",
+        "noText": "Hipotermik Arrest"
       },
       "node_5": {
         "id": "node_5",
         "type": "action",
-        "content": "Orta Hipotermi (28 °C < vücut ısısı < 32 °C) / Ağır Hipotermi (vücut ısısı < 28 °C): Monitörize et, hava yolu güvenliğini sağla",
+        "content": "Orta Hipotermi (bilinç bozukluğu, 28-32 °C) / Ağır Hipotermi (bilinç kapalı, <28 °C): Monitörize et. Ağır hipotermide orta hipotermi tedavisine ek olarak hava yolu güvenliğini sağla",
         "nextId": "node_6",
         "isCritical": false
       },
@@ -1912,14 +1929,14 @@
       "node_6": {
         "id": "node_6",
         "type": "action",
-        "content": "Standart erişkin ileri yaşam desteği uygulamasına başla. Eş zamanlı olarak pasif ve aktif ısıtma yöntemlerini uygula",
+        "content": "Standart erişkin ileri yaşam desteği uygulamasına başla. Eş zamanlı olarak pasif ve aktif ısıtma yöntemlerini uygula. İlk defibrilasyon girişimi başarısızsa vücut sıcaklığı 30 °C'ye ulaşıncaya kadar defibrilasyon ertelenmelidir",
         "nextId": "node_7",
         "isCritical": false
       },
       "node_7": {
         "id": "node_7",
         "type": "decision",
-        "content": "Vücut ısısı > 35 °C oldu mu?",
+        "content": "Vücut ısısı ≥ 35 °C oldu mu? (≥ 35 °C olana kadar KPR'yi sonlandırma)",
         "yesId": "node_8",
         "noId": "node_6",
         "isCritical": false
@@ -2148,7 +2165,7 @@
         "type": "action",
         "content": "Sıvı yüklemesi yap! (1 saatten daha kısa nakiller için 500 ml Ringer Laktat, daha uzun süreli nakiller için PARKLAND formülü kullanılmalıdır). Ağrı kontrolü için ANALJEZİK/FENTANİL (Fentanil: 1 mcg/kg IV yavaş, IM) uygula",
         "nextId": "node_8",
-        "isCritical": false
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
@@ -2236,7 +2253,7 @@
       "node_3": {
         "id": "node_3",
         "type": "action",
-        "content": "Kimyasala maruziyeti kes: Görülebilen parçaları ve kalıntıları temizle. Bol su veya %0,9 NaCl ile 20 dk boyunca nazikçe yıka",
+        "content": "Kimyasala maruziyeti kes: Görülebilen parçaları ve kalıntıları temizle. Bol su veya %0,9 NaCl ile 20 dk boyunca nazikçe yıka. Olası bir KBRN durumuna hazırlıklı ol",
         "nextId": "node_4",
         "isCritical": false
       },
@@ -2349,7 +2366,7 @@
       "node_5": {
         "id": "node_5",
         "type": "redirect",
-        "content": "KOLİNERJİK AJANLARLA ZEHİRLENME ALGORİTMASINA GİT",
+        "content": "KOLİNERJİK AJANLARLA ZEHİRLENME ALGORİTMASINA GİT (Tarım ilacı ile zehirlenme ihtimalini değerlendir, dekontamine et)",
         "targetAlgorithmId": "SB-ASH-Y-35",
         "isCritical": false
       },
@@ -2554,14 +2571,14 @@
         "content": "Kalsiyum kanal blokörü ile zehirlenmeden emin olunursa ve hipotansiyon da eşlik ediyorsa?",
         "yesId": "node_11",
         "noId": "node_10",
-        "isCritical": false
+        "isCritical": true
       },
       "node_11": {
         "id": "node_11",
         "type": "action",
         "content": "3 ampul KALSİYUM GLUKONAT %0,9 NaCl içinde IV olarak 10 dk da verilebilir",
         "nextId": "node_10",
-        "isCritical": false
+        "isCritical": true
       },
       "node_10": {
         "id": "node_10",
@@ -2665,14 +2682,14 @@
         "id": "node_7",
         "type": "action",
         "content": "NALOKSON 0,4-2 mg IM/IV/IO/SC verilir (Maks 10 mg). Düzelme olmazsa 2-3 dk da bir tekrarla",
-        "nextId": "node_8",
-        "isCritical": false
+        "nextId": "node_9",
+        "isCritical": true
       },
       "node_8": {
         "id": "node_8",
         "type": "action",
-        "content": "İleri hava yolu uygulaması için hazırlan",
-        "nextId": "node_9",
+        "content": "Solunum depresyonu devam ederse ileri hava yolu uygulaması için hazırlan",
+        "nextId": "node_11",
         "isCritical": false
       },
       "node_9": {
@@ -2680,14 +2697,14 @@
         "type": "decision",
         "content": "Hipotansiyon varlığında?",
         "yesId": "node_10",
-        "noId": "node_11",
+        "noId": "node_8",
         "isCritical": false
       },
       "node_10": {
         "id": "node_10",
         "type": "action",
         "content": "% 0,9 NaCl IV yüklemesi yap",
-        "nextId": "node_11",
+        "nextId": "node_8",
         "isCritical": false
       },
       "node_11": {
@@ -2720,37 +2737,53 @@
       "node_3": {
         "id": "node_3",
         "type": "decision",
-        "content": "Ciddi bulgu ve semptomlar: Disritmiler mi, Hipertermi mi, Nöbet mi?",
+        "content": "Ciddi bulgu: Disritmi var mı?",
         "yesId": "node_4",
-        "noId": "node_8",
+        "noId": "node_9",
         "isCritical": false
       },
       "node_4": {
         "id": "node_4",
         "type": "action",
         "content": "Disritmiler: QRS süresi 0,10 sn den uzunsa, 1-2 mEq/kg puşe NaHCO3 ver, 3-5 dk da bir tekrarla. Hipotansiyon varlığında % 0,9 NaCl yüklemesi yap. Gerekirse İLGİLİ RİTİM ALGORİTMASINA GİT",
-        "nextId": "node_8",
-        "isCritical": false
+        "nextId": "node_9",
+        "isCritical": true
       },
       "node_5": {
         "id": "node_5",
-        "type": "action",
-        "content": "Hipertermi: HİPERTERMİ ALGORİTMASINA GİT",
-        "nextId": "node_8",
-        "isCritical": false
+        "type": "redirect",
+        "content": "HİPERTERMİ ALGORİTMASINA GİT",
+        "isCritical": false,
+        "targetAlgorithmId": "SB-ASH-Y-23"
       },
       "node_6": {
         "id": "node_6",
-        "type": "action",
-        "content": "Nöbet: NÖBET/KONVÜLZİYON ALGORİTMASINA GİT",
-        "nextId": "node_8",
-        "isCritical": false
+        "type": "redirect",
+        "content": "NÖBET/KONVÜLZİYON ALGORİTMASINA GİT",
+        "isCritical": false,
+        "targetAlgorithmId": "SB-ASH-Y-19"
       },
       "node_8": {
         "id": "node_8",
         "type": "action",
         "content": "HER AŞAMADA HASTANEYE NAKİL",
         "isCritical": false
+      },
+      "node_9": {
+        "id": "node_9",
+        "isCritical": false,
+        "type": "decision",
+        "content": "Hipertermi var mı?",
+        "yesId": "node_5",
+        "noId": "node_10"
+      },
+      "node_10": {
+        "id": "node_10",
+        "isCritical": false,
+        "type": "decision",
+        "content": "Nöbet var mı?",
+        "yesId": "node_6",
+        "noId": "node_8"
       }
     }
   },
@@ -2931,7 +2964,7 @@
         "type": "action",
         "content": "Toplamda 3000-6000 ml sıvı ver (Kurtarma işlemi 2 saatten uzun sürerse %0,9 NaCl hızını azalt: 500 ml/sa veya daha az)",
         "nextId": "node_7",
-        "isCritical": false
+        "isCritical": true
       },
       "node_7": {
         "id": "node_7",
@@ -2946,7 +2979,7 @@
         "type": "action",
         "content": "KALSİYUM GLUKONAT %10 luk solüsyondan 10-30 ml IV (2-3 dk içinde) verilir",
         "nextId": "node_9",
-        "isCritical": false
+        "isCritical": true
       },
       "node_9": {
         "id": "node_9",
@@ -2986,7 +3019,7 @@
       "node_4": {
         "id": "node_4",
         "type": "action",
-        "content": "SpO2 >%94-98 olacak şekilde oksijenizasyonu ve ventilasyonu sağla (Ventilasyon sayısı yetişkinlerde 10/dk)",
+        "content": "SpO2 %94-98 olacak şekilde oksijenizasyonu ve ventilasyonu sağla (Ventilasyon sayısı yetişkinlerde 10/dk, çocuklarda 20/dk, bebeklerde 25/dk)",
         "nextId": "node_5",
         "isCritical": false
       },
@@ -3107,7 +3140,7 @@
       "node_9": {
         "id": "node_9",
         "type": "action",
-        "content": "Solunum varsa KIRMIZI KOD",
+        "content": "KIRMIZI KOD",
         "isCritical": false
       },
       "node_10": {
