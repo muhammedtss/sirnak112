@@ -8,7 +8,7 @@ import BurnCalculatorEmbed from "@/components/skalalar/BurnCalculatorEmbed";
 export default function ParklandPage() {
   return (
     <PageShell>
-      <AppHeader title="Yanık Sıvı Resüsitasyonu" back="/skalalar" icon={<Flame style={{ width: 16, height: 16 }} />} />
+      <AppHeader title="Parkland Formülü" back="/skalalar" icon={<Flame style={{ width: 16, height: 16 }} />} />
 
       <main className="flex-1 px-3 sm:px-6 py-4 sm:py-6 w-full max-w-xl mx-auto pb-20">
         <BurnCalculatorEmbed variant="parkland" />
