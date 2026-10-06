@@ -115,7 +115,7 @@ function Lightbox({
       </div>
 
       <div
-        className={`flex-1 overflow-auto flex items-start p-4 transition-transform ${zoomLevel === 1 ? 'justify-center' : 'justify-start'}`}
+        className={`flex-1 overflow-auto flex items-start p-4 pb-52 transition-transform ${zoomLevel === 1 ? 'justify-center' : 'justify-start'}`}
         style={{ touchAction: zoomLevel === 1 ? "pan-y pinch-zoom" : "auto" }}
         onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
         onTouchStart={handleTouchStart}
@@ -139,14 +139,16 @@ function Lightbox({
         )}
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 shadow-2xl rounded-full bg-slate-900/90 backdrop-blur-md px-4 py-2 border border-white/20">
+      {/* Alt navigasyon barının (~96px + güvenli alan) üstünde; çok sayfalıysa geçiş oklarının da üstünde */}
+      <div style={{ bottom: `calc(env(safe-area-inset-bottom, 0px) + ${group.images.length > 1 ? 176 : 112}px)` }}
+        className="absolute left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 shadow-2xl rounded-full bg-slate-900/90 backdrop-blur-md px-4 py-2 border border-white/20">
         <button onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.max(z - 0.5, 1)); }} disabled={zoomLevel <= 1} className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-2xl flex items-center justify-center active:scale-95 transition-all disabled:opacity-30">-</button>
         <div className="flex items-center justify-center w-16 text-white font-bold text-base bg-black/40 rounded-full py-1">{Math.round(zoomLevel * 100)}%</div>
         <button onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.min(z + 0.5, 4)); }} disabled={zoomLevel >= 4} className="w-12 h-12 rounded-full bg-white text-black hover:bg-slate-200 font-black text-2xl flex items-center justify-center active:scale-95 transition-all disabled:opacity-30 shadow-lg">+</button>
       </div>
 
       {group.images.length > 1 && (
-        <div className="flex-none flex items-center justify-center gap-4 py-3 bg-black/50 border-t border-white/10 relative z-40">
+        <div className="flex-none flex items-center justify-center gap-4 py-3 bg-black/50 border-t border-white/10 relative z-40" style={{ marginBottom: "calc(env(safe-area-inset-bottom, 0px) + 96px)" }}>
           <button onClick={() => setIdx((i) => Math.max(0, i - 1))} disabled={idx === 0} className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-30 active:scale-90 transition-all text-white"><ArrowLeft style={{ width: 20, height: 20 }} /></button>
           <button onClick={() => setIdx((i) => Math.min(group.images.length - 1, i + 1))} disabled={idx === group.images.length - 1} className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-30 active:scale-90 transition-all text-white"><ArrowLeft className="rotate-180" style={{ width: 20, height: 20 }} /></button>
         </div>

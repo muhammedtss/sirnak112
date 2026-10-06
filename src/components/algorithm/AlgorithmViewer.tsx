@@ -141,7 +141,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
       )}
 
       <div
-        className={`flex-1 overflow-auto flex items-start p-4 transition-transform ${zoomLevel === 1 ? 'justify-center' : 'justify-start'}`}
+        className={`flex-1 overflow-auto flex items-start p-4 pb-52 transition-transform ${zoomLevel === 1 ? 'justify-center' : 'justify-start'}`}
         style={{ touchAction: zoomLevel === 1 ? "pan-y pinch-zoom" : "auto" }}
         onClick={(e) => {
           if (e.target === e.currentTarget) onClose();
@@ -178,7 +178,8 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
       </div>
 
       {/* Zoom Controls */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 shadow-2xl rounded-full bg-slate-900/90 backdrop-blur-md px-4 py-2 border border-white/20">
+      <div style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 112px)" }}
+        className="absolute left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 shadow-2xl rounded-full bg-slate-900/90 backdrop-blur-md px-4 py-2 border border-white/20">
         <button 
           onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.max(z - 0.5, 1)); }} 
           disabled={zoomLevel <= 1}
