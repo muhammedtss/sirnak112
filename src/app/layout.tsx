@@ -45,7 +45,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${outfit.variable} h-[100dvh]`}>
+    <html lang="tr" data-theme="dark" className={`${outfit.variable} h-[100dvh]`} suppressHydrationWarning>
+      <head>
+        {/* Kayıtlı temayı ilk boyamadan önce uygula (açık temada koyu parlamayı önler) */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="flex flex-col h-full relative antialiased overflow-hidden">
         {/* Layered premium background — fixed, stays behind everything */}
         <Background />

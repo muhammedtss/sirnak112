@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   CheckCircle2,
   CloudCheck,
@@ -191,20 +192,40 @@ export function OfflineButton() {
         aria-haspopup="dialog"
         className="header-icon-btn"
       >
-        {icon}
+        {/* Durum değişince ikon çapraz geçişle değişir (ör. senkron bitti → bulut onayı) */}
+        <span className="relative w-[19px] h-[19px]" aria-hidden="true">
+          <AnimatePresence initial={false}>
+            <motion.span
+              key={label}
+              className="absolute inset-0 flex items-center justify-center"
+              initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+              transition={{ type: "spring", duration: 0.3, bounce: 0 }}
+            >
+              {icon}
+            </motion.span>
+          </AnimatePresence>
+        </span>
       </button>
 
-      {open && (
-        <div
-          role="dialog"
-          aria-label="Çevrimdışı kullanım"
-          className="absolute right-0 top-full mt-2 z-50 w-[min(20rem,calc(100vw-2rem))] glass-card p-4 shadow-2xl animate-in fade-in zoom-in-95 duration-150 origin-top-right"
-          style={{ background: "var(--bg-surface)" }}
-        >
-          <p className="text-[11px] font-bold uppercase tracking-widest text-subtle mb-3">Çevrimdışı Kullanım</p>
-          <OfflinePanel s={s} />
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="dialog"
+            aria-label="Çevrimdışı kullanım"
+            className="absolute right-0 top-full mt-2 z-50 w-[min(20rem,calc(100vw-2rem))] glass-card p-4 shadow-2xl origin-top-right"
+            style={{ background: "var(--bg-surface)" }}
+            initial={{ opacity: 0, scale: 0.96, y: -4 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.98, y: -2 }}
+            transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="text-[11px] font-bold uppercase tracking-widest text-subtle mb-3">Çevrimdışı Kullanım</p>
+            <OfflinePanel s={s} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
