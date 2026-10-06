@@ -169,7 +169,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
             key={current.src}
             src={current.src}
             alt={`${title} - ${current.label}`}
-            className="rounded-xl shadow-2xl transition duration-200 origin-top-left shrink-0"
+            className="img-outline rounded-xl shadow-2xl origin-top-left shrink-0"
             style={{ width: zoomLevel === 1 ? '100%' : `${zoomLevel * 100}%`, minWidth: 280, maxWidth: 'none' }}
             onError={() => setImgError(true)}
             draggable={false}
@@ -221,7 +221,8 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
 
   useEffect(() => {
     if (viewMode === "step") {
-      bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      bottomRef.current?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "end" });
     }
   }, [history, viewMode]);
 
@@ -266,6 +267,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
             <button
               onClick={() => setViewMode(viewMode === "step" ? "full" : "step")}
+              aria-pressed={viewMode === "full"}
               className="shrink-0 text-sm font-bold px-4 py-2 rounded-full active:scale-[0.97] transition shadow-sm"
               style={{ background: "rgba(255,255,255,0.05)", border: "1px solid var(--glass-border)", color: "var(--fg)" }}
             >
@@ -276,7 +278,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
               <button
                 onClick={() => setShowLightbox(true)}
                 className="shrink-0 flex items-center gap-1.5 text-sm font-bold px-4 py-2 rounded-full active:scale-[0.97] transition shadow-sm whitespace-nowrap"
-                style={{ background: "rgba(59,130,246,0.15)", color: "#60A5FA", border: "1px solid rgba(59,130,246,0.3)" }}
+                style={{ background: "rgba(59,130,246,0.15)", color: "var(--info-text)", border: "1px solid rgba(59,130,246,0.3)" }}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
@@ -307,7 +309,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
               }
 
               return (
-                <div key={`${nodeId}-${index}`} className="w-full flex flex-col items-center">
+                <div key={`${nodeId}-${index}`} className={`w-full flex flex-col items-center ${index > 0 ? "animate-in fade-in slide-in-from-bottom-2" : ""}`}>
                   {index > 0 && (
                     <div className="w-0.5 h-6" style={{ background: "var(--glass-border)" }} />
                   )}
@@ -331,7 +333,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                       <p
                         className={`font-medium leading-relaxed ${
                           isLast ? "text-lg text-white" : "text-base text-subtle"
-                        } ${node.isCritical ? "text-red-100" : ""}`}
+                        } ${node.isCritical ? "text-critical" : ""}`}
                       >
                         {node.content}
                       </p>
@@ -353,7 +355,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                             onClick={() => node.yesId && advance(node.yesId)}
                             disabled={!node.yesId}
                             className="flex-1 glass-card hover:bg-emerald-500/10 hover:border-emerald-500/50 hover:text-emerald-400 disabled:opacity-50 py-3 rounded-xl font-bold text-lg active:scale-[0.97] transition"
-                            style={{ borderColor: "rgba(16,185,129,0.3)", color: "#34D399" }}
+                            style={{ borderColor: "rgba(16,185,129,0.3)", color: "var(--ok-text)" }}
                           >
                             {node.yesText || "Evet"}
                           </button>
@@ -361,7 +363,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                             onClick={() => node.noId && advance(node.noId)}
                             disabled={!node.noId}
                             className="flex-1 glass-card hover:bg-red-500/10 hover:border-red-500/50 hover:text-red-400 disabled:opacity-50 py-3 rounded-xl font-bold text-lg active:scale-[0.97] transition"
-                            style={{ borderColor: "rgba(239,68,68,0.3)", color: "#F87171" }}
+                            style={{ borderColor: "rgba(239,68,68,0.3)", color: "var(--bad-text)" }}
                           >
                             {node.noText || "Hayır"}
                           </button>
@@ -373,7 +375,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                             className="flex-1 py-3 rounded-xl font-bold text-lg text-center cursor-pointer transition active:scale-[0.97]"
                             style={
                               selectedAnswer === "Evet"
-                                ? { background: "rgba(16,185,129,0.15)", border: "1px solid rgba(16,185,129,0.3)", color: "#34D399" }
+                                ? { background: "rgba(16,185,129,0.15)", border: "1px solid rgba(16,185,129,0.3)", color: "var(--ok-text)" }
                                 : { background: "rgba(255,255,255,0.02)", border: "1px solid var(--glass-border)", color: "var(--fg-muted)" }
                             }
                           >
@@ -384,7 +386,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                             className="flex-1 py-3 rounded-xl font-bold text-lg text-center cursor-pointer transition active:scale-[0.97]"
                             style={
                               selectedAnswer === "Hayır"
-                                ? { background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.3)", color: "#F87171" }
+                                ? { background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.3)", color: "var(--bad-text)" }
                                 : { background: "rgba(255,255,255,0.02)", border: "1px solid var(--glass-border)", color: "var(--fg-muted)" }
                             }
                           >
@@ -410,7 +412,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                         <button
                           onClick={() => node.nextId && advance(node.nextId)}
                           className="flex-1 py-3 rounded-xl font-bold text-base active:scale-[0.97] transition shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                          style={{ background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.5)", color: "#60A5FA" }}
+                          style={{ background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.5)", color: "var(--info-text)" }}
                         >
                           Sonraki Adım →
                         </button>
@@ -428,12 +430,12 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                             <Link
                               href={`/algoritmalar/${category}/${node.targetAlgorithmId}`}
                               className="w-full text-center py-4 rounded-xl font-bold text-lg active:scale-[0.97] transition block shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                              style={{ background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.5)", color: "#60A5FA" }}
+                              style={{ background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.5)", color: "var(--info-text)" }}
                             >
                               {node.content || "İlgili Protocole Git"} 🚀
                             </Link>
                           ) : (
-                            <div className="p-4 glass-card rounded-xl text-center font-bold" style={{ borderColor: "rgba(16,185,129,0.3)", color: "#34D399", background: "rgba(16,185,129,0.1)" }}>
+                            <div role="status" className="p-4 glass-card rounded-xl text-center font-bold animate-in fade-in zoom-in-95" style={{ borderColor: "rgba(16,185,129,0.3)", color: "var(--ok-text)", background: "rgba(16,185,129,0.1)" }}>
                               ✅ Akış Tamamlandı
                             </div>
                           )}
@@ -497,19 +499,19 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                       </div>
                     )}
                     <div className={`p-4 ${node.isCritical ? "pt-6" : ""}`}>
-                      <p className={`font-medium ${node.isCritical ? "text-red-100" : "text-white"}`}>{node.content}</p>
+                      <p className={`font-medium ${node.isCritical ? "text-critical" : "text-white"}`}>{node.content}</p>
                       {node.type === "decision" && (
                         <div className="mt-3 text-sm flex flex-col gap-1.5">
                           <span
                             className="px-2 py-1 rounded inline-block border"
-                            style={{ background: "rgba(16,185,129,0.1)", borderColor: "rgba(16,185,129,0.2)", color: "#34D399" }}
+                            style={{ background: "rgba(16,185,129,0.1)", borderColor: "rgba(16,185,129,0.2)", color: "var(--ok-text)" }}
                           >
                             <strong>{node.yesText || "Evet"}:</strong>{" "}
                             {algorithm.nodes[node.yesId!]?.content || "Eksik Veri"}
                           </span>
                           <span
                             className="px-2 py-1 rounded inline-block border mt-1"
-                            style={{ background: "rgba(239,68,68,0.1)", borderColor: "rgba(239,68,68,0.2)", color: "#F87171" }}
+                            style={{ background: "rgba(239,68,68,0.1)", borderColor: "rgba(239,68,68,0.2)", color: "var(--bad-text)" }}
                           >
                             <strong>{node.noText || "Hayır"}:</strong>{" "}
                             {algorithm.nodes[node.noId!]?.content || "Eksik Veri"}

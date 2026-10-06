@@ -131,7 +131,7 @@ function Lightbox({
             key={current.src}
             src={current.src}
             alt={`${group.title} - ${current.label}`}
-            className="rounded-xl shadow-2xl transition duration-200 origin-top-left shrink-0"
+            className="img-outline rounded-xl shadow-2xl origin-top-left shrink-0"
             style={{ width: zoomLevel === 1 ? '100%' : `${zoomLevel * 100}%`, minWidth: 280, maxWidth: 'none' }}
             onError={() => setImgErr(true)}
             draggable={false}
@@ -242,7 +242,7 @@ export default function AlgoritmalarGorselKategoriPage() {
                               <img
                                 src={img.src}
                                 alt={img.label}
-                                className="w-full aspect-[3/4] object-cover object-top border border-white/10 rounded-xl"
+                                className="img-outline w-full aspect-[3/4] object-cover object-top rounded-xl"
                                 loading="lazy"
                               />
                             </button>

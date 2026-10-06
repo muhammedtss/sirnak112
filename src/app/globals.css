@@ -39,6 +39,10 @@
   --dur-base:    200ms;  /* açma/kapama, sayfa geçişi */
   --focus-ring:  0 0 0 2px var(--bg), 0 0 0 4px var(--primary-light);
   --accent-text: var(--primary-light); /* teal metin: koyu zeminde 9,8:1 */
+  --info-text:   #60A5FA;
+  --ok-text:     #34D399;
+  --bad-text:    #F87171;
+  --critical-text: #FEE2E2;
   --shadow-glass:   0 8px 32px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255,255,255,0.04) inset;
 }
 
@@ -60,6 +64,10 @@
   --glass-border-h: rgba(0, 0, 0, 0.12);
   --shadow-glass:   0 8px 32px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255,255,255,0.3) inset;
   --accent-text:    var(--primary); /* #0F766E: açık zeminde 5,1:1 */
+  --info-text:      #1D4ED8;
+  --ok-text:        #047857;
+  --bad-text:       #B91C1C;
+  --critical-text:  #7F1D1D;
 }
 
 @theme inline {
@@ -245,6 +253,10 @@ p, li, dd, figcaption { text-wrap: pretty; }
 .skala-card:active { transform: scale(0.97); }
 .skala-card:focus-visible { box-shadow: var(--focus-ring); }
 
+/* Görsel çerçevesi: saf beyaz/siyah %10 (renkli nötr kenarda kir gibi görünür) */
+.img-outline { outline: 1px solid oklch(1 0 0 / 0.1); outline-offset: -1px; }
+[data-theme="light"] .img-outline { outline-color: oklch(0 0 0 / 0.1); }
+
 /* Alt gezinme: basınca hafif küçülme */
 .nav-item { transition: transform var(--dur-press) var(--ease-out); }
 .nav-item:active { transform: scale(0.97); }
@@ -346,6 +358,7 @@ p, li, dd, figcaption { text-wrap: pretty; }
   text-shadow: 0 0 20px var(--primary-glow), 0 0 40px rgba(45,212,191,0.15);
 }
 .text-fg     { color: var(--fg); }
+.text-critical { color: var(--critical-text); }
 .text-muted  { color: var(--fg-muted); }
 .text-subtle { color: var(--fg-subtle); }
 
