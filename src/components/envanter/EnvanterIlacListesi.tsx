@@ -220,7 +220,7 @@ export default function EnvanterIlacListesi({
                         type="button"
                         onClick={() => handleYeterli(ilac.id)}
                         aria-label={`${ilac.name}: yeterli`}
-                        className="min-h-11 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold px-3 sm:px-4 rounded-lg active:scale-[0.97] transition whitespace-nowrap"
+                        className="min-h-11 bg-emerald-700 hover:bg-emerald-600 text-white text-xs sm:text-sm font-bold px-3 sm:px-4 rounded-lg active:scale-[0.97] transition whitespace-nowrap"
                       >
                         Yeterli
                       </button>

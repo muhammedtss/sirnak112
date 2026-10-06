@@ -329,7 +329,7 @@ function EvrakKart({ evrak }: { evrak: Evrak }) {
       <button className="w-full text-left" onClick={() => setAcik((v) => !v)} aria-expanded={acik}>
         <div className="px-4 py-3.5 flex items-start justify-between gap-2">
           <div className="flex-1 min-w-0">
-            <div className="text-[11px] font-mono font-bold mb-1 opacity-70" style={{ color: tagColor.color }}>{evrak.kod}</div>
+            <div className="kat-text text-[11px] font-mono font-bold mb-1" style={{ "--kat": tagColor.color } as React.CSSProperties}>{evrak.kod}</div>
             <h3 className="font-bold text-sm sm:text-base leading-tight">{evrak.baslik}</h3>
           </div>
           <span
@@ -344,8 +344,8 @@ function EvrakKart({ evrak }: { evrak: Evrak }) {
         <div className="px-4 py-2.5 flex items-center justify-between gap-3 border-t" style={{ borderColor: "var(--glass-border)" }}>
           <p className="text-subtle text-xs leading-snug flex-1 line-clamp-2">{evrak.aciklama}</p>
           <span
-            className="shrink-0 text-[11px] font-bold px-2 py-0.5 rounded-full border"
-            style={{ background: tagColor.bg, color: tagColor.color, borderColor: tagColor.border }}
+            className="kat-text shrink-0 text-[11px] font-bold px-2 py-0.5 rounded-full border"
+            style={{ background: tagColor.bg, borderColor: tagColor.border, "--kat": tagColor.color } as React.CSSProperties}
           >
             {KAT_LABEL[evrak.kategori]}
           </span>
@@ -359,7 +359,7 @@ function EvrakKart({ evrak }: { evrak: Evrak }) {
               <div className="px-4 py-4 space-y-3">
                 {evrak.bolumler.map((b, i) => (
                   <div key={i} className="rounded-xl border p-3" style={{ background: "rgba(255,255,255,0.02)", borderColor: "var(--glass-border)" }}>
-                    <div className="text-[11px] font-bold tracking-wide uppercase mb-2" style={{ color: tagColor.color }}>{b.baslik}</div>
+                    <div className="kat-text text-[11px] font-bold tracking-wide uppercase mb-2" style={{ "--kat": tagColor.color } as React.CSSProperties}>{b.baslik}</div>
                     <div className="text-xs leading-relaxed space-y-1">
                       {b.icerik.split(" | ").map((item, j) => (
                         <div key={j} className="flex items-start gap-2">
@@ -375,8 +375,8 @@ function EvrakKart({ evrak }: { evrak: Evrak }) {
                 <a
                   href={evrak.dosya}
                   download
-                  className="w-full min-h-11 flex items-center justify-center gap-2 text-sm font-bold py-3 rounded-xl active:scale-[0.97] transition border"
-                  style={{ background: tagColor.bg, color: tagColor.color, borderColor: tagColor.border }}
+                  className="kat-text w-full min-h-11 flex items-center justify-center gap-2 text-sm font-bold py-3 rounded-xl active:scale-[0.97] transition border"
+                  style={{ background: tagColor.bg, borderColor: tagColor.border, "--kat": tagColor.color } as React.CSSProperties}
                 >
                   <Download style={{ width: 16, height: 16 }} />
                   Orijinal Dosyayı İndir
@@ -429,17 +429,18 @@ export default function EvraklarPage() {
             const isActive = seciliKat === kat;
             const style = kat !== "Tumu"
               ? (isActive
-                  ? { background: KAT_RENK[kat].bg, color: KAT_RENK[kat].color, borderColor: KAT_RENK[kat].border }
+                  ? ({ background: KAT_RENK[kat].bg, borderColor: KAT_RENK[kat].border, "--kat": KAT_RENK[kat].color } as React.CSSProperties)
                   : { background: "rgba(255,255,255,0.04)", color: "var(--fg-muted)", borderColor: "var(--glass-border)" })
               : (isActive
-                  ? { background: "rgba(255,255,255,0.15)", color: "var(--fg)", borderColor: "rgba(255,255,255,0.25)" }
+                  ? { background: "color-mix(in srgb, var(--fg) 12%, transparent)", color: "var(--fg)", borderColor: "color-mix(in srgb, var(--fg) 25%, transparent)" }
                   : { background: "rgba(255,255,255,0.04)", color: "var(--fg-muted)", borderColor: "var(--glass-border)" });
             
             return (
               <button
                 key={kat}
                 onClick={() => setSeciliKat(kat)}
-                className="chip-hit shrink-0 text-xs font-bold px-3 py-1.5 rounded-full border transition"
+                aria-pressed={isActive}
+                className={`chip-hit shrink-0 text-xs font-bold px-3 py-1.5 rounded-full border transition ${isActive && kat !== "Tumu" ? "kat-text" : ""}`}
                 style={style}
               >
                 {kat === "Tumu" ? "Tümü" : KAT_LABEL[kat]}
@@ -460,8 +461,8 @@ export default function EvraklarPage() {
             return (
               <div key={kat}>
                 <h2
-                  className="text-xs font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-xl mb-3 inline-block"
-                  style={{ color: tagColor.color, background: tagColor.bg }}
+                  className="kat-text text-xs font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-xl mb-3 inline-block"
+                  style={{ background: tagColor.bg, "--kat": tagColor.color } as React.CSSProperties}
                 >
                   {KAT_LABEL[kat]} ({katEvraklar.length})
                 </h2>
