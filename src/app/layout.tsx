@@ -47,12 +47,10 @@ export default function RootLayout({
   return (
     <html lang="tr" data-theme="dark" className={`${outfit.variable} h-[100dvh]`} suppressHydrationWarning>
       <head>
-        {/* Kayıtlı temayı ilk boyamadan önce uygula (açık temada koyu parlamayı önler) */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}`,
-          }}
-        />
+        {/* Kayıtlı temayı ilk boyamadan önce uygula (açık temada koyu parlamayı önler).
+            Bilerek eşzamanlı: async/defer olsaydı ilk kare yanlış temayla boyanırdı. */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script src="/theme-init.js" />
       </head>
       <body className="flex flex-col h-full relative antialiased overflow-hidden">
         {/* Layered premium background — fixed, stays behind everything */}
