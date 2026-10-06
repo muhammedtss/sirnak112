@@ -28,13 +28,14 @@ export function ThemeToggle() {
     document.documentElement.setAttribute("data-theme", newTheme);
   };
 
-  if (!mounted) return <div className="w-9 h-9" />; // Placeholder to prevent layout shift
+  if (!mounted) return <div className="w-11 h-11 shrink-0" />; // Placeholder to prevent layout shift
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full glass-hover hover:bg-white/10 text-white flex items-center justify-center transition-transform active:scale-[0.97]"
-      aria-label="Toggle Theme"
+      className="header-icon-btn"
+      aria-label={theme === "dark" ? "Açık temaya geç" : "Koyu temaya geç"}
+      title={theme === "dark" ? "Açık temaya geç" : "Koyu temaya geç"}
     >
       {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
     </button>

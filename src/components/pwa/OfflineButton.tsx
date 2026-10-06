@@ -176,7 +176,7 @@ export function OfflineButton() {
     };
   }, [open]);
 
-  if (s.mode === "pending") return <div className="w-9 h-9" />; // yerleşim kaymasını önle
+  if (s.mode === "pending") return <div className="w-11 h-11 shrink-0" />; // yerleşim kaymasını önle
 
   const { icon, label } = buttonAppearance(s);
 
@@ -189,7 +189,7 @@ export function OfflineButton() {
         title={label}
         aria-expanded={open}
         aria-haspopup="dialog"
-        className="w-9 h-9 rounded-full glass-hover hover:bg-white/10 flex items-center justify-center transition-transform active:scale-[0.97]"
+        className="header-icon-btn"
       >
         {icon}
       </button>

@@ -184,7 +184,7 @@ export default function GlobalSearchModal() {
       {/* Search Button for Header */}
       <button
         onClick={() => setIsOpen(true)}
-        className="p-2 rounded-full text-slate-600 hover:text-teal-600 hover:bg-slate-100 active:scale-[0.97] transition flex items-center gap-1.5"
+        className="header-icon-btn"
         title="Genel Arama"
         aria-label="Genel Arama"
       >

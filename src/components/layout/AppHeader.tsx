@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import { useScrolled } from "./useScrolled";
 import { OfflineButton } from "@/components/pwa/OfflineButton";
 
 interface AppHeaderProps {
@@ -21,6 +22,7 @@ interface AppHeaderProps {
 
 export function AppHeader({ title, icon, back, right, badge }: AppHeaderProps) {
   const router = useRouter();
+  const scrolled = useScrolled(4, 2);
 
   const handleBack = () => {
     if (typeof back === "string") router.push(back);
@@ -29,18 +31,17 @@ export function AppHeader({ title, icon, back, right, badge }: AppHeaderProps) {
 
   return (
     <header
-      className="glass sticky top-0 z-20 flex items-center gap-3 px-4 py-3.5 border-b"
-      style={{ borderColor: "var(--glass-border)" }}
+      data-scrolled={scrolled}
+      className="app-header sticky top-0 z-20 flex items-center gap-3 px-3 py-2"
     >
       {/* Back button */}
       {back && (
         <button
           onClick={handleBack}
-          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-transform active:scale-[0.97]"
-          style={{ background: "rgba(255,255,255,0.06)" }}
+          className="header-icon-btn"
           aria-label="Geri"
         >
-          <ArrowLeft style={{ width: 18, height: 18, color: "var(--fg-muted)" }} strokeWidth={2.5} />
+          <ArrowLeft style={{ width: 20, height: 20 }} strokeWidth={2.5} />
         </button>
       )}
 
@@ -75,7 +76,7 @@ export function AppHeader({ title, icon, back, right, badge }: AppHeaderProps) {
       )}
 
       {/* Right slot, çevrimdışı durumu & Theme Toggle */}
-      <div className="shrink-0 flex items-center gap-2 ml-1">
+      <div className="shrink-0 flex items-center gap-0.5 ml-1">
         {right}
         <OfflineButton />
         <ThemeToggle />

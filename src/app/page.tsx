@@ -8,7 +8,6 @@ import {
   Package,
   FileText,
   FileSearch,
-  Cpu,
   ChevronRight,
   Zap,
   HeartPulse,
@@ -17,6 +16,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import GlobalSearchModal from "@/components/search/GlobalSearchModal";
 import { OfflineButton } from "@/components/pwa/OfflineButton";
+import { useScrolled } from "@/components/layout/useScrolled";
 
 const quickLinks = [
   { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Algoritmalar",      desc: "Akış şemaları", accent: "#F97316" },
@@ -30,25 +30,32 @@ const quickLinks = [
 ];
 
 export default function HomePage() {
+  const scrolled = useScrolled();
+
   return (
     <PageShell>
       {/* ── Ambient header (no back btn) ── */}
-      <header className="sticky top-0 z-20 px-5 pt-5 pb-4 flex items-center justify-between"
-        style={{ background: "linear-gradient(to bottom, var(--bg) 60%, transparent)" }}
+      <header
+        data-scrolled={scrolled}
+        className={`app-header sticky top-0 z-20 px-5 flex items-center justify-between gap-3 ${scrolled ? "py-2.5" : "pt-5 pb-4"}`}
       >
-        <div>
-        <p className="text-[11px] font-semibold tracking-widest uppercase text-muted mb-0.5">
-          Şırnak 112 Acil Sağlık
-        </p>
-        <h1 className="text-2xl font-extrabold leading-tight tracking-tight">
-          Acil Protokol{" "}
-          <span className="text-glow" style={{ color: "var(--primary-light)" }}>
-            Sistemi
-          </span>
-        </h1>
-        <p className="text-[11px] font-medium text-subtle mt-0.5 opacity-80">Developed by Kadir Taş</p>
+        <div className="min-w-0">
+          {!scrolled && (
+            <p className="text-[11px] font-semibold tracking-widest uppercase text-muted mb-0.5">
+              Şırnak 112 Acil Sağlık
+            </p>
+          )}
+          <h1 className={`font-extrabold leading-tight tracking-tight truncate ${scrolled ? "text-lg" : "text-2xl"}`}>
+            Acil Protokol{" "}
+            <span className="text-glow" style={{ color: "var(--primary-light)" }}>
+              Sistemi
+            </span>
+          </h1>
+          {!scrolled && (
+            <p className="text-[11px] font-medium text-subtle mt-0.5">Developed by Kadir Taş</p>
+          )}
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-0.5 shrink-0">
           <GlobalSearchModal />
           <OfflineButton />
           <ThemeToggle />

@@ -122,6 +122,38 @@ p, li, dd, figcaption { text-wrap: pretty; }
   .animate-pulse, .animate-ping { animation: none !important; }
 }
 
+/* === Kaydırmaya duyarlı başlık === */
+.app-header {
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+.app-header[data-scrolled="true"] {
+  background-color: color-mix(in srgb, var(--bg) 72%, transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom-color: var(--glass-border-h);
+  box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.45);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .app-header[data-scrolled="true"], .glass { background-color: var(--bg-surface); }
+}
+
+/* Başlık ikon butonları: 44×44 dokunma alanı */
+.header-icon-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  color: var(--fg-muted);
+  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-press) var(--ease-out);
+}
+.header-icon-btn:hover { background-color: color-mix(in srgb, var(--fg) 8%, transparent); color: var(--fg); }
+.header-icon-btn:active { transform: scale(0.97); }
+
 /* === Glassmorphism === */
 .glass {
   background: var(--glass-bg);
