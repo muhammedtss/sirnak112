@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { CheckCircle2 } from "lucide-react";
 
 interface EnvanterIlac {
   id: string;
@@ -32,7 +34,7 @@ function ExpandableText({
       onClick={() => setExpanded(!expanded)}
     >
       <p
-        className={`text-[13px] sm:text-[15px] md:text-base font-bold leading-tight transition duration-200 ${
+        className={`text-sm sm:text-[15px] md:text-base font-bold leading-tight ${
           expanded ? "whitespace-normal break-words" : "truncate"
         } ${colorClass}`}
       >
@@ -93,51 +95,61 @@ export default function EnvanterIlacListesi({
   const checkedCount = yeterliCount + yetersizCount;
   const bekleyenCount = total - checkedCount;
 
+  // Tüm kalemler işaretlenince kısa bir özet bildirimi (toast) göster
+  const [toast, setToast] = useState(false);
+  const wasComplete = useRef(false);
+  const complete = total > 0 && bekleyenCount === 0;
+  useEffect(() => {
+    if (complete && !wasComplete.current) {
+      setToast(true);
+      const tm = setTimeout(() => setToast(false), 4000);
+      wasComplete.current = true;
+      return () => clearTimeout(tm);
+    }
+    if (!complete) wasComplete.current = false;
+  }, [complete]);
+
   return (
     <div className="flex flex-col items-center gap-3 sm:gap-4 w-full max-w-3xl mx-auto pb-10 px-2 sm:px-0">
       {/* Üst İstatistik Kartı */}
       {total > 0 && (
-        <div className="w-full bg-white rounded-xl border border-slate-200 shadow-sm p-3 sm:p-4 mb-1 sm:mb-2">
+        <div className="glass-card w-full rounded-2xl p-3 sm:p-4 mb-1 sm:mb-2">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-[11px] sm:text-sm font-extrabold text-slate-500 uppercase tracking-widest">
+            <span className="text-[11px] sm:text-sm font-extrabold text-subtle uppercase tracking-widest">
               Kontrol Durumu
             </span>
-            <span className="text-[11px] sm:text-sm font-extrabold text-slate-600">
+            <span className="text-[11px] sm:text-sm font-extrabold text-muted tabular-nums">
               {checkedCount} / {total}
             </span>
           </div>
 
-          <div className="w-full bg-slate-200 rounded-full h-2 sm:h-2.5 overflow-hidden mb-3 sm:mb-4">
+          <div
+            className="w-full rounded-full h-2 sm:h-2.5 overflow-hidden mb-3 sm:mb-4"
+            style={{ background: "color-mix(in srgb, var(--fg) 10%, transparent)" }}
+            role="progressbar"
+            aria-label="Kontrol edilen kalemler"
+            aria-valuemin={0}
+            aria-valuemax={total}
+            aria-valuenow={checkedCount}
+          >
             <div className="h-full rounded-full flex">
-              <div
-                className="bg-[#00c853]"
-                style={{ width: `${(yeterliCount / total) * 100}%` }}
-              />
-              <div
-                className="bg-[#ff3d00]"
-                style={{ width: `${(yetersizCount / total) * 100}%` }}
-              />
+              <div className="bg-emerald-500" style={{ width: `${(yeterliCount / total) * 100}%` }} />
+              <div className="bg-red-500" style={{ width: `${(yetersizCount / total) * 100}%` }} />
             </div>
           </div>
 
-          <div className="flex items-center justify-between sm:justify-start sm:gap-5">
+          <div className="flex items-center justify-between sm:justify-start sm:gap-5 tabular-nums">
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#00c853]" />
-              <span className="text-[11px] sm:text-xs font-bold text-slate-600">
-                {yeterliCount} Yeterli
-              </span>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-emerald-500" />
+              <span className="text-xs font-bold text-muted">{yeterliCount} Yeterli</span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#ff3d00]" />
-              <span className="text-[11px] sm:text-xs font-bold text-slate-600">
-                {yetersizCount} Yetersiz
-              </span>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500" />
+              <span className="text-xs font-bold text-muted">{yetersizCount} Yetersiz</span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-slate-300" />
-              <span className="text-[11px] sm:text-xs font-bold text-slate-600">
-                {bekleyenCount} Bekliyor
-              </span>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full" style={{ background: "var(--fg-subtle)" }} />
+              <span className="text-xs font-bold text-muted">{bekleyenCount} Bekliyor</span>
             </div>
           </div>
         </div>
@@ -156,120 +168,83 @@ export default function EnvanterIlacListesi({
           return (
             <div
               key={ilac.id}
-              className={`flex flex-col w-full rounded-xl border transition duration-200 overflow-hidden ${
-                isYeterli
-                  ? "bg-emerald-50/50 border-emerald-300 shadow-sm"
-                  : isYetersiz
-                    ? "bg-red-50/50 border-red-300 shadow-sm"
-                    : "bg-white border-slate-200 shadow-sm"
+              className={`glass-card flex flex-col w-full !rounded-xl overflow-hidden ${
+                isYeterli ? "!border-emerald-500/40" : isYetersiz ? "!border-red-500/40" : ""
               }`}
+              style={
+                isYeterli
+                  ? { background: "color-mix(in srgb, #10B981 9%, var(--glass-bg))" }
+                  : isYetersiz
+                    ? { background: "color-mix(in srgb, #EF4444 9%, var(--glass-bg))" }
+                    : undefined
+              }
             >
-              {/* ANA SATIR: Asla kırılmayacak Flex yapısı */}
               <div className="flex flex-row items-center justify-between gap-2 sm:gap-3 p-2.5 sm:p-4 w-full">
-                {/* Sol Grup: İkon ve Metin (Mümkün olduğunca küçülebilir) */}
                 <div className="flex flex-row items-center gap-2 sm:gap-3 flex-1 min-w-0">
-                  {/* İkon */}
+                  {/* Durum ikonu: işaretlenince tik çizilir (Checkbox check) */}
                   <div
-                    className={`w-7 h-7 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 transition-colors ${
-                      isYeterli
-                        ? "bg-[#00c853]"
-                        : isYetersiz
-                          ? "bg-[#ff3d00]"
-                          : "bg-slate-100"
+                    aria-hidden="true"
+                    className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 transition-colors duration-150 ${
+                      isYeterli ? "bg-emerald-500" : isYetersiz ? "bg-red-500" : ""
                     }`}
+                    style={!isYeterli && !isYetersiz ? { background: "color-mix(in srgb, var(--fg) 8%, transparent)" } : undefined}
                   >
                     {isYeterli ? (
-                      <svg
-                        className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4.5 12.75l6 6 9-13.5"
-                        />
+                      <svg key="ok" className="t-check w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                        <path pathLength={1} strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
                     ) : isYetersiz ? (
-                      <svg
-                        className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
+                      <svg key="no" className="t-check w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                        <path pathLength={1} strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     ) : (
-                      <div className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-slate-400" />
+                      <div className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full" style={{ background: "var(--fg-subtle)" }} />
                     )}
                   </div>
 
-                  {/* Metin */}
                   <div className="flex-1 min-w-0 flex flex-col justify-center">
                     <ExpandableText
                       text={ilac.name}
-                      colorClass={
-                        isYeterli
-                          ? "text-emerald-900"
-                          : isYetersiz
-                            ? "text-red-900"
-                            : "text-[#1e293b]"
-                      }
+                      colorClass={isYeterli ? "text-emerald-300" : isYetersiz ? "text-red-300" : "text-fg"}
                     />
-                    <p
-                      className={`text-[11px] sm:text-[13px] font-semibold mt-0.5 ${
-                        isYeterli
-                          ? "text-emerald-600"
-                          : isYetersiz
-                            ? "text-red-600"
-                            : "text-slate-500"
-                      }`}
-                    >
-                      Gerekli:{" "}
-                      <span className="font-bold">{ilac.gerekliMiktar}</span>
+                    <p className={`text-xs sm:text-[13px] font-semibold mt-0.5 ${isYeterli ? "text-emerald-400" : isYetersiz ? "text-red-400" : "text-muted"}`}>
+                      Gerekli: <span className="font-bold tabular-nums">{ilac.gerekliMiktar}</span>
                     </p>
                   </div>
                 </div>
 
-                {/* Sağ Grup: Butonlar (Asla küçülmeyecek) */}
                 <div className="flex flex-row items-center gap-1.5 sm:gap-2 shrink-0">
                   {!isYeterli && !isYetersiz && (
                     <>
                       <button
+                        type="button"
                         onClick={() => handleYeterli(ilac.id)}
-                        className="bg-[#00c853] hover:bg-emerald-500 text-white text-[11px] sm:text-sm font-bold px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-lg active:scale-[0.97] transition whitespace-nowrap"
+                        aria-label={`${ilac.name}: yeterli`}
+                        className="min-h-11 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-bold px-3 sm:px-4 rounded-lg active:scale-[0.97] transition whitespace-nowrap"
                       >
                         Yeterli
                       </button>
                       <button
+                        type="button"
                         onClick={() => handleYetersiz(ilac.id)}
-                        className="bg-[#ff3d00] hover:bg-red-500 text-white text-[11px] sm:text-sm font-bold px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-lg active:scale-[0.97] transition whitespace-nowrap"
+                        aria-label={`${ilac.name}: yetersiz`}
+                        className="min-h-11 bg-red-600 hover:bg-red-500 text-white text-xs sm:text-sm font-bold px-3 sm:px-4 rounded-lg active:scale-[0.97] transition whitespace-nowrap"
                       >
                         Yetersiz
                       </button>
                     </>
                   )}
 
-                  {/* Geri Al Butonları */}
-                  {isYeterli && (
+                  {(isYeterli || isYetersiz) && (
                     <button
+                      type="button"
                       onClick={() => handleReset(ilac.id)}
-                      className="text-emerald-700 bg-emerald-100 hover:bg-emerald-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-[11px] sm:text-xs font-bold active:scale-[0.97] transition whitespace-nowrap"
-                    >
-                      Geri Al
-                    </button>
-                  )}
-                  {isYetersiz && (
-                    <button
-                      onClick={() => handleReset(ilac.id)}
-                      className="text-red-700 bg-red-100 hover:bg-red-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-[11px] sm:text-xs font-bold active:scale-[0.97] transition whitespace-nowrap"
+                      aria-label={`${ilac.name}: işareti geri al`}
+                      className={`min-h-11 px-3 sm:px-4 rounded-lg text-xs font-bold active:scale-[0.97] transition whitespace-nowrap border ${
+                        isYeterli
+                          ? "text-emerald-300 border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20"
+                          : "text-red-300 border-red-500/30 bg-red-500/10 hover:bg-red-500/20"
+                      }`}
                     >
                       Geri Al
                     </button>
@@ -277,24 +252,23 @@ export default function EnvanterIlacListesi({
                 </div>
               </div>
 
-              {/* Yetersiz Seçildiğinde Açılan Input Alanı */}
+              {/* Yetersiz seçildiğinde açılan miktar alanı */}
               {isYetersiz && (
-                <div className="px-2.5 pb-2.5 sm:px-4 sm:pb-4 pt-0 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-3 bg-red-100/50 border border-red-200 rounded-xl p-2 sm:p-3">
-                    <label className="text-[11px] sm:text-sm font-bold text-red-800 whitespace-nowrap pl-1">
+                <div className="px-2.5 pb-2.5 sm:px-4 sm:pb-4 pt-0 animate-in fade-in slide-in-from-top-2">
+                  <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-3 bg-red-500/10 border border-red-500/25 rounded-xl p-2 sm:p-3">
+                    <label htmlFor={`mevcut-${ilac.id}`} className="text-xs sm:text-sm font-bold text-red-300 whitespace-nowrap pl-1">
                       Mevcut Adet:
                     </label>
                     <input
+                      id={`mevcut-${ilac.id}`}
                       type="number"
                       inputMode="numeric"
                       value={state.mevcutMiktar}
-                      onChange={(e) =>
-                        handleMiktarChange(ilac.id, e.target.value)
-                      }
+                      onChange={(e) => handleMiktarChange(ilac.id, e.target.value)}
                       placeholder="0"
-                      className="w-16 sm:w-24 bg-white border border-red-200 sm:border-2 rounded-lg px-2 sm:px-3 py-1 sm:py-1.5 text-sm sm:text-base font-bold text-red-900 placeholder-red-300 focus:outline-none focus:border-red-400 focus:ring-0 transition-colors text-center sm:text-left"
+                      className="glass-input w-20 sm:w-24 min-h-11 px-2 sm:px-3 text-base font-bold text-center sm:text-left tabular-nums"
                     />
-                    <span className="text-[11px] sm:text-xs font-semibold text-red-600/80">
+                    <span className="text-xs font-semibold text-red-300 tabular-nums">
                       Eksik:{" "}
                       {Math.max(
                         0,
@@ -311,12 +285,34 @@ export default function EnvanterIlacListesi({
       </div>
 
       {ilaclar.length === 0 && (
-        <div className="bg-white w-full rounded-xl border border-slate-200 p-6 sm:p-10 text-center shadow-sm">
-          <p className="text-slate-400 text-sm sm:text-base font-semibold">
+        <div className="glass-card w-full rounded-xl p-6 sm:p-10 text-center">
+          <p className="text-subtle text-sm sm:text-base font-semibold">
             Bu ambulans tipi için ilaç verisi bulunmuyor.
           </p>
         </div>
       )}
+
+      {/* Toast: kontrol tamamlandı (Transitions.dev #22: yükselerek gelir, daha hızlı gider) */}
+      <div className="fixed inset-x-0 bottom-28 z-40 flex justify-center px-4 pointer-events-none" role="status" aria-live="polite">
+        <AnimatePresence>
+          {toast && (
+            <motion.div
+              key="toast"
+              className="glass-card !rounded-2xl px-4 py-3 flex items-center gap-2.5 shadow-2xl pointer-events-auto"
+              style={{ background: "var(--bg-surface)" }}
+              initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: 8, filter: "blur(2px)", transition: { duration: 0.15 } }}
+              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+              <span className="text-sm font-bold">
+                Kontrol tamamlandı: <span className="tabular-nums">{yeterliCount} yeterli, {yetersizCount} yetersiz</span>
+              </span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
