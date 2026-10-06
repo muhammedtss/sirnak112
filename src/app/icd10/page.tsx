@@ -2,6 +2,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Search, X, Copy, Check, FileSearch } from "lucide-react";
 import icdData from "@/data/icd10.json";
+import { normalizeTr } from "@/lib/text";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 
@@ -35,17 +36,20 @@ const katRenk: Record<string, { bg: string; color: string; dot: string; border: 
 const defaultRenk = { bg: "rgba(148,163,184,0.10)", color: "#CBD5E1", dot: "#94A3B8", border: "rgba(148,163,184,0.22)" };
 const renk = (kat: string) => katRenk[kat] ?? defaultRenk;
 
+// Türkçe duyarlı eşleştirme: "İ"/"ı" ve aksanlar sorguyu bozmaz (ilac = İlaç)
+const n = normalizeTr;
+
 function score(entry: IcdEntry, query: string): number {
-  const q = query.toLowerCase().trim();
+  const q = n(query);
   if (!q) return 0;
   const terms = q.split(/\s+/);
   let s = 0;
   for (const t of terms) {
-    if (entry.kod.toLowerCase().startsWith(t)) s += 30;
-    if (entry.tr.toLowerCase().includes(t)) s += 20;
-    if (entry.ad.toLowerCase().includes(t)) s += 15;
-    if (entry.anahtar.toLowerCase().includes(t)) s += 10;
-    if (entry.kategori.toLowerCase().includes(t)) s += 5;
+    if (n(entry.kod).startsWith(t)) s += 30;
+    if (n(entry.tr).includes(t)) s += 20;
+    if (n(entry.ad).includes(t)) s += 15;
+    if (n(entry.anahtar).includes(t)) s += 10;
+    if (n(entry.kategori).includes(t)) s += 5;
   }
   return s;
 }
@@ -125,10 +129,11 @@ export default function ICD10Page() {
               <button
                 key={k}
                 onClick={() => setKategori(k)}
-                className="shrink-0 text-[11px] font-bold px-2.5 py-1 rounded-full border transition"
+                aria-pressed={isActive}
+                className={`shrink-0 text-xs font-bold px-3 min-h-8 rounded-full border transition ${isActive ? "icd-kat-text" : ""}`}
                 style={
                   isActive
-                    ? { background: r.bg, color: r.color, borderColor: r.border }
+                    ? ({ background: r.bg, borderColor: r.dot, "--kat": r.dot, "--kat-soft": r.color } as React.CSSProperties)
                     : { background: "rgba(255,255,255,0.04)", color: "var(--fg-muted)", borderColor: "var(--glass-border)" }
                 }
               >
@@ -164,7 +169,7 @@ export default function ICD10Page() {
               <div
                 key={`${entry.kod}-${idx}`}
                 className="glass-card overflow-hidden"
-                style={{ borderColor: r.border }}
+                style={{ borderColor: r.border, "--kat": r.dot, "--kat-soft": r.color } as React.CSSProperties}
               >
                 <div className="px-3.5 py-3 flex items-start gap-3">
                   {/* Copy button / code badge */}
@@ -172,18 +177,19 @@ export default function ICD10Page() {
                     <button
                       onClick={() => copyCode(entry.kod)}
                       title="Kodu kopyala"
-                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border text-sm font-bold transition active:scale-[0.97]"
+                      aria-label={isCopied ? `${entry.kod} kopyalandı` : `${entry.kod} kodunu kopyala`}
+                      className={`min-h-11 flex items-center gap-1.5 px-2.5 rounded-xl border text-sm font-bold tabular-nums transition active:scale-[0.97] ${isCopied ? "" : "icd-kat-text"}`}
                       style={
                         isCopied
-                          ? { background: "rgba(52,211,153,0.2)", color: "#34D399", borderColor: "rgba(52,211,153,0.4)" }
-                          : { background: r.bg, color: r.color, borderColor: r.border }
+                          ? { background: "rgba(52,211,153,0.2)", color: "var(--ok-text)", borderColor: "rgba(52,211,153,0.4)" }
+                          : { background: r.bg, borderColor: r.border }
                       }
                     >
                       {isCopied ? (
-                        <>
-                          <Check style={{ width: 11, height: 11 }} strokeWidth={3} />
+                        <span key="ok" className="flex items-center gap-1.5 animate-in fade-in zoom-in-95">
+                          <Check style={{ width: 12, height: 12 }} strokeWidth={3} />
                           <span className="text-[11px]">Kopyalandı</span>
-                        </>
+                        </span>
                       ) : (
                         <>
                           <span>{entry.kod}</span>
@@ -195,11 +201,11 @@ export default function ICD10Page() {
 
                   {/* Entry content */}
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold leading-tight" style={{ color: r.color }}>{entry.tr}</p>
+                    <p className="icd-kat-text text-sm font-bold leading-tight">{entry.tr}</p>
                     <p className="text-[11px] text-subtle mt-0.5 leading-snug">{entry.ad}</p>
                     <div className="flex items-center gap-1.5 mt-1.5">
                       <div className="w-1.5 h-1.5 rounded-full" style={{ background: r.dot }} />
-                      <span className="text-[11px] font-semibold" style={{ color: r.color, opacity: 0.8 }}>{entry.kategori}</span>
+                      <span className="icd-kat-text text-[11px] font-semibold">{entry.kategori}</span>
                     </div>
                   </div>
                 </div>

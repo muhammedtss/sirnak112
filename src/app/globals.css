@@ -257,6 +257,10 @@ p, li, dd, figcaption { text-wrap: pretty; }
 .skala-card:active { transform: scale(0.97); }
 .skala-card:focus-visible { box-shadow: var(--focus-ring); }
 
+/* ICD-10 kategori metni: koyuda pastel ton, açıkta kategori renginin koyulaştırılmışı (≥4,5:1) */
+.icd-kat-text { color: var(--kat-soft); }
+[data-theme="light"] .icd-kat-text { color: color-mix(in srgb, var(--kat) 55%, #000); }
+
 /* Görsel çerçevesi: saf beyaz/siyah %10 (renkli nötr kenarda kir gibi görünür) */
 .img-outline { outline: 1px solid oklch(1 0 0 / 0.1); outline-offset: -1px; }
 [data-theme="light"] .img-outline { outline-color: oklch(0 0 0 / 0.1); }

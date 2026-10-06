@@ -5,6 +5,9 @@ import ilaclarData from "@/data/ilaclar.json";
 import icd10Data from "@/data/icd10.json";
 import envanterData from "@/data/ambulans-envanter.json";
 import { DERSLER } from "@/lib/ekg/lessons";
+import { normalizeTr } from "@/lib/text";
+
+export { normalizeTr };
 
 export type SearchGroup = "Algoritma" | "Vaka" | "İlaç" | "Skala" | "ICD-10" | "EKG" | "Envanter" | "Evrak";
 
@@ -34,22 +37,6 @@ export interface SearchItem {
   keywords?: string;
   /** Normalize edilmiş arama metni (önceden hesaplanır) */
   haystack: string;
-}
-
-/** Türkçe duyarlı normalize: büyük/küçük harf + aksan farkını yok sayar (Şok = sok, İlaç = ilac). */
-export function normalizeTr(s: string): string {
-  return s
-    .toLocaleLowerCase("tr")
-    .replace(/ı/g, "i")
-    .replace(/ş/g, "s")
-    .replace(/ğ/g, "g")
-    .replace(/ü/g, "u")
-    .replace(/ö/g, "o")
-    .replace(/ç/g, "c")
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
 }
 
 type Raw = Omit<SearchItem, "haystack">;
