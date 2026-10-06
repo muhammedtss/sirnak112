@@ -213,5 +213,5 @@ Faz 5 (GSAP) plan gereği açık onay olmadan **uygulanmadı**.
 - `tiny-text`: 11px etiket tabanı (Faz 2 tip ölçeği). Y11'deki 12px önerisi tüm etiketlerde uygulanmadı; ICD-10 İngilizce ad ve kategori satırları 11px.
 - `nested-cards` (GKS bölümleri), `flat-type-hierarchy` (vaka akışı): yapısal düzen değişikliği gerektirir; refinement kapsamı dışında.
 - ICD-10 skeleton loader uygulanmadı: arama eşzamanlı, yükleme anı yok.
-- EKG atlas modalı eklenmedi: atlas kartları zaten sayfa içinde genişliyor; yeni bir modal etkileşim kalıbı eklemek kapsam dışı.
+- EKG atlas modalı eklenmedi: atlas kartları sayfa içinde açılıyor ve her EKG şeridinde zaten tam ekran görünümü (`EkgStrip` › Tam ekran) var; ikinci bir modal kalıbı eklenmedi.
 - Önceden var olan 3 lint hatası (`AlgorithmViewer`, `algoritmalar-gorsel`: setState-in-effect) akış mantığına dokunmamak için bırakıldı.
