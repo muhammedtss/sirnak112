@@ -211,6 +211,36 @@ p, li, dd, figcaption { text-wrap: pretty; }
 .hero-cta:hover { background: color-mix(in srgb, var(--primary-light) 16%, transparent); }
 .hero-cta:active { transform: scale(0.97); }
 
+/* Geniş ekranda içerikle hizalı yatay boşluk (max 64rem içerik + 1.25rem) */
+.page-gutter { padding-inline: max(1.25rem, calc((100% - 64rem) / 2 + 1.25rem)); }
+
+/* === Ana sayfa modül kartları === */
+.module-card { transition-duration: var(--dur-fast); }
+.module-watermark {
+  opacity: 0.07;
+  transform: rotate(-12deg);
+  transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-base) var(--ease-out);
+}
+.module-chevron {
+  color: var(--fg-subtle);
+  transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+@media (hover: hover) {
+  .module-card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--accent) 38%, transparent);
+    box-shadow: 0 14px 32px -14px color-mix(in srgb, var(--accent) 55%, transparent), var(--shadow-glass);
+  }
+  .module-card:hover .module-watermark { opacity: 0.12; transform: rotate(-6deg) scale(1.06); }
+  .module-card:hover .module-chevron { color: var(--accent); transform: translateX(2px); }
+}
+.module-card:active { transform: scale(0.97); }
+.module-card:focus-visible { box-shadow: var(--focus-ring); }
+
+/* Alt gezinme: basınca hafif küçülme */
+.nav-item { transition: transform var(--dur-press) var(--ease-out); }
+.nav-item:active { transform: scale(0.97); }
+
 /* === Glassmorphism === */
 .glass {
   background: var(--glass-bg);

@@ -17,9 +17,10 @@ export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    /* Safe-area padding for iPhone notch, now part of normal flow */
-    <div className="w-full flex justify-center pb-[env(safe-area-inset-bottom,16px)] pt-2 px-4">
+    /* Çentikli cihazlarda güvenli alan; çentiksizde en az 12px boşluk */
+    <div className="w-full flex justify-center pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2 px-4">
       <nav
+        aria-label="Ana gezinme"
         className="glass flex items-center justify-between w-full max-w-sm px-2 py-2 rounded-[2rem] shadow-xl"
         style={{ borderColor: "var(--glass-border)" }}
       >
@@ -34,7 +35,10 @@ export function BottomNav() {
             <Link
               key={item.href}
               href={item.href}
-              className="relative flex flex-col items-center justify-center w-12 h-12 rounded-full"
+              aria-label={item.label}
+              title={item.label}
+              aria-current={isActive ? "page" : undefined}
+              className="nav-item relative flex flex-col items-center justify-center w-12 h-12 rounded-full"
             >
               {isActive && (
                 <motion.div
@@ -45,11 +49,12 @@ export function BottomNav() {
                 />
               )}
               <Icon
-                className="relative z-10 transition-colors duration-200"
+                aria-hidden="true"
+                className="relative z-10 transition-colors duration-150"
                 style={{
                   width: 22,
                   height: 22,
-                  color: isActive ? "var(--primary-light)" : "var(--fg-subtle)",
+                  color: isActive ? "var(--accent-text)" : "var(--fg-subtle)",
                   strokeWidth: isActive ? 2.5 : 1.8,
                 }}
               />

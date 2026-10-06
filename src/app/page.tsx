@@ -38,7 +38,7 @@ export default function HomePage() {
       {/* ── Ambient header (no back btn) ── */}
       <header
         data-scrolled={scrolled}
-        className={`app-header sticky top-0 z-20 px-5 flex items-center justify-between gap-3 ${scrolled ? "py-2.5" : "pt-5 pb-4"}`}
+        className={`app-header page-gutter sticky top-0 z-20 flex items-center justify-between gap-3 ${scrolled ? "py-2.5" : "pt-5 pb-4"}`}
       >
         <div className="min-w-0">
           {!scrolled && (
@@ -64,7 +64,7 @@ export default function HomePage() {
       </header>
 
       {/* ── Hero banner ── */}
-      <section className="hero-card mx-4 mt-2 mb-5 p-5 glass-card overflow-hidden relative" aria-label="Hızlı erişim">
+      <section className="hero-card mx-4 sm:mx-auto sm:w-[calc(100%-2rem)] max-w-5xl mt-2 mb-5 p-5 glass-card overflow-hidden relative" aria-label="Hızlı erişim">
         {/* Teal ışıma */}
         <div
           aria-hidden="true"
@@ -95,53 +95,45 @@ export default function HomePage() {
         </button>
       </section>
 
-      {/* ── Bento Grid ── */}
-      <div
-        className="px-4 grid grid-cols-2 gap-3"
-      >
+      {/* ── Modül ızgarası: mobilde 2, geniş ekranda 4 sütun; 8 modül = yetim kart yok ── */}
+      <nav aria-label="Modüller" className="px-4 pb-6 w-full max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3">
         {quickLinks.map((link) => {
           const Icon = link.icon;
-          const isFullRow = link.href === "/icd10" || link.href === "/ekg-egitim";
           return (
-            <div key={link.href} className={isFullRow ? "col-span-2 flex justify-center" : "w-full"}>
-              <Link
-                href={link.href}
-                className={`glass-card glass-hover flex flex-col p-4 gap-3 group relative overflow-hidden ${isFullRow ? "w-[65%]" : "w-full"}`}
-              >
-                {/* Background Watermark Icon */}
-                <Icon
-                  className="absolute -right-4 -bottom-4 opacity-10 transform -rotate-12 group-hover:scale-110 group-hover:-rotate-6 transition duration-200 pointer-events-none"
-                  style={{ width: 80, height: 80, color: link.accent }}
-                  strokeWidth={1.5}
-                />
+            <Link
+              key={link.href}
+              href={link.href}
+              className="module-card glass-card flex flex-col p-4 gap-3 group relative overflow-hidden"
+              style={{ "--accent": link.accent } as React.CSSProperties}
+            >
+              {/* Filigran ikon */}
+              <Icon
+                aria-hidden="true"
+                className="module-watermark absolute -right-3 -bottom-3 pointer-events-none"
+                style={{ width: 76, height: 76, color: link.accent }}
+                strokeWidth={1.5}
+              />
 
+              <div className="flex items-center justify-between relative">
                 <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center relative z-10"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center"
                   style={{
                     background: `${link.accent}22`,
                     border: `1px solid ${link.accent}33`,
                   }}
                 >
-                  <Icon
-                    style={{ width: 20, height: 20, color: link.accent }}
-                    strokeWidth={2}
-                  />
+                  <Icon style={{ width: 20, height: 20, color: link.accent }} strokeWidth={2} />
                 </div>
-                <div className="flex items-end justify-between relative z-10 mt-1">
-                  <div className="flex flex-col">
-                    <span className="text-sm font-semibold leading-tight">{link.label}</span>
-                    <span className="text-[11px] text-muted font-medium mt-1">{link.desc}</span>
-                  </div>
-                  <ChevronRight
-                    className="shrink-0 opacity-30 group-hover:opacity-70 transition-opacity mb-1"
-                    style={{ width: 14, height: 14 }}
-                  />
-                </div>
-              </Link>
-            </div>
+                <ChevronRight aria-hidden="true" className="module-chevron shrink-0" style={{ width: 16, height: 16 }} />
+              </div>
+              <div className="flex flex-col relative mt-1">
+                <span className="text-sm font-semibold leading-tight">{link.label}</span>
+                <span className="text-xs text-muted font-medium mt-1">{link.desc}</span>
+              </div>
+            </Link>
           );
         })}
-      </div>
+      </nav>
     </PageShell>
   );
 }
