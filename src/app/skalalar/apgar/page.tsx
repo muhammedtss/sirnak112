@@ -3,6 +3,7 @@ import { useState } from "react";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";
+import { NumberPop } from "@/components/ui/motion";
 
 const criteria = [
   {
@@ -116,9 +117,9 @@ export default function ApgarPage() {
         ))}
 
         {allSelected && (
-          <div className={`${interp.bg} rounded-xl border-2 border-current p-4 text-center ${interp.color}`}>
+          <div role="status" aria-live="polite" className={`animate-in fade-in zoom-in-95 ${interp.bg} rounded-xl border-2 border-current p-4 text-center ${interp.color}`}>
             <p className="text-xs font-bold uppercase tracking-wider mb-1">{minute}. Dakika APGAR Skoru</p>
-            <p className="text-4xl font-black tabular-nums">{total}/10</p>
+            <p className="text-4xl font-black tabular-nums"><NumberPop value={total} />/10</p>
             <p className="text-sm font-bold mt-1">{interp.text}</p>
           </div>
         )}

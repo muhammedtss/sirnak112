@@ -236,6 +236,14 @@ p, li, dd, figcaption { text-wrap: pretty; }
 }
 .module-card:active { transform: scale(0.97); }
 .module-card:focus-visible { box-shadow: var(--focus-ring); }
+/* Skala kartları ana sayfa kartlarının dilini paylaşır (daha küçük) */
+.skala-card { border-radius: 1.25rem; transition-duration: var(--dur-fast); }
+@media (hover: hover) {
+  .skala-card:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--accent) 38%, transparent); }
+  .skala-card:hover .module-chevron { color: var(--accent); transform: translateX(2px); }
+}
+.skala-card:active { transform: scale(0.97); }
+.skala-card:focus-visible { box-shadow: var(--focus-ring); }
 
 /* Alt gezinme: basınca hafif küçülme */
 .nav-item { transition: transform var(--dur-press) var(--ease-out); }
@@ -328,6 +336,10 @@ p, li, dd, figcaption { text-wrap: pretty; }
 [data-theme="light"] :is(.text-amber-200, .text-amber-300, .text-amber-400) { color: #B45309; }
 [data-theme="light"] :is(.text-orange-300, .text-orange-400) { color: #C2410C; }
 [data-theme="light"] :is(.text-sky-200, .text-sky-300, .text-sky-400) { color: #0369A1; }
+[data-theme="light"] :is(.text-blue-300, .text-blue-400) { color: #1D4ED8; }
+[data-theme="light"] :is(.text-indigo-300, .text-indigo-400) { color: #4338CA; }
+[data-theme="light"] :is(.text-purple-300, .text-purple-400, .text-violet-300, .text-violet-400) { color: #6D28D9; }
+[data-theme="light"] :is(.text-pink-300, .text-pink-400) { color: #BE185D; }
 
 /* === Typography === */
 .text-glow {

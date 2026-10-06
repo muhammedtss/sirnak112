@@ -33,7 +33,7 @@ const lmaSizes = [
     etTube: "4.5 mm",
     note: "Küçük çocuk",
     color: "border-blue-300 bg-blue-500/15",
-    badge: "bg-blue-500/150",
+    badge: "bg-blue-500/15",
     textColor: "text-blue-800",
   },
   {
@@ -44,7 +44,7 @@ const lmaSizes = [
     etTube: "5.0 mm",
     note: "Büyük çocuk",
     color: "border-teal-300 bg-teal-500/15",
-    badge: "bg-teal-500/150",
+    badge: "bg-teal-500/15",
     textColor: "text-teal-800",
   },
   {
@@ -92,7 +92,7 @@ export default function LMAPage() {
         <div className="bg-green-50 border border-green-200 rounded-xl p-3.5">
           <p className="text-xs font-bold text-green-800 uppercase tracking-wide mb-1">LMA Numara Seçimi</p>
           <p className="text-[11px] text-green-700 leading-relaxed">
-            Hastanın kilogram cinsinden vücut ağırlığına göre uygun numarayı seç. Kaf basıncını 60 cmH₂O'yu geçmeyecek şekilde şişir.
+            Hastanın kilogram cinsinden vücut ağırlığına göre uygun numarayı seç. Kaf basıncını 60 cmH₂O&apos;yu geçmeyecek şekilde şişir.
           </p>
         </div>
 

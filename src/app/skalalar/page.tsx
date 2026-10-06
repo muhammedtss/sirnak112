@@ -1,12 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ChevronDown, Activity } from "lucide-react";
+import { ChevronRight, Activity } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
-import BurnCalculatorEmbed from "@/components/skalalar/BurnCalculatorEmbed";
 
 interface Skala {
   id: string;
@@ -133,78 +130,33 @@ const cocukSkalalar: Skala[] = [
   },
 ];
 
-function GlassAccordionItem({ skala, isOpen, onToggle }: {
-  skala: Skala; isOpen: boolean; onToggle: () => void;
-}) {
+/** Tek dokunuşla hesaplayıcıyı açan skala kartı (K5 / Y10). */
+function SkalaKart({ skala }: { skala: Skala }) {
   return (
-    <div
-      className="glass-card overflow-hidden"
-      style={{ borderColor: isOpen ? skala.border : "var(--glass-border)" }}
+    <Link
+      id={`skala-${skala.id}`}
+      href={skala.href}
+      className="skala-card glass-card flex flex-col gap-2.5 p-3.5 group"
+      style={{ "--accent": skala.accent } as React.CSSProperties}
     >
-      <button
-        id={`skala-${skala.id}`}
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        className="w-full flex items-center gap-3 px-4 py-3.5 text-left"
-      >
+      <span className="flex items-center justify-between">
         <span
           className="shrink-0 w-9 h-9 flex items-center justify-center rounded-xl text-lg"
           style={{ background: skala.glow, border: `1px solid ${skala.border}` }}
+          aria-hidden="true"
         >
           {skala.icon}
         </span>
-        <span className="flex-1 text-sm font-semibold leading-tight">{skala.name}</span>
-        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-          <ChevronDown className="shrink-0 text-subtle" style={{ width: 16, height: 16 }} />
-        </motion.div>
-      </button>
-
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            key="content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-            className="overflow-hidden"
-          >
-            <div className="px-4 pb-4 pt-2 border-t" style={{ borderColor: "var(--glass-border)" }}>
-              <p className="text-sm leading-relaxed text-muted mb-3">{skala.description}</p>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {skala.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[11px] font-bold px-2.5 py-0.5 rounded-full border"
-                    style={{ background: skala.glow, color: skala.accent, borderColor: skala.border }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <Link
-                href={skala.href}
-                id={`skala-link-${skala.id}`}
-                className="inline-flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-xl border transition active:scale-[0.97]"
-                style={{
-                  background: skala.glow,
-                  color: skala.accent,
-                  borderColor: skala.border,
-                }}
-              >
-                Hesaplamayı Aç
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+        <ChevronRight aria-hidden="true" className="module-chevron shrink-0" style={{ width: 16, height: 16 }} />
+      </span>
+      <span className="text-sm font-semibold leading-snug">{skala.name}</span>
+      <span className="text-xs text-muted leading-snug">{skala.tags.join(" · ")}</span>
+    </Link>
   );
 }
 
-function SkalaSection({ title, icon, skalalar, openId, onToggle }: {
+function SkalaSection({ title, icon, skalalar }: {
   title: string; icon: string; skalalar: Skala[];
-  openId: string | null; onToggle: (id: string) => void;
 }) {
   return (
     <div className="flex flex-col gap-3">
@@ -219,21 +171,13 @@ function SkalaSection({ title, icon, skalalar, openId, onToggle }: {
         </span>
       </div>
       {skalalar.map((s) => (
-        <GlassAccordionItem
-          key={s.id}
-          skala={s}
-          isOpen={openId === s.id}
-          onToggle={() => onToggle(s.id)}
-        />
+        <SkalaKart key={s.id} skala={s} />
       ))}
     </div>
   );
 }
 
 export default function SkalalarPage() {
-  const [openYetiskin, setOpenYetiskin] = useState<string | null>(null);
-  const [openCocuk, setOpenCocuk] = useState<string | null>(null);
-
   return (
     <PageShell>
       <AppHeader
@@ -244,17 +188,15 @@ export default function SkalalarPage() {
 
       <div className="px-4 pt-5 pb-4 max-w-3xl mx-auto w-full">
         {/* Banner */}
-        <div
-          className="glass-card p-4 mb-6 relative overflow-hidden"
-          style={{ borderColor: "rgba(99,102,241,0.25)" }}
-        >
+        <div className="hero-card glass-card p-4 mb-6 relative overflow-hidden">
           <div
+            aria-hidden="true"
             className="absolute -right-4 -top-4 w-24 h-24 rounded-full pointer-events-none"
-            style={{ background: "radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%)", filter: "blur(16px)" }}
+            style={{ background: "radial-gradient(circle, color-mix(in srgb, #34D399 28%, transparent) 0%, transparent 70%)", filter: "blur(16px)" }}
           />
           <p className="text-sm font-bold relative z-10">Tıbbi Skalalar &amp; Hesaplayıcılar</p>
           <p className="text-subtle text-xs mt-1 relative z-10">
-            Skala kartına dokun, aç ve hesaplama ekranına geç.
+            Skala kartına dokun, hesaplama ekranı açılsın.
           </p>
         </div>
 
@@ -264,15 +206,11 @@ export default function SkalalarPage() {
             title="Yetişkin Skalaları"
             icon="👤"
             skalalar={yetiskinSkalalar}
-            openId={openYetiskin}
-            onToggle={(id) => setOpenYetiskin((p) => (p === id ? null : id))}
           />
           <SkalaSection
             title="Çocuk Skalaları"
             icon="🧒"
             skalalar={cocukSkalalar}
-            openId={openCocuk}
-            onToggle={(id) => setOpenCocuk((p) => (p === id ? null : id))}
           />
 
         </div>

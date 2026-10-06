@@ -3,6 +3,7 @@ import { useState } from "react";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";
+import { NumberPop } from "@/components/ui/motion";
 
 const sections = [
   {
@@ -62,6 +63,7 @@ export default function GlasgowPediatriPage() {
                 <button
                   key={opt.score}
                   onClick={() => setSelections((p) => ({ ...p, [si]: opt.score }))}
+                  aria-pressed={selections[si] === opt.score}
                   className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors ${
                     selections[si] === opt.score ? "bg-green-500/15" : "glass-hover hover:bg-white/5"
                   }`}
@@ -81,9 +83,9 @@ export default function GlasgowPediatriPage() {
         ))}
 
         {allSelected && (
-          <div className={`${severity.bg} rounded-xl border-2 border-current p-4 text-center ${severity.color}`}>
+          <div role="status" aria-live="polite" className={`animate-in fade-in zoom-in-95 ${severity.bg} rounded-xl border-2 border-current p-4 text-center ${severity.color}`}>
             <p className="text-xs font-bold uppercase tracking-wider mb-1">Toplam Pediatrik GKS Skoru</p>
-            <p className="text-4xl font-black tabular-nums">{total}</p>
+            <p className="text-4xl font-black tabular-nums"><NumberPop value={total} /></p>
             <p className="text-sm font-bold mt-1">{severity.text}</p>
           </div>
         )}

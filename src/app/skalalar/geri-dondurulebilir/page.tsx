@@ -204,7 +204,7 @@ export default function GeriDondurulebilirPage() {
         </div>
 
         <div className="bg-slate-200/50 dark:bg-slate-800 rounded-xl p-3 text-[11px] text-slate-600 dark:text-white/90 text-center font-semibold border border-slate-200 dark:border-transparent">
-          KPR'yi kesme — bu nedenler tedavi edilebilir ✓
+          KPR&apos;yi kesme — bu nedenler tedavi edilebilir ✓
         </div>
       </main>
     </PageShell>

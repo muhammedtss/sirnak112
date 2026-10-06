@@ -200,7 +200,7 @@ export default function PATPage() {
             >
               {/* Görünüm */}
               <div className="px-3 py-2.5 flex items-start gap-1.5">
-                <span className="shrink-0 w-5 h-5 rounded-full bg-indigo-100 text-indigo-400 text-[11px] font-black flex items-center justify-center leading-none">
+                <span className="shrink-0 w-5 h-5 rounded-full bg-indigo-500/15 text-indigo-400 text-[11px] font-black flex items-center justify-center leading-none">
                   {gorunumMaddeler[i].harf}
                 </span>
                 <span className="text-[12px] text-white/90 leading-snug font-medium">
@@ -228,8 +228,8 @@ export default function PATPage() {
         </div>
 
         {/* Üçgen görsel */}
-        <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-xl p-4 text-white text-center">
-          <p className="text-xs font-bold uppercase tracking-wider opacity-80 mb-1">Pediatric Assessment Triangle</p>
+        <div className="bg-emerald-500/10 border border-emerald-500/25 rounded-xl p-4 text-fg text-center">
+          <p className="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">Pediatric Assessment Triangle</p>
           <div className="flex justify-center gap-4 mt-2">
             {["Görünüm (A)", "Solunum (B)", "Dolaşım (C)"].map((l) => (
               <div key={l} className="text-center">
@@ -245,7 +245,7 @@ export default function PATPage() {
           const current = statuses[side.key];
           return (
             <div key={side.key} className="glass-card rounded-xl border border-white/10  overflow-hidden">
-              <div className="bg-indigo-500/150/15 text-indigo-400 border-b border-white/10 px-4 py-2.5 flex items-center gap-2">
+              <div className="bg-indigo-500/15 text-indigo-400 border-b border-white/10 px-4 py-2.5 flex items-center gap-2">
                 <span className="text-base">{side.icon}</span>
                 <div>
                   <p className="text-sm font-black leading-tight">{side.title}</p>
