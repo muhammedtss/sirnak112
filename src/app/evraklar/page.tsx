@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { Search, ChevronDown, Download, FileText } from "lucide-react";
@@ -333,13 +332,14 @@ function EvrakKart({ evrak }: { evrak: Evrak }) {
             <div className="text-[11px] font-mono font-bold mb-1 opacity-70" style={{ color: tagColor.color }}>{evrak.kod}</div>
             <h3 className="font-bold text-sm sm:text-base leading-tight">{evrak.baslik}</h3>
           </div>
-          <motion.div
-            animate={{ rotate: acik ? 180 : 0 }}
-            transition={{ duration: 0.2 }}
+          <span
+            aria-hidden="true"
             className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-white/5"
           >
-            <ChevronDown className="w-4 h-4 text-subtle" />
-          </motion.div>
+            <ChevronDown
+              className={`w-4 h-4 text-subtle transition-transform duration-200 ${acik ? "rotate-180" : ""}`}
+            />
+          </span>
         </div>
         <div className="px-4 py-2.5 flex items-center justify-between gap-3 border-t" style={{ borderColor: "var(--glass-border)" }}>
           <p className="text-subtle text-xs leading-snug flex-1 line-clamp-2">{evrak.aciklama}</p>
@@ -352,15 +352,9 @@ function EvrakKart({ evrak }: { evrak: Evrak }) {
         </div>
       </button>
 
-      <AnimatePresence initial={false}>
-        {acik && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-            className="overflow-hidden"
-          >
+      {/* Panel reveal: yükseklik canlandırılmaz (hareket bütçesi) — opaklık + küçük kayma */}
+      {acik && (
+          <div className="animate-in fade-in slide-in-from-top-2">
             <div className="border-t" style={{ borderColor: "var(--glass-border)" }}>
               <div className="px-4 py-4 space-y-3">
                 {evrak.bolumler.map((b, i) => (
@@ -381,7 +375,7 @@ function EvrakKart({ evrak }: { evrak: Evrak }) {
                 <a
                   href={evrak.dosya}
                   download
-                  className="w-full flex items-center justify-center gap-2 text-sm font-bold py-3 rounded-xl active:scale-[0.97] transition border"
+                  className="w-full min-h-11 flex items-center justify-center gap-2 text-sm font-bold py-3 rounded-xl active:scale-[0.97] transition border"
                   style={{ background: tagColor.bg, color: tagColor.color, borderColor: tagColor.border }}
                 >
                   <Download style={{ width: 16, height: 16 }} />
@@ -389,9 +383,8 @@ function EvrakKart({ evrak }: { evrak: Evrak }) {
                 </a>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+      )}
     </div>
   );
 }
@@ -420,7 +413,7 @@ export default function EvraklarPage() {
         badge={EVRAKLAR.length}
       />
 
-      <div className="sticky top-[57px] z-10 px-4 py-3 glass border-b space-y-3" style={{ borderColor: "var(--glass-border)" }}>
+      <div className="sticky top-(--app-header-h) z-10 px-4 py-3 glass border-b space-y-3" style={{ borderColor: "var(--glass-border)" }}>
         <div className="relative max-w-2xl mx-auto">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-subtle" style={{ width: 15, height: 15 }} />
           <input

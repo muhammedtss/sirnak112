@@ -89,7 +89,7 @@ export default function ICD10Page() {
 
       {/* Sticky search + filter bar */}
       <div
-        className="sticky top-[57px] z-10 px-4 py-3 space-y-2.5 glass border-b"
+        className="sticky top-(--app-header-h) z-10 px-4 py-3 space-y-2.5 glass border-b"
         style={{ borderColor: "var(--glass-border)" }}
       >
         {/* Search input */}

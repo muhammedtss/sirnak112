@@ -38,6 +38,7 @@
   --dur-fast:    150ms;  /* hover, renk, geri bildirim */
   --dur-base:    200ms;  /* açma/kapama, sayfa geçişi */
   --focus-ring:  0 0 0 2px var(--bg), 0 0 0 4px var(--primary-light);
+  --app-header-h: 3.75rem; /* AppHeader: 44px buton + 2×8px dikey boşluk — yapışkan alt çubuklar bunun altına oturur */
   --accent-text: var(--primary-light); /* teal metin: koyu zeminde 9,8:1 */
   --info-text:   #60A5FA;
   --ok-text:     #34D399;
@@ -148,6 +149,9 @@ p, li, dd, figcaption { text-wrap: pretty; }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .app-header[data-scrolled="true"], .glass { background-color: var(--bg-surface); }
 }
+
+/* Başlığın altındaki yapışkan arama/filtre çubukları: içerik arkadan okunmasın */
+.sticky.glass { background-color: color-mix(in srgb, var(--bg) 84%, transparent); }
 
 /* Başlık ikon butonları: 44×44 dokunma alanı */
 .header-icon-btn {

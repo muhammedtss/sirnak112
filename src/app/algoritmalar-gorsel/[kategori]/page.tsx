@@ -183,7 +183,7 @@ export default function AlgoritmalarGorselKategoriPage() {
         icon={<ArrowLeft style={{ width: 16, height: 16 }} />}
       />
 
-      <div className="sticky top-[57px] z-10 px-4 py-3 glass border-b" style={{ borderColor: "var(--glass-border)" }}>
+      <div className="sticky top-(--app-header-h) z-10 px-4 py-3 glass border-b" style={{ borderColor: "var(--glass-border)" }}>
         <div className="relative max-w-md mx-auto">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-subtle" style={{ width: 15, height: 15 }} />
           <input

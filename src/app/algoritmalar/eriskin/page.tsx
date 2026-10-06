@@ -21,7 +21,7 @@ export default function EriskinAlgoritmalarListesi() {
 
       {/* Sticky search */}
       <div
-        className="sticky top-[57px] z-10 px-4 py-3 glass border-b"
+        className="sticky top-(--app-header-h) z-10 px-4 py-3 glass border-b"
         style={{ borderColor: "var(--glass-border)" }}
       >
         <div className="relative max-w-md mx-auto">
