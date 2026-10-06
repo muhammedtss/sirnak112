@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import ilaclarData from "@/data/ilaclar.json";
+import { NumberPop, useShake } from "@/components/ui/motion";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -36,13 +37,13 @@ const ALL_DRUGS = ilaclarData as unknown as Record<string, Drug>;
 
 function StepBadge({ step, label, active, done }: { step: number; label: string; active: boolean; done: boolean }) {
   return (
-    <div className={`flex items-center gap-2 transition duration-200 ${active ? "opacity-100" : done ? "opacity-60" : "opacity-30"}`}>
-      <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 transition border ${
-        done 
-          ? "bg-teal-500/20 border-teal-500/50 text-teal-400" 
-          : active 
-            ? "bg-teal-500/20 border-teal-500/50 text-teal-400 shadow-[0_0_15px_rgba(59,130,246,0.3)] ring-2 ring-teal-500/30" 
-            : "glass-card text-subtle border-white/5"
+    <div className="flex items-center gap-2" aria-current={active ? "step" : undefined}>
+      <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 border tabular-nums transition-colors duration-150 ${
+        done
+          ? "bg-teal-500/15 border-teal-500/40 text-teal-400"
+          : active
+            ? "bg-teal-500/20 border-teal-500/60 text-teal-400 ring-2 ring-teal-500/30"
+            : "border-[color:var(--glass-border-h)] text-subtle"
       }`}>
         {done ? (
           <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -50,7 +51,7 @@ function StepBadge({ step, label, active, done }: { step: number; label: string;
           </svg>
         ) : step}
       </div>
-      <span className={`text-xs font-semibold tracking-wide ${active ? "text-teal-400" : "text-subtle"}`}>{label}</span>
+      <span className={`text-xs font-semibold tracking-wide ${active ? "text-teal-400" : done ? "text-muted" : "text-subtle"}`}>{label}</span>
     </div>
   );
 }
@@ -69,24 +70,26 @@ function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
   const showDopaminDrops = drugId === "dopamin" && !isNaN(weightNum);
 
   return (
-    <div className="mt-5 rounded-2xl overflow-hidden shadow-lg border border-teal-500/30 glass-card animate-in fade-in slide-in-from-bottom-4 duration-200">
+    <div role="status" aria-live="polite" className="mt-5 rounded-2xl overflow-hidden shadow-lg border border-teal-500/30 glass-card animate-in fade-in slide-in-from-bottom-4 duration-200">
       {/* Header */}
       <div className="bg-teal-500/20 px-5 py-3 flex items-center justify-between border-b border-teal-500/30">
         <span className="text-teal-400 text-sm font-bold uppercase tracking-widest">Hesaplanan Doz</span>
-        <span className="bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full">{ageLabel}</span>
+        <span className="bg-white/10 text-fg text-xs font-bold px-3 py-1 rounded-full">{ageLabel}</span>
       </div>
 
       {/* Main Dose */}
       <div className="bg-white/5 px-5 py-5 text-center">
-        <p className="text-6xl font-black text-white leading-none tracking-tight drop-shadow-[0_0_15px_rgba(52,211,153,0.3)] tabular-nums">{dose}</p>
+        <p className="text-6xl font-black text-fg leading-none tracking-tight drop-shadow-[0_0_15px_rgba(52,211,153,0.3)] tabular-nums">
+          <NumberPop value={dose} />
+        </p>
         <p className="text-lg text-teal-400 font-semibold mt-1">{doseInfo.unit}</p>
         {doseInfo.isWeightBased && weight && (
-          <p className="text-xs text-subtle mt-1">{weight} kg × {doseInfo.dosePerKg} {doseInfo.unit}/kg</p>
+          <p className="text-xs text-subtle mt-1 tabular-nums">{weight} kg × {doseInfo.dosePerKg} {doseInfo.unit}/kg</p>
         )}
         {showDopaminDrops && (
           <div className="mt-4 bg-orange-500/10 border border-orange-500/30 rounded-xl p-3">
             <p className="text-[11px] text-orange-400 font-bold uppercase tracking-widest mb-1">cc/saat Ayar Değeri</p>
-            <p className="text-2xl font-black text-orange-300 tabular-nums">{(weightNum * 1.5).toFixed(1)} <span className="text-sm font-bold text-orange-400/80">cc/saat</span></p>
+            <p className="text-2xl font-black text-orange-300 tabular-nums"><NumberPop value={(weightNum * 1.5).toFixed(1)} /> <span className="text-sm font-bold text-orange-400/80">cc/saat</span></p>
           </div>
         )}
       </div>
@@ -102,7 +105,7 @@ function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
             </div>
             <div>
               <p className="text-[11px] text-muted font-medium uppercase tracking-wide">Uygulama Yolu</p>
-              <p className="text-sm font-bold text-white">{doseInfo.route}</p>
+              <p className="text-sm font-bold text-fg">{doseInfo.route}</p>
             </div>
           </div>
         )}
@@ -116,7 +119,7 @@ function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
             </div>
             <div>
               <p className="text-[11px] text-amber-400 font-medium uppercase tracking-wide">Maksimum Doz</p>
-              <p className="text-sm font-bold text-white">{doseInfo.maxDose}</p>
+              <p className="text-sm font-bold text-fg tabular-nums">{doseInfo.maxDose}</p>
             </div>
           </div>
         )}
@@ -160,6 +163,7 @@ export default function DrugDoseCalculator() {
   const weightNum = parseFloat(weight);
   const isWeightInvalid = weight !== "" && (isNaN(weightNum) || weightNum <= 0 || weightNum > 300);
   const isWeightHigh = !isWeightInvalid && weightNum > 150;
+  const weightRef = useShake<HTMLInputElement>(isWeightInvalid);
 
   const isSpecialWeightDrug = selectedDrugId === "dopamin";
   const requiresWeight = currentDoseInfo?.isWeightBased || isSpecialWeightDrug;
@@ -168,7 +172,7 @@ export default function DrugDoseCalculator() {
   const calculatedDose = useMemo(() => {
     if (!currentDoseInfo) return null;
     if (!currentDoseInfo.isAvailable) return null;
-    
+
     if (requiresWeight) {
       if (!weight || isWeightInvalid || weightNum > 300) return null;
       if (currentDoseInfo.isWeightBased && currentDoseInfo.dosePerKg) {
@@ -246,7 +250,7 @@ export default function DrugDoseCalculator() {
                 <button
                   key={drug.id}
                   onMouseDown={() => handleDrugSelect(drug)}
-                  className={`w-full text-left px-4 py-3.5 glass-hover transition-colors border-b border-white/5 last:border-0 ${selectedDrugId === drug.id ? "bg-white/10 text-white font-bold" : "text-muted"}`}
+                  className={`w-full text-left px-4 py-3.5 glass-hover transition-colors border-b border-white/5 last:border-0 ${selectedDrugId === drug.id ? "bg-white/10 text-fg font-bold" : "text-muted"}`}
                 >
                   <span className="text-sm font-semibold">{drug.name}</span>
                   <span className="text-xs text-subtle ml-2">· {Object.keys(drug.cases).length} vaka</span>
@@ -280,7 +284,7 @@ export default function DrugDoseCalculator() {
                 onClick={() => { setSelectedCaseKey(caseKey); setWeight(""); }}
                 className={`w-full text-left px-4 py-3.5 rounded-xl border transition duration-150 active:scale-[0.98] shadow-sm min-h-[52px] ${
                   selectedCaseKey === caseKey
-                    ? "bg-teal-500/20 border-teal-500/50 text-teal-300 shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                    ? "bg-teal-500/20 border-teal-500/50 text-teal-300 shadow-[0_0_15px_rgba(45,212,191,0.18)]"
                     : "glass-card text-muted hover:border-white/30 hover:bg-white/5"
                 }`}
               >
@@ -313,7 +317,7 @@ export default function DrugDoseCalculator() {
                       isDisabled
                         ? "opacity-40 cursor-not-allowed bg-transparent text-subtle line-through"
                         : ageGroup === ag
-                          ? "bg-white/10 text-white shadow-md border border-white/20"
+                          ? "bg-white/10 text-fg shadow-md border border-white/20"
                           : "text-muted hover:bg-white/5"
                     }`}
                   >
@@ -347,8 +351,11 @@ export default function DrugDoseCalculator() {
                   Hasta Kilosu (kg)
                 </label>
                 <input
+                  ref={weightRef}
                   type="text"
                   inputMode="decimal"
+                  aria-invalid={isWeightInvalid || undefined}
+                  aria-describedby={isWeightInvalid ? "kilo-hata" : undefined}
                   value={weight}
                   onChange={(e) => {
                     const val = e.target.value.replace(",", ".");
@@ -358,17 +365,17 @@ export default function DrugDoseCalculator() {
                   }}
                   onKeyDown={(e) => { if (["-", "+", "e", "E"].includes(e.key)) e.preventDefault(); }}
                   placeholder="Örn: 70"
-                  className={`w-full border rounded-xl px-4 py-4 text-3xl font-black text-center tracking-wide focus:outline-none transition ${
+                  className={`w-full border rounded-xl px-4 py-4 text-3xl font-black text-center tracking-wide tabular-nums placeholder:text-[color:var(--fg-subtle)] focus:outline-none transition ${
                     isWeightInvalid
                       ? "border-red-500/50 bg-red-500/10 text-red-400 focus:ring-2 focus:ring-red-500/50"
                       : isWeightHigh
                         ? "border-amber-500/50 bg-amber-500/10 text-amber-400 focus:ring-2 focus:ring-amber-500/50"
-                        : "border-white/20 bg-black/20 text-white focus:ring-2 focus:ring-teal-400 focus:border-transparent"
+                        : "border-white/20 bg-black/20 text-fg focus:ring-2 focus:ring-teal-400 focus:border-transparent"
                   }`}
                 />
                 {/* Weight warnings */}
                 {isWeightInvalid && weight !== "" && (
-                  <div className="flex items-center gap-2 bg-red-500/10 border border-red-500/30 px-3 py-2 rounded-lg">
+                  <div id="kilo-hata" role="alert" className="flex items-center gap-2 bg-red-500/10 border border-red-500/30 px-3 py-2 rounded-lg animate-in fade-in slide-in-from-top-2">
                     <svg className="w-4 h-4 text-red-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0v-4.5A.75.75 0 0110 5zm0 10a1 1 0 100-2 1 1 0 000 2z" />
                     </svg>
@@ -391,7 +398,7 @@ export default function DrugDoseCalculator() {
             {currentDoseInfo?.isAvailable && !requiresWeight && currentDoseInfo.fixedDose && (
               <div className="bg-teal-500/10 border border-teal-500/30 rounded-xl p-4">
                 <p className="text-xs text-teal-400 font-bold uppercase tracking-wide mb-1">Sabit Doz (Kilo Bağımsız)</p>
-                <p className="text-4xl font-black text-teal-300 tabular-nums">{currentDoseInfo.fixedDose}</p>
+                <p className="text-4xl font-black text-teal-300 tabular-nums"><NumberPop value={currentDoseInfo.fixedDose} /></p>
                 <p className="text-base text-teal-400/80 font-semibold mt-0.5">{currentDoseInfo.unit}</p>
               </div>
             )}
