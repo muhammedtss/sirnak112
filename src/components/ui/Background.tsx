@@ -6,21 +6,21 @@ export function Background() {
       className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none"
       style={{ backgroundColor: "var(--bg)" }}
     >
-      {/* Primary indigo orb — top left */}
+      {/* Teal ışıma — sol üst */}
       <div
         className="absolute -top-[15%] -left-[15%] w-[70vw] h-[70vw] rounded-full"
         style={{
           background:
-            "radial-gradient(circle at center, rgba(99,102,241,0.22) 0%, transparent 70%)",
+            "radial-gradient(circle at center, rgba(45,212,191,0.10) 0%, transparent 70%)",
           filter: "blur(40px)",
         }}
       />
-      {/* Violet orb — bottom right */}
+      {/* Derin camgöbeği ışıma — sağ alt */}
       <div
         className="absolute -bottom-[20%] -right-[10%] w-[80vw] h-[80vw] rounded-full"
         style={{
           background:
-            "radial-gradient(circle at center, rgba(139,92,246,0.16) 0%, transparent 70%)",
+            "radial-gradient(circle at center, rgba(13,148,136,0.12) 0%, transparent 70%)",
           filter: "blur(50px)",
         }}
       />

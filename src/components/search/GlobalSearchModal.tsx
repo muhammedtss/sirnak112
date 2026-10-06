@@ -1,341 +1,277 @@
 "use client";
 
-import { useState, useMemo, useEffect, useRef } from "react";
-import Link from "next/link";
-import eriskinData from "@/data/eriskin.json";
-import cocukData from "@/data/cocuk.json";
-import yenidoganData from "@/data/yenidogan.json";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+import { Search, X, CornerDownLeft } from "lucide-react";
+import { GROUP_ACCENT, SEARCH_GROUPS, searchItems, type SearchGroup } from "./searchIndex";
 
-export interface SearchResultItem {
-  id: string;
-  title: string;
-  category: "Erişkin" | "Çocuk" | "Yenidoğan" | "Genel Özellik";
-  type: "algoritma" | "sayfa";
-  url: string;
-  description?: string;
+const OPEN_EVENT = "acil:open-search";
+
+/** Sayfadaki herhangi bir yerden hızlı aramayı açar (ör. ana sayfa hero butonu). */
+export function openGlobalSearch() {
+  window.dispatchEvent(new Event(OPEN_EVENT));
 }
 
+const ORNEKLER = ["Arrest", "Astım", "Şok", "Adrenalin", "Glasgow", "I21"];
+
 export default function GlobalSearchModal() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string>("Hepsi");
+  const [group, setGroup] = useState<SearchGroup | "Hepsi">("Hepsi");
+  const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const listId = useId();
 
-  // Focus input when modal opens
-  useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 100);
-    } else {
-      setSearchTerm("");
-      setSelectedCategory("Hepsi");
-    }
-  }, [isOpen]);
+  useEffect(() => setMounted(true), []); // eslint-disable-line react-hooks/set-state-in-effect -- portal hedefi yalnızca istemcide var
 
-  // Handle ESC key
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
-
-  // Index all search items
-  const allSearchItems = useMemo<SearchResultItem[]>(() => {
-    const items: SearchResultItem[] = [
-      // Static Pages & Features
-      {
-        id: "page-algoritmalar",
-        title: "Algoritmalar (Tüm Kategoriler)",
-        category: "Genel Özellik",
-        type: "sayfa",
-        url: "/algoritmalar",
-        description: "Erişkin, çocuk ve yenidoğan acil algoritmaları ana menüsü",
-      },
-      {
-        id: "page-eriskin-algoritmalar",
-        title: "Erişkin Algoritmaları Listesi",
-        category: "Erişkin",
-        type: "sayfa",
-        url: "/algoritmalar/eriskin",
-        description: "41 adet erişkin acil algoritması",
-      },
-      {
-        id: "page-cocuk-algoritmalar",
-        title: "Çocuk Algoritmaları Listesi",
-        category: "Çocuk",
-        type: "sayfa",
-        url: "/algoritmalar/cocuk",
-        description: "30 adet çocuk acil algoritması",
-      },
-      {
-        id: "page-yenidogan-algoritmalar",
-        title: "Yenidoğan Algoritmaları Listesi",
-        category: "Yenidoğan",
-        type: "sayfa",
-        url: "/algoritmalar/yenidogan",
-        description: "7 adet yenidoğan acil algoritması",
-      },
-      {
-        id: "page-ilac-doz",
-        title: "İlaç Doz Hesaplamaları",
-        category: "Genel Özellik",
-        type: "sayfa",
-        url: "/ilac-doz",
-        description: "Acil ilaç doz hesaplama aracı",
-      },
-      {
-        id: "page-ilac-doz-eriskin",
-        title: "Erişkin İlaç Dozları",
-        category: "Erişkin",
-        type: "sayfa",
-        url: "/ilac-doz/eriskin",
-        description: "Erişkin hastalar için ilaç doz rehberi",
-      },
-      {
-        id: "page-ilac-doz-cocuk",
-        title: "Çocuk İlaç Dozları",
-        category: "Çocuk",
-        type: "sayfa",
-        url: "/ilac-doz/cocuk",
-        description: "Pediyatrik hastalar için ilaç doz rehberi",
-      },
-      {
-        id: "page-ilac-doz-yenidogan",
-        title: "Yenidoğan İlaç Dozları",
-        category: "Yenidoğan",
-        type: "sayfa",
-        url: "/ilac-doz/yenidogan",
-        description: "Yenidoğan hastalar için ilaç doz rehberi",
-      },
-    ];
-
-    // Add Erişkin Algorithms
-    Object.values(eriskinData).forEach((algo: any) => {
-      items.push({
-        id: `eriskin-${algo.id}`,
-        title: algo.title,
-        category: "Erişkin",
-        type: "algoritma",
-        url: `/algoritmalar/eriskin/${algo.id}`,
-      });
-    });
-
-    // Add Çocuk Algorithms
-    Object.values(cocukData).forEach((algo: any) => {
-      items.push({
-        id: `cocuk-${algo.id}`,
-        title: algo.title,
-        category: "Çocuk",
-        type: "algoritma",
-        url: `/algoritmalar/cocuk/${algo.id}`,
-      });
-    });
-
-    // Add Yenidoğan Algorithms
-    Object.values(yenidoganData).forEach((algo: any) => {
-      items.push({
-        id: `yenidogan-${algo.id}`,
-        title: algo.title,
-        category: "Yenidoğan",
-        type: "algoritma",
-        url: `/algoritmalar/yenidogan/${algo.id}`,
-      });
-    });
-
-    return items;
+  const open = useCallback(() => setIsOpen(true), []);
+  const close = useCallback(() => {
+    setIsOpen(false);
+    setSearchTerm("");
+    setGroup("Hepsi");
+    setActive(0);
+    triggerRef.current?.focus({ preventScroll: true });
   }, []);
 
-  // Filtered Search Results
-  const filteredResults = useMemo(() => {
-    if (!searchTerm.trim()) return [];
+  useEffect(() => {
+    window.addEventListener(OPEN_EVENT, open);
+    return () => window.removeEventListener(OPEN_EVENT, open);
+  }, [open]);
 
-    const query = searchTerm.toLowerCase().trim();
+  useEffect(() => {
+    if (!isOpen) return;
+    const t = setTimeout(() => inputRef.current?.focus(), 30);
+    return () => clearTimeout(t);
+  }, [isOpen]);
 
-    return allSearchItems.filter((item) => {
-      const matchesQuery =
-        item.title.toLowerCase().includes(query) ||
-        (item.description && item.description.toLowerCase().includes(query));
+  const { items, total } = useMemo(() => searchItems(searchTerm, group), [searchTerm, group]);
 
-      const matchesCategory =
-        selectedCategory === "Hepsi" || item.category === selectedCategory;
+  const go = useCallback(
+    (url: string) => {
+      close();
+      router.push(url);
+    },
+    [close, router],
+  );
 
-      return matchesQuery && matchesCategory;
-    });
-  }, [allSearchItems, searchTerm, selectedCategory]);
+  // Seçili sonucu görünür tut
+  useEffect(() => {
+    listRef.current?.querySelector<HTMLElement>(`[data-idx="${active}"]`)?.scrollIntoView({ block: "nearest" });
+  }, [active]);
 
-  const getCategoryBadgeClass = (category: SearchResultItem["category"]) => {
-    switch (category) {
-      case "Erişkin":
-        return "bg-teal-100 text-teal-700 border-teal-200";
-      case "Çocuk":
-        return "bg-sky-100 text-sky-700 border-sky-200";
-      case "Yenidoğan":
-        return "bg-indigo-100 text-indigo-700 border-indigo-200";
-      default:
-        return "bg-amber-100 text-amber-700 border-amber-200";
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      close();
+    } else if (e.key === "ArrowDown" && items.length) {
+      e.preventDefault();
+      setActive(i => (i + 1) % items.length);
+    } else if (e.key === "ArrowUp" && items.length) {
+      e.preventDefault();
+      setActive(i => (i - 1 + items.length) % items.length);
+    } else if (e.key === "Enter" && items[active]) {
+      e.preventDefault();
+      go(items[active].url);
     }
   };
 
-  return (
-    <>
-      {/* Search Button for Header */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className="header-icon-btn"
-        title="Genel Arama"
-        aria-label="Genel Arama"
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-          />
-        </svg>
-      </button>
+  const hasQuery = searchTerm.trim().length > 0;
 
-      {/* Modal Backdrop */}
+  const modal = (
+    <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-4 pt-12 sm:pt-20 animate-in fade-in duration-200">
-          <div
-            className="bg-white w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] border border-slate-100"
-            onClick={(e) => e.stopPropagation()}
+        <motion.div
+          key="search"
+          className="fixed inset-0 z-[100] flex items-start justify-center px-4 pt-[max(1rem,env(safe-area-inset-top))] sm:pt-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          onKeyDown={onKeyDown}
+        >
+          <div className="search-backdrop absolute inset-0" onClick={close} aria-hidden="true" />
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Hızlı arama"
+            className="search-panel relative w-full max-w-xl flex flex-col max-h-[min(85dvh,640px)] overflow-hidden"
+            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -4, scale: 0.98 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Modal Header / Search Bar */}
-            <div className="p-4 border-b border-slate-200 flex items-center gap-3 bg-slate-50">
-              <svg
-                className="w-6 h-6 text-teal-600 flex-shrink-0"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                />
-              </svg>
-
+            {/* Arama satırı */}
+            <div className="flex items-center gap-2 pl-4 pr-1.5 py-1.5 border-b" style={{ borderColor: "var(--glass-border)" }}>
+              <Search className="w-5 h-5 shrink-0" style={{ color: "var(--accent-text)" }} strokeWidth={2.25} />
               <input
                 ref={inputRef}
-                type="text"
+                type="search"
+                enterKeyHint="go"
+                autoComplete="off"
+                spellCheck={false}
+                role="combobox"
+                aria-expanded={items.length > 0}
+                aria-controls={listId}
+                aria-activedescendant={items[active] ? `${listId}-${active}` : undefined}
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Algoritma, ilaç veya özellik ara..."
-                className="flex-1 bg-transparent text-slate-800 text-lg placeholder-slate-400 focus:outline-none"
+                onChange={e => {
+                  setSearchTerm(e.target.value);
+                  setActive(0);
+                }}
+                placeholder="Algoritma, ilaç, skala, tanı kodu…"
+                className="search-input flex-1 min-w-0 bg-transparent text-base py-2.5 focus:outline-none"
               />
-
-              {searchTerm && (
+              {hasQuery && (
                 <button
-                  onClick={() => setSearchTerm("")}
-                  className="text-slate-400 hover:text-slate-600 p-1"
+                  type="button"
+                  onClick={() => {
+                    setSearchTerm("");
+                    inputRef.current?.focus();
+                  }}
+                  className="header-icon-btn"
+                  aria-label="Aramayı temizle"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <X className="w-4 h-4" />
                 </button>
               )}
-
-              <button
-                onClick={() => setIsOpen(false)}
-                className="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-2.5 py-1.5 rounded-lg active:scale-[0.97] transition"
-              >
-                ESC
+              <button type="button" onClick={close} className="header-icon-btn" aria-label="Aramayı kapat">
+                <kbd className="hidden sm:inline text-[11px] font-bold px-1.5 py-0.5 rounded-md border" style={{ borderColor: "var(--glass-border-h)" }}>
+                  Esc
+                </kbd>
+                <X className="w-5 h-5 sm:hidden" />
               </button>
             </div>
 
-            {/* Category Filter Chips */}
-            <div className="flex items-center gap-2 px-4 py-2.5 bg-white border-b border-slate-100 overflow-x-auto no-scrollbar">
-              {["Hepsi", "Erişkin", "Çocuk", "Yenidoğan", "Genel Özellik"].map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1 text-xs font-bold rounded-full transition flex-shrink-0 ${
-                    selectedCategory === cat
-                      ? "bg-teal-600 text-white shadow-sm"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
+            {/* Modül filtreleri */}
+            <div className="flex items-center gap-1.5 px-3 py-2 overflow-x-auto no-scrollbar border-b" style={{ borderColor: "var(--glass-border)" }}>
+              {(["Hepsi", ...SEARCH_GROUPS] as const).map(g => {
+                const on = group === g;
+                const accent = g === "Hepsi" ? "var(--primary-light)" : GROUP_ACCENT[g];
+                return (
+                  <button
+                    key={g}
+                    type="button"
+                    aria-pressed={on}
+                    onClick={() => {
+                      setGroup(g);
+                      setActive(0);
+                      inputRef.current?.focus();
+                    }}
+                    className="search-chip shrink-0"
+                    style={on ? { color: "var(--fg)", borderColor: `color-mix(in srgb, ${accent} 55%, transparent)`, background: `color-mix(in srgb, ${accent} 16%, transparent)` } : undefined}
+                  >
+                    {g}
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Search Results Area */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-2">
-              {!searchTerm.trim() ? (
-                <div className="text-center py-10 text-slate-400">
-                  <svg
-                    className="w-12 h-12 mx-auto mb-3 text-slate-300"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                    />
-                  </svg>
-                  <p className="font-semibold text-slate-600">Aramak istediğiniz terimi yazın</p>
-                  <p className="text-xs text-slate-400 mt-1">
-                    Örn: "Arrest", "Astım", "Şok", "İlaç Doz"
-                  </p>
+            {/* Sonuçlar */}
+            <div ref={listRef} id={listId} role="listbox" aria-label="Arama sonuçları" className="flex-1 overflow-y-auto overscroll-contain p-2">
+              {!hasQuery ? (
+                <div className="px-3 py-8 text-center">
+                  <p className="text-sm font-semibold">Tüm modüllerde ara</p>
+                  <p className="text-xs text-muted mt-1">Algoritma, vaka protokolü, ilaç, skala, ICD-10, EKG, envanter ve evrak</p>
+                  <div className="flex flex-wrap justify-center gap-1.5 mt-4">
+                    {ORNEKLER.map(o => (
+                      <button
+                        key={o}
+                        type="button"
+                        onClick={() => {
+                          setSearchTerm(o);
+                          inputRef.current?.focus();
+                        }}
+                        className="search-chip"
+                      >
+                        {o}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              ) : filteredResults.length === 0 ? (
-                <div className="text-center py-12 text-slate-500">
-                  <p className="font-bold text-lg">Sonuç bulunamadı</p>
-                  <p className="text-sm text-slate-400 mt-1">
-                    "{searchTerm}" ile eşleşen algoritma veya özellik bulunamadı.
+              ) : items.length === 0 ? (
+                <div className="px-3 py-10 text-center">
+                  <p className="text-sm font-bold">Sonuç bulunamadı</p>
+                  <p className="text-xs text-muted mt-1">
+                    “{searchTerm.trim()}” için {group === "Hepsi" ? "hiçbir modülde" : `${group} içinde`} eşleşme yok.
                   </p>
+                  {group !== "Hepsi" && (
+                    <button type="button" onClick={() => setGroup("Hepsi")} className="search-chip mt-3">
+                      Tüm modüllerde ara
+                    </button>
+                  )}
                 </div>
               ) : (
-                filteredResults.map((item) => (
-                  <Link
-                    key={item.id}
-                    href={item.url}
-                    onClick={() => setIsOpen(false)}
-                    className="block bg-slate-50 hover:bg-teal-50/60 border border-slate-200 hover:border-teal-300 p-3.5 rounded-xl transition group"
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="font-semibold text-slate-800 group-hover:text-teal-700 transition-colors">
-                        {item.title}
+                items.map((item, i) => {
+                  const accent = GROUP_ACCENT[item.group];
+                  const sel = i === active;
+                  return (
+                    <button
+                      key={item.id}
+                      id={`${listId}-${i}`}
+                      data-idx={i}
+                      type="button"
+                      role="option"
+                      aria-selected={sel}
+                      onMouseMove={() => sel || setActive(i)}
+                      onClick={() => go(item.url)}
+                      className="search-result w-full text-left flex items-center gap-3 px-3 py-2.5"
+                      data-active={sel}
+                    >
+                      <span className="w-1 self-stretch rounded-full shrink-0" style={{ background: accent }} aria-hidden="true" />
+                      <span className="flex-1 min-w-0">
+                        <span className="block text-sm font-semibold leading-snug">{item.title}</span>
+                        {(item.description || item.tag) && (
+                          <span className="block text-xs text-muted mt-0.5 truncate">
+                            {item.tag && <span className="font-semibold tabular-nums">{item.tag}</span>}
+                            {item.tag && item.description && " · "}
+                            {item.description}
+                          </span>
+                        )}
                       </span>
-                      <span
-                        className={`text-[11px] font-bold px-2 py-0.5 rounded-md border flex-shrink-0 ${getCategoryBadgeClass(
-                          item.category
-                        )}`}
-                      >
-                        {item.category}
+                      <span className="text-[11px] font-bold shrink-0" style={{ color: accent }}>
+                        {item.group}
                       </span>
-                    </div>
-                    {item.description && (
-                      <p className="text-xs text-slate-500 mt-1">{item.description}</p>
-                    )}
-                  </Link>
-                ))
+                      <CornerDownLeft className={`w-3.5 h-3.5 shrink-0 text-subtle hidden sm:block ${sel ? "opacity-100" : "opacity-0"}`} aria-hidden="true" />
+                    </button>
+                  );
+                })
               )}
             </div>
 
-            {/* Modal Footer */}
-            <div className="px-4 py-3 bg-slate-50 border-t border-slate-200 text-xs text-slate-500 flex justify-between items-center">
-              <span>{filteredResults.length} sonuç bulundu</span>
-              <span className="text-[11px] text-slate-400">Şırnak 112 Acil Protokol</span>
-            </div>
-          </div>
-        </div>
+            {hasQuery && (
+              <div className="px-4 py-2 text-xs text-subtle border-t flex justify-between tabular-nums" style={{ borderColor: "var(--glass-border)" }}>
+                <span role="status">
+                  {total} sonuç{total > items.length ? ` · ilk ${items.length} gösteriliyor` : ""}
+                </span>
+                <span className="hidden sm:inline">↑↓ seç · Enter aç</span>
+              </div>
+            )}
+          </motion.div>
+        </motion.div>
       )}
+    </AnimatePresence>
+  );
+
+  return (
+    <>
+      <button
+        ref={triggerRef}
+        type="button"
+        onClick={open}
+        className="header-icon-btn"
+        title="Hızlı arama"
+        aria-label="Hızlı arama"
+        aria-haspopup="dialog"
+      >
+        <Search className="w-[22px] h-[22px]" strokeWidth={2.2} />
+      </button>
+      {mounted && createPortal(modal, document.body)}
     </>
   );
 }

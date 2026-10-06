@@ -9,12 +9,13 @@ import {
   FileText,
   FileSearch,
   ChevronRight,
+  Search,
   Zap,
   HeartPulse,
 } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
-import GlobalSearchModal from "@/components/search/GlobalSearchModal";
+import GlobalSearchModal, { openGlobalSearch } from "@/components/search/GlobalSearchModal";
 import { OfflineButton } from "@/components/pwa/OfflineButton";
 import { useScrolled } from "@/components/layout/useScrolled";
 
@@ -47,7 +48,7 @@ export default function HomePage() {
           )}
           <h1 className={`font-extrabold leading-tight tracking-tight truncate ${scrolled ? "text-lg" : "text-2xl"}`}>
             Acil Protokol{" "}
-            <span className="text-glow" style={{ color: "var(--primary-light)" }}>
+            <span className="text-glow" style={{ color: "var(--accent-text)" }}>
               Sistemi
             </span>
           </h1>
@@ -63,36 +64,36 @@ export default function HomePage() {
       </header>
 
       {/* ── Hero banner ── */}
-      <div
-        className="mx-4 mt-2 mb-5 p-5 glass-card overflow-hidden relative"
-        style={{ borderColor: "rgba(99,102,241,0.25)" }}
-      >
-        {/* Glow orb inside card */}
+      <section className="hero-card mx-4 mt-2 mb-5 p-5 glass-card overflow-hidden relative" aria-label="Hızlı erişim">
+        {/* Teal ışıma */}
         <div
-          className="absolute -top-6 -right-6 w-36 h-36 rounded-full pointer-events-none"
+          aria-hidden="true"
+          className="absolute -top-8 -right-8 w-40 h-40 rounded-full pointer-events-none"
           style={{
-            background: "radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%)",
+            background: "radial-gradient(circle, color-mix(in srgb, var(--primary-light) 26%, transparent) 0%, transparent 70%)",
             filter: "blur(20px)",
           }}
         />
-        <span
-          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold mb-3 border"
-          style={{ background: "rgba(239,68,68,0.15)", color: "#FCA5A5", borderColor: "rgba(239,68,68,0.25)" }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse" />
+        <span className="live-badge inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold mb-3 relative">
+          <span className="relative flex w-1.5 h-1.5" aria-hidden="true">
+            <span className="absolute inset-0 rounded-full bg-teal-400 opacity-60 animate-ping" />
+            <span className="relative w-1.5 h-1.5 rounded-full bg-teal-400" />
+          </span>
           Canlı — Güncel Protokoller
         </span>
-        <p className="text-base font-bold leading-snug max-w-[72%] relative z-10">
+        <p className="text-base font-bold leading-snug max-w-[34ch] relative">
           Kritik vakalarda hızlı, doğru karar için tasarlanmış acil başvuru sistemi.
         </p>
-        <Link
-          href="/algoritmalar-gorsel"
-          className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold relative z-10"
-          style={{ color: "var(--primary-light)" }}
+        <button
+          type="button"
+          onClick={openGlobalSearch}
+          className="hero-cta inline-flex items-center gap-2 mt-4 text-sm font-semibold relative"
         >
-          Algoritmalar <ChevronRight style={{ width: 16, height: 16 }} />
-        </Link>
-      </div>
+          <Search style={{ width: 16, height: 16 }} strokeWidth={2.4} />
+          Protokol, ilaç veya skala ara
+          <ChevronRight style={{ width: 16, height: 16 }} className="-mr-1 opacity-70" />
+        </button>
+      </section>
 
       {/* ── Bento Grid ── */}
       <div
