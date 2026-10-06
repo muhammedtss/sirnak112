@@ -5,7 +5,6 @@ import { algorithmImages, AlgorithmImage } from "@/data/algorithmImages";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft, Search, ChevronDown, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const CATEGORY_DIR: Record<string, string> = {
   yetiskin: "/Yetiskin_Algoritmalari/",
@@ -209,24 +208,21 @@ export default function AlgoritmalarGorselKategoriPage() {
                 <div key={group.id} className="glass-card overflow-hidden" style={{ borderColor: isOpen ? "rgba(59,130,246,0.3)" : "var(--glass-border)" }}>
                   <button
                     onClick={() => setOpenId(isOpen ? null : group.id)}
+                    aria-expanded={isOpen}
                     className="w-full flex items-center justify-between px-4 py-3.5 group text-left"
                     style={{ background: isOpen ? "rgba(59,130,246,0.05)" : "transparent" }}
                   >
                     <span className="text-sm font-semibold leading-tight pr-4">{group.title}</span>
-                    <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                      <ChevronDown className="shrink-0 text-subtle" style={{ width: 16, height: 16 }} />
-                    </motion.div>
+                    <ChevronDown
+                      aria-hidden="true"
+                      className={`shrink-0 text-subtle transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                      style={{ width: 16, height: 16 }}
+                    />
                   </button>
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden"
-                      >
+                  {/* Panel reveal: yükseklik canlandırılmaz (hareket bütçesi) */}
+                  {isOpen && (
+                      <div className="animate-in fade-in slide-in-from-top-2">
                         <div className="px-4 pb-4 pt-1 grid grid-cols-2 gap-3 border-t" style={{ borderColor: "var(--glass-border)" }}>
                           {group.images.map((img, i) => (
                             <button
@@ -248,9 +244,8 @@ export default function AlgoritmalarGorselKategoriPage() {
                             </button>
                           ))}
                         </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                      </div>
+                  )}
                 </div>
               );
             })}

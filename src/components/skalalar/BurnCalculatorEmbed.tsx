@@ -135,7 +135,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
               role="tab"
               aria-selected={inputMode === m}
               onClick={() => setInputMode(m)}
-              className={`flex-1 py-2 text-sm font-bold rounded-lg transition ${
+              className={`flex-1 min-h-11 py-2 text-sm font-bold rounded-lg transition ${
                 inputMode === m ? "bg-orange-500/20 text-orange-300 border border-orange-500/50 shadow-sm" : "text-muted hover:bg-white/5"
               }`}
             >
@@ -176,7 +176,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
                   role="radio"
                   aria-checked={view === o.value}
                   onClick={() => setView(o.value)}
-                  className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition ${
+                  className={`flex-1 min-h-10 py-1.5 text-xs font-bold rounded-lg transition chip-hit ${
                     view === o.value ? "bg-white/10 text-white border border-white/20" : "text-muted hover:bg-white/5"
                   }`}
                 >
@@ -228,7 +228,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
                 <button
                   type="button"
                   onClick={() => setSelected(new Set())}
-                  className="w-full py-2 bg-red-500/10 text-red-400 rounded-lg text-sm font-bold border border-red-500/20 active:scale-[0.97] transition flex items-center justify-center gap-2"
+                  className="w-full min-h-11 py-2 bg-red-500/10 text-red-400 rounded-lg text-sm font-bold border border-red-500/20 active:scale-[0.97] transition flex items-center justify-center gap-2"
                 >
                   <RotateCcw className="w-3.5 h-3.5" /> Seçimleri Temizle
                 </button>
@@ -238,7 +238,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
             <button
               type="button"
               onClick={() => setIsZoomed(true)}
-              className="w-full flex items-center justify-center gap-2 py-2 text-xs font-bold text-muted rounded-lg border border-white/10 hover:bg-white/5 transition"
+              className="w-full min-h-11 flex items-center justify-center gap-2 py-2 text-xs font-bold text-muted rounded-lg border border-white/10 hover:bg-white/5 transition"
             >
               <BookOpen className="w-3.5 h-3.5" /> Referans Lund-Browder Şeması
             </button>

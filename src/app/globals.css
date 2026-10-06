@@ -153,6 +153,10 @@ p, li, dd, figcaption { text-wrap: pretty; }
 /* Başlığın altındaki yapışkan arama/filtre çubukları: içerik arkadan okunmasın */
 .sticky.glass { background-color: color-mix(in srgb, var(--bg) 84%, transparent); }
 
+/* Küçük çipler: görünüm aynı, dokunma alanı sözde öğeyle ≥44px (komşu çiplerle çakışmaz: gap 8px) */
+.chip-hit, .search-chip { position: relative; }
+.chip-hit::after, .search-chip::after { content: ""; position: absolute; inset: -6px -4px; }
+
 /* Başlık ikon butonları: 44×44 dokunma alanı */
 .header-icon-btn {
   width: 2.75rem;

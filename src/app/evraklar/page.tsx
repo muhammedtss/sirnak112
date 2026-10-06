@@ -424,7 +424,7 @@ export default function EvraklarPage() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-0.5 max-w-2xl mx-auto">
+        <div className="flex gap-2 overflow-x-auto no-scrollbar py-1.5 -my-1.5 max-w-2xl mx-auto">
           {(["Tumu", ...KAT_SIRA] as (Kategori | "Tumu")[]).map((kat) => {
             const isActive = seciliKat === kat;
             const style = kat !== "Tumu"
@@ -439,7 +439,7 @@ export default function EvraklarPage() {
               <button
                 key={kat}
                 onClick={() => setSeciliKat(kat)}
-                className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-full border transition"
+                className="chip-hit shrink-0 text-xs font-bold px-3 py-1.5 rounded-full border transition"
                 style={style}
               >
                 {kat === "Tumu" ? "Tümü" : KAT_LABEL[kat]}

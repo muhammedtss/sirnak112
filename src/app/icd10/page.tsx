@@ -121,7 +121,7 @@ export default function ICD10Page() {
         </div>
 
         {/* Category chips */}
-        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-0.5">
+        <div className="flex gap-2 overflow-x-auto no-scrollbar py-1.5 -my-1.5">
           {kategoriler.map((k) => {
             const isActive = kategori === k;
             const r = renk(k);
@@ -130,7 +130,7 @@ export default function ICD10Page() {
                 key={k}
                 onClick={() => setKategori(k)}
                 aria-pressed={isActive}
-                className={`shrink-0 text-xs font-bold px-3 min-h-8 rounded-full border transition ${isActive ? "icd-kat-text" : ""}`}
+                className={`chip-hit shrink-0 text-xs font-bold px-3 min-h-8 rounded-full border transition ${isActive ? "icd-kat-text" : ""}`}
                 style={
                   isActive
                     ? ({ background: r.bg, borderColor: r.dot, "--kat": r.dot, "--kat-soft": r.color } as React.CSSProperties)
