@@ -214,7 +214,7 @@ function SoruEkrani({
               const kilitli = secim !== undefined;
               let cls = "border-white/10 bg-black/[0.03] dark:bg-black/20 hover:bg-white/5";
               if (kilitli && dogru) cls = "border-emerald-500/50 bg-emerald-500/15 text-emerald-300";
-              else if (kilitli && secili) cls = "border-red-500/50 bg-red-500/15 text-red-300";
+              else if (kilitli && secili) cls = "border-red-500/50 bg-red-500/15 text-red-300 t-shake";
               else if (kilitli) cls = "border-white/5 opacity-50";
               return (
                 <button
@@ -229,16 +229,17 @@ function SoruEkrani({
                   className={`flex items-center justify-between gap-2 text-left px-4 py-3 rounded-xl border text-sm font-semibold transition ${cls}`}
                 >
                   {s.etiket}
-                  {kilitli && dogru && <CheckCircle2 className="w-4 h-4 shrink-0" />}
-                  {kilitli && secili && !dogru && <XCircle className="w-4 h-4 shrink-0" />}
+                  {kilitli && dogru && <CheckCircle2 className="w-4 h-4 shrink-0 t-icon-in" aria-label="Doğru cevap" />}
+                  {kilitli && secili && !dogru && <XCircle className="w-4 h-4 shrink-0 t-icon-in" aria-label="Yanlış cevap" />}
                 </button>
               );
             })}
           </div>
 
           {secim !== undefined && (
-            <div className="space-y-3 animate-in fade-in">
+            <div className="space-y-3 animate-in fade-in slide-in-from-bottom-2">
               <p
+                role="status"
                 className={`text-xs leading-relaxed rounded-lg px-3 py-2 border ${
                   secim === adim.dogru
                     ? "text-emerald-200/90 bg-emerald-500/10 border-emerald-500/20"
@@ -251,7 +252,7 @@ function SoruEkrani({
               <button
                 type="button"
                 onClick={() => setBekleyen(null)}
-                className="w-full py-3 rounded-xl text-sm font-bold bg-amber-500 text-slate-950 active:scale-[0.98] transition-transform"
+                className="w-full min-h-11 py-3 rounded-xl text-sm font-bold bg-amber-500 text-slate-950 active:scale-[0.97] transition-transform"
               >
                 {bekleyen === soru.adimlar.length - 1 ? "Vaka özetini gör" : "Sonraki adım"}
               </button>

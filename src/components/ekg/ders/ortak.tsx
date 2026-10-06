@@ -230,7 +230,7 @@ export function Eslestirme({ ciftler, baslik }: { ciftler: { sol: string; sag: s
                 eslesen.has(i)
                   ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
                   : hata === i
-                    ? "border-red-500/60 bg-red-500/15 text-red-300"
+                    ? "border-red-500/60 bg-red-500/15 text-red-300 t-shake"
                     : "border-white/10 bg-black/[0.03] dark:bg-black/20 hover:bg-white/5"
               }`}
             >
@@ -242,7 +242,7 @@ export function Eslestirme({ ciftler, baslik }: { ciftler: { sol: string; sag: s
       {bitti && (
         <div className="flex items-center justify-between gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-2 animate-in fade-in">
           <span className="flex items-center gap-1.5 text-xs font-bold text-emerald-400">
-            <CheckCircle2 className="w-4 h-4" /> Tümü doğru eşleşti
+            <CheckCircle2 className="w-4 h-4 t-icon-in" /> Tümü doğru eşleşti
           </span>
           <button
             type="button"
@@ -271,18 +271,18 @@ export function HizliSoru({ soru, secenekler, dogru, aciklama }: { soru: string;
             kilit && s === dogru
               ? "border-emerald-500/50 bg-emerald-500/15 text-emerald-300"
               : kilit && s === secim
-                ? "border-red-500/50 bg-red-500/15 text-red-300"
+                ? "border-red-500/50 bg-red-500/15 text-red-300 t-shake"
                 : "border-white/10 hover:bg-white/5";
           return (
-            <button key={s} type="button" disabled={kilit} onClick={() => setSecim(s)} className={`px-3 py-2 rounded-lg border text-xs font-bold ${cls}`}>
+            <button key={s} type="button" disabled={kilit} onClick={() => setSecim(s)} className={`min-h-11 px-3 py-2 rounded-lg border text-xs font-bold transition-colors ${cls}`}>
               {s}
             </button>
           );
         })}
       </div>
       {secim !== null && (
-        <p className={`flex items-start gap-1.5 text-xs ${secim === dogru ? "text-emerald-300" : "text-red-300"}`}>
-          {secim === dogru ? <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 shrink-0" /> : <XCircle className="w-3.5 h-3.5 mt-0.5 shrink-0" />}
+        <p role="status" className={`flex items-start gap-1.5 text-xs animate-in fade-in ${secim === dogru ? "text-emerald-300" : "text-red-300"}`}>
+          {secim === dogru ? <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 shrink-0 t-icon-in" /> : <XCircle className="w-3.5 h-3.5 mt-0.5 shrink-0 t-icon-in" />}
           <span>
             {secim === dogru ? "Doğru. " : `Yanlış — doğru cevap: ${dogru}. `}
             {aciklama}
