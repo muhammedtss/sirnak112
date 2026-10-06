@@ -163,3 +163,55 @@ Basma ölçeği notu: skill 0.96 öneriyor, plan 0.97 diyor — **plan değeri (
 1. **Faz 2:** Y1 (giriş animasyonu), S2 (reduced-motion), Y2 (odak), S7 (`transition-all`), S5/Y11 (kontrast + 12px taban), Y3 (zoom, K3'e göre), Y9 (sonsuz animasyon), tip ölçeği, `tabular-nums`, `text-wrap`.
 2. **Faz 3:** 3.1 header (S1, Y7) → 3.2 hero (S6, S9, S10) → 3.3 kartlar (S3, S4, Y16) → 3.4 nav (Y4) → 3.5 arama (Y5, Y6, Y8) → 3.6 tema/senkron ikonları (Y14).
 3. **Faz 4:** İlaç Dozu (Y15) → Skalalar (Y10) → Algoritmalar (Y21) → diğerleri (Y17, Y22).
+
+---
+
+## 10. Uygulama sonucu ve kabul kontrol listesi (Faz 6)
+
+Dal: `ui-upgrade` · 16 commit (`85b74d3` → `410e357`) · **pushlanmadı**.
+Faz 5 (GSAP) plan gereği açık onay olmadan **uygulanmadı**.
+
+### Öz korundu mu?
+
+- [x] Renk token'ları aynı: `--bg #090C14`, `--bg-surface #101520`, `--primary #0D9488 / #2DD4BF`, durum renkleri. Yalnızca **yeni** token'lar eklendi: `--accent-text`, `--info/ok/bad/critical-text`, `--app-header-h`, hareket/tip ölçeği.
+- [x] Outfit fontu aynı.
+- [x] Kategori renk kodlaması aynı (8 modül rengi ana sayfa, arama ve skala kartlarında).
+- [x] Glass kart dili ve filigran ikonlar duruyor (filigran sağ altta, daha soluk).
+- [x] Alt navigasyon yapısı aynı: yüzen hap, aktif öğe teal daire, 5 öğe.
+- [x] 8 modül, sıraları ve rotaları aynı (`quickLinks` değişmedi; yalnızca ızgara düzeni).
+- [x] Klinik veri ve hesaplama dosyalarında sıfır değişiklik: `git diff main --stat -- src/data src/lib/burn.ts src/lib/ekg` boş. `src/lib` altında tek yeni dosya `text.ts` (Türkçe arama normalizasyonu, klinik değil).
+
+### Kalite
+
+- [x] **S1–S10:** S1 (3.1), S2 (2), S3/S4 (3.3), S5 (2 + 4 + 6), S6 (3.2, K2: hero hızlı aramayı açar), S7 (2, `transition-all` = 0), S8 (2 + 3.4), S9 (3.2, arka plan küreleri teal ailesine), S10 (3.2, K1: teal).
+- [x] **WCAG AA kontrast:** token düzeyinde hesaplandı (koyu: muted 6,9:1, subtle 4,9:1; açık: 6,4 / 4,7). Açık temada soluk 200–400 renk tonları ve pastel kategori renkleri koyu tonlara iniyor. Dedektör `low-contrast`: Envanter 39 → 0, Evraklar 5 → 0. *Açık tema dedektörle taranamadı (URL'den tema seçilemiyor); ana sayfa, skalalar, vaka akışı, ICD-10 ve arama açık temada elle doğrulandı.*
+- [x] **Dokunma hedefleri ≥ 44×44:** 12 sayfada 375px'te otomatik tarama. Başlık/nav/arama/envanter/ICD kopyala ≥44. Filtre çipleri görünüşte 30–32px; `::after` ile etkin alan 44px (`elementFromPoint` ile doğrulandı). Yanık görünüm seçici 40px (yoğun segment kontrol).
+- [x] **`:focus-visible`:** global `:where(a,button,input,select,textarea,summary,[tabindex])` halka + kartlarda özel halka.
+- [x] **`prefers-reduced-motion`:** global kural (animasyon 1ms, geçiş yalnız opaklık/renk 100ms), `MotionConfig reducedMotion="user"`, `.t-*` geçişlerinde ayrıca `animation: none`, JS sarsılma `matchMedia` kontrolü, otomatik kaydırma `auto`. Önizleme tarayıcısı reduce emüle ediyordu: pop-in/sarsılma oynamadı; normal yol `matchMedia` geçersiz kılınarak doğrulandı.
+- [x] **`transition: all` yok:** `grep` 0 sonuç.
+- [x] **Hareket bütçesi:** hover/press ≤150ms, açma/kapama ≤220ms, kapanış daha hızlı. `height` animasyonu kalmadı (skalalar, evraklar, görsel algoritma akordeonları panel reveal'a çevrildi). Sonsuz animasyon yalnızca "Canlı" noktası ve senkron/yükleme dönmesi. Bilinçli istisna: hata sarsılması 300ms (geri bildirim, bir kez).
+- [x] **Ana sayfa ilk karede tıklanabilir:** giriş animasyonu yok (Faz 2'de kaldırıldı).
+
+### Teknik
+
+- [x] `npm run build` hatasız (217 statik sayfa; `verify-integrity` 4/4 PASS).
+- [ ] **Lighthouse mobil Performance/Accessibility: çalıştırılmadı.** Ortamda Lighthouse kurulu değil. Doğrulamak için: `npx lighthouse http://localhost:3100 --preset=desktop` ve mobil için `--form-factor=mobile`; `main` ile karşılaştırın.
+- [x] PWA: production sunucusunda Service Worker etkin (`navigator.serviceWorker.controller`), konsolda hata yok. `theme-color`, manifest ve ikonlar değişmedi. Yeni `public/theme-init.js` SW çekirdek paketine otomatik giriyor. Senkron göstergesi ikon geçişiyle çalışıyor.
+
+### Metin değişiklikleri (davranış değiştiği için zorunlu olanlar)
+
+| Yer | Önce | Sonra | Neden |
+|---|---|---|---|
+| Hero CTA | "Algoritmalar ›" | "Protokol, ilaç veya skala ara ›" | K2: CTA artık hızlı aramayı açıyor |
+| Skalalar banner | "Skala kartına dokun, aç ve hesaplama ekranına geç." | "Skala kartına dokun, hesaplama ekranı açılsın." | K5: akordeon kaldırıldı, tek dokunuş |
+| Arama yer tutucu | "Algoritma, ilaç veya özellik ara..." | "Algoritma, ilaç, skala, tanı kodu…" | Arama artık tüm modülleri kapsıyor |
+| Envanter (yeni) | — | "Kontrol tamamlandı: X yeterli, Y yetersiz" toast | Plan: Envanter için Toast |
+
+### Kalan / bilinçli bırakılanlar
+
+- Dedektör `ai-color-palette`, `radial-spotlight-glow`, `dark-glow`: teal kimlik, cam dili ve arka plan ışımaları dokunulmaz listede (Bölüm 7). Evraklar'daki mor, "İlaç & Malzeme" kategori rengi.
+- `tiny-text`: 11px etiket tabanı (Faz 2 tip ölçeği). Y11'deki 12px önerisi tüm etiketlerde uygulanmadı; ICD-10 İngilizce ad ve kategori satırları 11px.
+- `nested-cards` (GKS bölümleri), `flat-type-hierarchy` (vaka akışı): yapısal düzen değişikliği gerektirir; refinement kapsamı dışında.
+- ICD-10 skeleton loader uygulanmadı: arama eşzamanlı, yükleme anı yok.
+- EKG atlas modalı eklenmedi: atlas kartları zaten sayfa içinde genişliyor; yeni bir modal etkileşim kalıbı eklemek kapsam dışı.
+- Önceden var olan 3 lint hatası (`AlgorithmViewer`, `algoritmalar-gorsel`: setState-in-effect) akış mantığına dokunmamak için bırakıldı.
