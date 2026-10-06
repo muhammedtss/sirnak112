@@ -175,7 +175,7 @@ function GlassAccordionItem({ skala, isOpen, onToggle }: {
                 {skala.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-[10px] font-bold px-2.5 py-0.5 rounded-full border"
+                    className="text-[11px] font-bold px-2.5 py-0.5 rounded-full border"
                     style={{ background: skala.glow, color: skala.accent, borderColor: skala.border }}
                   >
                     {tag}
@@ -185,7 +185,7 @@ function GlassAccordionItem({ skala, isOpen, onToggle }: {
               <Link
                 href={skala.href}
                 id={`skala-link-${skala.id}`}
-                className="inline-flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-xl border transition-all active:scale-95"
+                className="inline-flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-xl border transition active:scale-[0.97]"
                 style={{
                   background: skala.glow,
                   color: skala.accent,

@@ -184,7 +184,7 @@ export default function GlobalSearchModal() {
       {/* Search Button for Header */}
       <button
         onClick={() => setIsOpen(true)}
-        className="p-2 rounded-full text-slate-600 hover:text-teal-600 hover:bg-slate-100 active:scale-95 transition-all flex items-center gap-1.5"
+        className="p-2 rounded-full text-slate-600 hover:text-teal-600 hover:bg-slate-100 active:scale-[0.97] transition flex items-center gap-1.5"
         title="Genel Arama"
         aria-label="Genel Arama"
       >
@@ -248,7 +248,7 @@ export default function GlobalSearchModal() {
 
               <button
                 onClick={() => setIsOpen(false)}
-                className="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-2.5 py-1.5 rounded-lg active:scale-95 transition-all"
+                className="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-2.5 py-1.5 rounded-lg active:scale-[0.97] transition"
               >
                 ESC
               </button>
@@ -260,7 +260,7 @@ export default function GlobalSearchModal() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1 text-xs font-bold rounded-full transition-all flex-shrink-0 ${
+                  className={`px-3 py-1 text-xs font-bold rounded-full transition flex-shrink-0 ${
                     selectedCategory === cat
                       ? "bg-teal-600 text-white shadow-sm"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -306,14 +306,14 @@ export default function GlobalSearchModal() {
                     key={item.id}
                     href={item.url}
                     onClick={() => setIsOpen(false)}
-                    className="block bg-slate-50 hover:bg-teal-50/60 border border-slate-200 hover:border-teal-300 p-3.5 rounded-xl transition-all group"
+                    className="block bg-slate-50 hover:bg-teal-50/60 border border-slate-200 hover:border-teal-300 p-3.5 rounded-xl transition group"
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className="font-semibold text-slate-800 group-hover:text-teal-700 transition-colors">
                         {item.title}
                       </span>
                       <span
-                        className={`text-[10px] font-bold px-2 py-0.5 rounded-md border flex-shrink-0 ${getCategoryBadgeClass(
+                        className={`text-[11px] font-bold px-2 py-0.5 rounded-md border flex-shrink-0 ${getCategoryBadgeClass(
                           item.category
                         )}`}
                       >

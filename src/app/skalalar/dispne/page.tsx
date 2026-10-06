@@ -33,7 +33,7 @@ export default function DispnePage() {
           <button
             key={g.score}
             onClick={() => setSelected(g.score)}
-            className={`w-full rounded-xl border-2 p-4 text-left transition-all ${
+            className={`w-full rounded-xl border-2 p-4 text-left transition ${
               selected === g.score ? "border-slate-800 shadow-lg scale-[1.02]" : "border-white/10 glass-card shadow-sm"
             }`}
           >
@@ -52,7 +52,7 @@ export default function DispnePage() {
         {grade && (
           <div className={`${getColor(grade.score)} rounded-xl p-4 text-center text-white`}>
             <p className="text-xs font-bold uppercase tracking-wider mb-1">mMRC Dispne Derecesi</p>
-            <p className="text-4xl font-black">{grade.score}</p>
+            <p className="text-4xl font-black tabular-nums">{grade.score}</p>
             <p className="text-sm font-bold mt-1">{grade.label}</p>
           </div>
         )}

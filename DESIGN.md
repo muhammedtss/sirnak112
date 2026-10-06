@@ -107,13 +107,13 @@ Sistem sahada değişken ışığa göre kurulmuştur. Koyu tema varsayılandır
 Koyu, soğuk bir zemin, tek bir teal marka rengi ve modül başına ayrılmış canlı kategori renkleri.
 
 ### Primary
-- **Protokol Teal'i** (#0D9488; açık ton #2DD4BF): Marka rengi. "Sistemi" vurgusu, aktif navigasyon öğesi, rozetler, odak halkası ve birincil eylemler. Açık temada #0F766E / #14B8A6.
+- **Protokol Teal'i** (#0D9488; açık ton #2DD4BF): Marka rengi. "Sistemi" vurgusu, aktif navigasyon öğesi, rozetler, klavye odak halkası (`--focus-ring`: 2px zemin + 2px açık teal) ve birincil eylemler. Açık temada #0F766E / #14B8A6.
 - **Teal Parıltısı** (rgba(45,212,191,0.35)): Aktif öğe ve rozet arka planı, metin parlaması.
 
 ### Neutral
 - **Gece Kabini** (#090C14): Uygulama zemini (koyu tema).
 - **Kabin Yüzeyi** (#101520): Opak yüzeyler, açılır paneller.
-- **Sinyal Beyazı** (#F1F5FF): Birincil metin. İkincil metin %55, silik metin %30 opaklıkla aynı tondan türetilir (`--fg-muted`, `--fg-subtle`).
+- **Sinyal Beyazı** (#F1F5FF): Birincil metin. İkincil metin %62, silik metin %50 opaklıkla aynı tondan türetilir (`--fg-muted` 6,9:1, `--fg-subtle` 4,9:1). Açık temada %75 / %66 (6,4:1 / 4,7:1). Her ikisi de WCAG AA'yı geçer.
 - **Gündüz Slate'i** (#F1F5F9 / yüzey #F8FAFC / mürekkep #1E293B): Açık tema karşılıkları.
 - **Cam** (rgba(16,21,32,0.55), kenar rgba(255,255,255,0.07)): Kart ve navigasyon yüzeyi.
 
@@ -144,8 +144,11 @@ Algoritmalar #F97316 · Vaka Protokolleri #8B5CF6 · Skalalar #34D399 · İlaç 
 - **Body** (500, 0.875rem, 1.5): Açıklamalar, algoritma adımları.
 - **Label** (700, 0.6875rem, 0.1em, BÜYÜK HARF): Bölüm etiketleri, "Şırnak 112 Acil Sağlık" üst satırı, adım numaraları.
 
+Tip ölçeği `:root` içinde token olarak tanımlıdır: 11 (etiket tabanı) / 12 / 14 / 16 / 20 / 24 / 32px. **11px'in altına inilmez.** Başlıklarda `text-wrap: balance`, paragraflarda `text-wrap: pretty`; değişen sayılarda (doz, puan, sıvı) `tabular-nums`.
+
 ### Named Rules
 **The Single Family Rule.** Outfit tek yazı ailesidir; hiyerarşi ağırlık ve boyutla kurulur.
+**The 11px Floor Rule.** Hiçbir metin 11px'ten küçük olamaz; güneş altında okunabilirlik tabanı budur.
 
 ## Layout
 
@@ -153,7 +156,7 @@ Mobil öncelikli tek sütun akış; içerik `max-w-xl` (36rem) ile `max-w-3xl` (
 
 ## Elevation & Depth
 
-Derinlik, cam katmanlamayla verilir: yarı saydam yüzey + `backdrop-filter: blur(20px) saturate(180%)` + ince açık kenar + yumuşak gölge. Arka planda yavaş hareket eden, bulanık renk küreleri ve çok silik bir nokta ızgarası bulunur.
+Derinlik, cam katmanlamayla verilir: yarı saydam yüzey + `backdrop-filter: blur(20px) saturate(180%)` + ince açık kenar + yumuşak gölge. Arka planda **statik** bulanık renk küreleri ve çok silik bir nokta ızgarası bulunur.
 
 ### Shadow Vocabulary
 - **Cam dinlenme** (`box-shadow: 0 8px 32px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.04) inset`): Kartlar, başlık, alt navigasyon.
@@ -176,7 +179,7 @@ Yumuşak, büyük köşeler: kartlar 1.75rem, alt navigasyon 2rem, giriş alanla
 - **Border:** 1px rgba(255,255,255,0.07), hover'da 0.14
 - **Internal Padding:** 16px
 - **Press:** `:active` → `scale(0.97)`
-- **Modül kartı:** sol üstte modül renginde 40px ikon kutusu, altta başlık (14px, 600) ve açıklama (10px, muted), sağ altta chevron ve 80px filigran ikon.
+- **Modül kartı:** sol üstte modül renginde 40px ikon kutusu, altta başlık (14px, 600) ve açıklama (11px, muted), sağ altta chevron ve 80px filigran ikon.
 
 ### Inputs / Fields
 - **Style:** rgba(255,255,255,0.05) zemin, ince cam kenar, 0.875rem köşe, blur(12px)
@@ -224,3 +227,5 @@ Adımlar dikey bir hat üzerinde cam kartlar olarak dizilir; karar adımlarında
 | Basma geri bildirimi | `:active` → `scale(0.97)`, ~100ms |
 | `prefers-reduced-motion: reduce` | Tüm transform animasyonları kapanır; yalnızca ≤100ms opacity değişimleri kalır; "Canlı" rozetinin `pulse` animasyonu durur |
 | Döngüsel animasyon | Yalnızca "Canlı" rozetindeki nokta ve senkron ikonundaki `spin`; başka sonsuz animasyon eklenmez |
+
+**Token'lar** (`globals.css :root`): `--ease-out` cubic-bezier(0.22, 1, 0.36, 1), `--ease-in-out` cubic-bezier(0.65, 0, 0.35, 1), `--dur-press` 100ms, `--dur-fast` 150ms, `--dur-base` 200ms. Tailwind'de `transition` (açık özellik listesi) + `duration-150`/`duration-200`; `transition-all` kullanılmaz. framer-motion `MotionConfig reducedMotion="user"` ile sarılıdır.

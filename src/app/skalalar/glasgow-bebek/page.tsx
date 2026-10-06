@@ -83,7 +83,7 @@ export default function GlasgowBebekPage() {
         {allSelected && (
           <div className={`${severity.bg} rounded-xl border-2 border-current p-4 text-center ${severity.color}`}>
             <p className="text-xs font-bold uppercase tracking-wider mb-1">Toplam Bebek GKS Skoru</p>
-            <p className="text-4xl font-black">{total}</p>
+            <p className="text-4xl font-black tabular-nums">{total}</p>
             <p className="text-sm font-bold mt-1">{severity.text}</p>
           </div>
         )}

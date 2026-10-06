@@ -49,7 +49,7 @@ function Kurulum({ onBasla }: { onBasla: (k: Kapsam, n: number) => void }) {
               type="button"
               onClick={() => setKapsam(k.id)}
               aria-pressed={kapsam === k.id}
-              className={`text-left rounded-xl border px-4 py-3 transition-all ${
+              className={`text-left rounded-xl border px-4 py-3 transition ${
                 kapsam === k.id
                   ? "border-amber-500/50 bg-amber-500/10 ring-2 ring-amber-500/20"
                   : "border-white/10 bg-black/[0.03] dark:bg-black/20 hover:bg-white/5"
@@ -71,7 +71,7 @@ function Kurulum({ onBasla }: { onBasla: (k: Kapsam, n: number) => void }) {
               type="button"
               onClick={() => setSayi(n)}
               aria-pressed={sayi === n}
-              className={`flex-1 py-2.5 rounded-xl text-sm font-bold border transition-all ${
+              className={`flex-1 py-2.5 rounded-xl text-sm font-bold border transition ${
                 sayi === n ? "border-amber-500/50 bg-amber-500/10 text-amber-400" : "border-white/10 text-muted hover:bg-white/5"
               }`}
             >
@@ -186,7 +186,7 @@ function SoruEkrani({
         <div className="glass-card p-4 space-y-3">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-amber-400">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-amber-400">
                 Adım {aktif + 1} · {adim.baslik}
               </p>
               <p className="text-base font-bold mt-1">{adim.soru}</p>
@@ -226,7 +226,7 @@ function SoruEkrani({
                     setIpucu(false);
                     onCevap(s.id);
                   }}
-                  className={`flex items-center justify-between gap-2 text-left px-4 py-3 rounded-xl border text-sm font-semibold transition-all ${cls}`}
+                  className={`flex items-center justify-between gap-2 text-left px-4 py-3 rounded-xl border text-sm font-semibold transition ${cls}`}
                 >
                   {s.etiket}
                   {kilitli && dogru && <CheckCircle2 className="w-4 h-4 shrink-0" />}
@@ -273,7 +273,7 @@ function VakaOzeti({ soru, cevaplar, onSonraki, sonMu }: { soru: Soru; cevaplar:
   return (
     <div className="glass-card p-4 space-y-4 animate-in fade-in">
       <div>
-        <p className="text-[10px] font-bold uppercase tracking-widest text-subtle">Tanı</p>
+        <p className="text-[11px] font-bold uppercase tracking-widest text-subtle">Tanı</p>
         <p className="text-base font-black mt-0.5">{r.ad}</p>
         <p className="text-xs text-muted mt-1">{r.ozet}</p>
         <p className="text-[11px] font-bold mt-2 text-amber-400">
@@ -283,7 +283,7 @@ function VakaOzeti({ soru, cevaplar, onSonraki, sonMu }: { soru: Soru; cevaplar:
 
       {tablo && (
         <div className="rounded-xl border border-white/10 overflow-hidden">
-          <p className="px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-subtle bg-white/5">
+          <p className="px-3 py-2 text-[11px] font-bold uppercase tracking-widest text-subtle bg-white/5">
             Kaynak sunumdaki değerlendirme · Slayt {soru.serit.tur === "gercek" ? soru.serit.vaka.kaynakSlayt : ""}
           </p>
           <dl className="divide-y divide-white/5 text-xs">
@@ -368,7 +368,7 @@ function Sonuc({
       </div>
 
       <div className="glass-card overflow-hidden">
-        <p className="px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-subtle border-b border-white/10">Ritim bazında</p>
+        <p className="px-4 py-3 text-[11px] font-bold uppercase tracking-widest text-subtle border-b border-white/10">Ritim bazında</p>
         <ul className="divide-y divide-white/5">
           {[...ritimBazli.entries()].map(([id, v]) => (
             <li key={id} className="flex items-center justify-between px-4 py-2.5 text-sm">

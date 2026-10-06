@@ -76,7 +76,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
             type="button"
             onClick={() => setAgeGroup(age)}
             aria-pressed={ageGroup === age}
-            className={`py-2.5 px-2 rounded-lg text-sm font-bold transition-all active:scale-95 ${
+            className={`py-2.5 px-2 rounded-lg text-sm font-bold transition active:scale-[0.97] ${
               ageGroup === age
                 ? "bg-teal-500/20 text-teal-300 border border-teal-500/50 shadow-[0_0_15px_rgba(20,184,166,0.3)] ring-2 ring-teal-500/20"
                 : "bg-black/20 text-muted border border-white/5 hover:bg-white/5"
@@ -107,7 +107,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
           if (val === "" || /^\d*\.?\d*$/.test(val)) setKilo(val);
         }}
         placeholder="Örn: 70"
-        className="w-full text-xl font-black text-white bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all placeholder-white/20"
+        className="w-full text-xl font-black text-white bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition placeholder-white/20"
       />
       {kiloInvalid && (
         <p className="text-xs font-bold text-red-400">Lütfen geçerli bir kilo değeri giriniz (1–300 kg arası).</p>
@@ -135,7 +135,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
               role="tab"
               aria-selected={inputMode === m}
               onClick={() => setInputMode(m)}
-              className={`flex-1 py-2 text-sm font-bold rounded-lg transition-all ${
+              className={`flex-1 py-2 text-sm font-bold rounded-lg transition ${
                 inputMode === m ? "bg-orange-500/20 text-orange-300 border border-orange-500/50 shadow-sm" : "text-muted hover:bg-white/5"
               }`}
             >
@@ -157,7 +157,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
                 if (val === "" || /^\d*\.?\d*$/.test(val)) setManualTbsa(val);
               }}
               placeholder="Örn: 15.5"
-              className="w-full text-xl font-black text-white bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all placeholder-white/20"
+              className="w-full text-xl font-black text-white bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition placeholder-white/20"
             />
             {tbsaInvalid && <p className="text-xs font-bold text-red-400">Yanık yüzdesi %100&apos;ü geçemez.</p>}
           </div>
@@ -176,7 +176,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
                   role="radio"
                   aria-checked={view === o.value}
                   onClick={() => setView(o.value)}
-                  className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${
+                  className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition ${
                     view === o.value ? "bg-white/10 text-white border border-white/20" : "text-muted hover:bg-white/5"
                   }`}
                 >
@@ -187,12 +187,12 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
 
             <div className="rounded-xl bg-black/[0.03] dark:bg-black/20 border border-white/10 px-2 pt-2 pb-3">
               {view === "both" ? (
-                <div className="grid grid-cols-2 text-center text-[10px] font-bold uppercase tracking-widest text-subtle mb-1">
+                <div className="grid grid-cols-2 text-center text-[11px] font-bold uppercase tracking-widest text-subtle mb-1">
                   <span>Ön</span>
                   <span>Arka</span>
                 </div>
               ) : (
-                <p className="text-center text-[10px] font-bold uppercase tracking-widest text-subtle mb-1">
+                <p className="text-center text-[11px] font-bold uppercase tracking-widest text-subtle mb-1">
                   {view === "anterior" ? "Ön" : "Arka"}
                 </p>
               )}
@@ -201,7 +201,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
 
             <div className="flex items-center justify-between rounded-xl bg-orange-500/10 border border-orange-500/25 px-4 py-3">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-orange-300/80">Toplam Yanık (TBSA)</p>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-orange-300/80">Toplam Yanık (TBSA)</p>
                 <p className="text-[11px] text-subtle">{selectedZones.length} bölge seçili</p>
               </div>
               <p className="text-3xl font-black text-orange-400 tabular-nums">%{formatPercent(calculatedTbsa)}</p>
@@ -209,7 +209,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
 
             {selectedZones.length > 0 && (
               <div className="space-y-2">
-                <p className="text-[10px] font-bold text-muted uppercase tracking-widest">Seçili bölgeler</p>
+                <p className="text-[11px] font-bold text-muted uppercase tracking-widest">Seçili bölgeler</p>
                 <div className="flex flex-wrap gap-1.5">
                   {selectedZones.map(z => (
                     <button
@@ -217,10 +217,10 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
                       type="button"
                       onClick={() => toggleZone(z.id)}
                       aria-label={`${z.name_tr} bölgesini çıkar`}
-                      className="flex items-center gap-1 px-2 py-1 rounded-full bg-orange-500/20 border border-orange-500/40 text-orange-300 text-xs font-bold hover:bg-red-500/20 hover:border-red-500/40 hover:text-red-300 transition-all"
+                      className="flex items-center gap-1 px-2 py-1 rounded-full bg-orange-500/20 border border-orange-500/40 text-orange-300 text-xs font-bold hover:bg-red-500/20 hover:border-red-500/40 hover:text-red-300 transition"
                     >
                       {z.name_tr}
-                      <span className="opacity-70 text-[10px]">%{formatPercent(zonePercent(z, ageGroup))}</span>
+                      <span className="opacity-70 text-[11px]">%{formatPercent(zonePercent(z, ageGroup))}</span>
                       <X className="w-3 h-3 opacity-60" />
                     </button>
                   ))}
@@ -228,7 +228,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
                 <button
                   type="button"
                   onClick={() => setSelected(new Set())}
-                  className="w-full py-2 bg-red-500/10 text-red-400 rounded-lg text-sm font-bold border border-red-500/20 active:scale-95 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-2 bg-red-500/10 text-red-400 rounded-lg text-sm font-bold border border-red-500/20 active:scale-[0.97] transition flex items-center justify-center gap-2"
                 >
                   <RotateCcw className="w-3.5 h-3.5" /> Seçimleri Temizle
                 </button>
@@ -238,7 +238,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
             <button
               type="button"
               onClick={() => setIsZoomed(true)}
-              className="w-full flex items-center justify-center gap-2 py-2 text-xs font-bold text-muted rounded-lg border border-white/10 hover:bg-white/5 transition-all"
+              className="w-full flex items-center justify-center gap-2 py-2 text-xs font-bold text-muted rounded-lg border border-white/10 hover:bg-white/5 transition"
             >
               <BookOpen className="w-3.5 h-3.5" /> Referans Lund-Browder Şeması
             </button>
@@ -251,7 +251,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
   /* ───────────── Sayfa ───────────── */
 
   return (
-    <div className="flex flex-col gap-6 w-full animate-in fade-in duration-300">
+    <div className="flex flex-col gap-6 w-full animate-in fade-in duration-200">
       {variant === "parkland" ? (
         <>
           <div className="glass-card rounded-2xl shadow-sm">
@@ -286,26 +286,26 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
               <Droplet className="w-4 h-4" />
               <p className="text-xs font-bold uppercase tracking-wider">24 Saatlik Toplam Sıvı (Ringer Laktat)</p>
             </div>
-            <p className="text-5xl font-black tracking-tight">{toplam.toFixed(0)} <span className="text-xl opacity-80">mL</span></p>
+            <p className="text-5xl font-black tracking-tight tabular-nums">{toplam.toFixed(0)} <span className="text-xl opacity-80">mL</span></p>
             <p className="text-[11px] opacity-80 mt-1">4 mL × {k} kg × %{formatPercent(tbsa)}</p>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div className="glass-card rounded-2xl border-2 border-orange-400/50 p-4 text-center bg-orange-500/10">
               <p className="text-[11px] font-bold text-orange-300 uppercase tracking-wide mb-1">İlk 8 Saat</p>
-              <p className="text-3xl font-black text-orange-400">{ilk8.toFixed(0)}</p>
+              <p className="text-3xl font-black text-orange-400 tabular-nums">{ilk8.toFixed(0)}</p>
               <p className="text-xs text-orange-300/80 font-bold mb-3">mL</p>
               <div className="pt-3 border-t border-orange-500/20">
-                <p className="text-[10px] text-orange-300/60 uppercase">Saatlik Hız</p>
+                <p className="text-[11px] text-orange-300/60 uppercase">Saatlik Hız</p>
                 <p className="text-lg font-black text-white">{(ilk8 / 8).toFixed(0)} <span className="text-xs font-normal">mL/saat</span></p>
               </div>
             </div>
             <div className="glass-card rounded-2xl border-2 border-teal-400/50 p-4 text-center bg-teal-500/10">
               <p className="text-[11px] font-bold text-teal-300 uppercase tracking-wide mb-1">Kalan 16 Saat</p>
-              <p className="text-3xl font-black text-teal-400">{kalan16.toFixed(0)}</p>
+              <p className="text-3xl font-black text-teal-400 tabular-nums">{kalan16.toFixed(0)}</p>
               <p className="text-xs text-teal-300/80 font-bold mb-3">mL</p>
               <div className="pt-3 border-t border-teal-500/20">
-                <p className="text-[10px] text-teal-300/60 uppercase">Saatlik Hız</p>
+                <p className="text-[11px] text-teal-300/60 uppercase">Saatlik Hız</p>
                 <p className="text-lg font-black text-white">{(kalan16 / 16).toFixed(0)} <span className="text-xs font-normal">mL/saat</span></p>
               </div>
             </div>
@@ -335,7 +335,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
           </div>
           <button
             type="button"
-            className="absolute top-6 right-6 px-4 py-2 rounded-full text-sm font-bold border transition-all shadow-lg"
+            className="absolute top-6 right-6 px-4 py-2 rounded-full text-sm font-bold border transition shadow-lg"
             style={{ backgroundColor: "var(--glass-bg-hover)", borderColor: "var(--glass-border)", color: "var(--fg)" }}
           >
             Kapat

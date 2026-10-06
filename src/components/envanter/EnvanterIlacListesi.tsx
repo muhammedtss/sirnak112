@@ -32,7 +32,7 @@ function ExpandableText({
       onClick={() => setExpanded(!expanded)}
     >
       <p
-        className={`text-[13px] sm:text-[15px] md:text-base font-bold leading-tight transition-all duration-300 ${
+        className={`text-[13px] sm:text-[15px] md:text-base font-bold leading-tight transition duration-200 ${
           expanded ? "whitespace-normal break-words" : "truncate"
         } ${colorClass}`}
       >
@@ -110,11 +110,11 @@ export default function EnvanterIlacListesi({
           <div className="w-full bg-slate-200 rounded-full h-2 sm:h-2.5 overflow-hidden mb-3 sm:mb-4">
             <div className="h-full rounded-full flex">
               <div
-                className="bg-[#00c853] transition-all duration-500"
+                className="bg-[#00c853]"
                 style={{ width: `${(yeterliCount / total) * 100}%` }}
               />
               <div
-                className="bg-[#ff3d00] transition-all duration-500"
+                className="bg-[#ff3d00]"
                 style={{ width: `${(yetersizCount / total) * 100}%` }}
               />
             </div>
@@ -123,19 +123,19 @@ export default function EnvanterIlacListesi({
           <div className="flex items-center justify-between sm:justify-start sm:gap-5">
             <div className="flex items-center gap-1.5 sm:gap-2">
               <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#00c853]" />
-              <span className="text-[10px] sm:text-xs font-bold text-slate-600">
+              <span className="text-[11px] sm:text-xs font-bold text-slate-600">
                 {yeterliCount} Yeterli
               </span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2">
               <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#ff3d00]" />
-              <span className="text-[10px] sm:text-xs font-bold text-slate-600">
+              <span className="text-[11px] sm:text-xs font-bold text-slate-600">
                 {yetersizCount} Yetersiz
               </span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2">
               <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-slate-300" />
-              <span className="text-[10px] sm:text-xs font-bold text-slate-600">
+              <span className="text-[11px] sm:text-xs font-bold text-slate-600">
                 {bekleyenCount} Bekliyor
               </span>
             </div>
@@ -156,7 +156,7 @@ export default function EnvanterIlacListesi({
           return (
             <div
               key={ilac.id}
-              className={`flex flex-col w-full rounded-xl border transition-all duration-300 overflow-hidden ${
+              className={`flex flex-col w-full rounded-xl border transition duration-200 overflow-hidden ${
                 isYeterli
                   ? "bg-emerald-50/50 border-emerald-300 shadow-sm"
                   : isYetersiz
@@ -244,13 +244,13 @@ export default function EnvanterIlacListesi({
                     <>
                       <button
                         onClick={() => handleYeterli(ilac.id)}
-                        className="bg-[#00c853] hover:bg-emerald-500 text-white text-[11px] sm:text-sm font-bold px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-lg active:scale-95 transition-all whitespace-nowrap"
+                        className="bg-[#00c853] hover:bg-emerald-500 text-white text-[11px] sm:text-sm font-bold px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-lg active:scale-[0.97] transition whitespace-nowrap"
                       >
                         Yeterli
                       </button>
                       <button
                         onClick={() => handleYetersiz(ilac.id)}
-                        className="bg-[#ff3d00] hover:bg-red-500 text-white text-[11px] sm:text-sm font-bold px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-lg active:scale-95 transition-all whitespace-nowrap"
+                        className="bg-[#ff3d00] hover:bg-red-500 text-white text-[11px] sm:text-sm font-bold px-2.5 py-1.5 sm:px-4 sm:py-2.5 rounded-lg active:scale-[0.97] transition whitespace-nowrap"
                       >
                         Yetersiz
                       </button>
@@ -261,7 +261,7 @@ export default function EnvanterIlacListesi({
                   {isYeterli && (
                     <button
                       onClick={() => handleReset(ilac.id)}
-                      className="text-emerald-700 bg-emerald-100 hover:bg-emerald-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-[11px] sm:text-xs font-bold active:scale-95 transition-all whitespace-nowrap"
+                      className="text-emerald-700 bg-emerald-100 hover:bg-emerald-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-[11px] sm:text-xs font-bold active:scale-[0.97] transition whitespace-nowrap"
                     >
                       Geri Al
                     </button>
@@ -269,7 +269,7 @@ export default function EnvanterIlacListesi({
                   {isYetersiz && (
                     <button
                       onClick={() => handleReset(ilac.id)}
-                      className="text-red-700 bg-red-100 hover:bg-red-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-[11px] sm:text-xs font-bold active:scale-95 transition-all whitespace-nowrap"
+                      className="text-red-700 bg-red-100 hover:bg-red-200 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-[11px] sm:text-xs font-bold active:scale-[0.97] transition whitespace-nowrap"
                     >
                       Geri Al
                     </button>
@@ -279,7 +279,7 @@ export default function EnvanterIlacListesi({
 
               {/* Yetersiz Seçildiğinde Açılan Input Alanı */}
               {isYetersiz && (
-                <div className="px-2.5 pb-2.5 sm:px-4 sm:pb-4 pt-0 animate-in fade-in slide-in-from-top-2 duration-300">
+                <div className="px-2.5 pb-2.5 sm:px-4 sm:pb-4 pt-0 animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-3 bg-red-100/50 border border-red-200 rounded-xl p-2 sm:p-3">
                     <label className="text-[11px] sm:text-sm font-bold text-red-800 whitespace-nowrap pl-1">
                       Mevcut Adet:

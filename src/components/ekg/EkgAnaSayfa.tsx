@@ -22,7 +22,7 @@ export default function EkgAnaSayfa() {
           className="absolute -top-8 -right-8 w-40 h-40 rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(16,185,129,0.28) 0%, transparent 70%)", filter: "blur(18px)" }}
         />
-        <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-400">Temel EKG ve Ritim Bozuklukları</p>
+        <p className="text-[11px] font-bold uppercase tracking-widest text-emerald-400">Temel EKG ve Ritim Bozuklukları</p>
         <h2 className="text-xl font-extrabold mt-1 leading-snug">Bakmak ve görmek farklı şeylerdir.</h2>
         <p className="text-xs text-muted mt-1.5 leading-relaxed max-w-md">
           Ritimleri 5 adımlı ortak bir yöntemle değerlendirmeyi öğrenin, gerçek EKG&apos;lerle pratik yapın ve vaka sınavıyla
@@ -34,7 +34,7 @@ export default function EkgAnaSayfa() {
             <span className="text-emerald-400">{tamam}/{DERSLER.length} ders</span>
           </div>
           <div className="h-2 rounded-full bg-white/10 overflow-hidden">
-            <div className="h-full rounded-full bg-emerald-400 transition-all" style={{ width: `${(tamam / DERSLER.length) * 100}%` }} />
+            <div className="h-full w-full rounded-full bg-emerald-400 origin-left transition-transform duration-200 ease-out" style={{ transform: `scaleX(${tamam / DERSLER.length})` }} />
           </div>
         </div>
         <Link
@@ -102,7 +102,7 @@ export default function EkgAnaSayfa() {
                 <li key={s.tarih} className="flex items-center justify-between gap-3 px-4 py-2.5">
                   <span className="min-w-0">
                     <span className="block text-xs font-bold">{s.kapsam} · {s.soruSayisi} vaka</span>
-                    <span className="block text-[10px] text-subtle">{tarihBicim(s.tarih)} · {s.taniDogru}/{s.soruSayisi} tanı doğru</span>
+                    <span className="block text-[11px] text-subtle">{tarihBicim(s.tarih)} · {s.taniDogru}/{s.soruSayisi} tanı doğru</span>
                   </span>
                   <span className={`text-sm font-black tabular-nums ${y >= 85 ? "text-emerald-400" : y >= 60 ? "text-amber-400" : "text-red-400"}`}>%{y}</span>
                 </li>
@@ -112,7 +112,7 @@ export default function EkgAnaSayfa() {
         </section>
       )}
 
-      <p className="text-[10px] text-subtle leading-relaxed">
+      <p className="text-[11px] text-subtle leading-relaxed">
         Kaynak: ASH Genel Müdürlüğü Eğitim ve Projeler Daire Başkanlığı — “Temel EKG (Elektrokardiyografi)” eğitim sunumu. Gerçek
         vaka görüntüleri bu sunumdan alınmıştır; alıştırma şeritleri standart kağıt ölçeğinde (25 mm/sn, 10 mm/mV) üretilir.
       </p>

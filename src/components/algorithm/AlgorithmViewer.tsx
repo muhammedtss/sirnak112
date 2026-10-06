@@ -94,7 +94,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
         </div>
         <button
           onClick={onClose}
-          className="shrink-0 ml-3 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:scale-90 transition-all text-white"
+          className="shrink-0 ml-3 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:scale-[0.97] transition text-white"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -107,7 +107,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
           <button
             onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
             disabled={currentIndex === 0}
-            className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-30 active:scale-90 transition-all text-white"
+            className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-30 active:scale-[0.97] transition text-white"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -118,7 +118,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
               <button
                 key={img.src}
                 onClick={() => setCurrentIndex(i)}
-                className={`shrink-0 transition-all rounded-full px-4 py-1.5 text-xs font-bold ${
+                className={`shrink-0 transition rounded-full px-4 py-1.5 text-xs font-bold ${
                   i === currentIndex
                     ? "bg-white text-black"
                     : "bg-white/10 text-white hover:bg-white/20"
@@ -131,7 +131,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
           <button
             onClick={() => setCurrentIndex((i) => Math.min(images.length - 1, i + 1))}
             disabled={currentIndex === images.length - 1}
-            className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-30 active:scale-90 transition-all text-white"
+            className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-30 active:scale-[0.97] transition text-white"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -158,7 +158,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
             </p>
             <button
               onClick={onClose}
-              className="mt-2 bg-white/20 hover:bg-white/30 text-white font-bold px-6 py-2.5 rounded-xl active:scale-95 transition-all"
+              className="mt-2 bg-white/20 hover:bg-white/30 text-white font-bold px-6 py-2.5 rounded-xl active:scale-[0.97] transition"
             >
               Kapat
             </button>
@@ -169,7 +169,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
             key={current.src}
             src={current.src}
             alt={`${title} - ${current.label}`}
-            className="rounded-xl shadow-2xl transition-all duration-200 origin-top-left shrink-0"
+            className="rounded-xl shadow-2xl transition duration-200 origin-top-left shrink-0"
             style={{ width: zoomLevel === 1 ? '100%' : `${zoomLevel * 100}%`, minWidth: 280, maxWidth: 'none' }}
             onError={() => setImgError(true)}
             draggable={false}
@@ -183,7 +183,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
         <button 
           onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.max(z - 0.5, 1)); }} 
           disabled={zoomLevel <= 1}
-          className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-2xl flex items-center justify-center active:scale-95 transition-all disabled:opacity-30"
+          className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-2xl flex items-center justify-center active:scale-[0.97] transition disabled:opacity-30"
         >
           -
         </button>
@@ -193,7 +193,7 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
         <button 
           onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.min(z + 0.5, 4)); }} 
           disabled={zoomLevel >= 4}
-          className="w-12 h-12 rounded-full bg-white text-black hover:bg-slate-200 font-black text-2xl flex items-center justify-center active:scale-95 transition-all disabled:opacity-30 shadow-lg"
+          className="w-12 h-12 rounded-full bg-white text-black hover:bg-slate-200 font-black text-2xl flex items-center justify-center active:scale-[0.97] transition disabled:opacity-30 shadow-lg"
         >
           +
         </button>
@@ -259,14 +259,14 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
         />
       )}
 
-      <div className="w-full max-w-2xl mx-auto p-4 flex flex-col gap-6 animate-in fade-in duration-300">
+      <div className="w-full max-w-2xl mx-auto p-4 flex flex-col gap-6 animate-in fade-in duration-200">
         <div className="sticky top-4 z-10 p-4 rounded-2xl glass-card shadow-lg flex flex-col gap-3">
           <h2 className="text-xl font-bold leading-tight">{algorithm.title}</h2>
           
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
             <button
               onClick={() => setViewMode(viewMode === "step" ? "full" : "step")}
-              className="shrink-0 text-sm font-bold px-4 py-2 rounded-full active:scale-95 transition-all shadow-sm"
+              className="shrink-0 text-sm font-bold px-4 py-2 rounded-full active:scale-[0.97] transition shadow-sm"
               style={{ background: "rgba(255,255,255,0.05)", border: "1px solid var(--glass-border)", color: "var(--fg)" }}
             >
               {viewMode === "step" ? "Tüm Akışı Gör" : "Adım Adım Gör"}
@@ -275,7 +275,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
             {schemaImages.length > 0 && (
               <button
                 onClick={() => setShowLightbox(true)}
-                className="shrink-0 flex items-center gap-1.5 text-sm font-bold px-4 py-2 rounded-full active:scale-95 transition-all shadow-sm whitespace-nowrap"
+                className="shrink-0 flex items-center gap-1.5 text-sm font-bold px-4 py-2 rounded-full active:scale-[0.97] transition shadow-sm whitespace-nowrap"
                 style={{ background: "rgba(59,130,246,0.15)", color: "#60A5FA", border: "1px solid rgba(59,130,246,0.3)" }}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -283,7 +283,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                 </svg>
                 Algoritmayı Gör
                 {schemaImages.length > 1 && (
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none" style={{ background: "rgba(59,130,246,0.3)" }}>
+                  <span className="text-[11px] font-bold px-1.5 py-0.5 rounded-full leading-none" style={{ background: "rgba(59,130,246,0.3)" }}>
                     {schemaImages.length}
                   </span>
                 )}
@@ -313,7 +313,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                   )}
 
                   <div
-                    className={`w-full rounded-xl transition-all duration-300 relative overflow-hidden ${
+                    className={`w-full rounded-xl transition duration-200 relative overflow-hidden ${
                       node.isCritical ? "" : "glass-card"
                     }`}
                     style={
@@ -323,7 +323,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                     }
                   >
                     {node.isCritical && (
-                      <div className="absolute top-0 left-0 bg-red-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-br-lg uppercase tracking-wider">
+                      <div className="absolute top-0 left-0 bg-red-500/90 text-white text-[11px] font-bold px-2 py-0.5 rounded-br-lg uppercase tracking-wider">
                         KKM
                       </div>
                     )}
@@ -352,7 +352,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                           <button
                             onClick={() => node.yesId && advance(node.yesId)}
                             disabled={!node.yesId}
-                            className="flex-1 glass-card hover:bg-emerald-500/10 hover:border-emerald-500/50 hover:text-emerald-400 disabled:opacity-50 py-3 rounded-xl font-bold text-lg active:scale-95 transition-all"
+                            className="flex-1 glass-card hover:bg-emerald-500/10 hover:border-emerald-500/50 hover:text-emerald-400 disabled:opacity-50 py-3 rounded-xl font-bold text-lg active:scale-[0.97] transition"
                             style={{ borderColor: "rgba(16,185,129,0.3)", color: "#34D399" }}
                           >
                             {node.yesText || "Evet"}
@@ -360,7 +360,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                           <button
                             onClick={() => node.noId && advance(node.noId)}
                             disabled={!node.noId}
-                            className="flex-1 glass-card hover:bg-red-500/10 hover:border-red-500/50 hover:text-red-400 disabled:opacity-50 py-3 rounded-xl font-bold text-lg active:scale-95 transition-all"
+                            className="flex-1 glass-card hover:bg-red-500/10 hover:border-red-500/50 hover:text-red-400 disabled:opacity-50 py-3 rounded-xl font-bold text-lg active:scale-[0.97] transition"
                             style={{ borderColor: "rgba(239,68,68,0.3)", color: "#F87171" }}
                           >
                             {node.noText || "Hayır"}
@@ -370,7 +370,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                         <div className="flex flex-col sm:flex-row gap-3 w-full">
                           <button
                             onClick={() => node.yesId && setHistory(prev => [...prev.slice(0, index + 1), node.yesId!])}
-                            className="flex-1 py-3 rounded-xl font-bold text-lg text-center cursor-pointer transition-all active:scale-95"
+                            className="flex-1 py-3 rounded-xl font-bold text-lg text-center cursor-pointer transition active:scale-[0.97]"
                             style={
                               selectedAnswer === "Evet"
                                 ? { background: "rgba(16,185,129,0.15)", border: "1px solid rgba(16,185,129,0.3)", color: "#34D399" }
@@ -381,7 +381,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                           </button>
                           <button
                             onClick={() => node.noId && setHistory(prev => [...prev.slice(0, index + 1), node.noId!])}
-                            className="flex-1 py-3 rounded-xl font-bold text-lg text-center cursor-pointer transition-all active:scale-95"
+                            className="flex-1 py-3 rounded-xl font-bold text-lg text-center cursor-pointer transition active:scale-[0.97]"
                             style={
                               selectedAnswer === "Hayır"
                                 ? { background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.3)", color: "#F87171" }
@@ -402,14 +402,14 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                         {history.length > 1 && (
                           <button
                             onClick={goBack}
-                            className="flex-1 glass-card glass-hover py-3 rounded-xl font-bold text-base active:scale-95 transition-all"
+                            className="flex-1 glass-card glass-hover py-3 rounded-xl font-bold text-base active:scale-[0.97] transition"
                           >
                             ← Önceki
                           </button>
                         )}
                         <button
                           onClick={() => node.nextId && advance(node.nextId)}
-                          className="flex-1 py-3 rounded-xl font-bold text-base active:scale-95 transition-all shadow-[0_0_15px_rgba(59,130,246,0.3)]"
+                          className="flex-1 py-3 rounded-xl font-bold text-base active:scale-[0.97] transition shadow-[0_0_15px_rgba(59,130,246,0.3)]"
                           style={{ background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.5)", color: "#60A5FA" }}
                         >
                           Sonraki Adım →
@@ -427,7 +427,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                           {node.type === "redirect" && node.targetAlgorithmId ? (
                             <Link
                               href={`/algoritmalar/${category}/${node.targetAlgorithmId}`}
-                              className="w-full text-center py-4 rounded-xl font-bold text-lg active:scale-95 transition-all block shadow-[0_0_15px_rgba(59,130,246,0.3)]"
+                              className="w-full text-center py-4 rounded-xl font-bold text-lg active:scale-[0.97] transition block shadow-[0_0_15px_rgba(59,130,246,0.3)]"
                               style={{ background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.5)", color: "#60A5FA" }}
                             >
                               {node.content || "İlgili Protocole Git"} 🚀
@@ -441,14 +441,14 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                             {history.length > 1 && (
                               <button
                                 onClick={goBack}
-                                className="flex-1 glass-card glass-hover py-3 rounded-xl font-bold text-base active:scale-95 transition-all"
+                                className="flex-1 glass-card glass-hover py-3 rounded-xl font-bold text-base active:scale-[0.97] transition"
                               >
                                 ← Önceki
                               </button>
                             )}
                             <button
                               onClick={handleReset}
-                              className="flex-1 glass-card glass-hover py-3 rounded-xl font-bold text-base active:scale-95 transition-all"
+                              className="flex-1 glass-card glass-hover py-3 rounded-xl font-bold text-base active:scale-[0.97] transition"
                             >
                               Başa Sar
                             </button>
@@ -462,7 +462,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                       <div className="w-0.5 h-4 bg-transparent" />
                       <button
                         onClick={goBack}
-                        className="w-full glass-card glass-hover py-3 rounded-xl font-bold text-base active:scale-95 transition-all mt-2"
+                        className="w-full glass-card glass-hover py-3 rounded-xl font-bold text-base active:scale-[0.97] transition mt-2"
                       >
                         ← Önceki Adım
                       </button>
@@ -492,7 +492,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                     }
                   >
                     {node.isCritical && (
-                      <div className="absolute top-0 left-0 bg-red-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-br-lg uppercase tracking-wider">
+                      <div className="absolute top-0 left-0 bg-red-500/90 text-white text-[11px] font-bold px-2 py-0.5 rounded-br-lg uppercase tracking-wider">
                         KKM
                       </div>
                     )}

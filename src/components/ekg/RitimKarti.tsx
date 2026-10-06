@@ -50,7 +50,7 @@ export default function RitimKarti({ ritimId, varsayilanSeed = 1 }: { ritimId: R
         <dl className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {kriterler.map(([k, v]) => (
             <div key={k} className="rounded-lg bg-black/[0.03] dark:bg-black/20 border border-white/10 px-3 py-2">
-              <dt className="text-[10px] font-bold uppercase tracking-widest text-subtle">{k}</dt>
+              <dt className="text-[11px] font-bold uppercase tracking-widest text-subtle">{k}</dt>
               <dd className="text-xs font-semibold mt-0.5">{v}</dd>
             </div>
           ))}

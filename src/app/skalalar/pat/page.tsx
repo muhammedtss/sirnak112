@@ -233,7 +233,7 @@ export default function PATPage() {
           <div className="flex justify-center gap-4 mt-2">
             {["Görünüm (A)", "Solunum (B)", "Dolaşım (C)"].map((l) => (
               <div key={l} className="text-center">
-                <div className="text-[10px] font-bold opacity-70">{l}</div>
+                <div className="text-[11px] font-bold opacity-70">{l}</div>
               </div>
             ))}
           </div>
@@ -249,7 +249,7 @@ export default function PATPage() {
                 <span className="text-base">{side.icon}</span>
                 <div>
                   <p className="text-sm font-black leading-tight">{side.title}</p>
-                  <p className="text-[10px] opacity-70">{side.subtitle}</p>
+                  <p className="text-[11px] opacity-70">{side.subtitle}</p>
                 </div>
               </div>
               <div className="grid grid-cols-2 divide-x divide-white/10">
@@ -263,7 +263,7 @@ export default function PATPage() {
                     </div>
                     <p className={`text-xs font-black ${current === "normal" ? "text-emerald-400" : "text-white/90"}`}>{side.normalLabel}</p>
                   </div>
-                  <p className="text-[10px] text-slate-500 leading-snug">{side.normalDesc}</p>
+                  <p className="text-[11px] text-slate-500 leading-snug">{side.normalDesc}</p>
                 </button>
                 <button
                   onClick={() => setStatus(side.key, "abnormal")}
@@ -275,7 +275,7 @@ export default function PATPage() {
                     </div>
                     <p className={`text-xs font-black ${current === "abnormal" ? "text-red-400" : "text-white/90"}`}>{side.abnormalLabel}</p>
                   </div>
-                  <p className="text-[10px] text-slate-500 leading-snug">{side.abnormalDesc}</p>
+                  <p className="text-[11px] text-slate-500 leading-snug">{side.abnormalDesc}</p>
                 </button>
               </div>
             </div>

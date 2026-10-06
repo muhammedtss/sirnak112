@@ -75,13 +75,13 @@ function IletiAnimasyonu() {
           return (
             <li key={s.ad} className="relative">
               <span
-                className={`absolute -left-7 top-2 w-6 h-6 rounded-full border-2 flex items-center justify-center text-[10px] font-black transition-all duration-300 ${
+                className={`absolute -left-7 top-2 w-6 h-6 rounded-full border-2 flex items-center justify-center text-[11px] font-black transition duration-200 ${
                   on ? "bg-amber-400 border-amber-300 text-slate-900 shadow-[0_0_14px_rgba(251,191,36,0.7)]" : "border-white/20 text-muted"
                 }`}
               >
                 {i + 1}
               </span>
-              <div className={`rounded-xl border px-3 py-2 transition-all duration-300 ${on ? "border-amber-500/40 bg-amber-500/10" : "border-white/10"}`}>
+              <div className={`rounded-xl border px-3 py-2 transition duration-200 ${on ? "border-amber-500/40 bg-amber-500/10" : "border-white/10"}`}>
                 <p className="text-sm font-bold">{s.ad}</p>
                 <p className="text-[11px] text-muted">{s.not}</p>
               </div>
@@ -135,7 +135,7 @@ function IletiSiralama() {
               type="button"
               onClick={() => tikla(i)}
               disabled={sira >= 0}
-              className={`px-3 py-2 rounded-xl border text-xs font-bold transition-all ${
+              className={`px-3 py-2 rounded-xl border text-xs font-bold transition ${
                 sira >= 0
                   ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
                   : hata === i
@@ -278,7 +278,7 @@ function DalgaAnatomisi() {
             type="button"
             onClick={() => setSecili(d.id)}
             aria-pressed={secili === d.id}
-            className="px-3 py-1.5 rounded-lg text-xs font-bold border transition-all"
+            className="px-3 py-1.5 rounded-lg text-xs font-bold border transition"
             style={
               secili === d.id
                 ? { borderColor: d.renk, background: `${d.renk}22`, color: d.renk }
@@ -290,7 +290,7 @@ function DalgaAnatomisi() {
         ))}
       </div>
       <div className="rounded-xl border px-3.5 py-3 text-sm leading-relaxed" style={{ borderColor: `${aktif.renk}55`, background: `${aktif.renk}14` }}>
-        <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: aktif.renk }}>{aktif.etiket}</p>
+        <p className="text-[11px] font-bold uppercase tracking-widest mb-1" style={{ color: aktif.renk }}>{aktif.etiket}</p>
         {aktif.metin}
       </div>
     </div>
@@ -320,7 +320,7 @@ export function EkgKagidiDersi() {
             ["Dikey 10 mm", "1 mV"],
           ].map(([k, v]) => (
             <div key={k} className="rounded-xl border border-white/10 bg-black/[0.03] dark:bg-black/20 px-2 py-2.5">
-              <p className="text-[10px] font-bold uppercase tracking-wide text-subtle">{k}</p>
+              <p className="text-[11px] font-bold uppercase tracking-wide text-subtle">{k}</p>
               <p className="text-base font-black mt-0.5">{v}</p>
             </div>
           ))}
@@ -479,7 +479,7 @@ export function DegerlendirmeDersi() {
         <div className="grid grid-cols-4 sm:grid-cols-8 gap-1.5 text-center">
           {[[1, 300], [2, 150], [3, 100], [4, 75], [6, 50], [7, 43], [8, 37], [9, 33]].map(([k, h]) => (
             <div key={k} className="rounded-lg border border-white/10 py-1.5">
-              <p className="text-[10px] text-subtle font-bold">{k} kare</p>
+              <p className="text-[11px] text-subtle font-bold">{k} kare</p>
               <p className="text-sm font-black">{h}</p>
             </div>
           ))}

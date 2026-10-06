@@ -24,7 +24,7 @@ export default function AvpuPage() {
           <button
             key={l.id}
             onClick={() => setSelected(l.id)}
-            className={`w-full rounded-xl border-2 p-4 text-left transition-all ${
+            className={`w-full rounded-xl border-2 p-4 text-left transition ${
               selected === l.id ? "border-slate-800 shadow-lg scale-[1.02]" : "border-white/10 glass-card shadow-sm"
             }`}
           >
@@ -43,7 +43,7 @@ export default function AvpuPage() {
         {level && (
           <div className={`${level.color} rounded-xl p-4 text-center text-white`}>
             <p className="text-xs font-bold uppercase tracking-wider mb-1">Bilinç Düzeyi</p>
-            <p className="text-3xl font-black">{level.id}</p>
+            <p className="text-3xl font-black tabular-nums">{level.id}</p>
             <p className="text-sm font-bold mt-1">{level.severity}</p>
           </div>
         )}

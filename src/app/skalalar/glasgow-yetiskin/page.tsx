@@ -85,7 +85,7 @@ export default function GlasgowYetiskinPage() {
         {allSelected && (
           <div className={`${severity.bg} rounded-xl border-2 border-current p-4 text-center ${severity.color}`}>
             <p className="text-xs font-bold uppercase tracking-wider mb-1">Toplam GKS Skoru</p>
-            <p className="text-4xl font-black">{total}</p>
+            <p className="text-4xl font-black tabular-nums">{total}</p>
             <p className="text-sm font-bold mt-1">{severity.text}</p>
             <p className="text-[11px] mt-2 opacity-70">E{selections[0]} + V{selections[1]} + M{selections[2]}</p>
           </div>

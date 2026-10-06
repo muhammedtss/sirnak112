@@ -54,7 +54,7 @@ export default function CabukPage() {
             <button
               key={step.id}
               onClick={() => toggleItem(step.id)}
-              className={`w-full text-left p-4 rounded-xl border transition-all ${
+              className={`w-full text-left p-4 rounded-xl border transition ${
                 checkedItems[step.id]
                   ? "bg-emerald-500/10 border-emerald-500/30"
                   : "glass-card hover:bg-white/5"

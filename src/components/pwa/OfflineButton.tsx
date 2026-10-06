@@ -25,7 +25,7 @@ const formatMB = (bytes: number) => `${(bytes / 1024 / 1024).toFixed(1).replace(
 function ProgressBar({ value, color }: { value: number; color: string }) {
   return (
     <div className="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
-      <div className="h-full rounded-full transition-all duration-300" style={{ width: `${Math.min(100, value * 100)}%`, background: color }} />
+      <div className="h-full w-full rounded-full origin-left transition-transform duration-200 ease-out" style={{ transform: `scaleX(${Math.min(1, Math.max(0, value))})`, background: color }} />
     </div>
   );
 }
@@ -58,7 +58,7 @@ function PackRow({ name, pack, online, busy, progress }: PackRowProps) {
           <button
             type="button"
             onClick={() => removePack(name)}
-            className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-emerald-400 border border-emerald-500/30 bg-emerald-500/10 hover:text-red-400 hover:border-red-500/30 hover:bg-red-500/10 transition-all group"
+            className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-emerald-400 border border-emerald-500/30 bg-emerald-500/10 hover:text-red-400 hover:border-red-500/30 hover:bg-red-500/10 transition group"
             aria-label={`${pack.label} paketini cihazdan kaldır`}
           >
             <CheckCircle2 className="w-3.5 h-3.5 group-hover:hidden" />
@@ -76,7 +76,7 @@ function PackRow({ name, pack, online, busy, progress }: PackRowProps) {
             type="button"
             disabled={!online}
             onClick={() => downloadPack(name)}
-            className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-sky-400 border border-sky-500/30 bg-sky-500/10 disabled:opacity-40 active:scale-95 transition-all"
+            className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-sky-400 border border-sky-500/30 bg-sky-500/10 disabled:opacity-40 active:scale-[0.97] transition"
           >
             <CloudDownload className="w-3.5 h-3.5" /> {pack.enabled || pack.cached > 0 ? "Devam et" : "İndir"}
           </button>
@@ -137,7 +137,7 @@ function OfflinePanel({ s }: { s: OfflineState }) {
         ))}
 
       {s.mode === "active" && (
-        <p className="text-[10px] text-subtle leading-relaxed">
+        <p className="text-[11px] text-subtle leading-relaxed">
           iPhone&apos;da kalıcı çevrimdışı kullanım için Safari&apos;de Paylaş → Ana Ekrana Ekle ile yükleyin.
         </p>
       )}
@@ -189,7 +189,7 @@ export function OfflineButton() {
         title={label}
         aria-expanded={open}
         aria-haspopup="dialog"
-        className="w-9 h-9 rounded-full glass-hover hover:bg-white/10 flex items-center justify-center transition-transform active:scale-90"
+        className="w-9 h-9 rounded-full glass-hover hover:bg-white/10 flex items-center justify-center transition-transform active:scale-[0.97]"
       >
         {icon}
       </button>
@@ -201,7 +201,7 @@ export function OfflineButton() {
           className="absolute right-0 top-full mt-2 z-50 w-[min(20rem,calc(100vw-2rem))] glass-card p-4 shadow-2xl animate-in fade-in zoom-in-95 duration-150 origin-top-right"
           style={{ background: "var(--bg-surface)" }}
         >
-          <p className="text-[10px] font-bold uppercase tracking-widest text-subtle mb-3">Çevrimdışı Kullanım</p>
+          <p className="text-[11px] font-bold uppercase tracking-widest text-subtle mb-3">Çevrimdışı Kullanım</p>
           <OfflinePanel s={s} />
         </div>
       )}

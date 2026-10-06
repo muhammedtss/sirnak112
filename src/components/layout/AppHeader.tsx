@@ -36,7 +36,7 @@ export function AppHeader({ title, icon, back, right, badge }: AppHeaderProps) {
       {back && (
         <button
           onClick={handleBack}
-          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-transform active:scale-90"
+          className="shrink-0 w-9 h-9 flex items-center justify-center rounded-full transition-transform active:scale-[0.97]"
           style={{ background: "rgba(255,255,255,0.06)" }}
           aria-label="Geri"
         >

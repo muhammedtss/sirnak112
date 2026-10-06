@@ -118,7 +118,7 @@ export default function ApgarPage() {
         {allSelected && (
           <div className={`${interp.bg} rounded-xl border-2 border-current p-4 text-center ${interp.color}`}>
             <p className="text-xs font-bold uppercase tracking-wider mb-1">{minute}. Dakika APGAR Skoru</p>
-            <p className="text-4xl font-black">{total}/10</p>
+            <p className="text-4xl font-black tabular-nums">{total}/10</p>
             <p className="text-sm font-bold mt-1">{interp.text}</p>
           </div>
         )}

@@ -113,15 +113,15 @@ export default function LMAPage() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-0.5">
                     <p className={`text-sm font-black ${size.textColor}`}>{size.kilo}</p>
-                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${size.badge} text-white opacity-80`}>{size.note}</span>
+                    <span className={`text-[11px] font-bold px-1.5 py-0.5 rounded ${size.badge} text-white opacity-80`}>{size.note}</span>
                   </div>
                   <div className="flex gap-3 flex-wrap">
                     <div>
-                      <p className="text-[10px] text-slate-500 font-bold">Maks Kaf</p>
+                      <p className="text-[11px] text-slate-500 font-bold">Maks Kaf</p>
                       <p className={`text-xs font-black ${size.textColor}`}>{size.maxKaf}</p>
                     </div>
                     <div>
-                      <p className="text-[10px] text-slate-500 font-bold">ETT Geçiş</p>
+                      <p className="text-[11px] text-slate-500 font-bold">ETT Geçiş</p>
                       <p className={`text-xs font-black ${size.textColor}`}>{size.etTube}</p>
                     </div>
                   </div>

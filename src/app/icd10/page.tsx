@@ -125,7 +125,7 @@ export default function ICD10Page() {
               <button
                 key={k}
                 onClick={() => setKategori(k)}
-                className="shrink-0 text-[11px] font-bold px-2.5 py-1 rounded-full border transition-all"
+                className="shrink-0 text-[11px] font-bold px-2.5 py-1 rounded-full border transition"
                 style={
                   isActive
                     ? { background: r.bg, color: r.color, borderColor: r.border }
@@ -172,7 +172,7 @@ export default function ICD10Page() {
                     <button
                       onClick={() => copyCode(entry.kod)}
                       title="Kodu kopyala"
-                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border text-sm font-bold transition-all active:scale-95"
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border text-sm font-bold transition active:scale-[0.97]"
                       style={
                         isCopied
                           ? { background: "rgba(52,211,153,0.2)", color: "#34D399", borderColor: "rgba(52,211,153,0.4)" }
@@ -199,7 +199,7 @@ export default function ICD10Page() {
                     <p className="text-[11px] text-subtle mt-0.5 leading-snug">{entry.ad}</p>
                     <div className="flex items-center gap-1.5 mt-1.5">
                       <div className="w-1.5 h-1.5 rounded-full" style={{ background: r.dot }} />
-                      <span className="text-[10px] font-semibold" style={{ color: r.color, opacity: 0.8 }}>{entry.kategori}</span>
+                      <span className="text-[11px] font-semibold" style={{ color: r.color, opacity: 0.8 }}>{entry.kategori}</span>
                     </div>
                   </div>
                 </div>

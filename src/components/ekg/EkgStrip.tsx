@@ -150,7 +150,7 @@ export default function EkgStrip({ kaynak, etiket, className = "" }: EkgStripPro
           type="button"
           onClick={() => setIpucu(v => !v)}
           aria-pressed={ipucu}
-          className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${
+          className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition ${
             ipucu ? "bg-amber-500/20 text-amber-400 border-amber-500/40" : "text-muted border-white/10 hover:bg-white/5"
           }`}
         >
@@ -163,7 +163,7 @@ export default function EkgStrip({ kaynak, etiket, className = "" }: EkgStripPro
         aria-pressed={yakin}
         aria-label={yakin ? "Uzaklaştır" : "Yakınlaştır"}
         title={yakin ? "Uzaklaştır" : "Yakınlaştır"}
-        className={`flex items-center px-2 py-1.5 rounded-lg border transition-all ${
+        className={`flex items-center px-2 py-1.5 rounded-lg border transition ${
           yakin ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/40" : "text-muted border-white/10 hover:bg-white/5"
         }`}
       >
@@ -173,7 +173,7 @@ export default function EkgStrip({ kaynak, etiket, className = "" }: EkgStripPro
         type="button"
         onClick={() => setKaliper(v => !v)}
         aria-pressed={kaliper}
-        className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition-all ${
+        className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition ${
           kaliper ? "bg-sky-500/20 text-sky-400 border-sky-500/40" : "text-muted border-white/10 hover:bg-white/5"
         }`}
       >
@@ -193,7 +193,7 @@ export default function EkgStrip({ kaynak, etiket, className = "" }: EkgStripPro
   return (
     <div className={`space-y-2 ${className}`}>
       <div className="flex items-center justify-between gap-2">
-        <div className="min-w-0 text-[10px] font-bold uppercase tracking-widest text-subtle truncate">{etiket}</div>
+        <div className="min-w-0 text-[11px] font-bold uppercase tracking-widest text-subtle truncate">{etiket}</div>
         {araclar}
       </div>
 
@@ -210,7 +210,7 @@ export default function EkgStrip({ kaynak, etiket, className = "" }: EkgStripPro
       </div>
 
       {kaliper && (
-        <p className="text-[10px] text-subtle leading-relaxed">
+        <p className="text-[11px] text-subtle leading-relaxed">
           {kaynak.tur === "uretilmis"
             ? "Bacakları iki R dalgasının tepesine getirin: süre ve hız otomatik hesaplanır. Ortadaki noktadan sürükleyerek aralığı şerit boyunca kaydırıp düzenliliği kontrol edin."
             : "Pergel modu: bacakları bir R-R aralığına ayarlayın, ortadaki noktadan sürükleyerek aynı aralığı diğer atımlarla karşılaştırın."}

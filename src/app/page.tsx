@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   Activity,
@@ -18,20 +17,6 @@ import { PageShell } from "@/components/layout/PageShell";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import GlobalSearchModal from "@/components/search/GlobalSearchModal";
 import { OfflineButton } from "@/components/pwa/OfflineButton";
-
-const container = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.07 } },
-};
-const item = {
-  hidden: { opacity: 0, y: 18, filter: "blur(4px)" },
-  show: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { type: "spring" as const, stiffness: 340, damping: 28 },
-  },
-};
 
 const quickLinks = [
   { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Algoritmalar",      desc: "Akış şemaları", accent: "#F97316" },
@@ -71,10 +56,7 @@ export default function HomePage() {
       </header>
 
       {/* ── Hero banner ── */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.97 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      <div
         className="mx-4 mt-2 mb-5 p-5 glass-card overflow-hidden relative"
         style={{ borderColor: "rgba(99,102,241,0.25)" }}
       >
@@ -103,33 +85,30 @@ export default function HomePage() {
         >
           Algoritmalar <ChevronRight style={{ width: 16, height: 16 }} />
         </Link>
-      </motion.div>
+      </div>
 
       {/* ── Bento Grid ── */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
+      <div
         className="px-4 grid grid-cols-2 gap-3"
       >
         {quickLinks.map((link) => {
           const Icon = link.icon;
           const isFullRow = link.href === "/icd10" || link.href === "/ekg-egitim";
           return (
-            <motion.div key={link.href} variants={item} className={isFullRow ? "col-span-2 flex justify-center" : "w-full"}>
+            <div key={link.href} className={isFullRow ? "col-span-2 flex justify-center" : "w-full"}>
               <Link
                 href={link.href}
                 className={`glass-card glass-hover flex flex-col p-4 gap-3 group relative overflow-hidden ${isFullRow ? "w-[65%]" : "w-full"}`}
               >
                 {/* Background Watermark Icon */}
                 <Icon
-                  className="absolute -right-4 -bottom-4 opacity-10 transform -rotate-12 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500 pointer-events-none"
+                  className="absolute -right-4 -bottom-4 opacity-10 transform -rotate-12 group-hover:scale-110 group-hover:-rotate-6 transition duration-200 pointer-events-none"
                   style={{ width: 80, height: 80, color: link.accent }}
                   strokeWidth={1.5}
                 />
 
                 <div
-                  className="w-10 h-10 rounded-2xl flex items-center justify-center relative z-10"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center relative z-10"
                   style={{
                     background: `${link.accent}22`,
                     border: `1px solid ${link.accent}33`,
@@ -143,7 +122,7 @@ export default function HomePage() {
                 <div className="flex items-end justify-between relative z-10 mt-1">
                   <div className="flex flex-col">
                     <span className="text-sm font-semibold leading-tight">{link.label}</span>
-                    <span className="text-[10px] text-muted font-medium mt-1">{link.desc}</span>
+                    <span className="text-[11px] text-muted font-medium mt-1">{link.desc}</span>
                   </div>
                   <ChevronRight
                     className="shrink-0 opacity-30 group-hover:opacity-70 transition-opacity mb-1"
@@ -151,10 +130,10 @@ export default function HomePage() {
                   />
                 </div>
               </Link>
-            </motion.div>
+            </div>
           );
         })}
-      </motion.div>
+      </div>
     </PageShell>
   );
 }

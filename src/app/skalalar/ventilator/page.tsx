@@ -60,7 +60,7 @@ export default function VentilatorPage() {
               onChange={(e) => setPeep(e.target.value)}
               className="w-full accent-purple-600"
             />
-            <div className="flex justify-between text-[10px] text-slate-400 font-bold mt-0.5">
+            <div className="flex justify-between text-[11px] text-slate-400 font-bold mt-0.5">
               <span>0</span><span>20</span>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function VentilatorPage() {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setFreq(p => String(Math.max(8, parseInt(p) - 1)))}
-                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center font-bold text-xl active:scale-95 transition-all"
+                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center font-bold text-xl active:scale-[0.97] transition"
               >
                 -
               </button>
@@ -89,12 +89,12 @@ export default function VentilatorPage() {
               />
               <button
                 onClick={() => setFreq(p => String(Math.min(30, parseInt(p) + 1)))}
-                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center font-bold text-xl active:scale-95 transition-all"
+                className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center font-bold text-xl active:scale-[0.97] transition"
               >
                 +
               </button>
             </div>
-            <div className="flex justify-between text-[10px] text-slate-400 font-bold mt-0.5">
+            <div className="flex justify-between text-[11px] text-slate-400 font-bold mt-0.5">
               <span>8</span><span>30</span>
             </div>
           </div>
@@ -108,12 +108,12 @@ export default function VentilatorPage() {
               <p className="text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Tidal Volüm (6–10 mL/kg)</p>
               <div className="flex items-center justify-center gap-3">
                 <div className="text-center">
-                  <p className="text-3xl font-black">{tidalMin}</p>
+                  <p className="text-3xl font-black tabular-nums">{tidalMin}</p>
                   <p className="text-[11px] opacity-70 font-bold">6 mL/kg</p>
                 </div>
                 <span className="text-lg font-black opacity-50">–</span>
                 <div className="text-center">
-                  <p className="text-3xl font-black">{tidalMax}</p>
+                  <p className="text-3xl font-black tabular-nums">{tidalMax}</p>
                   <p className="text-[11px] opacity-70 font-bold">10 mL/kg</p>
                 </div>
                 <span className="text-sm font-bold opacity-70 ml-1">mL</span>
@@ -123,14 +123,14 @@ export default function VentilatorPage() {
             {/* Grid sonuçlar */}
             <div className="grid grid-cols-2 gap-3">
               <div className="glass-card rounded-xl border border-white/10 p-3 text-center ">
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">MİNUTE VOLÜME</p>
+                <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">MİNUTE VOLÜME</p>
                 <p className="text-base font-black text-white/90 mt-1">{dkVolMin}–{dkVolMax}</p>
-                <p className="text-[10px] text-slate-500 font-bold">L/dk</p>
+                <p className="text-[11px] text-slate-500 font-bold">L/dk</p>
               </div>
               <div className="glass-card rounded-xl border border-white/10 p-3 text-center ">
-                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide">PEEP</p>
+                <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">PEEP</p>
                 <p className="text-base font-black text-white/90 mt-1">{peep}</p>
-                <p className="text-[10px] text-slate-500 font-bold">cmH₂O</p>
+                <p className="text-[11px] text-slate-500 font-bold">cmH₂O</p>
               </div>
             </div>
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Background } from "@/components/ui/Background";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { OfflineManager } from "@/components/pwa/OfflineManager";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -35,8 +36,6 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   themeColor: "#090C14",
 };
 
@@ -51,12 +50,14 @@ export default function RootLayout({
         {/* Layered premium background — fixed, stays behind everything */}
         <Background />
 
-        <div className="flex-1 overflow-y-auto w-full relative z-10" id="main-scroll-container">
-          {children}
-        </div>
-        <div className="shrink-0 w-full relative z-50 bg-transparent">
-          <BottomNav />
-        </div>
+        <MotionProvider>
+          <div className="flex-1 overflow-y-auto w-full relative z-10" id="main-scroll-container">
+            {children}
+          </div>
+          <div className="shrink-0 w-full relative z-50 bg-transparent">
+            <BottomNav />
+          </div>
+        </MotionProvider>
         <OfflineManager />
       </body>
     </html>

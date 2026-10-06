@@ -36,8 +36,8 @@ const ALL_DRUGS = ilaclarData as unknown as Record<string, Drug>;
 
 function StepBadge({ step, label, active, done }: { step: number; label: string; active: boolean; done: boolean }) {
   return (
-    <div className={`flex items-center gap-2 transition-all duration-300 ${active ? "opacity-100" : done ? "opacity-60" : "opacity-30"}`}>
-      <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 transition-all border ${
+    <div className={`flex items-center gap-2 transition duration-200 ${active ? "opacity-100" : done ? "opacity-60" : "opacity-30"}`}>
+      <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 transition border ${
         done 
           ? "bg-teal-500/20 border-teal-500/50 text-teal-400" 
           : active 
@@ -69,7 +69,7 @@ function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
   const showDopaminDrops = drugId === "dopamin" && !isNaN(weightNum);
 
   return (
-    <div className="mt-5 rounded-2xl overflow-hidden shadow-lg border border-teal-500/30 glass-card animate-in fade-in slide-in-from-bottom-4 duration-400">
+    <div className="mt-5 rounded-2xl overflow-hidden shadow-lg border border-teal-500/30 glass-card animate-in fade-in slide-in-from-bottom-4 duration-200">
       {/* Header */}
       <div className="bg-teal-500/20 px-5 py-3 flex items-center justify-between border-b border-teal-500/30">
         <span className="text-teal-400 text-sm font-bold uppercase tracking-widest">Hesaplanan Doz</span>
@@ -78,7 +78,7 @@ function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
 
       {/* Main Dose */}
       <div className="bg-white/5 px-5 py-5 text-center">
-        <p className="text-6xl font-black text-white leading-none tracking-tight drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">{dose}</p>
+        <p className="text-6xl font-black text-white leading-none tracking-tight drop-shadow-[0_0_15px_rgba(52,211,153,0.3)] tabular-nums">{dose}</p>
         <p className="text-lg text-teal-400 font-semibold mt-1">{doseInfo.unit}</p>
         {doseInfo.isWeightBased && weight && (
           <p className="text-xs text-subtle mt-1">{weight} kg × {doseInfo.dosePerKg} {doseInfo.unit}/kg</p>
@@ -86,7 +86,7 @@ function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
         {showDopaminDrops && (
           <div className="mt-4 bg-orange-500/10 border border-orange-500/30 rounded-xl p-3">
             <p className="text-[11px] text-orange-400 font-bold uppercase tracking-widest mb-1">cc/saat Ayar Değeri</p>
-            <p className="text-2xl font-black text-orange-300">{(weightNum * 1.5).toFixed(1)} <span className="text-sm font-bold text-orange-400/80">cc/saat</span></p>
+            <p className="text-2xl font-black text-orange-300 tabular-nums">{(weightNum * 1.5).toFixed(1)} <span className="text-sm font-bold text-orange-400/80">cc/saat</span></p>
           </div>
         )}
       </div>
@@ -235,7 +235,7 @@ export default function DrugDoseCalculator() {
               onChange={(e) => { setDrugSearch(e.target.value); setShowDrugDropdown(true); setSelectedDrugId(""); setSelectedCaseKey(""); setWeight(""); }}
               onFocus={() => setShowDrugDropdown(true)}
               placeholder="İlaç adı yaz veya seç..."
-              className="w-full glass-input rounded-xl pl-10 pr-4 py-3.5 text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all"
+              className="w-full glass-input rounded-xl pl-10 pr-4 py-3.5 text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition"
             />
           </div>
 
@@ -269,7 +269,7 @@ export default function DrugDoseCalculator() {
 
       {/* ── STEP 2: Case Selection ─────────────────────────────────────────── */}
       {selectedDrug && (
-        <div className="glass-card rounded-2xl shadow-sm animate-in fade-in slide-in-from-bottom-2 duration-300">
+        <div className="glass-card rounded-2xl shadow-sm animate-in fade-in slide-in-from-bottom-2 duration-200">
           <div className="px-4 py-3 border-b border-white/10">
             <p className="text-xs font-bold text-subtle uppercase tracking-widest">Adım 2 · Vaka / Endikasyon Seç</p>
           </div>
@@ -278,7 +278,7 @@ export default function DrugDoseCalculator() {
               <button
                 key={caseKey}
                 onClick={() => { setSelectedCaseKey(caseKey); setWeight(""); }}
-                className={`w-full text-left px-4 py-3.5 rounded-xl border transition-all duration-150 active:scale-[0.98] shadow-sm min-h-[52px] ${
+                className={`w-full text-left px-4 py-3.5 rounded-xl border transition duration-150 active:scale-[0.98] shadow-sm min-h-[52px] ${
                   selectedCaseKey === caseKey
                     ? "bg-teal-500/20 border-teal-500/50 text-teal-300 shadow-[0_0_15px_rgba(59,130,246,0.2)]"
                     : "glass-card text-muted hover:border-white/30 hover:bg-white/5"
@@ -293,7 +293,7 @@ export default function DrugDoseCalculator() {
 
       {/* ── STEP 3: Age + Weight ───────────────────────────────────────────── */}
       {selectedCase && (
-        <div className="glass-card rounded-2xl shadow-sm animate-in fade-in slide-in-from-bottom-2 duration-300">
+        <div className="glass-card rounded-2xl shadow-sm animate-in fade-in slide-in-from-bottom-2 duration-200">
           <div className="px-4 py-3 border-b border-white/10">
             <p className="text-xs font-bold text-subtle uppercase tracking-widest">Adım 3 · Yaş Grubu ve Kilo</p>
           </div>
@@ -309,7 +309,7 @@ export default function DrugDoseCalculator() {
                     disabled={isDisabled}
                     onClick={() => { setAgeGroup(ag); setWeight(""); }}
                     title={isDisabled ? "Bu yaş grubunda kontrendikedir" : undefined}
-                    className={`py-3 rounded-lg text-sm font-bold transition-all duration-200 active:scale-95 min-h-[48px] ${
+                    className={`py-3 rounded-lg text-sm font-bold transition duration-200 active:scale-[0.97] min-h-[48px] ${
                       isDisabled
                         ? "opacity-40 cursor-not-allowed bg-transparent text-subtle line-through"
                         : ageGroup === ag
@@ -318,7 +318,7 @@ export default function DrugDoseCalculator() {
                     }`}
                   >
                     {ag === "eriskin" ? "Erişkin" : "Çocuk"}
-                    {isDisabled && <span className="block text-[10px] font-medium normal-case no-underline opacity-80 text-red-400">Kontrendike</span>}
+                    {isDisabled && <span className="block text-[11px] font-medium normal-case no-underline opacity-80 text-red-400">Kontrendike</span>}
                   </button>
                 );
               })}
@@ -358,7 +358,7 @@ export default function DrugDoseCalculator() {
                   }}
                   onKeyDown={(e) => { if (["-", "+", "e", "E"].includes(e.key)) e.preventDefault(); }}
                   placeholder="Örn: 70"
-                  className={`w-full border rounded-xl px-4 py-4 text-3xl font-black text-center tracking-wide focus:outline-none transition-all ${
+                  className={`w-full border rounded-xl px-4 py-4 text-3xl font-black text-center tracking-wide focus:outline-none transition ${
                     isWeightInvalid
                       ? "border-red-500/50 bg-red-500/10 text-red-400 focus:ring-2 focus:ring-red-500/50"
                       : isWeightHigh
@@ -391,7 +391,7 @@ export default function DrugDoseCalculator() {
             {currentDoseInfo?.isAvailable && !requiresWeight && currentDoseInfo.fixedDose && (
               <div className="bg-teal-500/10 border border-teal-500/30 rounded-xl p-4">
                 <p className="text-xs text-teal-400 font-bold uppercase tracking-wide mb-1">Sabit Doz (Kilo Bağımsız)</p>
-                <p className="text-4xl font-black text-teal-300">{currentDoseInfo.fixedDose}</p>
+                <p className="text-4xl font-black text-teal-300 tabular-nums">{currentDoseInfo.fixedDose}</p>
                 <p className="text-base text-teal-400/80 font-semibold mt-0.5">{currentDoseInfo.unit}</p>
               </div>
             )}

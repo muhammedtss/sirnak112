@@ -149,7 +149,7 @@ export default function GeriDondurulebilirPage() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-0.5">
                     <span
-                      className={`text-[10px] font-black text-white px-1.5 py-0.5 rounded ${item.badgeColor}`}
+                      className={`text-[11px] font-black text-white px-1.5 py-0.5 rounded ${item.badgeColor}`}
                     >
                       {item.letter}
                     </span>
@@ -186,7 +186,7 @@ export default function GeriDondurulebilirPage() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-0.5">
                     <span
-                      className={`text-[10px] font-black text-white px-1.5 py-0.5 rounded ${item.badgeColor}`}
+                      className={`text-[11px] font-black text-white px-1.5 py-0.5 rounded ${item.badgeColor}`}
                     >
                       {item.letter}
                     </span>

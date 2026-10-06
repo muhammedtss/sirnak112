@@ -78,7 +78,7 @@ export default function BestGuessPage() {
                   value={age}
                   onChange={(e) => setAge(e.target.value)}
                   placeholder="Örn: 6"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition-all font-medium"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-white placeholder-slate-500 focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 transition font-medium"
                 />
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-bold text-slate-400">
                   {unit === "months" ? "ay" : "yaş"}
@@ -87,16 +87,16 @@ export default function BestGuessPage() {
             </div>
 
             {/* Result */}
-            <div className={`mt-6 rounded-xl p-4 border transition-all duration-300 ${weight !== null ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-white/5 border-white/10'}`}>
+            <div className={`mt-6 rounded-xl p-4 border transition duration-200 ${weight !== null ? 'bg-emerald-500/10 border-emerald-500/30' : 'bg-white/5 border-white/10'}`}>
               <div className="text-center">
                 <p className="text-xs font-bold text-slate-400 mb-1 uppercase tracking-wider">Tahmini Ağırlık</p>
                 {weight !== null ? (
                   <div className="flex items-baseline justify-center gap-1.5">
-                    <span className="text-4xl font-black text-emerald-400">{weight.toFixed(1)}</span>
+                    <span className="text-4xl font-black text-emerald-400 tabular-nums">{weight.toFixed(1)}</span>
                     <span className="text-emerald-500 font-bold">kg</span>
                   </div>
                 ) : (
-                  <div className="text-2xl font-bold text-slate-500">--</div>
+                  <div className="text-2xl font-bold text-slate-500 tabular-nums">--</div>
                 )}
               </div>
             </div>

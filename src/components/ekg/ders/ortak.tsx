@@ -16,7 +16,7 @@ export function Bolum({ baslik, altBaslik, children, slayt }: { baslik: string; 
           <h2 className="text-base font-extrabold leading-snug">{baslik}</h2>
           {altBaslik && <p className="text-xs text-muted mt-0.5">{altBaslik}</p>}
         </div>
-        {slayt && <span className="shrink-0 text-[10px] font-bold text-subtle">Slayt {slayt}</span>}
+        {slayt && <span className="shrink-0 text-[11px] font-bold text-subtle">Slayt {slayt}</span>}
       </div>
       {children}
     </section>
@@ -122,7 +122,7 @@ export function VakaInceleme({ ritimId }: { ritimId: RitimId }) {
                   {i + 1}. {a.baslik}
                 </span>
                 {!gorunur && i === acik && (
-                  <span className="text-[10px] text-subtle">Önce kendiniz değerlendirin</span>
+                  <span className="text-[11px] text-subtle">Önce kendiniz değerlendirin</span>
                 )}
               </div>
               {gorunur ? (
@@ -137,7 +137,7 @@ export function VakaInceleme({ ritimId }: { ritimId: RitimId }) {
 
       {tamam ? (
         <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-3 animate-in fade-in">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-400">Tanı</p>
+          <p className="text-[11px] font-bold uppercase tracking-widest text-emerald-400">Tanı</p>
           <p className="text-sm font-black mt-0.5">{vaka.kaynakTablo.tani}</p>
           <button type="button" onClick={() => setAcik(0)} className="mt-2 flex items-center gap-1 text-[11px] font-bold text-muted">
             <RotateCcw className="w-3 h-3" /> Baştan incele
@@ -207,7 +207,7 @@ export function Eslestirme({ ciftler, baslik }: { ciftler: { sol: string; sag: s
               type="button"
               disabled={eslesen.has(i)}
               onClick={() => setSecSol(i)}
-              className={`w-full text-left px-3 py-2.5 rounded-xl border text-xs font-semibold transition-all ${
+              className={`w-full text-left px-3 py-2.5 rounded-xl border text-xs font-semibold transition ${
                 eslesen.has(i)
                   ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
                   : secSol === i
@@ -226,7 +226,7 @@ export function Eslestirme({ ciftler, baslik }: { ciftler: { sol: string; sag: s
               type="button"
               disabled={eslesen.has(i)}
               onClick={() => sagTikla(i)}
-              className={`w-full text-left px-3 py-2.5 rounded-xl border text-xs font-semibold transition-all ${
+              className={`w-full text-left px-3 py-2.5 rounded-xl border text-xs font-semibold transition ${
                 eslesen.has(i)
                   ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
                   : hata === i

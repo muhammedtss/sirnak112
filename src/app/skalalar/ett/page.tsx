@@ -92,13 +92,13 @@ export default function ETTPage() {
             {/* ETT boyutları */}
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-blue-600 rounded-xl p-3.5 text-center text-white">
-                <p className="text-[10px] font-bold uppercase tracking-wide opacity-80">Kafsız ETT</p>
-                <p className="text-3xl font-black mt-1">{ettkafsız || "-"}</p>
+                <p className="text-[11px] font-bold uppercase tracking-wide opacity-80">Kafsız ETT</p>
+                <p className="text-3xl font-black mt-1 tabular-nums">{ettkafsız || "-"}</p>
                 <p className="text-xs font-bold opacity-70">mm İç Çap</p>
               </div>
               <div className="bg-indigo-600 rounded-xl p-3.5 text-center text-white">
-                <p className="text-[10px] font-bold uppercase tracking-wide opacity-80">Kaflı ETT</p>
-                <p className="text-3xl font-black mt-1">{ettkaflı || "-"}</p>
+                <p className="text-[11px] font-bold uppercase tracking-wide opacity-80">Kaflı ETT</p>
+                <p className="text-3xl font-black mt-1 tabular-nums">{ettkaflı || "-"}</p>
                 <p className="text-xs font-bold opacity-70">mm İç Çap</p>
               </div>
             </div>

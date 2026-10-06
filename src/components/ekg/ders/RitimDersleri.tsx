@@ -25,7 +25,7 @@ function Secim({ aktif, onClick, children }: { aktif: boolean; onClick: () => vo
       type="button"
       onClick={onClick}
       aria-pressed={aktif}
-      className={`flex-1 py-3 rounded-xl border text-sm font-bold transition-all ${
+      className={`flex-1 py-3 rounded-xl border text-sm font-bold transition ${
         aktif ? "border-orange-500/50 bg-orange-500/15 text-orange-300" : "border-white/10 hover:bg-white/5"
       }`}
     >
@@ -58,7 +58,7 @@ function TasikardiAgaci() {
       )}
       {qrs && duzen && (
         <div className="rounded-xl border border-orange-500/30 bg-orange-500/10 p-3 space-y-1.5 animate-in fade-in">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-orange-400">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-orange-400">
             {qrs === "dar" ? "Dar" : "Geniş"} QRS · {duzen === "duzenli" ? "düzenli" : "düzensiz"} taşikardi
           </p>
           <ul className="space-y-1">
@@ -159,7 +159,7 @@ function VakaSecici({ ritimler }: { ritimler: RitimId[] }) {
             type="button"
             onClick={() => setSecili(r)}
             aria-pressed={secili === r}
-            className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold border transition-all ${
+            className={`shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold border transition ${
               secili === r ? "border-emerald-500/50 bg-emerald-500/15 text-emerald-300" : "border-white/10 text-muted hover:bg-white/5"
             }`}
           >
