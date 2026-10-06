@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T00:00:00Z",
+  "title": "Design System: Acil Protokol Sistemi",
+  "extensions": {
+    "colorMeta": {
+      "night-cabin": { "role": "neutral", "displayName": "Gece Kabini", "canonical": "#090C14", "tonalRamp": ["#05070C", "#090C14", "#101520", "#1A2130", "#2A3346", "#4A5468", "#8A93A6", "#D5DAE5"] },
+      "protocol-teal": { "role": "primary", "displayName": "Protokol Teal'i", "canonical": "#0D9488", "tonalRamp": ["#042F2E", "#134E4A", "#115E59", "#0F766E", "#0D9488", "#14B8A6", "#2DD4BF", "#99F6E4"] },
+      "vital-green": { "role": "neutral", "displayName": "Hayati Yeşil", "canonical": "#34D399" },
+      "caution-amber": { "role": "neutral", "displayName": "Dikkat Amberi", "canonical": "#FBBF24" },
+      "alarm-red": { "role": "neutral", "displayName": "Alarm Kırmızısı", "canonical": "#F87171" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Ana sayfa başlığı." },
+      "title": { "displayName": "Title", "purpose": "Sayfa ve kart başlıkları." },
+      "body": { "displayName": "Body", "purpose": "Açıklamalar ve algoritma adımları." },
+      "label": { "displayName": "Label", "purpose": "Büyük harf bölüm etiketleri." }
+    },
+    "shadows": [
+      { "name": "glass-rest", "value": "0 8px 32px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.04) inset", "purpose": "Kart, başlık ve alt navigasyon." },
+      { "name": "glass-hover", "value": "0 12px 40px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.06) inset", "purpose": "Masaüstü hover." },
+      { "name": "focus-glow", "value": "0 0 0 3px rgba(45,212,191,0.35)", "purpose": "Odaklanan giriş alanı." }
+    ],
+    "motion": [
+      { "name": "press", "value": "transform 100ms, scale(0.97)", "purpose": "Basma geri bildirimi." },
+      { "name": "feedback-max", "value": "150ms", "purpose": "Hover/press üst sınırı." },
+      { "name": "open-max", "value": "220ms", "purpose": "Modal/dropdown/akordeon açılış üst sınırı." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Modül Kartı",
+      "kind": "card",
+      "refersTo": "card-glass",
+      "description": "Ana sayfa modül kartı: kategori renkli ikon kutusu ve filigran ikon.",
+      "html": "<a class=\"ds-card\"><span class=\"ds-card-icon\">✚</span><span class=\"ds-card-title\">İlaç Dozu</span><span class=\"ds-card-desc\">İnfüzyon hesabı</span></a>",
+      "css": ".ds-card{display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:1.75rem;background:rgba(16,21,32,0.55);border:1px solid rgba(255,255,255,0.07);box-shadow:0 8px 32px rgba(0,0,0,0.35),0 1px 0 rgba(255,255,255,0.04) inset;color:#F1F5FF;font-family:Outfit,system-ui,sans-serif;transition:background .25s,border-color .25s,transform .18s,box-shadow .25s}.ds-card:hover{background:rgba(20,28,48,0.72);border-color:rgba(255,255,255,0.14)}.ds-card:active{transform:scale(.97)}.ds-card-icon{width:40px;height:40px;border-radius:1rem;display:flex;align-items:center;justify-content:center;background:#F59E0B22;border:1px solid #F59E0B33;color:#F59E0B}.ds-card-title{font-size:14px;font-weight:600}.ds-card-desc{font-size:10px;color:rgba(241,245,255,0.55)}"
+    },
+    {
+      "name": "Cam Giriş Alanı",
+      "kind": "input",
+      "refersTo": "input-glass",
+      "description": "Hesaplayıcı ve arama girişleri.",
+      "html": "<input class=\"ds-input\" placeholder=\"Örn: 70\" />",
+      "css": ".ds-input{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);color:#F1F5FF;border-radius:.875rem;padding:12px 16px;font:500 16px Outfit,system-ui,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}.ds-input:focus-visible{border-color:rgba(45,212,191,0.6);box-shadow:0 0 0 3px rgba(45,212,191,0.35)}"
+    },
+    {
+      "name": "Alt Navigasyon",
+      "kind": "nav",
+      "refersTo": "nav-bottom",
+      "description": "Cam hap şeklinde 5 öğeli alt navigasyon; aktif öğe teal daire.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-item ds-active\">⌂</a><a class=\"ds-nav-item\">∿</a><a class=\"ds-nav-item\">▤</a></nav>",
+      "css": ".ds-nav{display:flex;justify-content:space-between;gap:4px;padding:8px;border-radius:2rem;background:rgba(16,21,32,0.55);border:1px solid rgba(255,255,255,0.07);box-shadow:0 8px 32px rgba(0,0,0,0.35)}.ds-nav-item{width:48px;height:48px;border-radius:9999px;display:flex;align-items:center;justify-content:center;color:rgba(241,245,255,0.30);font-size:20px}.ds-nav-item.ds-active{background:rgba(45,212,191,0.35);color:#2DD4BF}.ds-nav-item:focus-visible{outline:2px solid #2DD4BF;outline-offset:2px}"
+    },
+    {
+      "name": "Rozet",
+      "kind": "chip",
+      "refersTo": "badge-primary",
+      "description": "Teal rozet.",
+      "html": "<span class=\"ds-badge\">12</span>",
+      "css": ".ds-badge{display:inline-block;padding:2px 10px;border-radius:9999px;background:rgba(45,212,191,0.35);color:#2DD4BF;font:700 11px Outfit,system-ui,sans-serif}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Cebinizdeki Protokol",
+    "overview": "Arayüz, acil ekiplerin başucu protokol kitabının her an elde olan dijital halidir. Bilgi öndedir, süs arkadadır. Koyu, gece kabinine uygun bir zeminin üzerinde yarı saydam cam kartlar durur. Renk, dekor için değil, yön bulmak için kullanılır.",
+    "keyCharacteristics": [
+      "Koyu lacivert zemin üzerinde cam kartlar",
+      "Tek marka rengi: protokol teal'i",
+      "Modül başına sabit kategori rengi",
+      "Büyük köşe yarıçapı ve hap şeklinde alt navigasyon",
+      "Klinik anlamlı durum renkleri yalnızca durum için"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Teal tek marka sesidir; aktif, seçili ve odaklı durumları yalnızca teal anlatır.", "section": "colors" },
+      { "name": "The Clinical Color Rule", "body": "Yeşil, amber ve kırmızı yalnızca klinik ya da sistem durumu bildirir.", "section": "colors" },
+      { "name": "The Recognition Rule", "body": "Modül renkleri sabittir; değiştirilmez ve takas edilmez.", "section": "colors" },
+      { "name": "The Single Family Rule", "body": "Outfit tek yazı ailesidir.", "section": "typography" },
+      { "name": "The Glass Not Paper Rule", "body": "Yüzeyler opak kağıt değil camdır.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do teal'i yalnızca marka, aktif ve odak durumları için kullan.",
+      "Do modül kartlarında kategori rengini ikon kutusu ve filigran ikonda koru.",
+      "Do her dokunma hedefini en az 44×44px yap; basmada scale(0.97) geri bildirimi ver.",
+      "Do hem koyu hem açık temada kontrol et."
+    ],
+    "donts": [
+      "Don't yazı ailesini değiştirme; Outfit sabittir.",
+      "Don't durum renklerini dekorasyon için kullanma.",
+      "Don't modül renklerini değiştirme ya da takas etme.",
+      "Don't klinik veri ve hesaplama dosyalarına görsel çalışma sırasında dokunma."
+    ]
+  }
+}
