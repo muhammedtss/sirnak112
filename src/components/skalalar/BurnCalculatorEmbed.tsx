@@ -38,8 +38,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
   const [inputMode, setInputMode] = useState<"visual" | "manual">("visual");
   const [manualTbsa, setManualTbsa] = useState("");
   const [isZoomed, setIsZoomed] = useState(false);
-  // Parkland formül grubu: yaş grubundan varsayılır, elle değiştirilebilir; elektrik çarpması herkes için 4 mL
-  const [yasGrubuSecim, setYasGrubuSecim] = useState<Exclude<ParklandGroup, "elektrik"> | null>(null);
+  // Parkland katsayısı seçili yaştan belirlenir; elektrik çarpması yaştan bağımsız 4 mL
   const [elektrik, setElektrik] = useState(false);
 
   const toggleZone = useCallback((id: string) => {
@@ -69,8 +68,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
   const kiloInvalid = kilo !== "" && (!Number.isFinite(k) || k <= 0 || k > 300);
   const valid = !kiloInvalid && k > 0 && tbsa > 0 && !tbsaInvalid;
 
-  const yasGrubu = yasGrubuSecim ?? defaultParklandGroup(ageGroup);
-  const grup: ParklandGroup = elektrik ? "elektrik" : yasGrubu;
+  const grup: ParklandGroup = elektrik ? "elektrik" : defaultParklandGroup(ageGroup);
   const katsayi = PARKLAND_KATSAYI[grup];
   const saatlikHiz = valid ? parklandSaatlikHiz(grup, k, tbsa) : null;
   const esikKarsilandi = valid ? parklandEsikKarsilandi(k, tbsa) : true;
@@ -105,41 +103,16 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
     </div>
   );
 
-  const formulSecici = (
-    <div className="space-y-2">
-      <span className="text-xs font-bold text-muted uppercase tracking-wide">Formül Grubu</span>
-      <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Parkland formül grubu">
-        {(["buyuk", "kucuk"] as const).map(g => (
-          <button
-            key={g}
-            type="button"
-            role="radio"
-            aria-checked={!elektrik && yasGrubu === g}
-            disabled={elektrik}
-            onClick={() => setYasGrubuSecim(g)}
-            className={`min-h-11 px-2 py-1.5 rounded-lg text-xs font-bold leading-tight transition active:scale-[0.97] disabled:opacity-40 ${
-              !elektrik && yasGrubu === g
-                ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
-                : "bg-black/20 text-muted border border-white/5 hover:bg-white/5"
-            }`}
-          >
-            {PARKLAND_ETIKET[g]} <span className="font-semibold opacity-80 tabular-nums">· {PARKLAND_KATSAYI[g]} mL</span>
-          </button>
-        ))}
-      </div>
-      <label className="flex items-center gap-3 min-h-11 px-3 rounded-lg border border-white/10 bg-black/20 cursor-pointer">
-        <input
-          type="checkbox"
-          checked={elektrik}
-          onChange={e => setElektrik(e.target.checked)}
-          className="w-5 h-5 accent-amber-500"
-        />
-        <span className="text-sm font-bold">Elektrik çarpması <span className="font-semibold text-muted tabular-nums">· herkes için 4 mL</span></span>
-      </label>
-      {ageGroup === "10" && !elektrik && yasGrubuSecim === null && (
-        <p className="text-[11px] text-subtle leading-relaxed">10 yaş grubu 10–14 yaşı kapsar; hasta 13 yaş ve üzeriyse “13 yaş üstü / erişkin”i seçin.</p>
-      )}
-    </div>
+  const elektrikSecici = (
+    <label className="flex items-center gap-3 min-h-11 px-3 rounded-lg border border-white/10 bg-black/20 cursor-pointer">
+      <input
+        type="checkbox"
+        checked={elektrik}
+        onChange={e => setElektrik(e.target.checked)}
+        className="w-5 h-5 accent-amber-500"
+      />
+      <span className="text-sm font-bold">Elektrik çarpması</span>
+    </label>
   );
 
   const kiloInput = (
@@ -308,7 +281,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
             </div>
             <div className="p-4 flex flex-col gap-5">
               {ageSelector}
-              {formulSecici}
+              {elektrikSecici}
               {kiloInput}
             </div>
           </div>
@@ -323,7 +296,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
               <p className="text-xs font-bold text-teal-400 uppercase tracking-widest">2. Adım · Sıvı İhtiyacı (Parkland)</p>
             </div>
             <div className="p-4 flex flex-col gap-5">
-              {formulSecici}
+              {elektrikSecici}
               {kiloInput}
             </div>
           </div>
