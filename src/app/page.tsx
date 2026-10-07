@@ -42,8 +42,8 @@ export default function HomePage() {
       >
         <div className="min-w-0">
           {!scrolled && (
-            <p className="text-[11px] font-semibold tracking-widest uppercase text-muted mb-0.5">
-              Şırnak 112 Acil Sağlık
+            <p className="text-[11px] font-semibold tracking-wider uppercase text-muted mb-0.5 leading-snug text-balance">
+              Şırnak İl Ambulans Servisi Başhekimliği
             </p>
           )}
           <h1 className={`font-extrabold leading-tight tracking-tight truncate ${scrolled ? "text-lg" : "text-2xl"}`}>
