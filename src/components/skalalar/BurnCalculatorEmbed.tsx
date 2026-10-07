@@ -9,7 +9,13 @@ import {
   formatPercent,
   totalBurnPercent,
   zonePercent,
+  defaultParklandGroup,
+  parklandEsikKarsilandi,
+  parklandSaatlikHiz,
+  PARKLAND_ETIKET,
+  PARKLAND_KATSAYI,
   type AgeGroup,
+  type ParklandGroup,
 } from "@/lib/burn";
 
 const VIEW_OPTIONS: { value: BurnMapView; label: string }[] = [
@@ -32,6 +38,9 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
   const [inputMode, setInputMode] = useState<"visual" | "manual">("visual");
   const [manualTbsa, setManualTbsa] = useState("");
   const [isZoomed, setIsZoomed] = useState(false);
+  // Parkland formül grubu: yaş grubundan varsayılır, elle değiştirilebilir; elektrik çarpması herkes için 4 mL
+  const [yasGrubuSecim, setYasGrubuSecim] = useState<Exclude<ParklandGroup, "elektrik"> | null>(null);
+  const [elektrik, setElektrik] = useState(false);
 
   const toggleZone = useCallback((id: string) => {
     setSelected(prev => {
@@ -60,9 +69,11 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
   const kiloInvalid = kilo !== "" && (!Number.isFinite(k) || k <= 0 || k > 300);
   const valid = !kiloInvalid && k > 0 && tbsa > 0 && !tbsaInvalid;
 
-  const toplam = valid ? 4 * k * tbsa : null;
-  const ilk8 = toplam !== null ? toplam / 2 : null;
-  const kalan16 = toplam !== null ? toplam / 2 : null;
+  const yasGrubu = yasGrubuSecim ?? defaultParklandGroup(ageGroup);
+  const grup: ParklandGroup = elektrik ? "elektrik" : yasGrubu;
+  const katsayi = PARKLAND_KATSAYI[grup];
+  const saatlikHiz = valid ? parklandSaatlikHiz(grup, k, tbsa) : null;
+  const esikKarsilandi = valid ? parklandEsikKarsilandi(k, tbsa) : true;
 
   /* ───────────── Parçalar ───────────── */
 
@@ -90,6 +101,43 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
         <p className="text-[11px] text-subtle leading-relaxed">
           Çocukta baş, uyluk ve alt bacak yüzdeleri Lund-Browder tablosuna göre yaşa uyarlanır; haritadaki etiketler de güncellenir.
         </p>
+      )}
+    </div>
+  );
+
+  const formulSecici = (
+    <div className="space-y-2">
+      <span className="text-xs font-bold text-muted uppercase tracking-wide">Formül Grubu</span>
+      <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Parkland formül grubu">
+        {(["buyuk", "kucuk"] as const).map(g => (
+          <button
+            key={g}
+            type="button"
+            role="radio"
+            aria-checked={!elektrik && yasGrubu === g}
+            disabled={elektrik}
+            onClick={() => setYasGrubuSecim(g)}
+            className={`min-h-11 px-2 py-1.5 rounded-lg text-xs font-bold leading-tight transition active:scale-[0.97] disabled:opacity-40 ${
+              !elektrik && yasGrubu === g
+                ? "bg-teal-500/20 text-teal-300 border border-teal-500/50"
+                : "bg-black/20 text-muted border border-white/5 hover:bg-white/5"
+            }`}
+          >
+            {PARKLAND_ETIKET[g]} <span className="font-semibold opacity-80 tabular-nums">· {PARKLAND_KATSAYI[g]} mL</span>
+          </button>
+        ))}
+      </div>
+      <label className="flex items-center gap-3 min-h-11 px-3 rounded-lg border border-white/10 bg-black/20 cursor-pointer">
+        <input
+          type="checkbox"
+          checked={elektrik}
+          onChange={e => setElektrik(e.target.checked)}
+          className="w-5 h-5 accent-amber-500"
+        />
+        <span className="text-sm font-bold">Elektrik çarpması <span className="font-semibold text-muted tabular-nums">· herkes için 4 mL</span></span>
+      </label>
+      {ageGroup === "10" && !elektrik && yasGrubuSecim === null && (
+        <p className="text-[11px] text-subtle leading-relaxed">10 yaş grubu 10–14 yaşı kapsar; hasta 13 yaş ve üzeriyse “13 yaş üstü / erişkin”i seçin.</p>
       )}
     </div>
   );
@@ -260,6 +308,7 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
             </div>
             <div className="p-4 flex flex-col gap-5">
               {ageSelector}
+              {formulSecici}
               {kiloInput}
             </div>
           </div>
@@ -273,48 +322,59 @@ export default function BurnCalculatorEmbed({ variant = "tbsa" }: BurnCalculator
             <div className="px-4 py-3 border-b border-white/10 bg-teal-500/5">
               <p className="text-xs font-bold text-teal-400 uppercase tracking-widest">2. Adım · Sıvı İhtiyacı (Parkland)</p>
             </div>
-            <div className="p-4">{kiloInput}</div>
+            <div className="p-4 flex flex-col gap-5">
+              {formulSecici}
+              {kiloInput}
+            </div>
           </div>
         </>
       )}
 
-      {/* Sonuç: Parkland */}
-      {valid && toplam !== null && ilk8 !== null && kalan16 !== null && (
-        <div className="space-y-3 animate-in fade-in slide-in-from-bottom-4">
+      {/* Sonuç: Parkland — saatlik başlangıç hızı (SB Hastane Öncesi Akış Şemaları s. 48, 133) */}
+      {valid && saatlikHiz !== null && (
+        <div role="status" aria-live="polite" className="space-y-3 animate-in fade-in slide-in-from-bottom-4">
+          {!esikKarsilandi && (
+            <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs text-amber-200/90 leading-relaxed">
+              <span className="font-bold text-amber-400 block mb-1">Sıvı eşiğinin altında</span>
+              Hastane öncesinde sıvı tedavisi; vücut ağırlığı 30 kg ve üzerindeyse %15 ve üzeri,
+              30 kg altındaysa %10 ve üzeri yanıkta verilir. Bu hastada yanık %{formatPercent(tbsa)}, kilo {k} kg.
+            </div>
+          )}
+
           <div className="bg-teal-600 rounded-2xl p-5 text-center text-white shadow-[0_0_30px_rgba(13,148,136,0.3)] border border-teal-400">
             <div className="flex items-center justify-center gap-2 mb-2 opacity-90">
               <Droplet className="w-4 h-4" />
-              <p className="text-xs font-bold uppercase tracking-wider">24 Saatlik Toplam Sıvı (Ringer Laktat)</p>
+              <p className="text-xs font-bold uppercase tracking-wider">Saatlik Başlangıç Sıvısı (Ringer Laktat)</p>
             </div>
-            <p className="text-5xl font-black tracking-tight tabular-nums">{toplam.toFixed(0)} <span className="text-xl opacity-80">mL</span></p>
-            <p className="text-[11px] opacity-80 mt-1">4 mL × {k} kg × %{formatPercent(tbsa)}</p>
+            <p className="text-5xl font-black tracking-tight tabular-nums">
+              {saatlikHiz.toFixed(0)} <span className="text-xl opacity-80">mL/saat</span>
+            </p>
+            <p className="text-[11px] opacity-90 mt-1 tabular-nums">
+              ({katsayi} × %{formatPercent(tbsa)} × {k} kg) / 16 · {PARKLAND_ETIKET[grup]}
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div className="glass-card rounded-2xl border-2 border-orange-400/50 p-4 text-center bg-orange-500/10">
-              <p className="text-[11px] font-bold text-orange-300 uppercase tracking-wide mb-1">İlk 8 Saat</p>
-              <p className="text-3xl font-black text-orange-400 tabular-nums">{ilk8.toFixed(0)}</p>
-              <p className="text-xs text-orange-300/80 font-bold mb-3">mL</p>
-              <div className="pt-3 border-t border-orange-500/20">
-                <p className="text-[11px] text-orange-300/60 uppercase">Saatlik Hız</p>
-                <p className="text-lg font-black text-white">{(ilk8 / 8).toFixed(0)} <span className="text-xs font-normal">mL/saat</span></p>
-              </div>
+          <div className="glass-card rounded-2xl p-4 grid grid-cols-2 gap-3 text-center">
+            <div>
+              <p className="text-[11px] font-bold text-muted uppercase tracking-wide">İlk 8 saatte</p>
+              <p className="text-2xl font-black tabular-nums">{(saatlikHiz * 8).toFixed(0)} <span className="text-xs font-bold text-muted">mL</span></p>
             </div>
-            <div className="glass-card rounded-2xl border-2 border-teal-400/50 p-4 text-center bg-teal-500/10">
-              <p className="text-[11px] font-bold text-teal-300 uppercase tracking-wide mb-1">Kalan 16 Saat</p>
-              <p className="text-3xl font-black text-teal-400 tabular-nums">{kalan16.toFixed(0)}</p>
-              <p className="text-xs text-teal-300/80 font-bold mb-3">mL</p>
-              <div className="pt-3 border-t border-teal-500/20">
-                <p className="text-[11px] text-teal-300/60 uppercase">Saatlik Hız</p>
-                <p className="text-lg font-black text-white">{(kalan16 / 16).toFixed(0)} <span className="text-xs font-normal">mL/saat</span></p>
-              </div>
+            <div>
+              <p className="text-[11px] font-bold text-muted uppercase tracking-wide">24 saatlik toplam</p>
+              <p className="text-2xl font-black tabular-nums">{(katsayi * tbsa * k).toFixed(0)} <span className="text-xs font-bold text-muted">mL</span></p>
             </div>
+            <p className="col-span-2 text-[11px] text-subtle leading-relaxed">
+              Saatlik hız, 24 saatlik toplamın ({katsayi} mL × kg × %VYA) yarısının ilk 8 saatte verilmesine karşılık gelir.
+            </p>
           </div>
 
-          <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs text-amber-200/90 leading-relaxed shadow-inner">
-            <span className="font-bold text-amber-400 block mb-1">⚠️ Klinik Not:</span>
-            Sıvı resüsitasyonu yanığın başladığı saatten itibaren hesaplanır. Formül bir rehberdir, hastanın idrar çıkışı (0.5–1 mL/kg/saat) ve klinik yanıtına göre titre edilmelidir.
-            {ageGroup !== "Erişkin" && " Çocuklarda Parkland sıvısına ek olarak dekstrozlu idame sıvısı da planlanmalıdır."}
+          <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs text-amber-200/90 leading-relaxed shadow-inner space-y-1.5">
+            <span className="font-bold text-amber-400 block">⚠️ Klinik Not (SB Akış Şemaları)</span>
+            <p>1. derece yanıklar yanık yüzdesine dahil edilmez.</p>
+            <p>Formül saatlik başlangıç miktarını verir; idrar çıkışına göre saatlik miktar %10–30 oranında artırılır veya azaltılır
+              (hedef idrar çıkışı erişkinde 0,5–1 mL/kg/saat, çocukta 1 mL/kg/saat).</p>
+            <p>1 saatten kısa nakillerde 500 mL Ringer Laktat; uzun süreli nakillerde Parkland formülü kullanılır, vital bulgu ve idrar takibi yapılır.</p>
+            {grup === "kucuk" && <p>İnfant ve 30 kg altı küçük çocuklarda Ringer Laktat ile birlikte verilmelidir.</p>}
           </div>
         </div>
       )}

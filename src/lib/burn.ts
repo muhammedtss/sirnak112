@@ -60,3 +60,37 @@ export function totalBurnPercent(ids: Iterable<string>, age: AgeGroup): number {
 export function formatPercent(value: number): string {
   return (Math.round(value * 100) / 100).toString().replace(".", ",");
 }
+
+/* ───────────── Parkland Formülü (Sağlık Bakanlığı Hastane Öncesi Akış Şemaları, s. 48 ve 133) ─────────────
+   Saatlik BAŞLANGIÇ sıvı resüsitasyonu, Ringer Laktat:
+     13 yaş üstü çocuk ve erişkin : (2 × yanık VYA % × kg) / 16
+     13 yaştan küçük              : (3 × yanık VYA % × kg) / 16
+     Elektrik çarpması (herkes)   : (4 × yanık VYA % × kg) / 16
+   1. derece yanıklar VYA hesabına dahil edilmez. İdrar çıkışına göre saatlik
+   miktar %10–30 artırılır/azaltılır.
+   Hastane öncesi sıvı eşiği: ≥ 30 kg ise %15 ve üzeri, < 30 kg ise %10 ve üzeri yanık. */
+
+export type ParklandGroup = "buyuk" | "kucuk" | "elektrik";
+
+export const PARKLAND_KATSAYI: Record<ParklandGroup, number> = { buyuk: 2, kucuk: 3, elektrik: 4 };
+
+export const PARKLAND_ETIKET: Record<ParklandGroup, string> = {
+  buyuk: "13 yaş üstü / erişkin",
+  kucuk: "13 yaş altı",
+  elektrik: "Elektrik çarpması",
+};
+
+/** Lund-Browder yaş grubundan varsayılan formül grubu (10 yaş grubu 10–14 yaşı kapsar → 13 altı varsayılır). */
+export function defaultParklandGroup(age: AgeGroup): Exclude<ParklandGroup, "elektrik"> {
+  return age === "15" || age === "Erişkin" ? "buyuk" : "kucuk";
+}
+
+/** Saatlik başlangıç Ringer Laktat hızı (mL/saat). */
+export function parklandSaatlikHiz(group: ParklandGroup, kg: number, tbsa: number): number {
+  return (PARKLAND_KATSAYI[group] * tbsa * kg) / 16;
+}
+
+/** PDF'teki hastane öncesi sıvı tedavisi eşiği karşılanıyor mu? */
+export function parklandEsikKarsilandi(kg: number, tbsa: number): boolean {
+  return kg >= 30 ? tbsa >= 15 : tbsa >= 10;
+}

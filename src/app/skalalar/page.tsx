@@ -50,7 +50,7 @@ const yetiskinSkalalar: Skala[] = [
   {
     id: "parkland", name: "Parkland Formülü", icon: "💧",
     accent: "#38BDF8", glow: "rgba(56,189,248,0.15)", border: "rgba(56,189,248,0.25)",
-    description: "Yanık resüsitasyonunda ilk 24 saatte verilecek sıvı: 4 mL × kg × TBSA%.",
+    description: "Yanıkta saatlik başlangıç Ringer Laktat: (2/3/4 × %VYA × kg) / 16 — erişkin, 13 yaş altı, elektrik.",
     tags: ["Yanık", "Sıvı", "Ringer"],
     href: "/skalalar/parkland",
   },
