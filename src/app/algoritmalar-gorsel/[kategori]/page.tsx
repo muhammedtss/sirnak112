@@ -39,7 +39,7 @@ function getImagesForCategory(kategori: string): AlgoGroup[] {
         .pop()!
         .replace(/^\d+_/, "")
         .replace(/_/g, " ")
-        .replace(/\.png$/i, "");
+        .replace(/\.(png|webp)$/i, "");
       
       results.push({ id, title, images: matched });
     }
