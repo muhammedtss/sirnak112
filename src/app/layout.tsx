@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, KEYWORDS, OG_BASE, ORG_NAME, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { Background } from "@/components/ui/Background";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { OfflineManager } from "@/components/pwa/OfflineManager";
@@ -13,9 +14,20 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Şırnak 112 - Acil Protokol",
-  description: "Şırnak 112 Acil Saglik Hizmetleri Protokol ve Ilac Uygulamasi",
-  applicationName: "Şırnak 112 Acil Protokol",
+  metadataBase: new URL(SITE_URL),
+  title: { default: DEFAULT_TITLE, template: `%s · ${SITE_NAME}` },
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: KEYWORDS,
+  authors: [{ name: ORG_NAME }],
+  creator: ORG_NAME,
+  publisher: ORG_NAME,
+  category: "medical",
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+  openGraph: { ...OG_BASE, title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, url: "/" },
+  twitter: { card: "summary_large_image", title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, images: ["/og.png"] },
+  formatDetection: { telephone: false },
   appleWebApp: {
     capable: true,
     title: "112 Protokol",

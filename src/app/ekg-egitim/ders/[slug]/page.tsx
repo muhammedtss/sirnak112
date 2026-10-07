@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import { BookOpen } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
@@ -15,7 +16,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const ders = dersBySlug((await params).slug);
-  return { title: ders ? `${ders.baslik} · EKG Eğitimi` : "EKG Eğitimi" };
+  if (!ders) return { title: "EKG Eğitimi" };
+  return pageMeta(`/ekg-egitim/ders/${ders.slug}`, `${ders.baslik} · EKG Eğitimi`, `EKG eğitimi ${ders.no}. ders: ${ders.ozet}.`);
 }
 
 export default async function DersPage({ params }: { params: Promise<{ slug: string }> }) {

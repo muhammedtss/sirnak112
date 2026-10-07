@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import envanterData from "@/data/ambulans-envanter.json";
@@ -9,6 +11,13 @@ import { staticParamsFor } from "@/lib/static-params";
 
 export function generateStaticParams() {
   return staticParamsFor("/envanter/[tip]/[kategori]");
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ tip: string; kategori: string }> }): Promise<Metadata> {
+  const { tip, kategori } = await params;
+  const ambulans = (envanterData as Record<string, { name: string }>)[tip];
+  if (!ambulans) return {};
+  return pageMeta(`/envanter/${tip}/${kategori}`, `${ambulans.name} — İlaç Kontrol Listesi`, `${ambulans.name} için ilaç ve malzeme kontrol listesi.`);
 }
 
 const ambulansNames: Record<string, string> = {

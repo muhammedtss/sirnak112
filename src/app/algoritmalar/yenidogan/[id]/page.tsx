@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import AlgorithmViewer from "@/components/algorithm/AlgorithmViewer";
 import yenidoganData from "@/data/yenidogan.json";
@@ -8,6 +10,17 @@ import { staticParamsFor } from "@/lib/static-params";
 
 export function generateStaticParams() {
   return staticParamsFor("/algoritmalar/yenidogan/[id]");
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const kayit = (yenidoganData as Record<string, { title: string }>)[id];
+  if (!kayit) return {};
+  return pageMeta(
+    `/algoritmalar/yenidogan/${id}`,
+    `${kayit.title} — Yenidoğan Algoritması`,
+    `${kayit.title}: hastane öncesi yenidoğan acil algoritma, Sağlık Bakanlığı akış şemasına göre adım adım.`,
+  );
 }
 
 export default async function YenidoganAlgoritmaSayfasi({

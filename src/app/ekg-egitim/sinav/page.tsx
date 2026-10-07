@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
 import { Trophy } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import EkgSinav from "@/components/ekg/EkgSinav";
-
-export const metadata: Metadata = { title: "Vaka Sınavı · EKG Eğitimi" };
 
 export default function EkgSinavPage() {
   return (

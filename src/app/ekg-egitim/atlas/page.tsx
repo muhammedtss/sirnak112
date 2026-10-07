@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
 import { BookMarked } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import RitimAtlasi from "@/components/ekg/RitimAtlasi";
-
-export const metadata: Metadata = { title: "Ritim Atlası · EKG Eğitimi" };
 
 export default function RitimAtlasiPage() {
   return (

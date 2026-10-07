@@ -5,7 +5,8 @@ import { AppHeader } from "@/components/layout/AppHeader";
 import { RetryLink } from "./RetryLink";
 
 export const metadata: Metadata = {
-  title: "Çevrimdışı · Şırnak 112 - Acil Protokol",
+  title: "Çevrimdışı",
+  robots: { index: false, follow: false },
 };
 
 /* Service worker, çevrimdışıyken önbellekte bulunmayan bir sayfa

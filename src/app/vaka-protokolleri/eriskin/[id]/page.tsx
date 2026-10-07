@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import AlgorithmViewer from "@/components/algorithm/AlgorithmViewer";
 import eriskinProtokolData from "@/data/eriskin.json";
@@ -8,6 +10,17 @@ import { staticParamsFor } from "@/lib/static-params";
 
 export function generateStaticParams() {
   return staticParamsFor("/vaka-protokolleri/eriskin/[id]");
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const kayit = (eriskinProtokolData as Record<string, { title: string }>)[id];
+  if (!kayit) return {};
+  return pageMeta(
+    `/vaka-protokolleri/eriskin/${id}`,
+    `${kayit.title} — Erişkin Vaka Protokolü`,
+    `${kayit.title}: hastane öncesi erişkin acil vaka protokolü, Sağlık Bakanlığı akış şemasına göre adım adım.`,
+  );
 }
 
 export default async function EriskinProtokolSayfasi({

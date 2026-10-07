@@ -1,3 +1,8 @@
+import { NOINDEX } from "@/lib/seo";
+
+// Yapım aşamasında / bağlantısız sayfa: arama motorlarında listelenmesin
+export const metadata = NOINDEX;
+
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import AlgorithmViewer from "@/components/algorithm/AlgorithmViewer";
 import cocukData from "@/data/cocuk.json";
@@ -8,6 +10,17 @@ import { staticParamsFor } from "@/lib/static-params";
 
 export function generateStaticParams() {
   return staticParamsFor("/algoritmalar/cocuk/[id]");
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const kayit = (cocukData as Record<string, { title: string }>)[id];
+  if (!kayit) return {};
+  return pageMeta(
+    `/algoritmalar/cocuk/${id}`,
+    `${kayit.title} — Çocuk Algoritması`,
+    `${kayit.title}: hastane öncesi çocuk acil algoritma, Sağlık Bakanlığı akış şemasına göre adım adım.`,
+  );
 }
 
 export default async function CocukAlgoritmaSayfasi({

@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
 import { HeartPulse } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import EkgAnaSayfa from "@/components/ekg/EkgAnaSayfa";
-
-export const metadata: Metadata = { title: "EKG Eğitimi · Şırnak 112" };
 
 export default function EkgEgitimPage() {
   return (
