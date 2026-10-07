@@ -21,14 +21,16 @@ export const metadata: Metadata = {
     title: "112 Protokol",
     statusBarStyle: "black-translucent",
   },
+  // Next 16 yalnızca "mobile-web-app-capable" basar; eski iOS sürümleri tam ekran için bu etiketi arar
+  other: { "apple-mobile-web-app-capable": "yes" },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
+      { url: '/icons/icon.svg', type: 'image/svg+xml' },
       { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
       { url: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' }
     ],
     apple: [
-      { url: '/apple-touch-icon.png' }
+      { url: '/apple-touch-icon.png', sizes: '180x180' }
     ]
   }
 };
@@ -36,6 +38,8 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  // black-translucent durum çubuğuyla birlikte: içerik çentiğin altına uzanır, güvenli alan boşlukları CSS'te
+  viewportFit: "cover",
   themeColor: "#090C14",
 };
 
@@ -52,7 +56,7 @@ export default function RootLayout({
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script src="/theme-init.js" />
       </head>
-      <body className="flex flex-col h-full relative antialiased overflow-hidden">
+      <body className="flex flex-col h-full relative antialiased overflow-hidden pt-[env(safe-area-inset-top)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
         {/* Layered premium background — fixed, stays behind everything */}
         <Background />
 

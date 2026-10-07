@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { WifiOff } from "lucide-react";
 import { startServiceWorker, useOfflineState } from "@/lib/pwa/sw-client";
+import { startInstallListener } from "@/lib/pwa/install";
 
 /** Kök layout'ta bir kez: service worker'ı başlatır, çevrimdışıyken bant gösterir. */
 export function OfflineManager() {
@@ -10,6 +11,7 @@ export function OfflineManager() {
 
   useEffect(() => {
     startServiceWorker();
+    startInstallListener();
   }, []);
 
   if (online) return null;

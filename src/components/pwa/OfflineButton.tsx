@@ -20,6 +20,7 @@ import {
   type PackStatus,
   type SyncProgress,
 } from "@/lib/pwa/sw-client";
+import { InstallCard } from "./InstallCard";
 
 const formatMB = (bytes: number) => `${(bytes / 1024 / 1024).toFixed(1).replace(".", ",")} MB`;
 
@@ -137,11 +138,7 @@ function OfflinePanel({ s }: { s: OfflineState }) {
           <PackRow key={name} name={name} pack={pack} online={s.online} busy={s.syncing} progress={s.progress} />
         ))}
 
-      {s.mode === "active" && (
-        <p className="text-[11px] text-subtle leading-relaxed">
-          iPhone&apos;da kalıcı çevrimdışı kullanım için Safari&apos;de Paylaş → Ana Ekrana Ekle ile yükleyin.
-        </p>
-      )}
+      <InstallCard />
     </div>
   );
 }
@@ -214,7 +211,7 @@ export function OfflineButton() {
           <motion.div
             role="dialog"
             aria-label="Çevrimdışı kullanım"
-            className="absolute right-0 top-full mt-2 z-50 w-[min(20rem,calc(100vw-2rem))] glass-card p-4 shadow-2xl origin-top-right"
+            className="fixed inset-x-4 top-[calc(env(safe-area-inset-top)+4rem)] sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-80 z-50 max-h-[75dvh] overflow-y-auto glass-card p-4 shadow-2xl origin-top-right"
             style={{ background: "var(--bg-surface)" }}
             initial={{ opacity: 0, scale: 0.96, y: -4 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
