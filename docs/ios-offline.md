@@ -30,7 +30,7 @@ Tarih: 2026-10-07 · Kapsam: `public/sw.js`, `src/lib/pwa/*`, `src/app/manifest.
 
 Bu ortamda gerçek iPhone/WebKit yok. Chromium'da yapılan çevrimdışı testler WebKit davranışını birebir göstermez. Sahaya çıkmadan önce bir iPhone'da şu kontrol listesi uygulanmalı:
 
-- [ ] Safari'de https://sirnak112.vercel.app aç → Paylaş → Ana Ekrana Ekle → Ekle. Simge yeni ikonla görünüyor mu?
+- [ ] Safari'de https://www.112acilsaglik.com aç → Paylaş → Ana Ekrana Ekle → Ekle. Simge yeni ikonla görünüyor mu?
 - [ ] Ana ekrandan aç: adres çubuğu yok, üst kısım çentiğin/saatin altına girmiyor mu?
 - [ ] Başlıktaki bulut düğmesi → "İnternetsiz kullanıma hazır" görünene kadar bekle.
 - [ ] İsteğe bağlı: Algoritma görselleri paketini indir (92 MB, Wi-Fi'de).

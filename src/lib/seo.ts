@@ -9,7 +9,7 @@ import type { Metadata } from "next";
    Alan adı değişirse NEXT_PUBLIC_SITE_URL ortam değişkeni ile verilir.
    ════════════════════════════════════════════════════════════════ */
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://sirnak112.vercel.app").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.112acilsaglik.com").replace(/\/$/, "");
 export const SITE_NAME = "Acil Protokol";
 export const ORG_NAME = "Şırnak İl Ambulans Servisi Başhekimliği";
 
