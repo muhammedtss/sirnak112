@@ -18,6 +18,7 @@ import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import GlobalSearchModal, { openGlobalSearch } from "@/components/search/GlobalSearchModal";
 import { OfflineButton } from "@/components/pwa/OfflineButton";
 import { useScrolled } from "@/components/layout/useScrolled";
+import { SignatureEcg } from "@/components/layout/SignatureEcg";
 
 const quickLinks = [
   { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Algoritmalar",      desc: "Akış şemaları", accent: "#F97316" },
@@ -53,7 +54,7 @@ export default function HomePage() {
             </span>
           </h1>
           {!scrolled && (
-            <p className="text-[11px] font-medium text-subtle mt-0.5">Developed by Kadir Taş</p>
+            <p className="text-[11px] font-medium text-subtle mt-0.5 flex items-center gap-1">Developed by <SignatureEcg name="Kadir Taş" /></p>
           )}
         </div>
         <div className="flex items-center gap-0.5 shrink-0">
