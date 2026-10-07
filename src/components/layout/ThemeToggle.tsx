@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 
 type Theme = "dark" | "light";
@@ -34,7 +34,7 @@ export function ThemeToggle() {
     <button type="button" onClick={toggleTheme} className="header-icon-btn" aria-label={label} title={label}>
       <span className="relative w-5 h-5" aria-hidden="true">
         <AnimatePresence initial={false}>
-          <motion.span
+          <m.span
             key={theme}
             className="absolute inset-0 flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
@@ -43,7 +43,7 @@ export function ThemeToggle() {
             transition={{ type: "spring", duration: 0.3, bounce: 0 }}
           >
             {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-          </motion.span>
+          </m.span>
         </AnimatePresence>
       </span>
     </button>

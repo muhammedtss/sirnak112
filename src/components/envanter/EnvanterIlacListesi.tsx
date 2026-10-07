@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 interface EnvanterIlac {
@@ -296,7 +296,7 @@ export default function EnvanterIlacListesi({
       <div className="fixed inset-x-0 bottom-28 z-40 flex justify-center px-4 pointer-events-none" role="status" aria-live="polite">
         <AnimatePresence>
           {toast && (
-            <motion.div
+            <m.div
               key="toast"
               className="glass-card !rounded-2xl px-4 py-3 flex items-center gap-2.5 shadow-2xl pointer-events-auto"
               style={{ background: "var(--bg-surface)" }}
@@ -309,7 +309,7 @@ export default function EnvanterIlacListesi({
               <span className="text-sm font-bold">
                 Kontrol tamamlandı: <span className="tabular-nums">{yeterliCount} yeterli, {yetersizCount} yetersiz</span>
               </span>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import {
   CheckCircle2,
   CloudCheck,
@@ -192,7 +192,7 @@ export function OfflineButton() {
         {/* Durum değişince ikon çapraz geçişle değişir (ör. senkron bitti → bulut onayı) */}
         <span className="relative w-[19px] h-[19px]" aria-hidden="true">
           <AnimatePresence initial={false}>
-            <motion.span
+            <m.span
               key={label}
               className="absolute inset-0 flex items-center justify-center"
               initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
@@ -201,14 +201,14 @@ export function OfflineButton() {
               transition={{ type: "spring", duration: 0.3, bounce: 0 }}
             >
               {icon}
-            </motion.span>
+            </m.span>
           </AnimatePresence>
         </span>
       </button>
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             role="dialog"
             aria-label="Çevrimdışı kullanım"
             className="fixed inset-x-4 top-[calc(env(safe-area-inset-top)+4rem)] sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-80 z-50 max-h-[75dvh] overflow-y-auto glass-card p-4 shadow-2xl origin-top-right"
@@ -220,7 +220,7 @@ export function OfflineButton() {
           >
             <p className="text-[11px] font-bold uppercase tracking-widest text-subtle mb-3">Çevrimdışı Kullanım</p>
             <OfflinePanel s={s} />
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

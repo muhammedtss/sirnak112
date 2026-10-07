@@ -47,6 +47,20 @@ function walk(dir: string): string[] {
   });
 }
 
+/**
+ * Build'in ürettiği tüm /_next/static dosyaları (JS, CSS, font).
+ * Sayfa HTML'lerinde geçmeyen, sonradan yüklenen parçalar (ör. arama dizini) da
+ * çevrimdışı önbelleğe girsin ve senkronda budanmasın diye SW'ye açıkça verilir.
+ */
+function collectStatics(): string[] {
+  const dir = path.join(process.cwd(), ".next", "static");
+  if (!fs.existsSync(dir)) return [];
+  return walk(dir)
+    .filter(f => !f.endsWith(".map"))
+    .map(f => "/_next/static/" + path.relative(dir, f).split(path.sep).join("/"))
+    .sort();
+}
+
 /** src/app içindeki page dosyalarından URL listesi. */
 function collectPages(): string[] {
   const pages = new Set<string>();
@@ -125,6 +139,7 @@ function buildManifest() {
     pages,
     // public dışında üretilen dosyalar (src/app/favicon.ico, manifest.ts)
     extra: ["/favicon.ico", "/manifest.webmanifest"],
+    statics: collectStatics(),
     core,
     packs,
   };

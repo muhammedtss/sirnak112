@@ -22,7 +22,7 @@
      public dosya : önbellek öncelikli (görüntülenen dosya kaydedilir)
    ════════════════════════════════════════════════════════════════ */
 
-const SW_VERSION = 'v6';
+const SW_VERSION = 'v7';
 const MANIFEST_URL = '/sw-manifest';
 const OFFLINE_URL = '/offline';
 const PAGES_PREFIX = 'pages-';
@@ -262,7 +262,9 @@ async function runSync() {
     reportProgress({ phase: 'pages', done: pagesOk + pagesFailed, total });
   });
 
-  /* 2) Sayfaların kullandığı JS/CSS/font dosyaları */
+  /* 2) Sayfaların kullandığı JS/CSS/font dosyaları
+        + build'in tüm static dosyaları (HTML'de geçmeyen, sonradan yüklenen parçalar dahil) */
+  (manifest.statics || []).forEach((u) => staticRefs.add(u));
   const staticCache = await caches.open(STATIC_CACHE);
   let queue = [...staticRefs];
   let staticFailed = 0;

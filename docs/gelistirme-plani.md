@@ -80,10 +80,28 @@ Bunlar gelene kadar ilgili alanlar sitede **gizli** kalır; hiçbir şey uydurul
 3. **Sürüm numarası:** öneri `1.0.0` (bakanlık sunumu ilk resmi sürüm).
 4. **Vercel Analytics:** isteniyor mu? (C4)
 
+## Faz B sonuçları (2026-10-08)
+
+| Ölçüm | Önce (canlı) | Sonra | Fark |
+|---|---|---|---|
+| Ana sayfa ilk yükleme JS (gzip) | 278 KB | 206 KB | −%26 |
+| Ana sayfa ilk yükleme JS (açık) | 965 KB | 654 KB | −%32 |
+| Diğer sayfalar ilk yükleme JS (gzip) | ~230–240 KB | ~202–214 KB | ≈ −26 KB her sayfada |
+| Algoritma görselleri (çevrimdışı paket) | 92,5 MB (PNG) | 11,8 MB (WebP) | −%87 |
+| Arama verisi ilk yüklemede | Evet | Hayır (arama açılınca) | — |
+
+Ek düzeltmeler:
+- Service Worker (v7) artık build'in tüm static dosyalarını önbelleğe alır; sonradan yüklenen parçalar (arama, animasyon motoru) çevrimdışında da çalışır. Doğrulandı: 64/64 dosya önbellekte.
+- Algoritmalar, Vaka Protokolleri, Görsel Algoritmalar ve Envanter liste sayfalarındaki giriş animasyonu kaldırıldı: kartlar sunucudan görünmez geliyor ve JS yüklenene kadar gizli kalıyordu.
+- Alt menüdeki aktif daire CSS ile çiziliyor (görünüm aynı).
+- Kullanılmayan `PageTransition` ve `GlassCard` bileşenleri silindi.
+
+Ölçüm yöntemi: sayfanın ilk HTML'inde yüklenen tüm JS dosyalarının gzip −9 boyutu (aynı betikle hem canlı hem yerel). Lighthouse skorları PageSpeed kotası açılınca eklenecek.
+
 ## İlerleme
 
 - [x] Faz A — kurumsal sayfalar, sorumluluk notu, alt bilgi, SEO kayıtları
-- [ ] Faz B
+- [x] Faz B — görseller WebP, arama dizini ve animasyon motoru ilk yüklemeden çıkarıldı
 - [ ] Faz C
 - [ ] Faz D
 - [ ] Faz E

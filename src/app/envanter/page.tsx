@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { Ambulance, Navigation, Plane, ChevronRight, Package } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
@@ -36,14 +35,6 @@ const ambulanslar = [
   },
 ];
 
-const stagger = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
-};
-const card = {
-  hidden: { opacity: 0, x: -16 },
-  show: { opacity: 1, x: 0, transition: { type: "spring" as const, stiffness: 320, damping: 28 } },
-};
 
 export default function EnvanterPage() {
   return (
@@ -57,16 +48,13 @@ export default function EnvanterPage() {
       <div className="px-4 pt-6 pb-4 max-w-xl mx-auto w-full">
         <p className="text-muted text-sm mb-6">Ambulans tipini seçerek envanter listesine ulaşın.</p>
 
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          animate="show"
+        <div
           className="flex flex-col gap-3"
         >
           {ambulanslar.map((a) => {
             const Icon = a.icon;
             return (
-              <motion.div key={a.id} variants={card}>
+              <div key={a.id}>
                 <Link
                   href={`/envanter/${a.id}`}
                   className="glass-card glass-hover flex items-center gap-4 p-5"
@@ -84,10 +72,10 @@ export default function EnvanterPage() {
                   </div>
                   <ChevronRight className="shrink-0 text-subtle" style={{ width: 18, height: 18 }} />
                 </Link>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </PageShell>
   );

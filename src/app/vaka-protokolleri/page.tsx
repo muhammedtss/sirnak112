@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { User, Baby, Heart, ChevronRight, BookOpen } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
@@ -36,14 +35,6 @@ const groups = [
   },
 ];
 
-const stagger = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
-};
-const card = {
-  hidden: { opacity: 0, x: -16 },
-  show: { opacity: 1, x: 0, transition: { type: "spring" as const, stiffness: 320, damping: 28 } },
-};
 
 export default function VakaProtokolleriPage() {
   return (
@@ -59,16 +50,13 @@ export default function VakaProtokolleriPage() {
           Yaş grubuna göre vaka bazlı müdahale protokollerine ulaşın.
         </p>
 
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          animate="show"
+        <div
           className="flex flex-col gap-3"
         >
           {groups.map((g) => {
             const Icon = g.icon;
             return (
-              <motion.div key={g.href} variants={card}>
+              <div key={g.href}>
                 <Link
                   href={g.href}
                   className="glass-card glass-hover flex items-center gap-4 p-5"
@@ -86,10 +74,10 @@ export default function VakaProtokolleriPage() {
                   </div>
                   <ChevronRight className="shrink-0 text-subtle" style={{ width: 18, height: 18 }} />
                 </Link>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </PageShell>
   );

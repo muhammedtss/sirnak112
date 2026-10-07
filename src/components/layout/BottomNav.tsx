@@ -3,7 +3,6 @@
 import { Home, Activity, BookOpen, Pill, Package } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 
 const navItems = [
   { icon: Home,      label: "Ana Sayfa",     href: "/" },
@@ -40,14 +39,7 @@ export function BottomNav() {
               aria-current={isActive ? "page" : undefined}
               className="nav-item relative flex flex-col items-center justify-center w-12 h-12 rounded-full"
             >
-              {isActive && (
-                <motion.div
-                  layoutId="nav-pill"
-                  className="absolute inset-0 rounded-full"
-                  style={{ background: "var(--primary-glow)" }}
-                  transition={{ type: "spring", stiffness: 450, damping: 30 }}
-                />
-              )}
+              <span aria-hidden="true" className="nav-pill absolute inset-0 rounded-full" data-active={isActive} />
               <Icon
                 aria-hidden="true"
                 className="relative z-10 transition-colors duration-150"

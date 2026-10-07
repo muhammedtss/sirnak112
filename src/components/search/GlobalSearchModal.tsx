@@ -3,9 +3,20 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { Search, X, CornerDownLeft } from "lucide-react";
-import { GROUP_ACCENT, SEARCH_GROUPS, searchItems, type SearchGroup } from "./searchIndex";
+import { GROUP_ACCENT, SEARCH_GROUPS, type SearchGroup } from "./searchGroups";
+
+type SearchFn = typeof import("./searchIndex").searchItems;
+
+/* Arama dizini (~150 KB: algoritma, ilaç, ICD-10 verisi) ilk yüklemeden çıkarıldı;
+   arama açılınca ya da düğmeye yaklaşılınca bir kez yüklenir. Çevrimdışında da çalışır:
+   SW, build'in tüm static dosyalarını önbelleğe alır (sw-manifest › statics). */
+let searchFnPromise: Promise<SearchFn> | null = null;
+function loadSearch(): Promise<SearchFn> {
+  searchFnPromise ??= import("./searchIndex").then(m => m.searchItems);
+  return searchFnPromise;
+}
 
 const OPEN_EVENT = "acil:open-search";
 
@@ -50,7 +61,22 @@ export default function GlobalSearchModal() {
     return () => clearTimeout(t);
   }, [isOpen]);
 
-  const { items, total } = useMemo(() => searchItems(searchTerm, group), [searchTerm, group]);
+  const [searchFn, setSearchFn] = useState<SearchFn | null>(null);
+  useEffect(() => {
+    if (!isOpen || searchFn) return;
+    let iptal = false;
+    loadSearch().then(fn => {
+      if (!iptal) setSearchFn(() => fn);
+    });
+    return () => {
+      iptal = true;
+    };
+  }, [isOpen, searchFn]);
+
+  const { items, total } = useMemo(
+    () => (searchFn ? searchFn(searchTerm, group) : { items: [], total: 0 }),
+    [searchFn, searchTerm, group],
+  );
 
   const go = useCallback(
     (url: string) => {
@@ -86,7 +112,7 @@ export default function GlobalSearchModal() {
   const modal = (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
+        <m.div
           key="search"
           className="fixed inset-0 z-[100] flex items-start justify-center px-4 pt-[max(1rem,env(safe-area-inset-top))] sm:pt-20"
           initial={{ opacity: 0 }}
@@ -96,7 +122,7 @@ export default function GlobalSearchModal() {
           onKeyDown={onKeyDown}
         >
           <div className="search-backdrop absolute inset-0" onClick={close} aria-hidden="true" />
-          <motion.div
+          <m.div
             role="dialog"
             aria-modal="true"
             aria-label="Hızlı arama"
@@ -252,8 +278,8 @@ export default function GlobalSearchModal() {
                 <span className="hidden sm:inline">↑↓ seç · Enter aç</span>
               </div>
             )}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>
   );
@@ -262,6 +288,8 @@ export default function GlobalSearchModal() {
     <>
       <button
         ref={triggerRef}
+        onPointerEnter={() => void loadSearch()}
+        onFocus={() => void loadSearch()}
         type="button"
         onClick={open}
         className="header-icon-btn"
