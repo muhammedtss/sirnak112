@@ -315,23 +315,30 @@ p, li, dd, figcaption { text-wrap: pretty; }
 }
 .t-icon-in { animation: t-icon-in 260ms cubic-bezier(0.34, 1.45, 0.64, 1) both; }
 
-/* İmza EKG'si: iz soldan sağa çizilir (monitör taraması), sonra isim netleşir. Bir kez, ~1 sn. */
-@keyframes sig-ecg-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-@keyframes sig-ecg-name-in {
-  from { opacity: 0; transform: translateX(-4px); filter: blur(3px); }
-  to   { opacity: 1; transform: translateX(0); filter: blur(0); }
+/* İmza: isim EKG atımı gibi girer — her harf sırayla P–QRS–T salınımı yapar, teal parıltıdan
+   normal renge oturur. Harf başına 640 ms, harfler arası 55 ms gecikme (bileşende). */
+@keyframes sig-ecg-beat {
+  0%   { opacity: 0; transform: translateY(0); color: var(--accent-text); text-shadow: 0 0 6px var(--primary-glow); }
+  10%  { opacity: 1; transform: translateY(0); }
+  20%  { transform: translateY(-1.5px); }             /* P */
+  28%  { transform: translateY(0); }
+  36%  { transform: translateY(1.5px); }              /* Q */
+  44%  { transform: translateY(-6px); }               /* R */
+  52%  { transform: translateY(3px); }                /* S */
+  60%  { transform: translateY(0); }
+  72%  { transform: translateY(-2.5px); }             /* T */
+  84%  { transform: translateY(0); color: var(--accent-text); text-shadow: 0 0 6px var(--primary-glow); }
+  100% { opacity: 1; transform: translateY(0); color: var(--fg-muted); text-shadow: none; }
 }
-.sig-ecg { cursor: default; -webkit-tap-highlight-color: transparent; }
-.sig-ecg-trace { color: var(--accent-text); filter: drop-shadow(0 0 3px color-mix(in srgb, var(--primary-light) 55%, transparent)); }
-.sig-ecg-trace path { stroke-dasharray: 1; animation: sig-ecg-draw 700ms cubic-bezier(0.45, 0, 0.55, 1) 150ms both; }
-.sig-ecg-name { font-weight: 700; color: var(--fg-muted); animation: sig-ecg-name-in 380ms var(--ease-out) 720ms both; }
+.sig-ecg { display: inline-flex; font-weight: 700; color: var(--fg-muted); cursor: default; -webkit-tap-highlight-color: transparent; }
+.sig-ecg-ch { display: inline-block; animation: sig-ecg-beat 640ms linear both; }
 
 /* Success check: yol çizimi (pathLength=1 olan SVG path'lerinde) */
 @keyframes t-check-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 .t-check path { stroke-dasharray: 1; animation: t-check-draw 220ms var(--ease-out) 60ms both; }
 
 @media (prefers-reduced-motion: reduce) {
-  .t-digit, .animate-in, .t-check path, .t-shake, .t-icon-in, .sig-ecg-trace path, .sig-ecg-name { animation: none !important; }
+  .t-digit, .animate-in, .t-check path, .t-shake, .t-icon-in, .sig-ecg-ch { animation: none !important; }
 }
 
 /* === Glassmorphism === */
