@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { Algorithm } from "@/types";
 import { getAlgorithmImages, AlgorithmImage } from "@/data/algorithmImages";
+import { usePinchZoom, ZOOM_MAX, ZOOM_MIN } from "./usePinchZoom";
 
 interface Props {
   algorithm: Algorithm;
@@ -22,6 +23,8 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
   const [imgError, setImgError] = useState(false);
   const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const { gestureRef } = usePinchZoom(scrollRef, zoomLevel, setZoomLevel);
 
   const current = images[currentIndex];
   const hasMultiple = images.length > 1;
@@ -46,23 +49,25 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
   }, [onClose, images.length]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart({ x: e.targetTouches[0].clientX, y: e.targetTouches[0].clientY });
+    const t0 = e.targetTouches[0] ?? e.touches[0];
+    if (!t0 || e.touches.length > 1) { setTouchStart(null); return; }
+    setTouchStart({ x: t0.clientX, y: t0.clientY });
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (!touchStart) return;
-    
-    if (zoomLevel > 1) {
+
+    if (zoomLevel > 1 || gestureRef.current) {
       setTouchStart(null);
       return;
     }
 
     const touchEndX = e.changedTouches[0].clientX;
     const touchEndY = e.changedTouches[0].clientY;
-    
+
     const dx = touchStart.x - touchEndX;
     const dy = touchStart.y - touchEndY;
-    
+
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
       if (dx > 0 && currentIndex < images.length - 1) {
         setCurrentIndex((prev) => prev + 1); // Swiped left -> next
@@ -141,8 +146,9 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
       )}
 
       <div
-        className={`flex-1 overflow-auto flex items-start p-4 pb-52 transition-transform ${zoomLevel === 1 ? 'justify-center' : 'justify-start'}`}
-        style={{ touchAction: zoomLevel === 1 ? "pan-y pinch-zoom" : "auto" }}
+        ref={scrollRef}
+        className={`flex-1 overflow-auto flex items-start p-4 pb-52 ${zoomLevel === 1 ? 'justify-center' : 'justify-start'}`}
+        style={{ touchAction: "pan-x pan-y" }}
         onClick={(e) => {
           if (e.target === e.currentTarget) onClose();
         }}
@@ -180,9 +186,10 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
       {/* Zoom Controls */}
       <div style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 112px)" }}
         className="absolute left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 shadow-2xl rounded-full bg-slate-900/90 backdrop-blur-md px-4 py-2 border border-white/20">
-        <button 
-          onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.max(z - 0.5, 1)); }} 
-          disabled={zoomLevel <= 1}
+        <button
+          onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.max(z - 0.5, ZOOM_MIN)); }}
+          disabled={zoomLevel <= ZOOM_MIN}
+          aria-label="Uzaklaştır"
           className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-2xl flex items-center justify-center active:scale-[0.97] transition disabled:opacity-30"
         >
           -
@@ -190,9 +197,10 @@ function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
         <div className="flex items-center justify-center w-16 text-white font-bold text-base bg-black/40 rounded-full py-1">
           {Math.round(zoomLevel * 100)}%
         </div>
-        <button 
-          onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.min(z + 0.5, 4)); }} 
-          disabled={zoomLevel >= 4}
+        <button
+          onClick={(e) => { e.stopPropagation(); setZoomLevel(z => Math.min(z + 0.5, ZOOM_MAX)); }}
+          disabled={zoomLevel >= ZOOM_MAX}
+          aria-label="Yakınlaştır"
           className="w-12 h-12 rounded-full bg-white text-black hover:bg-slate-200 font-black text-2xl flex items-center justify-center active:scale-[0.97] transition disabled:opacity-30 shadow-lg"
         >
           +
@@ -263,7 +271,7 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
       <div className="w-full max-w-2xl mx-auto p-4 flex flex-col gap-6 animate-in fade-in duration-200">
         <div className="sticky top-4 z-10 p-4 rounded-2xl glass-card shadow-lg flex flex-col gap-3">
           <h2 className="text-xl font-bold leading-tight">{algorithm.title}</h2>
-          
+
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
             <button
               onClick={() => setViewMode(viewMode === "step" ? "full" : "step")}
