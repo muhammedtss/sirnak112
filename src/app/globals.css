@@ -157,6 +157,14 @@ p, li, dd, figcaption { text-wrap: pretty; }
 .chip-hit, .search-chip { position: relative; }
 .chip-hit::after, .search-chip::after { content: ""; position: absolute; inset: -6px -4px; }
 
+/* Ana sayfa alt bilgi bağlantıları */
+.footer-link {
+  display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 0.625rem; border-radius: 0.5rem;
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--glass-border-h);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.footer-link:hover { color: var(--fg); }
+
 /* Başlık ikon butonları: 44×44 dokunma alanı */
 .header-icon-btn {
   width: 2.75rem;

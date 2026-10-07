@@ -76,6 +76,10 @@ export const ROUTE_SEO: Record<string, RouteSeo> = {
   "/ekg-egitim": { title: "EKG Eğitimi", description: "Temel EKG ve ritim bozuklukları: dersler, gerçek EKG şeritleriyle ritim atlası ve vaka sınavı." },
   "/ekg-egitim/atlas": { title: "EKG Ritim Atlası", description: "Hızlı, yavaş ve arrest ritimleri; gerçek EKG şeritleri ve değerlendirme ölçütleriyle." },
   "/ekg-egitim/sinav": { title: "EKG Vaka Sınavı", description: "Gerçek EKG şeritleriyle adım adım ritim değerlendirme sınavı." },
+  "/hakkinda": { title: "Hakkında ve Kaynaklar", description: "Acil Protokol'ün amacı, kapsamı, içerik kaynakları (Sağlık Bakanlığı hastane öncesi akış şemaları), künyesi ve tıbbi sorumluluk reddi." },
+  "/gizlilik": { title: "Gizlilik", description: "Acil Protokol kişisel veri toplamaz; hesaplayıcı girdileri yalnızca cihazda işlenir. Çerez ve izleme yok." },
+  "/erisilebilirlik": { title: "Erişilebilirlik Beyanı", description: "WCAG 2.1 AA hedefi, uygulanan erişilebilirlik önlemleri ve bilinen sınırlamalar." },
+  "/degisiklikler": { title: "Klinik Değişiklik Günlüğü", description: "Doz, formül ve akış şemalarında yapılan klinik değişiklikler; tarih ve kaynaklarıyla." },
 };
 
 /** Alt sayfaların openGraph'ı kökünkünü tamamen ezer; ortak alanlar her sayfada tekrar verilir. */

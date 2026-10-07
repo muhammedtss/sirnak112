@@ -1,5 +1,6 @@
 "use client";
 
+import { ClinicalNote } from "@/components/kurumsal/ClinicalNote";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { Flame } from "lucide-react";
@@ -12,6 +13,7 @@ export default function ParklandPage() {
 
       <main className="flex-1 px-3 sm:px-6 py-4 sm:py-6 w-full max-w-xl mx-auto pb-20">
         <BurnCalculatorEmbed variant="parkland" />
+        <ClinicalNote className="mt-6" />
       </main>
     </PageShell>
   );

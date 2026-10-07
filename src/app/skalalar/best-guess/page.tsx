@@ -1,4 +1,5 @@
 "use client";
+import { ClinicalNote } from "@/components/kurumsal/ClinicalNote";
 import { useState } from "react";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
@@ -137,6 +138,7 @@ export default function BestGuessPage() {
             </div>
           </div>
         </div>
+        <ClinicalNote className="mt-6" />
       </main>
     </PageShell>
   );

@@ -1,3 +1,4 @@
+import { ClinicalNote } from "@/components/kurumsal/ClinicalNote";
 import { Pill } from "lucide-react";
 import DrugDoseCalculator from "@/components/drugs/DrugDoseCalculator";
 import { PageShell } from "@/components/layout/PageShell";
@@ -13,6 +14,9 @@ export default function IlacDozPage() {
       />
       <div className="flex-1 overflow-y-auto">
         <DrugDoseCalculator />
+        <div className="w-full max-w-md mx-auto px-4 -mt-10 pb-10">
+          <ClinicalNote />
+        </div>
       </div>
     </PageShell>
   );

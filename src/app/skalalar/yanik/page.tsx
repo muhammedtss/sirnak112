@@ -1,5 +1,6 @@
 "use client";
 
+import { ClinicalNote } from "@/components/kurumsal/ClinicalNote";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";
@@ -12,6 +13,7 @@ export default function YanikHesaplamaPage() {
 
       <main className="flex-1 w-full max-w-3xl mx-auto py-6 px-4">
         <BurnCalculatorEmbed />
+        <ClinicalNote className="mt-6" />
       </main>
     </PageShell>
   );

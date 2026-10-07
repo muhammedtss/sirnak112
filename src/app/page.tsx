@@ -19,6 +19,7 @@ import GlobalSearchModal, { openGlobalSearch } from "@/components/search/GlobalS
 import { OfflineButton } from "@/components/pwa/OfflineButton";
 import { useScrolled } from "@/components/layout/useScrolled";
 import { SignatureEcg } from "@/components/layout/SignatureEcg";
+import { KLINIK_SON_GUNCELLEME, SITE_INFO, tarihTr } from "@/lib/site-info";
 
 const quickLinks = [
   { href: "/algoritmalar-gorsel",  icon: Zap,        label: "Algoritmalar",      desc: "Akış şemaları", accent: "#F97316" },
@@ -135,6 +136,27 @@ export default function HomePage() {
           );
         })}
       </nav>
+
+      {/* ── Alt bilgi: kurumsal sayfalar ── */}
+      <footer className="px-4 pb-8 w-full max-w-5xl mx-auto text-xs text-muted">
+        <nav aria-label="Kurumsal" className="flex flex-wrap justify-center gap-x-1 gap-y-1">
+          {[
+            ["/hakkinda", "Hakkında ve kaynaklar"],
+            ["/degisiklikler", "Klinik değişiklikler"],
+            ["/gizlilik", "Gizlilik"],
+            ["/erisilebilirlik", "Erişilebilirlik"],
+          ].map(([href, label]) => (
+            <Link key={href} href={href} className="footer-link">
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <p className="text-center mt-2 text-subtle">
+          {SITE_INFO.kurum}
+          {SITE_INFO.surum && <span className="tabular-nums"> · Sürüm {SITE_INFO.surum}</span>}
+          {" · "}Klinik içerik: <time dateTime={KLINIK_SON_GUNCELLEME}>{tarihTr(KLINIK_SON_GUNCELLEME)}</time>
+        </p>
+      </footer>
     </PageShell>
   );
 }

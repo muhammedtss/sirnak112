@@ -1,4 +1,5 @@
-﻿import { PageShell } from "@/components/layout/PageShell";
+import { ClinicalNote } from "@/components/kurumsal/ClinicalNote";
+import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";
 
@@ -153,6 +154,7 @@ export default function LMAPage() {
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800">
           <span className="font-bold">⚠️</span> LMA kesin hava yolu güvencesi sağlamaz. Yüksek aspirasyon riski veya pulmoner kompliyans düşüklüğünde ETT tercih edilmeli.
         </div>
+        <ClinicalNote className="mt-6" />
       </main>
     </PageShell>
   );

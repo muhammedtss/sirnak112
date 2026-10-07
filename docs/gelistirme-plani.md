@@ -82,7 +82,7 @@ Bunlar gelene kadar ilgili alanlar sitede **gizli** kalır; hiçbir şey uydurul
 
 ## İlerleme
 
-- [ ] Faz A
+- [x] Faz A — kurumsal sayfalar, sorumluluk notu, alt bilgi, SEO kayıtları
 - [ ] Faz B
 - [ ] Faz C
 - [ ] Faz D
