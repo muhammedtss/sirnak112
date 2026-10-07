@@ -54,7 +54,7 @@ export default function HomePage() {
             </span>
           </h1>
           {!scrolled && (
-            <p className="text-[11px] font-medium text-subtle mt-0.5 flex items-center gap-1">Developed by <SignatureEcg name="Kadir Taş" /></p>
+            <p className="text-[11px] font-medium text-subtle mt-0.5 flex items-center gap-1">Developed by <SignatureEcg name="Kadir TAŞ" /></p>
           )}
         </div>
         <div className="flex items-center gap-0.5 shrink-0">

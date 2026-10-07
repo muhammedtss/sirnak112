@@ -315,23 +315,28 @@ p, li, dd, figcaption { text-wrap: pretty; }
 }
 .t-icon-in { animation: t-icon-in 260ms cubic-bezier(0.34, 1.45, 0.64, 1) both; }
 
-/* İmza: isim EKG atımı gibi girer — her harf sırayla P–QRS–T salınımı yapar, teal parıltıdan
-   normal renge oturur. Harf başına 900 ms, harfler arası 70 ms gecikme (bileşende). */
-@keyframes sig-ecg-beat {
-  0%   { opacity: 0; transform: translateY(0); color: var(--accent-text); text-shadow: 0 0 6px var(--primary-glow); }
-  10%  { opacity: 1; transform: translateY(0); }
-  20%  { transform: translateY(-2px); }             /* P */
-  28%  { transform: translateY(0); }
-  36%  { transform: translateY(2px); }              /* Q */
-  44%  { transform: translateY(-8px); }               /* R */
-  52%  { transform: translateY(4px); }                /* S */
-  60%  { transform: translateY(0); }
-  72%  { transform: translateY(-3px); }             /* T */
-  84%  { transform: translateY(0); color: var(--accent-text); text-shadow: 0 0 6px var(--primary-glow); }
-  100% { opacity: 1; transform: translateY(0); color: var(--fg-muted); text-shadow: none; }
+/* İmza: EKG ışını "Kadir TAŞ"ı tek çizgiyle yazar (kelimeler arasında QRS), iz söner, yeniden yazar.
+   3,2 sn döngü: %0–62 yazım (parlak uç önde), %62–80 iz parlak kalır, %80–100 söner. */
+@keyframes sig-lit {
+  0%   { stroke-dashoffset: 1; opacity: 1; }
+  62%  { stroke-dashoffset: 0; opacity: 1; }
+  80%  { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0.08; }
 }
-.sig-ecg { display: inline-flex; font-weight: 700; color: var(--fg-muted); cursor: default; -webkit-tap-highlight-color: transparent; }
-.sig-ecg-ch { display: inline-block; animation: sig-ecg-beat 900ms linear both; }
+@keyframes sig-head {
+  0%       { stroke-dashoffset: 0.012; opacity: 1; }
+  62%      { stroke-dashoffset: -0.988; opacity: 1; }
+  63%, 100% { stroke-dashoffset: -0.988; opacity: 0; }
+}
+.sig-ecg { display: inline-block; flex-shrink: 0; overflow: visible; }
+.sig-ecg path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.sig-base { stroke: color-mix(in srgb, var(--fg) 22%, transparent); stroke-width: 2.4; }
+.sig-lit  { stroke: var(--accent-text); stroke-width: 2.6; stroke-dasharray: 1 1; animation: sig-lit 3.2s linear infinite; }
+.sig-head {
+  stroke: color-mix(in srgb, var(--primary-light) 35%, #fff); stroke-width: 3.8; stroke-dasharray: 0.012 2;
+  filter: drop-shadow(0 0 2px var(--primary-light)); animation: sig-head 3.2s linear infinite;
+}
+[data-theme="light"] .sig-head { stroke: var(--primary); }
 
 /* Success check: yol çizimi (pathLength=1 olan SVG path'lerinde) */
 @keyframes t-check-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
@@ -339,9 +344,9 @@ p, li, dd, figcaption { text-wrap: pretty; }
 
 @media (prefers-reduced-motion: reduce) {
   .t-digit, .animate-in, .t-check path, .t-shake, .t-icon-in { animation: none !important; }
-  /* Bilinçli istisna (site sahibinin isteği): imza animasyonu küçük (≤8px), tek seferlik ve ~2 sn;
-     hareket azaltma açıkken de oynar. Global 1ms kuralını (yukarıda, * seçicisi) daha özgül seçiciyle geçersiz kılar. */
-  .sig-ecg .sig-ecg-ch { animation-duration: 900ms !important; }
+  /* Bilinçli istisna (site sahibinin isteği): imzadaki EKG ışını hareket azaltma açıkken de sürekli oynar.
+     Global 1ms / tek tekrar kuralını (yukarıda, * seçicisi) daha özgül seçiciyle geçersiz kılar. */
+  .sig-ecg .sig-lit, .sig-ecg .sig-head { animation-duration: 3.2s !important; animation-iteration-count: infinite !important; }
 }
 
 /* === Glassmorphism === */
