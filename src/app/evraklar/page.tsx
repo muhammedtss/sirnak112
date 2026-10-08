@@ -212,7 +212,7 @@ const EVRAKLAR: Evrak[] = [
     baslik: "Ambulans Refakatçi Onam Formu",
     kategori: "Hasta Bakim",
     aciklama: "Hasta ile ambulansa binen refakatcinin bilgilendirilmis onam belgesi",
-    dosya: "/Ambulans_Evraklar/9-HE.FR.001 AMBULANS REFAKATÇİ ONAM FORMU.doc",
+    dosya: "/Ambulans_Evraklar/9-HE.FR.001 AMBULANS REFAKATÇI ONAM FORMU.doc",
     bolumler: [
       { baslik: "Beyan Metni", icerik: "Tarih | Ambulans no | Hastanin refakatcisi olarak ambulansa binmek istiyorum. Ekibin calismalarinai mudahale etmeyecegimi, talimatlara uyacagimi ve gerektiginde aractan inebilecegimi kabul ederim." },
       { baslik: "Refakatci Bilgileri", icerik: "Adi Soyadi | TC Kimlik | Yakinlik Derecesi | Tarih/Saat | Hastanin Adi Soyadi" },

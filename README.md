@@ -41,7 +41,7 @@ src/
 public/           Görseller, evraklar, ikonlar, sw.js
 tests/            Otomatik testler (npm test)
 scripts/          Bütünlük denetimi, ikon ve görsel üretimi
-docs/             Planlar, denetim raporları, iOS analizi
+docs/             Güncel plan ve iOS analizi; docs/arsiv/ altında tamamlanmış planlar ve denetim raporları
 ```
 
 ## Geliştirme

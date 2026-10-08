@@ -65,6 +65,17 @@ export interface KlinikDegisiklik {
 /** En yeni üstte. Yalnızca klinik içeriği (doz, formül, akış, veri) etkileyen değişiklikler. */
 export const KLINIK_DEGISIKLIKLER: KlinikDegisiklik[] = [
   {
+    tarih: "2026-10-08",
+    baslik: "Eksik akış şeması eklendi, kırık algoritma yönlendirmeleri düzeltildi",
+    ayrinti: [
+      "Çocuk: \"Etiyolojisi Saptanmamış Şok Tablosuna Yaklaşım\" tablosu görsel algoritmalara eklendi (önceden hiçbir listeden açılmıyordu).",
+      "Eklampsi → Diyabetik Aciller ve Yenidoğan Canlandırması → Arrest Yönetimi yönlendirmeleri açılmıyordu (404); artık doğru algoritmaya gider.",
+      "\"İlgili algoritmaya git\" türü genel yönlendirmeler kategori listesini açar; hastanın durumuna uygun algoritma seçilir.",
+      "Algoritma içerikleri değişmedi.",
+    ],
+    kaynak: "SB Hastane Öncesi Akış Şemaları (s. 99)",
+  },
+  {
     tarih: "2026-10-07",
     baslik: "Parkland formülü akış şemalarına göre güncellendi",
     ayrinti: [

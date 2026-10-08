@@ -200,6 +200,10 @@ export const algorithmImages: Record<string, AlgorithmImage[]> = {
     { src: `${C}097_Kardiyojenik_Sok_Anahtar_Noktalar.webp`, label: "Anahtar Noktalar" },
     { src: `${C}098_Kardiyojenik_Sok.webp`, label: "Akış Şeması" },
   ],
+  // Akış şemaları kitapçığı s. 99 — metin algoritması yok, yalnızca görsel olarak sunulur
+  "SB-ASH-C-SOK-YAKLASIM": [
+    { src: `${C}099_Etiyolojisi_Saptanmamis_Sok_Tablosuna_Yaklasim.webp`, label: "Yaklaşım Tablosu" },
+  ],
   "SB-ASH-C-09": [
     { src: `${C}100_Septik_Sok_Anahtar_Noktalar.webp`, label: "Anahtar Noktalar" },
     { src: `${C}101_Septik_Sok.webp`, label: "Akış Şeması" },

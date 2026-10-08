@@ -214,7 +214,7 @@ Adımlar dikey bir hat üzerinde cam kartlar olarak dizilir; karar adımlarında
 
 ## Motion Budget
 
-*(plan.md Bölüm 5'ten; tüm animasyonlar bu sınırlara uyar.)*
+*(docs/arsiv/ui-yukseltme-plani.md Bölüm 5'ten; tüm animasyonlar bu sınırlara uyar.)*
 
 | Kural | Değer |
 |---|---|

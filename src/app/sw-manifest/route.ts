@@ -19,16 +19,8 @@ export const dynamic = "force-static";
 const APP_DIR = path.join(process.cwd(), "src", "app");
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 
-/** Çevrimdışı önbelleğe hiç alınmayacak public dosyalar (SW'nin kendisi, kullanılmayan şablon dosyaları). */
-const EXCLUDED_PUBLIC = new Set([
-  "/sw.js",
-  "/burn-maket-bg.png",
-  "/file.svg",
-  "/globe.svg",
-  "/next.svg",
-  "/vercel.svg",
-  "/window.svg",
-]);
+/** Çevrimdışı önbelleğe hiç alınmayacak public dosyalar (SW'nin kendisi). */
+const EXCLUDED_PUBLIC = new Set(["/sw.js"]);
 
 /** İsteğe bağlı indirilen büyük paketler. */
 const PACKS: Record<string, { label: string; dirs: string[] }> = {
