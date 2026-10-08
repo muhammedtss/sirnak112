@@ -45,6 +45,8 @@ const SKALALAR: [string, string, string][] = [
   ["best-guess", "Best Guess Formülü", "çocuk kilo tahmini"],
   ["ett", "ETT — Endotrakeal Entübasyon", "tüp boyutu hava yolu"],
   ["lma", "LMA — Laringeal Maske", "hava yolu"],
+  ["cabuk", "ÇABUK Değerlendirme", "primer bakı olay yeri çevre güvenliği hava yolu solunum dolaşım"],
+  ["onaysiz-ilaclar", "Onaysız Kullanılabilecek İlaçlar", "onam acil morfin fentanil antidot"],
 ];
 
 const YAS: [Record<string, { id: string; title: string }>, string, string][] = [

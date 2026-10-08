@@ -1,7 +1,6 @@
-import { NOINDEX } from "@/lib/seo";
+import { seoFor } from "@/lib/seo";
 
-// Yapım aşamasında / bağlantısız sayfa: arama motorlarında listelenmesin
-export const metadata = NOINDEX;
+export const metadata = seoFor("/skalalar/onaysiz-ilaclar");
 
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
@@ -69,8 +68,8 @@ export default function OnaysizIlaclarPage() {
       <AppHeader title="Onaysız Kullanılabilecek İlaçlar" back="/skalalar" icon={<ArrowLeft style={{ width: 16, height: 16 }} />} />
 
       <main className="flex-1 px-3 sm:px-6 py-4 sm:py-6 w-full max-w-xl mx-auto space-y-5">
-        <div className="bg-red-50 border border-red-200 rounded-xl p-3 text-xs text-red-800">
-          <span className="font-black">⚠️ UYARI:</span> Bu liste acil yaşam-kurtarıcı durumlarda hasta onayı alınamadığı hallerde uygulanabilecek ilaçların hatırlatıcı rehberidir. Klinik değerlendirme esastır. Dozlar ideal ya da gerçek vücut ağırlığına göre ayarlanmalıdır.
+        <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-3 text-xs text-red-200/90 leading-relaxed">
+          <span className="font-black text-red-300">⚠️ UYARI:</span> Bu liste acil yaşam-kurtarıcı durumlarda hasta onayı alınamadığı hallerde uygulanabilecek ilaçların hatırlatıcı rehberidir. Klinik değerlendirme esastır. Dozlar ideal ya da gerçek vücut ağırlığına göre ayarlanmalıdır.
         </div>
 
         {ilaclar.map((grup, gi) => (
@@ -85,7 +84,7 @@ export default function OnaysizIlaclarPage() {
                     <p className="text-sm font-black text-white/90">{ilac.ad}</p>
                     <p className="text-xs font-bold text-white/90 text-right shrink-0 max-w-[55%]">{ilac.doz}</p>
                   </div>
-                  <p className="text-[11px] text-slate-500 mt-0.5 leading-snug">{ilac.not}</p>
+                  <p className="text-[11px] text-muted mt-0.5 leading-snug">{ilac.not}</p>
                 </div>
               ))}
             </div>

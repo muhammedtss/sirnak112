@@ -44,9 +44,9 @@ export default function CabukPage() {
       <AppHeader title="ÇABUK Değerlendirme" back="/skalalar" icon={<ArrowLeft style={{ width: 16, height: 16 }} />} />
 
       <main className="flex-1 px-4 py-6 w-full max-w-xl mx-auto space-y-4">
-        <div className="bg-rose-500/15 border border-rose-200 rounded-xl p-4 mb-6 text-rose-800">
-          <p className="font-bold text-sm mb-1">ÇABUK Hızlı Değerlendirme</p>
-          <p className="text-xs">Kritik hastalarda ilk dakikalarda yapılması gereken hızlı primer bakı ve müdahale adımları.</p>
+        <div className="bg-rose-500/10 border border-rose-500/30 rounded-xl p-4 mb-6">
+          <p className="font-bold text-sm mb-1 text-fg">ÇABUK Hızlı Değerlendirme</p>
+          <p className="text-xs text-muted">Kritik hastalarda ilk dakikalarda yapılması gereken hızlı primer bakı ve müdahale adımları.</p>
         </div>
 
         <div className="space-y-3">

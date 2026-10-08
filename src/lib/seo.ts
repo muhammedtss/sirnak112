@@ -69,6 +69,8 @@ export const ROUTE_SEO: Record<string, RouteSeo> = {
   "/skalalar/pat": { title: "Pediatrik Değerlendirme Üçgeni (PAT)", description: "Görünüm, solunum eforu ve dolaşım ile çocukta aciliyetin hızlı değerlendirilmesi." },
   "/skalalar/best-guess": { title: "Best Guess Çocuk Kilo Tahmini", description: "Çocuklarda yaşa göre vücut ağırlığı tahmini: 12 ay altı, 1–4 yaş ve 5–14 yaş." },
   "/skalalar/ett": { title: "Pediatrik ETT Boyutu Hesaplama", description: "Yaş ve kiloya göre endotrakeal tüp boyutu, yerleştirme derinliği, blade ve aspirasyon sondası." },
+  "/skalalar/cabuk": { title: "ÇABUK Hızlı Değerlendirme", description: "Kritik hastada olay yerinde ilk dakikalarda primer bakı kontrol listesi: çevre güvenliği, hava yolu, solunum, dolaşım, karar." },
+  "/skalalar/onaysiz-ilaclar": { title: "Onaysız Kullanılabilecek İlaçlar", description: "Hasta onayı alınamayan yaşamı tehdit eden acil durumlarda uygulanabilecek ilaçlar: analjezi, hava yolu, kardiyovasküler, nöroloji, antidotlar." },
   "/skalalar/lma": { title: "LMA Numara Seçimi", description: "Kiloya göre laringeal maske (LMA) numarası, kaf hacmi ve uyumlu ETT boyutu." },
   "/envanter": { title: "Ambulans Envanteri", description: "Acil yardım, hasta nakil ve hava/deniz ambulansları için ilaç ve malzeme kontrol listeleri." },
   "/evraklar": { title: "Ambulans Evrakları ve Formlar", description: "Vaka kayıt formu, tedavi red formu ve diğer 112 ambulans evrakları; indirilebilir orijinal dosyalar." },
