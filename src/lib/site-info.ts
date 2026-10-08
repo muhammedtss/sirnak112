@@ -66,12 +66,12 @@ export interface KlinikDegisiklik {
 export const KLINIK_DEGISIKLIKLER: KlinikDegisiklik[] = [
   {
     tarih: "2026-10-08",
-    baslik: "Eksik akış şeması ve skalalar eklendi, kırık algoritma yönlendirmeleri düzeltildi",
+    baslik: "Eksik akış şeması ve ÇABUK eklendi, kırık algoritma yönlendirmeleri düzeltildi",
     ayrinti: [
       "Çocuk: \"Etiyolojisi Saptanmamış Şok Tablosuna Yaklaşım\" tablosu görsel algoritmalara eklendi (önceden hiçbir listeden açılmıyordu).",
       "Eklampsi → Diyabetik Aciller ve Yenidoğan Canlandırması → Arrest Yönetimi yönlendirmeleri açılmıyordu (404); artık doğru algoritmaya gider.",
       "\"İlgili algoritmaya git\" türü genel yönlendirmeler kategori listesini açar; hastanın durumuna uygun algoritma seçilir.",
-      "ÇABUK hızlı değerlendirme ve Onaysız Kullanılabilecek İlaçlar sayfaları Skalalar listesine eklendi (önceden listede görünmüyordu).",
+      "ÇABUK hızlı değerlendirme sayfası Skalalar listesine eklendi (önceden listede görünmüyordu); \"Onaysız Kullanılabilecek İlaçlar\" sayfası kaldırıldı.",
       "Algoritma içerikleri değişmedi.",
     ],
     kaynak: "SB Hastane Öncesi Akış Şemaları (s. 99)",

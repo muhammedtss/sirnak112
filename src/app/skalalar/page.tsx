@@ -82,13 +82,6 @@ const yetiskinSkalalar: Skala[] = [
     tags: ["Yanık", "Sıvı", "TBSA"],
     href: "/skalalar/yanik",
   },
-  {
-    id: "onaysiz-ilaclar", name: "Onaysız Kullanılabilecek İlaçlar", icon: "💊",
-    accent: "#A78BFA", glow: "rgba(167,139,250,0.15)", border: "rgba(167,139,250,0.25)",
-    description: "Hasta onayı alınamayan yaşamı tehdit eden acil durumlarda uygulanabilecek ilaçlar için hatırlatıcı rehber.",
-    tags: ["Acil", "Onam", "İlaç"],
-    href: "/skalalar/onaysiz-ilaclar",
-  },
 ];
 
 const cocukSkalalar: Skala[] = [
