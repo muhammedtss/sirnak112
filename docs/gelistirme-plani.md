@@ -113,5 +113,5 @@ Ek düzeltmeler:
 - [x] Faz A — kurumsal sayfalar, sorumluluk notu, alt bilgi, SEO kayıtları
 - [x] Faz B — görseller WebP, arama dizini ve animasyon motoru ilk yüklemeden çıkarıldı
 - [x] Faz C — 20 otomatik test, build öncesi zorunlu; 7 kırık algoritma yönlendirmesi bulundu ve düzeltildi
-- [ ] Faz D
+- [x] Faz D — CSP sıkılaştırıldı (D1); security.txt iletişim e-postası bekliyor (D2); taşınabilirlik notu README'de (D3)
 - [ ] Faz E
