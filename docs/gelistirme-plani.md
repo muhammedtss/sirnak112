@@ -71,6 +71,17 @@ Lighthouse (PageSpeed) skorları API günlük kotası dolduğu için alınamadı
 
 ---
 
+## Açık kalanlar
+
+| # | İş | Neden bekliyor |
+|---|---|---|
+| A1 | Hakkında künyesine sürüm, klinik onay, iletişim | Bilgi gerekiyor (aşağıda) |
+| C4 | Vercel Speed Insights / Analytics | Yeni paket ve Vercel ayarı; onay gerekiyor |
+| D2 | `security.txt` | İletişim e-postası gerekiyor |
+| B4 | Lighthouse skorları | PageSpeed API kotası dolu; sonraki gün ölçülecek |
+| — | İlaç dozu ve envanter listelerinin kaynağı | Hakkında › Kaynaklar'da yalnızca doğrulanmış kaynaklar gösteriliyor; bu iki listenin kaynağı bilinmiyor |
+| — | Mevcut lint hataları (27, `main`'den kalma: veri dosyalarında `as any`, AlgorithmViewer efekt deseni) | Davranışa dokunmadan ayrı bir temizlik işi olarak yapılmalı |
+
 ## Senden gereken bilgiler
 
 Bunlar gelene kadar ilgili alanlar sitede **gizli** kalır; hiçbir şey uydurulmaz.
@@ -114,4 +125,4 @@ Ek düzeltmeler:
 - [x] Faz B — görseller WebP, arama dizini ve animasyon motoru ilk yüklemeden çıkarıldı
 - [x] Faz C — 20 otomatik test, build öncesi zorunlu; 7 kırık algoritma yönlendirmesi bulundu ve düzeltildi
 - [x] Faz D — CSP sıkılaştırıldı (D1); security.txt iletişim e-postası bekliyor (D2); taşınabilirlik notu README'de (D3)
-- [ ] Faz E
+- [x] Faz E — README yeniden yazıldı (proje, mimari, içerik güncelleme süreci, testler, taşınabilirlik)
