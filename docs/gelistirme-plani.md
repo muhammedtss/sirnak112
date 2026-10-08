@@ -98,10 +98,20 @@ Ek düzeltmeler:
 
 Ölçüm yöntemi: sayfanın ilk HTML'inde yüklenen tüm JS dosyalarının gzip −9 boyutu (aynı betikle hem canlı hem yerel). Lighthouse skorları PageSpeed kotası açılınca eklenecek.
 
+## Faz C sonuçları (2026-10-08)
+
+- `npm test`: Node'un yerleşik test koşucusu, **yeni bağımlılık yok**. `prebuild` adımında çalışır; bir test kırılırsa Vercel yayına almaz.
+- **20 test:** Parkland (PDF örnekleri ve eşik), Lund-Browder (her yaşta %100), ilaç dozu (hesap, yuvarlama, kilo sınırları, kontrendikasyon, dopamin) ve veri bütünlüğü (algoritma bağlantıları ve erişilebilirlik, ICD-10, görsel dosyaları, SEO rotaları, değişiklik günlüğü).
+- **Testlerin bulduğu gerçek hata:** 7 algoritma yönlendirmesi 404 veriyordu (canlıda doğrulandı):
+  - Yenidoğan → erişkin/çocuk yönlendirmeleri yanlış kategoride aranıyordu (Eklampsi → Diyabetik Aciller, Yenidoğan Canlandırması → Arrest Yönetimi). Artık hedefin kendi kategorisine gidiyor.
+  - "İlgili algoritmaya git" türü 5 genel yönlendirme var olmayan bir sayfaya bağlanıyordu. Artık kategori listesini açıyor ve "Hastanın durumuna uygun algoritmayı listeden seçin" diyor.
+  - Klinik veri (JSON) değiştirilmedi; düzeltme görüntüleyicide.
+- İlaç doz hesabı bileşenden `src/lib/doz.ts`'e birebir taşındı (test edilebilir); davranış aynı.
+
 ## İlerleme
 
 - [x] Faz A — kurumsal sayfalar, sorumluluk notu, alt bilgi, SEO kayıtları
 - [x] Faz B — görseller WebP, arama dizini ve animasyon motoru ilk yüklemeden çıkarıldı
-- [ ] Faz C
+- [x] Faz C — 20 otomatik test, build öncesi zorunlu; 7 kırık algoritma yönlendirmesi bulundu ve düzeltildi
 - [ ] Faz D
 - [ ] Faz E

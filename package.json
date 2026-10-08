@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/verify-integrity.mjs",
+    "prebuild": "node scripts/verify-integrity.mjs && npm test",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "verify": "node scripts/verify-integrity.mjs"
+    "verify": "node scripts/verify-integrity.mjs",
+    "test": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --disable-warning=ExperimentalWarning --import ./tests/loader/register.mjs --test \"tests/*.test.ts\""
   },
   "dependencies": {
     "clsx": "^2.1.1",

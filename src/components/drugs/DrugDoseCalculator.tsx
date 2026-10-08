@@ -3,19 +3,10 @@
 import { useState, useMemo } from "react";
 import ilaclarData from "@/data/ilaclar.json";
 import { NumberPop, useShake } from "@/components/ui/motion";
+import { dopaminCcSaat, dozHesapla, kiloGecersiz, kiloGerekli, kiloYuksek, DOPAMIN_ID, type DoseInfo } from "@/lib/doz";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-interface DoseInfo {
-  isAvailable: boolean;
-  isWeightBased: boolean;
-  dosePerKg: number | null;
-  unit: string | null;
-  fixedDose: string | null;
-  maxDose: string | null;
-  route: string | null;
-  notes: string | null;
-}
 
 interface DrugCase {
   caseName: string;
@@ -67,7 +58,7 @@ function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
 }) {
   const ageLabel = ageGroup === "eriskin" ? "Erişkin" : "Çocuk";
   const weightNum = parseFloat(weight);
-  const showDopaminDrops = drugId === "dopamin" && !isNaN(weightNum);
+  const showDopaminDrops = drugId === DOPAMIN_ID && !isNaN(weightNum);
 
   return (
     <div role="status" aria-live="polite" className="mt-5 rounded-2xl overflow-hidden shadow-lg border border-teal-500/30 glass-card animate-in fade-in slide-in-from-bottom-4 duration-200">
@@ -89,7 +80,7 @@ function ResultCard({ dose, doseInfo, ageGroup, weight, drugId }: {
         {showDopaminDrops && (
           <div className="mt-4 bg-orange-500/10 border border-orange-500/30 rounded-xl p-3">
             <p className="text-[11px] text-orange-400 font-bold uppercase tracking-widest mb-1">cc/saat Ayar Değeri</p>
-            <p className="text-2xl font-black text-orange-300 tabular-nums"><NumberPop value={(weightNum * 1.5).toFixed(1)} /> <span className="text-sm font-bold text-orange-400/80">cc/saat</span></p>
+            <p className="text-2xl font-black text-orange-300 tabular-nums"><NumberPop value={dopaminCcSaat(weightNum)} /> <span className="text-sm font-bold text-orange-400/80">cc/saat</span></p>
           </div>
         )}
       </div>
@@ -160,29 +151,17 @@ export default function DrugDoseCalculator() {
   const currentDoseInfo: DoseInfo | null = selectedCase ? selectedCase[ageGroup] : null;
 
   // Weight validation
-  const weightNum = parseFloat(weight);
-  const isWeightInvalid = weight !== "" && (isNaN(weightNum) || weightNum <= 0 || weightNum > 300);
-  const isWeightHigh = !isWeightInvalid && weightNum > 150;
+  const isWeightInvalid = kiloGecersiz(weight);
+  const isWeightHigh = kiloYuksek(weight);
   const weightRef = useShake<HTMLInputElement>(isWeightInvalid);
 
-  const isSpecialWeightDrug = selectedDrugId === "dopamin";
-  const requiresWeight = currentDoseInfo?.isWeightBased || isSpecialWeightDrug;
+  const requiresWeight = kiloGerekli(currentDoseInfo, selectedDrugId);
 
   // Calculate dose
-  const calculatedDose = useMemo(() => {
-    if (!currentDoseInfo) return null;
-    if (!currentDoseInfo.isAvailable) return null;
-
-    if (requiresWeight) {
-      if (!weight || isWeightInvalid || weightNum > 300) return null;
-      if (currentDoseInfo.isWeightBased && currentDoseInfo.dosePerKg) {
-        const raw = weightNum * currentDoseInfo.dosePerKg;
-        return raw % 1 === 0 ? raw.toString() : raw.toFixed(2);
-      }
-      return currentDoseInfo.fixedDose;
-    }
-    return currentDoseInfo.fixedDose;
-  }, [currentDoseInfo, weight, weightNum, isWeightInvalid, requiresWeight]);
+  const calculatedDose = useMemo(
+    () => dozHesapla(currentDoseInfo, selectedDrugId, weight),
+    [currentDoseInfo, selectedDrugId, weight],
+  );
 
   const step = !selectedDrugId ? 1 : !selectedCaseKey ? 2 : !currentDoseInfo?.isAvailable ? 3 : (requiresWeight && !calculatedDose) ? 3 : 4;
 

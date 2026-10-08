@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Algorithm } from "@/types";
 import { getAlgorithmImages, AlgorithmImage } from "@/data/algorithmImages";
 import { usePinchZoom, ZOOM_MAX, ZOOM_MIN } from "./usePinchZoom";
+import { hedefKategorisi } from "@/lib/algoritma";
 
 interface Props {
   algorithm: Algorithm;
@@ -435,13 +436,25 @@ export default function AlgorithmViewer({ algorithm, category }: Props) {
                         <div className="w-0.5 h-4" style={{ background: "var(--glass-border)" }} />
                         <div className="flex flex-col gap-3 w-full">
                           {node.type === "redirect" && node.targetAlgorithmId ? (
-                            <Link
-                              href={`/algoritmalar/${category}/${node.targetAlgorithmId}`}
-                              className="w-full text-center py-4 rounded-xl font-bold text-lg active:scale-[0.97] transition block shadow-[0_0_15px_rgba(59,130,246,0.3)]"
-                              style={{ background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.5)", color: "var(--info-text)" }}
-                            >
-                              {node.content || "İlgili Protocole Git"} 🚀
-                            </Link>
+                            (() => {
+                              // Hedef başka kategoride olabilir (yenidoğan → erişkin/çocuk); genel yönlendirmede liste açılır
+                              const hedefKat = hedefKategorisi(node.targetAlgorithmId);
+                              const genel = hedefKat === null;
+                              return (
+                                <Link
+                                  href={genel ? `/algoritmalar/${category}` : `/algoritmalar/${hedefKat}/${node.targetAlgorithmId}`}
+                                  className="w-full text-center py-4 px-3 rounded-xl font-bold text-lg active:scale-[0.97] transition block shadow-[0_0_15px_rgba(59,130,246,0.3)]"
+                                  style={{ background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.5)", color: "var(--info-text)" }}
+                                >
+                                  {node.content || "İlgili Protocole Git"} {genel ? "" : "🚀"}
+                                  {genel && (
+                                    <span className="block text-xs font-semibold mt-1 opacity-90">
+                                      Hastanın durumuna uygun algoritmayı listeden seçin →
+                                    </span>
+                                  )}
+                                </Link>
+                              );
+                            })()
                           ) : (
                             <div role="status" className="p-4 glass-card rounded-xl text-center font-bold animate-in fade-in zoom-in-95" style={{ borderColor: "rgba(16,185,129,0.3)", color: "var(--ok-text)", background: "rgba(16,185,129,0.1)" }}>
                               ✅ Akış Tamamlandı
