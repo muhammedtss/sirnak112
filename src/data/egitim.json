@@ -1,0 +1,1258 @@
+{
+ "kaynak": "https://acilafet.saglik.gov.tr/TR-120867/egitim.html",
+ "yayinlayan": "T.C. Sağlık Bakanlığı Acil Sağlık Hizmetleri Genel Müdürlüğü",
+ "aktarim": "2026-10-12",
+ "kategoriler": [
+  {
+   "id": "dokumanlar",
+   "baslik": "Eğitim Dökümanları",
+   "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121057/egitim-dokumanlari.html",
+   "bolumler": [
+    {
+     "slug": "tem",
+     "baslik": "Temel Eğitim Modülü (TEM) Eğitim Dökümanları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121091/temel-egitim-modulu-tem-egitim-dokumanlari.html",
+     "dosyalar": [
+      {
+       "ad": "TEM-Acil Olgu Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56370/0/tem-acil-olgu-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 40274431
+      },
+      {
+       "ad": "Temel Eğitim Modülü Dikey Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56573/0/temel-egitim-modulu-dikey-programixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 11856
+      },
+      {
+       "ad": "Temel Eğitim Modülü Yatay Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56574/0/temel-egitim-modulu-yatay-programixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 28502
+      },
+      {
+       "ad": "TEM-Öğrenim Rehberleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56380/0/ogrenim-rehberleridocx.docx",
+       "tur": "DOCX",
+       "bayt": 6638362
+      },
+      {
+       "ad": "TEM-Arrest Ritimlerin Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56372/0/tem-arrest-ritimlerin-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 246526790
+      },
+      {
+       "ad": "TEM-Haberleşme, Olay Yeri Yönetimi, Triyaj",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56374/0/tem-haberlesme-olay-yeri-yonetimi-triyajpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 17128293
+      },
+      {
+       "ad": "TEM-Solunum Yetmezliği Olan Hastaya Yaklaşım",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56375/0/tem-solunum-yetmezligi-olan-hastaya-yaklasimpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 66173334
+      },
+      {
+       "ad": "TEM-Temel EKG ve Ritim tanıma",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56376/0/tem-temel-ekg-ve-ritim-tanimapptx.pptx",
+       "tur": "PPTX",
+       "bayt": 33726780
+      },
+      {
+       "ad": "TEM-Temel Yaşam Desteği",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56377/0/tem-temel-yasam-destegipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 46279227
+      },
+      {
+       "ad": "TEM-Havayolu Açıklığı ve Ventilasyonun Sağlanması",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56395/0/tem-havayolu-acikligi-ve-ventilasyonun-saglanmasipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 33637708
+      },
+      {
+       "ad": "TEM-Mekanik Ventilasyon ve Cihaz Kullanımı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56397/0/tem-mekanik-ventilasyon-ve-cihaz-kullanimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 4459688
+      },
+      {
+       "ad": "TEM-Peri-Arrest Ritimlerin Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56405/0/tem-peri-arrest-ritimlerin-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 152467568
+      },
+      {
+       "ad": "TEM-Şoklu Hastaya Yaklaşım, Damaryolunun Açılması",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56406/0/tem-soklu-hastaya-yaklasim-damaryolunun-acilmasipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 20235869
+      },
+      {
+       "ad": "TEM-Travmalı Hastaya Yaklaşım",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56595/0/tem-travmali-hastaya-yaklasimpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 40453999
+      },
+      {
+       "ad": "TEM Afiş",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56510/0/tem-afispdf.pdf",
+       "tur": "PDF",
+       "bayt": 4025745
+      }
+     ],
+     "videolar": []
+    },
+    {
+     "slug": "ilyad",
+     "baslik": "Erişkin İleri Yaşam Desteği (İLYAD) Eğitim Dökümanları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121098/eriskin-ileri-yasam-destegi-ilyad-egitim-dokumanlari.html",
+     "dosyalar": [
+      {
+       "ad": "Erişkin İleri Yaşam Desteği Eğitimi Dikey Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56390/0/eriskin-ileri-yasam-destegi-egitimi-dikey--programixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 8933
+      },
+      {
+       "ad": "Erişkin İleri yaşam Desteği Eğitimi Yatay Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56514/0/eriskin-ileri-yasam-destegi-egitimi-yatay-programxlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 18648
+      },
+      {
+       "ad": "İLYAD-Öğrenim Rehberleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56392/0/ilyad-ogrenim-rehberleridocx.docx",
+       "tur": "DOCX",
+       "bayt": 253858
+      },
+      {
+       "ad": "İLYAD-Acil Olgu Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56393/0/ilyad-acil-olgu-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 5151575
+      },
+      {
+       "ad": "İLYAD-Arrest Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56382/0/ilyad-arrest-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 244685633
+      },
+      {
+       "ad": "İLYAD-Etik",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56384/0/ilyad-etikpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 5361003
+      },
+      {
+       "ad": "İLYAD-Göğüs Ağrısı ve Akut Koroner Sendrom",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56385/0/ilyad-gogus-agrisi-ve-akut-koroner-sendrompptx.pptx",
+       "tur": "PPTX",
+       "bayt": 41563362
+      },
+      {
+       "ad": "İLYAD-Özel Durumlarda İleri Yaşam Desteği-1",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56387/0/ilyad-ozel-durumlarda-ileri-yasam-destegi-1pptx.pptx",
+       "tur": "PPTX",
+       "bayt": 55603283
+      },
+      {
+       "ad": "İLYAD-Özel Durumlarda İleri Yaşam Desteği-2",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56388/0/ilyad-ozel-durumlarda-ileri-yasam-destegi-2pptx.pptx",
+       "tur": "PPTX",
+       "bayt": 36152837
+      },
+      {
+       "ad": "İLYAD-Özel Durumlarda İleri Yaşam Destegi-3",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56386/0/ilyad-ozel-durumlarda-ileri-yasam-destegi-3pptx.pptx",
+       "tur": "PPTX",
+       "bayt": 18113222
+      },
+      {
+       "ad": "İLYAD-Temel EKG ve Ritim Tanıma",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56389/0/ilyad-temel-ekg-ve-ritim-tanimapptx.pptx",
+       "tur": "PPTX",
+       "bayt": 32205825
+      },
+      {
+       "ad": "İLYAD-Mekanik Ventilasyon ve Cihaz Kullanımı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56408/0/ilyad-mekanik-ventilasyon-ve-cihaz-kullanimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 4458982
+      },
+      {
+       "ad": "İLYAD-Periarrest Ritimler",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56409/0/ilyad-periarrest-ritimlerpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 29157883
+      }
+     ],
+     "videolar": []
+    },
+    {
+     "slug": "cilyad",
+     "baslik": "Çocuklarda İleri Yaşam Desteği (ÇİLYAD) Eğitim Dökümanları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121529/cocuklarda-ileri-yasam-destegi-cilyad-egitim-dokumanlari.html",
+     "dosyalar": [
+      {
+       "ad": "ÇİLYAD-Arrest Ritimlerin Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56580/0/cilyad-arrest-ritimlerin-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 20862639
+      },
+      {
+       "ad": "Çocuklarda İleri Yaşam Desteği Eğitimi Dikey Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56592/0/cocuklarda-ileri-yasam-destegi-egitimi-dikey-programixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 11556
+      },
+      {
+       "ad": "Çocuklarda İleri Yaşam Desteği Eğitimi Yatay Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56593/0/cocuklarda-ileri-yasam-destegi-egitimi-yatay-programixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 19070
+      },
+      {
+       "ad": "ÇİLYAD Öğrenim Rehberleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56594/0/cilyad-ogrenim-rehberleridocx.docx",
+       "tur": "DOCX",
+       "bayt": 7177763
+      },
+      {
+       "ad": "ÇİLYAD-Acil Olgu Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56586/0/cilyad-acil-olgu-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 29984980
+      },
+      {
+       "ad": "ÇİLYAD-Solunum Acilleri-1",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56583/0/cilyad-solunum-acilleri-1pptx.pptx",
+       "tur": "PPTX",
+       "bayt": 32593235
+      },
+      {
+       "ad": "ÇİLYAD-Solunum Acilleri-2",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56584/0/cilyad-solunum-acilleri-2pptx.pptx",
+       "tur": "PPTX",
+       "bayt": 6014876
+      },
+      {
+       "ad": "ÇİLYAD-Şok ve Tedavisi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56588/0/cilyad-sok-ve-tedavisipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 41144810
+      },
+      {
+       "ad": "ÇİLYAD-Ritim Bozuklukları",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56589/0/cilyad-ritim-bozukluklaripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 41591625
+      },
+      {
+       "ad": "ÇİLYAD-Nöbet Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56582/0/cilyad-nobet-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 15864367
+      },
+      {
+       "ad": "ÇİLYAD-Travma Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56585/0/cilyad-travma-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 20414122
+      },
+      {
+       "ad": "ÇİLYAD-Çocuk İstismarında Farkındalık",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56581/0/cilyad-cocuk-istismarinda-farkindalikpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 6720175
+      }
+     ],
+     "videolar": []
+    },
+    {
+     "slug": "tilyad",
+     "baslik": "Travma İleri Yaşam Desteği (TİLYAD) Eğitim Dökümanları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121444/travma-ileri-yasam-destegi-tilyad-egitim-dokumanlari.html",
+     "dosyalar": [
+      {
+       "ad": "Travma İleri Yaşam Desteği Dikey Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56576/0/travma-ileri-yasam-destegi-dikey-programixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 11488
+      },
+      {
+       "ad": "Travma İleri Yaşam Desteği Yatay Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56577/0/travma-ileri-yasam-destegi-yatay-programixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 20748
+      },
+      {
+       "ad": "TİLYAD-Öğrenim Rehberleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56517/0/tilyad-ogrenim-rehberleridocx.docx",
+       "tur": "DOCX",
+       "bayt": 298820
+      },
+      {
+       "ad": "TILYAD-Olay Yeri Yonetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56518/0/tilyad-olay-yeri-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 65888512
+      },
+      {
+       "ad": "TİLYAD-Triyaj",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56523/0/tilyad-triyajpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 32694016
+      },
+      {
+       "ad": "TILYAD-Travma Acil Olgu Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56524/0/tilyad-travma-acil-olgu-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 29305863
+      },
+      {
+       "ad": "TILYAD-Spesifik Travmalar-1",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56519/0/tilyad-spesifik-travmalar-1pptx.pptx",
+       "tur": "PPTX",
+       "bayt": 43619435
+      },
+      {
+       "ad": "TİLYAD-Spesifik Travmalar-2",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56578/0/tilyad-spesifik-travmalar-2pptx.pptx",
+       "tur": "PPTX",
+       "bayt": 11513979
+      },
+      {
+       "ad": "TILYAD-Spesifik Travmalar-3",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56521/0/tilyad-spesifik-travmalar-3pptx.pptx",
+       "tur": "PPTX",
+       "bayt": 12619916
+      }
+     ],
+     "videolar": []
+    },
+    {
+     "slug": "asge",
+     "baslik": "Ambulans Sürüş Güvenliği (ASGE) Eğitim Dökümanları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120878/ambulans-surus-guvenligi-asge-egitim-dokumanlari.html",
+     "dosyalar": [
+      {
+       "ad": "1. Bölüm - Trafik Bilgisi ve Kuralları",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56105/0/1-bolum---trafik-bilgisi-ve-kurallaripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 37694380
+      },
+      {
+       "ad": "2. Bölüm - Ambulans Çeşitleri ve Teknik Özellikleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56106/0/2-bolum---ambulans-cesitleri-ve-teknik-ozellikleripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 40184148
+      },
+      {
+       "ad": "3. Bölüm - Ambulanslarda Sürüş Güvenliği",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56107/0/3-bolum---ambulanslarda-surus-guvenligipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 131596200
+      },
+      {
+       "ad": "4. Bölüm - Araç Bakımı, Kontrolü ve Temizliği",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56108/0/4-bolum---arac-bakimi-kontrolu-ve-temizligipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 155812163
+      },
+      {
+       "ad": "5. Bölüm - Güvenli Sürücülük Davranışları Geliştirme",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56109/0/5-bolum---guvenli-suruculuk-davranislari-gelistirmepptx.pptx",
+       "tur": "PPTX",
+       "bayt": 41203755
+      },
+      {
+       "ad": "7. Bölüm - Özel Durumlarda Ambulans Kullanımı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56110/0/7-bolum---ozel-durumlarda-ambulans-kullanimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 13426345
+      },
+      {
+       "ad": "8. Bölüm - Ambulans Kazaları ve Kabin Güvenliği",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56111/0/8-bolum---ambulans-kazalari-ve-kabin-guvenligipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 4144714
+      },
+      {
+       "ad": "9. Bölüm - Ambulans Yangınları ve Yangına Güvenli Müdahale Teknikleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56112/0/9-bolum---ambulans-yanginlari-ve-yangina-guvenli-mudahale-teknikleripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 28723523
+      },
+      {
+       "ad": "10. Bölüm - Işık ve Siren Protokolleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56113/0/10-bolum---isik-ve-siren-protokolleripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 6248088
+      },
+      {
+       "ad": "11. Bölüm - Ambulansta İletişim ve Yön Bulma Cihazlarının Kullanımı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56114/0/11-bolum---ambulansta-iletisim-ve-yon-bulma-cihazlarinin-kullanimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 18920155
+      },
+      {
+       "ad": "12. Bölüm -Ambulans Kullanımı Açısından Hukuki Durumlar",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56115/0/12-bolum--ambulans-kullanimi-acisindan-hukuki-durumlarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 2355197
+      }
+     ],
+     "videolar": []
+    },
+    {
+     "slug": "hastane-oncesi-obstetrik-aciller",
+     "baslik": "Hastane Öncesi Obstetrik Aciller Eğitim Dökümanları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121037/hastane-oncesi-obstetrik-aciller-egitim-dokumanlari.html",
+     "dosyalar": [
+      {
+       "ad": "Hastane Öncesi Obstetrik Aciller Eğitim Rehberi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56487/0/hastane-oncesi-obstetrik-aciller-egitim-rehberipdf.pdf",
+       "tur": "PDF",
+       "bayt": 20091740
+      },
+      {
+       "ad": "Ders Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56328/0/ders-programixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 11887
+      },
+      {
+       "ad": "NORMAL DOĞUM VE UTERİN MASAJ UYGULAMASI ÖĞRENİM REHBERİ",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56324/0/normal-dogum-ve-uterin-masaj-uygulamasi-ogrenim-rehberidocx.docx",
+       "tur": "DOCX",
+       "bayt": 26034
+      },
+      {
+       "ad": "MAKAT DOĞUM UYGULAMASI ÖĞRENİM REHBERİ",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56323/0/makat-dogum-uygulamasi-ogrenim-rehberidocx.docx",
+       "tur": "DOCX",
+       "bayt": 27336
+      },
+      {
+       "ad": "KORDON SARKMASI UYGULAMASI ÖĞRENİM REHBERİ",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56322/0/kordon-sarkmasi-uygulamasi-ogrenim-rehberidocx.docx",
+       "tur": "DOCX",
+       "bayt": 21949
+      },
+      {
+       "ad": "YENİDOĞAN CANLANDIRMA HIZLI MALZEME KONTROL LİSTESİ",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56325/0/yenidogan-canlandirma-hizli-malzeme-kontrol-listesidocx.docx",
+       "tur": "DOCX",
+       "bayt": 15488
+      },
+      {
+       "ad": "YENİDOĞAN CANLANDIRMA SENARYO UYGULAMASI",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56326/0/yenidogan-canlandirma-senaryo-uygulamasidocx.docx",
+       "tur": "DOCX",
+       "bayt": 21581
+      },
+      {
+       "ad": "1.MATERNAL MORTALİTE",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56347/0/1maternal-mortalitepptx.pptx",
+       "tur": "PPTX",
+       "bayt": 7726698
+      },
+      {
+       "ad": "2.GEBELIKTE ANATOMIK FIZYOLOJIK VE PSIKOLOJIK DEGISIKLIKLER",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56348/0/2gebelikte-anatomik-fizyolojik-ve-psikolojik-degisikliklerpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 7672640
+      },
+      {
+       "ad": "3-MATERNAL RESÜSİTASYON",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56604/0/3-maternal-resusitasyonpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 5692782
+      },
+      {
+       "ad": "4.DOĞUM EYLEMİ, EVRELERİ ve AMBULANSTA DOĞUM",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56349/0/4dogum-eylemi-evreleri-ve-ambulansta-dogumpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 62492902
+      },
+      {
+       "ad": "5.GEBELİK VE POSTPARTUM DÖNEMDE GÖRÜLEN KANAMALAR",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56350/0/5gebelik-ve-postpartum-donemde-gorulen-kanamalarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 12723218
+      },
+      {
+       "ad": "6.MALPREZENTASYONLAR",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56351/0/6malprezentasyonlarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 140891499
+      },
+      {
+       "ad": "7.GEBELİKTE HİPERTANSİF HASTALIKLAR",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56352/0/7gebelikte-hipertansif-hastaliklarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 5136054
+      },
+      {
+       "ad": "8.GEBELIK VE KALP HASTALIKLARI",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56353/0/8gebelik-ve-kalp-hastaliklaripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 4782566
+      },
+      {
+       "ad": "9.GEBELIK VE SOLUNUM SIKINTISI",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56354/0/9gebelik-ve-solunum-sikintisipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 4444149
+      },
+      {
+       "ad": "10.GEBELIK VE POSTPARTUM DONEMDE KARIN AGRISI",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56355/0/10gebelik-ve-postpartum-donemde-karin-agrisipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 3159166
+      },
+      {
+       "ad": "11.GEBELIK VE PORSTPARTUM DONEMDE BAS AGRISI KONVULZIYONLAR VE SENKOP",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56356/0/11gebelik-ve-porstpartum-donemde-bas-agrisi-konvulziyonlar-ve-senkoppptx.pptx",
+       "tur": "PPTX",
+       "bayt": 9354037
+      },
+      {
+       "ad": "12.GEBELİK VE POSTPARTUM DÖNEMDE ATEŞ VE SEPSİS",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56442/0/12gebelik-ve-postpartum-donemde-ates-ve-sepsispptx.pptx",
+       "tur": "PPTX",
+       "bayt": 15405042
+      },
+      {
+       "ad": "13.YENIDOGANIN ILK BAKIMI",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56358/0/13yenidoganin-ilk-bakimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 10922314
+      },
+      {
+       "ad": "14.YENIDOGAN RESUSITASYONU",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56359/0/14yenidogan-resusitasyonupptx.pptx",
+       "tur": "PPTX",
+       "bayt": 12388086
+      },
+      {
+       "ad": "15.HASTANE ÖNCESİ DOĞUM ve YENİDOĞAN BİLDİRİMİ, TRANSFER ve HUKUKİ SORUMLULUKLAR",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56360/0/15hastane-oncesi-dogum-ve-yenidogan-bildirimi-transfer-ve-hukuki-sorumluluklarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 3366848
+      }
+     ],
+     "videolar": []
+    },
+    {
+     "slug": "yenidogan-transport",
+     "baslik": "Yenidoğan Transport Eğitim Dökümanları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120921/yenidogan-transport-egitim--dokumanlari.html",
+     "dosyalar": [
+      {
+       "ad": "Yenidogan Transport Egitimi Rehberi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56346/0/yenidogan-transport-egitimi-rehberipdf.pdf",
+       "tur": "PDF",
+       "bayt": 10156096
+      },
+      {
+       "ad": "Dikey Ders Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56305/0/dikey-ders-programidocx.docx",
+       "tur": "DOCX",
+       "bayt": 24164
+      },
+      {
+       "ad": "Yatay Ders Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56304/0/yatay-ders-programidocx.docx",
+       "tur": "DOCX",
+       "bayt": 40651
+      },
+      {
+       "ad": "Uygulama Esasları",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56303/0/uygulama-esaslaridocx.docx",
+       "tur": "DOCX",
+       "bayt": 20041
+      },
+      {
+       "ad": "1- Yenidoğan Transportunda Temel İlkeler",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56227/0/1--yenidogan-transportunda-temel-ilkelerpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 3467175
+      },
+      {
+       "ad": "2-Yenidoğan Tanımı, Fizyolojik ve Anatomik Özellikleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56228/0/2-yenidogan-tanimi-fizyolojik-ve-anatomik-ozellikleripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 33047193
+      },
+      {
+       "ad": "3- Yenidoğanda Solunum Sıkıntısı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56229/0/3--yenidoganda-solunum-sikintisipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 6493496
+      },
+      {
+       "ad": "4-Yenidoğan Canlandırması",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56230/0/4-yenidogan-canlandirmasipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 11423777
+      },
+      {
+       "ad": "5-Yenidoğan Transportunda Mekanik Ventilatör Kullanımı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56231/0/5-yenidogan-trasportunda-mekanik-ventilator-kullanimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 8072707
+      },
+      {
+       "ad": "6-Prematüre Bebek Tanımı ve Transportu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56232/0/6-premature-bebek-tanimi-ve-transportupptx.pptx",
+       "tur": "PPTX",
+       "bayt": 3438754
+      },
+      {
+       "ad": "7- Yenidoğanda Kardiyak Acillerin Transportu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56233/0/7--yenidoganda-kardiyak-acillerin-transportupptx.pptx",
+       "tur": "PPTX",
+       "bayt": 9710804
+      },
+      {
+       "ad": "8-Yenidogan Norolojik Acillerinin Nakli",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56234/0/8-yenidogan-norolojik-acillerinin-naklipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 2833319
+      },
+      {
+       "ad": "9- Yenidoğanda Cerrahi Acillerin Transportu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56235/0/9--yenidoganda-cerrahi-acillerin-transportupptx.pptx",
+       "tur": "PPTX",
+       "bayt": 4518027
+      }
+     ],
+     "videolar": [
+      {
+       "id": "uYIFhEnm9Uo",
+       "baslik": "Yenidoğan Transport Eğitimi 1",
+       "altBaslik": "Yenidoğan Transport Kuvöz"
+      },
+      {
+       "id": "XCVt_41woWQ",
+       "baslik": "Yenidoğan Transport Eğitimi 2",
+       "altBaslik": "Mekanik Ventilatör 1"
+      },
+      {
+       "id": "lmW1wW0i-RQ",
+       "baslik": "Yenidoğan Transport Eğitimi 3",
+       "altBaslik": "Mekanik Ventilatör 2"
+      },
+      {
+       "id": "h09SRUPLwvU",
+       "baslik": "Yenidoğan Transport Eğitimi 4",
+       "altBaslik": "Mekanik Ventilatör 3"
+      }
+     ]
+    },
+    {
+     "slug": "tibbi-acil-cagri-yonetimi",
+     "baslik": "Tıbbi Acil Çağrı Yönetimi (Sağlık Komuta Kontrol Merkezi) Eğitim Dökümanları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120875/tibbi-acil-cagri-yonetimi-saglik-komuta-kontrol-merkezi-egitim-dokumanlari.html",
+     "dosyalar": [
+      {
+       "ad": "1- Eğitim Programı Tanıtımı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55670/0/1--egitim-programi-tanitimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 48619295
+      },
+      {
+       "ad": "2- SKKM Çalışma Sistemi ve Genel Kurallar",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55671/0/2--skkm-calisma--sistemi-ve-genel-kurallarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 5285207
+      },
+      {
+       "ad": "3- Tıbbi Acil Çağrı Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55672/0/3--tibbi-acil-cagri-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 3784542
+      },
+      {
+       "ad": "4- Yazılım ve Haberleşme Sistemleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55673/0/4--yazilim-ve-haberlesme-sistemleripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 32897852
+      },
+      {
+       "ad": "5- Nakil Koordinasyonu Ambulans Çeşitleri ve Acil Sağlık Araçları",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55674/0/5--nakil-koordinasyonu-ambulans-cesitleri-ve-acil-saglik-araclaripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 11541482
+      },
+      {
+       "ad": "6- Tıbbi Acil Çağrı Yönetimi Algoritmalarının Kullanımı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55685/0/6--tibbi-acil-cagri-yonetimi-algoritmalarinin-kullanimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 79607361
+      },
+      {
+       "ad": "- Tıbbi Acil Çağrı Karşılamada Telefon İletişimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55675/0/7--tibbi-acil-cagri-karsilamada-telefon-iletisimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 25509079
+      },
+      {
+       "ad": "8- Tıbbi Acil Çağrı Yönetiminde Profesyonel Basamaklar",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55676/0/8--tibbi-acil-cagri-yonetiminde-profesyonel-basamaklarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 1982835
+      },
+      {
+       "ad": "9- Özel Arama Gruplarına Yaklaşım",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55677/0/9--ozel-arama-gruplarina-yaklasimpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 78821614
+      },
+      {
+       "ad": "10- Afet ve Acil Durum Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55678/0/10--afet-ve-acil-durum-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 18155604
+      },
+      {
+       "ad": "11- Stres Yönetimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55679/0/11--stres-yonetimipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 2008322
+      },
+      {
+       "ad": "12-13- Hukuki Sorumluluklar",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55680/0/12-13--hukuki-sorumluluklarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 1916821
+      },
+      {
+       "ad": "14- Etik Kurallar",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55681/0/14--etik-kurallarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 8540598
+      },
+      {
+       "ad": "1. Eğitim Materyal Listesi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55686/0/1-egitim-materyal-listesixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 78457
+      },
+      {
+       "ad": "3. Hoşgeldiniz Sunusu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55687/0/3-hosgeldiniz-sunusupptx.pptx",
+       "tur": "PPTX",
+       "bayt": 251555
+      },
+      {
+       "ad": "4.1. Hoşgeldiniz Afişi Dikey (50x70) Ebadında Renkli Kağıt",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55688/0/41-hosgeldiniz-afisi-dikey-50x70-ebadinda-renkli-kagitpdf.pdf",
+       "tur": "PDF",
+       "bayt": 7422248
+      },
+      {
+       "ad": "4.2. Hoşgeldiniz Afişi Yatay (50x70) Ebadında Renkli Kağıt",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55689/0/42-hosgeldiniz-afisi-yatay-50x70-ebadinda-renkli-kagitpdf.pdf",
+       "tur": "PDF",
+       "bayt": 22995367
+      },
+      {
+       "ad": "5. Kurs Sözleşmesi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55690/0/5-kurs-sozlesmesipdf.pdf",
+       "tur": "PDF",
+       "bayt": 1448190
+      },
+      {
+       "ad": "6. Antetli Kağıt A4",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55691/0/6-antetli-kagit-a4pdf.pdf",
+       "tur": "PDF",
+       "bayt": 106633
+      },
+      {
+       "ad": "8. Tıbbi Acil Çağrı Yönetimi Algoritmaları",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55692/0/8-tibbi-acil-cagri-yonetimi-algoritmalaripdf.pdf",
+       "tur": "PDF",
+       "bayt": 16062399
+      },
+      {
+       "ad": "9. Tıbbi Acil Çağrı Yönetimi Senaryoları",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55693/0/9-tibbi-acil-cagri-yonetimi-senaryolaripdf.pdf",
+       "tur": "PDF",
+       "bayt": 14080041
+      },
+      {
+       "ad": "10.Eğitim Standartları ve Uygulama Kriterleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55694/0/10egitim-standartlari-ve-uygulama-kriterleripdf.pdf",
+       "tur": "PDF",
+       "bayt": 2768935
+      },
+      {
+       "ad": "11. Yatay Ders Program",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55695/0/11-yatay-ders-programdocx.docx",
+       "tur": "DOCX",
+       "bayt": 52225
+      },
+      {
+       "ad": "12. Dikey Ders Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55696/0/12-dikey-ders-programidocx.docx",
+       "tur": "DOCX",
+       "bayt": 24182
+      },
+      {
+       "ad": "13. 1. Masaüstü İsimlikler (Eğitmen ve Kursiyer İçin)",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55697/0/13-masaustu-isimlikler--egitmen-ve-kursiyer-icindocx.docx",
+       "tur": "DOCX",
+       "bayt": 922105
+      },
+      {
+       "ad": "13. 2. Masaüstü İsimlikler (Eğitmen ve Kursiyer İçin)",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55698/0/13-masaustu-isimlikler--egitmen-ve-kursiyer-icinpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 221096
+      },
+      {
+       "ad": "14. Yaka Kartı Şablonu (Eğitmen ve Kursiyer İçin)",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55699/0/14-yaka-karti-sablonu-egitmen-ve-kursiyer-icindocx.docx",
+       "tur": "DOCX",
+       "bayt": 4839688
+      },
+      {
+       "ad": "15. Ben Dili Örnekleri",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55700/0/15-ben-dili-ornekleridoc.doc",
+       "tur": "DOC",
+       "bayt": 28160
+      },
+      {
+       "ad": "16. Olumlu Cevaplar Formu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55701/0/16-olumlu-cevaplar-formudoc.doc",
+       "tur": "DOC",
+       "bayt": 28160
+      },
+      {
+       "ad": "17. Soru Tipleri Formu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55702/0/17-soru-tipleri-formudocx.docx",
+       "tur": "DOCX",
+       "bayt": 14892
+      },
+      {
+       "ad": "18. Dijital Algoritma Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55703/0/18-dijital-algoritma-programirar.rar",
+       "tur": "RAR",
+       "bayt": 23556543
+      },
+      {
+       "ad": "21. Eğitmen Senaryo Görev Dağılımı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55704/0/21-egitmen-senaryo-gorev-dagilimixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 129093
+      },
+      {
+       "ad": "22. Kursiyer Senaryo Görevlendirme Formu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55705/0/22-kursiyer-senaryo-gorevlendirme-formuxlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 10952
+      },
+      {
+       "ad": "23. İmza Föyü",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55706/0/23-imza-foyuxlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 43164
+      },
+      {
+       "ad": "25. Ön Test Cevap Anahtarı Optik Okuyucu Formu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55707/0/25-on-test-cevap-anahtari-optik-okuyucu-formudocx.docx",
+       "tur": "DOCX",
+       "bayt": 127299
+      },
+      {
+       "ad": "29. Son Test Cevap Anahtarı Optik Okuyucu Formu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55708/0/29-son-test-cevap-anahtari-optik-okuyucu-formudocx.docx",
+       "tur": "DOCX",
+       "bayt": 299086
+      },
+      {
+       "ad": "31. Eğitmen Çağrı Değerlendime Formu (Uygulama Puan Formu)",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55709/0/31-egitmen-cagri-degerlendime-formu-uygulama-puan-formudocx.docx",
+       "tur": "DOCX",
+       "bayt": 22825
+      },
+      {
+       "ad": "32. Kursiyer Çağrı Değerlendime Rehberi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55710/0/32-kursiyer-cagri-degerlendime-rehberidocx.docx",
+       "tur": "DOCX",
+       "bayt": 19895
+      },
+      {
+       "ad": "33. Genel Sınav Sonuç Çizelgesi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55711/0/33-genel-sinav-sonuc-cizelgesixlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 23547
+      },
+      {
+       "ad": "34-Eğitim ve Eğitmen Anketi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56345/0/34-egitim-ve-egitmen-anketidocx.docx",
+       "tur": "DOCX",
+       "bayt": 60996
+      },
+      {
+       "ad": "35. Eğitmen-Kursiyer İletişim Formu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55713/0/35-egitmen-kursiyer-iletisim-formuxlsx.xlsx",
+       "tur": "XLSX",
+       "bayt": 45208
+      },
+      {
+       "ad": "36. Eğitim Raporu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55714/0/36-egitim-raporudocx.docx",
+       "tur": "DOCX",
+       "bayt": 29239
+      }
+     ],
+     "videolar": []
+    },
+    {
+     "slug": "tibbi-kbrn-farkindalik",
+     "baslik": "Tıbbi KBRN Farkındalık Eğitim Dökümanları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121530/tibbi-kbrn-farkindalik-egitim-dokumanlari.html",
+     "dosyalar": [
+      {
+       "ad": "Tıbbi Kbrn Farkındalık Eğitimi Ders Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56601/0/tibbi-kbrn-farkindalik-egitimi-ders-programidoc.doc",
+       "tur": "DOC",
+       "bayt": 47616
+      },
+      {
+       "ad": "1- KBRN TEHLİKELERİ, ÖNEMİ VE TARİHÇESİ",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56596/0/1--kbrn-tehlikeleri-onemi-ve-tarihcesipptx.pptx",
+       "tur": "PPTX",
+       "bayt": 2825481
+      },
+      {
+       "ad": "2- KİMYASAL AJANLAR",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56597/0/2--kimyasal-ajanlarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 2879113
+      },
+      {
+       "ad": "3- BİYOLOJİK AJANLAR",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56598/0/3--biyolojik-ajanlarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 3655323
+      },
+      {
+       "ad": "4- RADYOLOJİK VE NÜKLEER AJANLAR",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56599/0/4--radyolojik-ve-nukleer-ajanlarpptx.pptx",
+       "tur": "PPTX",
+       "bayt": 1911085
+      },
+      {
+       "ad": "5- KKD, DEKONTAMINASYON VE OLAY YERI",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56600/0/5--kkd-dekontaminasyon-ve-olay-yeripptx.pptx",
+       "tur": "PPTX",
+       "bayt": 3578320
+      }
+     ],
+     "videolar": []
+    },
+    {
+     "slug": "adli-vakalarda-maddi-delillere-yaklasim-protokolu-ve-egitimi",
+     "baslik": "Adli Vakalarda Maddi Delillere Yaklaşım Protokolü ve Eğitimi",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120871/adli-vakalarda-maddi-delillere-yaklasim-protokolu-ve-egitimi.html",
+     "dosyalar": [
+      {
+       "ad": "Adli Vakalarda Maddi Delillere Yaklaşım Eğitimi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/41514/0/1--adli-vakalarda-maddi-delillere-yaklasim-egitimiustyazipdf.pdf",
+       "tur": "PDF",
+       "bayt": 195757
+      },
+      {
+       "ad": "ASH Personelinin Adli Vakalarda Maddi Delillere Yaklaşımı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/41515/0/2--ash-personelinin-adli-vakalarda-maddi-delillere-yaklasimiustyazipdf.pdf",
+       "tur": "PDF",
+       "bayt": 36847
+      },
+      {
+       "ad": "İçişleri Bakanlığı ve Sağlık Bakanlığı İşbirliği Protokolü",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/41516/0/3--ash-personelinin-adli-vakalardaicisleri-saglik-bakanligi-isbirligi-protokolupdf.pdf",
+       "tur": "PDF",
+       "bayt": 3888222
+      },
+      {
+       "ad": "Eğitim Uygulama Talimatı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/41523/0/4---ash-personelinin-adli-vakalarda-maddi-delillere-yaklasimiuygulama-talimatipdf.pdf",
+       "tur": "PDF",
+       "bayt": 227282
+      },
+      {
+       "ad": "Eğitim Programı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/41524/0/5---ash-personelinin-adli-vakalarda-maddi-delillere-yaklasimiegitim-programipdf.pdf",
+       "tur": "PDF",
+       "bayt": 137078
+      },
+      {
+       "ad": "Eğitim Kılavuzu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/41522/0/6---ash-personelinin-adli-vakalarda-maddi-delillere-yaklasimiegitim-kilavuzupdf.pdf",
+       "tur": "PDF",
+       "bayt": 442774
+      },
+      {
+       "ad": "Değerlendirme Formu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/41520/0/7--ash-personelinin-adli-vakalarda-maddi-delillere-yaklasimidegerlendirme-formudocx.docx",
+       "tur": "DOCX",
+       "bayt": 25273
+      }
+     ],
+     "videolar": []
+    },
+    {
+     "slug": "oksijen-tupu-ve-sistemlerinin-guvenli-kullanimi-egitimi-rehberi-ve-uygulama-kilavuzu",
+     "baslik": "Oksijen Tüpü ve Sistemlerinin Güvenli Kullanımı Eğitimi Rehberi ve Uygulama Kılavuzu",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120869/oksijen-tupu-ve-sistemlerinin-guvenli-kullanimi-egitimi-rehberi-ve-uygulama-kilavuzu.html",
+     "dosyalar": [
+      {
+       "ad": "Eğitim Rehberi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/39436/0/oksijen-egitim-rehberipdf.pdf",
+       "tur": "PDF",
+       "bayt": 0,
+       "erisilemez": true
+      },
+      {
+       "ad": "Uygulama Kılavuzu",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/39437/0/oksijen-tupuve-sistemlerinin-guvenli-kullanimi-egitimi-uygulama-ilkeleripdf.pdf",
+       "tur": "PDF",
+       "bayt": 0,
+       "erisilemez": true
+      }
+     ],
+     "videolar": []
+    }
+   ]
+  },
+  {
+   "id": "videolar",
+   "baslik": "Eğitim Videoları",
+   "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121056/egitim-videolari.html",
+   "videolar": [
+    {
+     "id": "D2opkZ5VbSs",
+     "baslik": "Erişkin Hastada Airway Uygulaması"
+    },
+    {
+     "id": "ZFDasf8cNkA",
+     "baslik": "Erişkin Hastada LMA Uygulaması"
+    },
+    {
+     "id": "FPtK5VAnzQE",
+     "baslik": "Erişkin Hastada Entübasyon Uygulaması"
+    },
+    {
+     "id": "yXH0Y9PaCQs",
+     "baslik": "Erişkin Hastada Mekanik Ventilatör Uygulaması"
+    },
+    {
+     "id": "UpnCgh4SCx8",
+     "baslik": "Erişkin Hastada İğne Krikotrotomi Uygulaması"
+    },
+    {
+     "id": "vvpgrIpcjY8",
+     "baslik": "Erişkin Hastada İntraosseöz Uygulaması"
+    },
+    {
+     "id": "7h09yeVQWcA",
+     "baslik": "Erişkin Hastada Güvenli Defibrilasyon Uygulaması"
+    },
+    {
+     "id": "am5nulyVP0k",
+     "baslik": "Erişkin Hastada Kardiyoversiyon Uygulaması"
+    },
+    {
+     "id": "kFYtDbclkPU",
+     "baslik": "Erişkin Hastada Transkutan Pacemaker Uygulaması"
+    },
+    {
+     "id": "085Mi7DqpWY",
+     "baslik": "Erişkin Hastada İğne Dekompresyon Uygulaması"
+    },
+    {
+     "id": "ctnkIWFXENM",
+     "baslik": "Erişkin Hastada Traksiyon Atel Uygulaması"
+    },
+    {
+     "id": "enJLLA1ff6E",
+     "baslik": "Erişkin Hastada Pelvis Kemeri Uygulaması"
+    },
+    {
+     "id": "a1yb5lLsfao",
+     "baslik": "Erişkin Hastada Kask Çıkarma Uygulaması"
+    },
+    {
+     "id": "uYIFhEnm9Uo",
+     "baslik": "Yenidoğan Transport Kuvöz"
+    },
+    {
+     "id": "XCVt_41woWQ",
+     "baslik": "Yenidoğan Mekanik Ventilatör 1",
+     "altBaslik": "Mekanik Ventilatör 1"
+    }
+   ]
+  },
+  {
+   "id": "kitaplar",
+   "baslik": "Eğitim Kitapları",
+   "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121096/egitim-kitaplari.html",
+   "kitaplar": [
+    {
+     "baslik": "Hastane Öncesi Acil Tıbbi Yardım ve Bakım Akış Şemaları",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120876/hastane-oncesi-acil-tibbi-yardim-ve-bakim-akis-semalari.html",
+     "dosyalar": [
+      {
+       "ad": "Ek-2 Hastane Öncesi Acil Tıbbi Yardım ve Bakım Akış Şemaları",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55773/0/ek-2-hastane-oncesi-acil-tibbi-yardim-ve-bakim-akis-semalaripdf.pdf",
+       "tur": "PDF",
+       "bayt": 8831093
+      }
+     ]
+    },
+    {
+     "baslik": "Yenidoğan Transport Eğitim Rehberi",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121178/yenidogan-transport-egitim-rehberi.html",
+     "dosyalar": [
+      {
+       "ad": "Yenidogan Transport Egitimi Rehberi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56346/0/yenidogan-transport-egitimi-rehberipdf.pdf",
+       "tur": "PDF",
+       "bayt": 10156096
+      }
+     ]
+    },
+    {
+     "baslik": "Hastane Öncesi Obstetrik Aciller Eğitim Rehberi",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121180/hastane-oncesi-obstetrik-aciller-egitim-rehberi.html",
+     "dosyalar": [
+      {
+       "ad": "Hastane Öncesi Obstetrik Aciller Eğitim Rehberi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56487/0/hastane-oncesi-obstetrik-aciller-egitim-rehberipdf.pdf",
+       "tur": "PDF",
+       "bayt": 20091740
+      }
+     ]
+    },
+    {
+     "baslik": "Tıbbi Acil Çağrı Yönetimi (Sağlık Komuta Kontrol Merkezi) Eğitim Kitabı",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120873/tibbi-acil-cagri-yonetimi-saglik-komuta-kontrol-merkezi-egitim-kitabi.html",
+     "dosyalar": [
+      {
+       "ad": "SKKM Eğitim Kitabı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/54933/0/skkmegitim-kitabi20mayispdf.pdf",
+       "tur": "PDF",
+       "bayt": 0,
+       "erisilemez": true
+      }
+     ]
+    },
+    {
+     "baslik": "Madde Kullanım Bozukluklarında Acil Yaklaşım Rehberi",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120870/madde-kullanim-bozukluklarinda-acil-yaklasim-rehberi.html",
+     "dosyalar": [],
+     "erisilemez": true
+    },
+    {
+     "baslik": "Ambulans Sürüş Güvenliği Eğitimi Eğitmen Kitabı",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120893/ambulans-surus-guvenligi-egitimi-egitmen-kitabi.html",
+     "dosyalar": [
+      {
+       "ad": "ASGE Egitmen Kitabı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/46915/0/asge-egitmen-kitabipdf.pdf",
+       "tur": "PDF",
+       "bayt": 46741996
+      }
+     ]
+    },
+    {
+     "baslik": "Ambulans Sürüş Güvenliği Eğitimi Eğitmen Rehberi",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120895/ambulans-surus-guvenligi-egitimi-egitmen-rehberi.html",
+     "dosyalar": [
+      {
+       "ad": "ASGE Egitmen Rehberi",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/46919/0/asge-egitmen-rehberipdf.pdf",
+       "tur": "PDF",
+       "bayt": 187126644
+      }
+     ]
+    },
+    {
+     "baslik": "Ambulans Sürüş Güvenliği Eğitimi Kursiyer Kitabı",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-120896/ambulans-surus-guvenligi-egitimi-kursiyer-kitabi.html",
+     "dosyalar": [
+      {
+       "ad": "ASGE Kursiyer Kitabı",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/46920/0/asge-kursiyer-kitabipdf.pdf",
+       "tur": "PDF",
+       "bayt": 158346493
+      }
+     ]
+    },
+    {
+     "baslik": "İlkyardım Eğitim Kitabı",
+     "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121183/ilkyardim-egitim-kitabi.html",
+     "dosyalar": [
+      {
+       "ad": "Sağlık Bakanlığı İlk Yardım Eğitimi Kitabı (Mayıs 2025)",
+       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/51010/0/sbacil-saglik-ilk-yardim-egitimi-kitabi-mayis-2025pdf.pdf",
+       "tur": "PDF",
+       "bayt": 23781791
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "afisler",
+   "baslik": "Afiş ve Posterler",
+   "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121372/afis-ve-posterler.html",
+   "dosyalar": [
+    {
+     "ad": "1-Birlikte Hayat Kurtarıyoruz 50x70 cm Baskı",
+     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55001/0/1-birlikte-hayat-kurtariyoruz-50x70-cm-baskipdf.pdf",
+     "tur": "PDF",
+     "bayt": 70586135
+    },
+    {
+     "ad": "2- OED 50x70 cm Baskı",
+     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/54997/0/2--oed--50x70-cm-baskipdf.pdf",
+     "tur": "PDF",
+     "bayt": 86787999
+    },
+    {
+     "ad": "3- Yasama Yol Ver 50x70 cm Baskı",
+     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/54998/0/3--yasama-yol-ver--50x70-cm-baskipdf.pdf",
+     "tur": "PDF",
+     "bayt": 107489380
+    },
+    {
+     "ad": "4- UMKE 50x70 cm",
+     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55002/0/4--umke-50x70-cmpdf.pdf",
+     "tur": "PDF",
+     "bayt": 128310446
+    },
+    {
+     "ad": "5- TYD 50x70 cm Baskı",
+     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/54999/0/5--tyd-50x70-cm-baskipdf.pdf",
+     "tur": "PDF",
+     "bayt": 25832020
+    },
+    {
+     "ad": "6- Her an her yerde 50x70 cm",
+     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55000/0/6--her-an-her-yerde--50x70-cmpdf.pdf",
+     "tur": "PDF",
+     "bayt": 82959015
+    }
+   ]
+  }
+ ]
+}

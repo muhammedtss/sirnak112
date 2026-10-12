@@ -269,6 +269,24 @@ p, li, dd, figcaption { text-wrap: pretty; }
 .skala-card:active { transform: scale(0.97); }
 .skala-card:focus-visible { box-shadow: var(--focus-ring); }
 
+/* === Liste satırları (Eğitim: belge, video, eğitim listeleri) === */
+.liste-satir { transition: background-color var(--dur-fast) var(--ease-out); }
+.liste-ok, .liste-ileri { transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
+@media (hover: hover) {
+  .liste-satir:hover { background-color: color-mix(in srgb, var(--fg) 5%, transparent); }
+  .liste-satir:hover .liste-ok { color: var(--fg); transform: translate(1px, -1px); }   /* dış bağlantı ↗ */
+  .liste-satir:hover .liste-ileri { color: var(--fg); transform: translateX(2px); }      /* iç sayfa › */
+}
+.liste-satir:active { background-color: color-mix(in srgb, var(--fg) 8%, transparent); }
+.liste-satir:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--primary-light); }
+/* Aramadan gelinen video satırı (#video-…) teal zeminle işaretlenir */
+.video-satir[data-isaretli="true"] { background-color: color-mix(in srgb, var(--primary-light) 9%, transparent); }
+/* Oynat ↔ kapat ikonu: ölçek 0.25→1, opaklık, bulanıklık (ikisi de DOM'da, çapraz geçiş) */
+.video-dugme > svg { transition: opacity 200ms cubic-bezier(0.2, 0, 0, 1), transform 200ms cubic-bezier(0.2, 0, 0, 1), filter 200ms cubic-bezier(0.2, 0, 0, 1); }
+.video-dugme .video-ikon-kapat,
+.video-dugme[data-acik="true"] .video-ikon-oynat { opacity: 0; transform: scale(0.25); filter: blur(4px); }
+.video-dugme[data-acik="true"] .video-ikon-kapat { opacity: 1; transform: scale(1); filter: blur(0); }
+
 /* ICD-10 kategori metni: koyuda pastel ton, açıkta kategori renginin koyulaştırılmışı (≥4,5:1) */
 .icd-kat-text { color: var(--kat-soft); }
 [data-theme="light"] .icd-kat-text { color: color-mix(in srgb, var(--kat) 55%, #000); }

@@ -5,6 +5,7 @@ import ilaclarData from "@/data/ilaclar.json";
 import icd10Data from "@/data/icd10.json";
 import envanterData from "@/data/ambulans-envanter.json";
 import { DERSLER } from "@/lib/ekg/lessons";
+import { EGITIM, kategoriYolu, kisaBaslik } from "@/lib/egitim";
 import { normalizeTr } from "@/lib/text";
 
 export { normalizeTr };
@@ -93,6 +94,33 @@ function build(): SearchItem[] {
   raw.push({ id: "ekg-sinav", title: "EKG Vaka Sınavı", group: "EKG", url: "/ekg-egitim/sinav", keywords: "test quiz" });
   for (const d of DERSLER) {
     raw.push({ id: `ekg-ders-${d.slug}`, title: `${d.no}. ${d.baslik}`, group: "EKG", url: `/ekg-egitim/ders/${d.slug}`, description: d.ozet });
+  }
+
+  raw.push({ id: "egitim", title: "Eğitim", group: "Eğitim", url: "/egitim", description: "Bakanlık eğitim dokümanları, videoları, kitapları ve afişleri", keywords: "ASHGM sağlık bakanlığı eğitim materyali sunum" });
+  for (const k of EGITIM.kategoriler) {
+    const url = kategoriYolu(k.id);
+    if (k.id === "dokumanlar") {
+      raw.push({ id: "egitim-dokumanlar", title: k.baslik, group: "Eğitim", url, description: `${k.bolumler.length} eğitim`, keywords: "doküman sunum" });
+      for (const b of k.bolumler) {
+        const burl = `${url}/${b.slug}`;
+        raw.push({ id: `egitim-${b.slug}`, title: kisaBaslik(b.baslik), group: "Eğitim", url: burl, description: `${b.dosyalar.length} belge`, keywords: `doküman ${b.dosyalar.map(d => d.ad).join(" ")}` });
+        for (const v of b.videolar) {
+          raw.push({ id: `egitim-video-${b.slug}-${v.id}`, title: v.baslik, group: "Eğitim", url: `${burl}#video-${v.id}`, tag: "Video", description: v.altBaslik });
+        }
+      }
+    } else if (k.id === "videolar") {
+      raw.push({ id: "egitim-videolar", title: k.baslik, group: "Eğitim", url, description: `${k.videolar.length} uygulama videosu` });
+      for (const v of k.videolar) {
+        raw.push({ id: `egitim-video-${v.id}`, title: v.baslik, group: "Eğitim", url: `${url}#video-${v.id}`, tag: "Video", description: v.altBaslik });
+      }
+    } else if (k.id === "kitaplar") {
+      raw.push({ id: "egitim-kitaplar", title: k.baslik, group: "Eğitim", url, description: `${k.kitaplar.length} kitap ve rehber` });
+      for (const [i, kitap] of k.kitaplar.entries()) {
+        raw.push({ id: `egitim-kitap-${i}`, title: kitap.baslik, group: "Eğitim", url, tag: "Kitap" });
+      }
+    } else {
+      raw.push({ id: "egitim-afisler", title: k.baslik, group: "Eğitim", url, description: `${k.dosyalar.length} afiş`, keywords: `poster ${k.dosyalar.map(d => d.ad).join(" ")}` });
+    }
   }
 
   raw.push({ id: "envanter", title: "Ambulans Envanteri", group: "Envanter", url: "/envanter", description: "Malzeme ve ilaç kontrol listeleri" });

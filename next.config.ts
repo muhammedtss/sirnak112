@@ -4,8 +4,9 @@ import type { NextConfig } from "next";
 const isDev = process.env.NODE_ENV !== "production";
 
 // Uygulama yalnızca kendi sunucusundan içerik yükler (font dahil, next/font ile yerel);
-// üçüncü taraf betik, bağlantı veya çerçeve yok. 'unsafe-inline' Next'in satır içi
-// sayfa verisi betikleri için gerekli.
+// üçüncü taraf betik veya bağlantı yok. Tek istisna: Eğitim videoları YouTube'un gizlilik
+// modu çerçevesinde, yalnızca kullanıcı oynat'a dokunduğunda açılır (frame-src).
+// 'unsafe-inline' Next'in satır içi sayfa verisi betikleri için gerekli.
 const csp = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
@@ -13,6 +14,7 @@ const csp = [
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
   `connect-src 'self'${isDev ? " ws: wss:" : ""}`,
+  "frame-src https://www.youtube-nocookie.com",
   "worker-src 'self'",
   "manifest-src 'self'",
   "object-src 'none'",

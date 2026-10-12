@@ -3,6 +3,7 @@ import eriskinData from "@/data/eriskin.json";
 import yenidoganData from "@/data/yenidogan.json";
 import envanterData from "@/data/ambulans-envanter.json";
 import { DERSLER } from "@/lib/ekg/lessons";
+import { BOLUMLER } from "@/lib/egitim";
 
 /* ════════════════════════════════════════════════════════════════
    Dinamik rotaların build-time parametreleri — tek kaynak.
@@ -32,6 +33,7 @@ export const STATIC_PARAMS: Record<string, () => Params[]> = {
   "/envanter/[tip]/[kategori]": () =>
     Object.keys(envanterData).flatMap(tip => ENVANTER_SECTIONS.map(kategori => ({ tip, kategori }))),
   "/ekg-egitim/ders/[slug]": () => DERSLER.map(d => ({ slug: d.slug })),
+  "/egitim/dokumanlar/[slug]": () => BOLUMLER.map(b => ({ slug: b.slug })),
 };
 
 export function staticParamsFor(route: string): Params[] {

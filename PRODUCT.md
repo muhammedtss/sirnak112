@@ -29,7 +29,8 @@ Başarı ölçütü: aracın bulunma ve kullanılma süresi. Hiçbir arayüz ö�
 
 ## Operating Context
 
-- 8 modül ve rotaları sabittir: Algoritmalar (`/algoritmalar-gorsel`), Vaka Protokolleri (`/vaka-protokolleri`), Skalalar (`/skalalar`), İlaç Dozu (`/ilac-doz`), Envanter (`/envanter`), Evraklar (`/evraklar`), ICD-10 (`/icd10`), EKG Eğitimi (`/ekg-egitim`).
+- 9 modül ve rotaları sabittir: Algoritmalar (`/algoritmalar-gorsel`), Vaka Protokolleri (`/vaka-protokolleri`), Skalalar (`/skalalar`), İlaç Dozu (`/ilac-doz`), Envanter (`/envanter`), Evraklar (`/evraklar`), ICD-10 (`/icd10`), EKG Eğitimi (`/ekg-egitim`), Eğitim (`/egitim`).
+- Eğitim modülü SB ASHGM'nin eğitim sayfasını kategori düzeniyle aktarır; belgeler Bakanlık sunucusundan, videolar YouTube gizlilik modunda açılır ve **internet gerektirir** (liste sayfaları çevrimdışı da açılır).
 - Alt navigasyon: Ana Sayfa, Skalalar, Protokoller, İlaç, Envanter.
 - Kaynak dokümanlar: EK-2 akış şemaları (PDF) ve "Temel EKG ve Ritim Bozuklukları" eğitim sunumu.
 

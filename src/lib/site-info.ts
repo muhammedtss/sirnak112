@@ -43,6 +43,11 @@ export const KAYNAKLAR: Kaynak[] = [
     kapsam: "EKG eğitimi dersleri, ritim atlası ve gerçek vaka görüntüleri",
   },
   {
+    baslik: "Eğitim dokümanları, videoları, kitapları ve afişleri (acilafet.saglik.gov.tr)",
+    yayinlayan: "T.C. Sağlık Bakanlığı Acil Sağlık Hizmetleri Genel Müdürlüğü",
+    kapsam: "Eğitim bölümü; belgeler Bakanlığın dosya sunucusundan, videolar YouTube üzerinden açılır",
+  },
+  {
     baslik: "ICD-10 — Uluslararası Hastalık Sınıflaması, 10. revizyon",
     yayinlayan: "Dünya Sağlık Örgütü",
     kapsam: "ICD-10 tanı kodu bulucu",

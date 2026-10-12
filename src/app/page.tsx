@@ -12,6 +12,7 @@ import {
   Search,
   Zap,
   HeartPulse,
+  GraduationCap,
 } from "lucide-react";
 import { PageShell } from "@/components/layout/PageShell";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
@@ -30,6 +31,7 @@ const quickLinks = [
   { href: "/evraklar",             icon: FileText,   label: "Evraklar",          desc: "Form ve tutanaklar", accent: "#EC4899" },
   { href: "/icd10",                icon: FileSearch, label: "ICD-10",            desc: "Tanı kodları", accent: "#06B6D4" },
   { href: "/ekg-egitim",           icon: HeartPulse, label: "EKG Eğitimi",       desc: "Eğitim, atlas ve vaka sınavı", accent: "#10B981" },
+  { href: "/egitim",               icon: GraduationCap, label: "Eğitim",         desc: "Bakanlık doküman ve videoları", accent: "#3B82F6" },
 ];
 
 export default function HomePage() {
@@ -97,15 +99,15 @@ export default function HomePage() {
         </button>
       </section>
 
-      {/* ── Modül ızgarası: mobilde 2, geniş ekranda 4 sütun; 8 modül = yetim kart yok ── */}
-      <nav aria-label="Modüller" className="px-4 pb-6 w-full max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3">
-        {quickLinks.map((link) => {
+      {/* ── Modül ızgarası: mobilde 2, geniş ekranda 3 sütun; 9 modül → mobilde son kart tam satır ── */}
+      <nav aria-label="Modüller" className="px-4 pb-6 w-full max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {quickLinks.map((link, i) => {
           const Icon = link.icon;
           return (
             <Link
               key={link.href}
               href={link.href}
-              className="module-card glass-card flex flex-col p-4 gap-3 group relative overflow-hidden"
+              className={`module-card glass-card flex flex-col p-4 gap-3 group relative overflow-hidden ${i === quickLinks.length - 1 && quickLinks.length % 2 ? "col-span-2 sm:col-span-1" : ""}`}
               style={{ "--accent": link.accent } as React.CSSProperties}
             >
               {/* Filigran ikon */}

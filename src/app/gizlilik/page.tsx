@@ -11,7 +11,8 @@ export default function GizlilikPage() {
       <InfoSection title="Kısaca">
         <p>
           {SITE_INFO.uygulama} <strong>hesap açtırmaz, kişisel veri istemez ve toplamaz.</strong> Çerez, reklam, analitik
-          veya üçüncü taraf izleme aracı kullanmaz. Uygulama yalnızca kendi sunucusundan içerik yükler.
+          veya üçüncü taraf izleme aracı kullanmaz. Uygulama kendiliğinden yalnızca kendi sunucusundan içerik yükler;
+          başka bir sunucuya yalnızca Eğitim bölümünde bir belgeyi veya videoyu siz açtığınızda bağlanılır.
         </p>
       </InfoSection>
 
@@ -35,6 +36,18 @@ export default function GizlilikPage() {
           ]}
         />
         <p>Bu veriler cihazınızdan dışarı gönderilmez. Tarayıcının site verilerini temizleyerek hepsini silebilirsiniz.</p>
+      </InfoSection>
+
+      <InfoSection title="Eğitim belgeleri ve videoları">
+        <p>
+          Eğitim bölümündeki belgeler uygulamaya kopyalanmaz; dokunduğunuzda Sağlık Bakanlığı&apos;nın dosya sunucusundan
+          (dosyamerkez.saglik.gov.tr) açılır.
+        </p>
+        <p>
+          Videolar YouTube&apos;un gizlilik geliştirilmiş modunda (youtube-nocookie.com) oynatılır. Oynatıcı ve küçük resimler
+          sayfa açılışında yüklenmez; <strong>yalnızca bir videoya dokunduğunuzda</strong> YouTube&apos;a bağlanılır. Bu durumda
+          YouTube (Google), oynatma için gereken teknik bilgileri kendi gizlilik politikası kapsamında işleyebilir.
+        </p>
       </InfoSection>
 
       <InfoSection title="Barındırma">
