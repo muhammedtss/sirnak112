@@ -12,14 +12,14 @@ interface Props {
   category: "eriskin" | "cocuk" | "yenidogan";
 }
 
-// ─── Lightbox Bileşeni ───────────────────────────────────────────────────────
+// ─── Lightbox Bileşeni (Skalalar › START / Jump START da kullanır) ───────────
 interface SchemaLightboxProps {
   images: AlgorithmImage[];
   title: string;
   onClose: () => void;
 }
 
-function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
+export function SchemaLightbox({ images, title, onClose }: SchemaLightboxProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imgError, setImgError] = useState(false);
   const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);

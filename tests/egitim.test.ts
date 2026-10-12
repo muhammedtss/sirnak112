@@ -12,18 +12,16 @@ const YT = /^[\w-]{11}$/;
 const tumDosyalar = () => [
   ...kategori("dokumanlar").bolumler.flatMap(b => b.dosyalar),
   ...kategori("kitaplar").kitaplar.flatMap(k => k.dosyalar),
-  ...kategori("afisler").dosyalar,
 ];
 const tumVideolar = () => [...kategori("videolar").videolar, ...BOLUMLER.flatMap(b => b.videolar)];
 
-test("Eğitim: kaynak sitedeki dört kategori, aynı sırayla", () => {
+test("Eğitim: kaynak sitedeki kategoriler aynı sırayla (Afiş ve Posterler kurum isteğiyle alınmadı)", () => {
   assert.deepEqual(
     EGITIM.kategoriler.map(k => [k.id, k.baslik]),
     [
       ["dokumanlar", "Eğitim Dökümanları"],
       ["videolar", "Eğitim Videoları"],
       ["kitaplar", "Eğitim Kitapları"],
-      ["afisler", "Afiş ve Posterler"],
     ],
   );
   assert.match(EGITIM.kaynak, KAYNAK);
@@ -54,6 +52,11 @@ test("Eğitim: belgeler yalnızca Bakanlık dosya sunucusuna bağlanır; erişil
   // Aynı bölüm içinde aynı belge iki kez listelenmez
   for (const b of BOLUMLER) assert.equal(new Set(b.dosyalar.map(d => d.url)).size, b.dosyalar.length, b.slug);
   for (const k of kategori("kitaplar").kitaplar) assert.ok(k.dosyalar.length > 0 || k.erisilemez, k.baslik);
+});
+
+test("Eğitim: ders programları listelenmez", () => {
+  const programlar = tumDosyalar().filter(d => /(dikey|yatay).*program|ders program/i.test(d.ad));
+  assert.deepEqual(programlar.map(d => d.ad), []);
 });
 
 test("Eğitim: video kimlikleri geçerli YouTube kimliği, her listede tekil", () => {

@@ -23,7 +23,7 @@ export default function HakkindaPage() {
             "İlaç doz hesaplayıcı, klinik skalalar, yanık yüzdesi ve Parkland sıvı hesabı",
             "ICD-10 tanı kodu bulucu, ambulans envanteri ve evrak örnekleri",
             "EKG eğitimi: dersler, ritim atlası ve vaka sınavı",
-            "Sağlık Bakanlığı eğitim dokümanları, uygulama videoları, eğitim kitapları ve afişleri",
+            "Sağlık Bakanlığı eğitim dokümanları, uygulama videoları ve eğitim kitapları",
             "İnternet bağlantısı olmadan çalışır (Eğitim bölümündeki belge ve videolar hariç); telefona uygulama olarak eklenebilir",
           ]}
         />

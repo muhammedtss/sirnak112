@@ -20,18 +20,6 @@
        "bayt": 40274431
       },
       {
-       "ad": "Temel Eğitim Modülü Dikey Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56573/0/temel-egitim-modulu-dikey-programixlsx.xlsx",
-       "tur": "XLSX",
-       "bayt": 11856
-      },
-      {
-       "ad": "Temel Eğitim Modülü Yatay Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56574/0/temel-egitim-modulu-yatay-programixlsx.xlsx",
-       "tur": "XLSX",
-       "bayt": 28502
-      },
-      {
        "ad": "TEM-Öğrenim Rehberleri",
        "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56380/0/ogrenim-rehberleridocx.docx",
        "tur": "DOCX",
@@ -111,18 +99,6 @@
      "baslik": "Erişkin İleri Yaşam Desteği (İLYAD) Eğitim Dökümanları",
      "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121098/eriskin-ileri-yasam-destegi-ilyad-egitim-dokumanlari.html",
      "dosyalar": [
-      {
-       "ad": "Erişkin İleri Yaşam Desteği Eğitimi Dikey Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56390/0/eriskin-ileri-yasam-destegi-egitimi-dikey--programixlsx.xlsx",
-       "tur": "XLSX",
-       "bayt": 8933
-      },
-      {
-       "ad": "Erişkin İleri yaşam Desteği Eğitimi Yatay Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56514/0/eriskin-ileri-yasam-destegi-egitimi-yatay-programxlsx.xlsx",
-       "tur": "XLSX",
-       "bayt": 18648
-      },
       {
        "ad": "İLYAD-Öğrenim Rehberleri",
        "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56392/0/ilyad-ogrenim-rehberleridocx.docx",
@@ -204,18 +180,6 @@
        "bayt": 20862639
       },
       {
-       "ad": "Çocuklarda İleri Yaşam Desteği Eğitimi Dikey Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56592/0/cocuklarda-ileri-yasam-destegi-egitimi-dikey-programixlsx.xlsx",
-       "tur": "XLSX",
-       "bayt": 11556
-      },
-      {
-       "ad": "Çocuklarda İleri Yaşam Desteği Eğitimi Yatay Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56593/0/cocuklarda-ileri-yasam-destegi-egitimi-yatay-programixlsx.xlsx",
-       "tur": "XLSX",
-       "bayt": 19070
-      },
-      {
        "ad": "ÇİLYAD Öğrenim Rehberleri",
        "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56594/0/cilyad-ogrenim-rehberleridocx.docx",
        "tur": "DOCX",
@@ -277,18 +241,6 @@
      "baslik": "Travma İleri Yaşam Desteği (TİLYAD) Eğitim Dökümanları",
      "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121444/travma-ileri-yasam-destegi-tilyad-egitim-dokumanlari.html",
      "dosyalar": [
-      {
-       "ad": "Travma İleri Yaşam Desteği Dikey Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56576/0/travma-ileri-yasam-destegi-dikey-programixlsx.xlsx",
-       "tur": "XLSX",
-       "bayt": 11488
-      },
-      {
-       "ad": "Travma İleri Yaşam Desteği Yatay Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56577/0/travma-ileri-yasam-destegi-yatay-programixlsx.xlsx",
-       "tur": "XLSX",
-       "bayt": 20748
-      },
       {
        "ad": "TİLYAD-Öğrenim Rehberleri",
        "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56517/0/tilyad-ogrenim-rehberleridocx.docx",
@@ -418,12 +370,6 @@
        "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56487/0/hastane-oncesi-obstetrik-aciller-egitim-rehberipdf.pdf",
        "tur": "PDF",
        "bayt": 20091740
-      },
-      {
-       "ad": "Ders Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56328/0/ders-programixlsx.xlsx",
-       "tur": "XLSX",
-       "bayt": 11887
       },
       {
        "ad": "NORMAL DOĞUM VE UTERİN MASAJ UYGULAMASI ÖĞRENİM REHBERİ",
@@ -558,18 +504,6 @@
        "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56346/0/yenidogan-transport-egitimi-rehberipdf.pdf",
        "tur": "PDF",
        "bayt": 10156096
-      },
-      {
-       "ad": "Dikey Ders Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56305/0/dikey-ders-programidocx.docx",
-       "tur": "DOCX",
-       "bayt": 24164
-      },
-      {
-       "ad": "Yatay Ders Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56304/0/yatay-ders-programidocx.docx",
-       "tur": "DOCX",
-       "bayt": 40651
       },
       {
        "ad": "Uygulama Esasları",
@@ -793,18 +727,6 @@
        "bayt": 2768935
       },
       {
-       "ad": "11. Yatay Ders Program",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55695/0/11-yatay-ders-programdocx.docx",
-       "tur": "DOCX",
-       "bayt": 52225
-      },
-      {
-       "ad": "12. Dikey Ders Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55696/0/12-dikey-ders-programidocx.docx",
-       "tur": "DOCX",
-       "bayt": 24182
-      },
-      {
        "ad": "13. 1. Masaüstü İsimlikler (Eğitmen ve Kursiyer İçin)",
        "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55697/0/13-masaustu-isimlikler--egitmen-ve-kursiyer-icindocx.docx",
        "tur": "DOCX",
@@ -920,12 +842,6 @@
      "baslik": "Tıbbi KBRN Farkındalık Eğitim Dökümanları",
      "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121530/tibbi-kbrn-farkindalik-egitim-dokumanlari.html",
      "dosyalar": [
-      {
-       "ad": "Tıbbi Kbrn Farkındalık Eğitimi Ders Programı",
-       "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56601/0/tibbi-kbrn-farkindalik-egitimi-ders-programidoc.doc",
-       "tur": "DOC",
-       "bayt": 47616
-      },
       {
        "ad": "1- KBRN TEHLİKELERİ, ÖNEMİ VE TARİHÇESİ",
        "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/56596/0/1--kbrn-tehlikeleri-onemi-ve-tarihcesipptx.pptx",
@@ -1208,49 +1124,6 @@
        "bayt": 23781791
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "afisler",
-   "baslik": "Afiş ve Posterler",
-   "kaynakUrl": "https://acilafet.saglik.gov.tr/TR-121372/afis-ve-posterler.html",
-   "dosyalar": [
-    {
-     "ad": "1-Birlikte Hayat Kurtarıyoruz 50x70 cm Baskı",
-     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55001/0/1-birlikte-hayat-kurtariyoruz-50x70-cm-baskipdf.pdf",
-     "tur": "PDF",
-     "bayt": 70586135
-    },
-    {
-     "ad": "2- OED 50x70 cm Baskı",
-     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/54997/0/2--oed--50x70-cm-baskipdf.pdf",
-     "tur": "PDF",
-     "bayt": 86787999
-    },
-    {
-     "ad": "3- Yasama Yol Ver 50x70 cm Baskı",
-     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/54998/0/3--yasama-yol-ver--50x70-cm-baskipdf.pdf",
-     "tur": "PDF",
-     "bayt": 107489380
-    },
-    {
-     "ad": "4- UMKE 50x70 cm",
-     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55002/0/4--umke-50x70-cmpdf.pdf",
-     "tur": "PDF",
-     "bayt": 128310446
-    },
-    {
-     "ad": "5- TYD 50x70 cm Baskı",
-     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/54999/0/5--tyd-50x70-cm-baskipdf.pdf",
-     "tur": "PDF",
-     "bayt": 25832020
-    },
-    {
-     "ad": "6- Her an her yerde 50x70 cm",
-     "url": "https://dosyamerkez.saglik.gov.tr/Eklenti/55000/0/6--her-an-her-yerde--50x70-cmpdf.pdf",
-     "tur": "PDF",
-     "bayt": 82959015
     }
    ]
   }

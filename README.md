@@ -13,12 +13,12 @@ Canlı: **https://www.112acilsaglik.com** · Geliştiren: Kadir TAŞ
 | Görsel algoritmalar | `/algoritmalar-gorsel` | SB akış şemaları (erişkin, çocuk, doğum/yenidoğan), parmakla yakınlaştırma |
 | Algoritmalar / Vaka protokolleri | `/algoritmalar`, `/vaka-protokolleri` | Aynı akışların adım adım, karar noktalı metin hali |
 | İlaç dozu | `/ilac-doz` | Kiloya göre doz, uygulama yolu, maksimum doz, dopamin cc/saat |
-| Skalalar | `/skalalar` | GKS, AVPU, APGAR, PAT, Parkland, yanık yüzdesi (Lund-Browder), ventilatör, ETT, LMA… |
+| Skalalar | `/skalalar` | START / Jump START triyaj, GKS, AVPU, APGAR, PAT, Parkland, yanık yüzdesi (Lund-Browder), ventilatör, ETT, LMA… |
 | Envanter | `/envanter` | Ambulans tipine göre ilaç kontrol listesi |
 | Evraklar | `/evraklar` | Form ve tutanak örnekleri, orijinal dosyalar |
 | ICD-10 | `/icd10` | Türkçe aramalı tanı kodu bulucu |
 | EKG eğitimi | `/ekg-egitim` | Dersler, ritim atlası, vaka sınavı |
-| Eğitim | `/egitim` | SB ASHGM eğitim dokümanları, videoları, kitapları ve afişleri (kaynak sitedeki kategorilerle) |
+| Eğitim | `/egitim` | SB ASHGM eğitim dokümanları, videoları ve kitapları (kaynak sitedeki kategorilerle; afişler ve ders programları alınmaz) |
 | Kurumsal | `/hakkinda`, `/gizlilik`, `/erisilebilirlik`, `/degisiklikler` | Kaynaklar, sorumluluk reddi, KVKK, erişilebilirlik, klinik değişiklik günlüğü |
 
 ## Teknik özet
@@ -68,7 +68,7 @@ npm start          # üretim sunucusu
 4. `npm test` ve `npm run build` çalıştırın; ardından tarayıcıda ilgili sayfayı kontrol edin.
 5. Klinik değişiklikler yayına alınmadan önce sorumlu hekim onayından geçmelidir.
 
-Test kapsamı: Parkland (SB akış şemaları s. 48/133 örnekleri ve sıvı eşiği), Lund-Browder (her yaşta toplam %100), ilaç dozu (hesap, yuvarlama, kilo sınırları, kontrendikasyon; veri dosyasındaki her kullanılabilir ilaç/vaka/yaş), algoritma akışları (tüm bağlantılar, yönlendirmeler, her adıma erişilebilirlik), ICD-10 kod biçimi, görsel dosyaları, SEO rotaları, Eğitim kataloğu (bağlantı alan adları, tekil kimlikler).
+Test kapsamı: Parkland (SB akış şemaları s. 48/133 örnekleri ve sıvı eşiği), Lund-Browder (her yaşta toplam %100), ilaç dozu (hesap, yuvarlama, kilo sınırları, kontrendikasyon; veri dosyasındaki her kullanılabilir ilaç/vaka/yaş), algoritma akışları (tüm bağlantılar, yönlendirmeler, her adıma erişilebilirlik), ICD-10 kod biçimi, görsel dosyaları, SEO rotaları, START / Jump START triyaj (kaynak şemadaki her dal), Eğitim kataloğu (bağlantı alan adları, tekil kimlikler).
 
 ## Diğer görevler
 

@@ -31,6 +31,8 @@ export interface SearchItem {
 type Raw = Omit<SearchItem, "haystack">;
 
 const SKALALAR: [string, string, string][] = [
+  ["start", "START", "triyaj triaj kitlesel olay afet çoklu yaralanma renk kodu kırmızı sarı yeşil siyah erişkin"],
+  ["jump-start", "Jump START", "jumpstart triyaj triaj çocuk pediatrik kitlesel olay afet renk kodu"],
   ["glasgow-yetiskin", "Glasgow Koma Skalası", "GKS bilinç erişkin"],
   ["avpu", "AVPU Skalası", "bilinç triaj"],
   ["kas-gucu", "Kas Gücü Skalası", "MRC motor"],
@@ -96,7 +98,7 @@ function build(): SearchItem[] {
     raw.push({ id: `ekg-ders-${d.slug}`, title: `${d.no}. ${d.baslik}`, group: "EKG", url: `/ekg-egitim/ders/${d.slug}`, description: d.ozet });
   }
 
-  raw.push({ id: "egitim", title: "Eğitim", group: "Eğitim", url: "/egitim", description: "Bakanlık eğitim dokümanları, videoları, kitapları ve afişleri", keywords: "ASHGM sağlık bakanlığı eğitim materyali sunum" });
+  raw.push({ id: "egitim", title: "Eğitim", group: "Eğitim", url: "/egitim", description: "Bakanlık eğitim dokümanları, videoları ve kitapları", keywords: "ASHGM sağlık bakanlığı eğitim materyali sunum" });
   for (const k of EGITIM.kategoriler) {
     const url = kategoriYolu(k.id);
     if (k.id === "dokumanlar") {
@@ -113,13 +115,11 @@ function build(): SearchItem[] {
       for (const v of k.videolar) {
         raw.push({ id: `egitim-video-${v.id}`, title: v.baslik, group: "Eğitim", url: `${url}#video-${v.id}`, tag: "Video", description: v.altBaslik });
       }
-    } else if (k.id === "kitaplar") {
+    } else {
       raw.push({ id: "egitim-kitaplar", title: k.baslik, group: "Eğitim", url, description: `${k.kitaplar.length} kitap ve rehber` });
       for (const [i, kitap] of k.kitaplar.entries()) {
         raw.push({ id: `egitim-kitap-${i}`, title: kitap.baslik, group: "Eğitim", url, tag: "Kitap" });
       }
-    } else {
-      raw.push({ id: "egitim-afisler", title: k.baslik, group: "Eğitim", url, description: `${k.dosyalar.length} afiş`, keywords: `poster ${k.dosyalar.map(d => d.ad).join(" ")}` });
     }
   }
 

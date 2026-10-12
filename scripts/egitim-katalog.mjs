@@ -7,6 +7,8 @@
    3) Her belgeye HEAD isteğiyle boyut ve erişilebilirlik bakar (404 → "erisilemez").
    4) Video başlıklarını YouTube oEmbed'den alır (kaynak başlıktan farklıysa altBaslik).
    Belgeler indirilmez; yalnızca bağlantı, ad, tür ve boyut kaydedilir.
+   Kurum isteğiyle alınmayanlar: "Afiş ve Posterler" kategorisi ve ders programları
+   (dikey/yatay program çizelgeleri) — bkz. LISTELENMEZ.
    ════════════════════════════════════════════════════════════════ */
 import fs from "node:fs";
 import path from "node:path";
@@ -19,7 +21,6 @@ const KATEGORILER = [
   ["Eğitim Dökümanları", "/TR-121057/egitim-dokumanlari.html"],
   ["Eğitim Videoları", "/TR-121056/egitim-videolari.html"],
   ["Eğitim Kitapları", "/TR-121096/egitim-kitaplari.html"],
-  ["Afiş ve Posterler", "/TR-121372/afis-ve-posterler.html"],
 ];
 const HATALAR = [];
 const bekle = ms => new Promise(r => setTimeout(r, ms));
@@ -180,6 +181,8 @@ function dosyaAdi(ad, url) {
   return ad.trim().replace(/\.(pptx?|pdf|docx?|xlsx?|rar|zip)$/i, "").trim();
 }
 const okunur = ad => /[A-ZÇĞİÖŞÜ ]/.test(ad);
+/** Ders programları listelenmez ("Eğitim Programı Tanıtımı" sunumu gibi ders içerikleri kalır). */
+const LISTELENMEZ = /(dikey|yatay).*program|ders program/;
 
 /* ── Çalıştır ── */
 const katalog = [];
@@ -204,7 +207,7 @@ function dosyalar(liste) {
     const a = dosyaAdi(f.ad, f.url);
     if (!adlar.has(f.url) || (okunur(a) && !okunur(adlar.get(f.url)))) adlar.set(f.url, a);
   }
-  return [...adlar].map(([u, a]) => {
+  return [...adlar].filter(([, a]) => !LISTELENMEZ.test(trKucuk(a))).map(([u, a]) => {
     const ext = path.posix.extname(new URL(u).pathname).toLowerCase();
     const b = boy.get(u) ?? {};
     const d = { ad: a, url: u, tur: TUR[ext] ?? ext.replace(/^\./, "").toUpperCase(), bayt: b.bayt ?? 0 };
@@ -255,9 +258,6 @@ const kitaplar = kat["Eğitim Kitapları"].alt.map(n => {
   return { baslik: baslik(n.listeBasligi || n.baslik), kaynakUrl: SRC + n.url, dosyalar: ds, ...(ds.length ? {} : { erisilemez: true }) };
 });
 cikti.kategoriler.push({ id: "kitaplar", baslik: "Eğitim Kitapları", kaynakUrl: SRC + kat["Eğitim Kitapları"].url, kitaplar });
-
-// 4) Afiş ve Posterler
-cikti.kategoriler.push({ id: "afisler", baslik: "Afiş ve Posterler", kaynakUrl: SRC + kat["Afiş ve Posterler"].url, dosyalar: dosyalar(kat["Afiş ve Posterler"].dosyalar) });
 
 fs.writeFileSync(CIKTI, JSON.stringify(cikti, null, 1) + "\n");
 

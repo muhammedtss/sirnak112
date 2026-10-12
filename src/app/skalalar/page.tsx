@@ -19,6 +19,13 @@ interface Skala {
 
 const yetiskinSkalalar: Skala[] = [
   {
+    id: "start", name: "START", icon: "🚦",
+    accent: "#EF4444", glow: "rgba(239,68,68,0.15)", border: "rgba(239,68,68,0.25)",
+    description: "Çoklu ve kitlesel yaralanmalı olaylarda erişkin yerinde triyajı: yürüme, solunum, dolaşım ve bilinçle renk kodu.",
+    tags: ["Triyaj", "Kitlesel olay", "Renk kodu"],
+    href: "/skalalar/start",
+  },
+  {
     id: "cabuk", name: "ÇABUK Değerlendirme", icon: "⏱️",
     accent: "#FB7185", glow: "rgba(251,113,133,0.15)", border: "rgba(251,113,133,0.25)",
     description: "Kritik hastada ilk dakikalarda hızlı primer bakı: Çevre güvenliği, Airway, Breathing, Ulaşım/Circulation, Kurtarma/Karar.",
@@ -85,6 +92,13 @@ const yetiskinSkalalar: Skala[] = [
 ];
 
 const cocukSkalalar: Skala[] = [
+  {
+    id: "jump-start", name: "Jump START", icon: "🚸",
+    accent: "#F43F5E", glow: "rgba(244,63,94,0.15)", border: "rgba(244,63,94,0.25)",
+    description: "START'ın 1–8 yaş çocuklara uyarlanmış hâli: 15–45/dk solunum, distal nabız, AVPU ve 5 kurtarıcı soluk.",
+    tags: ["Triyaj", "1–8 yaş", "Renk kodu"],
+    href: "/skalalar/jump-start",
+  },
   {
     id: "glasgow-pediatri", name: "Pediatri Glasgow", icon: "😊",
     accent: "#34D399", glow: "rgba(52,211,153,0.15)", border: "rgba(52,211,153,0.25)",

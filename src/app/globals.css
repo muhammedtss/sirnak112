@@ -269,6 +269,26 @@ p, li, dd, figcaption { text-wrap: pretty; }
 .skala-card:active { transform: scale(0.97); }
 .skala-card:focus-visible { box-shadow: var(--focus-ring); }
 
+/* === Triyaj (START / Jump START) cevap düğmeleri: seçili teal, diğer seçenekler soluk === */
+.triaj-secenek {
+  display: flex; align-items: center; gap: 0.75rem; width: 100%; min-height: 3.5rem;
+  padding: 0.75rem 1rem; border-radius: 1rem; text-align: left;
+  background-color: color-mix(in srgb, var(--fg) 4%, transparent);
+  border: 1px solid var(--glass-border);
+  transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
+    opacity var(--dur-fast) var(--ease-out), transform var(--dur-press) var(--ease-out);
+}
+@media (hover: hover) {
+  .triaj-secenek:hover { background-color: color-mix(in srgb, var(--fg) 8%, transparent); border-color: var(--glass-border-h); }
+}
+.triaj-secenek:active { transform: scale(0.97); }
+.triaj-secenek:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.triaj-secenek[data-secili="true"] {
+  background-color: color-mix(in srgb, var(--primary-light) 14%, transparent);
+  border-color: color-mix(in srgb, var(--primary-light) 55%, transparent);
+}
+.triaj-secenek[data-soluk="true"] { opacity: 0.55; }
+
 /* === Liste satırları (Eğitim: belge, video, eğitim listeleri) === */
 .liste-satir { transition: background-color var(--dur-fast) var(--ease-out); }
 .liste-ok, .liste-ileri { transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }

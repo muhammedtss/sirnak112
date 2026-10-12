@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, ChevronRight, Files, ImageIcon, PlayCircle, type LucideIcon } from "lucide-react";
+import { BookOpen, ChevronRight, Files, PlayCircle, type LucideIcon } from "lucide-react";
 import { EgitimSayfa } from "@/components/egitim/EgitimSayfa";
 import { EGITIM_RENK } from "@/components/egitim/renk";
 import { EGITIM, kategori, kategoriYolu, ozet, type KategoriId } from "@/lib/egitim";
@@ -9,19 +9,17 @@ export const metadata = seoFor("/egitim");
 
 const o = ozet();
 
-/** Kaynak sitedeki sırayla dört kategori. */
+/** Kaynak sitedeki sırayla kategoriler. */
 const KARTLAR: { id: KategoriId; ikon: LucideIcon; aciklama: string }[] = [
   { id: "dokumanlar", ikon: Files, aciklama: `${o.egitim} eğitim · ${o.belge} belge` },
   { id: "videolar", ikon: PlayCircle, aciklama: `${kategori("videolar").videolar.length} uygulama videosu` },
   { id: "kitaplar", ikon: BookOpen, aciklama: `${o.kitap} kitap ve rehber` },
-  { id: "afisler", ikon: ImageIcon, aciklama: `${o.afis} afiş · baskıya hazır PDF` },
 ];
 
 const SAYILAR: [number, string][] = [
   [o.belge, "belge"],
   [o.video, "video"],
   [o.kitap, "kitap"],
-  [o.afis, "afiş"],
 ];
 
 export default function EgitimPage() {
@@ -39,7 +37,7 @@ export default function EgitimPage() {
           Acil Sağlık Hizmetleri Genel Müdürlüğü&apos;nün eğitim sayfasındaki içerik, aynı kategori düzeniyle. Belgeler
           Bakanlığın kendi sunucusundan açılır.
         </p>
-        <dl className="mt-4 grid grid-cols-4 gap-2 relative">
+        <dl className="mt-4 grid grid-cols-3 gap-2 relative">
           {SAYILAR.map(([sayi, ad]) => (
             // dt önce (geçerli dl), sayı görsel olarak üstte
             <div key={ad} className="flex flex-col-reverse rounded-xl px-2 py-2 text-center" style={{ background: "var(--glass-bg)", border: "1px solid var(--glass-border)" }}>
@@ -50,12 +48,13 @@ export default function EgitimPage() {
         </dl>
       </section>
 
-      <nav aria-label="Eğitim kategorileri" className="grid grid-cols-2 gap-3">
-        {KARTLAR.map(({ id, ikon: Ikon, aciklama }) => (
+      {/* Mobilde 2 sütun; tek kalan son kart tam satır */}
+      <nav aria-label="Eğitim kategorileri" className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {KARTLAR.map(({ id, ikon: Ikon, aciklama }, i) => (
           <Link
             key={id}
             href={kategoriYolu(id)}
-            className="module-card glass-card flex flex-col p-4 gap-3 relative overflow-hidden"
+            className={`module-card glass-card flex flex-col p-4 gap-3 relative overflow-hidden ${i === KARTLAR.length - 1 && KARTLAR.length % 2 ? "col-span-2 sm:col-span-1" : ""}`}
             style={{ "--accent": EGITIM_RENK } as React.CSSProperties}
           >
             <Ikon

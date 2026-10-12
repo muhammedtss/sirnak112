@@ -2,7 +2,8 @@ import egitimData from "@/data/egitim.json";
 
 /* ════════════════════════════════════════════════════════════════
    Eğitim modülü — SB ASHGM "Eğitim" sayfasının (acilafet.saglik.gov.tr)
-   kategori düzeniyle aktarılmış kataloğu.
+   kategori düzeniyle aktarılmış kataloğu (kurum isteğiyle "Afiş ve Posterler"
+   kategorisi ve ders programları alınmadı).
    • Belgeler kopyalanmaz; Bakanlığın dosya sunucusundaki (dosyamerkez)
      özgün dosyalara bağlantı verilir (toplam ~3,9 GB).
    • Videolar YouTube'un gizlilik modunda (youtube-nocookie) yalnızca
@@ -51,8 +52,7 @@ interface KategoriTemel {
 export type EgitimKategori =
   | (KategoriTemel & { id: "dokumanlar"; bolumler: EgitimBolum[] })
   | (KategoriTemel & { id: "videolar"; videolar: EgitimVideo[] })
-  | (KategoriTemel & { id: "kitaplar"; kitaplar: EgitimKitap[] })
-  | (KategoriTemel & { id: "afisler"; dosyalar: EgitimDosya[] });
+  | (KategoriTemel & { id: "kitaplar"; kitaplar: EgitimKitap[] });
 
 export type KategoriId = EgitimKategori["id"];
 
@@ -96,6 +96,5 @@ export function ozet() {
     // Bazı videolar iki kategoride birden yer alır; tekil sayılır.
     video: new Set([...kategori("videolar").videolar, ...dok.bolumler.flatMap(b => b.videolar)].map(v => v.id)).size,
     kitap: kategori("kitaplar").kitaplar.length,
-    afis: kategori("afisler").dosyalar.length,
   };
 }

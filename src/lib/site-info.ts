@@ -43,9 +43,14 @@ export const KAYNAKLAR: Kaynak[] = [
     kapsam: "EKG eğitimi dersleri, ritim atlası ve gerçek vaka görüntüleri",
   },
   {
-    baslik: "Eğitim dokümanları, videoları, kitapları ve afişleri (acilafet.saglik.gov.tr)",
+    baslik: "Eğitim dokümanları, videoları ve kitapları (acilafet.saglik.gov.tr)",
     yayinlayan: "T.C. Sağlık Bakanlığı Acil Sağlık Hizmetleri Genel Müdürlüğü",
     kapsam: "Eğitim bölümü; belgeler Bakanlığın dosya sunucusundan, videolar YouTube üzerinden açılır",
+  },
+  {
+    baslik: "Travma İleri Yaşam Desteği (TİLYAD) — Triyaj eğitim sunumu",
+    yayinlayan: "T.C. Sağlık Bakanlığı Acil Sağlık Hizmetleri Genel Müdürlüğü",
+    kapsam: "Skalalar › START ve Jump START triyaj (adımlar, eşikler, renk kodları, dikkat edilecekler)",
   },
   {
     baslik: "ICD-10 — Uluslararası Hastalık Sınıflaması, 10. revizyon",
@@ -69,6 +74,16 @@ export interface KlinikDegisiklik {
 
 /** En yeni üstte. Yalnızca klinik içeriği (doz, formül, akış, veri) etkileyen değişiklikler. */
 export const KLINIK_DEGISIKLIKLER: KlinikDegisiklik[] = [
+  {
+    tarih: "2026-10-12",
+    baslik: "Skalalar: START ve Jump START triyaj eklendi",
+    ayrinti: [
+      "START (erişkin): yürüme → solunum (yoksa başa pozisyon) → solunum sayısı 10–30/dk → KGD 2 sn ve distal nabız → basit komutlar; sonuç kırmızı, sarı, yeşil veya siyah kod.",
+      "Jump START (1–8 yaş): solunum 15–45/dk, distal nabız, AVPU; solunumu olmayan çocukta karotis nabzı ve 5 kurtarıcı soluk.",
+      "Her iki sayfadan resmi akış şeması (Algoritmayı Gör) açılır. Mevcut algoritma ve vaka protokolleri değişmedi.",
+    ],
+    kaynak: "ASHGM TİLYAD Triyaj eğitim sunumu; Start Triyaj ve Jump Start Triyaj akış şemaları",
+  },
   {
     tarih: "2026-10-12",
     baslik: "Ventilatör: tidal volüm 6–8 mL/kg",
