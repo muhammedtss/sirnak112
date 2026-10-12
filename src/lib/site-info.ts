@@ -76,6 +76,16 @@ export interface KlinikDegisiklik {
 export const KLINIK_DEGISIKLIKLER: KlinikDegisiklik[] = [
   {
     tarih: "2026-10-12",
+    baslik: "Start Triyaj ve Jump Start Triyaj algoritmaları şemaya göre düzenlendi",
+    ayrinti: [
+      "Jump Start bilinç adımı: A, V veya P'ye uygun yanıt SARI kod; U ya da ağrılı uyarana uygunsuz yanıt KIRMIZI kod (önceki metin P yanıtını uygunsuz sayıyordu).",
+      "İki akışta da adımlar ve cevaplar resmi şemadaki ifadelerle aynı; her kırmızı kod kendi gerekçesiyle (solunum sayısı, KGD/distal nabız, komutlar) gösterilir.",
+      "Algoritmalar ve Vaka Protokolleri'ndeki aynı akışlar birlikte güncellendi.",
+    ],
+    kaynak: "SB Hastane Öncesi Akış Şemaları: Start Triyaj (SB-ASH-Y-41, s. 73), Jump Start Triyaj (SB-ASH-Ç-29, s. 138)",
+  },
+  {
+    tarih: "2026-10-12",
     baslik: "Skalalar: START ve Jump START triyaj eklendi",
     ayrinti: [
       "START (erişkin): yürüme → solunum (yoksa başa pozisyon) → solunum sayısı 10–30/dk → KGD 2 sn ve distal nabız → basit komutlar; sonuç kırmızı, sarı, yeşil veya siyah kod.",

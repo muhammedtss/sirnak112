@@ -2274,10 +2274,12 @@
       "node_2": {
         "id": "node_2",
         "type": "decision",
+        "content": "Yürüyebiliyor mu?",
         "yesId": "node_3",
         "noId": "node_4",
-        "isCritical": false,
-        "content": "Yürüyenler?"
+        "yesText": "Yürüyor",
+        "noText": "Yürüyemiyor",
+        "isCritical": false
       },
       "node_3": {
         "id": "node_3",
@@ -2288,32 +2290,36 @@
       "node_4": {
         "id": "node_4",
         "type": "action",
-        "content": "Yürüyemeyenler: Solunumu değerlendir",
+        "content": "Solunumu değerlendir",
         "nextId": "node_5",
         "isCritical": false
       },
       "node_5": {
         "id": "node_5",
         "type": "decision",
+        "content": "Solunum var mı?",
         "yesId": "node_10",
         "noId": "node_6",
-        "isCritical": false,
-        "content": "Solunum var mı?"
+        "yesText": "Solunum VAR",
+        "noText": "Solunum YOK",
+        "isCritical": false
       },
       "node_6": {
         "id": "node_6",
         "type": "action",
-        "content": "Solunum yok: Başa pozisyon ver",
+        "content": "Başa pozisyon ver",
         "nextId": "node_7",
         "isCritical": false
       },
       "node_7": {
         "id": "node_7",
         "type": "decision",
+        "content": "Başa pozisyon sonrası solunum var mı?",
         "yesId": "node_9",
         "noId": "node_8",
-        "isCritical": false,
-        "content": "Pozisyon sonrası solunum var mı?"
+        "yesText": "Solunum VAR",
+        "noText": "Solunum YOK",
+        "isCritical": false
       },
       "node_9": {
         "id": "node_9",
@@ -2331,10 +2337,18 @@
       "node_15": {
         "id": "node_15",
         "type": "decision",
+        "content": "Karotis arterden nabız var mı?",
         "yesId": "node_16",
         "noId": "node_17",
-        "isCritical": false,
-        "content": "Nabız var mı?"
+        "yesText": "Nabız VAR",
+        "noText": "Nabız YOK",
+        "isCritical": false
+      },
+      "node_17": {
+        "id": "node_17",
+        "type": "action",
+        "content": "SİYAH KOD",
+        "isCritical": false
       },
       "node_16": {
         "id": "node_16",
@@ -2346,10 +2360,12 @@
       "node_18": {
         "id": "node_18",
         "type": "decision",
+        "content": "5 soluk sonrası solunum var mı?",
         "yesId": "node_19",
         "noId": "node_20",
-        "isCritical": false,
-        "content": "Solunum var mı?"
+        "yesText": "Solunum VAR",
+        "noText": "Solunum YOK",
+        "isCritical": false
       },
       "node_19": {
         "id": "node_19",
@@ -2363,34 +2379,44 @@
         "content": "SİYAH KOD",
         "isCritical": false
       },
-      "node_17": {
-        "id": "node_17",
-        "type": "action",
-        "content": "SİYAH KOD",
-        "isCritical": false
-      },
       "node_10": {
         "id": "node_10",
         "type": "decision",
-        "yesId": "node_9",
-        "noId": "node_11",
-        "isCritical": false,
-        "content": "Solunum var: Solunum sayısı 15/dk'dan az veya 45/dk'dan fazla mı?"
+        "content": "Solunum sayısı kaç?",
+        "yesId": "node_11",
+        "noId": "node_22",
+        "yesText": "15–45/dk",
+        "noText": "15/dk'dan az veya 45/dk'dan fazla",
+        "isCritical": false
+      },
+      "node_22": {
+        "id": "node_22",
+        "type": "action",
+        "content": "KIRMIZI KOD",
+        "isCritical": false
       },
       "node_11": {
         "id": "node_11",
         "type": "action",
-        "content": "Dolaşımı değerlendir (Distal nabız var mı?)",
+        "content": "Dolaşım değerlendir",
         "nextId": "node_12",
         "isCritical": false
       },
       "node_12": {
         "id": "node_12",
-        "yesId": "node_9",
-        "noId": "node_13",
-        "isCritical": false,
-        "content": "Distal nabız YOK ise?",
-        "type": "decision"
+        "type": "decision",
+        "content": "Distal nabız var mı?",
+        "yesId": "node_13",
+        "noId": "node_23",
+        "yesText": "Distal nabız VAR",
+        "noText": "Distal nabız YOK",
+        "isCritical": false
+      },
+      "node_23": {
+        "id": "node_23",
+        "type": "action",
+        "content": "KIRMIZI KOD",
+        "isCritical": false
       },
       "node_13": {
         "id": "node_13",
@@ -2402,15 +2428,23 @@
       "node_14": {
         "id": "node_14",
         "type": "decision",
+        "content": "Komutlara uyuyor mu?",
         "yesId": "node_21",
-        "noId": "node_9",
-        "isCritical": false,
-        "content": "Komutlara uyuyor mu? (A-V uygun yanıt; P-U uygunsuz yanıt)"
+        "noId": "node_24",
+        "yesText": "Komutlara uyuyor (A-V-P uygun yanıt)",
+        "noText": "Komutlara uymuyor (Uygunsuz yanıt U-P)",
+        "isCritical": false
       },
       "node_21": {
         "id": "node_21",
         "type": "action",
         "content": "SARI KOD",
+        "isCritical": false
+      },
+      "node_24": {
+        "id": "node_24",
+        "type": "action",
+        "content": "KIRMIZI KOD",
         "isCritical": false
       }
     }

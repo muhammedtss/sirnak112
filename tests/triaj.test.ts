@@ -1,6 +1,8 @@
 /* START ve Jump START: her yol kaynak şemadaki renk koduna gider (ASHGM TİLYAD Triyaj sunumu, s. 24–34). */
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import eriskin from "@/data/eriskin.json";
+import cocuk from "@/data/cocuk.json";
 import { getAlgorithmImages } from "@/data/algorithmImages";
 import { JUMP_START, START, TRIAJ_AKISLARI, yurut, type TriajAkisi, type TriajKodu } from "@/lib/triaj";
 
@@ -65,4 +67,51 @@ test("Triyaj: resmi akış şeması görselleri tanımlı (Algoritmayı Gör)", 
     const gorseller = getAlgorithmImages(akis.algoritmaId);
     assert.ok(gorseller.some(g => g.label === "Akış Şeması"), akis.algoritmaId);
   }
+});
+
+/* Algoritmalar / Vaka Protokolleri'ndeki Start Triyaj ve Jump Start Triyaj akışları resmi şemadaki dallarla aynı
+   (Tebliğ ambulans ekleri s. 73 ve 138; sunumdaki şemalar aynı). Her yol: verilen cevap metinleri → renk kodu. */
+type Dugum = { id: string; type: string; content: string; nextId?: string; yesId?: string; noId?: string; yesText?: string; noText?: string };
+function yapraklar(algo: { startNodeId: string; nodes: Record<string, Dugum> }): Record<string, string> {
+  const out: Record<string, string> = {};
+  const gez = (id: string, yol: string[]) => {
+    const n = algo.nodes[id];
+    if (n.type === "decision") {
+      gez(n.yesId!, [...yol, n.yesText ?? "Evet"]);
+      gez(n.noId!, [...yol, n.noText ?? "Hayır"]);
+    } else if (n.nextId) gez(n.nextId, yol);
+    else out[yol.join(" › ")] = n.content.match(/(YEŞİL|SARI|KIRMIZI|SİYAH) KOD/)?.[1] ?? `?? ${n.content}`;
+  };
+  gez(algo.startNodeId, []);
+  return out;
+}
+
+test("Algoritma SB-ASH-Y-41 Start Triyaj: şemadaki tüm dallar", () => {
+  const algo = (eriskin as unknown as Record<string, { startNodeId: string; nodes: Record<string, Dugum> }>)["SB-ASH-Y-41"];
+  const Y = "Yürüyemiyor", K = "10–30/dk", N = "KGD 2 sn'den kısa ve distal nabız var";
+  assert.deepEqual(yapraklar(algo), {
+    "Yürüyor": "YEŞİL",
+    [`${Y} › Solunum yok › Solunum var`]: "KIRMIZI",
+    [`${Y} › Solunum yok › Solunum yok`]: "SİYAH",
+    [`${Y} › Solunum var › 10/dk'dan az veya 30/dk'dan fazla`]: "KIRMIZI",
+    [`${Y} › Solunum var › ${K} › KGD 2 sn'den uzun veya distal nabız yok`]: "KIRMIZI",
+    [`${Y} › Solunum var › ${K} › ${N} › Uyuyor`]: "SARI",
+    [`${Y} › Solunum var › ${K} › ${N} › Uymuyor`]: "KIRMIZI",
+  });
+});
+
+test("Algoritma SB-ASH-C-29 Jump Start Triyaj: şemadaki tüm dallar (A-V-P uygun → sarı)", () => {
+  const algo = (cocuk as unknown as Record<string, { startNodeId: string; nodes: Record<string, Dugum> }>)["SB-ASH-C-29"];
+  const Y = "Yürüyemiyor", V = "Solunum VAR", YOK = "Solunum YOK", R = "15–45/dk", DN = "Distal nabız VAR";
+  assert.deepEqual(yapraklar(algo), {
+    "Yürüyor": "YEŞİL",
+    [`${Y} › ${YOK} › ${V}`]: "KIRMIZI",
+    [`${Y} › ${YOK} › ${YOK} › Nabız YOK`]: "SİYAH",
+    [`${Y} › ${YOK} › ${YOK} › Nabız VAR › ${V}`]: "KIRMIZI",
+    [`${Y} › ${YOK} › ${YOK} › Nabız VAR › ${YOK}`]: "SİYAH",
+    [`${Y} › ${V} › 15/dk'dan az veya 45/dk'dan fazla`]: "KIRMIZI",
+    [`${Y} › ${V} › ${R} › Distal nabız YOK`]: "KIRMIZI",
+    [`${Y} › ${V} › ${R} › ${DN} › Komutlara uyuyor (A-V-P uygun yanıt)`]: "SARI",
+    [`${Y} › ${V} › ${R} › ${DN} › Komutlara uymuyor (Uygunsuz yanıt U-P)`]: "KIRMIZI",
+  });
 });

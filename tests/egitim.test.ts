@@ -54,9 +54,12 @@ test("Eğitim: belgeler yalnızca Bakanlık dosya sunucusuna bağlanır; erişil
   for (const k of kategori("kitaplar").kitaplar) assert.ok(k.dosyalar.length > 0 || k.erisilemez, k.baslik);
 });
 
-test("Eğitim: ders programları listelenmez", () => {
+test("Eğitim: ders programları ve kurum isteğiyle çıkarılan belgeler listelenmez", () => {
   const programlar = tumDosyalar().filter(d => /(dikey|yatay).*program|ders program/i.test(d.ad));
   assert.deepEqual(programlar.map(d => d.ad), []);
+  const adli = BOLUMLER.find(b => b.slug.startsWith("adli-vakalarda"));
+  assert.ok(adli);
+  assert.deepEqual(adli.dosyalar.filter(d => ["Eğitim Programı", "Eğitim Kılavuzu"].includes(d.ad)), []);
 });
 
 test("Eğitim: video kimlikleri geçerli YouTube kimliği, her listede tekil", () => {

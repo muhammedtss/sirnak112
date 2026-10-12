@@ -1,14 +1,15 @@
 /* ════════════════════════════════════════════════════════════════
    Eğitim kataloğunu SB ASHGM sitesinden yeniden üretir → src/data/egitim.json
      npm run egitim:guncelle
-   1) acilafet.saglik.gov.tr "Eğitim" bölümünün dört kategorisini gezer
+   1) acilafet.saglik.gov.tr "Eğitim" bölümünün kategorilerini gezer
       (kategori → eğitim/kitap sayfası → alt sayfalar).
    2) Sayfalardaki dosyamerkez.saglik.gov.tr belgelerini ve YouTube videolarını toplar.
    3) Her belgeye HEAD isteğiyle boyut ve erişilebilirlik bakar (404 → "erisilemez").
    4) Video başlıklarını YouTube oEmbed'den alır (kaynak başlıktan farklıysa altBaslik).
    Belgeler indirilmez; yalnızca bağlantı, ad, tür ve boyut kaydedilir.
-   Kurum isteğiyle alınmayanlar: "Afiş ve Posterler" kategorisi ve ders programları
-   (dikey/yatay program çizelgeleri) — bkz. LISTELENMEZ.
+   Kurum isteğiyle alınmayanlar: "Afiş ve Posterler" kategorisi, ders programları
+   (dikey/yatay program çizelgeleri) ve Adli Vakalar bölümündeki eğitim programı ile
+   kılavuzu — bkz. LISTELENMEZ, LISTELENMEZ_URL.
    ════════════════════════════════════════════════════════════════ */
 import fs from "node:fs";
 import path from "node:path";
@@ -109,11 +110,16 @@ async function boyutlar(urller) {
   const kuyruk = [...new Set(urller)];
   const isci = async () => {
     for (let u; (u = kuyruk.shift()); ) {
-      try {
-        const res = await fetch(u, { method: "HEAD", headers: { "User-Agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(30_000) });
-        sonuc.set(u, { durum: res.status, bayt: Number(res.headers.get("content-length") ?? 0) });
-      } catch (e) {
-        sonuc.set(u, { durum: String(e.message ?? e), bayt: 0 });
+      // Ağ hatası ve 5xx geçici sayılır, 3 kez denenir; yalnızca kalıcı yanıt (ör. 404) "erisilemez" yapar.
+      for (let deneme = 1; deneme <= 3; deneme++) {
+        try {
+          const res = await fetch(u, { method: "HEAD", headers: { "User-Agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(30_000) });
+          sonuc.set(u, { durum: res.status, bayt: Number(res.headers.get("content-length") ?? 0) });
+          if (res.status < 500) break;
+        } catch (e) {
+          sonuc.set(u, { durum: String(e.message ?? e), bayt: 0 });
+        }
+        await bekle(1500 * deneme);
       }
     }
   };
@@ -183,6 +189,8 @@ function dosyaAdi(ad, url) {
 const okunur = ad => /[A-ZÇĞİÖŞÜ ]/.test(ad);
 /** Ders programları listelenmez ("Eğitim Programı Tanıtımı" sunumu gibi ders içerikleri kalır). */
 const LISTELENMEZ = /(dikey|yatay).*program|ders program/;
+/** Kurum isteğiyle tek tek çıkarılan belgeler (URL parçası): Adli Vakalar › "Eğitim Programı" ve "Eğitim Kılavuzu". */
+const LISTELENMEZ_URL = ["maddi-delillere-yaklasimiegitim-programi", "maddi-delillere-yaklasimiegitim-kilavuzu"];
 
 /* ── Çalıştır ── */
 const katalog = [];
@@ -207,7 +215,7 @@ function dosyalar(liste) {
     const a = dosyaAdi(f.ad, f.url);
     if (!adlar.has(f.url) || (okunur(a) && !okunur(adlar.get(f.url)))) adlar.set(f.url, a);
   }
-  return [...adlar].filter(([, a]) => !LISTELENMEZ.test(trKucuk(a))).map(([u, a]) => {
+  return [...adlar].filter(([u, a]) => !LISTELENMEZ.test(trKucuk(a)) && !LISTELENMEZ_URL.some(p => u.includes(p))).map(([u, a]) => {
     const ext = path.posix.extname(new URL(u).pathname).toLowerCase();
     const b = boy.get(u) ?? {};
     const d = { ad: a, url: u, tur: TUR[ext] ?? ext.replace(/^\./, "").toUpperCase(), bayt: b.bayt ?? 0 };

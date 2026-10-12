@@ -3090,9 +3090,11 @@
       "node_2": {
         "id": "node_2",
         "type": "decision",
-        "content": "Yürüyenler?",
+        "content": "Yürüyebiliyor mu?",
         "yesId": "node_3",
         "noId": "node_4",
+        "yesText": "Yürüyor",
+        "noText": "Yürüyemiyor",
         "isCritical": false
       },
       "node_3": {
@@ -3104,16 +3106,18 @@
       "node_4": {
         "id": "node_4",
         "type": "action",
-        "content": "Yürüyemeyenler: Solunumu değerlendir",
+        "content": "Solunum değerlendir",
         "nextId": "node_5",
         "isCritical": false
       },
       "node_5": {
         "id": "node_5",
         "type": "decision",
-        "content": "Solunum yok mu?",
-        "yesId": "node_6",
-        "noId": "node_10",
+        "content": "Solunum var mı?",
+        "yesId": "node_10",
+        "noId": "node_6",
+        "yesText": "Solunum var",
+        "noText": "Solunum yok",
         "isCritical": false
       },
       "node_6": {
@@ -3126,9 +3130,11 @@
       "node_7": {
         "id": "node_7",
         "type": "decision",
-        "content": "Pozisyon sonrası solunum yok mu?",
-        "yesId": "node_8",
-        "noId": "node_9",
+        "content": "Başa pozisyon sonrası solunum var mı?",
+        "yesId": "node_9",
+        "noId": "node_8",
+        "yesText": "Solunum var",
+        "noText": "Solunum yok",
         "isCritical": false
       },
       "node_8": {
@@ -3146,9 +3152,17 @@
       "node_10": {
         "id": "node_10",
         "type": "decision",
-        "content": "Solunum var: Solunum sayısı 10/dk'dan az veya 30/dk'dan fazla mı?",
-        "yesId": "node_9",
-        "noId": "node_11",
+        "content": "Solunum sayısı kaç?",
+        "yesId": "node_11",
+        "noId": "node_15",
+        "yesText": "10–30/dk",
+        "noText": "10/dk'dan az veya 30/dk'dan fazla",
+        "isCritical": false
+      },
+      "node_15": {
+        "id": "node_15",
+        "type": "action",
+        "content": "KIRMIZI KOD",
         "isCritical": false
       },
       "node_11": {
@@ -3161,9 +3175,17 @@
       "node_12": {
         "id": "node_12",
         "type": "decision",
-        "content": "KGD 2 sn'den uzun veya distal nabız yok ise?",
-        "yesId": "node_9",
-        "noId": "node_13",
+        "content": "KGD ve distal nabız?",
+        "yesId": "node_13",
+        "noId": "node_16",
+        "yesText": "KGD 2 sn'den kısa ve distal nabız var",
+        "noText": "KGD 2 sn'den uzun veya distal nabız yok",
+        "isCritical": false
+      },
+      "node_16": {
+        "id": "node_16",
+        "type": "action",
+        "content": "KIRMIZI KOD",
         "isCritical": false
       },
       "node_13": {
@@ -3171,13 +3193,21 @@
         "type": "decision",
         "content": "Komutlara uyuyor mu?",
         "yesId": "node_14",
-        "noId": "node_9",
+        "noId": "node_17",
+        "yesText": "Uyuyor",
+        "noText": "Uymuyor",
         "isCritical": false
       },
       "node_14": {
         "id": "node_14",
         "type": "action",
         "content": "SARI KOD",
+        "isCritical": false
+      },
+      "node_17": {
+        "id": "node_17",
+        "type": "action",
+        "content": "KIRMIZI KOD",
         "isCritical": false
       }
     }
