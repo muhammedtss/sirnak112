@@ -60,7 +60,7 @@ export const ROUTE_SEO: Record<string, RouteSeo> = {
   "/skalalar/kas-gucu": { title: "Kas Gücü Skalası (MRC)", description: "MRC kas gücü skalası ile iskelet kası gücünü 0–5 arasında değerlendirme." },
   "/skalalar/dispne": { title: "Dispne Skalası (mMRC)", description: "mMRC skalası ile günlük aktivitelerde nefes darlığı şiddetini değerlendirme." },
   "/skalalar/parkland": { title: "Parkland Formülü — Yanık Sıvı Hesaplama", description: "Yanıkta saatlik başlangıç Ringer Laktat hızı: (2/3/4 × %VYA × kg) / 16. Lund-Browder ile yanık yüzdesi, elektrik yanığı." },
-  "/skalalar/ventilator": { title: "Ventilatör Ayarı Hesaplama", description: "Koruyucu akciğer ventilasyonu için tidal volüm, PEEP, FiO₂, I:E oranı ve solunum frekansı." },
+  "/skalalar/ventilator": { title: "Ventilatör Ayarı Hesaplama", description: "Koruyucu akciğer ventilasyonu için tidal volüm (6–8 mL/kg), dakika volümü, PEEP ve solunum frekansı." },
   "/skalalar/geri-dondurulebilir": { title: "Arrest — 5H 5T Geri Döndürülebilir Nedenler", description: "Kardiyak arrestte aranması gereken geri döndürülebilir nedenler: 5H ve 5T." },
   "/skalalar/yanik": { title: "Yanık Yüzdesi Hesaplama (Lund-Browder)", description: "Vücut haritasına dokunarak yanık yüzdesi (TBSA) hesaplama; yaşa göre Lund-Browder değerleri ve sıvı ihtiyacı." },
   "/skalalar/glasgow-pediatri": { title: "Pediatrik Glasgow Koma Skalası", description: "2 yaş üstü çocuklar için uyarlanmış Glasgow Koma Skalası hesaplama." },

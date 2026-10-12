@@ -65,6 +65,15 @@ export interface KlinikDegisiklik {
 /** En yeni üstte. Yalnızca klinik içeriği (doz, formül, akış, veri) etkileyen değişiklikler. */
 export const KLINIK_DEGISIKLIKLER: KlinikDegisiklik[] = [
   {
+    tarih: "2026-10-12",
+    baslik: "Ventilatör: tidal volüm 6–8 mL/kg",
+    ayrinti: [
+      "Ventilatör hesaplayıcısında tidal volüm aralığı 6–10 mL/kg yerine 6–8 mL/kg olarak hesaplanır.",
+      "Dakika volümü aralığı da aynı sınırlarla hesaplanır.",
+    ],
+    kaynak: "Yeni yönetmelik (kurum bildirimi)",
+  },
+  {
     tarih: "2026-10-08",
     baslik: "Eksik akış şeması ve ÇABUK eklendi, kırık algoritma yönlendirmeleri düzeltildi",
     ayrinti: [

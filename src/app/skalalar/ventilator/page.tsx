@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { ArrowLeft } from "lucide-react";
+import { dakikaVolumu, tidalVolum, TIDAL_ML_KG } from "@/lib/ventilator";
 
 export default function VentilatorPage() {
   const [kilo, setKilo] = useState("");
@@ -15,11 +16,13 @@ export default function VentilatorPage() {
 
   const valid = k > 0 && k <= 300;
 
-  // Ideal vücut ağırlığına göre hesaplama (erkek/kadın ortalaması)
-  const tidalMin = valid ? (k * 6).toFixed(0) : null;
-  const tidalMax = valid ? (k * 10).toFixed(0) : null;
-  const dkVolMin = valid && f ? ((k * 6 * f) / 1000).toFixed(1) : null;
-  const dkVolMax = valid && f ? ((k * 10 * f) / 1000).toFixed(1) : null;
+  // Tidal volüm 6–8 mL/kg (src/lib/ventilator.ts)
+  const tidal = valid ? tidalVolum(k) : null;
+  const dkVol = valid && f ? dakikaVolumu(k, f) : null;
+  const tidalMin = tidal?.min ?? null;
+  const tidalMax = tidal?.max ?? null;
+  const dkVolMin = dkVol?.min ?? null;
+  const dkVolMax = dkVol?.max ?? null;
 
   return (
     <PageShell>
@@ -41,7 +44,7 @@ export default function VentilatorPage() {
                 placeholder="0"
                 className="w-full text-right text-lg font-black text-white/90 bg-white/5 border border-white/10 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
               />
-              <span className="text-sm font-bold text-slate-500 shrink-0">kg</span>
+              <span className="text-sm font-bold text-muted shrink-0">kg</span>
             </div>
           </div>
 
@@ -106,16 +109,16 @@ export default function VentilatorPage() {
           <div className="space-y-3">
             {/* Tidal Volüm */}
             <div className="bg-purple-600 rounded-xl p-4 text-white">
-              <p className="text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Tidal Volüm (6–10 mL/kg)</p>
+              <p className="text-xs font-bold uppercase tracking-wider mb-2 opacity-80">Tidal Volüm ({TIDAL_ML_KG.min}–{TIDAL_ML_KG.max} mL/kg)</p>
               <div className="flex items-center justify-center gap-3">
                 <div className="text-center">
                   <p className="text-3xl font-black tabular-nums">{tidalMin}</p>
-                  <p className="text-[11px] opacity-70 font-bold">6 mL/kg</p>
+                  <p className="text-[11px] opacity-70 font-bold">{TIDAL_ML_KG.min} mL/kg</p>
                 </div>
                 <span className="text-lg font-black opacity-50">–</span>
                 <div className="text-center">
                   <p className="text-3xl font-black tabular-nums">{tidalMax}</p>
-                  <p className="text-[11px] opacity-70 font-bold">10 mL/kg</p>
+                  <p className="text-[11px] opacity-70 font-bold">{TIDAL_ML_KG.max} mL/kg</p>
                 </div>
                 <span className="text-sm font-bold opacity-70 ml-1">mL</span>
               </div>
@@ -124,18 +127,18 @@ export default function VentilatorPage() {
             {/* Grid sonuçlar */}
             <div className="grid grid-cols-2 gap-3">
               <div className="glass-card rounded-xl border border-white/10 p-3 text-center ">
-                <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">MİNUTE VOLÜME</p>
+                <p className="text-[11px] font-bold text-muted uppercase tracking-wide">MİNUTE VOLÜME</p>
                 <p className="text-base font-black text-white/90 mt-1">{dkVolMin}–{dkVolMax}</p>
-                <p className="text-[11px] text-slate-500 font-bold">L/dk</p>
+                <p className="text-[11px] text-muted font-bold">L/dk</p>
               </div>
               <div className="glass-card rounded-xl border border-white/10 p-3 text-center ">
-                <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">PEEP</p>
+                <p className="text-[11px] font-bold text-muted uppercase tracking-wide">PEEP</p>
                 <p className="text-base font-black text-white/90 mt-1">{peep}</p>
-                <p className="text-[11px] text-slate-500 font-bold">cmH₂O</p>
+                <p className="text-[11px] text-muted font-bold">cmH₂O</p>
               </div>
             </div>
 
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800">
+            <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 text-xs text-amber-200/90">
               <span className="font-bold">⚠️ Not:</span> Bu değerler başlangıç ayarları içindir. Plato basıncı ≤30 cmH₂O ve hastayla uyum sürekli izlenmeli; klinisyen değerlendirmesi esastır.
             </div>
           </div>
