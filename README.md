@@ -18,6 +18,7 @@ Canlı: **https://www.112acilsaglik.com** · Geliştiren: Kadir TAŞ
 | Evraklar | `/evraklar` | Form ve tutanak örnekleri, orijinal dosyalar |
 | ICD-10 | `/icd10` | Türkçe aramalı tanı kodu bulucu |
 | EKG eğitimi | `/ekg-egitim` | Dersler, ritim atlası, vaka sınavı |
+| Tıbbi sözlük | `/sozluk` | Hastane öncesi acile odaklı terimler ve kısaltmalar; Türkçe tanım, İngilizce/MeSH karşılığı, ilgili algoritma bağlantıları |
 | Eğitim | `/egitim` | SB ASHGM eğitim dokümanları, videoları ve kitapları (kaynak sitedeki kategorilerle; afişler ve ders programları alınmaz) |
 | Kurumsal | `/hakkinda`, `/gizlilik`, `/erisilebilirlik`, `/degisiklikler` | Kaynaklar, sorumluluk reddi, KVKK, erişilebilirlik, klinik değişiklik günlüğü |
 
@@ -38,6 +39,7 @@ src/
   data/           KLİNİK VERİ: algoritmalar (eriskin/cocuk/yenidogan.json), ilaclar.json, icd10.json,
                   ambulans-envanter.json, burn-zones.json, algorithmImages.ts
                   egitim.json (Eğitim kataloğu — elle değil, `npm run egitim:guncelle` ile üretilir)
+                  sozluk/*.txt (sözlük kaynağı, Excel'de "|" ayırıcıyla açılır) → sozluk.json (`npm run sozluk:derle`)
   lib/            Hesaplama ve yardımcılar: burn.ts (Lund-Browder, Parkland), doz.ts (ilaç dozu),
                   algoritma.ts, ekg/, seo.ts, site-info.ts (kurum, kaynaklar, değişiklik günlüğü)
 public/           Görseller, evraklar, ikonlar, sw.js
@@ -68,7 +70,7 @@ npm start          # üretim sunucusu
 4. `npm test` ve `npm run build` çalıştırın; ardından tarayıcıda ilgili sayfayı kontrol edin.
 5. Klinik değişiklikler yayına alınmadan önce sorumlu hekim onayından geçmelidir.
 
-Test kapsamı: Parkland (SB akış şemaları s. 48/133 örnekleri ve sıvı eşiği), Lund-Browder (her yaşta toplam %100), ilaç dozu (hesap, yuvarlama, kilo sınırları, kontrendikasyon; veri dosyasındaki her kullanılabilir ilaç/vaka/yaş), algoritma akışları (tüm bağlantılar, yönlendirmeler, her adıma erişilebilirlik), ICD-10 kod biçimi, görsel dosyaları, SEO rotaları, START / Jump START triyaj (kaynak şemadaki her dal), Eğitim kataloğu (bağlantı alan adları, tekil kimlikler).
+Test kapsamı: Parkland (SB akış şemaları s. 48/133 örnekleri ve sıvı eşiği), Lund-Browder (her yaşta toplam %100), ilaç dozu (hesap, yuvarlama, kilo sınırları, kontrendikasyon; veri dosyasındaki her kullanılabilir ilaç/vaka/yaş), algoritma akışları (tüm bağlantılar, yönlendirmeler, her adıma erişilebilirlik), ICD-10 kod biçimi, görsel dosyaları, SEO rotaları, START / Jump START triyaj (kaynak şemadaki her dal), tıbbi sözlük (tekillik, bağlantılar, doz içermeme), Eğitim kataloğu (bağlantı alan adları, tekil kimlikler).
 
 ## Diğer görevler
 
@@ -77,6 +79,7 @@ Test kapsamı: Parkland (SB akış şemaları s. 48/133 örnekleri ve sıvı eş
 | Yeni sayfa eklemek | `src/app/<yol>/page.tsx` + `src/lib/seo.ts › ROUTE_SEO` kaydı + istemci sayfasıysa `layout.tsx` (`seoFor`) |
 | Dinamik rota eklemek | `src/lib/static-params.ts`'e ekleyin; çevrimdışı önbellek ve sitemap buradan beslenir |
 | Kurum bilgilerini (sürüm, iletişim, klinik onay) girmek | `src/lib/site-info.ts › SITE_INFO`; boş alanlar sitede gösterilmez |
+| Sözlüğe terim eklemek / düzeltmek | `src/data/sozluk/<kategori>.txt` dosyasına `Terim \| Eş anlamlılar \| İngilizce \| Tanım \| İlgili` satırı ekleyin; `npm run sozluk:derle` (yeni İngilizce terimler için `-- --mesh`), sonra `npm test`. Tanımlara doz yazılmaz (test engeller) |
 | Eğitim kataloğunu Bakanlık sitesinden yenilemek | `npm run egitim:guncelle` → `src/data/egitim.json`; değişikliği `git diff` ile gözden geçirip `npm test` |
 | Uygulama ikonlarını yeniden üretmek | `node scripts/generate-icons.mjs` |
 | Yeni algoritma görsellerini (PNG) WebP'ye çevirmek | `node scripts/optimize-algorithm-images.mjs` |

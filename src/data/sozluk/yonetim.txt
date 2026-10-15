@@ -1,0 +1,15 @@
+# kategori: yonetim | Kayıt, mevzuat ve hizmet
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Vaka kayıt formu | Ambulans vaka kayıt formu | Medical Records | Her vakada doldurulan, hastanın bilgileri, bulguları, yapılan işlemler ve nakil bilgilerinin kaydedildiği temel form. | /evraklar
+Adli vaka | Adli olgu | Forensic Medicine | Travma, zehirlenme, şüpheli ölüm, istismar gibi kişinin dış etkenle zarar gördüğü ve yasal süreç gerektiren olgu; deliller korunmalı ve kayıtlar eksiksiz tutulmalıdır. | /egitim/dokumanlar/adli-vakalarda-maddi-delillere-yaklasim-protokolu-ve-egitimi
+Maddi delil | | Forensic Sciences | Adli olayın aydınlatılmasına yardımcı olacak giysi, nesne, iz ve biyolojik örnekler; tıbbi müdahaleyi geciktirmeden mümkün olduğunca korunur. | /egitim/dokumanlar/adli-vakalarda-maddi-delillere-yaklasim-protokolu-ve-egitimi
+Tedavi reddi | | Treatment Refusal | Karar verme yeterliliği olan hastanın, riskler açıklandıktan sonra önerilen tedaviyi veya nakli kabul etmemesi; ret yazılı olarak belgelenir. | /evraklar
+Aydınlatılmış onam | Bilgilendirilmiş onam | Informed Consent | Hastanın, yapılacak işlemin amacı, riskleri ve seçenekleri hakkında bilgilendirildikten sonra kendi iradesiyle verdiği izin. |
+Karar verme yeterliliği | | Mental Competency | Hastanın durumunu anlama, seçenekleri değerlendirme ve karar verme yeteneği; bilinç bozukluğu, zehirlenme veya ağır ruhsal durum bu yeterliliği etkileyebilir. |
+Sözel order | Sözlü talimat | Verbal order | Hekimin telefonla veya yüz yüze sözlü olarak verdiği tedavi talimatı; tekrar edilerek doğrulanır ve kayıt altına alınır. | /evraklar
+Ramak kala | | Near Miss, Healthcare | Hastaya ulaşmadan fark edilen veya zarar vermeden atlatılan hatalı durum; bildirilmesi hasta güvenliğini geliştirir. | /evraklar
+İstenmeyen olay | | Medical Errors | Sağlık hizmeti sırasında hastaya zarar veren veya verebilecek beklenmedik olay; sistemsel iyileştirme için bildirilir. | /evraklar
+Hasta güvenliği | | Patient Safety | Sağlık hizmeti sırasında hastanın zarar görmesini önlemeye yönelik uygulamaların bütünü. |
+Kişisel sağlık verisi | | Confidentiality | Kişinin sağlığına ilişkin, yasal olarak özel nitelikli kabul edilen ve gizliliği korunması gereken bilgiler. | /gizlilik
+Sevk | Hasta sevki | Patient Transfer | Hastanın tanı veya tedavi için uygun bir sağlık kuruluşuna yönlendirilmesi. |
+Ex | Exitus; Ölüm | Death | Tıbbi kayıtlarda ölümü belirtmek için kullanılan ifade; ölüm saati ve bulguları kaydedilir. | /evraklar

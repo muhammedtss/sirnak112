@@ -1,0 +1,25 @@
+# kategori: laboratuvar | Ölçüm ve laboratuvar
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Yaşam bulguları | Vital bulgular | Vital Signs | Nabız, kan basıncı, solunum sayısı, vücut ısısı ve oksijen satürasyonundan oluşan temel ölçümler; bilinç düzeyi ve ağrı da eklenebilir. | Y-02
+Kan şekeri | KŞ; Kan glukozu | Blood Glucose | Kandaki glukoz düzeyi; bilinç bozukluğu, nöbet ve davranış değişikliği olan her hastada ölçülmelidir. | Y-17
+Periferik oksijen satürasyonu | SpO2; Oksijen satürasyonu | Oxygen Saturation | Nabız oksimetresiyle ölçülen, hemoglobinin oksijenle doygunluk yüzdesi; sağlıklı kişide genellikle %95 ve üzeridir. |
+Kapiller geri dolum | KGD; Kapiller dolum zamanı | Capillary refill time | Tırnak yatağına veya göğüs cildine 5 saniye bastırılıp bırakıldığında rengin geri dönme süresi; 2 saniyeden uzun olması dolaşım bozukluğunu düşündürür. Soğuk ortamda yanıltıcı olabilir. | /skalalar/start
+Solunum sayısı | SS; Solunum hızı | Respiratory Rate | Bir dakikadaki solunum sayısı; erişkinde normal değer yaklaşık 12–20/dk'dır. | /skalalar/start
+Nabız | NB | Pulse | Kalbin her kasılmasıyla atardamarlarda hissedilen dalga; hızı, düzeni ve dolgunluğu değerlendirilir. Radial (bilek), karotis (boyun) ve femoral (kasık) nabız sık kullanılır. |
+Kan basıncı | TA; Tansiyon arteriyel; Tansiyon | Blood Pressure | Kanın atardamar duvarına yaptığı basınç; sistolik (büyük) ve diyastolik (küçük) değerlerle mmHg cinsinden ifade edilir. |
+Vücut ısısı | Ateş ölçümü | Body Temperature | Vücudun sıcaklığı; normalde yaklaşık 36,5–37,5 °C'dir. Hipotermi ve sıcak çarpmasında iç ısı ölçümü önemlidir. |
+Kan gazı | Arter kan gazı | Blood Gas Analysis | Kandaki oksijen, karbondioksit, pH ve bikarbonat düzeylerinin ölçülmesi; solunum ve asit-baz dengesini gösterir. |
+pH | | Hydrogen-Ion Concentration | Kanın asitlik-bazlık derecesi; normal değer yaklaşık 7,35–7,45'tir. Düşüklüğü asidozu, yüksekliği alkalozu gösterir. |
+Asidoz | | Acidosis | Kan pH'sının normalin altına düşmesi; solunumsal (karbondioksit birikimi) veya metabolik kaynaklı olabilir. |
+Alkaloz | | Alkalosis | Kan pH'sının normalin üzerine çıkması; hiperventilasyon ve kusma gibi durumlarda görülür. |
+Laktat | Laktik asit | Lactic Acid | Doku oksijensizliğinde artan madde; yüksekliği şok ve sepsisin ağırlığını gösterir. |
+Troponin | | Troponin | Kalp kası hasarında kana geçen protein; miyokard enfarktüsü tanısında kullanılır. |
+Hemoglobin | Hb | Hemoglobins | Alyuvarlarda oksijen taşıyan protein; düşüklüğü anemiyi gösterir. |
+Hematokrit | Hct | Hematocrit | Kanın içindeki alyuvar hacminin yüzdesi; kanama ve dehidratasyonun değerlendirilmesinde kullanılır. |
+Lökosit | Akyuvar; Beyaz küre | Leukocytes | Bağışıklık sisteminin hücreleri; sayısının artışı enfeksiyon veya iltihabı düşündürür. |
+Trombosit | Kan pulcuğu | Blood Platelets | Pıhtılaşmada görev alan kan hücreleri; düşüklüğü kanama eğilimine yol açar. |
+Elektrolitler | | Electrolytes | Kandaki sodyum, potasyum, klor, kalsiyum ve magnezyum gibi mineraller; sinir, kas ve kalp işlevleri için gereklidir. |
+Keton | Keton cisimleri | Ketone Bodies | Vücut enerji için yağ yaktığında oluşan maddeler; diyabetik ketoasidozda kanda ve idrarda yükselir. | Y-17
+Kreatinin | | Creatinine | Böbrek işlevinin değerlendirilmesinde kullanılan kan değeri; yükselmesi böbrek yetmezliğini gösterir. |
+CRP | C-reaktif protein | C-Reactive Protein | İltihap ve enfeksiyonda karaciğerin ürettiği, kanda yükselen protein. |
+İdeal vücut ağırlığı | | Ideal Body Weight | Boy ve cinsiyete göre hesaplanan ağırlık; ventilatör ayarlarında gerçek kilo yerine kullanılır. | /skalalar/ventilator

@@ -1,0 +1,22 @@
+# kategori: cevresel | Çevresel aciller
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Hipotermi | Vücut ısısı düşüklüğü | Hypothermia | Vücut iç ısısının 35 °C'nin altına düşmesi; titreme, bilinç bulanıklığı, bradikardi ve ağır durumda ölümcül ritim bozukluklarıyla seyreder. Geri döndürülebilir arrest nedenlerindendir. | Y-24 C-23
+Hipotermik arrest | | Hypothermia | Vücut ısısının aşırı düşmesine bağlı kardiyak arrest; vücut ısınana kadar resüsitasyon sürdürülür, çünkü soğuk beyni korur. | Y-25 C-24
+Donma | Soğuk yanığı | Frostbite | Dokuların donması sonucu en çok el, ayak, burun ve kulakta görülen hasar; cilt beyaz veya gri, sert ve uyuşuktur. |
+Hipertermi | Vücut ısısı yüksekliği | Hyperthermia | Vücut ısısının, ısı üretiminin veya dış sıcaklığın atılamaması nedeniyle yükselmesi; ateşten farklı olarak vücudun ısı ayar noktası değişmemiştir. | Y-23 C-22
+Sıcak çarpması | Isı çarpması | Heat Stroke | Vücut ısısının genellikle 40 °C'nin üzerine çıkmasıyla birlikte bilinç bozukluğunun eşlik ettiği, ölümcül olabilen ısı hastalığı; hızlı soğutma hayat kurtarır. | Y-23 C-22
+Isı bitkinliği | Sıcak yorgunluğu | Heat Exhaustion | Sıcak ortamda sıvı ve tuz kaybına bağlı halsizlik, baş dönmesi, bulantı ve bol terleme; bilinç normaldir ancak sıcak çarpmasına ilerleyebilir. | Y-23
+Isı krampı | | Heat cramps | Sıcakta ağır egzersiz sonrası tuz kaybına bağlı ağrılı kas kasılmaları. |
+Suda boğulma | Boğulma | Drowning | Suya batma veya dalma sonucu solunumun engellenmesi; temel sorun hipoksidir, bu nedenle resüsitasyonda solunum desteği önceliklidir. | Y-27 C-26
+Elektrik çarpması | | Electric Injuries | Vücuttan elektrik akımı geçmesiyle oluşan yaralanma; ritim bozukluğu, kas hasarı ve derin yanıklara yol açabilir. Kurtarmadan önce akım kesilmelidir. | Y-29
+Yıldırım çarpması | | Lightning Injuries | Yıldırımın oluşturduğu çok yüksek gerilimli, kısa süreli elektrik yaralanması; solunum ve kalp durabilir. Çok sayıda yaralıda ters triyaj uygulanır. | Y-29
+Ters triyaj | | Reverse triage | Yıldırım çarpması gibi olaylarda, solunumu veya dolaşımı duran hastalara öncelik verilmesi; çünkü bu hastalar hızlı resüsitasyonla geri dönebilir. | Y-29 /skalalar/start
+Dekompresyon hastalığı | Vurgun | Decompression Sickness | Dalgıçlarda hızlı yüzeye çıkış sonrası kanda ve dokularda azot kabarcıkları oluşmasıyla eklem ağrısı, nörolojik belirtiler ve solunum sıkıntısı. |
+Yükseklik hastalığı | İrtifa hastalığı | Altitude Sickness | Yüksek rakımda düşük oksijen basıncına bağlı baş ağrısı, bulantı ve ağır durumda beyin veya akciğer ödemi. |
+Hayvan ısırığı | | Bites and Stings | Köpek, kedi veya diğer hayvanların ısırması; yara bakımı yanında kuduz ve tetanoz riski değerlendirilir. | Y-26 C-25
+Kuduz riskli temas | | Rabies | Kuduz virüsü taşıyabilecek bir hayvanın ısırması veya tırmalaması; yara bol sabunlu suyla yıkanır ve kişi aşılama için yönlendirilir. | Y-26
+Yılan ısırması | | Snake Bites | Zehirli yılan ısırması; ısırık yerinde ağrı ve şişlik, ağır durumda pıhtılaşma bozukluğu ve şok. Isırılan uzuv hareketsiz tutulur, kesme ve emme yapılmaz. | Y-26 C-25
+Akrep sokması | | Scorpion Stings | Akrep zehrinin yol açtığı yerel ağrı ve uyuşma; çocuklarda kalp ve sinir sistemi etkileri ağır seyredebilir. | Y-26 C-25
+Arı sokması | | Insect Bites and Stings | Arı zehrine bağlı yerel ağrı ve şişlik; duyarlı kişilerde anafilaksiye yol açabilir. | Y-26 Y-22
+Kene tutunması | | Tick Bites | Kenenin deriye tutunması; uygun yöntemle, ezmeden ve parçalamadan çıkarılmalıdır. Kırım-Kongo kanamalı ateşi açısından izlem gerekir. |
+Kırım-Kongo kanamalı ateşi | KKKA | Hemorrhagic Fever, Crimean | Kene ile ve hasta kan-vücut sıvılarıyla bulaşan, ateş, kas ağrısı, kanama ve trombosit düşüklüğüyle seyreden viral hastalık; sağlık personeli uygun koruyucu ekipman kullanmalıdır. |

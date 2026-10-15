@@ -1,0 +1,60 @@
+# kategori: travma | Travma ve yanık
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Çoklu travma | Multitravma; Politravma | Multiple Trauma | Birden fazla vücut bölgesinde, en az birinin yaşamı tehdit ettiği yaralanmalar. | Y-38 C-30
+Künt travma | | Wounds, Nonpenetrating | Deriyi delmeden, çarpma, sıkışma veya düşmeyle oluşan yaralanma; iç organ hasarı dışarıdan belli olmayabilir. | Y-38
+Penetran travma | Delici yaralanma | Wounds, Penetrating | Bıçak, kurşun veya keskin cisimle deri bütünlüğünün bozularak vücut boşluğuna girilmesi. | Y-38
+Ateşli silah yaralanması | ASY | Wounds, Gunshot | Mermi veya saçmayla oluşan, giriş ve çıkış yerleri ile iç yaralanmaları farklı olabilen penetran yaralanma; adli olgudur. | /egitim/dokumanlar/adli-vakalarda-maddi-delillere-yaklasim-protokolu-ve-egitimi
+Yaralanma mekanizması | Kinematik | Trauma mechanism | Yaralanmanın nasıl oluştuğu (yükseklik, hız, çarpma yönü, emniyet kemeri vb.); gizli yaralanmaları tahmin etmede kullanılır. | Y-38
+Altın saat | | Golden hour | Ağır travmada yaralanmadan sonraki ilk saat; kesin tedaviye bu süre içinde ulaşılmasının sağkalımı artırdığı kabul edilir. | Y-38
+Masif kanama | Hayatı tehdit eden dış kanama | Hemorrhage | Kısa sürede ölüme yol açabilecek miktarda kan kaybı; travmalı hastada hava yolundan bile önce kontrol edilmesi gereken öncelikli sorundur. | Y-38
+Turnike | Arter bağı | Tourniquets | Kol veya bacakta doğrudan baskıyla durmayan, hayatı tehdit eden kanamayı durdurmak için uzvun üst kısmına sıkıca uygulanan bant; uygulama saati not edilir. | Y-38
+Hemostatik pansuman | | Hemostatics | Pıhtılaşmayı hızlandıran maddeyle emdirilmiş, yaraya doldurulup baskı uygulanan kanama durdurucu sargı. |
+Kafa travması | Travmatik beyin hasarı | Brain Injuries, Traumatic | Kafaya alınan darbe sonucu kafatası ve beyinde oluşan hasar; hafif sarsıntıdan ölümcül kanamaya kadar değişebilir. | Y-40
+Beyin sarsıntısı | Konküzyon | Brain Concussion | Kafa travması sonrası geçici bilinç kaybı, bulanıklık, baş ağrısı veya hafıza kaybı; görüntülemede yapısal hasar görülmez. | Y-40
+Epidural hematom | | Hematoma, Epidural, Cranial | Kafatası ile beyin zarı arasında, çoğunlukla atardamar kaynaklı kan birikmesi; kısa bir bilinç açıklığı döneminden sonra hızlı kötüleşme görülebilir. | Y-40
+Subdural hematom | | Hematoma, Subdural | Beyin zarı ile beyin arasında, çoğunlukla toplardamar kaynaklı kan birikmesi; yaşlılarda ve kan sulandırıcı kullananlarda küçük travmayla bile gelişebilir. | Y-40
+Kafatası kırığı | | Skull Fractures | Kafatası kemiğinin kırılması; kafa tabanı kırığında rakun gözü, Battle bulgusu veya kulak ve burundan beyin omurilik sıvısı gelmesi görülebilir. | Y-40
+Rakun gözü | | Raccoon eyes | Göz çevresinde gözlük şeklinde morluk; kafa tabanı kırığını düşündürür. | Y-40
+Battle bulgusu | | Battle sign | Kulak arkasında (mastoid bölgede) morluk; kafa tabanı kırığını düşündürür ve genellikle birkaç saat sonra belirginleşir. | Y-40
+Spinal immobilizasyon | Omurga sabitlemesi | Immobilization | Omurga yaralanmasından şüphelenilen hastada boyun ve gövdenin hareketini sınırlayarak ek hasarın önlenmesi; boyunluk, sırt tahtası veya vakum sedyeyle yapılır. | Y-38
+Boyunluk | Servikal kolar | Braces | Boyun omurlarını sabitleyerek hareketi sınırlayan sert yaka. | Y-38
+Göğüs travması | | Thoracic Injuries | Göğüs duvarı, akciğerler, kalp ve büyük damarları etkileyen yaralanmalar. | Y-38
+Yelken göğüs | Flail chest | Flail Chest | Komşu birkaç kaburganın iki ya da daha fazla yerden kırılmasıyla göğüs duvarının bir bölümünün solunumla ters yönde hareket etmesi. | Y-38
+Açık göğüs yarası | Emici göğüs yarası | Wounds, Penetrating | Göğüs duvarındaki yaradan solunumla hava girip çıkması; üç kenarı yapıştırılan veya valfli kapatıcı pansumanla kapatılır. | Y-38
+Kaburga kırığı | | Rib Fractures | Kaburganın kırılması; solunumla artan ağrı yapar, altındaki akciğer ve organlarda yaralanmaya eşlik edebilir. |
+Karın travması | | Abdominal Injuries | Karın içi organların (karaciğer, dalak, bağırsak, böbrek) künt veya penetran yaralanması; iç kanamaya bağlı şok gelişebilir. | Y-38
+Evisserasyon | | Evisceration | Karın duvarındaki yaradan iç organların dışarı çıkması; organlar geri itilmez, nemli steril örtüyle kapatılır. | Y-38
+Pelvis kırığı | Leğen kemiği kırığı | Pelvic Bones | Leğen kemiği halkasının kırılması; ciddi iç kanamaya yol açabilir ve pelvis kemeriyle sabitlenir. | Y-38
+Pelvis kemeri | Pelvik bağlayıcı | Pelvic binder | Kırık leğen kemiğini kalçalar seviyesinden çevreleyip sıkıştırarak sabitleyen ve kanamayı azaltan kemer. | Y-38
+Kırık | Fraktür | Fractures, Bone | Kemik bütünlüğünün bozulması; ağrı, şekil bozukluğu, şişlik ve hareket kısıtlılığı yapar. |
+Açık kırık | | Fractures, Open | Kırık kemiğin üzerindeki derinin açıldığı, enfeksiyon riski yüksek kırık. |
+Kapalı kırık | | Fractures, Closed | Üzerindeki deri bütünlüğü korunmuş kırık. |
+Çıkık | Lüksasyon | Joint Dislocations | Eklemi oluşturan kemik uçlarının birbirinden ayrılması. |
+Burkulma | Sprain | Sprains and Strains | Eklem bağlarının gerilmesi veya kısmen yırtılması. |
+Atel | Splint | Splints | Kırık veya yaralanan uzvu hareketsiz tutmak için uygulanan sert veya şişirilebilir destek. |
+Traksiyon atel | Çekme ateli | Traction | Uyluk kemiği kırığında bacağı boyuna çekerek sabitleyen, ağrı ve kanamayı azaltan atel. |
+Kompartman sendromu | | Compartment Syndromes | Kas bölmesindeki basıncın artarak kan akımını engellemesi; orantısız ağrı, gerginlik ve ileride nabız kaybıyla seyreder. |
+Ezilme sendromu | Crush sendromu | Crush Syndrome | Uzun süre ağırlık altında kalan kasların hasarlanması; kurtarma sonrası kana karışan potasyum ve kas yıkım ürünleri ölümcül ritim bozukluğu ve böbrek yetmezliğine yol açabilir. | Y-39
+Rabdomiyoliz | Kas yıkımı | Rhabdomyolysis | Kas hücrelerinin parçalanarak içeriklerinin kana geçmesi; koyu renkli idrar ve böbrek yetmezliğine yol açabilir. | Y-39
+Amputasyon | Uzuv kopması | Amputation, Traumatic | Bir uzvun travmayla kısmen veya tamamen kopması; kopan parça temiz ve nemli sargıya sarılıp poşetlenerek soğuk ortamda (buza doğrudan değmeden) taşınır. |
+Avülziyon | Doku kopması | Avulsion | Deri veya dokunun bir parçasının yırtılarak ayrılması. |
+Laserasyon | Kesi; Yırtık yara | Lacerations | Deride düzensiz kenarlı yırtılma veya kesi. |
+Kontüzyon | Ezik; Morluk | Contusions | Deri bütünlüğü bozulmadan alttaki dokuda kanama ve hasar. |
+Abrazyon | Sıyrık | Abrasion | Derinin yüzeysel tabakasının sürtünmeyle kalkması. |
+Ekimoz | Morluk | Ecchymosis | Deri altına kanamaya bağlı mor-mavi renk değişikliği. |
+Hematom | | Hematoma | Damar yaralanması sonucu doku içinde sınırlı kan birikmesi; şişlik ve morlukla kendini gösterir. |
+Yanık | | Burns | Isı, kimyasal, elektrik veya radyasyonla deri ve alttaki dokuların hasarı; ciddiyeti derinliğine ve etkilenen vücut yüzey alanına göre değerlendirilir. | Y-28 C-27 /skalalar/yanik
+Birinci derece yanık | Yüzeysel yanık | Burns | Yalnızca derinin üst tabakasını tutan, kızarıklık ve ağrıyla seyreden, büllü olmayan yanık; yanık yüzdesi hesabına katılmaz. | /skalalar/yanik
+İkinci derece yanık | Kısmi kalınlıkta yanık | Burns | Derinin üst ve orta tabakalarını tutan, bül (su toplaması) oluşturan ve çok ağrılı yanık. | /skalalar/yanik
+Üçüncü derece yanık | Tam kalınlıkta yanık | Burns | Derinin tüm katlarını tutan, beyaz, deri gibi veya kömürleşmiş görünümlü, sinir uçları hasarlandığı için ağrısız olabilen yanık. | /skalalar/yanik
+Vücut yüzey alanı | VYA; TBSA | Body Surface Area | Yanık hesaplarında yanmış alanın tüm vücuda oranı (yüzde olarak). Erişkinde dokuzlar kuralı, çocuklarda yaşa göre Lund-Browder şeması kullanılır; hastanın avuç içi yaklaşık %1'dir. | /skalalar/yanik
+Lund-Browder şeması | | Lund and Browder chart | Vücut bölgelerinin yüzey alanı oranlarını yaşa göre veren yanık değerlendirme şeması; çocuklarda baş ve bacak oranları erişkinden farklı olduğu için tercih edilir. | /skalalar/yanik
+Dokuzlar kuralı | | Rule of nines | Erişkinde vücudu yaklaşık %9'luk bölgelere ayırarak yanık yüzdesini hızla tahmin etme yöntemi. | /skalalar/yanik
+Parkland formülü | | Parkland formula | Yanıklı hastada sıvı ihtiyacını vücut ağırlığı ve yanık yüzdesine göre hesaplayan formül; uygulamadaki hesap SB hastane öncesi akış şemalarına göre yapılır. | /skalalar/parkland
+İnhalasyon yaralanması | Duman inhalasyonu | Smoke Inhalation Injury | Sıcak gaz, duman veya zehirli maddelerin solunmasıyla hava yolu ve akciğerlerin hasar görmesi; yüzde yanık, burun kıllarında yanma, is ve ses kısıklığı uyarıcı bulgulardır. | Y-28
+Kimyasal yanık | | Burns, Chemical | Asit veya alkali maddelerle oluşan doku hasarı; bol suyla uzun süre yıkama temel ilk yardımdır. | Y-30
+Elektrik yanığı | Elektrik çarpması | Burns, Electric | Vücuttan geçen elektrik akımının oluşturduğu hasar; deride küçük giriş-çıkış yaraları olsa da derin dokularda ve kalpte ciddi hasar olabilir. | Y-29
+Eskar | | Eschar | Üçüncü derece yanıkta oluşan sert, kalınlaşmış ölü doku; göğsü veya uzvu çevrelediğinde solunumu ve dolaşımı kısıtlayabilir. |
+Göz yaralanması | | Eye Injuries | Göze yabancı cisim, kimyasal, künt veya delici travma; kimyasal temasta göz hemen ve uzun süre yıkanır. |
+Diş travması | Diş kopması | Tooth Avulsion | Darbeyle dişin kırılması veya yerinden çıkması; çıkan diş kökünden tutulmadan süt veya serum fizyolojik içinde taşınır. |
+Ölüm bulguları | Kesin ölüm belirtileri | Signs of death | Resüsitasyon yapılmamasını gerektiren kesin bulgular: ölü lekeleri, ölü katılığı, yaşamla bağdaşmayan yaralanmalar (dekapitasyon gibi) ve çürüme. |

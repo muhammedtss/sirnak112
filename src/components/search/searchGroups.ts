@@ -1,9 +1,9 @@
 /* Arama grupları ve renkleri — veri içermez; arama düğmesi/penceresi bunu ilk yüklemede
    kullanır, büyük arama dizini (searchIndex.ts) ise yalnızca arama açılınca yüklenir. */
 
-export type SearchGroup = "Algoritma" | "Vaka" | "İlaç" | "Skala" | "ICD-10" | "EKG" | "Eğitim" | "Envanter" | "Evrak";
+export type SearchGroup = "Algoritma" | "Vaka" | "İlaç" | "Skala" | "ICD-10" | "EKG" | "Eğitim" | "Sözlük" | "Envanter" | "Evrak";
 
-export const SEARCH_GROUPS: SearchGroup[] = ["Algoritma", "Vaka", "İlaç", "Skala", "ICD-10", "EKG", "Eğitim", "Envanter", "Evrak"];
+export const SEARCH_GROUPS: SearchGroup[] = ["Algoritma", "Vaka", "İlaç", "Skala", "ICD-10", "EKG", "Eğitim", "Sözlük", "Envanter", "Evrak"];
 
 /** Ana sayfadaki modül renkleriyle aynı (DESIGN.md). */
 export const GROUP_ACCENT: Record<SearchGroup, string> = {
@@ -14,6 +14,7 @@ export const GROUP_ACCENT: Record<SearchGroup, string> = {
   "ICD-10": "#06B6D4",
   EKG: "#10B981",
   Eğitim: "#3B82F6",
+  Sözlük: "#D946EF",
   Envanter: "#EF4444",
   Evrak: "#EC4899",
 };

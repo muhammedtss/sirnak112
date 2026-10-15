@@ -53,6 +53,11 @@ export const KAYNAKLAR: Kaynak[] = [
     kapsam: "Skalalar › START ve Jump START triyaj (adımlar, eşikler, renk kodları, dikkat edilecekler)",
   },
   {
+    baslik: "Medical Subject Headings (MeSH)",
+    yayinlayan: "U.S. National Library of Medicine (NLM)",
+    kapsam: "Tıbbi Sözlük › uluslararası (İngilizce) terim karşılıkları; NLM bu uygulamayı onaylamaz veya desteklemez",
+  },
+  {
     baslik: "ICD-10 — Uluslararası Hastalık Sınıflaması, 10. revizyon",
     yayinlayan: "Dünya Sağlık Örgütü",
     kapsam: "ICD-10 tanı kodu bulucu",
@@ -74,6 +79,16 @@ export interface KlinikDegisiklik {
 
 /** En yeni üstte. Yalnızca klinik içeriği (doz, formül, akış, veri) etkileyen değişiklikler. */
 export const KLINIK_DEGISIKLIKLER: KlinikDegisiklik[] = [
+  {
+    tarih: "2026-10-15",
+    baslik: "Tıbbi Sözlük eklendi",
+    ayrinti: [
+      "Hastane öncesi acile odaklı terimler ve kısaltmalar; Türkçe tanım, eş anlamlılar, İngilizce karşılık ve ilgili algoritma bağlantılarıyla.",
+      "Tanımlar betimleyicidir; doz ve tedavi talimatı içermez (otomatik testle denetlenir). Tedavi kararı için ilgili algoritma ve İlaç Dozu modülü esastır.",
+      "Uluslararası karşılıklar NLM MeSH'ten otomatik doğrulanır. Mevcut algoritma ve hesaplayıcılar değişmedi.",
+    ],
+    kaynak: "Acil Protokol ekibi; U.S. National Library of Medicine MeSH",
+  },
   {
     tarih: "2026-10-12",
     baslik: "Start Triyaj ve Jump Start Triyaj algoritmaları şemaya göre düzenlendi",

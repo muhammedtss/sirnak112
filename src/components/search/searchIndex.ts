@@ -6,6 +6,7 @@ import icd10Data from "@/data/icd10.json";
 import envanterData from "@/data/ambulans-envanter.json";
 import { DERSLER } from "@/lib/ekg/lessons";
 import { EGITIM, kategoriYolu, kisaBaslik } from "@/lib/egitim";
+import { KISALTMA, SOZLUK, tanimi } from "@/lib/sozluk";
 import { normalizeTr } from "@/lib/text";
 
 export { normalizeTr };
@@ -121,6 +122,21 @@ function build(): SearchItem[] {
         raw.push({ id: `egitim-kitap-${i}`, title: kitap.baslik, group: "Eğitim", url, tag: "Kitap" });
       }
     }
+  }
+
+  raw.push({ id: "sozluk", title: "Tıbbi Sözlük", group: "Sözlük", url: "/sozluk", description: `${SOZLUK.terimler.length} terim ve kısaltma`, keywords: "terim kısaltma anlamı nedir tanım" });
+  for (const t of SOZLUK.terimler) {
+    const kisaltma = t.kat === KISALTMA;
+    const tanim = tanimi(t).tanim;
+    raw.push({
+      id: `sozluk-${t.id}`,
+      title: t.terim,
+      group: "Sözlük",
+      url: `/sozluk#t-${t.id}`,
+      tag: kisaltma ? "Kısaltma" : undefined,
+      description: kisaltma ? t.es?.join(" · ") : tanim.length > 70 ? tanim.slice(0, 68).trimEnd() + "…" : tanim,
+      keywords: [...(t.es ?? []), t.en].filter(Boolean).join(" "),
+    });
   }
 
   raw.push({ id: "envanter", title: "Ambulans Envanteri", group: "Envanter", url: "/envanter", description: "Malzeme ve ilaç kontrol listeleri" });

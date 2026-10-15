@@ -1,0 +1,94 @@
+# kategori: kisaltma | Kısaltmalar
+# Biçim: Kısaltma | Açılımı (; ile ek açılımlar) | İngilizce | Tanım | İlgili
+# Tanım boşsa ve açılım sözlükte ayrı bir terim olarak varsa o terimin tanımı gösterilir.
+5H5T | Geri döndürülebilir arrest nedenleri | Reversible causes of cardiac arrest | Kardiyak arrestte aranıp düzeltilmesi gereken nedenlerin anımsatıcısı: hipoksi, hipovolemi, hipo/hipertermi, hipo/hiperkalemi, hidrojen iyonu (asidoz); tansiyon pnömotoraks, kardiyak tamponad, pulmoner ve koroner tromboz, toksinler. | /skalalar/geri-dondurulebilir Y-09
+ABCDE | Hava yolu, solunum, dolaşım, nörolojik durum, açığa çıkarma | Airway, Breathing, Circulation, Disability, Exposure | Kritik hastanın birincil değerlendirmesinde izlenen sıra: hava yolu, solunum, dolaşım, nörolojik durum ve hastanın tümüyle açığa çıkarılarak muayenesi. Her basamaktaki hayatı tehdit eden sorun bir sonrakine geçmeden çözülür. | Y-02 C-02
+ABY | Akut böbrek hasarı; Akut böbrek yetmezliği | Acute Kidney Injury | |
+AED | Otomatik eksternal defibrilatör | Automated External Defibrillator | |
+AF | Atriyal fibrilasyon | Atrial Fibrillation | |
+AFAD | Afet ve Acil Durum Yönetimi Başkanlığı | Disaster and Emergency Management Authority | Türkiye'de afet ve acil durumlarda koordinasyon, müdahale ve iyileştirme çalışmalarını yürüten kamu kurumu. |
+AKS | Akut koroner sendrom | Acute Coronary Syndrome | |
+ARDS | Akut solunum sıkıntısı sendromu | Respiratory Distress Syndrome | |
+ASGE | Ambulans Sürüş Güvenliği Eğitimi | Ambulance driving safety training | Ambulans sürücülerine ve ekiplere yönelik, güvenli acil sürüş kurallarını ve kaza riskini azaltma yollarını öğreten Bakanlık eğitim programı. | /egitim/dokumanlar/asge
+ASOS | Acil Sağlık Otomasyon Sistemi | Emergency health automation system | Hastane öncesi acil sağlık hizmetleri ile hasta nakil hizmetlerinin kaydı ve yönetiminde kullanılan bilişim sistemi. |
+ATT | Acil tıp teknisyeni | Emergency Medical Technicians | Hastane öncesi acil sağlık hizmetlerinde görev yapan, acil bakım ve nakil konusunda eğitimli sağlık personeli. |
+AV blok | Atriyoventriküler blok | Atrioventricular Block | |
+AVPU | Uyanık, sese yanıt, ağrıya yanıt, yanıtsız | Alert, Voice, Pain, Unresponsive | Bilinç düzeyini dört basamakta hızlıca sınıflayan skala: uyanık (A), sese yanıt veriyor (V), yalnızca ağrıya yanıt veriyor (P), yanıtsız (U). | /skalalar/avpu
+BT | Bilgisayarlı tomografi | Tomography, X-Ray Computed | X ışınlarıyla vücudun kesitsel görüntülerini oluşturan görüntüleme yöntemi; kafa travması ve inmede ilk tercih edilen tetkiklerdendir. |
+BVM | Balon-valf-maske; Ambu | Bag-Valve-Mask | |
+CPAP | Sürekli pozitif hava yolu basıncı | Continuous Positive Airway Pressure | Solunumun her evresinde hava yolunda sabit pozitif basınç sağlayan, maskeyle uygulanan non-invaziv solunum desteği; akciğer ödeminde ve bazı solunum yetmezliklerinde kullanılır. |
+ÇABUK | Çevre güvenliği, hava yolu, solunum, ulaşım/dolaşım, kurtarma/karar | Scene safety and primary survey mnemonic | Olay yerinde kritik hastanın ilk dakikalardaki hızlı değerlendirme sırası: Çevre güvenliği, Airway (hava yolu), Breathing (solunum), Ulaşım/Circulation (dolaşım), Kurtarma/Karar. | /skalalar/cabuk
+ÇİLYAD | Çocuklarda İleri Yaşam Desteği | Pediatric Advanced Life Support | Çocuk ve bebeklerde ileri yaşam desteği uygulamalarını kapsayan Bakanlık eğitim programı. | /egitim/dokumanlar/cilyad
+DKA | Diyabetik ketoasidoz | Diabetic Ketoacidosis | |
+DM | Diabetes mellitus | Diabetes Mellitus | |
+DVT | Derin ven trombozu | Venous Thrombosis | |
+EKG | Elektrokardiyografi | Electrocardiography | |
+EtCO2 | Soluk sonu karbondioksit | End-tidal carbon dioxide | Ekspirasyon sonunda ölçülen karbondioksit kısmi basıncı. Kapnografiyle izlenir; tüp yerinin doğrulanmasında, ventilasyonun ve KPR etkinliğinin izlenmesinde kullanılır. |
+ETT | Endotrakeal tüp | Intubation, Intratracheal | |
+FiO2 | Solunan oksijen fraksiyonu | Fraction of inspired oxygen | Solunan gaz karışımındaki oksijen oranı; oda havasında yaklaşık %21'dir. | /skalalar/ventilator
+GİS | Gastrointestinal sistem; Sindirim sistemi | Gastrointestinal Tract | Ağızdan anüse uzanan sindirim kanalı ile karaciğer, safra yolları ve pankreası kapsayan organ sistemi. |
+GKS | Glasgow Koma Skalası | Glasgow Coma Scale | |
+HELLP | HELLP sendromu; Hemoliz, karaciğer enzim yüksekliği, düşük trombosit | HELLP Syndrome | |
+HHS | Hiperglisemik hiperozmolar durum | Hyperglycemic Hyperosmolar Nonketotic Coma | |
+HT | Hipertansiyon | Hypertension | |
+ICD-10 | Uluslararası Hastalık Sınıflaması, 10. revizyon | International Classification of Diseases | Dünya Sağlık Örgütünün hastalık ve sağlık sorunlarını harf ve rakamlarla kodlayan uluslararası sınıflaması; tanılar kayıt ve raporlamada bu kodlarla bildirilir. | /icd10
+IM | İntramüsküler | Injections, Intramuscular | |
+INR | Uluslararası normalleştirilmiş oran | International Normalized Ratio | Protrombin zamanının standartlaştırılmış sonucu; varfarin gibi kan sulandırıcı tedavinin izlenmesinde ve kanama riskinin değerlendirilmesinde kullanılır. |
+IO | İntraosseöz | Infusions, Intraosseous | |
+IV | İntravenöz | Administration, Intravenous | |
+İLYAD | Erişkin İleri Yaşam Desteği | Advanced Cardiac Life Support | Erişkinlerde ileri yaşam desteği, arrest ve ritim yönetimini kapsayan Bakanlık eğitim programı. | /egitim/dokumanlar/ilyad
+İN | İntranazal | Administration, Intranasal | |
+İYD | İleri yaşam desteği | Advanced Cardiac Life Support | |
+İYE | İdrar yolu enfeksiyonu | Urinary Tract Infections | |
+JumpSTART | Çocuklar için START triyajı | JumpSTART pediatric triage | 1–8 yaş çocuklar için uyarlanmış kitlesel olay triyaj yöntemi; solunum sınırları 15–45/dk'dır, solunumu olmayan ve nabzı olan çocuğa 5 kurtarıcı soluk verilir. | /skalalar/jump-start C-29
+KAH | Koroner arter hastalığı | Coronary Artery Disease | |
+KBRN | Kimyasal, biyolojik, radyolojik ve nükleer | Chemical, biological, radiological and nuclear | Kimyasal, biyolojik, radyolojik veya nükleer etkenlerle oluşan tehlikeler ve bu olaylara özel korunma, dekontaminasyon ve triyaj uygulamalarının genel adı. | /egitim/dokumanlar/tibbi-kbrn-farkindalik
+KBY | Kronik böbrek hastalığı; Kronik böbrek yetmezliği | Renal Insufficiency, Chronic | |
+KED | Kendrick kurtarma yeleği | Kendrick Extrication Device | Araç içindeki hastanın baş, boyun ve gövdesini tek parça halinde sabitleyerek çıkarılmasını sağlayan yelek tipi kurtarma aracı. |
+KGD | Kapiller geri dolum | Capillary refill time | |
+KİBAS | Kafa içi basınç artışı | Intracranial Hypertension | |
+KKE | Kişisel koruyucu ekipman | Personal Protective Equipment | |
+KKM | Komuta kontrol merkezi | Emergency medical dispatch center | 112 acil çağrılarını karşılayan, ekipleri olay yerine yönlendiren ve gerektiğinde tıbbi danışmanlık veren merkez. Akış şemalarında telefonla danışılacak adımlar bu kısaltmayla işaretlenir. | /egitim/dokumanlar/tibbi-acil-cagri-yonetimi
+KKY | Kalp yetmezliği; Konjestif kalp yetmezliği | Heart Failure | |
+KOAH | Kronik obstrüktif akciğer hastalığı | Pulmonary Disease, Chronic Obstructive | |
+KPR | Kardiyopulmoner resüsitasyon | Cardiopulmonary Resuscitation | |
+KŞ | Kan şekeri; Kan glukozu | Blood Glucose | |
+LMA | Laringeal maske | Laryngeal Masks | |
+MI | Miyokard enfarktüsü | Myocardial Infarction | |
+MR | Manyetik rezonans görüntüleme | Magnetic Resonance Imaging | Güçlü manyetik alan ve radyo dalgalarıyla, iyonlaştırıcı radyasyon kullanmadan ayrıntılı kesitsel görüntü elde eden yöntem. |
+NB | Nabız | Pulse | |
+NEA | Nabızsız elektriksel aktivite | Pulseless Electrical Activity | |
+NIV | Non-invaziv ventilasyon | Noninvasive Ventilation | Entübasyon yapılmadan, yüz veya burun maskesiyle uygulanan pozitif basınçlı solunum desteği. |
+NPA | Nazofaringeal airway | Nasopharyngeal airway | |
+NSTEMI | ST yükselmesiz miyokard enfarktüsü | Non-ST Elevated Myocardial Infarction | |
+nVT | Nabızsız ventriküler taşikardi | Pulseless ventricular tachycardia | |
+OED | Otomatik eksternal defibrilatör | Automated External Defibrillator | |
+OPA | Orofaringeal airway | Oropharyngeal airway | |
+OPQRST | Ağrı sorgulama anımsatıcısı | OPQRST pain assessment | Ağrının başlangıcı (Onset), artıran-azaltan etkenler (Provocation), niteliği (Quality), yayılımı (Radiation), şiddeti (Severity) ve süresinin (Time) sorgulandığı öykü anımsatıcısı. |
+PAT | Pediatrik değerlendirme üçgeni | Pediatric assessment triangle | |
+PCI | Perkütan koroner girişim | Percutaneous Coronary Intervention | Kasıktan veya bilekten girilen kateterle daralmış ya da tıkanmış koroner damarın balon ve stentle açılması; STEMI'de birincil tedavi yöntemidir. |
+PE | Pulmoner emboli | Pulmonary Embolism | |
+PEEP | Pozitif ekspirasyon sonu basıncı | Positive end-expiratory pressure | Mekanik ventilasyonda ekspirasyon sonunda hava yollarında korunan pozitif basınç; alveollerin kapanmasını önleyerek oksijenlenmeyi artırır. | /skalalar/ventilator
+ROSC | Spontan dolaşımın geri dönmesi | Return of Spontaneous Circulation | |
+RSI | Hızlı ardışık entübasyon | Rapid Sequence Induction and Intubation | |
+SALT | Sırala, değerlendir, yaşam kurtarıcı girişim, tedavi ve nakil | SALT mass casualty triage | Kitlesel olaylarda kullanılan triyaj yöntemi: yaralılar önce genel olarak sıralanır, sonra tek tek değerlendirilir, yaşam kurtarıcı girişimler yapılır ve tedavi ile nakil önceliği belirlenir. |
+SAMPLE | Belirtiler, alerjiler, ilaçlar, geçmiş hastalıklar, son öğün, olay | SAMPLE history | Hızlı öykü almada kullanılan anımsatıcı: belirti ve bulgular (Signs/Symptoms), alerjiler, kullanılan ilaçlar, geçmiş hastalıklar (Past history), son öğün (Last meal) ve olayın gelişimi (Events). |
+SKKM | Sağlık Komuta Kontrol Merkezi | Emergency medical dispatch center | 112 sağlık çağrılarını karşılayan, ambulans ekiplerini yönlendiren, hastane ve nakil koordinasyonunu yürüten merkez. | /egitim/dokumanlar/tibbi-acil-cagri-yonetimi
+SpO2 | Periferik oksijen satürasyonu | Oxygen Saturation | |
+SS | Solunum sayısı | Respiratory Rate | |
+START | Basit triyaj ve hızlı tedavi | Simple Triage and Rapid Treatment | Erişkinlerde kitlesel olay yerinde kullanılan triyaj yöntemi; yürüme, solunum, dolaşım ve basit komutlara uyma değerlendirilerek kırmızı, sarı, yeşil veya siyah kod verilir. | /skalalar/start Y-41
+STEMI | ST yükselmeli miyokard enfarktüsü | ST Elevation Myocardial Infarction | |
+SVO | Serebrovasküler olay; İnme | Stroke | |
+SVT | Supraventriküler taşikardi | Tachycardia, Supraventricular | |
+TA | Tansiyon arteriyel; Kan basıncı | Blood Pressure | |
+TEM | Temel Eğitim Modülü | Basic training module | Hastane öncesi acil sağlık hizmetlerinde görev alan personelin temel acil bakım, olay yeri yönetimi ve haberleşme eğitimini kapsayan Bakanlık eğitim programı. | /egitim/dokumanlar/tem
+TİA | Geçici iskemik atak | Ischemic Attack, Transient | |
+TİLYAD | Travma İleri Yaşam Desteği | Advanced trauma life support | Travmalı hastanın değerlendirilmesi, olay yeri ve triyaj uygulamalarını kapsayan Bakanlık eğitim programı. | /egitim/dokumanlar/tilyad
+tPA | Doku plazminojen aktivatörü | Tissue Plasminogen Activator | Pıhtıyı eriten (trombolitik) ilaç grubu; uygun hastada iskemik inme ve bazı kalp krizlerinde zaman sınırı içinde kullanılır. |
+TYD | Temel yaşam desteği | Basic life support | |
+UMKE | Ulusal Medikal Kurtarma Ekibi | National medical rescue team | |
+USG | Ultrasonografi | Ultrasonography | Ses dalgalarıyla, radyasyonsuz ve yatak başında yapılabilen görüntüleme yöntemi. |
+VF | Ventrikül fibrilasyonu | Ventricular Fibrillation | |
+VT | Ventriküler taşikardi | Tachycardia, Ventricular | |
+VYA | Vücut yüzey alanı | Body Surface Area | |
+WPW | Wolff-Parkinson-White sendromu | Wolff-Parkinson-White Syndrome | |

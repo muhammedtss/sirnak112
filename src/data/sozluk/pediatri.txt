@@ -1,0 +1,20 @@
+# kategori: pediatri | Çocuk ve yenidoğan
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Yenidoğan | Neonatal | Infant, Newborn | Doğumdan sonraki ilk 28 günündeki bebek. | DY-06
+Prematüre bebek | Erken doğmuş bebek | Infant, Premature | Gebeliğin 37. haftası tamamlanmadan doğan bebek; ısı kaybı ve solunum sorunları açısından risklidir. | DY-07
+Süt çocuğu | İnfant | Infant | Bir yaşından küçük çocuk; temel yaşam desteği ve yabancı cisim manevraları bu yaş grubunda erişkinden farklı uygulanır. |
+APGAR skoru | | Apgar Score | Yenidoğanın doğumdan sonra 1. ve 5. dakikada görünüm (renk), nabız, refleks yanıtı, kas tonusu ve solunum yönünden 0–10 arasında puanlanması. | /skalalar/apgar DY-06
+Yenidoğan canlandırması | Neonatal resüsitasyon | Resuscitation | Doğumda solunumu yetersiz veya kalp hızı düşük bebeğe kurulama-uyarma, hava yolu açma, ventilasyon ve gerekirse göğüs kompresyonuyla yapılan canlandırma; temel sorun çoğunlukla solunumdur. | DY-07
+Yenidoğan transportu | | Transportation of Patients | Yenidoğanın ısı, oksijen ve sıvı dengesi korunarak, uygun kuvöz ve ekipmanla bir sağlık kuruluşundan diğerine nakli. | /egitim/dokumanlar/yenidogan-transport
+Kuvöz | İnkübatör | Incubators, Infant | Yenidoğanı ısı kaybından koruyan, ısısı ve nemi ayarlanabilen kapalı yatak; transport kuvözü nakil için kullanılır. | /egitim/dokumanlar/yenidogan-transport
+Yenidoğan sarılığı | Yenidoğan ikteri | Jaundice, Neonatal | Yenidoğanda bilirubin yüksekliğine bağlı ciltte ve gözlerde sarılık; ilk gün başlaması veya çok yüksek olması tehlikelidir. |
+Pediatrik değerlendirme üçgeni | PAT | Pediatric assessment triangle | Çocuğa dokunmadan görünüm, solunum eforu ve cilt dolaşımının gözlenerek ilk saniyelerde aciliyetin belirlendiği değerlendirme yöntemi. | /skalalar/pat C-02
+Best Guess formülü | Kilo tahmini | Body Weight | Çocuğun kilosu bilinmediğinde yaşa göre tahmini vücut ağırlığını veren formül; ilaç ve ekipman seçiminde kullanılır. | /skalalar/best-guess
+Febril konvülziyon | Ateşli havale | Seizures, Febrile | 6 ay ile 5 yaş arası çocuklarda ateşle birlikte ortaya çıkan, sinir sistemi enfeksiyonu olmadan gelişen nöbet; çoğunlukla kısa sürer ve iyi seyirlidir. | C-17 C-18
+İnvajinasyon | | Intussusception | Bağırsağın bir bölümünün teleskop gibi bir sonraki bölümün içine girmesi; küçük çocuklarda aralıklı şiddetli ağlama krizleri, kusma ve kanlı-mukuslu dışkıyla seyreder. |
+Ani bebek ölümü sendromu | ABÖS; Beşik ölümü | Sudden Infant Death | Bir yaşından küçük, sağlıklı görünen bebeğin uykuda açıklanamayan ani ölümü. |
+Çocuk istismarı | | Child Abuse | Çocuğa fiziksel, cinsel, duygusal zarar verilmesi veya ihmal edilmesi; öyküyle uyumsuz yaralanmalar, farklı evrelerdeki morluklar ve gecikmiş başvuru şüphe uyandırır. Bildirimi yasal zorunluluktur. |
+Sarsılmış bebek sendromu | | Shaken Baby Syndrome | Bebeğin şiddetle sarsılmasına bağlı beyin ve göz içi kanamaları; istismar şeklidir. |
+Pediatrik vital bulgular | Çocukta yaşam bulguları | Vital Signs | Çocuklarda kalp hızı, solunum sayısı ve kan basıncının normal aralıkları yaşa göre değişir; bebeklerde kalp hızı ve solunum sayısı erişkinden yüksektir. | C-02
+Fontanel | Bıngıldak | Cranial Fontanelles | Bebeğin kafatası kemikleri arasındaki yumuşak bölge; çökük olması sıvı kaybını, kabarık ve gergin olması kafa içi basınç artışını düşündürebilir. |
+Dehidratasyon (çocuk) | Çocukta sıvı kaybı | Dehydration | Çocukta ishal ve kusmayla hızla gelişebilen sıvı kaybı; ağlarken gözyaşı olmaması, ağız kuruluğu, idrar azalması, çökük fontanel ve uzamış kapiller dolum ağır dehidratasyonu düşündürür. | C-07

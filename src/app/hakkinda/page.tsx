@@ -24,6 +24,7 @@ export default function HakkindaPage() {
             "ICD-10 tanı kodu bulucu, ambulans envanteri ve evrak örnekleri",
             "EKG eğitimi: dersler, ritim atlası ve vaka sınavı",
             "Sağlık Bakanlığı eğitim dokümanları, uygulama videoları ve eğitim kitapları",
+            "Hastane öncesi acile odaklı tıbbi terimler ve kısaltmalar sözlüğü",
             "İnternet bağlantısı olmadan çalışır (Eğitim bölümündeki belge ve videolar hariç); telefona uygulama olarak eklenebilir",
           ]}
         />

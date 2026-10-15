@@ -1,0 +1,46 @@
+# kategori: noroloji | Nöroloji
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+İnme | Serebrovasküler olay; SVO; Felç | Stroke | Beyne giden kan akımının bir damar tıkanması (iskemik inme) veya kanama (hemorajik inme) sonucu aniden bozulmasıyla gelişen nörolojik kayıp. Tedavi zamana bağlıdır; belirtilerin başlama saati mutlaka öğrenilmelidir. | Y-18
+İskemik inme | | Ischemic Stroke | Beyin damarının pıhtıyla tıkanması sonucu gelişen inme; inmelerin büyük çoğunluğunu oluşturur. | Y-18
+Hemorajik inme | Beyin kanaması | Hemorrhagic Stroke | Beyin içine veya beyin zarları arasına kanama sonucu gelişen inme. | Y-18
+Geçici iskemik atak | TİA | Ischemic Attack, Transient | İnme belirtilerinin kısa sürede, çoğunlukla bir saat içinde tamamen düzelmesi; yakın dönemde inme için güçlü bir uyarıdır. | Y-18
+Subaraknoid kanama | | Subarachnoid Hemorrhage | Beyin zarları arasına, çoğunlukla anevrizma yırtılmasıyla olan kanama; hastalar hayatlarının en şiddetli, ani başlayan baş ağrısını tarif eder. |
+FAST testi | Yüz, kol, konuşma, zaman | FAST stroke test | İnmeyi hızlı tanımak için kullanılan test: yüzde kayma (Face), kolda güçsüzlük (Arm), konuşma bozukluğu (Speech) ve belirti başlangıç zamanının (Time) not edilmesi. | Y-18
+Nöbet | Konvülziyon; Havale | Seizures | Beyindeki anormal ve aşırı elektriksel boşalmaya bağlı kasılma, bilinç değişikliği veya davranış bozukluğu atağı. | Y-19 C-17
+Jeneralize tonik-klonik nöbet | Grand mal | Seizures | Bilinç kaybıyla başlayan, önce tüm vücutta kasılma (tonik) ardından ritmik kasılma-gevşeme (klonik) evreleriyle süren nöbet. | Y-19 C-17
+Status epileptikus | | Status Epilepticus | Beş dakikadan uzun süren ya da arasında bilincin düzelmediği tekrarlayan nöbetler; acil tedavi gerektirir. | Y-19 C-17
+Epilepsi | Sara | Epilepsy | Tekrarlayan, nedeni olmayan nöbetlerle seyreden kronik beyin hastalığı. | Y-19
+Postiktal dönem | | Postictal period | Nöbet sonrasında bilinç bulanıklığı, uyku hali ve yorgunluğun görüldüğü geçiş dönemi. | Y-19
+Bilinç değişikliği | Bilinç bulanıklığı | Consciousness Disorders | Uyanıklık veya farkındalığın azalması; hipoglisemi, hipoksi, zehirlenme, travma ve inme gibi pek çok acil nedeni vardır. | Y-16 C-16
+Koma | | Coma | Ağrılı uyaranla dahi uyandırılamayan derin bilinç kaybı. | Y-16
+Glasgow Koma Skalası | GKS; GCS | Glasgow Coma Scale | Göz açma (1–4), sözel yanıt (1–5) ve motor yanıt (1–6) puanlarının toplamıyla bilinç düzeyini 3 ile 15 arasında değerlendiren skala; 8 ve altı ağır bilinç bozukluğunu gösterir. | /skalalar/glasgow-yetiskin /skalalar/glasgow-pediatri /skalalar/glasgow-bebek
+Dekortike postür | Dekortike yanıt | Decorticate posture | Ağrılı uyarana kolların göğse doğru bükülüp bacakların gerildiği anormal yanıt; beyin hasarını gösterir. |
+Deserebre postür | Deserebre yanıt | Decerebrate posture | Ağrılı uyarana kol ve bacakların gerilip kolların içe döndüğü anormal yanıt; dekortikeden daha ağır beyin sapı hasarını gösterir. |
+Kafa içi basınç artışı | KİBAS | Intracranial Hypertension | Kafatası içindeki basıncın kanama, ödem veya kitle nedeniyle yükselmesi; baş ağrısı, kusma, bilinç bozukluğu ve ilerlemiş durumda Cushing triadıyla seyreder. | Y-40
+Cushing triadı | | Cushing reflex | Kafa içi basıncın ileri derecede arttığını gösteren üç bulgu: kan basıncında yükselme, kalp hızında yavaşlama ve düzensiz solunum. | Y-40
+Herniasyon | Beyin fıtıklaşması | Brain herniation | Artan kafa içi basıncın beyin dokusunu bir bölmeden diğerine itmesi; tek taraflı genişlemiş ışık yanıtsız pupil ile kendini gösterebilir ve ölümcüldür. | Y-40
+Menenjit | Beyin zarı iltihabı | Meningitis | Beyin ve omuriliği saran zarların iltihabı; ateş, şiddetli baş ağrısı, ense sertliği ve bilinç değişikliği yapar. |
+Ensefalit | | Encephalitis | Beyin dokusunun, çoğunlukla viral kaynaklı iltihabı. |
+Migren | | Migraine Disorders | Tekrarlayan, çoğunlukla tek taraflı, zonklayıcı baş ağrısı atakları; bulantı, ışık ve ses hassasiyeti eşlik edebilir. |
+Vertigo | Baş dönmesi (döner tip) | Vertigo | Kişinin kendisinin veya çevresinin döndüğü hissi; iç kulak veya beyin sapı kaynaklı olabilir. | Y-20
+Bilinç kaybı | Şuur kaybı | Unconsciousness | Kişinin çevresini algılama ve uyaranlara anlamlı yanıt verme yeteneğini yitirmesi; bayılma, nöbet, travma, zehirlenme veya metabolik nedenlere bağlı olabilir. | Y-16
+Hemipleji | | Hemiplegia | Vücudun bir yarısında (yüz, kol ve bacak) tam felç; çoğunlukla karşı taraf beyin yarısında inme veya kanamaya bağlıdır. | Y-18
+Hemiparezi | | Hemiparesis | Vücudun bir yarısında kas gücünün azalması. | Y-18 /skalalar/kas-gucu
+Parapleji | | Paraplegia | Her iki bacakta felç; çoğunlukla göğüs veya bel omurgası seviyesinde omurilik hasarına bağlıdır. |
+Kuadripleji | Tetrapleji | Quadriplegia | Her iki kol ve her iki bacakta felç; boyun omurilik hasarına bağlıdır. |
+Afazi | Konuşma bozukluğu | Aphasia | Beyin hasarına bağlı olarak dili anlama veya ifade etme yeteneğinin kaybı. | Y-18
+Dizartri | Peltek konuşma | Dysarthria | Konuşma kaslarının güçsüzlüğü veya koordinasyon bozukluğuna bağlı anlaşılmaz, bozuk konuşma. | Y-18
+Ataksi | | Ataxia | Kas gücü normal olduğu halde hareketlerin koordinasyonunun bozulması; dengesiz yürüme. |
+Parestezi | Uyuşma, karıncalanma | Paresthesia | Ciltte uyuşma, karıncalanma veya iğnelenme hissi. |
+Pupil | Göz bebeği | Pupil | Göz renkli tabakasının (iris) ortasındaki, ışığa göre daralıp genişleyen açıklık. Büyüklüğü, eşitliği ve ışık yanıtı nörolojik muayenenin temel parçasıdır. |
+Miyozis | Pupil daralması | Miosis | Göz bebeğinin daralması; opioid ve organofosfat zehirlenmesinde belirgindir. | Y-35 Y-36
+Midriyazis | Pupil genişlemesi | Mydriasis | Göz bebeğinin genişlemesi; antikolinerjik ve sempatomimetik zehirlenmelerde, beyin hasarında görülebilir. |
+Anizokori | | Anisocoria | İki göz bebeğinin büyüklüğünün farklı olması; travmalı veya bilinci bozuk hastada beyin hasarını düşündürür. | Y-40
+Ense sertliği | Meningeal irritasyon | Meningism | Başın göğse doğru eğilmesine karşı direnç ve ağrı; menenjit ve subaraknoid kanamada görülür. |
+Spinal kord yaralanması | Omurilik yaralanması | Spinal Cord Injuries | Travmaya bağlı omurilik hasarı; yaralanma seviyesinin altında güç ve duyu kaybı, nörojenik şok ve solunum güçlüğüne yol açabilir. | Y-38
+Nöropati | | Peripheral Nervous System Diseases | Çevresel sinirlerin hasarı; uyuşma, ağrı ve güçsüzlük yapar. |
+Guillain-Barré sendromu | | Guillain-Barre Syndrome | Bacaklardan başlayıp yukarı doğru ilerleyen kas güçsüzlüğüyle seyreden bağışıklık kaynaklı sinir hastalığı; solunum kaslarını tutabilir. |
+Myastenia gravis | | Myasthenia Gravis | Kas ile sinir arasındaki iletimin bağışıklık kaynaklı bozulmasıyla gün içinde artan kas güçsüzlüğü; solunum yetmezliği krizine yol açabilir. |
+Deliryum | Akut konfüzyon | Delirium | Dikkat ve bilinçte aniden başlayan, gün içinde dalgalanan bozulma; enfeksiyon, ilaç, zehirlenme ve metabolik bozukluklarla tetiklenir. | Y-15 Y-16
+Demans | Bunama | Dementia | Hafıza ve diğer zihinsel yeteneklerin günlük yaşamı etkileyecek düzeyde ilerleyici kaybı. |
+Kas gücü | | Muscle Strength | Kasın direnç karşısında oluşturabildiği kuvvet; MRC skalasıyla 0 (hiç kasılma yok) ile 5 (normal) arasında derecelendirilir. | /skalalar/kas-gucu

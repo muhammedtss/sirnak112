@@ -10,6 +10,7 @@
     "lint": "eslint",
     "verify": "node scripts/verify-integrity.mjs",
     "egitim:guncelle": "node scripts/egitim-katalog.mjs",
+    "sozluk:derle": "node scripts/sozluk-derle.mjs",
     "test": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --disable-warning=ExperimentalWarning --import ./tests/loader/register.mjs --test \"tests/*.test.ts\""
   },
   "dependencies": {

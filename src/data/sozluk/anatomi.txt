@@ -1,0 +1,74 @@
+# kategori: anatomi | Anatomi ve fizyoloji
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Anatomik pozisyon | | Anatomic position | Vücudun ayakta, yüz öne dönük, kollar yanda ve avuç içleri öne bakar şekilde tarif edildiği standart konum; yön terimleri buna göre kullanılır. |
+Proksimal | | Proximal | Gövdeye veya bir yapının başlangıç noktasına daha yakın olan (örneğin dirsek, bileğe göre proksimaldir). |
+Distal | | Distal | Gövdeden veya başlangıç noktasından daha uzak olan (örneğin parmaklar, bileğe göre distaldir). |
+Lateral | | Lateral | Vücudun orta çizgisinden uzak, dış yanda olan. |
+Medial | | Medial | Vücudun orta çizgisine yakın, iç yanda olan. |
+Anterior | Ön | Anterior | Vücudun ön tarafında olan; yaralanma ve ağrının yerini tarif ederken kullanılır. |
+Posterior | Arka | Posterior | Vücudun arka tarafında olan; yaralanma ve ağrının yerini tarif ederken kullanılır. |
+Supin pozisyon | Sırtüstü | Supine Position | Sırtüstü yatış pozisyonu; KPR ve çoğu muayene bu pozisyonda yapılır, ileri gebelikte hipotansiyona yol açabilir. |
+Prone pozisyon | Yüzüstü | Prone Position | Yüzüstü yatış pozisyonu; bu pozisyonda bulunan travmalı hasta omurga korunarak çevrilir. |
+Hava yolu | | Respiratory System | Havanın burun ve ağızdan akciğerlere ulaştığı yol; üst hava yolu (burun, ağız, yutak, gırtlak) ve alt hava yolundan (nefes borusu, bronşlar) oluşur. |
+Farinks | Yutak | Pharynx | Burun ve ağız boşluğunu gırtlak ve yemek borusuna bağlayan kas yapısı. |
+Larinks | Gırtlak | Larynx | Ses tellerinin bulunduğu, nefes borusunun girişindeki kıkırdak yapı. |
+Epiglot | Gırtlak kapağı | Epiglottis | Yutkunma sırasında gırtlak girişini kapatarak yiyeceklerin nefes borusuna kaçmasını önleyen kıkırdak kapak. | C-05
+Ses telleri | Vokal kordlar | Vocal Cords | Gırtlaktaki, titreşerek ses oluşturan kas ve bağ dokusu kıvrımları; entübasyonda tüp bunların arasından geçirilir. |
+Trakea | Nefes borusu | Trachea | Gırtlaktan başlayıp göğüste iki ana bronşa ayrılan, kıkırdak halkalardan oluşan boru. |
+Bronş | | Bronchi | Nefes borusundan ayrılarak akciğerlere havayı taşıyan dallar. |
+Alveol | Hava keseciği | Pulmonary Alveoli | Akciğerlerde kan ile hava arasında oksijen ve karbondioksit alışverişinin gerçekleştiği küçük keseler. |
+Plevra | Akciğer zarı | Pleura | Akciğerleri ve göğüs duvarının içini örten iki katlı zar. |
+Diyafram | | Diaphragm | Göğüs ve karın boşluğunu ayıran, en önemli solunum kası. |
+Mediasten | | Mediastinum | İki akciğer arasındaki, kalp, büyük damarlar, nefes borusu ve yemek borusunun bulunduğu bölge. |
+Kalp | | Heart | Kanı vücuda pompalayan, iki atriyum ve iki ventrikülden oluşan kas organ. |
+Atriyum | Kulakçık | Heart Atria | Kalbin kanın toplandığı üst odacıkları. |
+Ventrikül | Karıncık | Heart Ventricles | Kalbin kanı akciğerlere (sağ) ve vücuda (sol) pompalayan alt odacıkları. |
+Miyokard | Kalp kası | Myocardium | Kalbin kasılmasını sağlayan kas tabakası. |
+Perikard | Kalp zarı | Pericardium | Kalbi saran iki katlı zar; katları arasında kan veya sıvı birikmesi kalbi sıkıştırarak tamponada yol açar. | /skalalar/geri-dondurulebilir
+Koroner arterler | Koroner damarlar; Kalp damarları | Coronary Vessels | Aortun başlangıcından çıkıp kalp kasını besleyen sağ ve sol koroner atardamarlar; tıkanmaları miyokard enfarktüsüne yol açar. | Y-06
+İleti sistemi | Kalbin ileti sistemi | Heart Conduction System | Kalpte elektriksel uyarıyı oluşturan ve ileten özel dokular: sinüs düğümü, AV düğüm, His demeti ve dalları. | /ekg-egitim
+Sinüs düğümü | SA düğüm | Sinoatrial Node | Sağ atriyumda bulunan, kalbin doğal uyarı merkezi (pacemaker). | /ekg-egitim
+AV düğüm | Atriyoventriküler düğüm | Atrioventricular Node | Atriyumlardan gelen uyarıyı kısa bir gecikmeyle ventriküllere ileten düğüm. | /ekg-egitim
+Aort | Ana atardamar | Aorta | Sol ventrikülden çıkıp vücuda oksijenli kan dağıtan en büyük atardamar. |
+Arter | Atardamar | Arteries | Kalpten dokulara oksijenli kan taşıyan, duvarı kalın ve basınçlı damar; yaralanmasında kan fışkırarak, parlak kırmızı renkte akar. |
+Ven | Toplardamar | Veins | Dokulardan kalbe kan taşıyan, düşük basınçlı damar; yaralanmasında kan koyu renkte ve sızarak akar. |
+Kapiller | Kılcal damar | Capillaries | Arter ile ven arasında, doku ile kan arasındaki madde alışverişinin yapıldığı en küçük damarlar. |
+Juguler ven | Boyun toplardamarı | Jugular Veins | Baş ve boyundan kalbe kan taşıyan boyun toplardamarları; dolgunluğu kalbe dönüşün engellendiğini düşündürür. |
+Karotis arter | Şah damarı | Carotid Arteries | Boyunda beyne kan taşıyan atardamar; bilinçsiz hastada nabız kontrolü için kullanılır. |
+Radial arter | Bilek atardamarı | Radial Artery | Bileğin başparmak tarafında nabzı alınan atardamar. |
+Femoral arter | Kasık atardamarı | Femoral Artery | Kasıkta, bacağa kan taşıyan büyük atardamar. |
+Dolaşım sistemi | Kardiyovasküler sistem | Cardiovascular System | Kalp ve damarlardan oluşan, kanın vücutta dolaşmasını sağlayan sistem. |
+Kan | | Blood | Plazma ile alyuvar, akyuvar ve trombositlerden oluşan, oksijen ve besin taşıyan sıvı doku; erişkinde yaklaşık 5 litredir. |
+Merkezi sinir sistemi | MSS | Central Nervous System | Beyin ve omurilikten oluşan sinir sistemi bölümü. |
+Beyin sapı | | Brain Stem | Beyni omuriliğe bağlayan, solunum ve dolaşım gibi yaşamsal işlevleri yöneten bölüm. |
+Serebellum | Beyincik | Cerebellum | Denge ve hareketlerin koordinasyonundan sorumlu beyin bölümü. |
+Meninksler | Beyin zarları | Meninges | Beyin ve omuriliği saran üç katlı zar: dura, araknoid ve pia mater. |
+Beyin omurilik sıvısı | BOS | Cerebrospinal Fluid | Beyin ve omuriliği çevreleyip koruyan berrak sıvı; kafa tabanı kırığında burun veya kulaktan gelebilir. |
+Omurilik | Spinal kord | Spinal Cord | Omurga kanalı içinde beyinden aşağı uzanan, beyin ile vücut arasında sinir iletimini sağlayan yapı. |
+Omurga | Vertebral kolon | Spine | Boyun (7), sırt (12), bel (5) omurları ile sakrum ve kuyruk sokumundan oluşan, omuriliği koruyan kemik yapı. |
+Servikal omurga | Boyun omurları | Cervical Vertebrae | Boyundaki yedi omur; travmada yaralanması solunum ve tüm uzuvlarda felce yol açabilir. |
+Otonom sinir sistemi | | Autonomic Nervous System | İstemsiz vücut işlevlerini düzenleyen sempatik ve parasempatik bölümlerden oluşan sinir sistemi. |
+Sempatik sinir sistemi | | Sympathetic Nervous System | Stres anında kalp hızını, kan basıncını artıran ve bronşları genişleten "savaş ya da kaç" sistemi. |
+Parasempatik sinir sistemi | | Parasympathetic Nervous System | Dinlenme halinde kalp hızını yavaşlatan, sindirimi ve salgıları artıran sistem; vagus siniri başlıca sinirdir. |
+Vagus siniri | | Vagus Nerve | Kalp, akciğer ve sindirim organlarına giden, kalp hızını yavaşlatan kafa siniri. | Y-08
+Karaciğer | | Liver | Sağ üst karında bulunan, metabolizma, zehirsizleştirme ve pıhtılaşma faktörü üretiminde görevli organ. |
+Dalak | | Spleen | Sol üst karında bulunan, kan hücrelerini süzen organ; künt travmada yırtılarak ciddi iç kanamaya yol açabilir. |
+Böbrek | | Kidney | Kanı süzerek idrar oluşturan, sıvı ve elektrolit dengesini sağlayan organ. |
+Pankreas | | Pancreas | Sindirim enzimleri ile insülin ve glukagon hormonlarını üreten organ. |
+Mide | | Stomach | Yiyeceklerin depolanıp sindirime başlandığı organ. |
+Bağırsaklar | | Intestines | İnce ve kalın bağırsaktan oluşan, besin emilimi ve dışkı oluşumunun gerçekleştiği sindirim kanalı bölümü. |
+Periton | Karın zarı | Peritoneum | Karın boşluğunun ve organların üzerini örten zar; iltihabı (peritonit) şiddetli karın ağrısı ve karın sertliği yapar. |
+Pelvis | Leğen kemiği | Pelvis | Gövdeyi bacaklara bağlayan, mesane ve üreme organlarını koruyan kemik halka. | Y-38
+Uterus | Rahim | Uterus | Gebelikte bebeğin geliştiği kas organ; doğumdan sonra kasılarak kanamayı durdurur. | DY-01
+Femur | Uyluk kemiği | Femur | Vücudun en uzun kemiği; kırığında ciddi kan kaybı olabilir. |
+Klavikula | Köprücük kemiği | Clavicle | Göğüs kemiği ile omuz arasındaki kemik. |
+Sternum | Göğüs kemiği | Sternum | Kaburgaların önde birleştiği yassı kemik; göğüs kompresyonu alt yarısına uygulanır. | Y-09
+Ksifoid | | Xiphoid Bone | Göğüs kemiğinin en alt ucundaki küçük çıkıntı. |
+Kaburgalar | Kostalar | Ribs | Göğüs kafesini oluşturan on iki çift kemik. |
+Homeostaz | | Homeostasis | Vücudun iç ortamını (ısı, sıvı, asit-baz dengesi gibi) sabit tutma yeteneği. |
+Perfüzyon | Doku kanlanması | Perfusion | Dokulara yeterli kan akımının sağlanması; bozulması şokun temelini oluşturur. |
+Metabolizma | | Metabolism | Vücutta enerji üretimi ve doku yapımı için gerçekleşen kimyasal tepkimelerin tümü. |
+Oksijenlenme | Oksijenizasyon | Oxygen | Kanın akciğerlerde oksijenle yüklenmesi. |
+Ventilasyon | | Pulmonary Ventilation | Havanın akciğerlere girip çıkması; yetersizliğinde karbondioksit birikir. |
+Depolarizasyon | | Membrane Potentials | Kalp ve sinir hücrelerinde elektriksel uyarılma; kalpte kasılmayı başlatır. | /ekg-egitim
+Repolarizasyon | | Membrane Potentials | Uyarılan hücrenin elektriksel olarak dinlenme durumuna dönmesi. | /ekg-egitim

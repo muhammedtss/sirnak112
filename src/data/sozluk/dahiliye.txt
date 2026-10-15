@@ -1,0 +1,57 @@
+# kategori: dahiliye | Metabolik, enfeksiyon ve diğer acil durumlar
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Diabetes mellitus | DM; Şeker hastalığı | Diabetes Mellitus | İnsülin salgısının yetersizliği veya etkisizliği sonucu kan şekerinin kronik olarak yüksek seyrettiği hastalık; tip 1 ve tip 2 olarak ikiye ayrılır. | Y-17
+Hipoglisemi | Kan şekeri düşüklüğü | Hypoglycemia | Kan şekerinin normalin altına, erişkinde genellikle 70 mg/dL'nin altına düşmesi; terleme, titreme, çarpıntı, davranış değişikliği, nöbet ve bilinç kaybına yol açabilir. Bilinç bozukluğu olan her hastada kan şekeri ölçülmelidir. | Y-17 C-20
+Hiperglisemi | Kan şekeri yüksekliği | Hyperglycemia | Kan şekerinin normalin üzerine çıkması; susama, sık idrara çıkma ve halsizlik yapar. | Y-17 C-19
+Diyabetik ketoasidoz | DKA | Diabetic Ketoacidosis | İnsülin eksikliğinde kan şekeri yüksekliği, keton cisimleri birikimi ve asidozla seyreden acil durum; derin ve hızlı solunum (Kussmaul), meyve kokulu nefes, kusma ve dehidratasyon görülür. | Y-17 C-19
+Hiperglisemik hiperozmolar durum | HHS; Hiperozmolar koma | Hyperglycemic Hyperosmolar Nonketotic Coma | Çoğunlukla yaşlı tip 2 diyabetlilerde çok yüksek kan şekeri ve ağır sıvı kaybıyla seyreden, ketoasidozun belirgin olmadığı acil durum; bilinç bozukluğu sıktır. | Y-17
+Kussmaul solunumu | | Kussmaul respiration | Metabolik asidozda vücudun karbondioksit atmak için yaptığı derin ve hızlı solunum. | Y-17
+Adrenal yetmezlik | Addison krizi | Adrenal Insufficiency | Böbrek üstü bezlerinin yeterli kortizol üretememesi; stres anında ağır hipotansiyon ve şoka yol açabilir. |
+Tiroid fırtınası | Tirotoksik kriz | Thyroid Crisis | Aşırı tiroid hormonuna bağlı yüksek ateş, taşikardi, ajitasyon ve kalp yetmezliğiyle seyreden hayatı tehdit eden durum. |
+Miksödem koması | | Myxedema | Ağır tiroid hormonu eksikliğinde hipotermi, bradikardi ve bilinç bozukluğuyla seyreden acil durum. |
+Dehidratasyon | Sıvı kaybı | Dehydration | Vücut sıvısının ishal, kusma, terleme veya yetersiz alım nedeniyle azalması; ağız kuruluğu, idrar azalması, taşikardi ve ağır durumda şok yapar. | C-07
+Elektrolit bozukluğu | | Water-Electrolyte Imbalance | Kandaki sodyum, potasyum, kalsiyum gibi minerallerin normal düzeyden sapması; kas güçsüzlüğü, nöbet ve ritim bozukluğuna yol açabilir. |
+Hiperkalemi | Potasyum yüksekliği | Hyperkalemia | Kan potasyumunun yükselmesi; böbrek yetmezliği ve ezilme sendromunda görülür, sivri T dalgası ve ölümcül ritim bozukluklarına yol açabilir. Geri döndürülebilir arrest nedenlerindendir. | /skalalar/geri-dondurulebilir Y-39
+Hipokalemi | Potasyum düşüklüğü | Hypokalemia | Kan potasyumunun düşmesi; kas güçsüzlüğü, kramp ve ritim bozukluğuna yol açabilir. Geri döndürülebilir arrest nedenlerindendir. | /skalalar/geri-dondurulebilir
+Hiponatremi | Sodyum düşüklüğü | Hyponatremia | Kan sodyumunun düşmesi; baş ağrısı, bulantı, bilinç değişikliği ve nöbete yol açabilir. |
+Hipernatremi | Sodyum yüksekliği | Hypernatremia | Kan sodyumunun yükselmesi; çoğunlukla su kaybına bağlıdır, huzursuzluk ve bilinç değişikliği yapar. |
+Hipokalsemi | Kalsiyum düşüklüğü | Hypocalcemia | Kan kalsiyumunun düşmesi; ağız çevresinde uyuşma, kas kasılmaları ve nöbete yol açabilir. |
+Metabolik asidoz | | Acidosis | Kanda asit birikmesi veya bikarbonat kaybı sonucu pH'nın düşmesi; ketoasidoz, laktik asidoz ve böbrek yetmezliğinde görülür. | /skalalar/geri-dondurulebilir
+Sepsis | Kan zehirlenmesi | Sepsis | Enfeksiyona karşı gelişen düzensiz vücut yanıtının organ işlev bozukluğuna yol açması; ateş veya hipotermi, taşikardi, hızlı solunum, bilinç değişikliği ve hipotansiyonla seyreder. Erken tanı hayat kurtarır. | C-09
+Ateş | Yüksek vücut ısısı | Fever | Vücut ısısının enfeksiyon veya iltihaba yanıt olarak normalin üzerine (genellikle 38 °C ve üzeri) yükselmesi. | C-18
+Febril nötropeni | | Febrile Neutropenia | Kemoterapi alan hastalarda bağışıklık hücrelerinin azaldığı dönemde ortaya çıkan ateş; ağır enfeksiyon riski nedeniyle acildir. |
+Anafilaksi | Anafilaktik şok | Anaphylaxis | Bir alerjene karşı dakikalar içinde gelişen, birden fazla organ sistemini tutan ağır ve yaşamı tehdit eden alerjik reaksiyon; hava yolu şişliği, bronş daralması, hipotansiyon ve deri bulgularıyla seyreder. Adrenalin temel tedavidir. | Y-22 C-21
+Alerjik reaksiyon | | Hypersensitivity | Bağışıklık sisteminin zararsız bir maddeye aşırı yanıt vermesi; kaşıntı, kurdeşen ve şişlikten anafilaksiye kadar değişebilir. | Y-21
+Ürtiker | Kurdeşen | Urticaria | Deride kaşıntılı, kabarık ve kızarık plaklar; çoğunlukla alerjik kaynaklıdır. | Y-21
+Gastrointestinal kanama | GİS kanaması | Gastrointestinal Hemorrhage | Sindirim kanalının herhangi bir yerinden kanama; üst sistem kanamaları kanlı veya kahve telvesi gibi kusma ve siyah dışkıyla, alt sistem kanamaları kırmızı kanlı dışkıyla kendini gösterir. |
+Akut karın | | Abdomen, Acute | Ani başlayan, çoğunlukla cerrahi müdahale gerektirebilecek şiddetli karın ağrısı tablosu (apandisit, bağırsak tıkanması, delinme gibi). |
+Apandisit | | Appendicitis | Apendiksin iltihabı; göbek çevresinden başlayıp sağ alt karına yerleşen ağrı, bulantı ve ateşle seyreder. |
+Bağırsak tıkanması | İleus | Intestinal Obstruction | Bağırsak içeriğinin ilerleyememesi; karın şişliği, kusma, gaz ve dışkı çıkaramama ile seyreder. |
+Pankreatit | | Pancreatitis | Pankreasın iltihabı; sırta yayılan şiddetli üst karın ağrısı ve kusma yapar, safra taşı ve alkol başlıca nedenlerdir. |
+Kolesistit | Safra kesesi iltihabı | Cholecystitis | Safra kesesinin çoğunlukla taşa bağlı iltihabı; sağ üst karın ağrısı ve ateş yapar. |
+Böbrek taşı | Renal kolik | Kidney Calculi | İdrar yolunda taşın ilerlemesiyle böğürden kasığa yayılan, dalgalanan şiddetli ağrı; idrarda kan görülebilir. |
+Gastroenterit | | Gastroenteritis | Mide ve bağırsakların çoğunlukla enfeksiyöz iltihabı; ishal, kusma ve karın ağrısı yapar, sıvı kaybı riski vardır. |
+Akut böbrek hasarı | ABY; Akut böbrek yetmezliği | Acute Kidney Injury | Böbrek işlevlerinin saatler veya günler içinde bozulması; idrar azalması, sıvı ve potasyum birikmesine yol açabilir. |
+Kronik böbrek hastalığı | KBY; Kronik böbrek yetmezliği | Renal Insufficiency, Chronic | Böbrek işlevlerinin aylar-yıllar içinde kalıcı olarak azalması; ileri evrede diyaliz gerekir. |
+Diyaliz | Hemodiyaliz | Renal Dialysis | Böbrek yetmezliğinde kandaki atık maddelerin ve fazla sıvının makineyle (hemodiyaliz) veya karın zarıyla (periton diyalizi) temizlenmesi; fistül kolundan tansiyon ölçülmez, damar yolu açılmaz. |
+İdrar yolu enfeksiyonu | İYE | Urinary Tract Infections | İdrar yollarının bakteriyel enfeksiyonu; yanma, sık idrara çıkma, ateş ve böğür ağrısı yapabilir. |
+İdrar retansiyonu | İdrar tutulması | Urinary Retention | Mesanenin dolu olmasına rağmen boşaltılamaması; alt karında ağrılı şişlik yapar. |
+Anemi | Kansızlık | Anemia | Kandaki hemoglobin veya alyuvar miktarının azalması; yorgunluk, solukluk ve çarpıntı yapar. |
+Orak hücre krizi | | Anemia, Sickle Cell | Orak hücre hastalığında bozuk alyuvarların küçük damarları tıkamasıyla ortaya çıkan şiddetli ağrı atağı. |
+Hemofili | | Hemophilia A | Pıhtılaşma faktörü eksikliğine bağlı doğuştan kanama bozukluğu; küçük travmalarla bile eklem içi ve ciddi kanamalar olabilir. |
+Pıhtılaşma bozukluğu | Koagülopati | Blood Coagulation Disorders | Kanın normal pıhtılaşma yeteneğinin bozulması; kanama eğilimini artırır. |
+Dissemine intravasküler koagülasyon | DİK | Disseminated Intravascular Coagulation | Sepsis, travma gibi ağır hastalıklarda pıhtılaşma sisteminin yaygın olarak etkinleşmesi ve pıhtılaşma faktörlerinin tükenmesiyle hem pıhtı hem kanama görülmesi. |
+Bulaşıcı hastalık | | Communicable Diseases | Bir kişiden diğerine veya hayvandan insana geçebilen enfeksiyon hastalığı; bulaş yoluna uygun koruyucu ekipman kullanılır. |
+Tetanoz | | Tetanus | Yaraya bulaşan Clostridium tetani toksinine bağlı ağrılı kas kasılmaları; kirli yaralarda aşı durumu sorgulanır. |
+Kuduz | | Rabies | Hayvan ısırığıyla bulaşan, belirtiler başladıktan sonra neredeyse her zaman ölümcül olan viral hastalık; ısırık sonrası hızlı aşılama ile önlenebilir. | Y-26
+Karaciğer yetmezliği | | Liver Failure | Karaciğerin işlevlerini yerine getirememesi; sarılık, pıhtılaşma bozukluğu, karında sıvı ve bilinç değişikliğiyle seyreder. |
+Hepatik ensefalopati | | Hepatic Encephalopathy | Karaciğer yetmezliğinde kanda biriken zararlı maddelerin beyin işlevlerini bozması; bilinç bulanıklığı ve el titremesiyle seyreder. |
+Siroz | | Liver Cirrhosis | Karaciğer dokusunun kalıcı hasarla sertleşip işlevini yitirmesi. |
+Özofagus varis kanaması | | Esophageal and Gastric Varices | Sirozlu hastada yemek borusundaki genişlemiş toplardamarlardan olan, bol kan kusmayla seyreden ağır kanama. |
+Peptik ülser perforasyonu | Ülser delinmesi | Peptic Ulcer Perforation | Mide veya on iki parmak bağırsağındaki yaranın delinmesi; ani ve şiddetli karın ağrısı ile tahta gibi sert karınla seyreder. |
+Peritonit | | Peritonitis | Karın zarının iltihabı; şiddetli karın ağrısı, karında sertlik ve ateşle seyreder. |
+Damlacık izolasyonu | | Patient Isolation | Konuşma, öksürme ve hapşırmayla yayılan büyük damlacıklarla bulaşan hastalıklarda (grip gibi) cerrahi maske kullanımını içeren önlemler. |
+Hava yolu izolasyonu | Solunum izolasyonu | Patient Isolation | Havada asılı kalan küçük partiküllerle bulaşan hastalıklarda (tüberküloz, kızamık gibi) N95/FFP2 maske kullanımını içeren önlemler. |
+Temas izolasyonu | | Patient Isolation | Doğrudan veya yüzeylerle temasla bulaşan mikroorganizmalarda eldiven ve önlük kullanımını içeren önlemler. |
+Standart önlemler | | Universal Precautions | Her hastaya, enfeksiyon durumu bilinmese de uygulanan el hijyeni, eldiven ve gerektiğinde maske-gözlük kullanımı gibi temel enfeksiyon önlemleri. |
+Kesici-delici alet yaralanması | İğne batması | Needlestick Injuries | Sağlık personelinin kullanılmış iğne veya kesici aletle yaralanması; kan yoluyla bulaşan enfeksiyonlar açısından hemen bildirilmeli ve izlenmelidir. | /evraklar

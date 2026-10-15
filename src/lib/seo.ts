@@ -84,6 +84,7 @@ export const ROUTE_SEO: Record<string, RouteSeo> = {
   "/egitim/dokumanlar": { title: "Eğitim Dökümanları", description: "TEM, İLYAD, ÇİLYAD, TİLYAD, ASGE, obstetrik aciller, yenidoğan transport, SKKM, KBRN, adli vakalar ve oksijen güvenliği eğitim belgeleri." },
   "/egitim/videolar": { title: "Eğitim Videoları", description: "Erişkin hastada airway, LMA, entübasyon, ventilatör, iğne krikotirotomi, intraosseöz, defibrilasyon, kardiyoversiyon ve travma uygulama videoları." },
   "/egitim/kitaplar": { title: "Eğitim Kitapları", description: "Hastane öncesi akış şemaları, yenidoğan transport, obstetrik aciller, SKKM, ambulans sürüş güvenliği ve ilk yardım eğitim kitapları (PDF)." },
+  "/sozluk": { title: "Tıbbi Sözlük", description: "Hastane öncesi acil sağlık için tıbbi terimler ve kısaltmalar sözlüğü: Türkçe tanımlar, İngilizce ve MeSH karşılıkları, ilgili algoritma bağlantıları." },
   "/hakkinda": { title: "Hakkında ve Kaynaklar", description: "Acil Protokol'ün amacı, kapsamı, içerik kaynakları (Sağlık Bakanlığı hastane öncesi akış şemaları), künyesi ve tıbbi sorumluluk reddi." },
   "/gizlilik": { title: "Gizlilik", description: "Acil Protokol kişisel veri toplamaz; hesaplayıcı girdileri yalnızca cihazda işlenir. Çerez ve izleme yok." },
   "/erisilebilirlik": { title: "Erişilebilirlik Beyanı", description: "WCAG 2.1 AA hedefi, uygulanan erişilebilirlik önlemleri ve bilinen sınırlamalar." },

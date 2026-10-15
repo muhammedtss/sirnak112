@@ -1,0 +1,31 @@
+# kategori: toksikoloji | Zehirlenmeler
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Zehirlenme | İntoksikasyon | Poisoning | Bir maddenin yutma, solunum, cilt teması veya enjeksiyonla vücuda zarar verecek miktarda alınması. Olay yeri güvenliği, maddenin adı, miktarı ve alım zamanı önemlidir. | Y-31 C-28
+Doz aşımı | Aşırı doz | Drug Overdose | Bir ilacın veya maddenin tedavi edici ya da güvenli miktarın üzerinde alınması. | Y-32 C-28
+Toksidrom | | Toxidrome | Belirli bir zehir grubunun yol açtığı belirti ve bulgu kümesi; bilinmeyen zehirlenmede maddeyi tahmin etmeye yardımcı olur (örneğin kolinerjik, opioid, antikolinerjik, sempatomimetik). | Y-31
+Antidot | Panzehir | Antidotes | Belirli bir zehrin etkisini ortadan kaldıran veya azaltan özel ilaç (örneğin opioid için nalokson, organofosfat için atropin ve pralidoksim). | Y-31
+Ulusal Zehir Danışma Merkezi | UZEM; 114 | Poison Control Centers | Zehirlenmelerde 7/24 telefonla danışmanlık veren merkez; Türkiye'de 114 numarasından ulaşılır. | Y-31
+Dekontaminasyon | | Decontamination | Zehirli veya tehlikeli maddenin hastanın cildinden, gözünden veya giysilerinden uzaklaştırılması; ekip önce kendini korumalıdır. | Y-31 Y-35
+Aktif kömür | | Charcoal | Mide-bağırsak kanalındaki bazı zehirleri bağlayarak emilimini azaltan madde; yalnızca uygun zehirlenmede ve hava yolu güvendeyse kullanılır. | Y-31
+Karbonmonoksit zehirlenmesi | CO zehirlenmesi | Carbon Monoxide Poisoning | Soba, şofben veya yangın kaynaklı renksiz, kokusuz karbonmonoksitin solunmasıyla oksijen taşınmasının bozulması; baş ağrısı, bulantı ve bilinç bozukluğu yapar. Nabız oksimetresi yanıltıcı biçimde normal görünebilir. | Y-33
+Organofosfat zehirlenmesi | Kolinerjik zehirlenme; Tarım ilacı zehirlenmesi | Organophosphate Poisoning | Tarım ilaçlarındaki organofosfatların sinir sisteminde asetilkolin birikimine yol açması; salya, terleme, gözyaşı, ishal, miyozis, bradikardi ve bronş salgısında artış görülür. | Y-35
+Kolinerjik sendrom | | Cholinergic Agents | Asetilkolin fazlalığına bağlı belirtiler: salya ve gözyaşı artışı, idrar ve dışkı kaçırma, kusma, terleme, miyozis, bradikardi ve bronş daralması. | Y-35
+Opioid zehirlenmesi | Narkotik zehirlenmesi | Opioid-Related Disorders | Morfin, eroin, metadon gibi opioidlerin aşırı alımı; bilinç bozukluğu, solunumun yavaşlaması ve iğne ucu pupil üçlüsüyle tanınır. | Y-36
+Nalokson | | Naloxone | Opioid etkisini geri çeviren antidot; özellikle solunumu baskılanmış hastada kullanılır. Etkisi opioidden kısa sürebileceği için hasta izlenmelidir. | Y-36
+Benzodiazepin zehirlenmesi | | Benzodiazepines | Sakinleştirici ilaçların aşırı alımı; uyku hali ve bilinç bozukluğu yapar, başka maddelerle birlikte alındığında solunum baskılanabilir. | Y-32
+Trisiklik antidepresan zehirlenmesi | TSA zehirlenmesi | Antidepressive Agents, Tricyclic | Trisiklik antidepresanların aşırı alımı; nöbet, hipotansiyon ve EKG'de QRS genişlemesiyle ölümcül ritim bozukluklarına yol açabilir. | Y-37
+Parasetamol zehirlenmesi | Asetaminofen zehirlenmesi | Acetaminophen | Yüksek doz parasetamol alımı; erken dönemde belirti vermeyebilir ancak günler içinde karaciğer yetmezliğine yol açabilir. Alım zamanı ve miktarı mutlaka kaydedilir. | Y-32
+Kalsiyum kanal blokeri zehirlenmesi | | Calcium Channel Blockers | Tansiyon ve ritim ilaçlarından kalsiyum kanal blokerlerinin aşırı alımı; ağır hipotansiyon ve bradikardi yapar. | Y-34
+Beta bloker zehirlenmesi | | Adrenergic beta-Antagonists | Beta bloker ilaçların aşırı alımı; bradikardi, hipotansiyon ve hipoglisemiye yol açabilir. | Y-34
+Alkol zehirlenmesi | Akut alkol intoksikasyonu | Alcoholic Intoxication | Aşırı alkol alımına bağlı bilinç bozukluğu, kusma ve aspirasyon riski; hipoglisemi ve kafa travması gözden kaçmamalıdır. | Y-16
+Metil alkol zehirlenmesi | Metanol zehirlenmesi | Methanol | Sahte içkilerde bulunan metanolün alımı; birkaç saat sonra görme bozukluğu, karın ağrısı ve ağır asidozla seyreder. |
+Mantar zehirlenmesi | | Mushroom Poisoning | Zehirli yabani mantar yenmesi; belirtilerin geç (6 saatten sonra) başlaması karaciğer hasarı yapan ağır türleri düşündürür. | Y-31
+Siyanür zehirlenmesi | | Cyanides | Yangın dumanı veya endüstriyel kaynaklı siyanürün hücrelerin oksijen kullanımını engellemesi; ani bilinç kaybı, nöbet ve asidoz yapar. |
+Sempatomimetik toksidrom | Uyarıcı madde zehirlenmesi | Sympathomimetics | Kokain, amfetamin gibi uyarıcıların yol açtığı ajitasyon, taşikardi, hipertansiyon, terleme, ateş ve pupil genişlemesi. | Y-15
+Antikolinerjik toksidrom | | Cholinergic Antagonists | Bazı ilaçlar ve bitkilerin yol açtığı kuru-sıcak-kızarık cilt, pupil genişlemesi, taşikardi, idrar retansiyonu ve deliryum. |
+Kostik madde yutulması | Çamaşır suyu, asit veya alkali içme | Caustics | Yakıcı kimyasalların yutulmasıyla ağız, yemek borusu ve midede yanık; hasta kusturulmaz. | Y-30
+Hidrokarbon aspirasyonu | | Hydrocarbons | Benzin, gazyağı gibi maddelerin yutulurken akciğere kaçması; ağır kimyasal pnömoniye yol açar, kusturulmaz. |
+Kurşun zehirlenmesi | | Lead Poisoning | Kurşuna uzun süreli maruziyetle karın ağrısı, kansızlık ve sinir sistemi etkileri; çocuklarda gelişim bozukluğuna yol açar. |
+Madde kullanım bozukluğu | Bağımlılık | Substance-Related Disorders | Zararlarına rağmen bir maddenin denetimsiz biçimde kullanılmaya devam edilmesi. |
+Yoksunluk sendromu | | Substance Withdrawal Syndrome | Bağımlılık yapan maddenin kesilmesi veya azaltılmasıyla ortaya çıkan belirtiler; alkol yoksunluğunda nöbet ve deliryum gelişebilir. |
+Sentetik kannabinoid zehirlenmesi | Bonzai; Jamaika | Cannabinoids | Sentetik kannabinoid içeren maddelerin kullanımına bağlı ajitasyon, psikoz, taşikardi, nöbet ve bilinç bozukluğu; etkileri öngörülemez ve ağır seyredebilir. | Y-15

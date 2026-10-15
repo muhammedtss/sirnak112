@@ -1,0 +1,89 @@
+# kategori: kardiyoloji | Kalp, dolaşım ve EKG
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Akut koroner sendrom | AKS | Acute Coronary Syndrome | Kalp kasını besleyen koroner damarlarda kan akımının ani olarak azalmasıyla gelişen tabloların ortak adı; kararsız angina, ST yükselmesiz ve ST yükselmeli miyokard enfarktüsünü kapsar. | Y-06
+Angina pektoris | Göğüs anjini; Angina | Angina Pectoris | Kalp kasının oksijen ihtiyacı karşılanamadığında ortaya çıkan, genellikle göğüs ortasında baskı, sıkışma veya yanma şeklinde hissedilen ve kola, çeneye ya da sırta yayılabilen ağrı. | Y-06
+Kararsız angina | Unstabil angina | Angina, Unstable | Yeni başlayan, giderek sıklaşan veya istirahatte ortaya çıkan göğüs ağrısı; kalp kası hasarı göstergeleri yükselmez ancak miyokard enfarktüsüne ilerleme riski yüksektir. | Y-06
+Miyokard enfarktüsü | MI; Kalp krizi | Myocardial Infarction | Koroner damarın tıkanması sonucu kalp kasının bir bölümünün kansız kalarak hasar görmesi. Erken tanı ve damarın hızla açılması hasarın boyutunu azaltır. | Y-06
+ST yükselmeli miyokard enfarktüsü | STEMI | ST Elevation Myocardial Infarction | EKG'de ardışık iki derivasyonda ST segment yükselmesiyle seyreden, genellikle koroner damarın tamamen tıkandığını gösteren miyokard enfarktüsü; damarın en kısa sürede açılmasını gerektirir. | Y-06
+ST yükselmesiz miyokard enfarktüsü | NSTEMI | Non-ST Elevated Myocardial Infarction | EKG'de ST yükselmesi olmadan, kalp kası hasar göstergelerinin (troponin) yükseldiği miyokard enfarktüsü. | Y-06
+Koroner arter hastalığı | KAH; Koroner kalp hastalığı | Coronary Artery Disease | Kalbi besleyen koroner damarlarda aterosklerotik plakların birikmesiyle damarın daralması; angina ve miyokard enfarktüsünün temel nedenidir. |
+Ateroskleroz | Damar sertliği | Atherosclerosis | Damar duvarında yağ, kolesterol ve iltihap hücrelerinden oluşan plak birikmesiyle damarın sertleşmesi ve daralması. |
+Kalp yetmezliği | KKY; Konjestif kalp yetmezliği | Heart Failure | Kalbin vücudun ihtiyacını karşılayacak kadar kan pompalayamaması; nefes darlığı, bacaklarda ödem, çabuk yorulma ve akciğerde sıvı birikmesiyle kendini gösterir. | Y-14
+Akut akciğer ödemi | Kardiyojenik akciğer ödemi | Pulmonary Edema | Kalbin sol tarafının yetersizliği sonucu akciğer dokusunda ve alveollerde ani sıvı birikmesi; şiddetli nefes darlığı, köpüklü balgam ve hırıltılı solunumla seyreder. | Y-14
+Kardiyojenik şok | | Shock, Cardiogenic | Kalbin pompa işlevinin ağır bozulması sonucu dokulara yetersiz kan gittiği şok tablosu; çoğunlukla geniş miyokard enfarktüsünden sonra gelişir. | Y-14 C-08
+Kardiyak arrest | Kalp durması | Heart Arrest | Kalbin etkili kan pompalamasının aniden durması; hasta yanıtsızdır, normal solunumu ve nabzı yoktur. Hemen KPR ve ritme göre defibrilasyon gerekir. | Y-09 C-12
+Ani kardiyak ölüm | | Death, Sudden, Cardiac | Belirtilerin başlamasından kısa süre sonra, çoğunlukla ölümcül bir ritim bozukluğuna bağlı olarak kalp kaynaklı beklenmedik ölüm. |
+Ventrikül fibrilasyonu | VF | Ventricular Fibrillation | Ventriküllerin düzensiz ve etkisiz titreşimiyle kalbin kan pompalayamadığı ölümcül ritim; EKG'de düzensiz, şekilsiz dalgalar görülür. Şoklanabilir ritimdir. | Y-11 C-13
+Ventriküler taşikardi | VT | Tachycardia, Ventricular | Ventriküllerden kaynaklanan, geniş QRS kompleksli hızlı ritim. Nabızlı veya nabızsız olabilir; nabızsız olanı arrest ritmidir. | Y-08 /ekg-egitim/atlas
+Nabızsız ventriküler taşikardi | nVT | Pulseless ventricular tachycardia | Ventriküler taşikardinin dolaşımı sağlayamadığı, nabız alınamayan arrest ritmi; ventrikül fibrilasyonu gibi şoklanabilir ritim olarak yönetilir. | Y-11 C-13
+Nabızsız elektriksel aktivite | NEA; PEA | Pulseless Electrical Activity | Monitörde düzenli bir elektriksel ritim görüldüğü halde nabız alınamayan arrest durumu. Şoklanamaz ritimdir; geri döndürülebilir nedenler aranır. | Y-10 C-14
+Asistoli | Düz çizgi | Asystole | Kalpte hiçbir elektriksel etkinliğin olmadığı, monitörde düz çizgi şeklinde görülen arrest ritmi. Şoklanamaz ritimdir. | Y-10 C-14
+Şoklanabilir ritim | | Shockable rhythm | Defibrilasyonla düzeltilebilen arrest ritimleri: ventrikül fibrilasyonu ve nabızsız ventriküler taşikardi. | Y-11
+Şoklanamaz ritim | | Non-shockable rhythm | Defibrilasyonun yarar sağlamadığı arrest ritimleri: asistoli ve nabızsız elektriksel aktivite. | Y-10
+Spontan dolaşımın geri dönmesi | ROSC | Return of Spontaneous Circulation | Kardiyak arrest sonrası resüsitasyonla kalbin kendiliğinden etkili kasılmaya başlaması; nabzın alınması ve kan basıncının oluşmasıyla anlaşılır. | Y-12 C-15
+Resüsitasyon sonrası bakım | | Post-cardiac arrest care | Dolaşımın geri dönmesinden sonra beyin ve diğer organları korumaya yönelik solunum, dolaşım, kan şekeri ve vücut ısısı yönetimi. | Y-12 C-15
+Taşikardi | | Tachycardia | Kalp hızının yaşa göre normalin üzerinde olması; erişkinde dakikada 100'ün üzeri. | Y-08 C-11
+Bradikardi | | Bradycardia | Kalp hızının yaşa göre normalin altında olması; erişkinde dakikada 60'ın altı. | Y-07 C-10
+Sinüs ritmi | Normal sinüs ritmi | Sinus rhythm | Kalbin doğal uyarı merkezi olan sinüs düğümünden kaynaklanan normal ritim; her QRS'ten önce düzenli bir P dalgası bulunur. | /ekg-egitim/atlas
+Sinüs taşikardisi | | Tachycardia, Sinus | Sinüs düğümü kaynaklı, hızı normalin üzerinde olan ritim; çoğunlukla ateş, ağrı, kanama, korku veya dehidratasyon gibi bir nedene yanıttır. | /ekg-egitim/atlas
+Sinüs bradikardisi | | Bradycardia, Sinus | Sinüs düğümü kaynaklı, hızı normalin altında olan ritim; sporcularda ve uykuda normal olabilir. | /ekg-egitim/atlas
+Supraventriküler taşikardi | SVT; Paroksismal supraventriküler taşikardi | Tachycardia, Supraventricular | Ventriküllerin üzerindeki iletim yollarından kaynaklanan, genellikle dar QRS'li, düzenli ve çok hızlı ritim; çoğunlukla aniden başlar ve aniden sonlanır. | Y-08 C-11
+Atriyal fibrilasyon | AF | Atrial Fibrillation | Atriyumların düzensiz ve çok hızlı elektriksel etkinliği sonucu P dalgalarının kaybolduğu, düzensiz ventrikül yanıtlı ritim. Atriyumda pıhtı oluşturarak inme riskini artırır. | Y-08 /ekg-egitim/atlas
+Atriyal flatter | AFL | Atrial Flutter | Atriyumda dönen tek bir elektriksel halkanın oluşturduğu hızlı ritim; EKG'de testere dişi görünümündeki flatter dalgalarıyla tanınır. | Y-08 /ekg-egitim/atlas
+Atriyoventriküler blok | AV blok; Kalp bloğu | Atrioventricular Block | Atriyumlardan ventriküllere uyarı iletiminin gecikmesi veya kesilmesi. Birinci derecede yalnızca gecikme vardır; ikinci derecede bazı uyarılar, üçüncü derecede (tam blok) hiçbir uyarı iletilmez. | Y-07 /ekg-egitim/atlas
+Tam kalp bloğu | Üçüncü derece AV blok | Heart Block | Atriyum ve ventriküllerin birbirinden bağımsız çalıştığı, uyarıların hiç iletilmediği AV blok; genellikle belirgin bradikardi ve dolaşım bozukluğuna yol açar. | Y-07
+Dal bloğu | Sağ dal bloğu; Sol dal bloğu | Bundle-Branch Block | Ventriküllere uyarı taşıyan sağ veya sol dalda iletimin bozulması; EKG'de genişlemiş QRS kompleksiyle görülür. |
+Wolff-Parkinson-White sendromu | WPW | Wolff-Parkinson-White Syndrome | Atriyum ile ventrikül arasında doğuştan ek bir iletim yolu bulunması; EKG'de kısa PR aralığı ve delta dalgası görülür, ani hızlı ritim bozukluklarına yol açabilir. |
+Torsades de pointes | | Torsades de Pointes | QRS komplekslerinin taban çizgisi etrafında dönüyormuş gibi görüldüğü, uzun QT ile ilişkili polimorfik ventriküler taşikardi. | /ekg-egitim/atlas
+Ekstrasistol | Erken atım | Cardiac Complexes, Premature | Normal ritim içinde beklenenden erken gelen atım; atriyum (supraventriküler) veya ventrikül kaynaklı olabilir. |
+Aritmi | Ritim bozukluğu; Disritmi | Arrhythmias, Cardiac | Kalp atımının hızında, düzeninde veya iletiminde ortaya çıkan bozuklukların genel adı. | /ekg-egitim/atlas
+Elektrokardiyografi | EKG; Elektrokardiyogram | Electrocardiography | Kalbin elektriksel etkinliğinin vücut yüzeyine yerleştirilen elektrotlarla kaydedilmesi; ritim bozuklukları, iskemi ve enfarktüs tanısında kullanılır. | /ekg-egitim
+On iki derivasyonlu EKG | 12 kanal EKG | 12-lead electrocardiogram | Kalbin elektriksel etkinliğini on iki farklı açıdan gösteren standart EKG çekimi; enfarktüsün yerini belirlemeye yarar. | /ekg-egitim
+Derivasyon | EKG derivasyonu | ECG lead | EKG'de kalbin elektriksel etkinliğine belirli bir açıdan bakan kayıt hattı (örneğin DI, aVF, V1). |
+P dalgası | | P wave | EKG'de atriyumların uyarılmasını (depolarizasyonunu) gösteren ilk küçük dalga. | /ekg-egitim
+PR aralığı | | PR interval | P dalgasının başlangıcından QRS kompleksinin başlangıcına kadar geçen süre; uyarının atriyumlardan ventriküllere iletim süresini gösterir, normalde 0,12–0,20 saniyedir. | /ekg-egitim
+QRS kompleksi | | QRS complex | EKG'de ventriküllerin uyarılmasını gösteren sivri dalga grubu; normal genişliği 0,12 saniyenin altındadır. | /ekg-egitim
+ST segmenti | | ST segment | QRS kompleksinin bitişi ile T dalgasının başlangıcı arasındaki bölüm; yükselmesi veya çökmesi kalp kasında iskemi ya da hasarı düşündürür. | /ekg-egitim
+T dalgası | | T wave | EKG'de ventriküllerin yeniden kutuplanmasını (repolarizasyonunu) gösteren dalga; sivrilmesi hiperkalemide, ters dönmesi iskemide görülebilir. | /ekg-egitim
+QT aralığı | | Long QT Syndrome | QRS başlangıcından T dalgasının sonuna kadar geçen süre; uzaması bazı ilaçlar ve elektrolit bozukluklarıyla ilişkilidir ve ölümcül ritim riskini artırır. |
+Delta dalgası | | Delta wave | QRS kompleksinin başlangıcındaki yavaş yükselen eğim; ek iletim yolunun (WPW) göstergesidir. |
+Kardiyoversiyon | Senkronize kardiyoversiyon | Electric Countershock | Nabızlı hızlı ritim bozukluklarını düzeltmek için QRS kompleksiyle eş zamanlı (senkronize) verilen elektrik şoku. | Y-08 C-11
+Defibrilasyon | | Defibrillators | Ventrikül fibrilasyonu ve nabızsız ventriküler taşikardide kalbe senkronize olmayan elektrik şoku verilerek ritmin düzeltilmeye çalışılması. | Y-11 C-13
+Transkutan pacing | Dış kalp pili; Pacemaker | Cardiac Pacing, Artificial | Göğse yapıştırılan pedler aracılığıyla kalbe dışarıdan elektrik uyarısı vererek kalp hızının sağlanması; ilaca yanıtsız ağır bradikardide kullanılır. | Y-07
+Kalp pili | Pacemaker | Pacemaker, Artificial | Yavaş veya düzensiz kalp ritminde kalbi elektrik uyarısıyla düzenli çalıştırmak için deri altına yerleştirilen cihaz. |
+İmplante edilebilir kardiyoverter defibrilatör | ICD cihazı | Defibrillators, Implantable | Ölümcül ritim bozukluğunu algılayıp kendiliğinden şok veren, deri altına yerleştirilmiş cihaz. |
+Kardiyak tamponad | Perikard tamponadı | Cardiac Tamponade | Kalbi saran zarın (perikard) içinde biriken kan veya sıvının kalbi sıkıştırarak dolmasını engellemesi; hipotansiyon, boyun venlerinde dolgunluk ve derinden gelen kalp sesleriyle seyreder. Geri döndürülebilir arrest nedenlerindendir. | /skalalar/geri-dondurulebilir
+Perikardit | | Pericarditis | Kalbi saran zarın iltihabı; öne eğilmekle azalan, nefes almakla artan göğüs ağrısı yapar. |
+Miyokardit | | Myocarditis | Kalp kasının çoğunlukla viral kaynaklı iltihabı; ritim bozukluğu ve kalp yetmezliğine yol açabilir. |
+Endokardit | | Endocarditis | Kalbin iç zarının ve kapakçıklarının, çoğunlukla bakteriyel iltihabı. |
+Aort diseksiyonu | | Aortic Dissection | Ana atardamarın (aort) iç tabakasının yırtılarak kanın damar duvarı katmanları arasına ilerlemesi; sırta yayılan ani ve yırtılır tarzda göğüs ağrısı, kollar arasında tansiyon farkı görülebilir. Ölümcül bir acildir. |
+Aort anevrizması | | Aortic Aneurysm | Aort duvarının zayıflayarak balon gibi genişlemesi; yırtılırsa ani karın veya sırt ağrısı ve şokla ölümcül kanamaya yol açar. |
+Hipertansiyon | HT; Yüksek tansiyon | Hypertension | Kan basıncının sürekli olarak normalin üzerinde seyretmesi; erişkinde genellikle 140/90 mmHg ve üzeri kabul edilir. |
+Hipertansif acil durum | Hipertansif kriz | Hypertensive Emergency | Ciddi kan basıncı yüksekliğine beyin, kalp, böbrek veya gözde yeni gelişen organ hasarının eşlik etmesi; kontrollü tedavi gerektirir. |
+Hipotansiyon | Düşük tansiyon | Hypotension | Kan basıncının normalin altında olması; erişkinde sistolik basıncın genellikle 90 mmHg'nın altında olması. Şokun önemli bulgularındandır. |
+Ortostatik hipotansiyon | | Hypotension, Orthostatic | Ayağa kalkınca kan basıncının belirgin düşmesi; baş dönmesi ve bayılmaya yol açabilir, sıvı kaybı ve bazı ilaçlarla ilişkilidir. |
+Şok | Dolaşım yetmezliği | Shock | Dokulara yeterli kan ve oksijen gidememesiyle hücre işlevlerinin bozulduğu yaşamı tehdit eden durum. Hipovolemik, kardiyojenik, dağılımsal (septik, anafilaktik, nörojenik) ve tıkayıcı tipleri vardır. | Y-13 C-07
+Hipovolemik şok | Hemorajik şok | Shock, Hemorrhagic | Kanama veya ağır sıvı kaybı nedeniyle dolaşan kan hacminin azalmasıyla gelişen şok. | Y-13 C-07
+Septik şok | | Shock, Septic | Ağır enfeksiyona verilen düzensiz vücut yanıtı sonucu damar genişlemesi ve dolaşım yetmezliğiyle seyreden şok. | C-09
+Nörojenik şok | | Shock, Neurogenic | Omurilik yaralanmasında sempatik sinir sisteminin etkisini yitirmesiyle damarların genişlemesi; hipotansiyonla birlikte bradikardi ve sıcak, kuru cilt görülür. |
+Obstrüktif şok | Tıkayıcı şok | Obstructive shock | Kalbin dolmasını veya kanı pompalamasını mekanik olarak engelleyen durumlarda (tansiyon pnömotoraks, kardiyak tamponad, masif pulmoner emboli) gelişen şok. |
+Senkop | Bayılma | Syncope | Beyin kan akımının geçici azalmasıyla ortaya çıkan, kısa süreli ve kendiliğinden düzelen bilinç ve tonus kaybı. Kalp kaynaklı senkop ani ölüm riski taşır. |
+Vazovagal senkop | | Syncope, Vasovagal | Uzun süre ayakta kalma, ağrı, korku veya kan görme gibi tetikleyicilerle kalp hızı ve kan basıncının refleks olarak düşmesi sonucu gelişen bayılma. |
+Derin ven trombozu | DVT | Venous Thrombosis | Derin toplardamarlarda, çoğunlukla bacakta pıhtı oluşması; şişlik ve ağrı yapar, pıhtının akciğere gitmesiyle pulmoner emboliye yol açabilir. |
+Periferik arter tıkanıklığı | Akut ekstremite iskemisi | Peripheral Arterial Disease | Bir kol veya bacağın atardamarının ani tıkanması; ağrı, solukluk, nabızsızlık, uyuşma ve hareket kaybıyla seyreder. |
+Kardiyomiyopati | | Cardiomyopathies | Kalp kasının yapısal ve işlevsel bozukluğu; kalp yetmezliği ve ani ölüme yol açabilir. |
+Kapak hastalığı | Kalp kapak hastalığı | Heart Valve Diseases | Kalp kapaklarının daralması (stenoz) veya tam kapanamaması (yetersizlik) sonucu kan akımının bozulması. |
+Kalp hızı | Nabız hızı | Heart Rate | Kalbin bir dakikadaki atım sayısı; erişkinde istirahatte normalde 60–100/dk arasıdır, çocuklarda yaş küçüldükçe yükselir. |
+Sistolik kan basıncı | Büyük tansiyon | Systolic pressure | Kalbin kasılması sırasında atardamarlarda ölçülen en yüksek basınç. |
+Diyastolik kan basıncı | Küçük tansiyon | Diastolic pressure | Kalbin gevşemesi sırasında atardamarlarda ölçülen en düşük basınç. |
+Ortalama arter basıncı | OAB; MAP | Arterial Pressure | Bir kalp döngüsü boyunca atardamarlardaki ortalama basınç; organ kanlanmasının göstergesi olarak kullanılır. |
+Kalp debisi | Kardiyak output | Cardiac Output | Kalbin bir dakikada pompaladığı kan hacmi; kalp hızı ile her atımda atılan kan hacminin çarpımıdır. |
+Preload | Ön yük | Preload | Kasılma başlamadan önce ventrikülün dolmasıyla oluşan gerilim; damar içi hacimle yakından ilişkilidir. |
+Afterload | Art yük | Afterload | Ventrikülün kanı atabilmek için yenmesi gereken direnç; büyük ölçüde damar direncine bağlıdır. |
+İskemi | | Ischemia | Bir dokuya giden kan akımının ihtiyacı karşılayamayacak kadar azalması. |
+Enfarktüs | | Infarction | Kan akımının kesilmesi sonucu bir doku bölümünün kalıcı olarak hasar görmesi (ölmesi). |
+Tromboz | Pıhtılaşma | Thrombosis | Damar içinde pıhtı oluşarak kan akımını engellemesi. |
+Emboli | | Embolism | Pıhtı, yağ, hava gibi bir parçanın kan akımıyla taşınarak bir damarı tıkaması. |
+Trombolitik tedavi | Fibrinolitik tedavi | Thrombolytic Therapy | Damarı tıkayan pıhtıyı ilaçla eritmeye yönelik tedavi; belirli zaman aralığında ve uygun hastada uygulanır. |
+Antikoagülan | Kan sulandırıcı | Anticoagulants | Kanın pıhtılaşmasını azaltan ilaç grubu (varfarin, heparin ve yeni oral antikoagülanlar gibi); kullanan hastada travma sonrası kanama riski yüksektir. |
+Antiagregan | Antitrombosit ilaç | Platelet Aggregation Inhibitors | Trombositlerin kümeleşmesini engelleyerek pıhtı oluşumunu azaltan ilaç grubu; aspirin bu gruptandır. |

@@ -24,6 +24,7 @@ colors:
   module-icd10: "#06B6D4"
   module-ekg: "#10B981"
   module-egitim: "#3B82F6"
+  module-sozluk: "#D946EF"
 typography:
   display:
     fontFamily: "Outfit, system-ui, sans-serif"
@@ -124,7 +125,7 @@ Koyu, soğuk bir zemin, tek bir teal marka rengi ve modül başına ayrılmış 
 - **Alarm Kırmızısı** (#F87171): Tehlike, kritik adım (KKM etiketi), hata.
 
 ### Modül renkleri
-Algoritmalar #F97316 · Vaka Protokolleri #8B5CF6 · Skalalar #34D399 · İlaç Dozu #F59E0B · Envanter #EF4444 · Evraklar #EC4899 · ICD-10 #06B6D4 · EKG Eğitimi #10B981 · Eğitim #3B82F6. İkon kutusunda %13 ve kenarda %20 opaklıkla, filigran ikonda %10 opaklıkla kullanılır.
+Algoritmalar #F97316 · Vaka Protokolleri #8B5CF6 · Skalalar #34D399 · İlaç Dozu #F59E0B · Envanter #EF4444 · Evraklar #EC4899 · ICD-10 #06B6D4 · EKG Eğitimi #10B981 · Eğitim #3B82F6 · Tıbbi Sözlük #D946EF. İkon kutusunda %13 ve kenarda %20 opaklıkla, filigran ikonda %10 opaklıkla kullanılır.
 
 ### Named Rules
 **The One Voice Rule.** Teal tek marka sesidir; aktif, seçili ve odaklı durumları yalnızca teal anlatır.
@@ -153,7 +154,7 @@ Tip ölçeği `:root` içinde token olarak tanımlıdır: 11 (etiket tabanı) / 
 
 ## Layout
 
-Mobil öncelikli tek sütun akış; içerik `max-w-xl` (36rem) ile `max-w-3xl` (48rem) arası kapsayıcılarda ortalanır. Kenar boşluğu 16px'tir. Ana sayfa modülleri mobilde 2, geniş ekranda 3 sütunlu ızgarada (12px aralık) durur; 9 modülde mobilde son kart (Eğitim) tam satır kaplar. Başlık (AppHeader) yapışkandır (sticky); alt navigasyon kaydırma alanının dışında, ekranın altında sabit bir haptır ve iOS güvenli alanı kadar alt boşluk bırakır. Uygulama kökü `100dvh` yüksekliğindedir ve yalnızca içerik alanı kayar.
+Mobil öncelikli tek sütun akış; içerik `max-w-xl` (36rem) ile `max-w-3xl` (48rem) arası kapsayıcılarda ortalanır. Kenar boşluğu 16px'tir. Ana sayfa modülleri mobil ve tablette 2, geniş ekranda (lg) 5 sütunlu ızgarada (12px aralık) durur; 10 modülle yetim kart kalmaz. Başlık (AppHeader) yapışkandır (sticky); alt navigasyon kaydırma alanının dışında, ekranın altında sabit bir haptır ve iOS güvenli alanı kadar alt boşluk bırakır. Uygulama kökü `100dvh` yüksekliğindedir ve yalnızca içerik alanı kayar.
 
 ## Elevation & Depth
 

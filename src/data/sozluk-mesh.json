@@ -1,0 +1,2365 @@
+{
+ "12-lead electrocardiogram": null,
+ "Abdomen, Acute": {
+  "id": "D000006",
+  "ad": "Abdomen, Acute"
+ },
+ "Abdominal Injuries": {
+  "id": "D000007",
+  "ad": "Abdominal Injuries"
+ },
+ "Abdominal Pain": {
+  "id": "D015746",
+  "ad": "Abdominal Pain"
+ },
+ "Abortion, Spontaneous": {
+  "id": "D000022",
+  "ad": "Abortion, Spontaneous"
+ },
+ "Abrasion": null,
+ "Abruptio Placentae": {
+  "id": "D000037",
+  "ad": "Abruptio Placentae"
+ },
+ "Acetaminophen": {
+  "id": "D000082",
+  "ad": "Acetaminophen"
+ },
+ "Acidosis": {
+  "id": "D000138",
+  "ad": "Acidosis"
+ },
+ "Acute Coronary Syndrome": {
+  "id": "D054058",
+  "ad": "Acute Coronary Syndrome"
+ },
+ "Acute Kidney Injury": {
+  "id": "D058186",
+  "ad": "Acute Kidney Injury"
+ },
+ "Adenosine": {
+  "id": "D000241",
+  "ad": "Adenosine"
+ },
+ "Administration, Inhalation": {
+  "id": "D000280",
+  "ad": "Administration, Inhalation"
+ },
+ "Administration, Intranasal": {
+  "id": "D000281",
+  "ad": "Administration, Intranasal"
+ },
+ "Administration, Intravenous": {
+  "id": "D061605",
+  "ad": "Administration, Intravenous"
+ },
+ "Administration, Sublingual": {
+  "id": "D000286",
+  "ad": "Administration, Sublingual"
+ },
+ "Adrenal Cortex Hormones": {
+  "id": "D000305",
+  "ad": "Adrenal Cortex Hormones"
+ },
+ "Adrenal Insufficiency": {
+  "id": "D000309",
+  "ad": "Adrenal Insufficiency"
+ },
+ "Adrenergic beta-Antagonists": {
+  "id": "D000319",
+  "ad": "Adrenergic beta-Antagonists"
+ },
+ "Advanced Cardiac Life Support": {
+  "id": "D022561",
+  "ad": "Advanced Cardiac Life Support"
+ },
+ "Advanced trauma life support": {
+  "id": "D061906",
+  "ad": "Advanced Trauma Life Support Care"
+ },
+ "Afterload": null,
+ "Air Ambulances": {
+  "id": "D017732",
+  "ad": "Air Ambulances"
+ },
+ "Airway Management": {
+  "id": "D058109",
+  "ad": "Airway Management"
+ },
+ "Airway Obstruction": {
+  "id": "D000402",
+  "ad": "Airway Obstruction"
+ },
+ "Airway, Breathing, Circulation, Disability, Exposure": null,
+ "Albuterol": {
+  "id": "D000420",
+  "ad": "Albuterol"
+ },
+ "Alcoholic Intoxication": {
+  "id": "D000435",
+  "ad": "Alcoholic Intoxication"
+ },
+ "Alert, Voice, Pain, Unresponsive": null,
+ "Alkalosis": {
+  "id": "D000471",
+  "ad": "Alkalosis"
+ },
+ "Altitude Sickness": {
+  "id": "D000532",
+  "ad": "Altitude Sickness"
+ },
+ "Ambulance driving safety training": null,
+ "Ambulances": {
+  "id": "D000552",
+  "ad": "Ambulances"
+ },
+ "Amiodarone": {
+  "id": "D000638",
+  "ad": "Amiodarone"
+ },
+ "Amniotic Fluid": {
+  "id": "D000653",
+  "ad": "Amniotic Fluid"
+ },
+ "Amputation, Traumatic": {
+  "id": "D000673",
+  "ad": "Amputation, Traumatic"
+ },
+ "Analgesics": {
+  "id": "D000700",
+  "ad": "Analgesics"
+ },
+ "Analgesics, Opioid": {
+  "id": "D000701",
+  "ad": "Analgesics, Opioid"
+ },
+ "Anaphylaxis": {
+  "id": "D000707",
+  "ad": "Anaphylaxis"
+ },
+ "Anatomic position": null,
+ "Anemia": {
+  "id": "D000740",
+  "ad": "Anemia"
+ },
+ "Anemia, Sickle Cell": {
+  "id": "D000755",
+  "ad": "Anemia, Sickle Cell"
+ },
+ "Anesthesia": {
+  "id": "D000758",
+  "ad": "Anesthesia"
+ },
+ "Angina Pectoris": {
+  "id": "D000787",
+  "ad": "Angina Pectoris"
+ },
+ "Angina, Unstable": {
+  "id": "D000789",
+  "ad": "Angina, Unstable"
+ },
+ "Angioedema": {
+  "id": "D000799",
+  "ad": "Angioedema"
+ },
+ "Anisocoria": {
+  "id": "D015875",
+  "ad": "Anisocoria"
+ },
+ "Anterior": null,
+ "Anti-Arrhythmia Agents": {
+  "id": "D000889",
+  "ad": "Anti-Arrhythmia Agents"
+ },
+ "Anticoagulants": {
+  "id": "D000925",
+  "ad": "Anticoagulants"
+ },
+ "Anticonvulsants": {
+  "id": "D000927",
+  "ad": "Anticonvulsants"
+ },
+ "Antidepressive Agents, Tricyclic": {
+  "id": "D000929",
+  "ad": "Antidepressive Agents, Tricyclic"
+ },
+ "Antidotes": {
+  "id": "D000931",
+  "ad": "Antidotes"
+ },
+ "Antipyretics": {
+  "id": "D058633",
+  "ad": "Antipyretics"
+ },
+ "Anuria": {
+  "id": "D001002",
+  "ad": "Anuria"
+ },
+ "Aorta": {
+  "id": "D001011",
+  "ad": "Aorta"
+ },
+ "Aortic Aneurysm": {
+  "id": "D001014",
+  "ad": "Aortic Aneurysm"
+ },
+ "Aortic Dissection": {
+  "id": "D000784",
+  "ad": "Aortic Dissection"
+ },
+ "Apgar Score": {
+  "id": "D001034",
+  "ad": "Apgar Score"
+ },
+ "Aphasia": {
+  "id": "D001037",
+  "ad": "Aphasia"
+ },
+ "Apnea": {
+  "id": "D001049",
+  "ad": "Apnea"
+ },
+ "Appendicitis": {
+  "id": "D001064",
+  "ad": "Appendicitis"
+ },
+ "Arrhythmias, Cardiac": {
+  "id": "D001145",
+  "ad": "Arrhythmias, Cardiac"
+ },
+ "Arterial Pressure": {
+  "id": "D062186",
+  "ad": "Arterial Pressure"
+ },
+ "Arteries": {
+  "id": "D001158",
+  "ad": "Arteries"
+ },
+ "Ascites": {
+  "id": "D001201",
+  "ad": "Ascites"
+ },
+ "Aspirin": {
+  "id": "D001241",
+  "ad": "Aspirin"
+ },
+ "Asthenia": {
+  "id": "D001247",
+  "ad": "Asthenia"
+ },
+ "Asthma": {
+  "id": "D001249",
+  "ad": "Asthma"
+ },
+ "Asthma attack": null,
+ "Asystole": {
+  "id": "D006323",
+  "ad": "Heart Arrest"
+ },
+ "Ataxia": {
+  "id": "D001259",
+  "ad": "Ataxia"
+ },
+ "Atherosclerosis": {
+  "id": "D050197",
+  "ad": "Atherosclerosis"
+ },
+ "Atrial Fibrillation": {
+  "id": "D001281",
+  "ad": "Atrial Fibrillation"
+ },
+ "Atrial Flutter": {
+  "id": "D001282",
+  "ad": "Atrial Flutter"
+ },
+ "Atrioventricular Block": {
+  "id": "D054537",
+  "ad": "Atrioventricular Block"
+ },
+ "Atrioventricular Node": {
+  "id": "D001283",
+  "ad": "Atrioventricular Node"
+ },
+ "Atropine": {
+  "id": "D001285",
+  "ad": "Atropine"
+ },
+ "Automated External Defibrillator": {
+  "id": "D047548",
+  "ad": "Defibrillators"
+ },
+ "Autonomic Nervous System": {
+  "id": "D001341",
+  "ad": "Autonomic Nervous System"
+ },
+ "Avulsion": null,
+ "Bag-Valve-Mask": null,
+ "Basic life support": null,
+ "Basic training module": null,
+ "Battle sign": {
+  "id": "D020205",
+  "ad": "Skull Fracture, Basilar"
+ },
+ "Benzodiazepines": {
+  "id": "D001569",
+  "ad": "Benzodiazepines"
+ },
+ "Bites and Stings": {
+  "id": "D001733",
+  "ad": "Bites and Stings"
+ },
+ "Blast Injuries": {
+  "id": "D001753",
+  "ad": "Blast Injuries"
+ },
+ "Blepharoptosis": {
+  "id": "D001763",
+  "ad": "Blepharoptosis"
+ },
+ "Blood": {
+  "id": "D001769",
+  "ad": "Blood"
+ },
+ "Blood Coagulation Disorders": {
+  "id": "D001778",
+  "ad": "Blood Coagulation Disorders"
+ },
+ "Blood Gas Analysis": {
+  "id": "D001784",
+  "ad": "Blood Gas Analysis"
+ },
+ "Blood Glucose": {
+  "id": "D001786",
+  "ad": "Blood Glucose"
+ },
+ "Blood Glucose Self-Monitoring": {
+  "id": "D015190",
+  "ad": "Blood Glucose Self-Monitoring"
+ },
+ "Blood Platelets": {
+  "id": "D001792",
+  "ad": "Blood Platelets"
+ },
+ "Blood Pressure": {
+  "id": "D001794",
+  "ad": "Blood Pressure"
+ },
+ "Body Surface Area": {
+  "id": "D001830",
+  "ad": "Body Surface Area"
+ },
+ "Body Temperature": {
+  "id": "D001831",
+  "ad": "Body Temperature"
+ },
+ "Body Weight": {
+  "id": "D001835",
+  "ad": "Body Weight"
+ },
+ "Bolus": null,
+ "Braces": {
+  "id": "D001915",
+  "ad": "Braces"
+ },
+ "Bradycardia": {
+  "id": "D001919",
+  "ad": "Bradycardia"
+ },
+ "Bradycardia, Sinus": null,
+ "Bradypnea": null,
+ "Brain Concussion": {
+  "id": "D001924",
+  "ad": "Brain Concussion"
+ },
+ "Brain herniation": null,
+ "Brain Injuries, Traumatic": null,
+ "Brain Stem": {
+  "id": "D001933",
+  "ad": "Brain Stem"
+ },
+ "Breech Presentation": {
+  "id": "D001946",
+  "ad": "Breech Presentation"
+ },
+ "Bronchi": {
+  "id": "D001980",
+  "ad": "Bronchi"
+ },
+ "Bronchiolitis": {
+  "id": "D001988",
+  "ad": "Bronchiolitis"
+ },
+ "Bronchitis": {
+  "id": "D001991",
+  "ad": "Bronchitis"
+ },
+ "Bronchodilator Agents": {
+  "id": "D001993",
+  "ad": "Bronchodilator Agents"
+ },
+ "Bundle-Branch Block": {
+  "id": "D002037",
+  "ad": "Bundle-Branch Block"
+ },
+ "Burns": {
+  "id": "D002056",
+  "ad": "Burns"
+ },
+ "Burns, Chemical": {
+  "id": "D002057",
+  "ad": "Burns, Chemical"
+ },
+ "Burns, Electric": {
+  "id": "D002058",
+  "ad": "Burns, Electric"
+ },
+ "C-Reactive Protein": {
+  "id": "D002097",
+  "ad": "C-Reactive Protein"
+ },
+ "Calcium Channel Blockers": {
+  "id": "D002121",
+  "ad": "Calcium Channel Blockers"
+ },
+ "Calcium Gluconate": {
+  "id": "D002125",
+  "ad": "Calcium Gluconate"
+ },
+ "Cannabinoids": {
+  "id": "D002186",
+  "ad": "Cannabinoids"
+ },
+ "Cannula": null,
+ "Capillaries": {
+  "id": "D002196",
+  "ad": "Capillaries"
+ },
+ "Capillary refill time": null,
+ "Capnography": {
+  "id": "D019296",
+  "ad": "Capnography"
+ },
+ "Carbetocin": null,
+ "Carbon Monoxide Poisoning": {
+  "id": "D002249",
+  "ad": "Carbon Monoxide Poisoning"
+ },
+ "Cardiac Complexes, Premature": {
+  "id": "D005117",
+  "ad": "Cardiac Complexes, Premature"
+ },
+ "Cardiac Output": {
+  "id": "D002302",
+  "ad": "Cardiac Output"
+ },
+ "Cardiac Pacing, Artificial": {
+  "id": "D002304",
+  "ad": "Cardiac Pacing, Artificial"
+ },
+ "Cardiac Tamponade": {
+  "id": "D002305",
+  "ad": "Cardiac Tamponade"
+ },
+ "Cardiomyopathies": {
+  "id": "D009202",
+  "ad": "Cardiomyopathies"
+ },
+ "Cardiopulmonary Resuscitation": {
+  "id": "D016887",
+  "ad": "Cardiopulmonary Resuscitation"
+ },
+ "Cardiotonic Agents": {
+  "id": "D002316",
+  "ad": "Cardiotonic Agents"
+ },
+ "Cardiovascular System": {
+  "id": "D002319",
+  "ad": "Cardiovascular System"
+ },
+ "Carotid Arteries": {
+  "id": "D002339",
+  "ad": "Carotid Arteries"
+ },
+ "Carotid Sinus": {
+  "id": "D002346",
+  "ad": "Carotid Sinus"
+ },
+ "Catheterization, Peripheral": {
+  "id": "D002406",
+  "ad": "Catheterization, Peripheral"
+ },
+ "Catheters": {
+  "id": "D057785",
+  "ad": "Catheters"
+ },
+ "Caustics": {
+  "id": "D002424",
+  "ad": "Caustics"
+ },
+ "Central Nervous System": {
+  "id": "D002490",
+  "ad": "Central Nervous System"
+ },
+ "Cephalic presentation": null,
+ "Cerebellum": {
+  "id": "D002531",
+  "ad": "Cerebellum"
+ },
+ "Cerebrospinal Fluid": {
+  "id": "D002555",
+  "ad": "Cerebrospinal Fluid"
+ },
+ "Cervical Vertebrae": {
+  "id": "D002574",
+  "ad": "Cervical Vertebrae"
+ },
+ "Charcoal": {
+  "id": "D002606",
+  "ad": "Charcoal"
+ },
+ "Chemical, biological, radiological and nuclear": null,
+ "Chest Pain": {
+  "id": "D002637",
+  "ad": "Chest Pain"
+ },
+ "Chest Tubes": {
+  "id": "D015505",
+  "ad": "Chest Tubes"
+ },
+ "Child Abuse": {
+  "id": "D002649",
+  "ad": "Child Abuse"
+ },
+ "Cholecystitis": {
+  "id": "D002764",
+  "ad": "Cholecystitis"
+ },
+ "Cholinergic Agents": {
+  "id": "D018678",
+  "ad": "Cholinergic Agents"
+ },
+ "Cholinergic Antagonists": {
+  "id": "D018680",
+  "ad": "Cholinergic Antagonists"
+ },
+ "Clavicle": {
+  "id": "D002968",
+  "ad": "Clavicle"
+ },
+ "Coma": {
+  "id": "D003128",
+  "ad": "Coma"
+ },
+ "Communicable Diseases": {
+  "id": "D003141",
+  "ad": "Communicable Diseases"
+ },
+ "Compartment Syndromes": {
+  "id": "D003161",
+  "ad": "Compartment Syndromes"
+ },
+ "Confidentiality": {
+  "id": "D003219",
+  "ad": "Confidentiality"
+ },
+ "Confusion": {
+  "id": "D003221",
+  "ad": "Confusion"
+ },
+ "Consciousness Disorders": {
+  "id": "D003244",
+  "ad": "Consciousness Disorders"
+ },
+ "Continuous Positive Airway Pressure": {
+  "id": "D045422",
+  "ad": "Continuous Positive Airway Pressure"
+ },
+ "Contraindications": null,
+ "Contusions": {
+  "id": "D003288",
+  "ad": "Contusions"
+ },
+ "Conversion Disorder": {
+  "id": "D003291",
+  "ad": "Conversion Disorder"
+ },
+ "Coronary Artery Disease": {
+  "id": "D003324",
+  "ad": "Coronary Artery Disease"
+ },
+ "Coronary Vessels": {
+  "id": "D003331",
+  "ad": "Coronary Vessels"
+ },
+ "Cranial Fontanelles": {
+  "id": "D055762",
+  "ad": "Cranial Fontanelles"
+ },
+ "Creatinine": {
+  "id": "D003404",
+  "ad": "Creatinine"
+ },
+ "Cricothyrotomy": null,
+ "Croup": {
+  "id": "D003440",
+  "ad": "Croup"
+ },
+ "Crush Syndrome": {
+  "id": "D003444",
+  "ad": "Crush Syndrome"
+ },
+ "Cushing reflex": null,
+ "Cyanides": {
+  "id": "D003486",
+  "ad": "Cyanides"
+ },
+ "Cyanosis": {
+  "id": "D003490",
+  "ad": "Cyanosis"
+ },
+ "Death": {
+  "id": "D003643",
+  "ad": "Death"
+ },
+ "Death, Sudden, Cardiac": {
+  "id": "D016757",
+  "ad": "Death, Sudden, Cardiac"
+ },
+ "Decerebrate posture": null,
+ "Decompression Sickness": {
+  "id": "D003665",
+  "ad": "Decompression Sickness"
+ },
+ "Decontamination": {
+  "id": "D003666",
+  "ad": "Decontamination"
+ },
+ "Decorticate posture": null,
+ "Defibrillators": {
+  "id": "D047548",
+  "ad": "Defibrillators"
+ },
+ "Defibrillators, Implantable": {
+  "id": "D017147",
+  "ad": "Defibrillators, Implantable"
+ },
+ "Dehydration": {
+  "id": "D003681",
+  "ad": "Dehydration"
+ },
+ "Delirium": {
+  "id": "D003693",
+  "ad": "Delirium"
+ },
+ "Delivery, Obstetric": {
+  "id": "D036861",
+  "ad": "Delivery, Obstetric"
+ },
+ "Delta wave": null,
+ "Delusions": {
+  "id": "D003702",
+  "ad": "Delusions"
+ },
+ "Dementia": {
+  "id": "D003704",
+  "ad": "Dementia"
+ },
+ "Diabetes Mellitus": {
+  "id": "D003920",
+  "ad": "Diabetes Mellitus"
+ },
+ "Diabetic Ketoacidosis": {
+  "id": "D016883",
+  "ad": "Diabetic Ketoacidosis"
+ },
+ "Diaphragm": {
+  "id": "D003964",
+  "ad": "Diaphragm"
+ },
+ "Diarrhea": {
+  "id": "D003967",
+  "ad": "Diarrhea"
+ },
+ "Diastolic pressure": {
+  "id": "D001794",
+  "ad": "Blood Pressure"
+ },
+ "Diltiazem": {
+  "id": "D004110",
+  "ad": "Diltiazem"
+ },
+ "Disaster and Emergency Management Authority": null,
+ "Disasters": {
+  "id": "D004190",
+  "ad": "Disasters"
+ },
+ "Disease exacerbation": {
+  "id": "D018450",
+  "ad": "Disease Progression"
+ },
+ "Disseminated Intravascular Coagulation": {
+  "id": "D004211",
+  "ad": "Disseminated Intravascular Coagulation"
+ },
+ "Distal": null,
+ "Diuretics": {
+  "id": "D004232",
+  "ad": "Diuretics"
+ },
+ "Dizziness": {
+  "id": "D004244",
+  "ad": "Dizziness"
+ },
+ "Dopamine": {
+  "id": "D004298",
+  "ad": "Dopamine"
+ },
+ "Drowning": {
+  "id": "D004332",
+  "ad": "Drowning"
+ },
+ "Drug Interactions": {
+  "id": "D004347",
+  "ad": "Drug Interactions"
+ },
+ "Drug Overdose": {
+  "id": "D062787",
+  "ad": "Drug Overdose"
+ },
+ "Drug-Related Side Effects and Adverse Reactions": {
+  "id": "D064420",
+  "ad": "Drug-Related Side Effects and Adverse Reactions"
+ },
+ "Dysarthria": {
+  "id": "D004401",
+  "ad": "Dysarthria"
+ },
+ "Dysmenorrhea": {
+  "id": "D004412",
+  "ad": "Dysmenorrhea"
+ },
+ "Dyspnea": {
+  "id": "D004417",
+  "ad": "Dyspnea"
+ },
+ "Ecchymosis": {
+  "id": "D004438",
+  "ad": "Ecchymosis"
+ },
+ "ECG lead": null,
+ "Eclampsia": {
+  "id": "D004461",
+  "ad": "Eclampsia"
+ },
+ "Edema": {
+  "id": "D004487",
+  "ad": "Edema"
+ },
+ "Electric Countershock": {
+  "id": "D004554",
+  "ad": "Electric Countershock"
+ },
+ "Electric Injuries": {
+  "id": "D004556",
+  "ad": "Electric Injuries"
+ },
+ "Electrocardiography": {
+  "id": "D004562",
+  "ad": "Electrocardiography"
+ },
+ "Electrolytes": {
+  "id": "D004573",
+  "ad": "Electrolytes"
+ },
+ "Embolism": {
+  "id": "D004617",
+  "ad": "Embolism"
+ },
+ "Emergency health automation system": null,
+ "Emergency medical dispatch center": null,
+ "Emergency Medical Services": {
+  "id": "D004632",
+  "ad": "Emergency Medical Services"
+ },
+ "Emergency Medical Technicians": {
+  "id": "D004634",
+  "ad": "Emergency Medical Technicians"
+ },
+ "Emergency rescue maneuver": null,
+ "Encephalitis": {
+  "id": "D004660",
+  "ad": "Encephalitis"
+ },
+ "End-tidal carbon dioxide": null,
+ "Endocarditis": {
+  "id": "D004696",
+  "ad": "Endocarditis"
+ },
+ "Epiglottis": {
+  "id": "D004825",
+  "ad": "Epiglottis"
+ },
+ "Epiglottitis": {
+  "id": "D004826",
+  "ad": "Epiglottitis"
+ },
+ "Epilepsy": {
+  "id": "D004827",
+  "ad": "Epilepsy"
+ },
+ "Epinephrine": {
+  "id": "D004837",
+  "ad": "Epinephrine"
+ },
+ "Epistaxis": {
+  "id": "D004844",
+  "ad": "Epistaxis"
+ },
+ "Eschar": null,
+ "Esophageal and Gastric Varices": {
+  "id": "D004932",
+  "ad": "Esophageal and Gastric Varices"
+ },
+ "Evisceration": null,
+ "Exanthema": {
+  "id": "D005076",
+  "ad": "Exanthema"
+ },
+ "Explosions": {
+  "id": "D005107",
+  "ad": "Explosions"
+ },
+ "Eye Injuries": {
+  "id": "D005131",
+  "ad": "Eye Injuries"
+ },
+ "Facial Paralysis": {
+  "id": "D005158",
+  "ad": "Facial Paralysis"
+ },
+ "FAST stroke test": null,
+ "Febrile Neutropenia": {
+  "id": "D064147",
+  "ad": "Febrile Neutropenia"
+ },
+ "Femoral Artery": {
+  "id": "D005263",
+  "ad": "Femoral Artery"
+ },
+ "Femur": {
+  "id": "D005269",
+  "ad": "Femur"
+ },
+ "Fetal Membranes, Premature Rupture": {
+  "id": "D005322",
+  "ad": "Premature Rupture of Fetal Membranes"
+ },
+ "Fever": {
+  "id": "D005334",
+  "ad": "Fever"
+ },
+ "Flail Chest": {
+  "id": "D005409",
+  "ad": "Flail Chest"
+ },
+ "Flumazenil": {
+  "id": "D005442",
+  "ad": "Flumazenil"
+ },
+ "Flushing": {
+  "id": "D005483",
+  "ad": "Flushing"
+ },
+ "Foreign Bodies": {
+  "id": "D005547",
+  "ad": "Foreign Bodies"
+ },
+ "Forensic Medicine": {
+  "id": "D005554",
+  "ad": "Forensic Medicine"
+ },
+ "Forensic Sciences": {
+  "id": "D044707",
+  "ad": "Forensic Sciences"
+ },
+ "Fraction of inspired oxygen": null,
+ "Fractures, Bone": {
+  "id": "D050723",
+  "ad": "Fractures, Bone"
+ },
+ "Fractures, Closed": {
+  "id": "D005596",
+  "ad": "Fractures, Closed"
+ },
+ "Fractures, Open": {
+  "id": "D005597",
+  "ad": "Fractures, Open"
+ },
+ "Frostbite": {
+  "id": "D005627",
+  "ad": "Frostbite"
+ },
+ "Furosemide": {
+  "id": "D005665",
+  "ad": "Furosemide"
+ },
+ "Gastroenteritis": {
+  "id": "D005759",
+  "ad": "Gastroenteritis"
+ },
+ "Gastrointestinal Hemorrhage": {
+  "id": "D006471",
+  "ad": "Gastrointestinal Hemorrhage"
+ },
+ "Gastrointestinal Tract": {
+  "id": "D041981",
+  "ad": "Gastrointestinal Tract"
+ },
+ "Glasgow Coma Scale": {
+  "id": "D015600",
+  "ad": "Glasgow Coma Scale"
+ },
+ "Glucagon": {
+  "id": "D005934",
+  "ad": "Glucagon"
+ },
+ "Glucose": {
+  "id": "D005947",
+  "ad": "Glucose"
+ },
+ "Golden hour": null,
+ "Guillain-Barre Syndrome": {
+  "id": "D020275",
+  "ad": "Guillain-Barre Syndrome"
+ },
+ "Half-Life": {
+  "id": "D006207",
+  "ad": "Half-Life"
+ },
+ "Hallucinations": {
+  "id": "D006212",
+  "ad": "Hallucinations"
+ },
+ "Hazardous Substances": {
+  "id": "D015386",
+  "ad": "Hazardous Substances"
+ },
+ "Head-Down Tilt": {
+  "id": "D018475",
+  "ad": "Head-Down Tilt"
+ },
+ "Headache": {
+  "id": "D006261",
+  "ad": "Headache"
+ },
+ "Heart": {
+  "id": "D006321",
+  "ad": "Heart"
+ },
+ "Heart Arrest": {
+  "id": "D006323",
+  "ad": "Heart Arrest"
+ },
+ "Heart Atria": {
+  "id": "D006325",
+  "ad": "Heart Atria"
+ },
+ "Heart Block": {
+  "id": "D006327",
+  "ad": "Heart Block"
+ },
+ "Heart Conduction System": {
+  "id": "D006329",
+  "ad": "Heart Conduction System"
+ },
+ "Heart Failure": {
+  "id": "D006333",
+  "ad": "Heart Failure"
+ },
+ "Heart Massage": {
+  "id": "D006336",
+  "ad": "Heart Massage"
+ },
+ "Heart Rate": {
+  "id": "D006339",
+  "ad": "Heart Rate"
+ },
+ "Heart Valve Diseases": {
+  "id": "D006349",
+  "ad": "Heart Valve Diseases"
+ },
+ "Heart Ventricles": {
+  "id": "D006352",
+  "ad": "Heart Ventricles"
+ },
+ "Heat cramps": {
+  "id": "D018882",
+  "ad": "Heat Stress Disorders"
+ },
+ "Heat Exhaustion": {
+  "id": "D006359",
+  "ad": "Heat Exhaustion"
+ },
+ "Heat Stroke": {
+  "id": "D018883",
+  "ad": "Heat Stroke"
+ },
+ "Heimlich maneuver": {
+  "id": "D059746",
+  "ad": "Heimlich Maneuver"
+ },
+ "HELLP Syndrome": {
+  "id": "D017359",
+  "ad": "HELLP Syndrome"
+ },
+ "Hematemesis": {
+  "id": "D006396",
+  "ad": "Hematemesis"
+ },
+ "Hematochezia": {
+  "id": "D006471",
+  "ad": "Gastrointestinal Hemorrhage"
+ },
+ "Hematocrit": {
+  "id": "D006400",
+  "ad": "Hematocrit"
+ },
+ "Hematoma": {
+  "id": "D006406",
+  "ad": "Hematoma"
+ },
+ "Hematoma, Epidural, Cranial": {
+  "id": "D006407",
+  "ad": "Hematoma, Epidural, Cranial"
+ },
+ "Hematoma, Subdural": {
+  "id": "D006408",
+  "ad": "Hematoma, Subdural"
+ },
+ "Hematuria": {
+  "id": "D006417",
+  "ad": "Hematuria"
+ },
+ "Hemiparesis": {
+  "id": "D010291",
+  "ad": "Paresis"
+ },
+ "Hemiplegia": {
+  "id": "D006429",
+  "ad": "Hemiplegia"
+ },
+ "Hemoglobins": {
+  "id": "D006454",
+  "ad": "Hemoglobins"
+ },
+ "Hemophilia A": {
+  "id": "D006467",
+  "ad": "Hemophilia A"
+ },
+ "Hemoptysis": {
+  "id": "D006469",
+  "ad": "Hemoptysis"
+ },
+ "Hemorrhage": {
+  "id": "D006470",
+  "ad": "Hemorrhage"
+ },
+ "Hemorrhagic Fever, Crimean": {
+  "id": "D006479",
+  "ad": "Hemorrhagic Fever, Crimean"
+ },
+ "Hemorrhagic Stroke": null,
+ "Hemostatics": {
+  "id": "D006490",
+  "ad": "Hemostatics"
+ },
+ "Hemothorax": {
+  "id": "D006491",
+  "ad": "Hemothorax"
+ },
+ "Hepatic Encephalopathy": {
+  "id": "D006501",
+  "ad": "Hepatic Encephalopathy"
+ },
+ "Histamine Antagonists": {
+  "id": "D006633",
+  "ad": "Histamine Antagonists"
+ },
+ "Homeostasis": {
+  "id": "D006706",
+  "ad": "Homeostasis"
+ },
+ "Hydrocarbons": {
+  "id": "D006838",
+  "ad": "Hydrocarbons"
+ },
+ "Hydrogen-Ion Concentration": {
+  "id": "D006863",
+  "ad": "Hydrogen-Ion Concentration"
+ },
+ "Hypercapnia": {
+  "id": "D006935",
+  "ad": "Hypercapnia"
+ },
+ "Hyperglycemia": {
+  "id": "D006943",
+  "ad": "Hyperglycemia"
+ },
+ "Hyperglycemic Hyperosmolar Nonketotic Coma": {
+  "id": "D006944",
+  "ad": "Hyperglycemic Hyperosmolar Nonketotic Coma"
+ },
+ "Hyperkalemia": {
+  "id": "D006947",
+  "ad": "Hyperkalemia"
+ },
+ "Hypernatremia": {
+  "id": "D006955",
+  "ad": "Hypernatremia"
+ },
+ "Hypersensitivity": {
+  "id": "D006967",
+  "ad": "Hypersensitivity"
+ },
+ "Hypertension": {
+  "id": "D006973",
+  "ad": "Hypertension"
+ },
+ "Hypertension, Pregnancy-Induced": {
+  "id": "D046110",
+  "ad": "Hypertension, Pregnancy-Induced"
+ },
+ "Hypertensive Emergency": null,
+ "Hyperthermia": null,
+ "Hyperventilation": {
+  "id": "D006985",
+  "ad": "Hyperventilation"
+ },
+ "Hyperventilation syndrome": null,
+ "Hypnotics and Sedatives": {
+  "id": "D006993",
+  "ad": "Hypnotics and Sedatives"
+ },
+ "Hypocalcemia": {
+  "id": "D006996",
+  "ad": "Hypocalcemia"
+ },
+ "Hypoglycemia": {
+  "id": "D007003",
+  "ad": "Hypoglycemia"
+ },
+ "Hypokalemia": {
+  "id": "D007008",
+  "ad": "Hypokalemia"
+ },
+ "Hyponatremia": {
+  "id": "D007010",
+  "ad": "Hyponatremia"
+ },
+ "Hypotension": {
+  "id": "D007022",
+  "ad": "Hypotension"
+ },
+ "Hypotension, Orthostatic": {
+  "id": "D007024",
+  "ad": "Hypotension, Orthostatic"
+ },
+ "Hypothermia": {
+  "id": "D007035",
+  "ad": "Hypothermia"
+ },
+ "Hypoventilation": {
+  "id": "D007040",
+  "ad": "Hypoventilation"
+ },
+ "Hypoxemia": {
+  "id": "D000860",
+  "ad": "Hypoxia"
+ },
+ "Hypoxia": {
+  "id": "D000860",
+  "ad": "Hypoxia"
+ },
+ "Ibuprofen": {
+  "id": "D007052",
+  "ad": "Ibuprofen"
+ },
+ "Ideal Body Weight": {
+  "id": "D056865",
+  "ad": "Ideal Body Weight"
+ },
+ "Immobilization": {
+  "id": "D007103",
+  "ad": "Immobilization"
+ },
+ "Incubators, Infant": {
+  "id": "D007186",
+  "ad": "Incubators, Infant"
+ },
+ "Indications": null,
+ "Infant": {
+  "id": "D007223",
+  "ad": "Infant"
+ },
+ "Infant, Newborn": {
+  "id": "D007231",
+  "ad": "Infant, Newborn"
+ },
+ "Infant, Premature": {
+  "id": "D007234",
+  "ad": "Infant, Premature"
+ },
+ "Infarction": {
+  "id": "D007238",
+  "ad": "Infarction"
+ },
+ "Informed Consent": {
+  "id": "D007258",
+  "ad": "Informed Consent"
+ },
+ "Infusions, Intraosseous": {
+  "id": "D017148",
+  "ad": "Infusions, Intraosseous"
+ },
+ "Infusions, Intravenous": {
+  "id": "D007262",
+  "ad": "Infusions, Intravenous"
+ },
+ "Injections, Intramuscular": {
+  "id": "D007273",
+  "ad": "Injections, Intramuscular"
+ },
+ "Injections, Subcutaneous": {
+  "id": "D007279",
+  "ad": "Injections, Subcutaneous"
+ },
+ "Insect Bites and Stings": {
+  "id": "D007299",
+  "ad": "Insect Bites and Stings"
+ },
+ "International Classification of Diseases": {
+  "id": "D038801",
+  "ad": "International Classification of Diseases"
+ },
+ "International Normalized Ratio": {
+  "id": "D019934",
+  "ad": "International Normalized Ratio"
+ },
+ "Intestinal Obstruction": {
+  "id": "D007415",
+  "ad": "Intestinal Obstruction"
+ },
+ "Intestines": {
+  "id": "D007422",
+  "ad": "Intestines"
+ },
+ "Intracranial Hypertension": {
+  "id": "D019586",
+  "ad": "Intracranial Hypertension"
+ },
+ "Intubation, Intratracheal": {
+  "id": "D007442",
+  "ad": "Intubation, Intratracheal"
+ },
+ "Intussusception": {
+  "id": "D007443",
+  "ad": "Intussusception"
+ },
+ "Ipratropium": {
+  "id": "D009241",
+  "ad": "Ipratropium"
+ },
+ "Ischemia": {
+  "id": "D007511",
+  "ad": "Ischemia"
+ },
+ "Ischemic Attack, Transient": {
+  "id": "D002546",
+  "ad": "Ischemic Attack, Transient"
+ },
+ "Ischemic Stroke": null,
+ "Isotonic Solutions": {
+  "id": "D007552",
+  "ad": "Isotonic Solutions"
+ },
+ "Jaundice": {
+  "id": "D007565",
+  "ad": "Jaundice"
+ },
+ "Jaundice, Neonatal": {
+  "id": "D007567",
+  "ad": "Jaundice, Neonatal"
+ },
+ "Joint Dislocations": {
+  "id": "D004204",
+  "ad": "Joint Dislocations"
+ },
+ "Jugular Veins": {
+  "id": "D007601",
+  "ad": "Jugular Veins"
+ },
+ "JumpSTART pediatric triage": null,
+ "Kendrick Extrication Device": null,
+ "Ketone Bodies": {
+  "id": "D007657",
+  "ad": "Ketone Bodies"
+ },
+ "Kidney": {
+  "id": "D007668",
+  "ad": "Kidney"
+ },
+ "Kidney Calculi": {
+  "id": "D007669",
+  "ad": "Kidney Calculi"
+ },
+ "Kussmaul respiration": null,
+ "Labor, Obstetric": {
+  "id": "D007743",
+  "ad": "Labor, Obstetric"
+ },
+ "Lacerations": {
+  "id": "D022125",
+  "ad": "Lacerations"
+ },
+ "Lactic Acid": {
+  "id": "D019344",
+  "ad": "Lactic Acid"
+ },
+ "Laryngeal Masks": {
+  "id": "D017214",
+  "ad": "Laryngeal Masks"
+ },
+ "Laryngismus": {
+  "id": "D007826",
+  "ad": "Laryngismus"
+ },
+ "Laryngoscopes": {
+  "id": "D020704",
+  "ad": "Laryngoscopes"
+ },
+ "Larynx": {
+  "id": "D007830",
+  "ad": "Larynx"
+ },
+ "Lateral": null,
+ "Lead Poisoning": {
+  "id": "D007855",
+  "ad": "Lead Poisoning"
+ },
+ "Lethargy": {
+  "id": "D053609",
+  "ad": "Lethargy"
+ },
+ "Leukocytes": {
+  "id": "D007962",
+  "ad": "Leukocytes"
+ },
+ "Lidocaine": {
+  "id": "D008012",
+  "ad": "Lidocaine"
+ },
+ "Lightning Injuries": {
+  "id": "D015168",
+  "ad": "Lightning Injuries"
+ },
+ "Liver": {
+  "id": "D008099",
+  "ad": "Liver"
+ },
+ "Liver Cirrhosis": {
+  "id": "D008103",
+  "ad": "Liver Cirrhosis"
+ },
+ "Liver Failure": {
+  "id": "D017093",
+  "ad": "Liver Failure"
+ },
+ "Long QT Syndrome": {
+  "id": "D008133",
+  "ad": "Long QT Syndrome"
+ },
+ "Lund and Browder chart": null,
+ "Lung Injury": {
+  "id": "D055370",
+  "ad": "Lung Injury"
+ },
+ "Magnesium Sulfate": {
+  "id": "D008278",
+  "ad": "Magnesium Sulfate"
+ },
+ "Magnetic Resonance Imaging": {
+  "id": "D008279",
+  "ad": "Magnetic Resonance Imaging"
+ },
+ "Masks": {
+  "id": "D008397",
+  "ad": "Masks"
+ },
+ "Mass Casualty Incidents": {
+  "id": "D054527",
+  "ad": "Mass Casualty Incidents"
+ },
+ "Meconium": {
+  "id": "D008470",
+  "ad": "Meconium"
+ },
+ "Medial": null,
+ "Mediastinum": {
+  "id": "D008482",
+  "ad": "Mediastinum"
+ },
+ "Medical Errors": {
+  "id": "D019300",
+  "ad": "Medical Errors"
+ },
+ "Medical Records": {
+  "id": "D008499",
+  "ad": "Medical Records"
+ },
+ "Melena": {
+  "id": "D008551",
+  "ad": "Melena"
+ },
+ "Membrane Potentials": {
+  "id": "D008564",
+  "ad": "Membrane Potentials"
+ },
+ "Meninges": {
+  "id": "D008578",
+  "ad": "Meninges"
+ },
+ "Meningism": {
+  "id": "D008580",
+  "ad": "Meningism"
+ },
+ "Meningitis": {
+  "id": "D008581",
+  "ad": "Meningitis"
+ },
+ "Mental Competency": {
+  "id": "D016743",
+  "ad": "Mental Competency"
+ },
+ "Metabolism": {
+  "id": "D008660",
+  "ad": "Metabolism"
+ },
+ "Methanol": {
+  "id": "D000432",
+  "ad": "Methanol"
+ },
+ "Metoprolol": {
+  "id": "D008790",
+  "ad": "Metoprolol"
+ },
+ "Migraine Disorders": {
+  "id": "D008881",
+  "ad": "Migraine Disorders"
+ },
+ "Miosis": {
+  "id": "D015877",
+  "ad": "Miosis"
+ },
+ "Monitoring, Physiologic": {
+  "id": "D008991",
+  "ad": "Monitoring, Physiologic"
+ },
+ "Multiple Trauma": {
+  "id": "D009104",
+  "ad": "Multiple Trauma"
+ },
+ "Muscle Hypotonia": {
+  "id": "D009123",
+  "ad": "Muscle Hypotonia"
+ },
+ "Muscle Strength": {
+  "id": "D053580",
+  "ad": "Muscle Strength"
+ },
+ "Mushroom Poisoning": {
+  "id": "D009145",
+  "ad": "Mushroom Poisoning"
+ },
+ "Myasthenia Gravis": {
+  "id": "D009157",
+  "ad": "Myasthenia Gravis"
+ },
+ "Mydriasis": {
+  "id": "D015878",
+  "ad": "Mydriasis"
+ },
+ "Myocardial Infarction": {
+  "id": "D009203",
+  "ad": "Myocardial Infarction"
+ },
+ "Myocarditis": {
+  "id": "D009205",
+  "ad": "Myocarditis"
+ },
+ "Myocardium": {
+  "id": "D009206",
+  "ad": "Myocardium"
+ },
+ "Myxedema": {
+  "id": "D009230",
+  "ad": "Myxedema"
+ },
+ "Naloxone": {
+  "id": "D009270",
+  "ad": "Naloxone"
+ },
+ "Nasopharyngeal airway": null,
+ "National medical rescue team": null,
+ "Nausea": {
+  "id": "D009325",
+  "ad": "Nausea"
+ },
+ "Near Miss, Healthcare": null,
+ "Nebulizers and Vaporizers": {
+  "id": "D009330",
+  "ad": "Nebulizers and Vaporizers"
+ },
+ "Needle decompression": null,
+ "Needlestick Injuries": {
+  "id": "D016602",
+  "ad": "Needlestick Injuries"
+ },
+ "Nerve Agents": null,
+ "Nifedipine": {
+  "id": "D009543",
+  "ad": "Nifedipine"
+ },
+ "Nitroglycerin": {
+  "id": "D005996",
+  "ad": "Nitroglycerin"
+ },
+ "Non-shockable rhythm": null,
+ "Non-ST Elevated Myocardial Infarction": null,
+ "Noninvasive Ventilation": {
+  "id": "D063087",
+  "ad": "Noninvasive Ventilation"
+ },
+ "Nuchal cord": {
+  "id": "D053589",
+  "ad": "Nuchal Cord"
+ },
+ "Nystagmus, Pathologic": {
+  "id": "D009759",
+  "ad": "Nystagmus, Pathologic"
+ },
+ "Obstetric Labor, Premature": {
+  "id": "D007752",
+  "ad": "Obstetric Labor, Premature"
+ },
+ "Obstructive shock": null,
+ "Oliguria": {
+  "id": "D009846",
+  "ad": "Oliguria"
+ },
+ "Opioid-Related Disorders": {
+  "id": "D009293",
+  "ad": "Opioid-Related Disorders"
+ },
+ "OPQRST pain assessment": null,
+ "Organophosphate Poisoning": {
+  "id": "D062025",
+  "ad": "Organophosphate Poisoning"
+ },
+ "Oropharyngeal airway": null,
+ "Orthopnea": {
+  "id": "D004417",
+  "ad": "Dyspnea"
+ },
+ "Ovarian Torsion": null,
+ "Oximetry": {
+  "id": "D010092",
+  "ad": "Oximetry"
+ },
+ "Oxygen": {
+  "id": "D010100",
+  "ad": "Oxygen"
+ },
+ "Oxygen Inhalation Therapy": {
+  "id": "D010102",
+  "ad": "Oxygen Inhalation Therapy"
+ },
+ "Oxygen Saturation": null,
+ "P wave": null,
+ "Pacemaker, Artificial": {
+  "id": "D010138",
+  "ad": "Pacemaker, Artificial"
+ },
+ "Pain": {
+  "id": "D010146",
+  "ad": "Pain"
+ },
+ "Pallor": {
+  "id": "D010167",
+  "ad": "Pallor"
+ },
+ "Palpitations": null,
+ "Pancreas": {
+  "id": "D010179",
+  "ad": "Pancreas"
+ },
+ "Pancreatitis": {
+  "id": "D010195",
+  "ad": "Pancreatitis"
+ },
+ "Panic Disorder": {
+  "id": "D016584",
+  "ad": "Panic Disorder"
+ },
+ "Paraplegia": {
+  "id": "D010264",
+  "ad": "Paraplegia"
+ },
+ "Parasympathetic Nervous System": {
+  "id": "D010275",
+  "ad": "Parasympathetic Nervous System"
+ },
+ "Paresthesia": {
+  "id": "D010292",
+  "ad": "Paresthesia"
+ },
+ "Parkland formula": null,
+ "Patient Isolation": {
+  "id": "D010356",
+  "ad": "Patient Isolation"
+ },
+ "Patient Positioning": {
+  "id": "D056888",
+  "ad": "Patient Positioning"
+ },
+ "Patient Safety": {
+  "id": "D061214",
+  "ad": "Patient Safety"
+ },
+ "Patient Transfer": {
+  "id": "D010360",
+  "ad": "Patient Transfer"
+ },
+ "Pediatric Advanced Life Support": null,
+ "Pediatric assessment triangle": null,
+ "Pelvic binder": null,
+ "Pelvic Bones": {
+  "id": "D010384",
+  "ad": "Pelvic Bones"
+ },
+ "Pelvis": {
+  "id": "D010388",
+  "ad": "Pelvis"
+ },
+ "Peptic Ulcer Perforation": {
+  "id": "D010439",
+  "ad": "Peptic Ulcer Perforation"
+ },
+ "Percutaneous Coronary Intervention": {
+  "id": "D062645",
+  "ad": "Percutaneous Coronary Intervention"
+ },
+ "Perfusion": {
+  "id": "D010477",
+  "ad": "Perfusion"
+ },
+ "Pericarditis": {
+  "id": "D010493",
+  "ad": "Pericarditis"
+ },
+ "Pericardium": {
+  "id": "D010496",
+  "ad": "Pericardium"
+ },
+ "Peripheral Arterial Disease": {
+  "id": "D058729",
+  "ad": "Peripheral Arterial Disease"
+ },
+ "Peripheral Nervous System Diseases": {
+  "id": "D010523",
+  "ad": "Peripheral Nervous System Diseases"
+ },
+ "Peritoneum": {
+  "id": "D010537",
+  "ad": "Peritoneum"
+ },
+ "Peritonitis": {
+  "id": "D010538",
+  "ad": "Peritonitis"
+ },
+ "Personal Protective Equipment": null,
+ "Pharmacovigilance": {
+  "id": "D060735",
+  "ad": "Pharmacovigilance"
+ },
+ "Pharynx": {
+  "id": "D010614",
+  "ad": "Pharynx"
+ },
+ "Physician's Role": {
+  "id": "D010819",
+  "ad": "Physician's Role"
+ },
+ "Placenta": {
+  "id": "D010920",
+  "ad": "Placenta"
+ },
+ "Placenta Previa": {
+  "id": "D010923",
+  "ad": "Placenta Previa"
+ },
+ "Platelet Aggregation Inhibitors": {
+  "id": "D010975",
+  "ad": "Platelet Aggregation Inhibitors"
+ },
+ "Pleura": {
+  "id": "D010994",
+  "ad": "Pleura"
+ },
+ "Pleural Effusion": {
+  "id": "D010996",
+  "ad": "Pleural Effusion"
+ },
+ "Pneumonia": {
+  "id": "D011014",
+  "ad": "Pneumonia"
+ },
+ "Pneumonia, Aspiration": {
+  "id": "D011015",
+  "ad": "Pneumonia, Aspiration"
+ },
+ "Pneumothorax": {
+  "id": "D011030",
+  "ad": "Pneumothorax"
+ },
+ "Pneumothorax, Tension": {
+  "id": "D011030",
+  "ad": "Pneumothorax"
+ },
+ "Poison Control Centers": {
+  "id": "D011039",
+  "ad": "Poison Control Centers"
+ },
+ "Poisoning": {
+  "id": "D011041",
+  "ad": "Poisoning"
+ },
+ "Polydipsia": {
+  "id": "D059606",
+  "ad": "Polydipsia"
+ },
+ "Polyuria": {
+  "id": "D011141",
+  "ad": "Polyuria"
+ },
+ "Positive end-expiratory pressure": {
+  "id": "D011175",
+  "ad": "Positive-Pressure Respiration"
+ },
+ "Post-cardiac arrest care": null,
+ "Posterior": null,
+ "Postictal period": null,
+ "Postpartum Hemorrhage": {
+  "id": "D006473",
+  "ad": "Postpartum Hemorrhage"
+ },
+ "PR interval": null,
+ "Pralidoxime Compounds": {
+  "id": "D011220",
+  "ad": "Pralidoxime Compounds"
+ },
+ "Pre-Eclampsia": {
+  "id": "D011225",
+  "ad": "Pre-Eclampsia"
+ },
+ "Pregnancy": {
+  "id": "D011247",
+  "ad": "Pregnancy"
+ },
+ "Pregnancy Complications": {
+  "id": "D011248",
+  "ad": "Pregnancy Complications"
+ },
+ "Pregnancy Trimesters": {
+  "id": "D011264",
+  "ad": "Pregnancy Trimesters"
+ },
+ "Pregnancy, Ectopic": {
+  "id": "D011271",
+  "ad": "Pregnancy, Ectopic"
+ },
+ "Preload": null,
+ "Prone Position": {
+  "id": "D016684",
+  "ad": "Prone Position"
+ },
+ "Proximal": null,
+ "Pruritus": {
+  "id": "D011537",
+  "ad": "Pruritus"
+ },
+ "Psychomotor Agitation": {
+  "id": "D011595",
+  "ad": "Psychomotor Agitation"
+ },
+ "Psychotic Disorders": {
+  "id": "D011618",
+  "ad": "Psychotic Disorders"
+ },
+ "Pulmonary Alveoli": {
+  "id": "D011650",
+  "ad": "Pulmonary Alveoli"
+ },
+ "Pulmonary Atelectasis": {
+  "id": "D001261",
+  "ad": "Pulmonary Atelectasis"
+ },
+ "Pulmonary Disease, Chronic Obstructive": {
+  "id": "D029424",
+  "ad": "Pulmonary Disease, Chronic Obstructive"
+ },
+ "Pulmonary Edema": {
+  "id": "D011654",
+  "ad": "Pulmonary Edema"
+ },
+ "Pulmonary Embolism": {
+  "id": "D011655",
+  "ad": "Pulmonary Embolism"
+ },
+ "Pulmonary Ventilation": {
+  "id": "D012123",
+  "ad": "Pulmonary Ventilation"
+ },
+ "Pulse": {
+  "id": "D011674",
+  "ad": "Pulse"
+ },
+ "Pulseless Electrical Activity": null,
+ "Pulseless ventricular tachycardia": null,
+ "Pupil": {
+  "id": "D011680",
+  "ad": "Pupil"
+ },
+ "Purpura": {
+  "id": "D011693",
+  "ad": "Purpura"
+ },
+ "QRS complex": null,
+ "Quadriplegia": {
+  "id": "D011782",
+  "ad": "Quadriplegia"
+ },
+ "Rabies": {
+  "id": "D011818",
+  "ad": "Rabies"
+ },
+ "Raccoon eyes": null,
+ "Radial Artery": {
+  "id": "D017534",
+  "ad": "Radial Artery"
+ },
+ "Radiation Exposure": null,
+ "Rapid Sequence Induction and Intubation": null,
+ "Renal Dialysis": {
+  "id": "D006435",
+  "ad": "Renal Dialysis"
+ },
+ "Renal Insufficiency, Chronic": {
+  "id": "D051436",
+  "ad": "Renal Insufficiency, Chronic"
+ },
+ "Rescue Work": {
+  "id": "D018635",
+  "ad": "Rescue Work"
+ },
+ "Respiration": {
+  "id": "D012119",
+  "ad": "Respiration"
+ },
+ "Respiration, Artificial": {
+  "id": "D012121",
+  "ad": "Respiration, Artificial"
+ },
+ "Respiratory arrest": null,
+ "Respiratory Aspiration": {
+  "id": "D053120",
+  "ad": "Respiratory Aspiration"
+ },
+ "Respiratory Distress Syndrome": {
+  "id": "D012128",
+  "ad": "Respiratory Distress Syndrome"
+ },
+ "Respiratory Insufficiency": {
+  "id": "D012131",
+  "ad": "Respiratory Insufficiency"
+ },
+ "Respiratory Muscles": {
+  "id": "D012132",
+  "ad": "Respiratory Muscles"
+ },
+ "Respiratory Rate": {
+  "id": "D056152",
+  "ad": "Respiratory Rate"
+ },
+ "Respiratory Sounds": {
+  "id": "D012135",
+  "ad": "Respiratory Sounds"
+ },
+ "Respiratory System": {
+  "id": "D012137",
+  "ad": "Respiratory System"
+ },
+ "Restraint, Physical": {
+  "id": "D012149",
+  "ad": "Restraint, Physical"
+ },
+ "Resuscitation": {
+  "id": "D012151",
+  "ad": "Resuscitation"
+ },
+ "Return of Spontaneous Circulation": null,
+ "Reverse triage": null,
+ "Reversible causes of cardiac arrest": null,
+ "Rhabdomyolysis": {
+  "id": "D012206",
+  "ad": "Rhabdomyolysis"
+ },
+ "Rib Fractures": {
+  "id": "D012253",
+  "ad": "Rib Fractures"
+ },
+ "Ribs": {
+  "id": "D012272",
+  "ad": "Ribs"
+ },
+ "Ringer's Lactate": null,
+ "Rule of nines": null,
+ "Safety": {
+  "id": "D012449",
+  "ad": "Safety"
+ },
+ "Saline Solution": null,
+ "SALT mass casualty triage": null,
+ "SAMPLE history": null,
+ "Scene safety and primary survey mnemonic": null,
+ "Scorpion Stings": {
+  "id": "D065008",
+  "ad": "Scorpion Stings"
+ },
+ "Seizures": {
+  "id": "D012640",
+  "ad": "Seizures"
+ },
+ "Seizures, Febrile": {
+  "id": "D003294",
+  "ad": "Seizures, Febrile"
+ },
+ "Self-Injurious Behavior": {
+  "id": "D016728",
+  "ad": "Self-Injurious Behavior"
+ },
+ "Sepsis": {
+  "id": "D018805",
+  "ad": "Sepsis"
+ },
+ "Sex Offenses": {
+  "id": "D012742",
+  "ad": "Sex Offenses"
+ },
+ "Shaken Baby Syndrome": {
+  "id": "D038642",
+  "ad": "Shaken Baby Syndrome"
+ },
+ "Shivering": {
+  "id": "D012768",
+  "ad": "Shivering"
+ },
+ "Shock": {
+  "id": "D012769",
+  "ad": "Shock"
+ },
+ "Shock, Cardiogenic": {
+  "id": "D012770",
+  "ad": "Shock, Cardiogenic"
+ },
+ "Shock, Hemorrhagic": {
+  "id": "D012771",
+  "ad": "Shock, Hemorrhagic"
+ },
+ "Shock, Neurogenic": null,
+ "Shock, Septic": {
+  "id": "D012772",
+  "ad": "Shock, Septic"
+ },
+ "Shockable rhythm": null,
+ "Shoulder Dystocia": null,
+ "Signs of death": null,
+ "Simple Triage and Rapid Treatment": null,
+ "Sinoatrial Node": {
+  "id": "D012849",
+  "ad": "Sinoatrial Node"
+ },
+ "Sinus rhythm": null,
+ "Skin mottling": null,
+ "Skin Pigmentation": {
+  "id": "D012880",
+  "ad": "Skin Pigmentation"
+ },
+ "Skull Fractures": {
+  "id": "D012887",
+  "ad": "Skull Fractures"
+ },
+ "Sleep Apnea, Obstructive": {
+  "id": "D020181",
+  "ad": "Sleep Apnea, Obstructive"
+ },
+ "Smoke Inhalation Injury": {
+  "id": "D015208",
+  "ad": "Smoke Inhalation Injury"
+ },
+ "Snake Bites": {
+  "id": "D012909",
+  "ad": "Snake Bites"
+ },
+ "Sodium Bicarbonate": {
+  "id": "D017693",
+  "ad": "Sodium Bicarbonate"
+ },
+ "Spinal Cord": {
+  "id": "D013116",
+  "ad": "Spinal Cord"
+ },
+ "Spinal Cord Injuries": {
+  "id": "D013119",
+  "ad": "Spinal Cord Injuries"
+ },
+ "Spine": {
+  "id": "D013131",
+  "ad": "Spine"
+ },
+ "Spleen": {
+  "id": "D013154",
+  "ad": "Spleen"
+ },
+ "Splints": {
+  "id": "D013165",
+  "ad": "Splints"
+ },
+ "Sprains and Strains": {
+  "id": "D013180",
+  "ad": "Sprains and Strains"
+ },
+ "ST Elevation Myocardial Infarction": null,
+ "ST segment": null,
+ "Status Asthmaticus": {
+  "id": "D013224",
+  "ad": "Status Asthmaticus"
+ },
+ "Status Epilepticus": {
+  "id": "D013226",
+  "ad": "Status Epilepticus"
+ },
+ "Sternum": {
+  "id": "D013249",
+  "ad": "Sternum"
+ },
+ "Stomach": {
+  "id": "D013270",
+  "ad": "Stomach"
+ },
+ "Stress Disorders, Traumatic, Acute": {
+  "id": "D040701",
+  "ad": "Stress Disorders, Traumatic, Acute"
+ },
+ "Stretchers": {
+  "id": "D058254",
+  "ad": "Stretchers"
+ },
+ "Stroke": {
+  "id": "D020521",
+  "ad": "Stroke"
+ },
+ "Subarachnoid Hemorrhage": {
+  "id": "D013345",
+  "ad": "Subarachnoid Hemorrhage"
+ },
+ "Subcutaneous Emphysema": {
+  "id": "D013352",
+  "ad": "Subcutaneous Emphysema"
+ },
+ "Substance Withdrawal Syndrome": {
+  "id": "D013375",
+  "ad": "Substance Withdrawal Syndrome"
+ },
+ "Substance-Related Disorders": {
+  "id": "D019966",
+  "ad": "Substance-Related Disorders"
+ },
+ "Suction": {
+  "id": "D013396",
+  "ad": "Suction"
+ },
+ "Sudden Infant Death": {
+  "id": "D013398",
+  "ad": "Sudden Infant Death"
+ },
+ "Suicide, Attempted": {
+  "id": "D013406",
+  "ad": "Suicide, Attempted"
+ },
+ "Supine hypotension": null,
+ "Supine Position": {
+  "id": "D016683",
+  "ad": "Supine Position"
+ },
+ "Sweating": {
+  "id": "D013546",
+  "ad": "Sweating"
+ },
+ "Sympathetic Nervous System": {
+  "id": "D013564",
+  "ad": "Sympathetic Nervous System"
+ },
+ "Sympathomimetics": {
+  "id": "D013566",
+  "ad": "Sympathomimetics"
+ },
+ "Syncope": {
+  "id": "D013575",
+  "ad": "Syncope"
+ },
+ "Syncope, Vasovagal": {
+  "id": "D019462",
+  "ad": "Syncope, Vasovagal"
+ },
+ "Systolic pressure": {
+  "id": "D001794",
+  "ad": "Blood Pressure"
+ },
+ "T wave": null,
+ "Tachycardia": {
+  "id": "D013610",
+  "ad": "Tachycardia"
+ },
+ "Tachycardia, Sinus": {
+  "id": "D013616",
+  "ad": "Tachycardia, Sinus"
+ },
+ "Tachycardia, Supraventricular": {
+  "id": "D013617",
+  "ad": "Tachycardia, Supraventricular"
+ },
+ "Tachycardia, Ventricular": {
+  "id": "D017180",
+  "ad": "Tachycardia, Ventricular"
+ },
+ "Tachypnea": {
+  "id": "D059246",
+  "ad": "Tachypnea"
+ },
+ "Tetanus": {
+  "id": "D013742",
+  "ad": "Tetanus"
+ },
+ "Thiamine": {
+  "id": "D013831",
+  "ad": "Thiamine"
+ },
+ "Thoracic Injuries": {
+  "id": "D013898",
+  "ad": "Thoracic Injuries"
+ },
+ "Thrombolytic Therapy": {
+  "id": "D015912",
+  "ad": "Thrombolytic Therapy"
+ },
+ "Thrombosis": {
+  "id": "D013927",
+  "ad": "Thrombosis"
+ },
+ "Thyroid Crisis": {
+  "id": "D013958",
+  "ad": "Thyroid Crisis"
+ },
+ "Tick Bites": {
+  "id": "D064927",
+  "ad": "Tick Bites"
+ },
+ "Tidal Volume": {
+  "id": "D013990",
+  "ad": "Tidal Volume"
+ },
+ "Tissue Plasminogen Activator": {
+  "id": "D010959",
+  "ad": "Tissue Plasminogen Activator"
+ },
+ "Titration": null,
+ "Tomography, X-Ray Computed": {
+  "id": "D014057",
+  "ad": "Tomography, X-Ray Computed"
+ },
+ "Tongue": {
+  "id": "D014059",
+  "ad": "Tongue"
+ },
+ "Tongue bite": null,
+ "Tooth Avulsion": {
+  "id": "D014084",
+  "ad": "Tooth Avulsion"
+ },
+ "Torsades de Pointes": {
+  "id": "D016171",
+  "ad": "Torsades de Pointes"
+ },
+ "Tourniquets": {
+  "id": "D014111",
+  "ad": "Tourniquets"
+ },
+ "Toxidrome": null,
+ "Trachea": {
+  "id": "D014132",
+  "ad": "Trachea"
+ },
+ "Traction": {
+  "id": "D014143",
+  "ad": "Traction"
+ },
+ "Transportation of Patients": {
+  "id": "D014187",
+  "ad": "Transportation of Patients"
+ },
+ "Trauma mechanism": null,
+ "Treatment Refusal": {
+  "id": "D016312",
+  "ad": "Treatment Refusal"
+ },
+ "Tremor": {
+  "id": "D014202",
+  "ad": "Tremor"
+ },
+ "Triage": {
+  "id": "D014218",
+  "ad": "Triage"
+ },
+ "Troponin": {
+  "id": "D014336",
+  "ad": "Troponin"
+ },
+ "Tuberculosis": {
+  "id": "D014376",
+  "ad": "Tuberculosis"
+ },
+ "Ultrasonography": {
+  "id": "D014463",
+  "ad": "Ultrasonography"
+ },
+ "Umbilical cord prolapse": null,
+ "Unconsciousness": {
+  "id": "D014474",
+  "ad": "Unconsciousness"
+ },
+ "Universal Precautions": {
+  "id": "D016635",
+  "ad": "Universal Precautions"
+ },
+ "Urinary Incontinence": {
+  "id": "D014549",
+  "ad": "Urinary Incontinence"
+ },
+ "Urinary Retention": {
+  "id": "D016055",
+  "ad": "Urinary Retention"
+ },
+ "Urinary Tract Infections": {
+  "id": "D014552",
+  "ad": "Urinary Tract Infections"
+ },
+ "Urticaria": {
+  "id": "D014581",
+  "ad": "Urticaria"
+ },
+ "Uterine Inertia": {
+  "id": "D014593",
+  "ad": "Uterine Inertia"
+ },
+ "Uterus": {
+  "id": "D014599",
+  "ad": "Uterus"
+ },
+ "Vagus Nerve": {
+  "id": "D014630",
+  "ad": "Vagus Nerve"
+ },
+ "Valsalva Maneuver": {
+  "id": "D014636",
+  "ad": "Valsalva Maneuver"
+ },
+ "Vasoconstrictor Agents": {
+  "id": "D014662",
+  "ad": "Vasoconstrictor Agents"
+ },
+ "Veins": {
+  "id": "D014680",
+  "ad": "Veins"
+ },
+ "Venous Thrombosis": {
+  "id": "D020246",
+  "ad": "Venous Thrombosis"
+ },
+ "Ventilation": {
+  "id": "D014691",
+  "ad": "Ventilation"
+ },
+ "Ventilators, Mechanical": {
+  "id": "D012122",
+  "ad": "Ventilators, Mechanical"
+ },
+ "Ventricular Fibrillation": {
+  "id": "D014693",
+  "ad": "Ventricular Fibrillation"
+ },
+ "Verbal order": null,
+ "Vertigo": {
+  "id": "D014717",
+  "ad": "Vertigo"
+ },
+ "Vital Signs": {
+  "id": "D055986",
+  "ad": "Vital Signs"
+ },
+ "Vocal Cords": {
+  "id": "D014827",
+  "ad": "Vocal Cords"
+ },
+ "Vomiting": {
+  "id": "D014839",
+  "ad": "Vomiting"
+ },
+ "Water-Electrolyte Imbalance": {
+  "id": "D014883",
+  "ad": "Water-Electrolyte Imbalance"
+ },
+ "Wolff-Parkinson-White Syndrome": {
+  "id": "D014927",
+  "ad": "Wolff-Parkinson-White Syndrome"
+ },
+ "Workplace Violence": {
+  "id": "D064450",
+  "ad": "Workplace Violence"
+ },
+ "Wounds, Gunshot": {
+  "id": "D014948",
+  "ad": "Wounds, Gunshot"
+ },
+ "Wounds, Nonpenetrating": {
+  "id": "D014949",
+  "ad": "Wounds, Nonpenetrating"
+ },
+ "Wounds, Penetrating": {
+  "id": "D014950",
+  "ad": "Wounds, Penetrating"
+ },
+ "Xiphoid Bone": {
+  "id": "D014989",
+  "ad": "Xiphoid Bone"
+ }
+}

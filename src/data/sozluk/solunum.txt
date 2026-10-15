@@ -1,0 +1,41 @@
+# kategori: solunum | Solunum
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Hava yolu tıkanıklığı | Hava yolu obstrüksiyonu | Airway Obstruction | Havanın akciğerlere ulaşmasının dil düşmesi, yabancı cisim, kusmuk, kan veya şişlik nedeniyle kısmen ya da tamamen engellenmesi. | Y-03 C-03
+Yabancı cisim aspirasyonu | Boğulma (yabancı cisim) | Foreign Bodies | Yiyecek veya bir nesnenin hava yoluna kaçması; tam tıkanmada hasta konuşamaz, öksüremez ve nefes alamaz. | Y-03 C-03
+Heimlich manevrası | Karına bası | Heimlich maneuver | Yabancı cisimle tam hava yolu tıkanmasında, bilinci açık erişkinde ve bir yaşından büyük çocukta göbeğin hemen üzerine içe ve yukarı doğru ani baskı uygulanarak cismin çıkarılmaya çalışılması. | Y-03 C-03
+Solunum yetmezliği | | Respiratory Insufficiency | Akciğerlerin kana yeterli oksijen sağlayamaması veya karbondioksiti atamaması; yorgunluk, bilinç değişikliği ve siyanozla ilerleyebilir. |
+Solunum arresti | Apne; Solunum durması | Apnea | Solunumun tamamen durması; müdahale edilmezse hipoksi gelişir ve kısa sürede kardiyak arreste ilerler. |
+Astım | Bronşiyal astım | Asthma | Hava yollarının kronik iltihabı ve tetikleyicilerle ani daralmasıyla tekrarlayan nefes darlığı, hırıltı ve öksürük atakları yapan hastalık. | Y-05 C-04
+Astım atağı | Astım krizi | Asthma attack | Astımlı hastada hava yollarının ani daralmasıyla nefes darlığı, hışıltı ve konuşmada güçlükle seyreden alevlenme; ağır atakta solunum sesleri azalabilir (sessiz göğüs). | Y-05 C-04
+Status astmatikus | | Status Asthmaticus | Standart tedaviye yanıt vermeyen, solunum yetmezliğine ilerleyebilen ağır astım atağı. | Y-05
+Kronik obstrüktif akciğer hastalığı | KOAH | Pulmonary Disease, Chronic Obstructive | Çoğunlukla sigaraya bağlı, hava akımının kalıcı olarak kısıtlandığı ilerleyici akciğer hastalığı; kronik bronşit ve amfizemi kapsar. | Y-04
+KOAH alevlenmesi | | Disease exacerbation | KOAH'lı hastada nefes darlığı, öksürük ve balgamın günlük değişkenliğin ötesinde ani kötüleşmesi; çoğunlukla enfeksiyonla tetiklenir. | Y-04
+Pnömoni | Zatürre | Pneumonia | Akciğer dokusunun çoğunlukla bakteri veya virüslerle oluşan iltihabı; ateş, öksürük, balgam ve nefes darlığı yapar. |
+Pnömotoraks | | Pneumothorax | Akciğer zarları arasına hava girmesiyle akciğerin kısmen veya tamamen sönmesi; ani göğüs ağrısı ve nefes darlığı yapar. |
+Tansiyon pnömotoraks | Basınçlı pnömotoraks | Pneumothorax, Tension | Göğüs boşluğuna giren havanın çıkamayıp basıncının artmasıyla kalbe dönen kanın engellendiği ölümcül durum; ağır solunum sıkıntısı, şok ve boyun venlerinde dolgunluk görülür, iğne dekompresyonu gerektirir. | Y-38 /skalalar/geri-dondurulebilir
+Hemotoraks | | Hemothorax | Göğüs boşluğunda (akciğer zarları arasında) kan birikmesi; çoğunlukla travmaya bağlıdır ve ağır kanamaya yol açabilir. | Y-38
+Plevral efüzyon | | Pleural Effusion | Akciğer zarları arasında sıvı birikmesi. |
+Pulmoner emboli | PE; Akciğer embolisi | Pulmonary Embolism | Çoğunlukla bacak toplardamarlarında oluşan pıhtının akciğer atardamarlarını tıkaması; ani nefes darlığı, göğüs ağrısı, taşikardi ve ağır vakada şok yapar. | /skalalar/geri-dondurulebilir
+Akut solunum sıkıntısı sendromu | ARDS | Respiratory Distress Syndrome | Sepsis, travma veya aspirasyon gibi ağır bir hastalığa bağlı yaygın akciğer hasarıyla gelişen, oksijen tedavisine dirençli solunum yetmezliği. | /skalalar/ventilator
+Aspirasyon | | Respiratory Aspiration | Mide içeriği, kan veya sıvıların hava yoluna ve akciğerlere kaçması; özellikle bilinci bozuk hastada risklidir. |
+Aspirasyon pnömonisi | | Pneumonia, Aspiration | Akciğere kaçan mide içeriğine bağlı gelişen akciğer iltihabı. |
+Hiperventilasyon | | Hyperventilation | Vücudun ihtiyacından hızlı veya derin solunum; karbondioksitin düşmesiyle el ve ağız çevresinde uyuşma, kramp ve baş dönmesi yapabilir. |
+Hiperventilasyon sendromu | | Hyperventilation syndrome | Çoğunlukla kaygıya bağlı, fiziksel bir hastalık olmadan ortaya çıkan hızlı solunum atağı; tanı konmadan önce ciddi nedenler dışlanmalıdır. |
+Hipoventilasyon | | Hypoventilation | Solunumun yetersiz kalması sonucu kanda karbondioksitin yükselmesi; opioid zehirlenmesi ve bilinç bozukluğunda görülür. |
+Hipoksi | Oksijen yetersizliği | Hypoxia | Dokulara yeterli oksijen ulaşmaması. Geri döndürülebilir arrest nedenlerindendir. | /skalalar/geri-dondurulebilir
+Hipoksemi | | Hypoxemia | Kandaki oksijen düzeyinin normalin altına düşmesi. |
+Hiperkapni | | Hypercapnia | Kanda karbondioksit düzeyinin yükselmesi; uyku hali ve bilinç bozukluğuna yol açabilir. |
+Atelektazi | | Pulmonary Atelectasis | Akciğerin bir bölümünün havasız kalarak sönmesi. |
+Bronşit | | Bronchitis | Bronşların iltihabı; öksürük ve balgamla seyreder. |
+Bronşiolit | | Bronchiolitis | Çoğunlukla 2 yaş altı çocuklarda, küçük hava yollarının viral iltihabıyla hışıltı ve solunum sıkıntısı yapan hastalık. |
+Krup | Laringotrakeobronşit | Croup | Küçük çocuklarda üst hava yolunun viral iltihabı; havlar tarzda öksürük, ses kısıklığı ve inspiratuar stridorla seyreder. | C-06
+Epiglottit | | Epiglottitis | Gırtlak kapağının (epiglot) hızlı ilerleyen bakteriyel iltihabı; yüksek ateş, salya akması, yutma güçlüğü ve tam hava yolu tıkanması riskiyle çok acil bir durumdur. Çocuk zorla yatırılmamalı, boğazına bakılmamalıdır. | C-05
+Laringospazm | | Laryngismus | Ses tellerinin istemsiz kasılarak hava yolunu kapatması. |
+Anjiyoödem | | Angioedema | Dudak, dil, gırtlak gibi deri ve mukoza altı dokularda ani şişlik; hava yolunu tıkayabilir. | Y-21 Y-22
+Oksijen tedavisi | Oksijen desteği | Oxygen Inhalation Therapy | Kanda oksijeni yetersiz olan hastaya ek oksijen verilmesi; nazal kanül, yüz maskesi veya rezervuarlı maskeyle uygulanır. | /egitim/dokumanlar/oksijen-tupu-ve-sistemlerinin-guvenli-kullanimi-egitimi-rehberi-ve-uygulama-kilavuzu
+Mekanik ventilasyon | | Respiration, Artificial | Solunumun bir cihaz (ventilatör) tarafından tamamen veya kısmen sağlanması. | /skalalar/ventilator
+Tidal volüm | Soluk hacmi | Tidal Volume | Her solukta akciğerlere alınan ve verilen hava hacmi; ventilatörde ideal vücut ağırlığına göre ayarlanır. | /skalalar/ventilator
+Dakika volümü | Dakika ventilasyonu | Pulmonary Ventilation | Bir dakikada akciğerlere alınan toplam hava hacmi; tidal volüm ile solunum sayısının çarpımıdır. | /skalalar/ventilator
+Akciğer kontüzyonu | Akciğer ezilmesi | Lung Injury | Göğse alınan künt darbe sonucu akciğer dokusunda kanama ve ödem; oksijenlenme bozukluğuna yol açar. | Y-38
+Uyku apnesi | Obstrüktif uyku apnesi | Sleep Apnea, Obstructive | Uyku sırasında üst hava yolunun tekrarlayan biçimde kapanmasıyla solunumun duraklaması. |
+Tüberküloz | Verem | Tuberculosis | Mycobacterium tuberculosis'in yol açtığı, çoğunlukla akciğeri tutan, solunum yoluyla bulaşan enfeksiyon; temasta uygun maske kullanılmalıdır. |

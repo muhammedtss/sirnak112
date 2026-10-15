@@ -1,0 +1,13 @@
+# kategori: psikiyatri | Psikiyatrik aciller
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Ajitasyon | Huzursuzluk | Psychomotor Agitation | Aşırı ve amaçsız hareketlilik, gerginlik ve saldırganlığa varabilen huzursuzluk hali; hipoksi, hipoglisemi, zehirlenme gibi tıbbi nedenler önce dışlanmalıdır. | Y-15
+Psikoz | | Psychotic Disorders | Gerçeği değerlendirme yeteneğinin bozulduğu, sanrı ve varsanıların görülebildiği durum. | Y-15
+Sanrı | Hezeyan | Delusions | Aksi kanıtlara rağmen sarsılmayan gerçek dışı inanç. |
+Varsanı | Halüsinasyon | Hallucinations | Gerçekte olmayan bir şeyi görme, duyma veya hissetme. |
+Panik atak | | Panic Disorder | Aniden başlayan yoğun korkuyla birlikte çarpıntı, nefes darlığı, terleme ve titreme atağı; kalp ve akciğer kaynaklı ciddi nedenler dışlanmadan konmamalıdır. |
+İntihar girişimi | | Suicide, Attempted | Kişinin kendi yaşamına son vermeye yönelik eylemi; tıbbi tedavi yanında güvenlik sağlanmalı ve hasta yalnız bırakılmamalıdır. |
+Kendine zarar verme | | Self-Injurious Behavior | Kişinin bilerek kendi bedenine zarar vermesi. |
+Konversiyon bozukluğu | | Conversion Disorder | Psikolojik etkenlere bağlı, nörolojik bir hastalıkla açıklanamayan güçsüzlük, bayılma veya nöbet benzeri belirtiler; tanı ancak organik nedenler dışlandıktan sonra düşünülür. |
+Akut stres tepkisi | | Stress Disorders, Traumatic, Acute | Travmatik bir olay sonrası gelişen kaygı, şaşkınlık, olayı yeniden yaşama ve uyku bozukluğu. |
+Fiziksel tespit | Kısıtlama | Restraint, Physical | Kendine veya çevresine zarar verme riski olan hastanın güvenlik için hareketlerinin kısıtlanması; en son seçenektir ve hasta yakından izlenir. | Y-15
+Ekip güvenliği | Şiddet riski | Workplace Violence | Saldırgan hastada ekibin kendini koruması, gerekiyorsa kolluk desteği istenmesi ve kaçış yolunun açık tutulması. | Y-15

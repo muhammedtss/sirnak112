@@ -1,0 +1,65 @@
+# kategori: belirti | Belirti ve bulgular
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Dispne | Nefes darlığı; Solunum sıkıntısı | Dyspnea | Nefes almada güçlük ve hava açlığı hissi; şiddeti mMRC skalasıyla derecelendirilebilir. | /skalalar/dispne
+Ortopne | | Orthopnea | Düz yatınca artan, oturunca azalan nefes darlığı; kalp yetmezliğine özgüdür. | Y-14
+Takipne | Hızlı solunum | Tachypnea | Solunum sayısının yaşa göre normalin üzerinde olması. |
+Bradipne | Yavaş solunum | Bradypnea | Solunum sayısının yaşa göre normalin altında olması; opioid zehirlenmesi ve kafa içi basınç artışında görülür. |
+Agonal solunum | Gasping; Can çekişme solunumu | Respiration | Kardiyak arrestin ilk dakikalarında görülebilen düzensiz, yavaş, iç çeker tarzda nefes alma; normal solunum değildir ve KPR'ye başlanmalıdır. | Y-09
+Stridor | | Respiratory Sounds | Üst hava yolu daralmasında, özellikle nefes alırken duyulan yüksek perdeli, ıslığa benzer ses. | C-06 C-05
+Hışıltı | Wheezing; Vizing | Respiratory Sounds | Alt hava yollarının daralmasında, özellikle nefes verirken duyulan ıslık sesi; astım ve KOAH'ta tipiktir. | Y-05
+Ral | Krepitan ral; Çıtırtı | Respiratory Sounds | Akciğer dinlenirken duyulan ince çıtırtı sesleri; akciğer ödemi ve pnömonide duyulur. | Y-14
+Ronküs | | Respiratory Sounds | Büyük hava yollarındaki salgılara bağlı kaba, horlamaya benzer solunum sesi. |
+Yardımcı solunum kası kullanımı | Retraksiyon; Çekilme | Respiratory Muscles | Solunum sıkıntısında boyun ve kaburga arası kasların devreye girmesi, kaburga aralarının ve göğüs kemiğinin içe çekilmesi; çocuklarda belirgin bir uyarı bulgusudur. | /skalalar/pat
+Burun kanadı solunumu | | Respiratory Insufficiency | Solunum sıkıntısındaki çocukta her nefeste burun kanatlarının genişlemesi. | /skalalar/pat
+Siyanoz | Morarma | Cyanosis | Kanda oksijenden yoksun hemoglobinin artmasıyla dudak, tırnak yatağı ve ciltte mavi-mor renk değişikliği. |
+Solukluk | Ağarma | Pallor | Cildin normal renginin kaybolması; kan kaybı, şok veya anemiyi düşündürür. |
+Mottling | Alacalı cilt; Ebru deri | Skin mottling | Ciltte dolaşım bozukluğuna bağlı ağ şeklinde mor-beyaz alacalanma; ağır şokun bulgusu olabilir. | /skalalar/pat
+Diaforez | Aşırı terleme; Soğuk terleme | Sweating | Bol terleme; göğüs ağrısıyla birlikte olması akut koroner sendromu, soğuk ve yapışkan olması şoku düşündürür. |
+Hemoptizi | Kan tükürme | Hemoptysis | Öksürükle kan veya kanlı balgam çıkarma. |
+Hematemez | Kan kusma | Hematemesis | Kan veya kahve telvesi görünümünde kusma; üst sindirim sistemi kanamasını gösterir. |
+Melena | Siyah dışkı | Melena | Sindirilmiş kan nedeniyle siyah, katran gibi, kötü kokulu dışkı; üst sindirim sistemi kanamasını gösterir. |
+Hematokezya | Rektal kanama | Hematochezia | Dışkıyla birlikte parlak kırmızı kan gelmesi; çoğunlukla alt sindirim sistemi kanamasını gösterir. |
+Hematüri | İdrarda kan | Hematuria | İdrarda kan bulunması; gözle görülebilir veya yalnızca tahlilde saptanabilir, böbrek taşı, enfeksiyon veya travmaya bağlı olabilir. |
+Epistaksis | Burun kanaması | Epistaxis | Burundan kanama; çoğunlukla ön bölümden olur ve burun kanatlarına baskıyla durur. |
+Göğüs ağrısı | | Chest Pain | Kalp, akciğer, aort, yemek borusu veya göğüs duvarı kaynaklı olabilen ağrı; akut koroner sendrom, aort diseksiyonu ve pulmoner emboli gibi ölümcül nedenler önce düşünülmelidir. | Y-06
+Çarpıntı | Palpitasyon | Palpitations | Kalp atımlarının hızlı, güçlü veya düzensiz olarak hissedilmesi. | Y-08
+Baş ağrısı | | Headache | Başın herhangi bir bölgesinde ağrı; ani başlayan en şiddetli baş ağrısı, ateş-ense sertliği veya nörolojik bulgu eşlik etmesi tehlike işaretidir. |
+Baş dönmesi | | Dizziness | Sersemlik, dengesizlik veya dönme hissi; iç kulak sorunları kadar hipotansiyon, ritim bozukluğu ve inmenin de belirtisi olabilir. | Y-20
+Bulantı | | Nausea | Kusma isteği hissi; mide-bağırsak hastalıklarının yanında kalp krizi, kafa içi basınç artışı ve zehirlenmelerde de görülebilir. |
+Kusma | | Vomiting | Mide içeriğinin ağızdan zorla dışarı atılması; bilinci bozuk hastada aspirasyon riski taşır. |
+İshal | Diyare | Diarrhea | Günde üç veya daha fazla sulu dışkılama; sıvı ve elektrolit kaybına yol açar. |
+Karın ağrısı | | Abdominal Pain | Karın bölgesinde ağrı; yeri, başlangıcı ve yayılımı nedeni ayırt etmede yardımcı olur. |
+Defans | Karında kas savunması | Abdomen, Acute | Muayenede karın kaslarının istemsiz olarak kasılması; periton iltihabını düşündürür. |
+Rebound | Geri tepme hassasiyeti | Abdomen, Acute | Karına bastırılan elin aniden çekilmesiyle ağrının artması; periton iltihabının bulgusudur. |
+Ödem | Şişlik | Edema | Dokularda fazla sıvı birikmesine bağlı şişlik; bacaklarda iki taraflı olması kalp, böbrek veya karaciğer yetmezliğini düşündürür. | Y-14
+Asit | Karında sıvı | Ascites | Karın boşluğunda sıvı birikmesi; karında şişlik yapar, çoğunlukla siroz, kalp yetmezliği veya kansere bağlıdır. |
+İkter | Sarılık | Jaundice | Kanda bilirubin artışına bağlı cilt ve göz aklarında sararma. |
+Peteşi | | Purpura | Deride basmakla solmayan, iğne başı büyüklüğünde kırmızı-mor noktalar; ateşle birlikte olması ağır enfeksiyonu (meningokoksemi) düşündürür. |
+Purpura | | Purpura | Deride basmakla solmayan, peteşiden büyük mor lekeler; pıhtılaşma bozukluğu veya ağır enfeksiyon belirtisi olabilir. |
+Döküntü | Raş | Exanthema | Deride kızarıklık, kabarıklık veya kabarcık şeklinde yaygın değişiklik. |
+Kaşıntı | Prurit | Pruritus | Kaşıma isteği yaratan deri hissi; alerjik reaksiyonlarda sıktır. | Y-21
+Poliüri | Çok idrara çıkma | Polyuria | Normalden fazla miktarda idrar yapma; kontrolsüz diyabette görülür. |
+Oligüri | İdrar azlığı | Oliguria | İdrar miktarının belirgin azalması; dehidratasyon, şok veya böbrek yetmezliğini düşündürür. |
+Anüri | İdrar yapamama | Anuria | Hiç veya hemen hiç idrar üretilmemesi; ağır şok, böbrek yetmezliği veya idrar yolu tıkanmasını düşündürür. |
+Polidipsi | Aşırı susama | Polydipsia | Aşırı susuzluk hissi ve fazla sıvı içme; kontrolsüz diyabette görülür. |
+Senkop öncesi | Presenkop | Syncope | Bayılmak üzere olma hissi; baş dönmesi, gözlerin kararması ve terlemeyle seyreder. |
+Konfüzyon | Zihin bulanıklığı | Confusion | Kişinin yer, zaman ve kişiye yönelimini kaybederek net düşünememesi. | Y-16
+Letarji | Uyuşukluk | Lethargy | Belirgin uyku hali ve tepkisizlik; uyandırılabilir ancak uyanık kalamaz. | Y-16
+Nistagmus | | Nystagmus, Pathologic | Gözlerin istemsiz, ritmik olarak sallanması; iç kulak veya beyincik sorunlarını düşündürür. | Y-20
+Ptozis | Göz kapağı düşüklüğü | Blepharoptosis | Üst göz kapağının düşmesi; yeni başlaması inme, kafa içi anevrizma veya myastenia gravisi düşündürebilir. |
+Fasiyal paralizi | Yüz felci | Facial Paralysis | Yüz kaslarının bir tarafta güçsüzlüğü; ağız kenarının düşmesi inme bulgusu olabilir. | Y-18
+Titreme | Tremor | Tremor | Vücudun bir bölümünde istemsiz, ritmik sallanma. |
+Üşüme-titreme | Rigor; Frisson | Shivering | Ateşin yükselmesi sırasında görülen şiddetli titreme nöbeti; ağır enfeksiyonu düşündürebilir. |
+Ateş basması | Flushing | Flushing | Yüzde ve göğüste ani kızarma ve sıcaklık hissi. |
+Halsizlik | Güçsüzlük | Asthenia | Genel enerji azlığı ve yorgunluk hissi; yaşlılarda ve diyabetlilerde enfeksiyon, kalp krizi gibi ciddi hastalıkların tek belirtisi olabilir. |
+Ağrı | | Pain | Gerçek veya olası doku hasarıyla ilişkili hoş olmayan duyusal ve duygusal deneyim; şiddeti 0–10 arası sayısal ölçekle değerlendirilebilir. |
+Beck triadı | | Cardiac Tamponade | Kardiyak tamponadın üç klasik bulgusu: hipotansiyon, boyun venlerinde dolgunluk ve derinden gelen kalp sesleri. |
+Paradoks nabız | Pulsus paradoksus | Pulse | Nefes alırken sistolik kan basıncının normalden fazla (10 mmHg'den çok) düşmesi; kardiyak tamponad ve ağır astımda görülür. |
+Boyun venöz dolgunluğu | Juguler venöz distansiyon | Jugular Veins | Boyun toplardamarlarının belirgin şişkinliği; kalp yetmezliği, tansiyon pnömotoraks ve kardiyak tamponadda görülür. |
+Trakea deviasyonu | Nefes borusunun kayması | Trachea | Nefes borusunun orta hattan bir yana kayması; tansiyon pnömotoraksın geç bulgusudur. |
+Subkutan amfizem | Deri altı hava | Subcutaneous Emphysema | Deri altına hava kaçmasıyla dokunulduğunda çıtırtı hissi; pnömotoraks veya hava yolu yaralanmasını düşündürür. |
+Kernig bulgusu | | Meningism | Uyluk kalçadan bükülüyken dizin düzleştirilmesine karşı ağrılı direnç; beyin zarı iltihabını düşündürür. |
+Brudzinski bulgusu | | Meningism | Baş öne doğru eğildiğinde kalça ve dizlerin istemsiz bükülmesi; beyin zarı iltihabını düşündürür. |
+Tonus kaybı | Hipotoni | Muscle Hypotonia | Kas gerginliğinin azalması; bebeklerde "gevşek bebek" görünümü ciddi hastalık bulgusudur. | /skalalar/pat
+İnkontinans | İdrar veya dışkı kaçırma | Urinary Incontinence | İdrar veya dışkının istemsiz kaçırılması; nöbet sırasında görülebilir. |
+Dil ısırma | | Tongue bite | Nöbet sırasında dilin yan kenarının ısırılması; bayılmayı nöbetten ayırt etmede yardımcı bulgudur. | Y-19

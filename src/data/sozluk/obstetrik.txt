@@ -1,0 +1,31 @@
+# kategori: obstetrik | Doğum ve kadın hastalıkları
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Gebelik | Hamilelik | Pregnancy | Döllenmiş yumurtanın rahimde gelişmesiyle başlayan ve doğumla sona eren yaklaşık 40 haftalık dönem; ilk, ikinci ve üçüncü trimestr olarak üçe ayrılır. |
+Trimestr | | Pregnancy Trimesters | Gebeliğin yaklaşık üçer aylık üç döneminden her biri. |
+Doğum eylemi | Travay | Labor, Obstetric | Düzenli rahim kasılmalarıyla rahim ağzının açılması ve bebeğin doğumuyla sonuçlanan süreç; açılma, bebeğin doğumu ve plasentanın doğumu evrelerinden oluşur. | DY-01
+Acil doğum | Olay yerinde doğum | Delivery, Obstetric | Hastaneye ulaşılmadan, olay yerinde veya ambulansta gerçekleşen doğum. | DY-01
+Baş geliş | Verteks geliş | Cephalic presentation | Bebeğin doğum kanalına başı önde gelecek şekilde yerleşmesi; normal doğum pozisyonudur. | DY-01
+Makat geliş | | Breech Presentation | Bebeğin kalçası veya ayakları önde gelecek şekilde doğum kanalına yerleşmesi; doğum komplikasyon riski taşır. | DY-02
+Kordon sarkması | Kordon prolapsusu | Umbilical cord prolapse | Göbek kordonunun bebekten önce doğum kanalına sarkması; kordonun sıkışması bebeğin oksijensiz kalmasına yol açacağı için en acil doğum komplikasyonlarındandır. | DY-02
+Omuz takılması | Omuz distosisi | Shoulder Dystocia | Bebeğin başı doğduktan sonra omuzlarının leğen kemiğine takılarak doğumun ilerlememesi. | DY-02
+Kordona dolanma | Nukal kordon | Nuchal cord | Göbek kordonunun bebeğin boynuna dolanması. | DY-01
+Plasenta | Eş | Placenta | Gebelikte anne ile bebek arasında besin, oksijen ve atık alışverişini sağlayan, doğumdan sonra atılan organ. | DY-01
+Plasenta previa | | Placenta Previa | Plasentanın rahim ağzını kısmen veya tamamen örtecek şekilde aşağıda yerleşmesi; gebeliğin son döneminde ağrısız, parlak kırmızı vajinal kanamaya yol açar. Vajinal muayene yapılmaz. | DY-02
+Dekolman plasenta | Plasenta ayrılması | Abruptio Placentae | Plasentanın doğumdan önce rahim duvarından erken ayrılması; ağrılı, sert karın ve vajinal kanamayla seyreder, anne ve bebek için hayatı tehdit eder. | DY-02
+Postpartum kanama | Doğum sonu kanama | Postpartum Hemorrhage | Doğumdan sonra aşırı kan kaybı; en sık nedeni rahmin yeterince kasılamamasıdır (atoni). Rahim masajı ve uygun tedavi gerektirir. | DY-03
+Uterus atonisi | Rahim atonisi | Uterine Inertia | Doğumdan sonra rahim kasının yeterince kasılamaması; postpartum kanamanın en sık nedenidir. | DY-03
+Preeklampsi | Gebelik zehirlenmesi | Pre-Eclampsia | Gebeliğin 20. haftasından sonra yüksek tansiyonla birlikte idrarda protein veya organ hasarı bulgularının görülmesi; baş ağrısı, görme bozukluğu ve üst karın ağrısı uyarıcıdır. | DY-04
+Eklampsi | | Eclampsia | Preeklampsili gebede veya doğum sonrası dönemde nöbet gelişmesi; anne ve bebek için hayatı tehdit eder. | DY-05
+HELLP sendromu | HELLP | HELLP Syndrome | Preeklampsinin ağır bir türü: alyuvar yıkımı (hemoliz), karaciğer enzimlerinde yükselme ve trombosit düşüklüğü. | DY-04
+Gebelikte hipertansiyon | Gestasyonel hipertansiyon | Hypertension, Pregnancy-Induced | Gebeliğin 20. haftasından sonra ortaya çıkan yüksek tansiyon. | DY-04
+Dış gebelik | Ektopik gebelik | Pregnancy, Ectopic | Döllenmiş yumurtanın rahim dışına, çoğunlukla tüplere yerleşmesi; yırtılırsa ani karın ağrısı ve iç kanamaya bağlı şoka yol açar. |
+Düşük | Abortus | Abortion, Spontaneous | Gebeliğin 20. haftadan önce kendiliğinden sonlanması; vajinal kanama ve kramp tarzı ağrıyla seyreder. |
+Erken doğum | Preterm eylem | Obstetric Labor, Premature | Gebeliğin 37. haftası tamamlanmadan başlayan doğum eylemi. |
+Erken membran rüptürü | Su kesesinin erken açılması | Fetal Membranes, Premature Rupture | Doğum eylemi başlamadan önce amniyon kesesinin açılarak sıvı gelmesi. |
+Amniyon sıvısı | Bebek suyu | Amniotic Fluid | Rahimde bebeği çevreleyen koruyucu sıvı; kesenin açılmasıyla gelmesi doğum eyleminin habercisi olabilir. |
+Mekonyum | | Meconium | Bebeğin ilk dışkısı; doğum öncesinde amniyon sıvısına geçmesi (yeşil-kahve renkli su) bebeğin sıkıntıda olabileceğini gösterir. | DY-07
+Vena kava sendromu | Supin hipotansiyon sendromu | Supine hypotension | Gebeliğin ileri döneminde sırtüstü yatan gebede rahmin büyük toplardamara bası yaparak kalbe dönen kanı azaltması; baş dönmesi ve hipotansiyon yapar. Gebe sol yanına yatırılır. |
+Gebelikte travma | | Pregnancy Complications | Gebe hastada travma; annenin stabil tutulması bebeğin de en iyi korunmasıdır, dekolman plasenta riski nedeniyle izlem gerekir. | Y-38
+Dismenore | Adet sancısı | Dysmenorrhea | Adet döneminde kramp tarzında alt karın ağrısı. |
+Over torsiyonu | Yumurtalık dönmesi | Ovarian Torsion | Yumurtalığın kendi damar sapı etrafında dönerek kansız kalması; ani ve şiddetli tek taraflı alt karın ağrısıyla seyreden acil durum. |
+Cinsel saldırı | | Sex Offenses | Rıza dışı cinsel temas; hastanın güvenliği, psikolojik desteği ve delillerin korunması önemlidir, adli olgudur. | /egitim/dokumanlar/adli-vakalarda-maddi-delillere-yaklasim-protokolu-ve-egitimi

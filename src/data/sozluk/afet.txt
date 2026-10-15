@@ -1,0 +1,25 @@
+# kategori: afet | Triyaj, afet ve KBRN
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Triyaj | Triaj | Triage | Çoklu yaralanmalı veya kitlesel olaylarda hastaların tıbbi önceliklerine göre sınıflandırılması ve tedavi ile nakil önceliklerinin belirlenmesi; amaç mevcut kaynaklarla en fazla sayıda hastanın hayatını kurtarmaktır. | /skalalar/start /skalalar/jump-start
+Kitlesel olay | Kitlesel yaralanmalı olay | Mass Casualty Incidents | Yaralı sayısının olay yerindeki kaynakları aştığı olay; bireysel en iyi bakım yerine en çok hayatı kurtarmaya öncelik verilir. | /skalalar/start
+Çoklu yaralanmalı olay | | Multiple Trauma | Birden fazla yaralının bulunduğu ancak kaynakların yeterli olduğu olay. | /skalalar/start
+Afet | | Disasters | Toplumun normal yaşamını kesintiye uğratan, yerel imkanların yetmediği doğal, teknolojik veya insan kaynaklı olay. |
+Kırmızı kod | Acil (Immediate) | Triage | Müdahale edilmediğinde hayati riski olan, acil bakımla kurtarılabilecek hastaların triyaj kategorisi; öncelikli tedavi ve sevk edilir. | /skalalar/start
+Sarı kod | Geciktirilebilir acil (Delayed) | Triage | Tıbbi müdahale gereken ancak kısa süre beklemesi hayati risk oluşturmayan hastaların triyaj kategorisi. | /skalalar/start
+Yeşil kod | Acil değil (Minör) | Triage | Kendi başına yürüyebilen, hafif yaralı hastaların triyaj kategorisi; en son sırada değerlendirilir ve tedavi edilir. | /skalalar/start
+Siyah kod | Ölü (Deceased) | Triage | Kesin ölüm bulguları olan veya olayın büyüklüğüne göre kurtarılamayacak hastaların triyaj kategorisi. | /skalalar/start
+Re-triyaj | Yeniden triyaj | Triage | Hastaların durumu zamanla değişebileceği için triyajın belirli aralıklarla tekrarlanması. | /skalalar/start
+Triyaj kartı | | Triage | Triyaj uygulanan hastaya takılan, renk kodunun işaretlendiği ve sonradan tedavi ve nakil bilgilerinin eklendiği kart. | /egitim/dokumanlar/tilyad
+Tıbbi triyaj | İkincil triyaj | Triage | Kitlesel olayda tıbbi triyaj alanında hastaların ayrıntılı değerlendirilip stabilize edildiği triyaj aşaması. | /egitim/dokumanlar/tilyad
+Nakil triyajı | Üçüncül triyaj | Triage | Hastaların hangi sırayla, hangi araçla ve hangi sağlık kuruluşuna sevk edileceğinin belirlendiği triyaj aşaması; SKKM koordinasyonunda yürütülür. | /egitim/dokumanlar/tilyad
+Dekontaminasyon (KBRN) | Arındırma | Decontamination | KBRN olaylarında hastanın kirletici maddeden arındırılması; ayrıntılı triyaj ve tedavi dekontaminasyondan sonra soğuk alanda yapılır. | /egitim/dokumanlar/tibbi-kbrn-farkindalik
+Sıcak bölge | Kırmızı bölge | Hazardous Substances | KBRN olayında tehlikeli maddenin bulunduğu, yalnızca uygun koruyucu ekipmanla girilebilen alan; rutin triyaj yapılmaz. | /egitim/dokumanlar/tibbi-kbrn-farkindalik
+Ilık bölge | Sarı bölge | Hazardous Substances | Sıcak ve soğuk bölge arasında dekontaminasyonun yapıldığı geçiş alanı. | /egitim/dokumanlar/tibbi-kbrn-farkindalik
+Soğuk bölge | Yeşil bölge | Hazardous Substances | Tehlikeli maddenin bulunmadığı, tıbbi triyaj ve tedavinin yapıldığı güvenli alan. | /egitim/dokumanlar/tibbi-kbrn-farkindalik
+Tehlikeli madde | | Hazardous Substances | İnsan sağlığına ve çevreye zarar verebilen kimyasal, biyolojik veya radyoaktif madde. | /egitim/dokumanlar/tibbi-kbrn-farkindalik
+Sinir ajanı | | Nerve Agents | Asetilkolinesteraz enzimini engelleyen, organofosfat zehirlenmesine benzer ağır kolinerjik belirtilere yol açan kimyasal silah grubu. | Y-35
+Radyasyon maruziyeti | | Radiation Exposure | İyonlaştırıcı radyasyona maruz kalma; bulantı, kusma ve kan hücrelerinde azalmayla seyreden radyasyon hastalığına yol açabilir. |
+Patlama yaralanması | Blast yaralanması | Blast Injuries | Patlamanın basınç dalgası, uçan parçalar, savrulma ve yanıklarla oluşturduğu yaralanmalar; kulak zarı, akciğer ve bağırsaklar basınç dalgasına duyarlıdır. |
+İkincil patlama riski | | Explosions | Terör olaylarında ilk patlamadan sonra müdahale ekiplerini hedef alabilecek ikinci patlama olasılığı; olay yeri güvenliği sağlanmadan girilmez. |
+Olay yeri güvenliği | | Safety | Müdahaleden önce ekibin, hastanın ve çevrenin tehlikelerden (trafik, yangın, elektrik, şiddet, kimyasal) korunduğunun sağlanması. | Y-01 /skalalar/cabuk
+Ulusal Medikal Kurtarma Ekibi | UMKE | Rescue Work | Afet ve acil durumlarda olay yerinde sağlık hizmeti veren, Sağlık Bakanlığına bağlı ulusal ekip. |

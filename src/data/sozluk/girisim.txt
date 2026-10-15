@@ -1,0 +1,55 @@
+# kategori: girisim | Girişimler ve ekipman
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+Kardiyopulmoner resüsitasyon | KPR; Canlandırma; CPR | Cardiopulmonary Resuscitation | Dolaşımı duran hastada göğüs kompresyonları ve solunum desteğiyle beyin ve kalbe kan akımı sağlanması; kesintisiz, yeterli derinlik ve hızda kompresyon temel unsurdur. | Y-09 C-12
+Temel yaşam desteği | TYD | Basic life support | Herhangi bir ilaç veya ileri araç kullanmadan hava yolu açıklığı, solunum ve göğüs kompresyonuyla yaşamın sürdürülmesi; gerekiyorsa otomatik eksternal defibrilatör kullanımını içerir. | Y-09
+İleri yaşam desteği | İYD; İleri kardiyak yaşam desteği | Advanced Cardiac Life Support | Temel yaşam desteğine ek olarak ritim analizi, defibrilasyon, ilaç uygulaması ve ileri hava yolu yönetimini içeren resüsitasyon. | Y-09 /egitim/dokumanlar/ilyad
+Göğüs kompresyonu | Kalp masajı | Heart Massage | Göğüs kemiğinin alt yarısına ritmik olarak bastırılarak kalpten kan pompalanması; her bası sonrası göğsün tamamen geri gelmesine izin verilir. | Y-09
+Otomatik eksternal defibrilatör | OED; AED | Defibrillators | Ritmi kendisi analiz edip şoklanabilir ritimde sesli komutlarla kullanıcıyı şok vermeye yönlendiren taşınabilir defibrilatör. | Y-11
+Hava yolu açma manevraları | Baş geri-çene yukarı; Çene itme | Airway Management | Dilin hava yolunu kapatmasını önlemek için başın geriye eğilip çenenin kaldırılması; omurga yaralanması şüphesinde başa dokunmadan çene itme manevrası kullanılır. | Y-02
+Orofaringeal airway | OPA; Ağız içi hava yolu | Airway Management | Bilinci kapalı hastada dilin geriye düşmesini önlemek için ağızdan yerleştirilen kıvrık hava yolu aracı; ölçüsü ağız köşesinden kulak memesine kadar alınır. | Y-02
+Nazofaringeal airway | NPA; Burun hava yolu | Airway Management | Burundan yerleştirilen yumuşak hava yolu aracı; öğürme refleksi korunmuş hastada da tolere edilebilir. Kafa tabanı kırığı şüphesinde kullanılmaz. | Y-02
+Balon-valf-maske | BVM; Ambu | Bag-Valve-Mask | Kendiliğinden şişen balon, tek yönlü valf ve maskeden oluşan, elle pozitif basınçlı ventilasyon sağlayan araç; rezervuar ve oksijenle yüksek oranda oksijen verilebilir. | Y-02
+Entübasyon | Endotrakeal entübasyon | Intubation, Intratracheal | Nefes borusuna bir tüp yerleştirilerek hava yolunun güvenceye alınması ve ventilasyonun sağlanması. | /skalalar/ett
+Endotrakeal tüp | ETT | Intubation, Intratracheal | Nefes borusuna yerleştirilen, ucunda şişirilebilir balonu (kaf) olan tüp; çocuklarda boyutu yaşa ve kiloya göre seçilir. | /skalalar/ett
+Hızlı ardışık entübasyon | RSI | Rapid Sequence Induction and Intubation | Aspirasyon riskini azaltmak için sedatif ve kas gevşeticinin art arda verilip hastanın hızla entübe edildiği yöntem. |
+Laringeal maske | LMA; Supraglottik hava yolu | Laryngeal Masks | Ses tellerinin üzerine oturarak gırtlak girişini çevreleyen, entübasyondan daha kolay yerleştirilen ileri hava yolu aracı; numarası kiloya göre seçilir. | /skalalar/lma
+Laringoskop | | Laryngoscopes | Entübasyon sırasında dili kaldırıp ses tellerini görmeyi sağlayan, ışıklı bıçaklı (bleyd) alet. | /skalalar/ett
+Krikotirotomi | Krikotiroidotomi | Cricothyrotomy | Entübasyon ve ventilasyonun mümkün olmadığı durumlarda gırtlaktaki krikotiroid zardan nefes borusuna girilmesi; iğne veya cerrahi yöntemle yapılır. |
+Aspirasyon (girişim) | Aspiratör; Sekresyon temizliği | Suction | Ağız ve hava yolundaki kusmuk, kan ve salgıların vakumlu cihazla çekilerek temizlenmesi. | /skalalar/ett
+Kapnografi | | Capnography | Soluk havasındaki karbondioksitin sürekli ölçülüp dalga şeklinde gösterilmesi; tüpün nefes borusunda olduğunun en güvenilir kanıtıdır. |
+Nabız oksimetresi | Pulse oksimetre | Oximetry | Parmağa takılan probla kandaki oksijen satürasyonunu ve nabzı ölçen cihaz; soğuk uzuv, oje ve karbonmonoksit zehirlenmesinde yanıltıcı olabilir. |
+Glukometre | Şeker ölçüm cihazı | Blood Glucose Self-Monitoring | Parmak ucundan alınan bir damla kanla kan şekerini ölçen cihaz. | Y-17
+Damar yolu açma | Periferik damar yolu | Catheterization, Peripheral | Kol veya eldeki bir toplardamara plastik kanül yerleştirilerek ilaç ve sıvı uygulaması için yol açılması. |
+Kanül | Branül | Catheters | Damara yerleştirilen ince plastik tüp; çapı numarasıyla (gauge) gösterilir, numara küçüldükçe çap büyür. |
+İğne dekompresyonu | İğne torakostomi | Needle decompression | Tansiyon pnömotoraksta göğüs duvarından kalın bir iğne sokularak göğüs boşluğundaki basınçlı havanın boşaltılması. | Y-38
+Göğüs tüpü | Toraks tüpü | Chest Tubes | Göğüs boşluğundaki hava veya kanı boşaltmak için yerleştirilen tüp. |
+Kardiyak monitör | Monitör | Monitoring, Physiologic | Kalp ritmini, nabzı ve diğer yaşam bulgularını sürekli gösteren cihaz. |
+Defibrilatör | | Defibrillators | Kalbe elektrik şoku vererek ritim bozukluklarını düzelten cihaz; elle (manuel) veya otomatik çalışabilir. | Y-11
+Mekanik KPR cihazı | Otomatik göğüs kompresyon cihazı | Heart Massage | Göğüs kompresyonlarını sabit derinlik ve hızda yapan cihaz; özellikle nakil sırasında kesintisiz kompresyon sağlar. |
+Ventilatör | Solunum cihazı | Ventilators, Mechanical | Hastanın solunumunu ayarlanan hacim, basınç ve hızla sağlayan veya destekleyen cihaz. | /skalalar/ventilator
+Nebülizatör | | Nebulizers and Vaporizers | Sıvı ilacı ince buhara çevirerek maskeyle solutan cihaz. | /ilac-doz
+Rezervuarlı maske | Geri solumasız maske | Masks | Torbasındaki oksijeni biriktirerek yüksek oranda oksijen verilmesini sağlayan yüz maskesi. |
+Nazal kanül | Burun kanülü | Cannula | Burun deliklerine yerleştirilen iki uçlu, düşük akımlı oksijen verme aracı. |
+Oksijen tüpü | Oksijen silindiri | Oxygen | Basınçlı oksijen taşıyan silindir; yağ ve kıvılcımdan uzak tutulmalı, devrilmeye karşı sabitlenmelidir. | /egitim/dokumanlar/oksijen-tupu-ve-sistemlerinin-guvenli-kullanimi-egitimi-rehberi-ve-uygulama-kilavuzu
+Sırt tahtası | Uzun omurga tahtası | Immobilization | Omurga yaralanması şüphesindeki hastanın taşınması ve sabitlenmesinde kullanılan sert tahta. | Y-38
+Kaşık sedye | Scoop sedye | Stretchers | İki parçaya ayrılıp hastanın altına iki yandan yerleştirilerek, hastayı az hareket ettirerek kaldırmayı sağlayan sedye. |
+Vakum sedye | Vakum yatak | Immobilization | Havası boşaltıldığında hastanın vücut şekline göre sertleşerek tüm vücudu sabitleyen yatak. |
+Vakum atel | | Splints | Havası boşaltıldığında uzvun şekline göre sertleşen atel. |
+Kurtarma | Ekstrikasyon | Rescue Work | Araç içinde sıkışmış veya ulaşılması zor yerdeki hastanın güvenli biçimde çıkarılması. |
+Rautek manevrası | | Emergency rescue maneuver | Tehlikeli ortamdaki bilinci kapalı hastanın tek kurtarıcı tarafından arkadan kavranarak hızla çıkarılması. |
+Derlenme pozisyonu | Koma pozisyonu; Yan yatış pozisyonu | Patient Positioning | Bilinci kapalı ancak solunumu olan ve travma şüphesi bulunmayan hastanın, hava yolunu açık tutmak ve aspirasyonu önlemek için yan yatırılması. | Y-16
+Şok pozisyonu | Trendelenburg; Bacak kaldırma | Head-Down Tilt | Hipotansif hastada bacakların kaldırılması; kanıt düzeyi sınırlıdır ve travmada dikkatli kullanılır. |
+Valsalva manevrası | Vagal manevra | Valsalva Maneuver | Ağzı ve burnu kapalıyken zorlu ıkınma; düzenli dar QRS'li SVT'yi sonlandırmak için ilk basamakta kullanılabilir. | Y-08
+Karotis masajı | Karotis sinüs masajı | Carotid Sinus | Boyundaki karotis sinüsüne masaj yapılarak vagal uyarı oluşturulması; inme riski nedeniyle yaşlılarda ve üfürüm varlığında yapılmaz. | Y-08
+Kompresyon-ventilasyon oranı | 30:2 | Cardiopulmonary Resuscitation | Erişkinde ileri hava yolu yokken her 30 göğüs kompresyonuna karşılık 2 solunum verilmesi. | Y-09
+Hasta nakli | Transport | Transportation of Patients | Hastanın ambulans veya diğer araçlarla uygun sağlık kuruluşuna güvenli biçimde taşınması. |
+Olay yeri yönetimi | | Emergency Medical Services | Olay yerinde güvenliğin sağlanması, durumun değerlendirilmesi, ek kaynak istenmesi, triyaj ve nakil düzeninin kurulması. | Y-01 C-01
+Kişisel koruyucu ekipman | KKE | Personal Protective Equipment | Eldiven, maske, gözlük, önlük gibi sağlık personelini enfeksiyon ve tehlikeli maddelerden koruyan ekipman. | Y-01
+Doğrudan bası | Kanama kontrolü | Hemorrhage | Kanayan yaraya eldivenli elle veya pansumanla kesintisiz bastırılması; dış kanamayı durdurmanın ilk ve en etkili yoludur. | Y-38
+Ambulans | | Ambulances | Hasta ve yaralılara olay yerinde ve nakil sırasında tıbbi bakım vermek için donatılmış araç; kara, hava ve deniz ambulansı olarak ayrılır. | /envanter
+Acil yardım ambulansı | | Ambulances | Acil hastaya olay yerinde ve nakil sırasında ileri tıbbi müdahale yapılabilecek ekipmanla donatılmış kara ambulansı. | /envanter
+Hasta nakil ambulansı | | Ambulances | Durumu stabil hastaların sağlık kuruluşları arasında veya evden hastaneye naklinde kullanılan ambulans. | /envanter
+Hava ambulansı | Ambulans helikopter; Ambulans uçak | Air Ambulances | Uzak veya ulaşımı güç bölgelerden ve uzun mesafeli nakillerde kullanılan, tıbbi donanımlı helikopter veya uçak. | /envanter
+Deniz ambulansı | | Ambulances | Kıyı ve ada yerleşimlerinden hasta nakli için donatılmış deniz aracı. | /envanter
+Hastane öncesi acil sağlık hizmeti | Hastane öncesi bakım; 112 hizmeti | Emergency Medical Services | Çağrının karşılanmasından hastanın sağlık kuruluşuna teslimine kadar olay yerinde ve nakil sırasında verilen acil sağlık hizmeti. |
+Acil sağlık istasyonu | 112 istasyonu | Emergency Medical Services | Ambulans ekiplerinin görev beklediği ve ekipmanın bulunduğu birim. |

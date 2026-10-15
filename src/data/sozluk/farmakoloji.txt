@@ -1,0 +1,62 @@
+# kategori: farmakoloji | İlaçlar ve uygulama yolları
+# Biçim: Terim | Eş anlamlılar | İngilizce | Tanım | İlgili
+# Not: Doz bilgisi bu sözlükte yer almaz; dozlar için İlaç Dozu modülü ve algoritmalar esastır.
+İntravenöz uygulama | İntravenöz; IV; Damar içi | Administration, Intravenous | İlacın veya sıvının doğrudan toplardamara verilmesi; etki en hızlı bu yolla başlar. | /ilac-doz
+İntraosseöz uygulama | İntraosseöz; IO; Kemik içi | Infusions, Intraosseous | Kemik iliği boşluğuna özel iğneyle girilerek ilaç ve sıvı verilmesi; damar yolu açılamayan kritik hastada hızlı ve güvenilir bir seçenektir. | /ilac-doz
+İntramüsküler uygulama | İntramüsküler; IM; Kas içi | Injections, Intramuscular | İlacın kas içine enjeksiyonu; anafilakside adrenalin bu yolla, uyluğun dış yan yüzüne uygulanır. | /ilac-doz
+Subkutan uygulama | Subkutan; SC; Deri altı | Injections, Subcutaneous | İlacın deri altı yağ dokusuna enjeksiyonu. |
+İntranazal uygulama | İntranazal; İN; Burun içi | Administration, Intranasal | İlacın burun mukozasına püskürtülerek verilmesi; damar yolu olmadan hızlı etki sağlayabilir. | /ilac-doz
+Sublingual uygulama | Sublingual; SL; Dil altı | Administration, Sublingual | İlacın dil altına konularak buradaki damarlardan emilmesi; nitrat ilaçlar bu yolla kullanılır. | /ilac-doz
+İnhalasyon yoluyla uygulama | Nebül; İnhaler | Administration, Inhalation | İlacın solunum yoluyla, nebülizatör veya ölçülü doz inhalerle akciğerlere ulaştırılması; bronş genişletici ilaçlar bu yolla verilir. | /ilac-doz
+Endikasyon | | Indications | Bir ilacın veya girişimin kullanılması gereken durum. | /ilac-doz
+Kontrendikasyon | | Contraindications | Bir ilacın veya girişimin zarar verme riski nedeniyle kullanılmaması gereken durum. | /ilac-doz
+Yan etki | Advers etki | Drug-Related Side Effects and Adverse Reactions | Bir ilacın istenen etkisi dışında ortaya çıkan, istenmeyen etkisi; ciddi olanlar bildirim formuyla bildirilir. | /evraklar
+Bolus | | Bolus | İlacın tek seferde, kısa sürede toplu olarak verilmesi. | /ilac-doz
+İnfüzyon | | Infusions, Intravenous | İlacın veya sıvının belirli bir hızla, sürekli olarak damardan verilmesi. | /ilac-doz
+Titrasyon | | Titration | İlacın dozunun, hastanın yanıtına göre istenen etki elde edilene kadar adım adım ayarlanması. |
+Yarılanma ömrü | | Half-Life | Bir ilacın kandaki düzeyinin yarıya inmesi için geçen süre. |
+Kristaloid sıvı | | Isotonic Solutions | Su ve elektrolitlerden oluşan damar içi sıvılar (serum fizyolojik, Ringer laktat gibi); sıvı replasmanında kullanılır. | /ilac-doz
+Serum fizyolojik | %0,9 sodyum klorür; İzotonik | Saline Solution | Kan ile aynı yoğunlukta tuzlu su çözeltisi; sıvı replasmanında ve ilaçların seyreltilmesinde en sık kullanılan sıvıdır. | /ilac-doz
+Ringer laktat | Laktatlı Ringer | Ringer's Lactate | Sodyum, potasyum, kalsiyum ve laktat içeren dengeli kristaloid sıvı; yanık ve kanamada sıvı replasmanında kullanılır. | /ilac-doz /skalalar/parkland
+Dekstroz | Glikoz; Glukoz | Glucose | Damardan verilen şeker çözeltisi; hipoglisemide kan şekerini hızla yükseltir. | /ilac-doz Y-17
+Oksijen | | Oxygen | Hipoksik hastada kandaki oksijen düzeyini artırmak için verilen gaz; ilaç olarak kabul edilir, gereğinden fazla verilmesinin de zararları olabilir. | /ilac-doz
+Adrenalin | Epinefrin | Epinephrine | Kalp hızını, kasılma gücünü ve damar direncini artıran, bronşları genişleten hormon ve ilaç; kardiyak arrest ve anafilaksinin temel ilacıdır. | /ilac-doz Y-09 Y-22
+Amiodaron | | Amiodarone | Ventriküler ve supraventriküler ritim bozukluklarında kullanılan antiaritmik ilaç; şoka dirençli VF/nVT'de de kullanılır. | /ilac-doz Y-11
+Adenozin | | Adenosine | AV düğümde iletimi çok kısa süreliğine durdurarak düzenli dar QRS'li supraventriküler taşikardiyi sonlandıran ilaç. | /ilac-doz Y-08
+Atropin | | Atropine | Kalp hızını artıran antikolinerjik ilaç; semptomatik bradikardide ve organofosfat zehirlenmesinde kullanılır. | /ilac-doz Y-07 Y-35
+Aspirin | Asetilsalisilik asit | Aspirin | Trombosit kümeleşmesini engelleyen ilaç; akut koroner sendromda çiğnetilerek verilir. Alerjisi ve aktif kanaması olanda kullanılmaz. | /ilac-doz Y-06
+Nitrat | Nitrogliserin; İsosorbid dinitrat | Nitroglycerin | Damarları genişleterek kalbin iş yükünü azaltan ilaç grubu; göğüs ağrısı ve akciğer ödeminde kullanılır. Hipotansiyonda ve bazı ilaç etkileşimlerinde kullanılmaz. | /ilac-doz Y-06
+Diltiazem | | Diltiazem | Kalp hızını yavaşlatan kalsiyum kanal blokeri; hızlı ventrikül yanıtlı atriyal fibrilasyon ve flatterde kullanılır. | /ilac-doz
+Metoprolol | | Metoprolol | Kalp hızını ve kan basıncını düşüren beta bloker ilaç. | /ilac-doz
+Nifedipin | | Nifedipine | Damarları genişleterek kan basıncını düşüren kalsiyum kanal blokeri. | /ilac-doz
+Dopamin | | Dopamine | Kan basıncını ve kalp debisini artırmak için sürekli infüzyonla verilen inotrop-vazopresör ilaç. | /ilac-doz
+Furosemid | | Furosemide | Böbreklerden su ve tuz atılımını artıran idrar söktürücü (diüretik) ilaç; akciğer ödeminde kullanılır. | /ilac-doz Y-14
+Salbutamol | | Albuterol | Bronşları hızla genişleten, astım ve KOAH ataklarında nebülle verilen ilaç. | /ilac-doz Y-05
+İpratropium bromür | | Ipratropium | Bronş genişletici antikolinerjik ilaç; astım ve KOAH ataklarında salbutamolle birlikte kullanılır. | /ilac-doz Y-04
+Kortikosteroid | Steroid; Metilprednizolon; Deksametazon | Adrenal Cortex Hormones | İltihabı ve bağışıklık yanıtını baskılayan ilaç grubu; astım, KOAH alevlenmesi, krup ve alerjik reaksiyonlarda kullanılır. | /ilac-doz
+Antihistaminik | Feniramin maleat; Difenhidramin | Histamine Antagonists | Histaminin etkisini engelleyerek kaşıntı, kurdeşen ve alerjik belirtileri azaltan ilaç grubu; anafilakside adrenalinin yerini tutmaz. | /ilac-doz Y-21
+Benzodiazepin | Diazepam; Midazolam | Benzodiazepines | Sakinleştirici, nöbet durdurucu ve kas gevşetici ilaç grubu; nöbet ve ajitasyonda kullanılır, solunumu baskılayabilir. | /ilac-doz Y-19
+Antiepileptik | Fenitoin; Levetirasetam; Levatirasetam; Valproik asit | Anticonvulsants | Nöbetleri önleyen veya durduran ilaç grubu. | /ilac-doz Y-19
+Opioid analjezik | Fentanil; Morfin | Analgesics, Opioid | Güçlü ağrı kesici ilaç grubu; solunum baskılanması ve hipotansiyon yapabilir. | /ilac-doz
+Parasetamol | Asetaminofen | Acetaminophen | Ağrı kesici ve ateş düşürücü ilaç; yüksek dozda karaciğere zarar verebilir. | /ilac-doz
+İbuprofen | | Ibuprofen | Ağrı kesici, ateş düşürücü ve iltihap giderici (nonsteroid antiinflamatuar) ilaç. | /ilac-doz
+Lidokain | | Lidocaine | Lokal anestezik ve antiaritmik etkili ilaç. | /ilac-doz
+Magnezyum sülfat | | Magnesium Sulfate | Eklampsi nöbetlerinde, torsades de pointes'te ve ağır astımda kullanılan ilaç. | /ilac-doz DY-05
+Kalsiyum glukonat | | Calcium Gluconate | Hiperkalemi, hipokalsemi ve kalsiyum kanal blokeri zehirlenmesinde kullanılan kalsiyum preparatı. | /ilac-doz Y-34
+Sodyum bikarbonat | | Sodium Bicarbonate | Asidozu düzeltmek için kullanılan alkali ilaç; trisiklik antidepresan zehirlenmesinde ve bazı hiperkalemi durumlarında verilir. | /ilac-doz Y-37
+Karbetosin | | Carbetocin | Doğum sonrası rahmin kasılmasını sağlayarak kanamayı önlemeye yardımcı olan ilaç. | /ilac-doz DY-03
+Vazopresör | | Vasoconstrictor Agents | Damarları daraltarak kan basıncını yükselten ilaç grubu. |
+İnotrop | | Cardiotonic Agents | Kalbin kasılma gücünü artıran ilaç grubu. |
+Antiaritmik | | Anti-Arrhythmia Agents | Kalp ritim bozukluklarını düzelten veya önleyen ilaç grubu. | /ilac-doz
+Bronkodilatör | Bronş genişletici | Bronchodilator Agents | Daralmış bronşları genişleterek hava akımını kolaylaştıran ilaç grubu. | /ilac-doz
+Diüretik | İdrar söktürücü | Diuretics | Böbreklerden su ve tuz atılımını artıran ilaç grubu. |
+Analjezik | Ağrı kesici | Analgesics | Ağrıyı azaltan ilaç grubu; parasetamol ve iltihap gidericilerden güçlü opioidlere kadar geniş bir yelpazeyi kapsar. | /ilac-doz
+Antipiretik | Ateş düşürücü | Antipyretics | Ateşi düşüren ilaç grubu; parasetamol ve ibuprofen en sık kullanılanlardır. | /ilac-doz C-18
+Sedasyon | Sedatif | Hypnotics and Sedatives | İlaçla bilincin ve kaygının kontrollü olarak azaltılması. |
+Anestezi | | Anesthesia | İlaçla ağrı duyusunun ve gerekirse bilincin geçici olarak ortadan kaldırılması. |
+Pralidoksim | | Pralidoxime Compounds | Organofosfat zehirlenmesinde sinir-kas kavşağındaki enzimi yeniden etkinleştiren antidot. | Y-35
+Flumazenil | | Flumazenil | Benzodiazepin etkisini geri çeviren antidot; nöbet riski nedeniyle seçilmiş hastalarda kullanılır. |
+Glukagon | | Glucagon | Kan şekerini yükselten hormon; damar yolu açılamayan hipoglisemik hastada ve beta bloker zehirlenmesinde kullanılabilir. |
+Tiamin | B1 vitamini | Thiamine | Alkol bağımlılığı ve kötü beslenmede eksikliği nöbet ve bilinç bozukluğuna yol açabilen vitamin. |
+İlaç etkileşimi | | Drug Interactions | Birlikte kullanılan ilaçların birbirinin etkisini artırması veya azaltması. |
+Advers etki bildirimi | Farmakovijilans | Pharmacovigilance | İlaçların yan etkilerinin izlenmesi ve Türkiye Farmakovijilans Merkezine bildirilmesi; ambulansta bildirim formuyla yapılır. | /evraklar
