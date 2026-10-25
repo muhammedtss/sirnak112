@@ -14,7 +14,7 @@ Canlı: **https://www.112acilsaglik.com** · Geliştiren: Kadir TAŞ
 | Algoritmalar / Vaka protokolleri | `/algoritmalar`, `/vaka-protokolleri` | Aynı akışların adım adım, karar noktalı metin hali |
 | İlaç dozu | `/ilac-doz` | Kiloya göre doz, uygulama yolu, maksimum doz, dopamin cc/saat |
 | Skalalar | `/skalalar` | START / Jump START triyaj, GKS, AVPU, APGAR, PAT, Parkland, yanık yüzdesi (Lund-Browder), ventilatör, ETT, LMA… |
-| Envanter | `/envanter` | Ambulans tipine göre ilaç kontrol listesi |
+| Envanter | `/envanter` | Ambulans tipine göre ilaç kontrol listesi; yeterli/yetersiz işaretleri, eksik adet ve Excel (.xlsx) kontrol raporu (cihazda üretilir) |
 | Evraklar | `/evraklar` | Form ve tutanak örnekleri, orijinal dosyalar |
 | ICD-10 | `/icd10` | Türkçe aramalı tanı kodu bulucu |
 | EKG eğitimi | `/ekg-egitim` | Dersler, ritim atlası, vaka sınavı |
@@ -41,7 +41,8 @@ src/
                   egitim.json (Eğitim kataloğu — elle değil, `npm run egitim:guncelle` ile üretilir)
                   sozluk/*.txt (sözlük kaynağı, Excel'de "|" ayırıcıyla açılır) → sozluk.json (`npm run sozluk:derle`)
   lib/            Hesaplama ve yardımcılar: burn.ts (Lund-Browder, Parkland), doz.ts (ilaç dozu),
-                  algoritma.ts, ekg/, seo.ts, site-info.ts (kurum, kaynaklar, değişiklik günlüğü)
+                  algoritma.ts, ekg/, seo.ts, site-info.ts (kurum, kaynaklar, değişiklik günlüğü),
+                  envanter.ts + xlsx.ts (kontrol durumu, bağımlılıksız Excel raporu)
 public/           Görseller, evraklar, ikonlar, sw.js
 tests/            Otomatik testler (npm test)
 scripts/          Bütünlük denetimi, ikon ve görsel üretimi, Eğitim kataloğu (egitim-katalog.mjs)

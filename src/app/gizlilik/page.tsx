@@ -23,7 +23,9 @@ export default function GizlilikPage() {
           silinir.
         </p>
         <p>
-          Envanter kontrol listesindeki işaretlemeler de yalnızca sayfa açıkken cihazın belleğinde tutulur.
+          Envanter kontrol listesindeki işaretlemeler de yalnızca sayfa açıkken cihazın belleğinde tutulur. Kontrol
+          raporunun Excel dosyası cihazınızda oluşturulur; sunucuya gönderilmez, yalnızca siz indirdiğinizde veya
+          paylaştığınızda cihazınıza ya da seçtiğiniz uygulamaya geçer.
         </p>
       </InfoSection>
 

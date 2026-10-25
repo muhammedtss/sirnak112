@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import envanterData from "@/data/ambulans-envanter.json";
 import EnvanterIlacListesi from "@/components/envanter/EnvanterIlacListesi";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
-import { ArrowLeft } from "lucide-react";
+import { Package } from "lucide-react";
 import { staticParamsFor } from "@/lib/static-params";
 
 export function generateStaticParams() {
@@ -41,14 +40,9 @@ export default async function EnvanterKategoriPage({ params }: PageProps) {
 
   return (
     <PageShell>
-      <AppHeader
-        title="İlaçlar"
-        back={`/envanter/${tip}`}
-        icon={<ArrowLeft style={{ width: 16, height: 16 }} />}
-        right={<span className="text-[11px] font-semibold text-primary">{ambulansNames[tip] || ambulans.name}</span>}
-      />
+      <AppHeader title="İlaç Kontrolü" back={`/envanter/${tip}`} icon={<Package style={{ width: 16, height: 16 }} />} />
       <main className="flex-1 overflow-y-auto px-4 py-4 w-full">
-        <EnvanterIlacListesi ilaclar={ambulans.ilaclar} />
+        <EnvanterIlacListesi tip={tip} baslik={ambulansNames[tip] || ambulans.name} ambulansAdi={ambulans.name} ilaclar={ambulans.ilaclar} />
       </main>
     </PageShell>
   );

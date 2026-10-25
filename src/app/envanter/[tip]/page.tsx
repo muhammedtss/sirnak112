@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import envanterData from "@/data/ambulans-envanter.json";
 import { PageShell } from "@/components/layout/PageShell";
 import { AppHeader } from "@/components/layout/AppHeader";
-import { Stethoscope, ArrowLeft } from "lucide-react";
+import { Stethoscope, Package } from "lucide-react";
 import { staticParamsFor } from "@/lib/static-params";
 
 export function generateStaticParams() {
@@ -54,7 +54,7 @@ export default async function AmbulansDetayPage({ params }: PageProps) {
       <AppHeader
         title={ambulansNames[tip] || ambulans.name}
         back="/envanter"
-        icon={<ArrowLeft style={{ width: 16, height: 16 }} />}
+        icon={<Package style={{ width: 16, height: 16 }} />}
       />
       <main className="flex-1 flex flex-col justify-center px-4 w-full max-w-md mx-auto gap-4 py-8">
         <p className="text-sm text-subtle font-semibold text-center mb-2">Kontrol edilecek kategoriyi seçin</p>
